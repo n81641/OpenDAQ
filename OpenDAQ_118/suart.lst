@@ -1,0 +1,1594 @@
+GAS LISTING /tmp/ccxg4eTE.s 			page 1
+
+
+   1               		.file	"suart.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_118/",100,0,2,.Ltext0
+   9               		.stabs	"suart.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"suart.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/sfr_defs.h",130,0,0,0
+  31               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  32               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  33               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  34               		.stabs	"int8_t:t(6,1)=(0,10)",128,0,121,0
+  35               		.stabs	"uint8_t:t(6,2)=(0,11)",128,0,122,0
+  36               		.stabs	"int16_t:t(6,3)=(0,1)",128,0,123,0
+  37               		.stabs	"uint16_t:t(6,4)=(0,4)",128,0,124,0
+  38               		.stabs	"int32_t:t(6,5)=(0,3)",128,0,125,0
+  39               		.stabs	"uint32_t:t(6,6)=(0,5)",128,0,126,0
+  40               		.stabs	"int64_t:t(6,7)=(0,6)",128,0,128,0
+  41               		.stabs	"uint64_t:t(6,8)=(0,7)",128,0,129,0
+  42               		.stabs	"intptr_t:t(6,9)=(6,3)",128,0,142,0
+  43               		.stabs	"uintptr_t:t(6,10)=(6,4)",128,0,147,0
+  44               		.stabs	"int_least8_t:t(6,11)=(6,1)",128,0,159,0
+  45               		.stabs	"uint_least8_t:t(6,12)=(6,2)",128,0,164,0
+  46               		.stabs	"int_least16_t:t(6,13)=(6,3)",128,0,169,0
+  47               		.stabs	"uint_least16_t:t(6,14)=(6,4)",128,0,174,0
+  48               		.stabs	"int_least32_t:t(6,15)=(6,5)",128,0,179,0
+  49               		.stabs	"uint_least32_t:t(6,16)=(6,6)",128,0,184,0
+  50               		.stabs	"int_least64_t:t(6,17)=(6,7)",128,0,192,0
+  51               		.stabs	"uint_least64_t:t(6,18)=(6,8)",128,0,199,0
+  52               		.stabs	"int_fast8_t:t(6,19)=(6,1)",128,0,213,0
+  53               		.stabs	"uint_fast8_t:t(6,20)=(6,2)",128,0,218,0
+  54               		.stabs	"int_fast16_t:t(6,21)=(6,3)",128,0,223,0
+  55               		.stabs	"uint_fast16_t:t(6,22)=(6,4)",128,0,228,0
+  56               		.stabs	"int_fast32_t:t(6,23)=(6,5)",128,0,233,0
+  57               		.stabs	"uint_fast32_t:t(6,24)=(6,6)",128,0,238,0
+GAS LISTING /tmp/ccxg4eTE.s 			page 2
+
+
+  58               		.stabs	"int_fast64_t:t(6,25)=(6,7)",128,0,246,0
+  59               		.stabs	"uint_fast64_t:t(6,26)=(6,8)",128,0,253,0
+  60               		.stabs	"intmax_t:t(6,27)=(6,7)",128,0,273,0
+  61               		.stabs	"uintmax_t:t(6,28)=(6,8)",128,0,278,0
+  62               		.stabn	162,0,0,0
+  63               		.stabn	162,0,0,0
+  64               		.stabs	"int_farptr_t:t(4,1)=(6,5)",128,0,77,0
+  65               		.stabs	"uint_farptr_t:t(4,2)=(6,6)",128,0,81,0
+  66               		.stabn	162,0,0,0
+  67               		.stabn	162,0,0,0
+  68               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  69               		.stabs	"__fuse_t:t(7,1)=(7,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  70               		.stabn	162,0,0,0
+  71               		.stabn	162,0,0,0
+  72               		.stabs	"utilities.h",130,0,0,0
+  73               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  74               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  75               		.stabs	"size_t:t(10,1)=(0,4)",128,0,211,0
+  76               		.stabs	"wchar_t:t(10,2)=(0,1)",128,0,323,0
+  77               		.stabn	162,0,0,0
+  78               		.stabs	"div_t:t(9,1)=(9,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+  79               		.stabs	"ldiv_t:t(9,3)=(9,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+  80               		.stabs	"__compar_fn_t:t(9,5)=(9,6)=*(9,7)=f(0,1)",128,0,80,0
+  81               		.stabn	162,0,0,0
+  82               		.stabn	162,0,0,0
+  83               		.stabn	162,0,0,0
+  84               		.stabs	"uart.h",130,0,0,0
+  85               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/pgmspace.h",130,0,0,0
+  86               		.stabs	"prog_void:t(12,1)=(12,2)=(12,2)",128,0,217,0
+  87               		.stabs	"prog_char:t(12,3)=(12,4)=@s8;r(12,4);0;255;",128,0,218,0
+  88               		.stabs	"prog_uchar:t(12,5)=(12,6)=@s8;r(12,6);0;255;",128,0,219,0
+  89               		.stabs	"prog_int8_t:t(12,7)=(12,8)=(0,10)",128,0,221,0
+  90               		.stabs	"prog_uint8_t:t(12,9)=(12,10)=(0,11)",128,0,222,0
+  91               		.stabs	"prog_int16_t:t(12,11)=(12,12)=(0,1)",128,0,223,0
+  92               		.stabs	"prog_uint16_t:t(12,13)=(12,14)=(0,4)",128,0,224,0
+  93               		.stabs	"prog_int32_t:t(12,15)=(12,16)=(0,3)",128,0,225,0
+  94               		.stabs	"prog_uint32_t:t(12,17)=(12,18)=(0,5)",128,0,226,0
+  95               		.stabs	"prog_int64_t:t(12,19)=(12,20)=(0,6)",128,0,228,0
+  96               		.stabs	"prog_uint64_t:t(12,21)=(12,22)=(0,7)",128,0,229,0
+  97               		.stabn	162,0,0,0
+  98               		.stabn	162,0,0,0
+  99               		.stabs	"xmit1:F(0,15)",36,0,105,xmit1
+ 100               		.stabs	"abyte:P(6,2)",64,0,105,18
+ 101               	.global	xmit1
+ 102               		.type	xmit1, @function
+ 103               	xmit1:
+ 104               		.stabd	46,0,0
+   1:suart.c       **** ///
+   2:suart.c       **** /// \file suart.c
+   3:suart.c       **** /// \brief software uart 
+   4:suart.c       **** /// \details Multiple software uarts can be addd here. Setup pns and timing in suart.h 
+   5:suart.c       **** /// \author Karl Walter.  karl (at) waltech.com
+   6:suart.c       **** /// \copyright Copyright (c) 2014 Karl Walter.  karl (at) waltech.com.
+   7:suart.c       **** ///This software is distributed under the MIT License. 
+   8:suart.c       **** ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software an
+   9:suart.c       **** ///associated documentation files (the "Software"), to deal in the Software without restriction, 
+  10:suart.c       **** ///including without limitation the rights to use, copy, modify, merge, publish, distribute, sublic
+GAS LISTING /tmp/ccxg4eTE.s 			page 3
+
+
+  11:suart.c       **** ///and/or sell copies of the Software, and to permit persons to whom the Software is furnished to d
+  12:suart.c       **** ///subject to the following conditions:
+  13:suart.c       **** ///The above copyright notice and this permission notice shall be included in all copies or substan
+  14:suart.c       **** ///portions of the Software.
+  15:suart.c       **** ///The software is provided "as is", without warranty of any kind expressed or implied, 
+  16:suart.c       **** ///including but not limited to the warranties of merchantability, fitness for a particular 
+  17:suart.c       **** ///purpose and noninfringement.  In no event shall the authors or copyright holders be liable 
+  18:suart.c       **** ///for any claim, damages or other liability whether in an action of contract, tort or 
+  19:suart.c       **** ///otherwise, arising from, out of or in connection with the software or the use or other 
+  20:suart.c       **** ///dealings in the software.
+  21:suart.c       **** ///
+  22:suart.c       **** #include "suart.h"
+  23:suart.c       **** #include "uart.h"
+  24:suart.c       **** 
+  25:suart.c       **** 
+  26:suart.c       **** 
+  27:suart.c       **** void get_line (uint8_t uart_num, char *buff, uint8_t len)//get line from soft uart discards all aft
+  28:suart.c       **** {
+  29:suart.c       **** 	uint8_t c, i;
+  30:suart.c       **** 
+  31:suart.c       **** 	c = i = 0;
+  32:suart.c       **** 	for (;;) {
+  33:suart.c       **** 
+  34:suart.c       **** 		switch(uart_num)
+  35:suart.c       ****         {
+  36:suart.c       ****             case 1:
+  37:suart.c       ****                 c = rcvr1();
+  38:suart.c       ****                 break; 
+  39:suart.c       ****             case 2:
+  40:suart.c       ****                 c = rcvr2();
+  41:suart.c       ****                 break; 
+  42:suart.c       ****             case 3:
+  43:suart.c       ****                 c = rcvr2();
+  44:suart.c       ****                 break; 
+  45:suart.c       ****         }
+  46:suart.c       **** 		if (c == '\r') break;
+  47:suart.c       **** 		if (c == '\n') break;
+  48:suart.c       ****         if (suart_timedout_flag == 1)break;
+  49:suart.c       **** 		if ((c == '\b') && i) i--;
+  50:suart.c       **** 		if ((c >= ' ') && (i < len - 1))
+  51:suart.c       **** 				buff[i++] = c;
+  52:suart.c       **** 	}
+  53:suart.c       **** 	buff[i] = '\0';
+  54:suart.c       **** }
+  55:suart.c       **** 
+  56:suart.c       **** void suart_puts(uint8_t uart_num, const char* str)
+  57:suart.c       **** {
+  58:suart.c       ****     while(*str)
+  59:suart.c       ****         {
+  60:suart.c       ****             switch(uart_num)
+  61:suart.c       ****             {
+  62:suart.c       ****                 case 1:
+  63:suart.c       ****                 xmit1(*str++);
+  64:suart.c       ****                 break; 
+  65:suart.c       ****                 case 2:
+  66:suart.c       ****                 xmit2(*str++);
+  67:suart.c       ****                 break; 
+GAS LISTING /tmp/ccxg4eTE.s 			page 4
+
+
+  68:suart.c       ****                 case 3:
+  69:suart.c       ****                 xmit3(*str++);
+  70:suart.c       ****                 break; 
+  71:suart.c       ****             }
+  72:suart.c       ****             _delay_ms(CHR_DELAY);//character delay 
+  73:suart.c       ****         }
+  74:suart.c       **** }
+  75:suart.c       **** 
+  76:suart.c       **** 
+  77:suart.c       ****  
+  78:suart.c       **** void suart_init(uint8_t uart_num)
+  79:suart.c       **** {
+  80:suart.c       ****     switch(uart_num)
+  81:suart.c       ****     {
+  82:suart.c       ****         case 1:  
+  83:suart.c       ****             DDRP1T |= (1<<PN1T);
+  84:suart.c       ****             _delay_ms(20);
+  85:suart.c       ****             xmit1('\0'); //throw away char
+  86:suart.c       ****             break;
+  87:suart.c       ****         case 2: 
+  88:suart.c       ****             DDRP2T |= (1<<PN2T);
+  89:suart.c       ****             xmit2('\0');
+  90:suart.c       ****             _delay_ms(20);
+  91:suart.c       ****             break;
+  92:suart.c       ****         case 3: 
+  93:suart.c       ****             DDRP3T |= (1<<PN3T);
+  94:suart.c       ****             xmit2('\0');
+  95:suart.c       ****             _delay_ms(20);
+  96:suart.c       ****             break;
+  97:suart.c       **** 
+  98:suart.c       ****     }
+  99:suart.c       **** 
+ 100:suart.c       **** }
+ 101:suart.c       **** 
+ 102:suart.c       **** 
+ 103:suart.c       **** 
+ 104:suart.c       **** 
+ 105:suart.c       **** void xmit1(uint8_t abyte)
+ 106:suart.c       **** { 
+ 105               		.stabn	68,0,106,.LM0-.LFBB1
+ 106               	.LM0:
+ 107               	.LFBB1:
+ 108               	/* prologue: function */
+ 109               	/* frame size = 0 */
+ 110               	/* stack size = 0 */
+ 111               	.L__stack_usage = 0
+ 112 0000 282F      		mov r18,r24
+ 107:suart.c       ****     asm volatile(
+ 113               		.stabn	68,0,107,.LM1-.LFBB1
+ 114               	.LM1:
+ 115               	/* #APP */
+ 116               	 ;  107 "suart.c" 1
+ 117 0002 0FB6      		in     __tmp_reg__,      __SREG__   
+ 118 0004 822F      		mov    r24, r18                     
+ 119 0006 8095      		com	r24		                    
+ 120 0008 9AE0      		ldi	r25, 10		                
+ 121 000a F894      		cli			                    
+GAS LISTING /tmp/ccxg4eTE.s 			page 5
+
+
+ 122               		bitloop6:                                   
+ 123 000c 70E9      		ldi r23, 144   
+ 124               		bitwait6:                                   
+ 125 000e 7A95      		dec	r23     	                
+ 126 0010 01F4      		brne	bitwait6		                    
+ 127 0012 00F0      		brcs	lowout6		                    
+ 128 0014 C69A      		sbi 24, 6	
+ 129               		lowout6:                                   
+ 130 0016 00F4      		brcc	donebit6		                    
+ 131 0018 C698      		cbi 24, 6	
+ 132               		donebit6:                                   
+ 133 001a 8695      		lsr	r24     	                
+ 134 001c 9A95      		dec	r25     	                
+ 135 001e 01F4      		brne	bitloop6	     	                
+ 136 0020 0FBE      		out __SREG__,   __tmp_reg__         
+ 137               		
+ 138               	 ;  0 "" 2
+ 139               	/* epilogue start */
+ 108:suart.c       ****     "in     __tmp_reg__,      __SREG__   \n\t"       //Save flags 
+ 109:suart.c       ****     "mov    r24, %0                     \n\t"       // get byte to transmit
+ 110:suart.c       **** 	"com	r24		                    \n\t"       //one's complement 
+ 111:suart.c       **** 	"ldi	r25, 10		                \n\t"       //Bit counter
+ 112:suart.c       **** 	"cli			                    \n\t"       //Start critical section
+ 113:suart.c       **** 
+ 114:suart.c       **** "bitloop%=:                                   \n\t" 	    //----- Bit transferring loop 
+ 115:suart.c       ****     TBITDELAY                                      //load bit dealy
+ 116:suart.c       **** "bitwait%=:                                   \n\t" 	
+ 117:suart.c       ****     "dec	r23     	                \n\t"       //Wait for a bit time
+ 118:suart.c       **** 	"brne	bitwait%=		                    \n\t"       //
+ 119:suart.c       **** 	"brcs	lowout%=		                    \n\t"       //bit to be sent
+ 120:suart.c       **** 	OUT1_1			                                // set pin to 1
+ 121:suart.c       **** "lowout%=:                                   \n\t" 	
+ 122:suart.c       ****     "brcc	donebit%=		                    \n\t"       //
+ 123:suart.c       **** 	OUT1_0			                                //  set pin to 0
+ 124:suart.c       **** "donebit%=:                                   \n\t" 	
+ 125:suart.c       ****     "lsr	r24     	                \n\t"       //Get next bit into C
+ 126:suart.c       **** 	"dec	r25     	                \n\t"       //All bits sent?
+ 127:suart.c       **** 	"brne	bitloop%=	     	                \n\t"       //  no, coutinue
+ 128:suart.c       **** 
+ 129:suart.c       **** 	"out __SREG__,   __tmp_reg__         \n\t"
+ 130:suart.c       ****     :                                       //outputs
+ 131:suart.c       ****     :"r" (abyte), "I" (OUT1PINPORT)           //inputs
+ 132:suart.c       ****     : "r23", "r24", "r25"                   //clobbers list (registers used inside)
+ 133:suart.c       ****     );
+ 134:suart.c       **** }
+ 140               		.stabn	68,0,134,.LM2-.LFBB1
+ 141               	.LM2:
+ 142               	/* #NOAPP */
+ 143 0022 0895      		ret
+ 144               		.size	xmit1, .-xmit1
+ 145               	.Lscope1:
+ 146               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 147               		.stabd	78,0,0
+ 148               		.stabs	"xmit2:F(0,15)",36,0,136,xmit2
+ 149               		.stabs	"abyte:P(6,2)",64,0,136,18
+ 150               	.global	xmit2
+ 151               		.type	xmit2, @function
+GAS LISTING /tmp/ccxg4eTE.s 			page 6
+
+
+ 152               	xmit2:
+ 153               		.stabd	46,0,0
+ 135:suart.c       **** 
+ 136:suart.c       **** void xmit2(uint8_t abyte)
+ 137:suart.c       **** {
+ 154               		.stabn	68,0,137,.LM3-.LFBB2
+ 155               	.LM3:
+ 156               	.LFBB2:
+ 157               	/* prologue: function */
+ 158               	/* frame size = 0 */
+ 159               	/* stack size = 0 */
+ 160               	.L__stack_usage = 0
+ 161 0024 282F      		mov r18,r24
+ 138:suart.c       **** 	asm volatile(
+ 162               		.stabn	68,0,138,.LM4-.LFBB2
+ 163               	.LM4:
+ 164               	/* #APP */
+ 165               	 ;  138 "suart.c" 1
+ 166 0026 0FB6      		in     __tmp_reg__,      __SREG__   
+ 167 0028 822F      		mov    r24, r18                     
+ 168 002a 8095      		com	r24		                    
+ 169 002c 9AE0      		ldi	r25, 10		                
+ 170 002e F894      		cli			                    
+ 171               		bitloop16:                                   
+ 172 0030 70E9      		ldi r23, 144   
+ 173               		bitwait16:                                   
+ 174 0032 7A95      		dec	r23     	                
+ 175 0034 01F4      		brne	bitwait16		                    
+ 176 0036 00F0      		brcs	lowout16		                    
+ 177 0038 D99A      		sbi 27, 1	
+ 178               		lowout16:                                   
+ 179 003a 00F4      		brcc	donebit16		                    
+ 180 003c D998      		cbi 27, 1	
+ 181               		donebit16:                                   
+ 182 003e 8695      		lsr	r24     	                
+ 183 0040 9A95      		dec	r25     	                
+ 184 0042 01F4      		brne	bitloop16	     	                
+ 185 0044 0FBE      		out __SREG__,   __tmp_reg__         
+ 186               		
+ 187               	 ;  0 "" 2
+ 188               	/* epilogue start */
+ 139:suart.c       ****     "in     __tmp_reg__,      __SREG__   \n\t"       //Save flags 
+ 140:suart.c       ****     "mov    r24, %0                     \n\t"       // get byte to transmit
+ 141:suart.c       **** 	"com	r24		                    \n\t"       //one's complement 
+ 142:suart.c       **** 	"ldi	r25, 10		                \n\t"       //Bit counter
+ 143:suart.c       **** 	"cli			                    \n\t"       //Start critical section
+ 144:suart.c       **** 
+ 145:suart.c       **** "bitloop%=:                                   \n\t" 	    //----- Bit transferring loop 
+ 146:suart.c       ****     TBITDELAY                                      //load bit dealy
+ 147:suart.c       **** "bitwait%=:                                   \n\t" 	
+ 148:suart.c       ****     "dec	r23     	                \n\t"       //Wait for a bit time
+ 149:suart.c       **** 	"brne	bitwait%=		                    \n\t"       //
+ 150:suart.c       **** 	"brcs	lowout%=		                    \n\t"       //bit to be sent
+ 151:suart.c       **** 	OUT2_1			                                // set pin to 1
+ 152:suart.c       **** "lowout%=:                                   \n\t" 	
+ 153:suart.c       ****     "brcc	donebit%=		                    \n\t"       //
+ 154:suart.c       **** 	OUT2_0			                                //  set pin to 0
+GAS LISTING /tmp/ccxg4eTE.s 			page 7
+
+
+ 155:suart.c       **** "donebit%=:                                   \n\t" 	
+ 156:suart.c       ****     "lsr	r24     	                \n\t"       //Get next bit into C
+ 157:suart.c       **** 	"dec	r25     	                \n\t"       //All bits sent?
+ 158:suart.c       **** 	"brne	bitloop%=	     	                \n\t"       //  no, coutinue
+ 159:suart.c       **** 
+ 160:suart.c       **** 	"out __SREG__,   __tmp_reg__         \n\t"
+ 161:suart.c       ****     :                                       //outputs
+ 162:suart.c       ****     :"r" (abyte), "I" (OUT2PINPORT)           //inputs
+ 163:suart.c       ****     : "r23", "r24", "r25"                   //clobbers list (registers used inside)
+ 164:suart.c       ****     );
+ 165:suart.c       **** }
+ 189               		.stabn	68,0,165,.LM5-.LFBB2
+ 190               	.LM5:
+ 191               	/* #NOAPP */
+ 192 0046 0895      		ret
+ 193               		.size	xmit2, .-xmit2
+ 194               	.Lscope2:
+ 195               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 196               		.stabd	78,0,0
+ 197               		.stabs	"suart_init:F(0,15)",36,0,78,suart_init
+ 198               		.stabs	"uart_num:P(6,2)",64,0,78,24
+ 199               	.global	suart_init
+ 200               		.type	suart_init, @function
+ 201               	suart_init:
+ 202               		.stabd	46,0,0
+  79:suart.c       **** {
+ 203               		.stabn	68,0,79,.LM6-.LFBB3
+ 204               	.LM6:
+ 205               	.LFBB3:
+ 206               	/* prologue: function */
+ 207               	/* frame size = 0 */
+ 208               	/* stack size = 0 */
+ 209               	.L__stack_usage = 0
+  80:suart.c       ****     switch(uart_num)
+ 210               		.stabn	68,0,80,.LM7-.LFBB3
+ 211               	.LM7:
+ 212 0048 8230      		cpi r24,lo8(2)
+ 213 004a 01F0      		breq .L6
+ 214 004c 8330      		cpi r24,lo8(3)
+ 215 004e 01F0      		breq .L7
+ 216 0050 8130      		cpi r24,lo8(1)
+ 217 0052 01F4      		brne .L3
+  83:suart.c       ****             DDRP1T |= (1<<PN1T);
+ 218               		.stabn	68,0,83,.LM8-.LFBB3
+ 219               	.LM8:
+ 220 0054 BE9A      		sbi 55-32,6
+ 221               	.LBB10:
+ 222               	.LBB11:
+ 223               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext1
+ 224               	.Ltext1:
+   1:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   6:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+GAS LISTING /tmp/ccxg4eTE.s 			page 8
+
+
+   8:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   9:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  12:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      distribution.
+  16:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  17:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  21:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  33:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* $Id: delay.h.in 2189 2010-10-13 09:39:34Z aboyapati $ */
+  34:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  35:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  38:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
+  39:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
+  40:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  41:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  42:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <inttypes.h>
+  43:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <util/delay_basic.h>
+  44:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <math.h>
+  45:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  46:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \file */
+  47:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  48:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \code
+  49:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  50:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  51:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #include <util/delay.h>
+  52:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \endcode
+  53:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  54:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  55:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  56:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  57:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     used.
+  58:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  59:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  60:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  61:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  62:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  63:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  64:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+GAS LISTING /tmp/ccxg4eTE.s 			page 9
+
+
+  65:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  66:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  67:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  68:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  69:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  70:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  71:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  72:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  73:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  74:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  75:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     routines linked into the application.
+  76:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  77:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  78:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  79:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  80:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  81:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** */
+  82:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  83:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  84:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
+  85:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
+  86:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  87:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  88:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef F_CPU
+  89:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  90:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  91:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # define F_CPU 1000000UL
+  92:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  93:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  94:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+  95:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+  96:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  97:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  98:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /**
+  99:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    \ingroup util_delay
+ 100:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 101:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 102:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 103:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 104:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 105:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 106:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 107:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 108:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 109:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 110:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 111:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 112:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 113:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 114:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
+ 115:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 116:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 117:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 118:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 119:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
+ 120:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
+ 121:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
+GAS LISTING /tmp/ccxg4eTE.s 			page 10
+
+
+ 122:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 123:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
+ 124:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    to round down and round to closest integer.
+ 125:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 126:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
+ 127:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
+ 128:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay
+ 129:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    although this will be deprecated in future.
+ 130:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 131:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****  */
+ 132:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** void
+ 133:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** _delay_ms(double __ms)
+ 134:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** {
+ 135:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint16_t __ticks;
+ 136:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	double __tmp ; 
+ 137:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && !defined(__DELAY_BACKWARD_COMPATIBLE__)
+ 138:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 139:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 140:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 141:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 142:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 143:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 144:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 145:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 146:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 147:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 148:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#else
+ 149:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		//round up by default
+ 150:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 151:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#endif
+ 152:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 153:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 225               		.stabn	68,0,153,.LM9-.LFBB3
+ 226               	.LM9:
+ 227 0056 8BEE      		 ldi r24,lo8(20971)
+ 228 0058 91E5      	    ldi r25,hi8(20971)
+ 229 005a 0197      	    1:sbiw r24,1
+ 230 005c 01F4      	    brne 1b
+ 231 005e 00C0      		rjmp .
+ 232               	.LBE11:
+ 233               	.LBE10:
+ 234               		.stabs	"suart.c",132,0,0,.Ltext2
+ 235               	.Ltext2:
+  85:suart.c       ****             xmit1('\0'); //throw away char
+ 236               		.stabn	68,0,85,.LM10-.LFBB3
+ 237               	.LM10:
+ 238 0060 80E0      		ldi r24,lo8(0)
+ 239 0062 0E94 0000 		call xmit1
+  86:suart.c       ****             break;
+ 240               		.stabn	68,0,86,.LM11-.LFBB3
+ 241               	.LM11:
+ 242 0066 0895      		ret
+ 243               	.L6:
+  88:suart.c       ****             DDRP2T |= (1<<PN2T);
+ 244               		.stabn	68,0,88,.LM12-.LFBB3
+ 245               	.LM12:
+ 246 0068 D19A      		sbi 58-32,1
+GAS LISTING /tmp/ccxg4eTE.s 			page 11
+
+
+  89:suart.c       ****             xmit2('\0');
+ 247               		.stabn	68,0,89,.LM13-.LFBB3
+ 248               	.LM13:
+ 249 006a 80E0      		ldi r24,lo8(0)
+ 250 006c 0E94 0000 		call xmit2
+ 251               	.LBB12:
+ 252               	.LBB13:
+ 253               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext3
+ 254               	.Ltext3:
+ 255               		.stabn	68,0,153,.LM14-.LFBB3
+ 256               	.LM14:
+ 257 0070 8BEE      		 ldi r24,lo8(20971)
+ 258 0072 91E5      	    ldi r25,hi8(20971)
+ 259 0074 0197      	    1:sbiw r24,1
+ 260 0076 01F4      	    brne 1b
+ 261 0078 00C0      		rjmp .
+ 262 007a 0895      		ret
+ 263               	.L7:
+ 264               	.LBE13:
+ 265               	.LBE12:
+ 266               		.stabs	"suart.c",132,0,0,.Ltext4
+ 267               	.Ltext4:
+  93:suart.c       ****             DDRP3T |= (1<<PN3T);
+ 268               		.stabn	68,0,93,.LM15-.LFBB3
+ 269               	.LM15:
+ 270 007c D79A      		sbi 58-32,7
+  94:suart.c       ****             xmit2('\0');
+ 271               		.stabn	68,0,94,.LM16-.LFBB3
+ 272               	.LM16:
+ 273 007e 80E0      		ldi r24,lo8(0)
+ 274 0080 0E94 0000 		call xmit2
+ 275               	.LBB14:
+ 276               	.LBB15:
+ 277               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext5
+ 278               	.Ltext5:
+ 279               		.stabn	68,0,153,.LM17-.LFBB3
+ 280               	.LM17:
+ 281 0084 8BEE      		 ldi r24,lo8(20971)
+ 282 0086 91E5      	    ldi r25,hi8(20971)
+ 283 0088 0197      	    1:sbiw r24,1
+ 284 008a 01F4      	    brne 1b
+ 285 008c 00C0      		rjmp .
+ 286               	.L3:
+ 287 008e 0895      		ret
+ 288               	.LBE15:
+ 289               	.LBE14:
+ 290               		.size	suart_init, .-suart_init
+ 291               	.Lscope3:
+ 292               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 293               		.stabd	78,0,0
+ 294               		.stabs	"xmit3:F(0,15)",36,0,166,xmit3
+ 295               		.stabs	"abyte:P(6,2)",64,0,166,18
+ 296               	.global	xmit3
+ 297               		.type	xmit3, @function
+ 298               	xmit3:
+ 299               		.stabd	46,0,0
+ 300               		.stabs	"suart.c",132,0,0,.Ltext6
+GAS LISTING /tmp/ccxg4eTE.s 			page 12
+
+
+ 301               	.Ltext6:
+ 166:suart.c       **** void xmit3(uint8_t abyte)
+ 167:suart.c       **** {
+ 302               		.stabn	68,0,167,.LM18-.LFBB4
+ 303               	.LM18:
+ 304               	.LFBB4:
+ 305               	/* prologue: function */
+ 306               	/* frame size = 0 */
+ 307               	/* stack size = 0 */
+ 308               	.L__stack_usage = 0
+ 309 0090 282F      		mov r18,r24
+ 168:suart.c       **** 	asm volatile(
+ 310               		.stabn	68,0,168,.LM19-.LFBB4
+ 311               	.LM19:
+ 312               	/* #APP */
+ 313               	 ;  168 "suart.c" 1
+ 314 0092 0FB6      		in     __tmp_reg__,      __SREG__   
+ 315 0094 822F      		mov    r24, r18                     
+ 316 0096 8095      		com	r24		                    
+ 317 0098 9AE0      		ldi	r25, 10		                
+ 318 009a F894      		cli			                    
+ 319               		bitloop85:                                   
+ 320 009c 70E9      		ldi r23, 144   
+ 321               		bitwait85:                                   
+ 322 009e 7A95      		dec	r23     	                
+ 323 00a0 01F4      		brne	bitwait85		                    
+ 324 00a2 00F0      		brcs	lowout85		                    
+ 325 00a4 DF9A      		sbi 27, 7	
+ 326               		lowout85:                                   
+ 327 00a6 00F4      		brcc	donebit85		                    
+ 328 00a8 DF98      		cbi 27, 7	
+ 329               		donebit85:                                   
+ 330 00aa 8695      		lsr	r24     	                
+ 331 00ac 9A95      		dec	r25     	                
+ 332 00ae 01F4      		brne	bitloop85	     	                
+ 333 00b0 0FBE      		out __SREG__,   __tmp_reg__         
+ 334               		
+ 335               	 ;  0 "" 2
+ 336               	/* epilogue start */
+ 169:suart.c       ****     "in     __tmp_reg__,      __SREG__   \n\t"       //Save flags 
+ 170:suart.c       ****     "mov    r24, %0                     \n\t"       // get byte to transmit
+ 171:suart.c       **** 	"com	r24		                    \n\t"       //one's complement 
+ 172:suart.c       **** 	"ldi	r25, 10		                \n\t"       //Bit counter
+ 173:suart.c       **** 	"cli			                    \n\t"       //Start critical section
+ 174:suart.c       **** 
+ 175:suart.c       **** "bitloop%=:                                   \n\t" 	    //----- Bit transferring loop 
+ 176:suart.c       ****     TBITDELAY                                      //load bit dealy
+ 177:suart.c       **** "bitwait%=:                                   \n\t" 	
+ 178:suart.c       ****     "dec	r23     	                \n\t"       //Wait for a bit time
+ 179:suart.c       **** 	"brne	bitwait%=		                    \n\t"       //
+ 180:suart.c       **** 	"brcs	lowout%=		                    \n\t"       //bit to be sent
+ 181:suart.c       **** 	OUT3_1			                                // set pin to 1
+ 182:suart.c       **** "lowout%=:                                   \n\t" 	
+ 183:suart.c       ****     "brcc	donebit%=		                    \n\t"       //
+ 184:suart.c       **** 	OUT3_0			                                //  set pin to 0
+ 185:suart.c       **** "donebit%=:                                   \n\t" 	
+ 186:suart.c       ****     "lsr	r24     	                \n\t"       //Get next bit into C
+GAS LISTING /tmp/ccxg4eTE.s 			page 13
+
+
+ 187:suart.c       **** 	"dec	r25     	                \n\t"       //All bits sent?
+ 188:suart.c       **** 	"brne	bitloop%=	     	                \n\t"       //  no, coutinue
+ 189:suart.c       **** 
+ 190:suart.c       **** 	"out __SREG__,   __tmp_reg__         \n\t"
+ 191:suart.c       ****     :                                       //outputs
+ 192:suart.c       ****     :"r" (abyte), "I" (OUT3PINPORT)           //inputs
+ 193:suart.c       ****     : "r23", "r24", "r25"                   //clobbers list (registers used inside)
+ 194:suart.c       ****     );
+ 195:suart.c       **** }
+ 337               		.stabn	68,0,195,.LM20-.LFBB4
+ 338               	.LM20:
+ 339               	/* #NOAPP */
+ 340 00b2 0895      		ret
+ 341               		.size	xmit3, .-xmit3
+ 342               	.Lscope4:
+ 343               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 344               		.stabd	78,0,0
+ 345               		.stabs	"suart_puts:F(0,15)",36,0,56,suart_puts
+ 346               		.stabs	"uart_num:P(6,2)",64,0,56,17
+ 347               		.stabs	"str:P(0,16)=*(0,17)=k(0,2)",64,0,56,28
+ 348               	.global	suart_puts
+ 349               		.type	suart_puts, @function
+ 350               	suart_puts:
+ 351               		.stabd	46,0,0
+  57:suart.c       **** {
+ 352               		.stabn	68,0,57,.LM21-.LFBB5
+ 353               	.LM21:
+ 354               	.LFBB5:
+ 355 00b4 1F93      		push r17
+ 356 00b6 CF93      		push r28
+ 357 00b8 DF93      		push r29
+ 358               	/* prologue: function */
+ 359               	/* frame size = 0 */
+ 360               	/* stack size = 3 */
+ 361               	.L__stack_usage = 3
+ 362 00ba 182F      		mov r17,r24
+ 363 00bc EB01      		movw r28,r22
+  58:suart.c       ****     while(*str)
+ 364               		.stabn	68,0,58,.LM22-.LFBB5
+ 365               	.LM22:
+ 366 00be 00C0      		rjmp .L10
+ 367               	.L15:
+  60:suart.c       ****             switch(uart_num)
+ 368               		.stabn	68,0,60,.LM23-.LFBB5
+ 369               	.LM23:
+ 370 00c0 1230      		cpi r17,lo8(2)
+ 371 00c2 01F0      		breq .L13
+ 372 00c4 1330      		cpi r17,lo8(3)
+ 373 00c6 01F0      		breq .L14
+ 374 00c8 1130      		cpi r17,lo8(1)
+ 375 00ca 01F4      		brne .L11
+  63:suart.c       ****                 xmit1(*str++);
+ 376               		.stabn	68,0,63,.LM24-.LFBB5
+ 377               	.LM24:
+ 378 00cc 2196      		adiw r28,1
+ 379 00ce 0E94 0000 		call xmit1
+  64:suart.c       ****                 break; 
+GAS LISTING /tmp/ccxg4eTE.s 			page 14
+
+
+ 380               		.stabn	68,0,64,.LM25-.LFBB5
+ 381               	.LM25:
+ 382 00d2 00C0      		rjmp .L11
+ 383               	.L13:
+  66:suart.c       ****                 xmit2(*str++);
+ 384               		.stabn	68,0,66,.LM26-.LFBB5
+ 385               	.LM26:
+ 386 00d4 2196      		adiw r28,1
+ 387 00d6 0E94 0000 		call xmit2
+  67:suart.c       ****                 break; 
+ 388               		.stabn	68,0,67,.LM27-.LFBB5
+ 389               	.LM27:
+ 390 00da 00C0      		rjmp .L11
+ 391               	.L14:
+  69:suart.c       ****                 xmit3(*str++);
+ 392               		.stabn	68,0,69,.LM28-.LFBB5
+ 393               	.LM28:
+ 394 00dc 2196      		adiw r28,1
+ 395 00de 0E94 0000 		call xmit3
+ 396               	.L11:
+ 397               	.LBB16:
+ 398               	.LBB17:
+ 399               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext7
+ 400               	.Ltext7:
+ 401               		.stabn	68,0,153,.LM29-.LFBB5
+ 402               	.LM29:
+ 403 00e2 85EF      		 ldi r24,lo8(10485)
+ 404 00e4 98E2      	    ldi r25,hi8(10485)
+ 405 00e6 0197      	    1:sbiw r24,1
+ 406 00e8 01F4      	    brne 1b
+ 407 00ea 00C0      		rjmp .
+ 408 00ec 0000      		nop
+ 409               	.L10:
+ 410               	.LBE17:
+ 411               	.LBE16:
+ 412               		.stabs	"suart.c",132,0,0,.Ltext8
+ 413               	.Ltext8:
+  58:suart.c       ****     while(*str)
+ 414               		.stabn	68,0,58,.LM30-.LFBB5
+ 415               	.LM30:
+ 416 00ee 8881      		ld r24,Y
+ 417 00f0 8823      		tst r24
+ 418 00f2 01F4      		brne .L15
+ 419               	/* epilogue start */
+  74:suart.c       **** }
+ 420               		.stabn	68,0,74,.LM31-.LFBB5
+ 421               	.LM31:
+ 422 00f4 DF91      		pop r29
+ 423 00f6 CF91      		pop r28
+ 424 00f8 1F91      		pop r17
+ 425 00fa 0895      		ret
+ 426               		.size	suart_puts, .-suart_puts
+ 427               	.Lscope5:
+ 428               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 429               		.stabd	78,0,0
+ 430               		.stabs	"rcvr1:F(6,2)",36,0,198,rcvr1
+ 431               	.global	rcvr1
+GAS LISTING /tmp/ccxg4eTE.s 			page 15
+
+
+ 432               		.type	rcvr1, @function
+ 433               	rcvr1:
+ 434               		.stabd	46,0,0
+ 196:suart.c       **** 
+ 197:suart.c       **** 
+ 198:suart.c       **** uint8_t rcvr1(void)
+ 199:suart.c       **** {
+ 435               		.stabn	68,0,199,.LM32-.LFBB6
+ 436               	.LM32:
+ 437               	.LFBB6:
+ 438               	/* prologue: function */
+ 439               	/* frame size = 0 */
+ 440               	/* stack size = 0 */
+ 441               	.L__stack_usage = 0
+ 200:suart.c       ****     uint8_t abyte= 0;
+ 201:suart.c       ****     asm volatile(
+ 442               		.stabn	68,0,201,.LM33-.LFBB6
+ 443               	.LM33:
+ 444               	/* #APP */
+ 445               	 ;  201 "suart.c" 1
+ 446 00fc 0FB6      		in     __tmp_reg__,      __SREG__              
+ 447 00fe 80E8      		ldi	r24,     0x80	                        
+ 448               		wait_idle152:                                   
+ 449 0100 9E99      		sbic 19, 6                                 
+ 450 0102 00C0      		rjmp error152                               
+ 451 0104 B59B      		sbis 22, 5 
+ 452 0106 00C0      		rjmp	   wait_idle152   	                    
+ 453               		wait_start152:                                  
+ 454 0108 9E99      		sbic 19, 6                                 
+ 455 010a 00C0      		rjmp error152                               
+ 456 010c B599      		sbic 22, 5 
+ 457 010e 00C0      		rjmp	wait_start152     	                    
+ 458 0110 98E4      		ldi r25, 72    
+ 459               		half_bit_delay152:                              
+ 460 0112 9A95      		dec	r25                               
+ 461 0114 01F4      		brne   half_bit_delay152                        
+ 462               		bit_loop152:                                    
+ 463 0116 91E9      		ldi r25, 145   
+ 464               		one_bit_delay152:                           
+ 465 0118 9A95      		dec	r25                               
+ 466 011a 01F4      		brne   one_bit_delay152                     
+ 467 011c 8695      		lsr	r24          	                
+ 468 011e B599      		sbic 22, 5 
+ 469 0120 8068      		ori	r24,     0x80	                
+ 470 0122 00F4      		brcc   bit_loop152                              
+ 471 0124 282F      		error152:mov        r18,  r24                             
+ 472 0126 0FBE      		out __SREG__,          __tmp_reg__                      
+ 473               		
+ 474               	 ;  0 "" 2
+ 202:suart.c       ****     
+ 203:suart.c       ****         "in     __tmp_reg__,      __SREG__              \n\t"       //Save flags
+ 204:suart.c       ****         "ldi	r24,     0x80	                        \n\t"      //Receiving shift reg load with 0x80
+ 205:suart.c       ****         //"cli	                                        \n\t"      //Start critical section //not us
+ 206:suart.c       ****     
+ 207:suart.c       ****         "wait_idle%=:                                   \n\t"       // wait for idle
+ 208:suart.c       ****             "sbic %2, 6                                 \n\t"	         //Skip if flag pin is clear
+ 209:suart.c       ****             "rjmp error%=                               \n\t"
+GAS LISTING /tmp/ccxg4eTE.s 			page 16
+
+
+ 210:suart.c       ****             SKIP1_IN_1                                               //macro looking for hi on rx p
+ 211:suart.c       ****         "rjmp	   wait_idle%=   	                    \n\t"       //
+ 212:suart.c       ****     
+ 213:suart.c       ****         "wait_start%=:                                  \n\t"       // wait for start bit
+ 214:suart.c       ****             "sbic %2, 6                                 \n\t"	 // Skip if flag pin is 
+ 215:suart.c       ****             "rjmp error%=                               \n\t"
+ 216:suart.c       ****             SKIP1_IN_0                                                       //macro looking for hi
+ 217:suart.c       ****         "rjmp	wait_start%=     	                    \n\t"       //
+ 218:suart.c       ****     
+ 219:suart.c       ****         H_BITDELAY      // load half bit's time
+ 220:suart.c       ****     
+ 221:suart.c       ****         "half_bit_delay%=:                              \n\t"       //Wait for half bit time
+ 222:suart.c       ****         "dec	r25                               \n\t"      //count down
+ 223:suart.c       ****         "brne   half_bit_delay%=                        \n\t"      //
+ 224:suart.c       **** 
+ 225:suart.c       ****         "bit_loop%=:                                    \n\t"   //----- Bit receiving loop
+ 226:suart.c       ****             BITDELAY      // load one bit's time
+ 227:suart.c       ****     
+ 228:suart.c       ****             "one_bit_delay%=:                           \n\t"       //Wait for one bit time
+ 229:suart.c       ****                 "dec	r25                               \n\t"   //count down
+ 230:suart.c       ****             "brne   one_bit_delay%=                     \n\t"      //
+ 231:suart.c       ****             
+ 232:suart.c       ****             "lsr	r24          	                \n\t" //Next bit
+ 233:suart.c       ****             SKIP1_IN_0                                       //Get a data bit into r24
+ 234:suart.c       ****             "ori	r24,     0x80	                \n\t"  // record bit
+ 235:suart.c       ****         "brcc   bit_loop%=                              \n\t"      //continue until all bits receiv
+ 236:suart.c       ****         "error%=:"
+ 237:suart.c       ****         "mov        %0,  r24                             \n\t" // byte received copied to abyte
+ 238:suart.c       ****         
+ 239:suart.c       ****         
+ 240:suart.c       ****         "out __SREG__,          __tmp_reg__                      \n\t"
+ 241:suart.c       ****         
+ 242:suart.c       ****         :"=r" (abyte)                       //outputs
+ 243:suart.c       ****         :"I" (IN1PINPORT) , "I" _SFR_IO_ADDR(PINC)          //inputs PINC is for timeoutflag
+ 244:suart.c       ****         : "r24", "r25", "r26"                   //clobbers list (registers used inside)
+ 245:suart.c       ****     );
+ 246:suart.c       ****  
+ 247:suart.c       **** 
+ 248:suart.c       ****     return abyte;
+ 249:suart.c       **** 
+ 250:suart.c       **** }
+ 475               		.stabn	68,0,250,.LM34-.LFBB6
+ 476               	.LM34:
+ 477               	/* #NOAPP */
+ 478 0128 822F      		mov r24,r18
+ 479               	/* epilogue start */
+ 480 012a 0895      		ret
+ 481               		.size	rcvr1, .-rcvr1
+ 482               	.Lscope6:
+ 483               		.stabs	"",36,0,0,.Lscope6-.LFBB6
+ 484               		.stabd	78,0,0
+ 485               		.stabs	"rcvr2:F(6,2)",36,0,252,rcvr2
+ 486               	.global	rcvr2
+ 487               		.type	rcvr2, @function
+ 488               	rcvr2:
+ 489               		.stabd	46,0,0
+ 251:suart.c       ****  
+GAS LISTING /tmp/ccxg4eTE.s 			page 17
+
+
+ 252:suart.c       **** uint8_t rcvr2(void)
+ 253:suart.c       **** {
+ 490               		.stabn	68,0,253,.LM35-.LFBB7
+ 491               	.LM35:
+ 492               	.LFBB7:
+ 493               	/* prologue: function */
+ 494               	/* frame size = 0 */
+ 495               	/* stack size = 0 */
+ 496               	.L__stack_usage = 0
+ 254:suart.c       **** 	uint8_t abyte= 0;
+ 255:suart.c       **** 	 asm volatile(
+ 497               		.stabn	68,0,255,.LM36-.LFBB7
+ 498               	.LM36:
+ 499               	/* #APP */
+ 500               	 ;  255 "suart.c" 1
+ 501 012c 0FB6      		in     __tmp_reg__,      __SREG__              
+ 502 012e 80E8      		ldi	r24,     0x80	                        
+ 503               		wait_idle163:                                   
+ 504 0130 9E99      		sbic 19, 6                                 
+ 505 0132 00C0      		rjmp error163                               
+ 506 0134 C89B      		sbis 25, 0 
+ 507 0136 00C0      		rjmp	   wait_idle163   	                    
+ 508               		wait_start163:                                  
+ 509 0138 9E99      		sbic 19, 6                                 
+ 510 013a 00C0      		rjmp error163                               
+ 511 013c C899      		sbic 25, 0 
+ 512 013e 00C0      		rjmp	wait_start163     	                    
+ 513 0140 98E4      		ldi r25, 72    
+ 514               		half_bit_delay163:                              
+ 515 0142 9A95      		dec	r25                               
+ 516 0144 01F4      		brne   half_bit_delay163                        
+ 517               		bit_loop163:                                    
+ 518 0146 91E9      		ldi r25, 145   
+ 519               		one_bit_delay163:                           
+ 520 0148 9A95      		dec	r25                               
+ 521 014a 01F4      		brne   one_bit_delay163                     
+ 522 014c 8695      		lsr	r24          	                
+ 523 014e C899      		sbic 25, 0 
+ 524 0150 8068      		ori	r24,     0x80	                
+ 525 0152 00F4      		brcc   bit_loop163                              
+ 526 0154 282F      		error163:mov        r18,  r24                             
+ 527 0156 0FBE      		out __SREG__,          __tmp_reg__                      
+ 528               		
+ 529               	 ;  0 "" 2
+ 256:suart.c       ****     
+ 257:suart.c       ****         "in     __tmp_reg__,      __SREG__              \n\t"       //Save flags
+ 258:suart.c       ****         "ldi	r24,     0x80	                        \n\t"      //Receiving shift reg load with 0x80
+ 259:suart.c       ****         //"cli	                                        \n\t"      //Start critical section //not us
+ 260:suart.c       ****     
+ 261:suart.c       ****         "wait_idle%=:                                   \n\t"       // wait for idle
+ 262:suart.c       ****             "sbic %2, 6                                 \n\t"	         //Skip if flag pin is clear
+ 263:suart.c       ****             "rjmp error%=                               \n\t"
+ 264:suart.c       ****             SKIP2_IN_1                                               //macro looking for hi on rx p
+ 265:suart.c       ****         "rjmp	   wait_idle%=   	                    \n\t"       //
+ 266:suart.c       ****     
+ 267:suart.c       ****         "wait_start%=:                                  \n\t"       // wait for start bit
+ 268:suart.c       ****             "sbic %2, 6                                 \n\t"	 // Skip if flag pin is 
+GAS LISTING /tmp/ccxg4eTE.s 			page 18
+
+
+ 269:suart.c       ****             "rjmp error%=                               \n\t"
+ 270:suart.c       ****             SKIP2_IN_0                                                       //macro looking for hi
+ 271:suart.c       ****         "rjmp	wait_start%=     	                    \n\t"       //
+ 272:suart.c       ****     
+ 273:suart.c       ****         H_BITDELAY      // load half bit's time
+ 274:suart.c       ****     
+ 275:suart.c       ****         "half_bit_delay%=:                              \n\t"       //Wait for half bit time
+ 276:suart.c       ****         "dec	r25                               \n\t"      //count down
+ 277:suart.c       ****         "brne   half_bit_delay%=                        \n\t"      //
+ 278:suart.c       **** 
+ 279:suart.c       ****         "bit_loop%=:                                    \n\t"   //----- Bit receiving loop
+ 280:suart.c       ****             BITDELAY      // load one bit's time
+ 281:suart.c       ****     
+ 282:suart.c       ****             "one_bit_delay%=:                           \n\t"       //Wait for one bit time
+ 283:suart.c       ****                 "dec	r25                               \n\t"   //count down
+ 284:suart.c       ****             "brne   one_bit_delay%=                     \n\t"      //
+ 285:suart.c       ****             
+ 286:suart.c       ****             "lsr	r24          	                \n\t" //Next bit
+ 287:suart.c       ****             SKIP2_IN_0                                       //Get a data bit into r24
+ 288:suart.c       ****             "ori	r24,     0x80	                \n\t"  // record bit
+ 289:suart.c       ****         "brcc   bit_loop%=                              \n\t"      //continue until all bits receiv
+ 290:suart.c       ****         "error%=:"
+ 291:suart.c       ****         "mov        %0,  r24                             \n\t" // byte received copied to abyte
+ 292:suart.c       ****         
+ 293:suart.c       ****         
+ 294:suart.c       ****         "out __SREG__,          __tmp_reg__                      \n\t"
+ 295:suart.c       ****         
+ 296:suart.c       ****         :"=r" (abyte)                       //outputs
+ 297:suart.c       ****         :"I" (IN2PINPORT) , "I" _SFR_IO_ADDR(PINC)          //inputs PINC is for timeoutflag
+ 298:suart.c       ****         : "r24", "r25", "r26"                   //clobbers list (registers used inside)
+ 299:suart.c       ****     );
+ 300:suart.c       **** 	
+ 301:suart.c       **** 	
+ 302:suart.c       **** 	
+ 303:suart.c       **** 	return abyte;
+ 304:suart.c       **** }
+ 530               		.stabn	68,0,304,.LM37-.LFBB7
+ 531               	.LM37:
+ 532               	/* #NOAPP */
+ 533 0158 822F      		mov r24,r18
+ 534               	/* epilogue start */
+ 535 015a 0895      		ret
+ 536               		.size	rcvr2, .-rcvr2
+ 537               	.Lscope7:
+ 538               		.stabs	"",36,0,0,.Lscope7-.LFBB7
+ 539               		.stabd	78,0,0
+ 540               		.stabs	"get_line:F(0,15)",36,0,27,get_line
+ 541               		.stabs	"uart_num:P(6,2)",64,0,27,15
+ 542               		.stabs	"buff:P(0,18)=*(0,2)",64,0,27,28
+ 543               		.stabs	"len:P(6,2)",64,0,27,20
+ 544               	.global	get_line
+ 545               		.type	get_line, @function
+ 546               	get_line:
+ 547               		.stabd	46,0,0
+  28:suart.c       **** {
+ 548               		.stabn	68,0,28,.LM38-.LFBB8
+ 549               	.LM38:
+GAS LISTING /tmp/ccxg4eTE.s 			page 19
+
+
+ 550               	.LFBB8:
+ 551 015c EF92      		push r14
+ 552 015e FF92      		push r15
+ 553 0160 0F93      		push r16
+ 554 0162 1F93      		push r17
+ 555 0164 CF93      		push r28
+ 556 0166 DF93      		push r29
+ 557               	/* prologue: function */
+ 558               	/* frame size = 0 */
+ 559               	/* stack size = 6 */
+ 560               	.L__stack_usage = 6
+ 561 0168 F82E      		mov r15,r24
+ 562 016a EB01      		movw r28,r22
+  31:suart.c       **** 	c = i = 0;
+ 563               		.stabn	68,0,31,.LM39-.LFBB8
+ 564               	.LM39:
+ 565 016c EE24      		clr r14
+ 566 016e 80E0      		ldi r24,lo8(0)
+  50:suart.c       **** 		if ((c >= ' ') && (i < len - 1))
+ 567               		.stabn	68,0,50,.LM40-.LFBB8
+ 568               	.LM40:
+ 569 0170 042F      		mov r16,r20
+ 570 0172 10E0      		ldi r17,lo8(0)
+ 571 0174 0150      		subi r16,lo8(-(-1))
+ 572 0176 1040      		sbci r17,hi8(-(-1))
+ 573               	.L30:
+  34:suart.c       **** 		switch(uart_num)
+ 574               		.stabn	68,0,34,.LM41-.LFBB8
+ 575               	.LM41:
+ 576 0178 9F2D      		mov r25,r15
+ 577 017a 9230      		cpi r25,lo8(2)
+ 578 017c 01F0      		breq .L23
+ 579 017e 9330      		cpi r25,lo8(3)
+ 580 0180 01F0      		breq .L23
+ 581 0182 9130      		cpi r25,lo8(1)
+ 582 0184 01F4      		brne .L20
+  37:suart.c       ****                 c = rcvr1();
+ 583               		.stabn	68,0,37,.LM42-.LFBB8
+ 584               	.LM42:
+ 585 0186 0E94 0000 		call rcvr1
+  38:suart.c       ****                 break; 
+ 586               		.stabn	68,0,38,.LM43-.LFBB8
+ 587               	.LM43:
+ 588 018a 00C0      		rjmp .L20
+ 589               	.L23:
+  43:suart.c       ****                 c = rcvr2();
+ 590               		.stabn	68,0,43,.LM44-.LFBB8
+ 591               	.LM44:
+ 592 018c 0E94 0000 		call rcvr2
+ 593               	.L20:
+  46:suart.c       **** 		if (c == '\r') break;
+ 594               		.stabn	68,0,46,.LM45-.LFBB8
+ 595               	.LM45:
+ 596 0190 8D30      		cpi r24,lo8(13)
+ 597 0192 01F0      		breq .L24
+  47:suart.c       **** 		if (c == '\n') break;
+ 598               		.stabn	68,0,47,.LM46-.LFBB8
+GAS LISTING /tmp/ccxg4eTE.s 			page 20
+
+
+ 599               	.LM46:
+ 600 0194 8A30      		cpi r24,lo8(10)
+ 601 0196 01F0      		breq .L24
+  48:suart.c       ****         if (suart_timedout_flag == 1)break;
+ 602               		.stabn	68,0,48,.LM47-.LFBB8
+ 603               	.LM47:
+ 604 0198 9091 0000 		lds r25,suart_timedout_flag
+ 605 019c 9130      		cpi r25,lo8(1)
+ 606 019e 01F0      		breq .L24
+  49:suart.c       **** 		if ((c == '\b') && i) i--;
+ 607               		.stabn	68,0,49,.LM48-.LFBB8
+ 608               	.LM48:
+ 609 01a0 8830      		cpi r24,lo8(8)
+ 610 01a2 01F4      		brne .L25
+  49:suart.c       **** 		if ((c == '\b') && i) i--;
+ 611               		.stabn	68,0,49,.LM49-.LFBB8
+ 612               	.LM49:
+ 613 01a4 EE20      		tst r14
+ 614 01a6 01F0      		breq .L30
+ 615 01a8 EA94      		dec r14
+ 616 01aa 00C0      		rjmp .L30
+ 617               	.L25:
+  50:suart.c       **** 		if ((c >= ' ') && (i < len - 1))
+ 618               		.stabn	68,0,50,.LM50-.LFBB8
+ 619               	.LM50:
+ 620 01ac 8032      		cpi r24,lo8(32)
+ 621 01ae 00F0      		brlo .L30
+  50:suart.c       **** 		if ((c >= ' ') && (i < len - 1))
+ 622               		.stabn	68,0,50,.LM51-.LFBB8
+ 623               	.LM51:
+ 624 01b0 2E2D      		mov r18,r14
+ 625 01b2 30E0      		ldi r19,lo8(0)
+ 626 01b4 2017      		cp r18,r16
+ 627 01b6 3107      		cpc r19,r17
+ 628 01b8 04F4      		brge .L30
+  51:suart.c       **** 				buff[i++] = c;
+ 629               		.stabn	68,0,51,.LM52-.LFBB8
+ 630               	.LM52:
+ 631 01ba 2C0F      		add r18,r28
+ 632 01bc 3D1F      		adc r19,r29
+ 633 01be F901      		movw r30,r18
+ 634 01c0 8083      		st Z,r24
+ 635 01c2 E394      		inc r14
+ 636 01c4 00C0      		rjmp .L30
+ 637               	.L24:
+  53:suart.c       **** 	buff[i] = '\0';
+ 638               		.stabn	68,0,53,.LM53-.LFBB8
+ 639               	.LM53:
+ 640 01c6 CE0D      		add r28,r14
+ 641 01c8 D11D      		adc r29,__zero_reg__
+ 642 01ca 1882      		st Y,__zero_reg__
+ 643               	/* epilogue start */
+  54:suart.c       **** }
+ 644               		.stabn	68,0,54,.LM54-.LFBB8
+ 645               	.LM54:
+ 646 01cc DF91      		pop r29
+ 647 01ce CF91      		pop r28
+GAS LISTING /tmp/ccxg4eTE.s 			page 21
+
+
+ 648 01d0 1F91      		pop r17
+ 649 01d2 0F91      		pop r16
+ 650 01d4 FF90      		pop r15
+ 651 01d6 EF90      		pop r14
+ 652 01d8 0895      		ret
+ 653               		.size	get_line, .-get_line
+ 654               		.stabs	"c:r(6,2)",64,0,29,24
+ 655               		.stabs	"i:r(6,2)",64,0,29,14
+ 656               		.stabn	192,0,0,.LFBB8-.LFBB8
+ 657               		.stabn	224,0,0,.Lscope8-.LFBB8
+ 658               	.Lscope8:
+ 659               		.stabs	"",36,0,0,.Lscope8-.LFBB8
+ 660               		.stabd	78,0,0
+ 661               		.stabs	"rcvr3:F(6,2)",36,0,306,rcvr3
+ 662               	.global	rcvr3
+ 663               		.type	rcvr3, @function
+ 664               	rcvr3:
+ 665               		.stabd	46,0,0
+ 305:suart.c       **** 
+ 306:suart.c       **** uint8_t rcvr3(void)
+ 307:suart.c       **** {
+ 666               		.stabn	68,0,307,.LM55-.LFBB9
+ 667               	.LM55:
+ 668               	.LFBB9:
+ 669               	/* prologue: function */
+ 670               	/* frame size = 0 */
+ 671               	/* stack size = 0 */
+ 672               	.L__stack_usage = 0
+ 308:suart.c       **** 	uint8_t abyte= 0;
+ 309:suart.c       **** 	 asm volatile(
+ 673               		.stabn	68,0,309,.LM56-.LFBB9
+ 674               	.LM56:
+ 675               	/* #APP */
+ 676               	 ;  309 "suart.c" 1
+ 677 01da 0FB6      		in     __tmp_reg__,      __SREG__              
+ 678 01dc 80E8      		ldi	r24,     0x80	                        
+ 679               		wait_idle261:                                   
+ 680 01de 9E99      		sbic 19, 6                                 
+ 681 01e0 00C0      		rjmp error261                               
+ 682 01e2 CE9B      		sbis 25, 6 
+ 683 01e4 00C0      		rjmp	   wait_idle261   	                    
+ 684               		wait_start261:                                  
+ 685 01e6 9E99      		sbic 19, 6                                 
+ 686 01e8 00C0      		rjmp error261                               
+ 687 01ea CE99      		sbic 25, 6 
+ 688 01ec 00C0      		rjmp	wait_start261     	                    
+ 689 01ee 98E4      		ldi r25, 72    
+ 690               		half_bit_delay261:                              
+ 691 01f0 9A95      		dec	r25                               
+ 692 01f2 01F4      		brne   half_bit_delay261                        
+ 693               		bit_loop261:                                    
+ 694 01f4 91E9      		ldi r25, 145   
+ 695               		one_bit_delay261:                           
+ 696 01f6 9A95      		dec	r25                               
+ 697 01f8 01F4      		brne   one_bit_delay261                     
+ 698 01fa 8695      		lsr	r24          	                
+ 699 01fc CE99      		sbic 25, 6 
+GAS LISTING /tmp/ccxg4eTE.s 			page 22
+
+
+ 700 01fe 8068      		ori	r24,     0x80	                
+ 701 0200 00F4      		brcc   bit_loop261                              
+ 702 0202 282F      		error261:mov        r18,  r24                             
+ 703 0204 0FBE      		out __SREG__,          __tmp_reg__                      
+ 704               		
+ 705               	 ;  0 "" 2
+ 310:suart.c       ****     
+ 311:suart.c       ****         "in     __tmp_reg__,      __SREG__              \n\t"       //Save flags
+ 312:suart.c       ****         "ldi	r24,     0x80	                        \n\t"      //Receiving shift reg load with 0x80
+ 313:suart.c       ****         //"cli	                                        \n\t"      //Start critical section //not us
+ 314:suart.c       ****     
+ 315:suart.c       ****         "wait_idle%=:                                   \n\t"       // wait for idle
+ 316:suart.c       ****             "sbic %2, 6                                 \n\t"	         //Skip if flag pin is clear
+ 317:suart.c       ****             "rjmp error%=                               \n\t"
+ 318:suart.c       ****             SKIP3_IN_1                                               //macro looking for hi on rx p
+ 319:suart.c       ****         "rjmp	   wait_idle%=   	                    \n\t"       //
+ 320:suart.c       ****     
+ 321:suart.c       ****         "wait_start%=:                                  \n\t"       // wait for start bit
+ 322:suart.c       ****             "sbic %2, 6                                 \n\t"	 // Skip if flag pin is 
+ 323:suart.c       ****             "rjmp error%=                               \n\t"
+ 324:suart.c       ****             SKIP3_IN_0                                                       //macro looking for hi
+ 325:suart.c       ****         "rjmp	wait_start%=     	                    \n\t"       //
+ 326:suart.c       ****     
+ 327:suart.c       ****         H_BITDELAY      // load half bit's time
+ 328:suart.c       ****     
+ 329:suart.c       ****         "half_bit_delay%=:                              \n\t"       //Wait for half bit time
+ 330:suart.c       ****         "dec	r25                               \n\t"      //count down
+ 331:suart.c       ****         "brne   half_bit_delay%=                        \n\t"      //
+ 332:suart.c       **** 
+ 333:suart.c       ****         "bit_loop%=:                                    \n\t"   //----- Bit receiving loop
+ 334:suart.c       ****             BITDELAY      // load one bit's time
+ 335:suart.c       ****     
+ 336:suart.c       ****             "one_bit_delay%=:                           \n\t"       //Wait for one bit time
+ 337:suart.c       ****                 "dec	r25                               \n\t"   //count down
+ 338:suart.c       ****             "brne   one_bit_delay%=                     \n\t"      //
+ 339:suart.c       ****             
+ 340:suart.c       ****             "lsr	r24          	                \n\t" //Next bit
+ 341:suart.c       ****             SKIP3_IN_0                                       //Get a data bit into r24
+ 342:suart.c       ****             "ori	r24,     0x80	                \n\t"  // record bit
+ 343:suart.c       ****         "brcc   bit_loop%=                              \n\t"      //continue until all bits receiv
+ 344:suart.c       ****         "error%=:"
+ 345:suart.c       ****         "mov        %0,  r24                             \n\t" // byte received copied to abyte
+ 346:suart.c       ****         
+ 347:suart.c       ****         
+ 348:suart.c       ****         "out __SREG__,          __tmp_reg__                      \n\t"
+ 349:suart.c       ****         
+ 350:suart.c       ****         :"=r" (abyte)                       //outputs
+ 351:suart.c       ****         :"I" (IN3PINPORT) , "I" _SFR_IO_ADDR(PINC)          //inputs PINC is for timeoutflag
+ 352:suart.c       ****         : "r24", "r25", "r26"                   //clobbers list (registers used inside)
+ 353:suart.c       ****     );
+ 354:suart.c       **** 
+ 355:suart.c       **** 	return abyte;
+ 356:suart.c       **** }
+ 706               		.stabn	68,0,356,.LM57-.LFBB9
+ 707               	.LM57:
+ 708               	/* #NOAPP */
+ 709 0206 822F      		mov r24,r18
+GAS LISTING /tmp/ccxg4eTE.s 			page 23
+
+
+ 710               	/* epilogue start */
+ 711 0208 0895      		ret
+ 712               		.size	rcvr3, .-rcvr3
+ 713               	.Lscope9:
+ 714               		.stabs	"",36,0,0,.Lscope9-.LFBB9
+ 715               		.stabd	78,0,0
+ 716               		.stabs	"direct_conn:F(0,15)",36,0,358,direct_conn
+ 717               		.stabs	"suart_num:P(6,2)",64,0,358,24
+ 718               	.global	direct_conn
+ 719               		.type	direct_conn, @function
+ 720               	direct_conn:
+ 721               		.stabd	46,0,0
+ 357:suart.c       **** 
+ 358:suart.c       **** void direct_conn(uint8_t suart_num)
+ 359:suart.c       **** {
+ 722               		.stabn	68,0,359,.LM58-.LFBB10
+ 723               	.LM58:
+ 724               	.LFBB10:
+ 725               	/* prologue: function */
+ 726               	/* frame size = 0 */
+ 727               	/* stack size = 0 */
+ 728               	.L__stack_usage = 0
+ 360:suart.c       ****     UCSRB &=~ (1 << RXEN); UCSRB &=~ (1 << RXCIE);//uart input disabled//
+ 729               		.stabn	68,0,360,.LM59-.LFBB10
+ 730               	.LM59:
+ 731 020a 5498      		cbi 42-32,4
+ 732 020c 5798      		cbi 42-32,7
+ 361:suart.c       ****     UCSRB &=~ (1 << TXEN); UCSRB &=~ (1 << TXCIE);//uart output disabled//
+ 733               		.stabn	68,0,361,.LM60-.LFBB10
+ 734               	.LM60:
+ 735 020e 5398      		cbi 42-32,3
+ 736 0210 5698      		cbi 42-32,6
+ 362:suart.c       ****     DDRD |= (1<<1); //port D1 out: tx
+ 737               		.stabn	68,0,362,.LM61-.LFBB10
+ 738               	.LM61:
+ 739 0212 899A      		sbi 49-32,1
+ 363:suart.c       ****     DDRD &=~ (1<<0); //port D0 in: rx
+ 740               		.stabn	68,0,363,.LM62-.LFBB10
+ 741               	.LM62:
+ 742 0214 8898      		cbi 49-32,0
+ 364:suart.c       ****     
+ 365:suart.c       ****     if (suart_num == 1)
+ 743               		.stabn	68,0,365,.LM63-.LFBB10
+ 744               	.LM63:
+ 745 0216 8130      		cpi r24,lo8(1)
+ 746 0218 01F4      		brne .L33
+ 366:suart.c       ****     {
+ 367:suart.c       ****         
+ 368:suart.c       ****         DDRP1T |=(1<<PN1T); 
+ 747               		.stabn	68,0,368,.LM64-.LFBB10
+ 748               	.LM64:
+ 749 021a BE9A      		sbi 55-32,6
+ 369:suart.c       ****         DDRP1R &=~(1<<PN1R);
+ 750               		.stabn	68,0,369,.LM65-.LFBB10
+ 751               	.LM65:
+ 752 021c BD98      		cbi 55-32,5
+ 753               	.L51:
+GAS LISTING /tmp/ccxg4eTE.s 			page 24
+
+
+ 370:suart.c       **** 
+ 371:suart.c       ****         while(1)
+ 372:suart.c       ****         {
+ 373:suart.c       ****             //data from sensor ---->
+ 374:suart.c       ****             if bit_is_set(PINPT1, PN1R) PORTD |= (1<<1);//mirror pin B6 TX
+ 754               		.stabn	68,0,374,.LM66-.LFBB10
+ 755               	.LM66:
+ 756 021e B59B      		sbis 54-32,5
+ 757 0220 00C0      		rjmp .L35
+ 758               		.stabn	68,0,374,.LM67-.LFBB10
+ 759               	.LM67:
+ 760 0222 919A      		sbi 50-32,1
+ 761 0224 00C0      		rjmp .L36
+ 762               	.L35:
+ 375:suart.c       ****             else PORTD &=~ (1<<1);
+ 763               		.stabn	68,0,375,.LM68-.LFBB10
+ 764               	.LM68:
+ 765 0226 9198      		cbi 50-32,1
+ 766               	.L36:
+ 376:suart.c       ****             //data to sensor    <----
+ 377:suart.c       ****             if bit_is_set(PIND, 0) OUT1PORT |= (1<<PN1T);
+ 767               		.stabn	68,0,377,.LM69-.LFBB10
+ 768               	.LM69:
+ 769 0228 809B      		sbis 48-32,0
+ 770 022a 00C0      		rjmp .L37
+ 771               		.stabn	68,0,377,.LM70-.LFBB10
+ 772               	.LM70:
+ 773 022c C69A      		sbi 56-32,6
+ 774 022e 00C0      		rjmp .L51
+ 775               	.L37:
+ 378:suart.c       ****             else OUT1PORT &=~ (1<<PN1T);
+ 776               		.stabn	68,0,378,.LM71-.LFBB10
+ 777               	.LM71:
+ 778 0230 C698      		cbi 56-32,6
+ 779 0232 00C0      		rjmp .L51
+ 780               	.L33:
+ 379:suart.c       ****         }
+ 380:suart.c       ****     }
+ 381:suart.c       ****         if (suart_num == 2)
+ 781               		.stabn	68,0,381,.LM72-.LFBB10
+ 782               	.LM72:
+ 783 0234 8230      		cpi r24,lo8(2)
+ 784 0236 01F4      		brne .L39
+ 382:suart.c       ****     {
+ 383:suart.c       ****         DDRP2T |=(1<<PN2T); 
+ 785               		.stabn	68,0,383,.LM73-.LFBB10
+ 786               	.LM73:
+ 787 0238 D19A      		sbi 58-32,1
+ 384:suart.c       ****         DDRP2R &=~(1<<PN2R);
+ 788               		.stabn	68,0,384,.LM74-.LFBB10
+ 789               	.LM74:
+ 790 023a D098      		cbi 58-32,0
+ 791               	.L52:
+ 385:suart.c       ****     
+ 386:suart.c       ****         while(1)
+ 387:suart.c       ****         {
+ 388:suart.c       ****             //data from sensor ---->
+GAS LISTING /tmp/ccxg4eTE.s 			page 25
+
+
+ 389:suart.c       ****             if bit_is_set(PINPT2, PN2R) PORTD |= (1<<1);//mirror pin B6 TX
+ 792               		.stabn	68,0,389,.LM75-.LFBB10
+ 793               	.LM75:
+ 794 023c C89B      		sbis 57-32,0
+ 795 023e 00C0      		rjmp .L41
+ 796               		.stabn	68,0,389,.LM76-.LFBB10
+ 797               	.LM76:
+ 798 0240 919A      		sbi 50-32,1
+ 799 0242 00C0      		rjmp .L42
+ 800               	.L41:
+ 390:suart.c       ****             else PORTD &=~ (1<<1);
+ 801               		.stabn	68,0,390,.LM77-.LFBB10
+ 802               	.LM77:
+ 803 0244 9198      		cbi 50-32,1
+ 804               	.L42:
+ 391:suart.c       ****         
+ 392:suart.c       ****             //data to sensor    <----
+ 393:suart.c       ****             if bit_is_set(PIND, 0) OUT2PORT |= (1<<PN2T);//mirror pin D0
+ 805               		.stabn	68,0,393,.LM78-.LFBB10
+ 806               	.LM78:
+ 807 0246 809B      		sbis 48-32,0
+ 808 0248 00C0      		rjmp .L43
+ 809               		.stabn	68,0,393,.LM79-.LFBB10
+ 810               	.LM79:
+ 811 024a D99A      		sbi 59-32,1
+ 812 024c 00C0      		rjmp .L52
+ 813               	.L43:
+ 394:suart.c       ****             else OUT2PORT &=~ (1<<PN2T);
+ 814               		.stabn	68,0,394,.LM80-.LFBB10
+ 815               	.LM80:
+ 816 024e D998      		cbi 59-32,1
+ 817 0250 00C0      		rjmp .L52
+ 818               	.L39:
+ 395:suart.c       ****         }
+ 396:suart.c       ****     }
+ 397:suart.c       ****         if (suart_num == 3)
+ 819               		.stabn	68,0,397,.LM81-.LFBB10
+ 820               	.LM81:
+ 821 0252 8330      		cpi r24,lo8(3)
+ 822 0254 01F4      		brne .L32
+ 398:suart.c       ****     {
+ 399:suart.c       ****         DDRP3T |=(1<<PN3T); 
+ 823               		.stabn	68,0,399,.LM82-.LFBB10
+ 824               	.LM82:
+ 825 0256 D79A      		sbi 58-32,7
+ 400:suart.c       ****         DDRP3R &=~(1<<PN3R);
+ 826               		.stabn	68,0,400,.LM83-.LFBB10
+ 827               	.LM83:
+ 828 0258 D698      		cbi 58-32,6
+ 829               	.L53:
+ 401:suart.c       ****     
+ 402:suart.c       ****         while(1)
+ 403:suart.c       ****         {
+ 404:suart.c       ****             //data from sensor ---->
+ 405:suart.c       ****             if bit_is_set(PINPT3, PN3R) PORTD |= (1<<1);//mirror pin B6 TX
+ 830               		.stabn	68,0,405,.LM84-.LFBB10
+ 831               	.LM84:
+GAS LISTING /tmp/ccxg4eTE.s 			page 26
+
+
+ 832 025a CE9B      		sbis 57-32,6
+ 833 025c 00C0      		rjmp .L47
+ 834               		.stabn	68,0,405,.LM85-.LFBB10
+ 835               	.LM85:
+ 836 025e 919A      		sbi 50-32,1
+ 837 0260 00C0      		rjmp .L48
+ 838               	.L47:
+ 406:suart.c       ****             else PORTD &=~ (1<<1);
+ 839               		.stabn	68,0,406,.LM86-.LFBB10
+ 840               	.LM86:
+ 841 0262 9198      		cbi 50-32,1
+ 842               	.L48:
+ 407:suart.c       ****         
+ 408:suart.c       ****             //data to sensor    <----
+ 409:suart.c       ****             if bit_is_set(PIND, 0) OUT3PORT |= (1<<PN3T);//mirror pin D0
+ 843               		.stabn	68,0,409,.LM87-.LFBB10
+ 844               	.LM87:
+ 845 0264 809B      		sbis 48-32,0
+ 846 0266 00C0      		rjmp .L49
+ 847               		.stabn	68,0,409,.LM88-.LFBB10
+ 848               	.LM88:
+ 849 0268 DF9A      		sbi 59-32,7
+ 850 026a 00C0      		rjmp .L53
+ 851               	.L49:
+ 410:suart.c       ****             else OUT3PORT &=~ (1<<PN3T);
+ 852               		.stabn	68,0,410,.LM89-.LFBB10
+ 853               	.LM89:
+ 854 026c DF98      		cbi 59-32,7
+ 855 026e 00C0      		rjmp .L53
+ 856               	.L32:
+ 857 0270 0895      		ret
+ 858               		.size	direct_conn, .-direct_conn
+ 859               	.Lscope10:
+ 860               		.stabs	"",36,0,0,.Lscope10-.LFBB10
+ 861               		.stabd	78,0,0
+ 862               		.stabs	"",100,0,0,.Letext0
+ 863               	.Letext0:
+GAS LISTING /tmp/ccxg4eTE.s 			page 27
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 suart.c
+     /tmp/ccxg4eTE.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccxg4eTE.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccxg4eTE.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccxg4eTE.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccxg4eTE.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccxg4eTE.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccxg4eTE.s:103    .text:0000000000000000 xmit1
+     /tmp/ccxg4eTE.s:122    .text:000000000000000c bitloop6
+     /tmp/ccxg4eTE.s:124    .text:000000000000000e bitwait6
+     /tmp/ccxg4eTE.s:129    .text:0000000000000016 lowout6
+     /tmp/ccxg4eTE.s:132    .text:000000000000001a donebit6
+     /tmp/ccxg4eTE.s:152    .text:0000000000000024 xmit2
+     /tmp/ccxg4eTE.s:171    .text:0000000000000030 bitloop16
+     /tmp/ccxg4eTE.s:173    .text:0000000000000032 bitwait16
+     /tmp/ccxg4eTE.s:178    .text:000000000000003a lowout16
+     /tmp/ccxg4eTE.s:181    .text:000000000000003e donebit16
+     /tmp/ccxg4eTE.s:201    .text:0000000000000048 suart_init
+     /tmp/ccxg4eTE.s:298    .text:0000000000000090 xmit3
+     /tmp/ccxg4eTE.s:319    .text:000000000000009c bitloop85
+     /tmp/ccxg4eTE.s:321    .text:000000000000009e bitwait85
+     /tmp/ccxg4eTE.s:326    .text:00000000000000a6 lowout85
+     /tmp/ccxg4eTE.s:329    .text:00000000000000aa donebit85
+     /tmp/ccxg4eTE.s:350    .text:00000000000000b4 suart_puts
+     /tmp/ccxg4eTE.s:433    .text:00000000000000fc rcvr1
+     /tmp/ccxg4eTE.s:448    .text:0000000000000100 wait_idle152
+     /tmp/ccxg4eTE.s:471    .text:0000000000000124 error152
+     /tmp/ccxg4eTE.s:453    .text:0000000000000108 wait_start152
+     /tmp/ccxg4eTE.s:459    .text:0000000000000112 half_bit_delay152
+     /tmp/ccxg4eTE.s:462    .text:0000000000000116 bit_loop152
+     /tmp/ccxg4eTE.s:464    .text:0000000000000118 one_bit_delay152
+     /tmp/ccxg4eTE.s:488    .text:000000000000012c rcvr2
+     /tmp/ccxg4eTE.s:503    .text:0000000000000130 wait_idle163
+     /tmp/ccxg4eTE.s:526    .text:0000000000000154 error163
+     /tmp/ccxg4eTE.s:508    .text:0000000000000138 wait_start163
+     /tmp/ccxg4eTE.s:514    .text:0000000000000142 half_bit_delay163
+     /tmp/ccxg4eTE.s:517    .text:0000000000000146 bit_loop163
+     /tmp/ccxg4eTE.s:519    .text:0000000000000148 one_bit_delay163
+     /tmp/ccxg4eTE.s:546    .text:000000000000015c get_line
+     /tmp/ccxg4eTE.s:664    .text:00000000000001da rcvr3
+     /tmp/ccxg4eTE.s:679    .text:00000000000001de wait_idle261
+     /tmp/ccxg4eTE.s:702    .text:0000000000000202 error261
+     /tmp/ccxg4eTE.s:684    .text:00000000000001e6 wait_start261
+     /tmp/ccxg4eTE.s:690    .text:00000000000001f0 half_bit_delay261
+     /tmp/ccxg4eTE.s:693    .text:00000000000001f4 bit_loop261
+     /tmp/ccxg4eTE.s:695    .text:00000000000001f6 one_bit_delay261
+     /tmp/ccxg4eTE.s:720    .text:000000000000020a direct_conn
+
+UNDEFINED SYMBOLS
+suart_timedout_flag

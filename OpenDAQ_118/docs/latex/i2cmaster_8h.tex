@@ -1,0 +1,220 @@
+\hypertarget{i2cmaster_8h}{\section{i2cmaster.\-h File Reference}
+\label{i2cmaster_8h}\index{i2cmaster.\-h@{i2cmaster.\-h}}
+}
+
+
+\subsection{Description}
+Header for \hyperlink{twimaster_8c}{twimaster.\-c}. Basic routines for communicating with I2\-C slave devices. This single masterimplementation is limited to one bus master on the I2\-C bus. compiled with A\-V\-R-\/\-G\-C\-C 3.\-4.\-3 and avr-\/libc 1.\-2.\-3 For any A\-V\-R device with hardware T\-W\-I This I2c library is implemented as a compact assembler software implementation of the I2\-C protocol which runs on any A\-V\-R (i2cmaster.\-S) and as a T\-W\-I hardware interface for all A\-V\-R with built-\/in T\-W\-I hardware (\hyperlink{twimaster_8c}{twimaster.\-c}). Since the A\-P\-I for these two implementations is exactly the same, an application can be linked either against the software I2\-C implementation or the hardware I2\-C implementation. Use 4.\-7k pull-\/up resistor on the S\-D\-A and S\-C\-L pin. Adapt the S\-C\-L and S\-D\-A port and pin definitions and eventually the delay routine in the module i2cmaster.\-S to your target when using the software I2\-C implementation ! Adjust the C\-P\-U clock frequence F\-\_\-\-C\-P\-U in \hyperlink{twimaster_8c}{twimaster.\-c} or in the Makfile when using the T\-W\-I hardware implementaion.
+
+\begin{DoxyAuthor}{Author}
+Peter Fleury pfleury (at) gmx.\-ch \href{http://jump.to/fleury}{\tt http\-://jump.\-to/fleury} 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Open source under the G\-N\-U G\-P\-L license. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{i2cmaster_8h_source}{i2cmaster.\-h}.
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{i2cmaster_8h_ab5c0fbe837494c5f9130a5914854250d}{I2\-C\-\_\-\-R\-E\-A\-D}~1
+\item 
+\#define \hyperlink{i2cmaster_8h_a9536bf85bced4f4e549a82fb18eb6140}{I2\-C\-\_\-\-W\-R\-I\-T\-E}~0
+\item 
+\#define \hyperlink{i2cmaster_8h_ad33503cf741851d1bca1d274e9001796}{i2c\-\_\-read}(ack)~(ack) ? \hyperlink{twimaster_8c_ae5ceba263ab6a0a6a930c5ac0efa6456}{i2c\-\_\-read\-Ack}() \-: \hyperlink{twimaster_8c_a989891ba8d805a79ec1d8a314d61983e}{i2c\-\_\-read\-Nak}();
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{i2cmaster_8h_a5730d9445429351b9f750084c5cb5aae}{i2c\-\_\-init} (void)
+\item 
+void \hyperlink{i2cmaster_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3}{i2c\-\_\-stop} (void)
+\item 
+unsigned char \hyperlink{i2cmaster_8h_aa3d328f00326115e9c660ccc838417c8}{i2c\-\_\-start} (unsigned char address)
+\item 
+unsigned char \hyperlink{i2cmaster_8h_a70c934b61f3c6ba8524104a1d7197d30}{i2c\-\_\-rep\-\_\-start} (unsigned char address)
+\item 
+unsigned char \hyperlink{i2cmaster_8h_a71640d1526479df4629c3024c9ada476}{i2c\-\_\-start\-\_\-wait} (unsigned char address)
+\item 
+unsigned char \hyperlink{i2cmaster_8h_add947aade44ed6b7f92265f9dec4a711}{i2c\-\_\-write} (unsigned char \hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+\item 
+unsigned char \hyperlink{i2cmaster_8h_a32ac22052d55f93375b024192217db21}{i2c\-\_\-read\-Ack} (void)
+\item 
+unsigned char \hyperlink{i2cmaster_8h_ad89e839fc17b05fbb5dd79897c55234e}{i2c\-\_\-read\-Nak} (void)
+\item 
+unsigned char \hyperlink{i2cmaster_8h_a669c0357614a79b3b35ae815f6f50e82}{i2c\-\_\-read} (unsigned char ack)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint8\-\_\-t \hyperlink{i2cmaster_8h_a10c7c5776234d15f07c3e63a0c6f6518}{i2c\-\_\-timeout\-\_\-flag}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{i2cmaster_8h_ab5c0fbe837494c5f9130a5914854250d}{\index{i2cmaster.\-h@{i2cmaster.\-h}!I2\-C\-\_\-\-R\-E\-A\-D@{I2\-C\-\_\-\-R\-E\-A\-D}}
+\index{I2\-C\-\_\-\-R\-E\-A\-D@{I2\-C\-\_\-\-R\-E\-A\-D}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{I2\-C\-\_\-\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define I2\-C\-\_\-\-R\-E\-A\-D~1}}\label{i2cmaster_8h_ab5c0fbe837494c5f9130a5914854250d}
+
+
+defines the data direction (reading from I2\-C device) in \hyperlink{i2cmaster_8h_aa3d328f00326115e9c660ccc838417c8}{i2c\-\_\-start()},\hyperlink{i2cmaster_8h_a70c934b61f3c6ba8524104a1d7197d30}{i2c\-\_\-rep\-\_\-start()} $\ast$/ 
+
+
+
+Definition at line 34 of file i2cmaster.\-h.
+
+\hypertarget{i2cmaster_8h_ad33503cf741851d1bca1d274e9001796}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-read@{i2c\-\_\-read}}
+\index{i2c\-\_\-read@{i2c\-\_\-read}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}\#define i2c\-\_\-read(
+\begin{DoxyParamCaption}
+\item[{}]{ack}
+\end{DoxyParamCaption}
+)~(ack) ? {\bf i2c\-\_\-read\-Ack}() \-: {\bf i2c\-\_\-read\-Nak}();}}\label{i2cmaster_8h_ad33503cf741851d1bca1d274e9001796}
+
+
+Definition at line 82 of file i2cmaster.\-h.
+
+\hypertarget{i2cmaster_8h_a9536bf85bced4f4e549a82fb18eb6140}{\index{i2cmaster.\-h@{i2cmaster.\-h}!I2\-C\-\_\-\-W\-R\-I\-T\-E@{I2\-C\-\_\-\-W\-R\-I\-T\-E}}
+\index{I2\-C\-\_\-\-W\-R\-I\-T\-E@{I2\-C\-\_\-\-W\-R\-I\-T\-E}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{I2\-C\-\_\-\-W\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I2\-C\-\_\-\-W\-R\-I\-T\-E~0}}\label{i2cmaster_8h_a9536bf85bced4f4e549a82fb18eb6140}
+
+
+defines the data direction (writing to I2\-C device) in \hyperlink{i2cmaster_8h_aa3d328f00326115e9c660ccc838417c8}{i2c\-\_\-start()},\hyperlink{i2cmaster_8h_a70c934b61f3c6ba8524104a1d7197d30}{i2c\-\_\-rep\-\_\-start()} $\ast$/ 
+
+
+
+Definition at line 37 of file i2cmaster.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{i2cmaster_8h_a5730d9445429351b9f750084c5cb5aae}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-init@{i2c\-\_\-init}}
+\index{i2c\-\_\-init@{i2c\-\_\-init}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void i2c\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{i2cmaster_8h_a5730d9445429351b9f750084c5cb5aae}
+
+
+initialize the I2\-C master interace. Need to be called only once 
+
+
+
+Definition at line 30 of file twimaster.\-c.
+
+\hypertarget{i2cmaster_8h_a669c0357614a79b3b35ae815f6f50e82}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-read@{i2c\-\_\-read}}
+\index{i2c\-\_\-read@{i2c\-\_\-read}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{ack}
+\end{DoxyParamCaption}
+)}}\label{i2cmaster_8h_a669c0357614a79b3b35ae815f6f50e82}
+\hypertarget{i2cmaster_8h_a32ac22052d55f93375b024192217db21}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-read\-Ack@{i2c\-\_\-read\-Ack}}
+\index{i2c\-\_\-read\-Ack@{i2c\-\_\-read\-Ack}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-read\-Ack}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-read\-Ack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{i2cmaster_8h_a32ac22052d55f93375b024192217db21}
+read one byte from the I2\-C device, request more data from device \par
+ returns byte read from I2\-C device 
+
+Definition at line 193 of file twimaster.\-c.
+
+\hypertarget{i2cmaster_8h_ad89e839fc17b05fbb5dd79897c55234e}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-read\-Nak@{i2c\-\_\-read\-Nak}}
+\index{i2c\-\_\-read\-Nak@{i2c\-\_\-read\-Nak}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-read\-Nak}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-read\-Nak (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{i2cmaster_8h_ad89e839fc17b05fbb5dd79897c55234e}
+read one byte from the I2\-C device, read is followed by a stop condition \par
+ returns byte read from I2\-C device 
+
+Definition at line 211 of file twimaster.\-c.
+
+\hypertarget{i2cmaster_8h_a70c934b61f3c6ba8524104a1d7197d30}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-rep\-\_\-start@{i2c\-\_\-rep\-\_\-start}}
+\index{i2c\-\_\-rep\-\_\-start@{i2c\-\_\-rep\-\_\-start}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-rep\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-rep\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{i2cmaster_8h_a70c934b61f3c6ba8524104a1d7197d30}
+
+
+Issues a repeated start condition and sends address and transfer direction. 
+
+
+
+Definition at line 135 of file twimaster.\-c.
+
+\hypertarget{i2cmaster_8h_aa3d328f00326115e9c660ccc838417c8}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-start@{i2c\-\_\-start}}
+\index{i2c\-\_\-start@{i2c\-\_\-start}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{i2cmaster_8h_aa3d328f00326115e9c660ccc838417c8}
+
+
+Issues a start condition and sends address and transfer direction. 
+
+
+
+Definition at line 44 of file twimaster.\-c.
+
+\hypertarget{i2cmaster_8h_a71640d1526479df4629c3024c9ada476}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-start\-\_\-wait@{i2c\-\_\-start\-\_\-wait}}
+\index{i2c\-\_\-start\-\_\-wait@{i2c\-\_\-start\-\_\-wait}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-start\-\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-start\-\_\-wait (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{i2cmaster_8h_a71640d1526479df4629c3024c9ada476}
+Issues a start condition and sends address and transfer direction \par
+ If device is busy, use ack polling to wait until device ready \par
+ addr address and transfer direction of I2\-C device
+
+Input\-: address and transfer direction of I2\-C device, timeout\-\_\-ms 
+
+Definition at line 84 of file twimaster.\-c.
+
+\hypertarget{i2cmaster_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-stop@{i2c\-\_\-stop}}
+\index{i2c\-\_\-stop@{i2c\-\_\-stop}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}void i2c\-\_\-stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{i2cmaster_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3}
+
+
+Terminates the data transfer and releases the I2\-C bus. 
+
+
+
+Definition at line 145 of file twimaster.\-c.
+
+\hypertarget{i2cmaster_8h_add947aade44ed6b7f92265f9dec4a711}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-write@{i2c\-\_\-write}}
+\index{i2c\-\_\-write@{i2c\-\_\-write}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{data}
+\end{DoxyParamCaption}
+)}}\label{i2cmaster_8h_add947aade44ed6b7f92265f9dec4a711}
+Send one byte to I2\-C device\par
+ returns data byte to be transfered 
+
+Definition at line 166 of file twimaster.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{i2cmaster_8h_a10c7c5776234d15f07c3e63a0c6f6518}{\index{i2cmaster.\-h@{i2cmaster.\-h}!i2c\-\_\-timeout\-\_\-flag@{i2c\-\_\-timeout\-\_\-flag}}
+\index{i2c\-\_\-timeout\-\_\-flag@{i2c\-\_\-timeout\-\_\-flag}!i2cmaster.h@{i2cmaster.\-h}}
+\subsubsection[{i2c\-\_\-timeout\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t i2c\-\_\-timeout\-\_\-flag}}\label{i2cmaster_8h_a10c7c5776234d15f07c3e63a0c6f6518}
+
+
+Definition at line 25 of file twimaster.\-c.
+

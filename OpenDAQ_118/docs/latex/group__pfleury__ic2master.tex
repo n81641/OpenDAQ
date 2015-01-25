@@ -1,0 +1,340 @@
+\hypertarget{group__pfleury__ic2master}{\section{I2\-C Master library}
+\label{group__pfleury__ic2master}\index{I2\-C Master library@{I2\-C Master library}}
+}
+
+
+\subsection{Detailed Description}
+Header for \hyperlink{twimaster_8c}{twimaster.\-c}. 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <\hyperlink{i2cmaster_8h}{i2cmaster.h}>} 
+\end{DoxyCode}
+
+
+I2\-C (T\-W\-I) Master Software Library
+
+Basic routines for communicating with I2\-C slave devices. This single master implementation is limited to one bus master on the I2\-C bus.
+
+This I2c library is implemented as a compact assembler software implementation of the I2\-C protocol which runs on any A\-V\-R (i2cmaster.\-S) and as a T\-W\-I hardware interface for all A\-V\-R with built-\/in T\-W\-I hardware (\hyperlink{twimaster_8c}{twimaster.\-c}). Since the A\-P\-I for these two implementations is exactly the same, an application can be linked either against the software I2\-C implementation or the hardware I2\-C implementation.
+
+Use 4.\-7k pull-\/up resistor on the S\-D\-A and S\-C\-L pin.
+
+Adapt the S\-C\-L and S\-D\-A port and pin definitions and eventually the delay routine in the module i2cmaster.\-S to your target when using the software I2\-C implementation !
+
+Adjust the C\-P\-U clock frequence F\-\_\-\-C\-P\-U in \hyperlink{twimaster_8c}{twimaster.\-c} or in the Makfile when using the T\-W\-I hardware implementaion.
+
+\begin{DoxyNote}{Note}
+The module i2cmaster.\-S is based on the Atmel Application Note A\-V\-R300, corrected and adapted to G\-N\-U assembler and A\-V\-R-\/\-G\-C\-C C call interface. Replaced the incorrect quarter period delays found in A\-V\-R300 with half period delays.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Peter Fleury \href{mailto:pfleury@gmx.ch}{\tt pfleury@gmx.\-ch} \href{http://jump.to/fleury}{\tt http\-://jump.\-to/fleury}
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{A\-P\-I Usage Example}
+The following code shows typical usage of this library, see example test\-\_\-i2cmaster.\-c
+\end{DoxyParagraph}
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <\hyperlink{i2cmaster_8h}{i2cmaster.h}>}
+
+
+\textcolor{preprocessor}{#define Dev24C02  0xA2      // device address of EEPROM 24C02, see datasheet}
+\textcolor{preprocessor}{}
+\textcolor{keywordtype}{int} \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}(\textcolor{keywordtype}{void})
+\{
+    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} ret;
+
+    \hyperlink{group__pfleury__ic2master_ga5730d9445429351b9f750084c5cb5aae}{i2c\_init}();                             \textcolor{comment}{// initialize I2C library}
+
+    \textcolor{comment}{// write 0x75 to EEPROM address 5 (Byte Write) }
+    \hyperlink{group__pfleury__ic2master_ga71640d1526479df4629c3024c9ada476}{i2c\_start\_wait}(Dev24C02+\hyperlink{group__pfleury__ic2master_ga9536bf85bced4f4e549a82fb18eb6140}{I2C\_WRITE});     \textcolor{comment}{// set device address and write mode}
+    \hyperlink{group__pfleury__ic2master_gadd947aade44ed6b7f92265f9dec4a711}{i2c\_write}(0x05);                        \textcolor{comment}{// write address = 5}
+    \hyperlink{group__pfleury__ic2master_gadd947aade44ed6b7f92265f9dec4a711}{i2c\_write}(0x75);                        \textcolor{comment}{// write value 0x75 to EEPROM}
+    \hyperlink{group__pfleury__ic2master_gad35d4e4f52ca74b503d5e5e1e0a3f5f3}{i2c\_stop}();                             \textcolor{comment}{// set stop conditon = release bus}
+
+
+    \textcolor{comment}{// read previously written value back from EEPROM address 5 }
+    \hyperlink{group__pfleury__ic2master_ga71640d1526479df4629c3024c9ada476}{i2c\_start\_wait}(Dev24C02+\hyperlink{group__pfleury__ic2master_ga9536bf85bced4f4e549a82fb18eb6140}{I2C\_WRITE});     \textcolor{comment}{// set device address and write mode}
+
+    \hyperlink{group__pfleury__ic2master_gadd947aade44ed6b7f92265f9dec4a711}{i2c\_write}(0x05);                        \textcolor{comment}{// write address = 5}
+    \hyperlink{group__pfleury__ic2master_ga70c934b61f3c6ba8524104a1d7197d30}{i2c\_rep\_start}(Dev24C02+\hyperlink{group__pfleury__ic2master_gab5c0fbe837494c5f9130a5914854250d}{I2C\_READ});       \textcolor{comment}{// set device address and read mode}
+
+    ret = \hyperlink{group__pfleury__ic2master_gad89e839fc17b05fbb5dd79897c55234e}{i2c\_readNak}();                    \textcolor{comment}{// read one byte from EEPROM}
+    \hyperlink{group__pfleury__ic2master_gad35d4e4f52ca74b503d5e5e1e0a3f5f3}{i2c\_stop}();
+
+    \textcolor{keywordflow}{for}(;;);
+\}
+\end{DoxyCode}
+ \subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pfleury__ic2master_gab5c0fbe837494c5f9130a5914854250d}{I2\-C\-\_\-\-R\-E\-A\-D}~1
+\item 
+\#define \hyperlink{group__pfleury__ic2master_ga9536bf85bced4f4e549a82fb18eb6140}{I2\-C\-\_\-\-W\-R\-I\-T\-E}~0
+\item 
+\#define \hyperlink{group__pfleury__ic2master_gad33503cf741851d1bca1d274e9001796}{i2c\-\_\-read}(ack)~(ack) ? \hyperlink{group__pfleury__ic2master_ga32ac22052d55f93375b024192217db21}{i2c\-\_\-read\-Ack}() \-: \hyperlink{group__pfleury__ic2master_gad89e839fc17b05fbb5dd79897c55234e}{i2c\-\_\-read\-Nak}();
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__pfleury__ic2master_ga5730d9445429351b9f750084c5cb5aae}{i2c\-\_\-init} (void)
+\item 
+void \hyperlink{group__pfleury__ic2master_gad35d4e4f52ca74b503d5e5e1e0a3f5f3}{i2c\-\_\-stop} (void)
+\item 
+unsigned char \hyperlink{group__pfleury__ic2master_gaa3d328f00326115e9c660ccc838417c8}{i2c\-\_\-start} (unsigned char address)
+\item 
+unsigned char \hyperlink{group__pfleury__ic2master_ga70c934b61f3c6ba8524104a1d7197d30}{i2c\-\_\-rep\-\_\-start} (unsigned char address)
+\item 
+unsigned char \hyperlink{group__pfleury__ic2master_ga71640d1526479df4629c3024c9ada476}{i2c\-\_\-start\-\_\-wait} (unsigned char address)
+\item 
+unsigned char \hyperlink{group__pfleury__ic2master_gadd947aade44ed6b7f92265f9dec4a711}{i2c\-\_\-write} (unsigned char \hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+\item 
+unsigned char \hyperlink{group__pfleury__ic2master_ga32ac22052d55f93375b024192217db21}{i2c\-\_\-read\-Ack} (void)
+\item 
+unsigned char \hyperlink{group__pfleury__ic2master_gad89e839fc17b05fbb5dd79897c55234e}{i2c\-\_\-read\-Nak} (void)
+\item 
+unsigned char \hyperlink{group__pfleury__ic2master_ga669c0357614a79b3b35ae815f6f50e82}{i2c\-\_\-read} (unsigned char ack)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint8\-\_\-t \hyperlink{group__pfleury__ic2master_ga10c7c5776234d15f07c3e63a0c6f6518}{i2c\-\_\-timeout\-\_\-flag}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__pfleury__ic2master_gab5c0fbe837494c5f9130a5914854250d}{\index{I2\-C Master library@{I2\-C Master library}!I2\-C\-\_\-\-R\-E\-A\-D@{I2\-C\-\_\-\-R\-E\-A\-D}}
+\index{I2\-C\-\_\-\-R\-E\-A\-D@{I2\-C\-\_\-\-R\-E\-A\-D}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{I2\-C\-\_\-\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define I2\-C\-\_\-\-R\-E\-A\-D~1}}\label{group__pfleury__ic2master_gab5c0fbe837494c5f9130a5914854250d}
+defines the data direction (reading from I2\-C device) in \hyperlink{group__pfleury__ic2master_gaa3d328f00326115e9c660ccc838417c8}{i2c\-\_\-start()},\hyperlink{group__pfleury__ic2master_ga70c934b61f3c6ba8524104a1d7197d30}{i2c\-\_\-rep\-\_\-start()} 
+
+Definition at line 95 of file i2cmaster.\-h.
+
+\hypertarget{group__pfleury__ic2master_gad33503cf741851d1bca1d274e9001796}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-read@{i2c\-\_\-read}}
+\index{i2c\-\_\-read@{i2c\-\_\-read}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}\#define i2c\-\_\-read(
+\begin{DoxyParamCaption}
+\item[{}]{ack}
+\end{DoxyParamCaption}
+)~(ack) ? {\bf i2c\-\_\-read\-Ack}() \-: {\bf i2c\-\_\-read\-Nak}();}}\label{group__pfleury__ic2master_gad33503cf741851d1bca1d274e9001796}
+
+
+Definition at line 173 of file i2cmaster.\-h.
+
+\hypertarget{group__pfleury__ic2master_ga9536bf85bced4f4e549a82fb18eb6140}{\index{I2\-C Master library@{I2\-C Master library}!I2\-C\-\_\-\-W\-R\-I\-T\-E@{I2\-C\-\_\-\-W\-R\-I\-T\-E}}
+\index{I2\-C\-\_\-\-W\-R\-I\-T\-E@{I2\-C\-\_\-\-W\-R\-I\-T\-E}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{I2\-C\-\_\-\-W\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I2\-C\-\_\-\-W\-R\-I\-T\-E~0}}\label{group__pfleury__ic2master_ga9536bf85bced4f4e549a82fb18eb6140}
+defines the data direction (writing to I2\-C device) in \hyperlink{group__pfleury__ic2master_gaa3d328f00326115e9c660ccc838417c8}{i2c\-\_\-start()},\hyperlink{group__pfleury__ic2master_ga70c934b61f3c6ba8524104a1d7197d30}{i2c\-\_\-rep\-\_\-start()} 
+
+Definition at line 98 of file i2cmaster.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__pfleury__ic2master_ga5730d9445429351b9f750084c5cb5aae}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-init@{i2c\-\_\-init}}
+\index{i2c\-\_\-init@{i2c\-\_\-init}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void i2c\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__ic2master_ga5730d9445429351b9f750084c5cb5aae}
+
+
+initialize the I2\-C master interace. Need to be called only once 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file twimaster.\-c.
+
+\hypertarget{group__pfleury__ic2master_ga669c0357614a79b3b35ae815f6f50e82}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-read@{i2c\-\_\-read}}
+\index{i2c\-\_\-read@{i2c\-\_\-read}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{ack}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__ic2master_ga669c0357614a79b3b35ae815f6f50e82}
+\hypertarget{group__pfleury__ic2master_ga32ac22052d55f93375b024192217db21}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-read\-Ack@{i2c\-\_\-read\-Ack}}
+\index{i2c\-\_\-read\-Ack@{i2c\-\_\-read\-Ack}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-read\-Ack}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-read\-Ack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__ic2master_ga32ac22052d55f93375b024192217db21}
+
+
+read one byte from the I2\-C device, request more data from device 
+
+\begin{DoxyReturn}{Returns}
+byte read from I2\-C device 
+\end{DoxyReturn}
+
+
+Definition at line 190 of file twimaster.\-c.
+
+\hypertarget{group__pfleury__ic2master_gad89e839fc17b05fbb5dd79897c55234e}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-read\-Nak@{i2c\-\_\-read\-Nak}}
+\index{i2c\-\_\-read\-Nak@{i2c\-\_\-read\-Nak}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-read\-Nak}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-read\-Nak (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__ic2master_gad89e839fc17b05fbb5dd79897c55234e}
+
+
+read one byte from the I2\-C device, read is followed by a stop condition 
+
+\begin{DoxyReturn}{Returns}
+byte read from I2\-C device 
+\end{DoxyReturn}
+
+
+Definition at line 208 of file twimaster.\-c.
+
+\hypertarget{group__pfleury__ic2master_ga70c934b61f3c6ba8524104a1d7197d30}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-rep\-\_\-start@{i2c\-\_\-rep\-\_\-start}}
+\index{i2c\-\_\-rep\-\_\-start@{i2c\-\_\-rep\-\_\-start}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-rep\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-rep\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__ic2master_ga70c934b61f3c6ba8524104a1d7197d30}
+
+
+Issues a repeated start condition and sends address and transfer direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & address and transfer direction of I2\-C device \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & device accessible \\
+\hline
+{\em 1} & failed to access device \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 132 of file twimaster.\-c.
+
+\hypertarget{group__pfleury__ic2master_gaa3d328f00326115e9c660ccc838417c8}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-start@{i2c\-\_\-start}}
+\index{i2c\-\_\-start@{i2c\-\_\-start}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__ic2master_gaa3d328f00326115e9c660ccc838417c8}
+
+
+Issues a start condition and sends address and transfer direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & address and transfer direction of I2\-C device \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & device accessible \\
+\hline
+{\em 1} & failed to access device \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 41 of file twimaster.\-c.
+
+\hypertarget{group__pfleury__ic2master_ga71640d1526479df4629c3024c9ada476}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-start\-\_\-wait@{i2c\-\_\-start\-\_\-wait}}
+\index{i2c\-\_\-start\-\_\-wait@{i2c\-\_\-start\-\_\-wait}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-start\-\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-start\-\_\-wait (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{address}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__ic2master_ga71640d1526479df4629c3024c9ada476}
+
+
+Issues a start condition and sends address and transfer direction. 
+
+If device is busy, use ack polling to wait until device ready 
+\begin{DoxyParams}{Parameters}
+{\em addr} & address and transfer direction of I2\-C device \\
+\hline
+{\em timeout\-\_\-ms} & how long to wait before giving up \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & device accessible \\
+\hline
+{\em 1} & failed to access device \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 81 of file twimaster.\-c.
+
+\hypertarget{group__pfleury__ic2master_gad35d4e4f52ca74b503d5e5e1e0a3f5f3}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-stop@{i2c\-\_\-stop}}
+\index{i2c\-\_\-stop@{i2c\-\_\-stop}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}void i2c\-\_\-stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__ic2master_gad35d4e4f52ca74b503d5e5e1e0a3f5f3}
+
+
+Terminates the data transfer and releases the I2\-C bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file twimaster.\-c.
+
+\hypertarget{group__pfleury__ic2master_gadd947aade44ed6b7f92265f9dec4a711}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-write@{i2c\-\_\-write}}
+\index{i2c\-\_\-write@{i2c\-\_\-write}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char i2c\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{data}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__ic2master_gadd947aade44ed6b7f92265f9dec4a711}
+
+
+Send one byte to I2\-C device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & byte to be transfered \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & write successful \\
+\hline
+{\em 1} & write failed \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 163 of file twimaster.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__pfleury__ic2master_ga10c7c5776234d15f07c3e63a0c6f6518}{\index{I2\-C Master library@{I2\-C Master library}!i2c\-\_\-timeout\-\_\-flag@{i2c\-\_\-timeout\-\_\-flag}}
+\index{i2c\-\_\-timeout\-\_\-flag@{i2c\-\_\-timeout\-\_\-flag}!I2C Master library@{I2\-C Master library}}
+\subsubsection[{i2c\-\_\-timeout\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t i2c\-\_\-timeout\-\_\-flag}}\label{group__pfleury__ic2master_ga10c7c5776234d15f07c3e63a0c6f6518}
+
+
+Definition at line 22 of file twimaster.\-c.
+

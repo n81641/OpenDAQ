@@ -1,0 +1,498 @@
+GAS LISTING /tmp/ccgBvLGZ.s 			page 1
+
+
+   1               		.file	"10_bit.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_118/",100,0,2,.Ltext0
+   9               		.stabs	"10_bit.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"10_bit.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/sfr_defs.h",130,0,0,0
+  31               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  32               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  33               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  34               		.stabs	"int8_t:t(6,1)=(0,10)",128,0,121,0
+  35               		.stabs	"uint8_t:t(6,2)=(0,11)",128,0,122,0
+  36               		.stabs	"int16_t:t(6,3)=(0,1)",128,0,123,0
+  37               		.stabs	"uint16_t:t(6,4)=(0,4)",128,0,124,0
+  38               		.stabs	"int32_t:t(6,5)=(0,3)",128,0,125,0
+  39               		.stabs	"uint32_t:t(6,6)=(0,5)",128,0,126,0
+  40               		.stabs	"int64_t:t(6,7)=(0,6)",128,0,128,0
+  41               		.stabs	"uint64_t:t(6,8)=(0,7)",128,0,129,0
+  42               		.stabs	"intptr_t:t(6,9)=(6,3)",128,0,142,0
+  43               		.stabs	"uintptr_t:t(6,10)=(6,4)",128,0,147,0
+  44               		.stabs	"int_least8_t:t(6,11)=(6,1)",128,0,159,0
+  45               		.stabs	"uint_least8_t:t(6,12)=(6,2)",128,0,164,0
+  46               		.stabs	"int_least16_t:t(6,13)=(6,3)",128,0,169,0
+  47               		.stabs	"uint_least16_t:t(6,14)=(6,4)",128,0,174,0
+  48               		.stabs	"int_least32_t:t(6,15)=(6,5)",128,0,179,0
+  49               		.stabs	"uint_least32_t:t(6,16)=(6,6)",128,0,184,0
+  50               		.stabs	"int_least64_t:t(6,17)=(6,7)",128,0,192,0
+  51               		.stabs	"uint_least64_t:t(6,18)=(6,8)",128,0,199,0
+  52               		.stabs	"int_fast8_t:t(6,19)=(6,1)",128,0,213,0
+  53               		.stabs	"uint_fast8_t:t(6,20)=(6,2)",128,0,218,0
+  54               		.stabs	"int_fast16_t:t(6,21)=(6,3)",128,0,223,0
+  55               		.stabs	"uint_fast16_t:t(6,22)=(6,4)",128,0,228,0
+  56               		.stabs	"int_fast32_t:t(6,23)=(6,5)",128,0,233,0
+  57               		.stabs	"uint_fast32_t:t(6,24)=(6,6)",128,0,238,0
+GAS LISTING /tmp/ccgBvLGZ.s 			page 2
+
+
+  58               		.stabs	"int_fast64_t:t(6,25)=(6,7)",128,0,246,0
+  59               		.stabs	"uint_fast64_t:t(6,26)=(6,8)",128,0,253,0
+  60               		.stabs	"intmax_t:t(6,27)=(6,7)",128,0,273,0
+  61               		.stabs	"uintmax_t:t(6,28)=(6,8)",128,0,278,0
+  62               		.stabn	162,0,0,0
+  63               		.stabn	162,0,0,0
+  64               		.stabs	"int_farptr_t:t(4,1)=(6,5)",128,0,77,0
+  65               		.stabs	"uint_farptr_t:t(4,2)=(6,6)",128,0,81,0
+  66               		.stabn	162,0,0,0
+  67               		.stabn	162,0,0,0
+  68               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  69               		.stabs	"__fuse_t:t(7,1)=(7,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  70               		.stabn	162,0,0,0
+  71               		.stabn	162,0,0,0
+  72               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  73               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  74               		.stabs	"size_t:t(9,1)=(0,4)",128,0,211,0
+  75               		.stabs	"wchar_t:t(9,2)=(0,1)",128,0,323,0
+  76               		.stabn	162,0,0,0
+  77               		.stabs	"div_t:t(8,1)=(8,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+  78               		.stabs	"ldiv_t:t(8,3)=(8,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+  79               		.stabs	"__compar_fn_t:t(8,5)=(8,6)=*(8,7)=f(0,1)",128,0,80,0
+  80               		.stabn	162,0,0,0
+  81               		.stabn	162,0,0,0
+  82               		.stabs	"delay:f(0,15)",36,0,43,delay
+  83               		.stabs	"us:P(6,4)",64,0,43,24
+  84               		.type	delay, @function
+  85               	delay:
+  86               		.stabd	46,0,0
+   1:10_bit.c      **** /// \file 10_bit.c
+   2:10_bit.c      **** /// \brief Control for the internal 10 bit ADC 
+   3:10_bit.c      **** /// \details For ATMega32 microcontroller.
+   4:10_bit.c      **** /// \author University of Illinois Department and Environmental and Civil Engineering
+   5:10_bit.c      **** /// \copyright Copyright (c) 2014 University of Illinois Department and Environmental and Civil Eng
+   6:10_bit.c      **** ///This software is distributed under the MIT License. 
+   7:10_bit.c      **** ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software an
+   8:10_bit.c      **** ///associated documentation files (the "Software"), to deal in the Software without restriction, 
+   9:10_bit.c      **** ///including without limitation the rights to use, copy, modify, merge, publish, distribute, sublic
+  10:10_bit.c      **** ///and/or sell copies of the Software, and to permit persons to whom the Software is furnished to d
+  11:10_bit.c      **** ///subject to the following conditions:
+  12:10_bit.c      **** ///
+  13:10_bit.c      **** ///\copyright The above copyright notice and this permission notice shall be included in all copies
+  14:10_bit.c      **** ///portions of the Software.
+  15:10_bit.c      **** ///The software is provided "as is", without warranty of any kind expressed or implied, 
+  16:10_bit.c      **** ///including but not limited to the warranties of merchantability, fitness for a particular 
+  17:10_bit.c      **** ///purpose and noninfringement.  In no event shall the authors or copyright holders be liable 
+  18:10_bit.c      **** ///for any claim, damages or other liability whether in an action of contract, tort or 
+  19:10_bit.c      **** ///otherwise, arising from, out of or in connection with the software or the use or other 
+  20:10_bit.c      **** ///dealings in the software.
+  21:10_bit.c      **** ///
+  22:10_bit.c      **** #include "10_bit.h"
+  23:10_bit.c      **** 
+  24:10_bit.c      **** 
+  25:10_bit.c      **** static volatile uint16_t adcData;
+  26:10_bit.c      **** static volatile uint8_t adcDataL;
+  27:10_bit.c      **** static volatile uint8_t adcDataH;
+  28:10_bit.c      **** 
+GAS LISTING /tmp/ccgBvLGZ.s 			page 3
+
+
+  29:10_bit.c      **** //interrupt for built-in adc
+  30:10_bit.c      **** ISR(ADC_vect) 
+  31:10_bit.c      **** {
+  32:10_bit.c      ****     adcDataL = ADCL;
+  33:10_bit.c      ****     adcDataH = ADCH;
+  34:10_bit.c      ****     
+  35:10_bit.c      ****     adcData = 0;
+  36:10_bit.c      ****     adcData = adcData | adcDataH;
+  37:10_bit.c      ****     adcData = adcData << 8;
+  38:10_bit.c      ****     adcData = adcData | adcDataL;
+  39:10_bit.c      **** }
+  40:10_bit.c      **** 
+  41:10_bit.c      **** 
+  42:10_bit.c      **** 
+  43:10_bit.c      **** static void delay(uint16_t us) //.delay used in adc readings
+  44:10_bit.c      **** {
+  87               		.stabn	68,0,44,.LM0-.LFBB1
+  88               	.LM0:
+  89               	.LFBB1:
+  90 0000 DF93      		push r29
+  91 0002 CF93      		push r28
+  92 0004 00D0      		rcall .
+  93 0006 CDB7      		in r28,__SP_L__
+  94 0008 DEB7      		in r29,__SP_H__
+  95 000a 00C0      		rjmp .L4
+  96               	/* prologue: function */
+  97               	/* frame size = 2 */
+  98               	/* stack size = 4 */
+  99               	.L__stack_usage = 4
+ 100               	.L3:
+  45:10_bit.c      **** 	volatile uint16_t i; // variable for software dealy
+  46:10_bit.c      ****     for (i=us; i>1; i--)		//software time dealy that may survive -0s optimization.
+  47:10_bit.c      **** 			{
+  48:10_bit.c      **** 			asm volatile ("nop"::);
+ 101               		.stabn	68,0,48,.LM1-.LFBB1
+ 102               	.LM1:
+ 103               	/* #APP */
+ 104               	 ;  48 "10_bit.c" 1
+ 105 000c 0000      		nop
+ 106               	 ;  0 "" 2
+  46:10_bit.c      ****     for (i=us; i>1; i--)		//software time dealy that may survive -0s optimization.
+ 107               		.stabn	68,0,46,.LM2-.LFBB1
+ 108               	.LM2:
+ 109               	/* #NOAPP */
+ 110 000e 8981      		ldd r24,Y+1
+ 111 0010 9A81      		ldd r25,Y+2
+ 112 0012 0197      		sbiw r24,1
+ 113               	.L4:
+ 114 0014 9A83      		std Y+2,r25
+ 115 0016 8983      		std Y+1,r24
+ 116 0018 8981      		ldd r24,Y+1
+ 117 001a 9A81      		ldd r25,Y+2
+ 118 001c 8230      		cpi r24,2
+ 119 001e 9105      		cpc r25,__zero_reg__
+ 120 0020 00F4      		brsh .L3
+ 121               	/* epilogue start */
+  49:10_bit.c      **** 			}
+GAS LISTING /tmp/ccgBvLGZ.s 			page 4
+
+
+  50:10_bit.c      **** }
+ 122               		.stabn	68,0,50,.LM3-.LFBB1
+ 123               	.LM3:
+ 124 0022 0F90      		pop __tmp_reg__
+ 125 0024 0F90      		pop __tmp_reg__
+ 126 0026 CF91      		pop r28
+ 127 0028 DF91      		pop r29
+ 128 002a 0895      		ret
+ 129               		.size	delay, .-delay
+ 130               		.stabs	"i:(0,16)=B(6,4)",128,0,45,1
+ 131               		.stabn	192,0,0,.LFBB1-.LFBB1
+ 132               		.stabn	224,0,0,.Lscope1-.LFBB1
+ 133               	.Lscope1:
+ 134               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 135               		.stabd	78,0,0
+ 136               		.stabs	"__vector_16:F(0,15)",36,0,30,__vector_16
+ 137               	.global	__vector_16
+ 138               		.type	__vector_16, @function
+ 139               	__vector_16:
+ 140               		.stabd	46,0,0
+  31:10_bit.c      **** {
+ 141               		.stabn	68,0,31,.LM4-.LFBB2
+ 142               	.LM4:
+ 143               	.LFBB2:
+ 144 002c 1F92      		push __zero_reg__
+ 145 002e 0F92      		push r0
+ 146 0030 0FB6      		in r0,__SREG__
+ 147 0032 0F92      		push r0
+ 148 0034 1124      		clr __zero_reg__
+ 149 0036 2F93      		push r18
+ 150 0038 3F93      		push r19
+ 151 003a 8F93      		push r24
+ 152 003c 9F93      		push r25
+ 153               	/* prologue: Signal */
+ 154               	/* frame size = 0 */
+ 155               	/* stack size = 7 */
+ 156               	.L__stack_usage = 7
+  32:10_bit.c      ****     adcDataL = ADCL;
+ 157               		.stabn	68,0,32,.LM5-.LFBB2
+ 158               	.LM5:
+ 159 003e 84B1      		in r24,36-32
+ 160 0040 8093 0000 		sts adcDataL,r24
+  33:10_bit.c      ****     adcDataH = ADCH;
+ 161               		.stabn	68,0,33,.LM6-.LFBB2
+ 162               	.LM6:
+ 163 0044 85B1      		in r24,37-32
+ 164 0046 8093 0000 		sts adcDataH,r24
+  35:10_bit.c      ****     adcData = 0;
+ 165               		.stabn	68,0,35,.LM7-.LFBB2
+ 166               	.LM7:
+ 167 004a 1092 0000 		sts adcData+1,__zero_reg__
+ 168 004e 1092 0000 		sts adcData,__zero_reg__
+  36:10_bit.c      ****     adcData = adcData | adcDataH;
+ 169               		.stabn	68,0,36,.LM8-.LFBB2
+ 170               	.LM8:
+ 171 0052 2091 0000 		lds r18,adcData
+ 172 0056 3091 0000 		lds r19,adcData+1
+GAS LISTING /tmp/ccgBvLGZ.s 			page 5
+
+
+ 173 005a 8091 0000 		lds r24,adcDataH
+ 174 005e 90E0      		ldi r25,lo8(0)
+ 175 0060 822B      		or r24,r18
+ 176 0062 932B      		or r25,r19
+ 177 0064 9093 0000 		sts adcData+1,r25
+ 178 0068 8093 0000 		sts adcData,r24
+  37:10_bit.c      ****     adcData = adcData << 8;
+ 179               		.stabn	68,0,37,.LM9-.LFBB2
+ 180               	.LM9:
+ 181 006c 8091 0000 		lds r24,adcData
+ 182 0070 9091 0000 		lds r25,adcData+1
+ 183 0074 982F      		mov r25,r24
+ 184 0076 8827      		clr r24
+ 185 0078 9093 0000 		sts adcData+1,r25
+ 186 007c 8093 0000 		sts adcData,r24
+  38:10_bit.c      ****     adcData = adcData | adcDataL;
+ 187               		.stabn	68,0,38,.LM10-.LFBB2
+ 188               	.LM10:
+ 189 0080 2091 0000 		lds r18,adcData
+ 190 0084 3091 0000 		lds r19,adcData+1
+ 191 0088 8091 0000 		lds r24,adcDataL
+ 192 008c 90E0      		ldi r25,lo8(0)
+ 193 008e 822B      		or r24,r18
+ 194 0090 932B      		or r25,r19
+ 195 0092 9093 0000 		sts adcData+1,r25
+ 196 0096 8093 0000 		sts adcData,r24
+ 197               	/* epilogue start */
+  39:10_bit.c      **** }
+ 198               		.stabn	68,0,39,.LM11-.LFBB2
+ 199               	.LM11:
+ 200 009a 9F91      		pop r25
+ 201 009c 8F91      		pop r24
+ 202 009e 3F91      		pop r19
+ 203 00a0 2F91      		pop r18
+ 204 00a2 0F90      		pop r0
+ 205 00a4 0FBE      		out __SREG__,r0
+ 206 00a6 0F90      		pop r0
+ 207 00a8 1F90      		pop __zero_reg__
+ 208 00aa 1895      		reti
+ 209               		.size	__vector_16, .-__vector_16
+ 210               	.Lscope2:
+ 211               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 212               		.stabd	78,0,0
+ 213               		.stabs	"adc_init:F(0,15)",36,0,52,adc_init
+ 214               	.global	adc_init
+ 215               		.type	adc_init, @function
+ 216               	adc_init:
+ 217               		.stabd	46,0,0
+  51:10_bit.c      **** 
+  52:10_bit.c      **** void adc_init(void)
+  53:10_bit.c      **** {
+ 218               		.stabn	68,0,53,.LM12-.LFBB3
+ 219               	.LM12:
+ 220               	.LFBB3:
+ 221               	/* prologue: function */
+ 222               	/* frame size = 0 */
+ 223               	/* stack size = 0 */
+GAS LISTING /tmp/ccgBvLGZ.s 			page 6
+
+
+ 224               	.L__stack_usage = 0
+  54:10_bit.c      ****     ADCSRA |= ( (1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0) );//  sets adc clock prescaler to 128 see page 204
+ 225               		.stabn	68,0,54,.LM13-.LFBB3
+ 226               	.LM13:
+ 227 00ac 86B1      		in r24,38-32
+ 228 00ae 8760      		ori r24,lo8(7)
+ 229 00b0 86B9      		out 38-32,r24
+  55:10_bit.c      ****     //ADMUX =  ( (1<<REFS0)|(1<<REFS1) );// sets ref volts to internal 2.56 see page 214
+  56:10_bit.c      **** 	//set at sample time
+  57:10_bit.c      ****     ADCSRA |= (1<<ADIE); // enable ADC conversion complete interrupt
+ 230               		.stabn	68,0,57,.LM14-.LFBB3
+ 231               	.LM14:
+ 232 00b2 339A      		sbi 38-32,3
+  58:10_bit.c      ****     ADCSRA |= (1<<ADEN); // enable the ADC
+ 233               		.stabn	68,0,58,.LM15-.LFBB3
+ 234               	.LM15:
+ 235 00b4 379A      		sbi 38-32,7
+ 236               	/* epilogue start */
+  59:10_bit.c      **** }
+ 237               		.stabn	68,0,59,.LM16-.LFBB3
+ 238               	.LM16:
+ 239 00b6 0895      		ret
+ 240               		.size	adc_init, .-adc_init
+ 241               	.Lscope3:
+ 242               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 243               		.stabd	78,0,0
+ 244               		.stabs	"read_adc_onboard:F(6,3)",36,0,61,read_adc_onboard
+ 245               		.stabs	"channel:P(6,2)",64,0,61,17
+ 246               		.stabs	"oversamples:P(6,2)",64,0,61,22
+ 247               	.global	read_adc_onboard
+ 248               		.type	read_adc_onboard, @function
+ 249               	read_adc_onboard:
+ 250               		.stabd	46,0,0
+  60:10_bit.c      **** 
+  61:10_bit.c      **** int16_t read_adc_onboard(uint8_t channel, uint8_t oversamples)
+  62:10_bit.c      **** {
+ 251               		.stabn	68,0,62,.LM17-.LFBB4
+ 252               	.LM17:
+ 253               	.LFBB4:
+ 254 00b8 EF92      		push r14
+ 255 00ba FF92      		push r15
+ 256 00bc 0F93      		push r16
+ 257 00be 1F93      		push r17
+ 258 00c0 DF93      		push r29
+ 259 00c2 CF93      		push r28
+ 260 00c4 0F92      		push __tmp_reg__
+ 261 00c6 CDB7      		in r28,__SP_L__
+ 262 00c8 DEB7      		in r29,__SP_H__
+ 263               	/* prologue: function */
+ 264               	/* frame size = 1 */
+ 265               	/* stack size = 7 */
+ 266               	.L__stack_usage = 7
+ 267 00ca 182F      		mov r17,r24
+  63:10_bit.c      **** 	sei();//set enable interrupts
+ 268               		.stabn	68,0,63,.LM18-.LFBB4
+ 269               	.LM18:
+ 270               	/* #APP */
+GAS LISTING /tmp/ccgBvLGZ.s 			page 7
+
+
+ 271               	 ;  63 "10_bit.c" 1
+ 272 00cc 7894      		sei
+ 273               	 ;  0 "" 2
+ 274               	/* #NOAPP */
+ 275               	.LBB2:
+  64:10_bit.c      **** 	uint16_t total = 0;
+  65:10_bit.c      **** 	for (uint8_t i = 0;i<oversamples;i++)
+ 276               		.stabn	68,0,65,.LM19-.LFBB4
+ 277               	.LM19:
+ 278 00ce 00E0      		ldi r16,lo8(0)
+  64:10_bit.c      **** 	uint16_t total = 0;
+ 279               		.stabn	68,0,64,.LM20-.LFBB4
+ 280               	.LM20:
+ 281 00d0 EE24      		clr r14
+ 282 00d2 FF24      		clr r15
+ 283               		.stabn	68,0,65,.LM21-.LFBB4
+ 284               	.LM21:
+ 285 00d4 00C0      		rjmp .L8
+ 286               	.L9:
+  66:10_bit.c      **** 	{
+  67:10_bit.c      **** 		delay(5000UL);   
+ 287               		.stabn	68,0,67,.LM22-.LFBB4
+ 288               	.LM22:
+ 289 00d6 88E8      		ldi r24,lo8(5000)
+ 290 00d8 93E1      		ldi r25,hi8(5000)
+ 291 00da 6983      		std Y+1,r22
+ 292 00dc 0E94 0000 		call delay
+  68:10_bit.c      ****         //maybe check channel here to make sure is sane?  
+  69:10_bit.c      **** 		ADMUX = channel; 
+ 293               		.stabn	68,0,69,.LM23-.LFBB4
+ 294               	.LM23:
+ 295 00e0 17B9      		out 39-32,r17
+  70:10_bit.c      **** 		ADMUX |= ( (1<<REFS0)|(1<<REFS1));//2.56 internal V ref 
+ 296               		.stabn	68,0,70,.LM24-.LFBB4
+ 297               	.LM24:
+ 298 00e2 87B1      		in r24,39-32
+ 299 00e4 806C      		ori r24,lo8(-64)
+ 300 00e6 87B9      		out 39-32,r24
+  71:10_bit.c      **** 		delay(5000UL);
+ 301               		.stabn	68,0,71,.LM25-.LFBB4
+ 302               	.LM25:
+ 303 00e8 88E8      		ldi r24,lo8(5000)
+ 304 00ea 93E1      		ldi r25,hi8(5000)
+ 305 00ec 0E94 0000 		call delay
+  72:10_bit.c      **** 		ADCSRA |= (1<<ADSC);
+ 306               		.stabn	68,0,72,.LM26-.LFBB4
+ 307               	.LM26:
+ 308 00f0 369A      		sbi 38-32,6
+  73:10_bit.c      **** 		delay(10000UL);     
+ 309               		.stabn	68,0,73,.LM27-.LFBB4
+ 310               	.LM27:
+ 311 00f2 80E1      		ldi r24,lo8(10000)
+ 312 00f4 97E2      		ldi r25,hi8(10000)
+ 313 00f6 0E94 0000 		call delay
+  74:10_bit.c      **** 		total = total + adcData;
+ 314               		.stabn	68,0,74,.LM28-.LFBB4
+ 315               	.LM28:
+GAS LISTING /tmp/ccgBvLGZ.s 			page 8
+
+
+ 316 00fa 2091 0000 		lds r18,adcData
+ 317 00fe 3091 0000 		lds r19,adcData+1
+ 318 0102 E20E      		add r14,r18
+ 319 0104 F31E      		adc r15,r19
+  65:10_bit.c      **** 	for (uint8_t i = 0;i<oversamples;i++)
+ 320               		.stabn	68,0,65,.LM29-.LFBB4
+ 321               	.LM29:
+ 322 0106 0F5F      		subi r16,lo8(-(1))
+ 323 0108 6981      		ldd r22,Y+1
+ 324               	.L8:
+  65:10_bit.c      **** 	for (uint8_t i = 0;i<oversamples;i++)
+ 325               		.stabn	68,0,65,.LM30-.LFBB4
+ 326               	.LM30:
+ 327 010a 0617      		cp r16,r22
+ 328 010c 00F0      		brlo .L9
+ 329               	.LBE2:
+  75:10_bit.c      **** 	}
+  76:10_bit.c      **** 	total = total/oversamples;
+ 330               		.stabn	68,0,76,.LM31-.LFBB4
+ 331               	.LM31:
+ 332 010e C701      		movw r24,r14
+ 333 0110 70E0      		ldi r23,lo8(0)
+ 334 0112 0E94 0000 		call __udivmodhi4
+  77:10_bit.c      **** 	return total;				
+  78:10_bit.c      **** }
+ 335               		.stabn	68,0,78,.LM32-.LFBB4
+ 336               	.LM32:
+ 337 0116 CB01      		movw r24,r22
+ 338               	/* epilogue start */
+ 339 0118 0F90      		pop __tmp_reg__
+ 340 011a CF91      		pop r28
+ 341 011c DF91      		pop r29
+ 342 011e 1F91      		pop r17
+ 343 0120 0F91      		pop r16
+ 344 0122 FF90      		pop r15
+ 345 0124 EF90      		pop r14
+ 346 0126 0895      		ret
+ 347               		.size	read_adc_onboard, .-read_adc_onboard
+ 348               		.stabs	"i:r(6,2)",64,0,65,16
+ 349               		.stabn	192,0,0,.LBB2-.LFBB4
+ 350               		.stabn	224,0,0,.LBE2-.LFBB4
+ 351               	.Lscope4:
+ 352               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 353               		.stabd	78,0,0
+ 354               		.lcomm adcData,2
+ 355               		.lcomm adcDataL,1
+ 356               		.lcomm adcDataH,1
+ 357               		.stabs	"adcData:S(0,16)",40,0,25,adcData
+ 358               		.stabs	"adcDataL:S(0,17)=B(6,2)",40,0,26,adcDataL
+ 359               		.stabs	"adcDataH:S(0,17)",40,0,27,adcDataH
+ 360               		.stabs	"",100,0,0,.Letext0
+ 361               	.Letext0:
+ 362               	.global __do_clear_bss
+GAS LISTING /tmp/ccgBvLGZ.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 10_bit.c
+     /tmp/ccgBvLGZ.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccgBvLGZ.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccgBvLGZ.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccgBvLGZ.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccgBvLGZ.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccgBvLGZ.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccgBvLGZ.s:85     .text:0000000000000000 delay
+     /tmp/ccgBvLGZ.s:139    .text:000000000000002c __vector_16
+     /tmp/ccgBvLGZ.s:354    .bss:0000000000000002 adcDataL
+     /tmp/ccgBvLGZ.s:355    .bss:0000000000000003 adcDataH
+                             .bss:0000000000000000 adcData
+     /tmp/ccgBvLGZ.s:216    .text:00000000000000ac adc_init
+     /tmp/ccgBvLGZ.s:249    .text:00000000000000b8 read_adc_onboard
+
+UNDEFINED SYMBOLS
+__udivmodhi4
+__do_clear_bss

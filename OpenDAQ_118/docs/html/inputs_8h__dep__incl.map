@@ -1,0 +1,6 @@
+<map id="inputs.h" name="inputs.h">
+<area shape="rect" id="node2" href="$inputs_8c.html" title="All the input functions, in order for sampling reside here. " alt="" coords="5,80,72,107"/>
+<area shape="rect" id="node3" href="$main_8c.html" title="Main program for OpenEmissionsDAQ. " alt="" coords="95,155,156,181"/>
+<area shape="rect" id="node4" href="$non__vol_8h.html" title="non_vol.h" alt="" coords="149,80,227,107"/>
+<area shape="rect" id="node5" href="$non__vol_8c.html" title="non_vol.c" alt="" coords="210,155,288,181"/>
+</map>

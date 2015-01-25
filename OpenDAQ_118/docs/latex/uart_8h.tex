@@ -1,0 +1,155 @@
+\hypertarget{uart_8h}{\section{uart.\-h File Reference}
+\label{uart_8h}\index{uart.\-h@{uart.\-h}}
+}
+
+
+\subsection{Description}
+Header for \hyperlink{uart_8c}{uart.\-c}. \begin{DoxyAuthor}{Author}
+Roland Riegel \href{mailto:feedback@roland-riegel.de}{\tt feedback@roland-\/riegel.\-de} 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2006-\/2009 by Roland Riegel \href{mailto:feedback@roland-riegel.de}{\tt feedback@roland-\/riegel.\-de} This file is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License version 2 as published by the Free Software Foundation. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{uart_8h_source}{uart.\-h}.
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{uart_8h_a10ec7e0331d3581cca297df825e26fb3}{C\-H\-A\-R\-\_\-\-D\-E\-L\-A\-Y}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{uart_8h_a01f5996cfbcef121abc486e732b208c7}{uart\-\_\-init} ()
+\item 
+void \hyperlink{uart_8h_a56660036f7789e250049bff7af91ea2e}{uart\-\_\-putc} (uint8\-\_\-t c)
+\item 
+void \hyperlink{uart_8h_a489fe73fc93f76436ffce9370feb245b}{uart\-\_\-putw\-\_\-dec} (uint16\-\_\-t w)
+\item 
+void \hyperlink{uart_8h_a4d874f1d33e44b0d0d7dc3784e6fdad7}{uart\-\_\-putdw\-\_\-dec} (uint32\-\_\-t dw)
+\item 
+void \hyperlink{uart_8h_a6535d7e4f249e5ae9fe0dd795b4a3ecc}{uart\-\_\-puts} (const char $\ast$str)
+\item 
+void \hyperlink{uart_8h_a7d78a1137bb4becb0407b7da865c5079}{uart\-\_\-puts\-\_\-p} (P\-G\-M\-\_\-\-P str)
+\item 
+uint8\-\_\-t \hyperlink{uart_8h_acac832687c91139ba43a27a5225b6e35}{uart\-\_\-getc} ()
+\item 
+uint8\-\_\-t \hyperlink{uart_8h_a384517778535cbb60a3a24584b32708b}{uart\-\_\-getc\-\_\-timeout} ()
+\item 
+uint8\-\_\-t \hyperlink{uart_8h_aee00a87665c68849755df63d5f60216a}{read\-\_\-line} (char $\ast$buffer, uint8\-\_\-t buffer\-\_\-length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{uart_8h_a10ec7e0331d3581cca297df825e26fb3}{\index{uart.\-h@{uart.\-h}!C\-H\-A\-R\-\_\-\-D\-E\-L\-A\-Y@{C\-H\-A\-R\-\_\-\-D\-E\-L\-A\-Y}}
+\index{C\-H\-A\-R\-\_\-\-D\-E\-L\-A\-Y@{C\-H\-A\-R\-\_\-\-D\-E\-L\-A\-Y}!uart.h@{uart.\-h}}
+\subsubsection[{C\-H\-A\-R\-\_\-\-D\-E\-L\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-A\-R\-\_\-\-D\-E\-L\-A\-Y~1}}\label{uart_8h_a10ec7e0331d3581cca297df825e26fb3}
+
+
+Definition at line 15 of file uart.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{uart_8h_aee00a87665c68849755df63d5f60216a}{\index{uart.\-h@{uart.\-h}!read\-\_\-line@{read\-\_\-line}}
+\index{read\-\_\-line@{read\-\_\-line}!uart.h@{uart.\-h}}
+\subsubsection[{read\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t read\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{uint8\-\_\-t}]{buffer\-\_\-length}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_aee00a87665c68849755df63d5f60216a}
+
+
+Definition at line 183 of file uart.\-c.
+
+\hypertarget{uart_8h_acac832687c91139ba43a27a5225b6e35}{\index{uart.\-h@{uart.\-h}!uart\-\_\-getc@{uart\-\_\-getc}}
+\index{uart\-\_\-getc@{uart\-\_\-getc}!uart.h@{uart.\-h}}
+\subsubsection[{uart\-\_\-getc}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t uart\-\_\-getc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_acac832687c91139ba43a27a5225b6e35}
+
+
+Definition at line 153 of file uart.\-c.
+
+\hypertarget{uart_8h_a384517778535cbb60a3a24584b32708b}{\index{uart.\-h@{uart.\-h}!uart\-\_\-getc\-\_\-timeout@{uart\-\_\-getc\-\_\-timeout}}
+\index{uart\-\_\-getc\-\_\-timeout@{uart\-\_\-getc\-\_\-timeout}!uart.h@{uart.\-h}}
+\subsubsection[{uart\-\_\-getc\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t uart\-\_\-getc\-\_\-timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_a384517778535cbb60a3a24584b32708b}
+
+
+Definition at line 164 of file uart.\-c.
+
+\hypertarget{uart_8h_a01f5996cfbcef121abc486e732b208c7}{\index{uart.\-h@{uart.\-h}!uart\-\_\-init@{uart\-\_\-init}}
+\index{uart\-\_\-init@{uart\-\_\-init}!uart.h@{uart.\-h}}
+\subsubsection[{uart\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_a01f5996cfbcef121abc486e732b208c7}
+
+
+Definition at line 69 of file uart.\-c.
+
+\hypertarget{uart_8h_a56660036f7789e250049bff7af91ea2e}{\index{uart.\-h@{uart.\-h}!uart\-\_\-putc@{uart\-\_\-putc}}
+\index{uart\-\_\-putc@{uart\-\_\-putc}!uart.h@{uart.\-h}}
+\subsubsection[{uart\-\_\-putc}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-putc (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_a56660036f7789e250049bff7af91ea2e}
+
+
+Definition at line 81 of file uart.\-c.
+
+\hypertarget{uart_8h_a4d874f1d33e44b0d0d7dc3784e6fdad7}{\index{uart.\-h@{uart.\-h}!uart\-\_\-putdw\-\_\-dec@{uart\-\_\-putdw\-\_\-dec}}
+\index{uart\-\_\-putdw\-\_\-dec@{uart\-\_\-putdw\-\_\-dec}!uart.h@{uart.\-h}}
+\subsubsection[{uart\-\_\-putdw\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-putdw\-\_\-dec (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{dw}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_a4d874f1d33e44b0d0d7dc3784e6fdad7}
+
+
+Definition at line 115 of file uart.\-c.
+
+\hypertarget{uart_8h_a6535d7e4f249e5ae9fe0dd795b4a3ecc}{\index{uart.\-h@{uart.\-h}!uart\-\_\-puts@{uart\-\_\-puts}}
+\index{uart\-\_\-puts@{uart\-\_\-puts}!uart.h@{uart.\-h}}
+\subsubsection[{uart\-\_\-puts}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-puts (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_a6535d7e4f249e5ae9fe0dd795b4a3ecc}
+
+
+Definition at line 134 of file uart.\-c.
+
+\hypertarget{uart_8h_a7d78a1137bb4becb0407b7da865c5079}{\index{uart.\-h@{uart.\-h}!uart\-\_\-puts\-\_\-p@{uart\-\_\-puts\-\_\-p}}
+\index{uart\-\_\-puts\-\_\-p@{uart\-\_\-puts\-\_\-p}!uart.h@{uart.\-h}}
+\subsubsection[{uart\-\_\-puts\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-puts\-\_\-p (
+\begin{DoxyParamCaption}
+\item[{P\-G\-M\-\_\-\-P}]{str}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_a7d78a1137bb4becb0407b7da865c5079}
+
+
+Definition at line 141 of file uart.\-c.
+
+\hypertarget{uart_8h_a489fe73fc93f76436ffce9370feb245b}{\index{uart.\-h@{uart.\-h}!uart\-\_\-putw\-\_\-dec@{uart\-\_\-putw\-\_\-dec}}
+\index{uart\-\_\-putw\-\_\-dec@{uart\-\_\-putw\-\_\-dec}!uart.h@{uart.\-h}}
+\subsubsection[{uart\-\_\-putw\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-putw\-\_\-dec (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{w}
+\end{DoxyParamCaption}
+)}}\label{uart_8h_a489fe73fc93f76436ffce9370feb245b}
+
+
+Definition at line 96 of file uart.\-c.
+

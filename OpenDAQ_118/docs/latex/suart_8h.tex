@@ -1,0 +1,551 @@
+\hypertarget{suart_8h}{\section{suart.\-h File Reference}
+\label{suart_8h}\index{suart.\-h@{suart.\-h}}
+}
+
+
+\subsection{Description}
+header for \hyperlink{suart_8c}{suart.\-c} Port and Pin setup here. Set up the pins for the soft U\-A\-R\-Ts here.\par
+Each software U\-A\-R\-T has an Rx and Tx pin. These can be assigned to any G\-P\-I\-O pins on the microcontroller. \par
+ \par
+ \begin{DoxyNote}{Note}
+To re-\/assign pins\-:\par
+ In each section below, for each pin there are 3 places where the port letter needs to be changed, and 3 places for the pin number to be changed.\par
+So for each pair of pins there will be 12 instances to be changed. Only the letter (ex\-: B) and the number (ex\-: 7) need to be changed. The reason for this is that there is both the soft uart and the corresponding direct connection (avalible to users in the cal menu) port and pin assignments done here.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Karl Walter. karl (at) waltech.\-com 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2014 Karl Walter. karl (at) waltech.\-com. This software is distributed under the M\-I\-T License. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\-Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\-:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. The software is provided \char`\"{}as is\char`\"{}, without warranty of any kind expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{suart_8h_source}{suart.\-h}.
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{suart_8h_ad1ea56f0ff9f3362efa182a9b0763d76}{B\-I\-T\-D\-E\-L\-A\-Y}~\char`\"{}ldi r25, 145   \textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a6a510ce7950dcd653bfe5e8d406befd2}{H\-\_\-\-B\-I\-T\-D\-E\-L\-A\-Y}~\char`\"{}ldi r25, 72    \textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a39ef48dbb313908594c756738b95bf37}{T\-B\-I\-T\-D\-E\-L\-A\-Y}~\char`\"{}ldi r23, 144   \textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a8815d9848c86cbfacf04af30f4568184}{C\-H\-R\-\_\-\-D\-E\-L\-A\-Y}~10
+\item 
+\#define \hyperlink{suart_8h_a5a390c537f19d4f461dfc371b36583c5}{O\-U\-T1\-P\-O\-R\-T}~P\-O\-R\-T\-B
+\item 
+\#define \hyperlink{suart_8h_a46fb4026038c555cb2f0dfebc8b9566a}{O\-U\-T1\-P\-I\-N\-P\-O\-R\-T}~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-O\-R\-T\-B)
+\item 
+\#define \hyperlink{suart_8h_ab5364ce672f93a5aab7fa9224a7333d1}{D\-D\-R\-P1\-T}~D\-D\-R\-B
+\item 
+\#define \hyperlink{suart_8h_a0cbc1f8f63f12fdf2f9e39581f4bef50}{P\-N1\-T}~6
+\item 
+\#define \hyperlink{suart_8h_a1bb5f7350ccf09c707044f7e770431ac}{O\-U\-T1\-\_\-1}~\char`\"{}sbi \%1, 6	\textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a3b9a5a406b30d2e0bcd23f6439a81dc9}{O\-U\-T1\-\_\-0}~\char`\"{}cbi \%1, 6	\textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a6183ef49b3dfd9eb7235d860535aff7e}{P\-I\-N\-P\-T1}~P\-I\-N\-B
+\item 
+\#define \hyperlink{suart_8h_a4bbd8613997843d89d9b6714f08c4ca1}{I\-N1\-P\-I\-N\-P\-O\-R\-T}~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-I\-N\-B)
+\item 
+\#define \hyperlink{suart_8h_a3412f61ab0a0ca0f7f4245f3c9537580}{D\-D\-R\-P1\-R}~D\-D\-R\-B
+\item 
+\#define \hyperlink{suart_8h_a9a541571fc0b45c984eeb295962248ad}{P\-N1\-R}~5
+\item 
+\#define \hyperlink{suart_8h_a0260e1cbb3d1b415fb47f9aecc01c927}{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-0}~\char`\"{}sbic \%1, 5 \textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a6564ef82ae89978e0e435081106f83ac}{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-1}~\char`\"{}sbis \%1, 5 \textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_aa2ba6f4f5027d523ae3fd8303d93145e}{O\-U\-T2\-P\-O\-R\-T}~P\-O\-R\-T\-A
+\item 
+\#define \hyperlink{suart_8h_a0432a7230fe348644948c1397d17dc76}{O\-U\-T2\-P\-I\-N\-P\-O\-R\-T}~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-O\-R\-T\-A)
+\item 
+\#define \hyperlink{suart_8h_a5bf34b3d11578d48eb9999e449f664ef}{D\-D\-R\-P2\-T}~D\-D\-R\-A
+\item 
+\#define \hyperlink{suart_8h_a8f1be7ef61243be059e64e9f816b250f}{P\-N2\-T}~1
+\item 
+\#define \hyperlink{suart_8h_a98363c01c6305e07a03191011e1d7292}{O\-U\-T2\-\_\-1}~\char`\"{}sbi \%1, 1	\textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_ac189507f3ad9c4d33db526e74faa86ec}{O\-U\-T2\-\_\-0}~\char`\"{}cbi \%1, 1	\textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a93db05178cd39c1b6f3891f66168a31a}{P\-I\-N\-P\-T2}~P\-I\-N\-A
+\item 
+\#define \hyperlink{suart_8h_a9cb9c0b7f30bc72655171d30578e812f}{I\-N2\-P\-I\-N\-P\-O\-R\-T}~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-I\-N\-A)
+\item 
+\#define \hyperlink{suart_8h_a7a044db4bf37604a46273bec08436e84}{D\-D\-R\-P2\-R}~D\-D\-R\-A
+\item 
+\#define \hyperlink{suart_8h_a04e70a9f64dc00fbd5dd27c47b9d5163}{P\-N2\-R}~0
+\item 
+\#define \hyperlink{suart_8h_ae2624ffe8c166705562f5150e51b9e64}{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-0}~\char`\"{}sbic \%1, 0 \textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a50a1bfeec1cc4d693ecaf6c5ba85d983}{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-1}~\char`\"{}sbis \%1, 0 \textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_ad0170d29663a71f556957a153e25116f}{O\-U\-T3\-P\-O\-R\-T}~P\-O\-R\-T\-A
+\item 
+\#define \hyperlink{suart_8h_ae061b0bdf69caa38c348ee533a6c5b11}{O\-U\-T3\-P\-I\-N\-P\-O\-R\-T}~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-O\-R\-T\-A)
+\item 
+\#define \hyperlink{suart_8h_a3331b5b0b35257676d4e216aafcfdae4}{D\-D\-R\-P3\-T}~D\-D\-R\-A
+\item 
+\#define \hyperlink{suart_8h_aa3f5460a5f209b633ff98124412288be}{P\-N3\-T}~7
+\item 
+\#define \hyperlink{suart_8h_a5d4562cba071e08915ecdaac87ce7d77}{O\-U\-T3\-\_\-1}~\char`\"{}sbi \%1, 7	\textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a61baf889c504023316d85d9ec37f9a4b}{O\-U\-T3\-\_\-0}~\char`\"{}cbi \%1, 7	\textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_a4a817bfdfb2224826cc52be1b5ff5f38}{P\-I\-N\-P\-T3}~P\-I\-N\-A
+\item 
+\#define \hyperlink{suart_8h_acaf40c096a2edaaea03667fdcfe0b529}{I\-N3\-P\-I\-N\-P\-O\-R\-T}~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-I\-N\-A)
+\item 
+\#define \hyperlink{suart_8h_afeabf541458db76940277b424e52d6e8}{D\-D\-R\-P3\-R}~D\-D\-R\-A
+\item 
+\#define \hyperlink{suart_8h_ab6e6cdbd6815e35ed040d0338c4c7eb8}{P\-N3\-R}~6
+\item 
+\#define \hyperlink{suart_8h_adcfa0b6edb2549f47f99754bd2468ffc}{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-0}~\char`\"{}sbic \%1, 6 \textbackslash{}n\textbackslash{}t\char`\"{}
+\item 
+\#define \hyperlink{suart_8h_ad0834f09786e92487ed4d99a9bb9fb39}{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-1}~\char`\"{}sbis \%1, 6 \textbackslash{}n\textbackslash{}t\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{suart_8h_afe22079e5a765106d135df80fef1289f}{direct\-\_\-conn} (uint8\-\_\-t suart\-\_\-num)
+\item 
+void \hyperlink{suart_8h_a093cd29fcb88eeb35d5796092ba7637d}{suart\-\_\-puts} (uint8\-\_\-t uart\-\_\-num, const char $\ast$str)
+\item 
+void \hyperlink{suart_8h_abfb528e9ba1134ede16118dd7b3cc1fd}{get\-\_\-line} (uint8\-\_\-t uart\-\_\-num, char $\ast$buff, uint8\-\_\-t len)
+\item 
+void \hyperlink{suart_8h_a15f129725adb9fc628a0cfe70abccb9a}{suart\-\_\-init} (uint8\-\_\-t uart\-\_\-num)
+\item 
+uint8\-\_\-t \hyperlink{suart_8h_a98fdfabf1ec5ce230244683dcabc3ad3}{rcvr1} ()
+\item 
+void \hyperlink{suart_8h_a7cdde4d52c876f85e24e67c0401af0cb}{xmit1} (uint8\-\_\-t)
+\item 
+uint8\-\_\-t \hyperlink{suart_8h_ac7610caa8d4d35601ef4f0bdca0d8991}{rcvr2} ()
+\item 
+void \hyperlink{suart_8h_a743920fc861d84039cbbfcc5fdd37c27}{xmit2} (uint8\-\_\-t)
+\item 
+uint8\-\_\-t \hyperlink{suart_8h_a5a01d1e9302fceadd33a53ee39ec0990}{rcvr3} ()
+\item 
+void \hyperlink{suart_8h_a12b58130f64f43200d402f5c0d686d55}{xmit3} (uint8\-\_\-t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{suart_8h_ad1ea56f0ff9f3362efa182a9b0763d76}{\index{suart.\-h@{suart.\-h}!B\-I\-T\-D\-E\-L\-A\-Y@{B\-I\-T\-D\-E\-L\-A\-Y}}
+\index{B\-I\-T\-D\-E\-L\-A\-Y@{B\-I\-T\-D\-E\-L\-A\-Y}!suart.h@{suart.\-h}}
+\subsubsection[{B\-I\-T\-D\-E\-L\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-I\-T\-D\-E\-L\-A\-Y~\char`\"{}ldi r25, 145   \textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_ad1ea56f0ff9f3362efa182a9b0763d76}
+
+
+Flag for stopping loop\-: 
+
+Setup the soft uart pins and timings here 
+
+Definition at line 52 of file suart.\-h.
+
+\hypertarget{suart_8h_a8815d9848c86cbfacf04af30f4568184}{\index{suart.\-h@{suart.\-h}!C\-H\-R\-\_\-\-D\-E\-L\-A\-Y@{C\-H\-R\-\_\-\-D\-E\-L\-A\-Y}}
+\index{C\-H\-R\-\_\-\-D\-E\-L\-A\-Y@{C\-H\-R\-\_\-\-D\-E\-L\-A\-Y}!suart.h@{suart.\-h}}
+\subsubsection[{C\-H\-R\-\_\-\-D\-E\-L\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-R\-\_\-\-D\-E\-L\-A\-Y~10}}\label{suart_8h_a8815d9848c86cbfacf04af30f4568184}
+
+
+Definition at line 55 of file suart.\-h.
+
+\hypertarget{suart_8h_a3412f61ab0a0ca0f7f4245f3c9537580}{\index{suart.\-h@{suart.\-h}!D\-D\-R\-P1\-R@{D\-D\-R\-P1\-R}}
+\index{D\-D\-R\-P1\-R@{D\-D\-R\-P1\-R}!suart.h@{suart.\-h}}
+\subsubsection[{D\-D\-R\-P1\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-D\-R\-P1\-R~D\-D\-R\-B}}\label{suart_8h_a3412f61ab0a0ca0f7f4245f3c9537580}
+
+
+Definition at line 86 of file suart.\-h.
+
+\hypertarget{suart_8h_ab5364ce672f93a5aab7fa9224a7333d1}{\index{suart.\-h@{suart.\-h}!D\-D\-R\-P1\-T@{D\-D\-R\-P1\-T}}
+\index{D\-D\-R\-P1\-T@{D\-D\-R\-P1\-T}!suart.h@{suart.\-h}}
+\subsubsection[{D\-D\-R\-P1\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-D\-R\-P1\-T~D\-D\-R\-B}}\label{suart_8h_ab5364ce672f93a5aab7fa9224a7333d1}
+
+
+Definition at line 78 of file suart.\-h.
+
+\hypertarget{suart_8h_a7a044db4bf37604a46273bec08436e84}{\index{suart.\-h@{suart.\-h}!D\-D\-R\-P2\-R@{D\-D\-R\-P2\-R}}
+\index{D\-D\-R\-P2\-R@{D\-D\-R\-P2\-R}!suart.h@{suart.\-h}}
+\subsubsection[{D\-D\-R\-P2\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-D\-R\-P2\-R~D\-D\-R\-A}}\label{suart_8h_a7a044db4bf37604a46273bec08436e84}
+
+
+Definition at line 105 of file suart.\-h.
+
+\hypertarget{suart_8h_a5bf34b3d11578d48eb9999e449f664ef}{\index{suart.\-h@{suart.\-h}!D\-D\-R\-P2\-T@{D\-D\-R\-P2\-T}}
+\index{D\-D\-R\-P2\-T@{D\-D\-R\-P2\-T}!suart.h@{suart.\-h}}
+\subsubsection[{D\-D\-R\-P2\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-D\-R\-P2\-T~D\-D\-R\-A}}\label{suart_8h_a5bf34b3d11578d48eb9999e449f664ef}
+
+
+Definition at line 96 of file suart.\-h.
+
+\hypertarget{suart_8h_afeabf541458db76940277b424e52d6e8}{\index{suart.\-h@{suart.\-h}!D\-D\-R\-P3\-R@{D\-D\-R\-P3\-R}}
+\index{D\-D\-R\-P3\-R@{D\-D\-R\-P3\-R}!suart.h@{suart.\-h}}
+\subsubsection[{D\-D\-R\-P3\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-D\-R\-P3\-R~D\-D\-R\-A}}\label{suart_8h_afeabf541458db76940277b424e52d6e8}
+
+
+Definition at line 125 of file suart.\-h.
+
+\hypertarget{suart_8h_a3331b5b0b35257676d4e216aafcfdae4}{\index{suart.\-h@{suart.\-h}!D\-D\-R\-P3\-T@{D\-D\-R\-P3\-T}}
+\index{D\-D\-R\-P3\-T@{D\-D\-R\-P3\-T}!suart.h@{suart.\-h}}
+\subsubsection[{D\-D\-R\-P3\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-D\-R\-P3\-T~D\-D\-R\-A}}\label{suart_8h_a3331b5b0b35257676d4e216aafcfdae4}
+
+
+Definition at line 116 of file suart.\-h.
+
+\hypertarget{suart_8h_a6a510ce7950dcd653bfe5e8d406befd2}{\index{suart.\-h@{suart.\-h}!H\-\_\-\-B\-I\-T\-D\-E\-L\-A\-Y@{H\-\_\-\-B\-I\-T\-D\-E\-L\-A\-Y}}
+\index{H\-\_\-\-B\-I\-T\-D\-E\-L\-A\-Y@{H\-\_\-\-B\-I\-T\-D\-E\-L\-A\-Y}!suart.h@{suart.\-h}}
+\subsubsection[{H\-\_\-\-B\-I\-T\-D\-E\-L\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-\_\-\-B\-I\-T\-D\-E\-L\-A\-Y~\char`\"{}ldi r25, 72    \textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a6a510ce7950dcd653bfe5e8d406befd2}
+
+
+Definition at line 53 of file suart.\-h.
+
+\hypertarget{suart_8h_a4bbd8613997843d89d9b6714f08c4ca1}{\index{suart.\-h@{suart.\-h}!I\-N1\-P\-I\-N\-P\-O\-R\-T@{I\-N1\-P\-I\-N\-P\-O\-R\-T}}
+\index{I\-N1\-P\-I\-N\-P\-O\-R\-T@{I\-N1\-P\-I\-N\-P\-O\-R\-T}!suart.h@{suart.\-h}}
+\subsubsection[{I\-N1\-P\-I\-N\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N1\-P\-I\-N\-P\-O\-R\-T~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-I\-N\-B)}}\label{suart_8h_a4bbd8613997843d89d9b6714f08c4ca1}
+
+
+Definition at line 85 of file suart.\-h.
+
+\hypertarget{suart_8h_a9cb9c0b7f30bc72655171d30578e812f}{\index{suart.\-h@{suart.\-h}!I\-N2\-P\-I\-N\-P\-O\-R\-T@{I\-N2\-P\-I\-N\-P\-O\-R\-T}}
+\index{I\-N2\-P\-I\-N\-P\-O\-R\-T@{I\-N2\-P\-I\-N\-P\-O\-R\-T}!suart.h@{suart.\-h}}
+\subsubsection[{I\-N2\-P\-I\-N\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N2\-P\-I\-N\-P\-O\-R\-T~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-I\-N\-A)}}\label{suart_8h_a9cb9c0b7f30bc72655171d30578e812f}
+
+
+Definition at line 104 of file suart.\-h.
+
+\hypertarget{suart_8h_acaf40c096a2edaaea03667fdcfe0b529}{\index{suart.\-h@{suart.\-h}!I\-N3\-P\-I\-N\-P\-O\-R\-T@{I\-N3\-P\-I\-N\-P\-O\-R\-T}}
+\index{I\-N3\-P\-I\-N\-P\-O\-R\-T@{I\-N3\-P\-I\-N\-P\-O\-R\-T}!suart.h@{suart.\-h}}
+\subsubsection[{I\-N3\-P\-I\-N\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N3\-P\-I\-N\-P\-O\-R\-T~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-I\-N\-A)}}\label{suart_8h_acaf40c096a2edaaea03667fdcfe0b529}
+
+
+Definition at line 124 of file suart.\-h.
+
+\hypertarget{suart_8h_a3b9a5a406b30d2e0bcd23f6439a81dc9}{\index{suart.\-h@{suart.\-h}!O\-U\-T1\-\_\-0@{O\-U\-T1\-\_\-0}}
+\index{O\-U\-T1\-\_\-0@{O\-U\-T1\-\_\-0}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T1\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T1\-\_\-0~\char`\"{}cbi \%1, 6	\textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a3b9a5a406b30d2e0bcd23f6439a81dc9}
+
+
+Definition at line 81 of file suart.\-h.
+
+\hypertarget{suart_8h_a1bb5f7350ccf09c707044f7e770431ac}{\index{suart.\-h@{suart.\-h}!O\-U\-T1\-\_\-1@{O\-U\-T1\-\_\-1}}
+\index{O\-U\-T1\-\_\-1@{O\-U\-T1\-\_\-1}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T1\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T1\-\_\-1~\char`\"{}sbi \%1, 6	\textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a1bb5f7350ccf09c707044f7e770431ac}
+
+
+Definition at line 80 of file suart.\-h.
+
+\hypertarget{suart_8h_a46fb4026038c555cb2f0dfebc8b9566a}{\index{suart.\-h@{suart.\-h}!O\-U\-T1\-P\-I\-N\-P\-O\-R\-T@{O\-U\-T1\-P\-I\-N\-P\-O\-R\-T}}
+\index{O\-U\-T1\-P\-I\-N\-P\-O\-R\-T@{O\-U\-T1\-P\-I\-N\-P\-O\-R\-T}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T1\-P\-I\-N\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T1\-P\-I\-N\-P\-O\-R\-T~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-O\-R\-T\-B)}}\label{suart_8h_a46fb4026038c555cb2f0dfebc8b9566a}
+
+
+Definition at line 77 of file suart.\-h.
+
+\hypertarget{suart_8h_a5a390c537f19d4f461dfc371b36583c5}{\index{suart.\-h@{suart.\-h}!O\-U\-T1\-P\-O\-R\-T@{O\-U\-T1\-P\-O\-R\-T}}
+\index{O\-U\-T1\-P\-O\-R\-T@{O\-U\-T1\-P\-O\-R\-T}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T1\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T1\-P\-O\-R\-T~P\-O\-R\-T\-B}}\label{suart_8h_a5a390c537f19d4f461dfc371b36583c5}
+S-\/\-U\-A\-R\-T 1 Tx\-: 
+
+Definition at line 76 of file suart.\-h.
+
+\hypertarget{suart_8h_ac189507f3ad9c4d33db526e74faa86ec}{\index{suart.\-h@{suart.\-h}!O\-U\-T2\-\_\-0@{O\-U\-T2\-\_\-0}}
+\index{O\-U\-T2\-\_\-0@{O\-U\-T2\-\_\-0}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T2\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T2\-\_\-0~\char`\"{}cbi \%1, 1	\textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_ac189507f3ad9c4d33db526e74faa86ec}
+
+
+Definition at line 99 of file suart.\-h.
+
+\hypertarget{suart_8h_a98363c01c6305e07a03191011e1d7292}{\index{suart.\-h@{suart.\-h}!O\-U\-T2\-\_\-1@{O\-U\-T2\-\_\-1}}
+\index{O\-U\-T2\-\_\-1@{O\-U\-T2\-\_\-1}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T2\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T2\-\_\-1~\char`\"{}sbi \%1, 1	\textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a98363c01c6305e07a03191011e1d7292}
+
+
+Definition at line 98 of file suart.\-h.
+
+\hypertarget{suart_8h_a0432a7230fe348644948c1397d17dc76}{\index{suart.\-h@{suart.\-h}!O\-U\-T2\-P\-I\-N\-P\-O\-R\-T@{O\-U\-T2\-P\-I\-N\-P\-O\-R\-T}}
+\index{O\-U\-T2\-P\-I\-N\-P\-O\-R\-T@{O\-U\-T2\-P\-I\-N\-P\-O\-R\-T}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T2\-P\-I\-N\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T2\-P\-I\-N\-P\-O\-R\-T~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-O\-R\-T\-A)}}\label{suart_8h_a0432a7230fe348644948c1397d17dc76}
+
+
+Definition at line 95 of file suart.\-h.
+
+\hypertarget{suart_8h_aa2ba6f4f5027d523ae3fd8303d93145e}{\index{suart.\-h@{suart.\-h}!O\-U\-T2\-P\-O\-R\-T@{O\-U\-T2\-P\-O\-R\-T}}
+\index{O\-U\-T2\-P\-O\-R\-T@{O\-U\-T2\-P\-O\-R\-T}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T2\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T2\-P\-O\-R\-T~P\-O\-R\-T\-A}}\label{suart_8h_aa2ba6f4f5027d523ae3fd8303d93145e}
+S-\/\-U\-A\-R\-T 2 Tx\-: 
+
+Definition at line 94 of file suart.\-h.
+
+\hypertarget{suart_8h_a61baf889c504023316d85d9ec37f9a4b}{\index{suart.\-h@{suart.\-h}!O\-U\-T3\-\_\-0@{O\-U\-T3\-\_\-0}}
+\index{O\-U\-T3\-\_\-0@{O\-U\-T3\-\_\-0}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T3\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T3\-\_\-0~\char`\"{}cbi \%1, 7	\textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a61baf889c504023316d85d9ec37f9a4b}
+
+
+Definition at line 119 of file suart.\-h.
+
+\hypertarget{suart_8h_a5d4562cba071e08915ecdaac87ce7d77}{\index{suart.\-h@{suart.\-h}!O\-U\-T3\-\_\-1@{O\-U\-T3\-\_\-1}}
+\index{O\-U\-T3\-\_\-1@{O\-U\-T3\-\_\-1}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T3\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T3\-\_\-1~\char`\"{}sbi \%1, 7	\textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a5d4562cba071e08915ecdaac87ce7d77}
+
+
+Definition at line 118 of file suart.\-h.
+
+\hypertarget{suart_8h_ae061b0bdf69caa38c348ee533a6c5b11}{\index{suart.\-h@{suart.\-h}!O\-U\-T3\-P\-I\-N\-P\-O\-R\-T@{O\-U\-T3\-P\-I\-N\-P\-O\-R\-T}}
+\index{O\-U\-T3\-P\-I\-N\-P\-O\-R\-T@{O\-U\-T3\-P\-I\-N\-P\-O\-R\-T}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T3\-P\-I\-N\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T3\-P\-I\-N\-P\-O\-R\-T~\-\_\-\-S\-F\-R\-\_\-\-I\-O\-\_\-\-A\-D\-D\-R(P\-O\-R\-T\-A)}}\label{suart_8h_ae061b0bdf69caa38c348ee533a6c5b11}
+
+
+Definition at line 115 of file suart.\-h.
+
+\hypertarget{suart_8h_ad0170d29663a71f556957a153e25116f}{\index{suart.\-h@{suart.\-h}!O\-U\-T3\-P\-O\-R\-T@{O\-U\-T3\-P\-O\-R\-T}}
+\index{O\-U\-T3\-P\-O\-R\-T@{O\-U\-T3\-P\-O\-R\-T}!suart.h@{suart.\-h}}
+\subsubsection[{O\-U\-T3\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T3\-P\-O\-R\-T~P\-O\-R\-T\-A}}\label{suart_8h_ad0170d29663a71f556957a153e25116f}
+S-\/\-U\-A\-R\-T 3 Tx\-: 
+
+Definition at line 114 of file suart.\-h.
+
+\hypertarget{suart_8h_a6183ef49b3dfd9eb7235d860535aff7e}{\index{suart.\-h@{suart.\-h}!P\-I\-N\-P\-T1@{P\-I\-N\-P\-T1}}
+\index{P\-I\-N\-P\-T1@{P\-I\-N\-P\-T1}!suart.h@{suart.\-h}}
+\subsubsection[{P\-I\-N\-P\-T1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-N\-P\-T1~P\-I\-N\-B}}\label{suart_8h_a6183ef49b3dfd9eb7235d860535aff7e}
+
+
+Rx\-: 
+
+
+
+Definition at line 84 of file suart.\-h.
+
+\hypertarget{suart_8h_a93db05178cd39c1b6f3891f66168a31a}{\index{suart.\-h@{suart.\-h}!P\-I\-N\-P\-T2@{P\-I\-N\-P\-T2}}
+\index{P\-I\-N\-P\-T2@{P\-I\-N\-P\-T2}!suart.h@{suart.\-h}}
+\subsubsection[{P\-I\-N\-P\-T2}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-N\-P\-T2~P\-I\-N\-A}}\label{suart_8h_a93db05178cd39c1b6f3891f66168a31a}
+
+
+Rx\-: 
+
+
+
+Definition at line 103 of file suart.\-h.
+
+\hypertarget{suart_8h_a4a817bfdfb2224826cc52be1b5ff5f38}{\index{suart.\-h@{suart.\-h}!P\-I\-N\-P\-T3@{P\-I\-N\-P\-T3}}
+\index{P\-I\-N\-P\-T3@{P\-I\-N\-P\-T3}!suart.h@{suart.\-h}}
+\subsubsection[{P\-I\-N\-P\-T3}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-N\-P\-T3~P\-I\-N\-A}}\label{suart_8h_a4a817bfdfb2224826cc52be1b5ff5f38}
+
+
+Rx\-: 
+
+
+
+Definition at line 123 of file suart.\-h.
+
+\hypertarget{suart_8h_a9a541571fc0b45c984eeb295962248ad}{\index{suart.\-h@{suart.\-h}!P\-N1\-R@{P\-N1\-R}}
+\index{P\-N1\-R@{P\-N1\-R}!suart.h@{suart.\-h}}
+\subsubsection[{P\-N1\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-N1\-R~5}}\label{suart_8h_a9a541571fc0b45c984eeb295962248ad}
+
+
+Definition at line 87 of file suart.\-h.
+
+\hypertarget{suart_8h_a0cbc1f8f63f12fdf2f9e39581f4bef50}{\index{suart.\-h@{suart.\-h}!P\-N1\-T@{P\-N1\-T}}
+\index{P\-N1\-T@{P\-N1\-T}!suart.h@{suart.\-h}}
+\subsubsection[{P\-N1\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-N1\-T~6}}\label{suart_8h_a0cbc1f8f63f12fdf2f9e39581f4bef50}
+
+
+Definition at line 79 of file suart.\-h.
+
+\hypertarget{suart_8h_a04e70a9f64dc00fbd5dd27c47b9d5163}{\index{suart.\-h@{suart.\-h}!P\-N2\-R@{P\-N2\-R}}
+\index{P\-N2\-R@{P\-N2\-R}!suart.h@{suart.\-h}}
+\subsubsection[{P\-N2\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-N2\-R~0}}\label{suart_8h_a04e70a9f64dc00fbd5dd27c47b9d5163}
+
+
+Definition at line 106 of file suart.\-h.
+
+\hypertarget{suart_8h_a8f1be7ef61243be059e64e9f816b250f}{\index{suart.\-h@{suart.\-h}!P\-N2\-T@{P\-N2\-T}}
+\index{P\-N2\-T@{P\-N2\-T}!suart.h@{suart.\-h}}
+\subsubsection[{P\-N2\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-N2\-T~1}}\label{suart_8h_a8f1be7ef61243be059e64e9f816b250f}
+
+
+Definition at line 97 of file suart.\-h.
+
+\hypertarget{suart_8h_ab6e6cdbd6815e35ed040d0338c4c7eb8}{\index{suart.\-h@{suart.\-h}!P\-N3\-R@{P\-N3\-R}}
+\index{P\-N3\-R@{P\-N3\-R}!suart.h@{suart.\-h}}
+\subsubsection[{P\-N3\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-N3\-R~6}}\label{suart_8h_ab6e6cdbd6815e35ed040d0338c4c7eb8}
+
+
+Definition at line 126 of file suart.\-h.
+
+\hypertarget{suart_8h_aa3f5460a5f209b633ff98124412288be}{\index{suart.\-h@{suart.\-h}!P\-N3\-T@{P\-N3\-T}}
+\index{P\-N3\-T@{P\-N3\-T}!suart.h@{suart.\-h}}
+\subsubsection[{P\-N3\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-N3\-T~7}}\label{suart_8h_aa3f5460a5f209b633ff98124412288be}
+
+
+Definition at line 117 of file suart.\-h.
+
+\hypertarget{suart_8h_a0260e1cbb3d1b415fb47f9aecc01c927}{\index{suart.\-h@{suart.\-h}!S\-K\-I\-P1\-\_\-\-I\-N\-\_\-0@{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-0}}
+\index{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-0@{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-0}!suart.h@{suart.\-h}}
+\subsubsection[{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-K\-I\-P1\-\_\-\-I\-N\-\_\-0~\char`\"{}sbic \%1, 5 \textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a0260e1cbb3d1b415fb47f9aecc01c927}
+
+
+Definition at line 88 of file suart.\-h.
+
+\hypertarget{suart_8h_a6564ef82ae89978e0e435081106f83ac}{\index{suart.\-h@{suart.\-h}!S\-K\-I\-P1\-\_\-\-I\-N\-\_\-1@{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-1}}
+\index{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-1@{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-1}!suart.h@{suart.\-h}}
+\subsubsection[{S\-K\-I\-P1\-\_\-\-I\-N\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-K\-I\-P1\-\_\-\-I\-N\-\_\-1~\char`\"{}sbis \%1, 5 \textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a6564ef82ae89978e0e435081106f83ac}
+
+
+Definition at line 89 of file suart.\-h.
+
+\hypertarget{suart_8h_ae2624ffe8c166705562f5150e51b9e64}{\index{suart.\-h@{suart.\-h}!S\-K\-I\-P2\-\_\-\-I\-N\-\_\-0@{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-0}}
+\index{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-0@{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-0}!suart.h@{suart.\-h}}
+\subsubsection[{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-K\-I\-P2\-\_\-\-I\-N\-\_\-0~\char`\"{}sbic \%1, 0 \textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_ae2624ffe8c166705562f5150e51b9e64}
+
+
+Definition at line 107 of file suart.\-h.
+
+\hypertarget{suart_8h_a50a1bfeec1cc4d693ecaf6c5ba85d983}{\index{suart.\-h@{suart.\-h}!S\-K\-I\-P2\-\_\-\-I\-N\-\_\-1@{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-1}}
+\index{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-1@{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-1}!suart.h@{suart.\-h}}
+\subsubsection[{S\-K\-I\-P2\-\_\-\-I\-N\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-K\-I\-P2\-\_\-\-I\-N\-\_\-1~\char`\"{}sbis \%1, 0 \textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a50a1bfeec1cc4d693ecaf6c5ba85d983}
+
+
+Definition at line 108 of file suart.\-h.
+
+\hypertarget{suart_8h_adcfa0b6edb2549f47f99754bd2468ffc}{\index{suart.\-h@{suart.\-h}!S\-K\-I\-P3\-\_\-\-I\-N\-\_\-0@{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-0}}
+\index{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-0@{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-0}!suart.h@{suart.\-h}}
+\subsubsection[{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-K\-I\-P3\-\_\-\-I\-N\-\_\-0~\char`\"{}sbic \%1, 6 \textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_adcfa0b6edb2549f47f99754bd2468ffc}
+
+
+Definition at line 127 of file suart.\-h.
+
+\hypertarget{suart_8h_ad0834f09786e92487ed4d99a9bb9fb39}{\index{suart.\-h@{suart.\-h}!S\-K\-I\-P3\-\_\-\-I\-N\-\_\-1@{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-1}}
+\index{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-1@{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-1}!suart.h@{suart.\-h}}
+\subsubsection[{S\-K\-I\-P3\-\_\-\-I\-N\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-K\-I\-P3\-\_\-\-I\-N\-\_\-1~\char`\"{}sbis \%1, 6 \textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_ad0834f09786e92487ed4d99a9bb9fb39}
+
+
+Definition at line 128 of file suart.\-h.
+
+\hypertarget{suart_8h_a39ef48dbb313908594c756738b95bf37}{\index{suart.\-h@{suart.\-h}!T\-B\-I\-T\-D\-E\-L\-A\-Y@{T\-B\-I\-T\-D\-E\-L\-A\-Y}}
+\index{T\-B\-I\-T\-D\-E\-L\-A\-Y@{T\-B\-I\-T\-D\-E\-L\-A\-Y}!suart.h@{suart.\-h}}
+\subsubsection[{T\-B\-I\-T\-D\-E\-L\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-B\-I\-T\-D\-E\-L\-A\-Y~\char`\"{}ldi r23, 144   \textbackslash{}n\textbackslash{}t\char`\"{}}}\label{suart_8h_a39ef48dbb313908594c756738b95bf37}
+
+
+Definition at line 54 of file suart.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{suart_8h_afe22079e5a765106d135df80fef1289f}{\index{suart.\-h@{suart.\-h}!direct\-\_\-conn@{direct\-\_\-conn}}
+\index{direct\-\_\-conn@{direct\-\_\-conn}!suart.h@{suart.\-h}}
+\subsubsection[{direct\-\_\-conn}]{\setlength{\rightskip}{0pt plus 5cm}void direct\-\_\-conn (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{suart\-\_\-num}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_afe22079e5a765106d135df80fef1289f}
+
+
+Definition at line 358 of file suart.\-c.
+
+\hypertarget{suart_8h_abfb528e9ba1134ede16118dd7b3cc1fd}{\index{suart.\-h@{suart.\-h}!get\-\_\-line@{get\-\_\-line}}
+\index{get\-\_\-line@{get\-\_\-line}!suart.h@{suart.\-h}}
+\subsubsection[{get\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{uart\-\_\-num, }
+\item[{char $\ast$}]{buff, }
+\item[{uint8\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_abfb528e9ba1134ede16118dd7b3cc1fd}
+
+
+Definition at line 27 of file suart.\-c.
+
+\hypertarget{suart_8h_a98fdfabf1ec5ce230244683dcabc3ad3}{\index{suart.\-h@{suart.\-h}!rcvr1@{rcvr1}}
+\index{rcvr1@{rcvr1}!suart.h@{suart.\-h}}
+\subsubsection[{rcvr1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rcvr1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_a98fdfabf1ec5ce230244683dcabc3ad3}
+
+
+can access up to three soft uarts 
+
+
+
+Definition at line 198 of file suart.\-c.
+
+\hypertarget{suart_8h_ac7610caa8d4d35601ef4f0bdca0d8991}{\index{suart.\-h@{suart.\-h}!rcvr2@{rcvr2}}
+\index{rcvr2@{rcvr2}!suart.h@{suart.\-h}}
+\subsubsection[{rcvr2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rcvr2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_ac7610caa8d4d35601ef4f0bdca0d8991}
+
+
+Definition at line 252 of file suart.\-c.
+
+\hypertarget{suart_8h_a5a01d1e9302fceadd33a53ee39ec0990}{\index{suart.\-h@{suart.\-h}!rcvr3@{rcvr3}}
+\index{rcvr3@{rcvr3}!suart.h@{suart.\-h}}
+\subsubsection[{rcvr3}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rcvr3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_a5a01d1e9302fceadd33a53ee39ec0990}
+
+
+Definition at line 306 of file suart.\-c.
+
+\hypertarget{suart_8h_a15f129725adb9fc628a0cfe70abccb9a}{\index{suart.\-h@{suart.\-h}!suart\-\_\-init@{suart\-\_\-init}}
+\index{suart\-\_\-init@{suart\-\_\-init}!suart.h@{suart.\-h}}
+\subsubsection[{suart\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void suart\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{uart\-\_\-num}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_a15f129725adb9fc628a0cfe70abccb9a}
+
+
+Definition at line 78 of file suart.\-c.
+
+\hypertarget{suart_8h_a093cd29fcb88eeb35d5796092ba7637d}{\index{suart.\-h@{suart.\-h}!suart\-\_\-puts@{suart\-\_\-puts}}
+\index{suart\-\_\-puts@{suart\-\_\-puts}!suart.h@{suart.\-h}}
+\subsubsection[{suart\-\_\-puts}]{\setlength{\rightskip}{0pt plus 5cm}void suart\-\_\-puts (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{uart\-\_\-num, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_a093cd29fcb88eeb35d5796092ba7637d}
+
+
+Definition at line 56 of file suart.\-c.
+
+\hypertarget{suart_8h_a7cdde4d52c876f85e24e67c0401af0cb}{\index{suart.\-h@{suart.\-h}!xmit1@{xmit1}}
+\index{xmit1@{xmit1}!suart.h@{suart.\-h}}
+\subsubsection[{xmit1}]{\setlength{\rightskip}{0pt plus 5cm}void xmit1 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_a7cdde4d52c876f85e24e67c0401af0cb}
+
+
+Definition at line 105 of file suart.\-c.
+
+\hypertarget{suart_8h_a743920fc861d84039cbbfcc5fdd37c27}{\index{suart.\-h@{suart.\-h}!xmit2@{xmit2}}
+\index{xmit2@{xmit2}!suart.h@{suart.\-h}}
+\subsubsection[{xmit2}]{\setlength{\rightskip}{0pt plus 5cm}void xmit2 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_a743920fc861d84039cbbfcc5fdd37c27}
+
+
+Definition at line 136 of file suart.\-c.
+
+\hypertarget{suart_8h_a12b58130f64f43200d402f5c0d686d55}{\index{suart.\-h@{suart.\-h}!xmit3@{xmit3}}
+\index{xmit3@{xmit3}!suart.h@{suart.\-h}}
+\subsubsection[{xmit3}]{\setlength{\rightskip}{0pt plus 5cm}void xmit3 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{suart_8h_a12b58130f64f43200d402f5c0d686d55}
+
+
+Definition at line 166 of file suart.\-c.
+
