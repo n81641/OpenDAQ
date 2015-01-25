@@ -1,0 +1,198 @@
+\hypertarget{main_8c}{\section{main.\-c File Reference}
+\label{main_8c}\index{main.\-c@{main.\-c}}
+}
+
+
+\subsection{Description}
+Main program for Open\-Emissions\-D\-A\-Q. See \hyperlink{inputs_8c}{inputs.\-c} to configure and order the inputs. \par
+ See int \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()} section for details on the power up process and main loop. \begin{DoxyAuthor}{Author}
+University of Illinois Department and Environmental and Civil Engineering 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2014 University of Illinois Department and Environmental and Civil Engineering. This software is distributed under the M\-I\-T License. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\-Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\-:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. The software is provided \char`\"{}as is\char`\"{}, without warranty of any kind expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{main_8c_source}{main.\-c}.
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8c_a2d6f614c23598aa814bbea3e352b69aa}{C\-L\-O\-C\-K\-C\-O\-N\-N\-E\-C\-T\-E\-D}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{main_8c_a71fec7786e47daeb9b1da34a655cebb5}{cal\-\_\-val\-\_\-input\-\_\-delay} (void)
+\item 
+void \hyperlink{main_8c_ada126027c8137450615f03a8692fb255}{cal\-\_\-menu} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$\hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+\item 
+void \hyperlink{main_8c_abd331c160dab86ce825c1bcfd6525357}{read\-\_\-stored\-\_\-vals} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$\hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+\item 
+uint8\-\_\-t \hyperlink{main_8c_a84d1b268e95cc6bb65ed25a11b49ece6}{showtime} (void)
+\item 
+uint16\-\_\-t \hyperlink{main_8c_ae0119e9f659b71796300980a8b9f8415}{timesample} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$\hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+\item 
+void \hyperlink{main_8c_a91b726e7a458c2ebd31ff51eaf57517c}{output\-\_\-headers} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$\hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+\item 
+\hyperlink{main_8c_ab16889ae984b9b798989a0d239283cac}{I\-S\-R} (T\-I\-M\-E\-R1\-\_\-\-O\-V\-F\-\_\-vect)
+\item 
+int \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint8\-\_\-t \hyperlink{main_8c_a0d388db35cad6048d0c1f68ae8c244b1}{sixteen}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{main_8c_a2d6f614c23598aa814bbea3e352b69aa}{\index{main.\-c@{main.\-c}!C\-L\-O\-C\-K\-C\-O\-N\-N\-E\-C\-T\-E\-D@{C\-L\-O\-C\-K\-C\-O\-N\-N\-E\-C\-T\-E\-D}}
+\index{C\-L\-O\-C\-K\-C\-O\-N\-N\-E\-C\-T\-E\-D@{C\-L\-O\-C\-K\-C\-O\-N\-N\-E\-C\-T\-E\-D}!main.c@{main.\-c}}
+\subsubsection[{C\-L\-O\-C\-K\-C\-O\-N\-N\-E\-C\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-L\-O\-C\-K\-C\-O\-N\-N\-E\-C\-T\-E\-D}}\label{main_8c_a2d6f614c23598aa814bbea3e352b69aa}
+
+
+Definition at line 26 of file main.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_ada126027c8137450615f03a8692fb255}{\index{main.\-c@{main.\-c}!cal\-\_\-menu@{cal\-\_\-menu}}
+\index{cal\-\_\-menu@{cal\-\_\-menu}!main.c@{main.\-c}}
+\subsubsection[{cal\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void cal\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sample\-\_\-data} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{main_8c_ada126027c8137450615f03a8692fb255}
+
+
+input menu for cal values and names. 
+
+
+
+Definition at line 246 of file main.\-c.
+
+\hypertarget{main_8c_a71fec7786e47daeb9b1da34a655cebb5}{\index{main.\-c@{main.\-c}!cal\-\_\-val\-\_\-input\-\_\-delay@{cal\-\_\-val\-\_\-input\-\_\-delay}}
+\index{cal\-\_\-val\-\_\-input\-\_\-delay@{cal\-\_\-val\-\_\-input\-\_\-delay}!main.c@{main.\-c}}
+\subsubsection[{cal\-\_\-val\-\_\-input\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t cal\-\_\-val\-\_\-input\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a71fec7786e47daeb9b1da34a655cebb5}
+
+
+See if user wants to enter cal mode on startup. 
+
+
+
+Definition at line 211 of file main.\-c.
+
+\hypertarget{main_8c_ab16889ae984b9b798989a0d239283cac}{\index{main.\-c@{main.\-c}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!main.c@{main.\-c}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{T\-I\-M\-E\-R1\-\_\-\-O\-V\-F\-\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_ab16889ae984b9b798989a0d239283cac}
+
+
+Definition at line 73 of file main.\-c.
+
+\hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main.\-c@{main.\-c}!main@{main}}
+\index{main@{main}!main.c@{main.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+\paragraph*{When the D\-A\-Q is powered up, the following occour\-:}
+
+• All channels are counted by running the \hyperlink{inputs_8c_a7d360acb6d1c7975ade96e550340801a}{sample\-\_\-all\-\_\-channels()} function in input.\-c wih case J\-U\-S\-T\-\_\-\-C\-O\-U\-N\-T \par
+• The user is given 5 second to enter \char`\"{}cal\char`\"{} and use the value entry menu in \hyperlink{main_8c_ada126027c8137450615f03a8692fb255}{cal\-\_\-menu()} \par
+• The U\-A\-R\-T receive is disabled in order to avoid noise if disconnected \par
+• All channels are tested. The function \hyperlink{inputs_8c_a7d360acb6d1c7975ade96e550340801a}{sample\-\_\-all\-\_\-channels()} is run with case T\-E\-S\-T. This also initilizes the channels that need. initilization \par
+• The Real Time Clock is tested. The D\-A\-Q cannot continue if the clock does not respond. I.\-e. if it is disconnected\par
+• The time it takes to run a sample loop is determined. This number is used to determine when the next sampling should begin. \par
+• The headers are read from the E\-E\-M\-E\-M (non volitale memory). These are then added to the output string\-: \hyperlink{structsample__data_af18460f06968c075db59516a21c409a7}{sample\-\_\-data.\-serialout}. \par
+• The initial start time is calculated. \par
+ \paragraph*{The main loop is started\-:}
+
+• The \hyperlink{structRTC}{R\-T\-C} is polled every 1 ms until the start time is matched. \par
+• The date and time is added to the output string\-: \hyperlink{structsample__data_af18460f06968c075db59516a21c409a7}{sample\-\_\-data.\-serialout}, then the Header I\-D, and the elapsed seconds.\par
+• All the channels are sampled and the values are added to the output string\-: \hyperlink{structsample__data_af18460f06968c075db59516a21c409a7}{sample\-\_\-data.\-serialout}. \par
+This is done by running the function \hyperlink{inputs_8c_a7d360acb6d1c7975ade96e550340801a}{sample\-\_\-all\-\_\-channels()} with case S\-A\-M\-P\-L\-E 
+
+Definition at line 92 of file main.\-c.
+
+\hypertarget{main_8c_a91b726e7a458c2ebd31ff51eaf57517c}{\index{main.\-c@{main.\-c}!output\-\_\-headers@{output\-\_\-headers}}
+\index{output\-\_\-headers@{output\-\_\-headers}!main.c@{main.\-c}}
+\subsubsection[{output\-\_\-headers}]{\setlength{\rightskip}{0pt plus 5cm}void output\-\_\-headers (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sample\-\_\-data} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a91b726e7a458c2ebd31ff51eaf57517c}
+
+
+Add headers to serialout\-: 
+
+
+
+Definition at line 459 of file main.\-c.
+
+\hypertarget{main_8c_abd331c160dab86ce825c1bcfd6525357}{\index{main.\-c@{main.\-c}!read\-\_\-stored\-\_\-vals@{read\-\_\-stored\-\_\-vals}}
+\index{read\-\_\-stored\-\_\-vals@{read\-\_\-stored\-\_\-vals}!main.c@{main.\-c}}
+\subsubsection[{read\-\_\-stored\-\_\-vals}]{\setlength{\rightskip}{0pt plus 5cm}void read\-\_\-stored\-\_\-vals (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sample\-\_\-data} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{main_8c_abd331c160dab86ce825c1bcfd6525357}
+
+
+read all the names and cal vals in the E\-E\-M\-E\-M 
+
+
+
+Definition at line 416 of file main.\-c.
+
+\hypertarget{main_8c_a84d1b268e95cc6bb65ed25a11b49ece6}{\index{main.\-c@{main.\-c}!showtime@{showtime}}
+\index{showtime@{showtime}!main.c@{main.\-c}}
+\subsubsection[{showtime}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t showtime (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a84d1b268e95cc6bb65ed25a11b49ece6}
+
+
+Definition at line 142 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{main_8c_ae0119e9f659b71796300980a8b9f8415}{\index{main.\-c@{main.\-c}!timesample@{timesample}}
+\index{timesample@{timesample}!main.c@{main.\-c}}
+\subsubsection[{timesample}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t timesample (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sample\-\_\-data} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{main_8c_ae0119e9f659b71796300980a8b9f8415}
+
+
+Check and calculate time for sampling period. 
+
+
+
+Definition at line 491 of file main.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{main_8c_a0d388db35cad6048d0c1f68ae8c244b1}{\index{main.\-c@{main.\-c}!sixteen@{sixteen}}
+\index{sixteen@{sixteen}!main.c@{main.\-c}}
+\subsubsection[{sixteen}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t sixteen}}\label{main_8c_a0d388db35cad6048d0c1f68ae8c244b1}
+
+
+incremented every 16 sec for testing timeout. 
+
+
+
+Definition at line 60 of file main.\-c.
+

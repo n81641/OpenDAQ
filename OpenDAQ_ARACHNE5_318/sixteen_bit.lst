@@ -1,0 +1,782 @@
+GAS LISTING /tmp/cc6EQGYe.s 			page 1
+
+
+   1               		.file	"sixteen_bit.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_ARACHNE5_220/",100,0,2,.Ltext0
+   9               		.stabs	"sixteen_bit.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"sixteen_bit.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  31               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  32               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  33               		.stabs	"int8_t:t(5,1)=(0,10)",128,0,121,0
+  34               		.stabs	"uint8_t:t(5,2)=(0,11)",128,0,122,0
+  35               		.stabs	"int16_t:t(5,3)=(0,1)",128,0,123,0
+  36               		.stabs	"uint16_t:t(5,4)=(0,4)",128,0,124,0
+  37               		.stabs	"int32_t:t(5,5)=(0,3)",128,0,125,0
+  38               		.stabs	"uint32_t:t(5,6)=(0,5)",128,0,126,0
+  39               		.stabs	"int64_t:t(5,7)=(0,6)",128,0,128,0
+  40               		.stabs	"uint64_t:t(5,8)=(0,7)",128,0,129,0
+  41               		.stabs	"intptr_t:t(5,9)=(5,3)",128,0,142,0
+  42               		.stabs	"uintptr_t:t(5,10)=(5,4)",128,0,147,0
+  43               		.stabs	"int_least8_t:t(5,11)=(5,1)",128,0,159,0
+  44               		.stabs	"uint_least8_t:t(5,12)=(5,2)",128,0,164,0
+  45               		.stabs	"int_least16_t:t(5,13)=(5,3)",128,0,169,0
+  46               		.stabs	"uint_least16_t:t(5,14)=(5,4)",128,0,174,0
+  47               		.stabs	"int_least32_t:t(5,15)=(5,5)",128,0,179,0
+  48               		.stabs	"uint_least32_t:t(5,16)=(5,6)",128,0,184,0
+  49               		.stabs	"int_least64_t:t(5,17)=(5,7)",128,0,192,0
+  50               		.stabs	"uint_least64_t:t(5,18)=(5,8)",128,0,199,0
+  51               		.stabs	"int_fast8_t:t(5,19)=(5,1)",128,0,213,0
+  52               		.stabs	"uint_fast8_t:t(5,20)=(5,2)",128,0,218,0
+  53               		.stabs	"int_fast16_t:t(5,21)=(5,3)",128,0,223,0
+  54               		.stabs	"uint_fast16_t:t(5,22)=(5,4)",128,0,228,0
+  55               		.stabs	"int_fast32_t:t(5,23)=(5,5)",128,0,233,0
+  56               		.stabs	"uint_fast32_t:t(5,24)=(5,6)",128,0,238,0
+  57               		.stabs	"int_fast64_t:t(5,25)=(5,7)",128,0,246,0
+GAS LISTING /tmp/cc6EQGYe.s 			page 2
+
+
+  58               		.stabs	"uint_fast64_t:t(5,26)=(5,8)",128,0,253,0
+  59               		.stabs	"intmax_t:t(5,27)=(5,7)",128,0,273,0
+  60               		.stabs	"uintmax_t:t(5,28)=(5,8)",128,0,278,0
+  61               		.stabn	162,0,0,0
+  62               		.stabn	162,0,0,0
+  63               		.stabs	"int_farptr_t:t(3,1)=(5,5)",128,0,77,0
+  64               		.stabs	"uint_farptr_t:t(3,2)=(5,6)",128,0,81,0
+  65               		.stabn	162,0,0,0
+  66               		.stabn	162,0,0,0
+  67               		.stabs	"i2cmaster.h",130,0,0,0
+  68               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  69               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  70               		.stabs	"__fuse_t:t(8,1)=(8,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  71               		.stabn	162,0,0,0
+  72               		.stabn	162,0,0,0
+  73               		.stabn	162,0,0,0
+  74               		.stabs	"utilities.h",130,0,0,0
+  75               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  76               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  77               		.stabs	"size_t:t(11,1)=(0,4)",128,0,211,0
+  78               		.stabs	"wchar_t:t(11,2)=(0,1)",128,0,323,0
+  79               		.stabn	162,0,0,0
+  80               		.stabs	"div_t:t(10,1)=(10,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+  81               		.stabs	"ldiv_t:t(10,3)=(10,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+  82               		.stabs	"__compar_fn_t:t(10,5)=(10,6)=*(10,7)=f(0,1)",128,0,80,0
+  83               		.stabn	162,0,0,0
+  84               		.stabn	162,0,0,0
+  85               		.stabn	162,0,0,0
+  86               		.stabs	"i2c_adc:F(5,2)",36,0,46,i2c_adc
+  87               		.stabs	"address:P(5,2)",64,0,46,14
+  88               		.stabs	"mux1:P(5,2)",64,0,46,22
+  89               		.stabs	"mux2:P(5,2)",64,0,46,17
+  90               	.global	i2c_adc
+  91               		.type	i2c_adc, @function
+  92               	i2c_adc:
+  93               		.stabd	46,0,0
+   1:sixteen_bit.c **** ///
+   2:sixteen_bit.c **** /// \file sixteen_bit.c
+   3:sixteen_bit.c **** /// \brief Communication with LTC2495 ADC
+   4:sixteen_bit.c **** /// \details I2c commands to setup and read LTC2495 Delta Sigma ADC by Linear Technology
+   5:sixteen_bit.c **** /// \author Karl Walter.  karl (at) waltech.com
+   6:sixteen_bit.c **** /// \copyright Copyright (c) 2014 Karl Walter.  karl (at) waltech.com.
+   7:sixteen_bit.c **** ///This software is distributed under the MIT License. 
+   8:sixteen_bit.c **** ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software an
+   9:sixteen_bit.c **** ///associated documentation files (the "Software"), to deal in the Software without restriction, 
+  10:sixteen_bit.c **** ///including without limitation the rights to use, copy, modify, merge, publish, distribute, sublic
+  11:sixteen_bit.c **** ///and/or sell copies of the Software, and to permit persons to whom the Software is furnished to d
+  12:sixteen_bit.c **** ///subject to the following conditions:
+  13:sixteen_bit.c **** ///
+  14:sixteen_bit.c **** ///\copyright The above copyright notice and this permission notice shall be included in all copies
+  15:sixteen_bit.c **** ///portions of the Software.
+  16:sixteen_bit.c **** ///The software is provided "as is", without warranty of any kind expressed or implied, 
+  17:sixteen_bit.c **** ///including but not limited to the warranties of merchantability, fitness for a particular 
+  18:sixteen_bit.c **** ///purpose and noninfringement.  In no event shall the authors or copyright holders be liable 
+  19:sixteen_bit.c **** ///for any claim, damages or other liability whether in an action of contract, tort or 
+  20:sixteen_bit.c **** ///otherwise, arising from, out of or in connection with the software or the use or other 
+  21:sixteen_bit.c **** ///dealings in the software.
+GAS LISTING /tmp/cc6EQGYe.s 			page 3
+
+
+  22:sixteen_bit.c **** ///
+  23:sixteen_bit.c **** #include "sixteen_bit.h"
+  24:sixteen_bit.c **** 
+  25:sixteen_bit.c **** volatile uint16_t ADC_volts; //16 bit i2c ADC result
+  26:sixteen_bit.c **** 
+  27:sixteen_bit.c **** 
+  28:sixteen_bit.c **** 
+  29:sixteen_bit.c **** /// \brief Reads the value from the I2c ADC
+  30:sixteen_bit.c **** /// \param  3 channel numbers 
+  31:sixteen_bit.c **** /// \return signed value or 65536 if overscale
+  32:sixteen_bit.c **** int32_t read_adc(uint8_t ADC_A, uint8_t ADC_B, uint8_t ADC_C)
+  33:sixteen_bit.c **** {
+  34:sixteen_bit.c ****     int32_t ADC_signed = 0; 
+  35:sixteen_bit.c ****     uint8_t sign = i2c_adc(ADC_A, ADC_B, ADC_C);//get value from ADC
+  36:sixteen_bit.c ****     if (sign == 2){return 65536;}//overscale
+  37:sixteen_bit.c ****     if (sign == 1){ADC_signed = (0-ADC_volts);}//negative result
+  38:sixteen_bit.c ****     if (sign == 0){ADC_signed = ADC_volts;}//positive result
+  39:sixteen_bit.c ****     return ADC_signed;
+  40:sixteen_bit.c **** }
+  41:sixteen_bit.c **** 
+  42:sixteen_bit.c **** 
+  43:sixteen_bit.c **** //read i2c ADC:
+  44:sixteen_bit.c **** 	//send i2c address, mux1, mux2 (see page 17 ltc2487 datasheet)
+  45:sixteen_bit.c **** 	//returns 0 for + value, 1 for -value, 2 for overvoltage
+  46:sixteen_bit.c **** uint8_t i2c_adc(uint8_t address, uint8_t mux1, uint8_t mux2)
+  47:sixteen_bit.c **** {
+  94               		.stabn	68,0,47,.LM0-.LFBB1
+  95               	.LM0:
+  96               	.LFBB1:
+  97 0000 8F92      		push r8
+  98 0002 9F92      		push r9
+  99 0004 AF92      		push r10
+ 100 0006 BF92      		push r11
+ 101 0008 CF92      		push r12
+ 102 000a DF92      		push r13
+ 103 000c EF92      		push r14
+ 104 000e FF92      		push r15
+ 105 0010 0F93      		push r16
+ 106 0012 1F93      		push r17
+ 107 0014 DF93      		push r29
+ 108 0016 CF93      		push r28
+ 109 0018 0F92      		push __tmp_reg__
+ 110 001a CDB7      		in r28,__SP_L__
+ 111 001c DEB7      		in r29,__SP_H__
+ 112               	/* prologue: function */
+ 113               	/* frame size = 1 */
+ 114               	/* stack size = 13 */
+ 115               	.L__stack_usage = 13
+ 116 001e E82E      		mov r14,r24
+ 117 0020 142F      		mov r17,r20
+  48:sixteen_bit.c **** 	//write mux and setup bits to ADC:
+  49:sixteen_bit.c **** 	i2c_start_wait(address+I2C_WRITE);     // set device address and write mode			
+ 118               		.stabn	68,0,49,.LM1-.LFBB1
+ 119               	.LM1:
+ 120 0022 6983      		std Y+1,r22
+ 121 0024 0E94 0000 		call i2c_start_wait
+  50:sixteen_bit.c **** 	i2c_write(mux1);	// Transmit first (of 2) input configure byte: 
+GAS LISTING /tmp/cc6EQGYe.s 			page 4
+
+
+ 122               		.stabn	68,0,50,.LM2-.LFBB1
+ 123               	.LM2:
+ 124 0028 6981      		ldd r22,Y+1
+ 125 002a 862F      		mov r24,r22
+ 126 002c 0E94 0000 		call i2c_write
+  51:sixteen_bit.c **** 	i2c_write(mux2);	//Transmit second (of 2) input configure byte
+ 127               		.stabn	68,0,51,.LM3-.LFBB1
+ 128               	.LM3:
+ 129 0030 812F      		mov r24,r17
+ 130 0032 0E94 0000 		call i2c_write
+  52:sixteen_bit.c **** 	i2c_stop();
+ 131               		.stabn	68,0,52,.LM4-.LFBB1
+ 132               	.LM4:
+ 133 0036 0E94 0000 		call i2c_stop
+ 134               	.LBB6:
+ 135               	.LBB7:
+ 136               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext1
+ 137               	.Ltext1:
+   1:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   6:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   9:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  12:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      distribution.
+  16:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  17:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  21:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  33:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* $Id: delay.h.in 2189 2010-10-13 09:39:34Z aboyapati $ */
+  34:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  35:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  38:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
+  39:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
+GAS LISTING /tmp/cc6EQGYe.s 			page 5
+
+
+  40:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  41:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  42:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <inttypes.h>
+  43:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <util/delay_basic.h>
+  44:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <math.h>
+  45:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  46:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \file */
+  47:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  48:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \code
+  49:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  50:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  51:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #include <util/delay.h>
+  52:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \endcode
+  53:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  54:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  55:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  56:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  57:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     used.
+  58:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  59:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  60:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  61:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  62:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  63:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  64:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  65:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  66:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  67:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  68:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  69:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  70:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  71:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  72:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  73:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  74:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  75:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     routines linked into the application.
+  76:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  77:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  78:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  79:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  80:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  81:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** */
+  82:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  83:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  84:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
+  85:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
+  86:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  87:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  88:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef F_CPU
+  89:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  90:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  91:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # define F_CPU 1000000UL
+  92:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  93:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  94:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+  95:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+  96:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+GAS LISTING /tmp/cc6EQGYe.s 			page 6
+
+
+  97:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  98:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /**
+  99:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    \ingroup util_delay
+ 100:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 101:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 102:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 103:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 104:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 105:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 106:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 107:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 108:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 109:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 110:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 111:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 112:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 113:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 114:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
+ 115:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 116:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 117:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 118:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 119:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
+ 120:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
+ 121:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
+ 122:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 123:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
+ 124:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    to round down and round to closest integer.
+ 125:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 126:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
+ 127:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
+ 128:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay
+ 129:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    although this will be deprecated in future.
+ 130:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 131:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****  */
+ 132:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** void
+ 133:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** _delay_ms(double __ms)
+ 134:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** {
+ 135:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint16_t __ticks;
+ 136:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	double __tmp ; 
+ 137:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && !defined(__DELAY_BACKWARD_COMPATIBLE__)
+ 138:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 139:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 140:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 141:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 142:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 143:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 144:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 145:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 146:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 147:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 148:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#else
+ 149:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		//round up by default
+ 150:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 151:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#endif
+ 152:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 153:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+GAS LISTING /tmp/cc6EQGYe.s 			page 7
+
+
+ 138               		.stabn	68,0,153,.LM5-.LFBB1
+ 139               	.LM5:
+ 140 003a 84E2      		 ldi r24,lo8(67108)
+ 141 003c 96E0      	    ldi r25,hi8(67108)
+ 142 003e A1E0      	    ldi r26,hlo8(67108)
+ 143 0040 8150      	    1:subi r24,1
+ 144 0042 9040      	    sbci r25,0
+ 145 0044 A040      	    sbci r26,0
+ 146 0046 01F4      	    brne 1b
+ 147 0048 00C0      		rjmp .
+ 148 004a 0000      		nop
+ 149               	.LBE7:
+ 150               	.LBE6:
+ 151               		.stabs	"sixteen_bit.c",132,0,0,.Ltext2
+ 152               	.Ltext2:
+  53:sixteen_bit.c **** 	_delay_ms(80); // 80 ok for normal channels, not enough for temp	
+  54:sixteen_bit.c **** 	if (mux2 == 0xC0){_delay_ms(80);}//internal temp read needs more time
+ 153               		.stabn	68,0,54,.LM6-.LFBB1
+ 154               	.LM6:
+ 155 004c 103C      		cpi r17,lo8(-64)
+ 156 004e 01F4      		brne .L2
+ 157               	.LBB8:
+ 158               	.LBB9:
+ 159               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext3
+ 160               	.Ltext3:
+ 161               		.stabn	68,0,153,.LM7-.LFBB1
+ 162               	.LM7:
+ 163 0050 84E2      		 ldi r24,lo8(67108)
+ 164 0052 96E0      	    ldi r25,hi8(67108)
+ 165 0054 A1E0      	    ldi r26,hlo8(67108)
+ 166 0056 8150      	    1:subi r24,1
+ 167 0058 9040      	    sbci r25,0
+ 168 005a A040      	    sbci r26,0
+ 169 005c 01F4      	    brne 1b
+ 170 005e 00C0      		rjmp .
+ 171 0060 0000      		nop
+ 172               	.L2:
+ 173               	.LBE9:
+ 174               	.LBE8:
+ 175               		.stabs	"sixteen_bit.c",132,0,0,.Ltext4
+ 176               	.Ltext4:
+  55:sixteen_bit.c ****     //delay(55000); //time for conversion to happen after stop command.  tried 25000, too little 35
+  56:sixteen_bit.c ****     //uart_puts_p(PSTR(" address sent "));
+  57:sixteen_bit.c ****     i2c_start_wait(address+I2C_READ);   // set device address and read mode
+ 177               		.stabn	68,0,57,.LM8-.LFBB1
+ 178               	.LM8:
+ 179 0062 8E2D      		mov r24,r14
+ 180 0064 8F5F      		subi r24,lo8(-(1))
+ 181 0066 0E94 0000 		call i2c_start_wait
+  58:sixteen_bit.c ****     uint16_t ret1 = i2c_readAck();// for what is read from i2c
+ 182               		.stabn	68,0,58,.LM9-.LFBB1
+ 183               	.LM9:
+ 184 006a 0E94 0000 		call i2c_readAck
+ 185 006e C82E      		mov r12,r24
+ 186 0070 DD24      		clr r13
+  59:sixteen_bit.c **** 	uint16_t ret2 = i2c_readAck();// for i2c
+ 187               		.stabn	68,0,59,.LM10-.LFBB1
+GAS LISTING /tmp/cc6EQGYe.s 			page 8
+
+
+ 188               	.LM10:
+ 189 0072 0E94 0000 		call i2c_readAck
+ 190 0076 A82E      		mov r10,r24
+  60:sixteen_bit.c **** 	uint8_t ret3 = i2c_readNak();// for i2c
+ 191               		.stabn	68,0,60,.LM11-.LFBB1
+ 192               	.LM11:
+ 193 0078 0E94 0000 		call i2c_readNak
+ 194 007c B82E      		mov r11,r24
+  61:sixteen_bit.c ****     i2c_stop();
+ 195               		.stabn	68,0,61,.LM12-.LFBB1
+ 196               	.LM12:
+ 197 007e 0E94 0000 		call i2c_stop
+  62:sixteen_bit.c **** 					//bit checks here:
+  63:sixteen_bit.c **** 				if (bitisset(ret1,7) && bitisset(ret1,6) )
+ 198               		.stabn	68,0,63,.LM13-.LFBB1
+ 199               	.LM13:
+ 200 0082 7601      		movw r14,r12
+ 201 0084 00E0      		ldi r16,lo8(0)
+ 202 0086 10E0      		ldi r17,hi8(0)
+ 203 0088 C801      		movw r24,r16
+ 204 008a B701      		movw r22,r14
+ 205 008c 47E0      		ldi r20,lo8(7)
+ 206 008e 0E94 0000 		call bitisset
+ 207 0092 8823      		tst r24
+ 208 0094 01F0      		breq .L3
+ 209               		.stabn	68,0,63,.LM14-.LFBB1
+ 210               	.LM14:
+ 211 0096 C801      		movw r24,r16
+ 212 0098 B701      		movw r22,r14
+ 213 009a 46E0      		ldi r20,lo8(6)
+ 214 009c 0E94 0000 		call bitisset
+ 215 00a0 8823      		tst r24
+ 216 00a2 01F0      		breq .L3
+  64:sixteen_bit.c **** 					{
+  65:sixteen_bit.c **** 						ADC_volts = 0xffff;
+ 217               		.stabn	68,0,65,.LM15-.LFBB1
+ 218               	.LM15:
+ 219 00a4 8FEF      		ldi r24,lo8(-1)
+ 220 00a6 9FEF      		ldi r25,hi8(-1)
+ 221 00a8 9093 0000 		sts ADC_volts+1,r25
+ 222 00ac 8093 0000 		sts ADC_volts,r24
+ 223 00b0 00C0      		rjmp .L7
+ 224               	.L3:
+  66:sixteen_bit.c **** 						return(2);//over fullscale +
+  67:sixteen_bit.c **** 					}
+  68:sixteen_bit.c **** 				if (!bitisset(ret1,7) && !bitisset(ret1,6) )
+ 225               		.stabn	68,0,68,.LM16-.LFBB1
+ 226               	.LM16:
+ 227 00b2 C801      		movw r24,r16
+ 228 00b4 B701      		movw r22,r14
+ 229 00b6 47E0      		ldi r20,lo8(7)
+ 230 00b8 0E94 0000 		call bitisset
+ 231 00bc 8823      		tst r24
+ 232 00be 01F4      		brne .L5
+ 233               		.stabn	68,0,68,.LM17-.LFBB1
+ 234               	.LM17:
+ 235 00c0 C801      		movw r24,r16
+GAS LISTING /tmp/cc6EQGYe.s 			page 9
+
+
+ 236 00c2 B701      		movw r22,r14
+ 237 00c4 46E0      		ldi r20,lo8(6)
+ 238 00c6 0E94 0000 		call bitisset
+ 239 00ca 8823      		tst r24
+ 240 00cc 01F4      		brne .+2
+ 241 00ce 00C0      		rjmp .L7
+ 242               	.L5:
+  59:sixteen_bit.c **** 	uint16_t ret2 = i2c_readAck();// for i2c
+ 243               		.stabn	68,0,59,.LM18-.LFBB1
+ 244               	.LM18:
+ 245 00d0 8A2C      		mov r8,r10
+ 246 00d2 9924      		clr r9
+  69:sixteen_bit.c **** 					{
+  70:sixteen_bit.c **** 						return(2);//over fullscale -
+  71:sixteen_bit.c **** 					}
+  72:sixteen_bit.c **** 				if (bitisset(ret1,7) && !bitisset(ret1,6) )
+ 247               		.stabn	68,0,72,.LM19-.LFBB1
+ 248               	.LM19:
+ 249 00d4 C801      		movw r24,r16
+ 250 00d6 B701      		movw r22,r14
+ 251 00d8 47E0      		ldi r20,lo8(7)
+ 252 00da 0E94 0000 		call bitisset
+ 253 00de 8823      		tst r24
+ 254 00e0 01F0      		breq .L6
+ 255               		.stabn	68,0,72,.LM20-.LFBB1
+ 256               	.LM20:
+ 257 00e2 C801      		movw r24,r16
+ 258 00e4 B701      		movw r22,r14
+ 259 00e6 46E0      		ldi r20,lo8(6)
+ 260 00e8 0E94 0000 		call bitisset
+ 261 00ec 8823      		tst r24
+ 262 00ee 01F4      		brne .L6
+  73:sixteen_bit.c **** 					{
+  74:sixteen_bit.c **** 						//bits 21...6 from 24 bit adc register, read into 3 registers in avr, ret1,2,3
+  75:sixteen_bit.c **** 						//which is bits 5,4,3,2,1,0 of ret1 (ret1<<10);//ret1 left shifted 10 sopts
+  76:sixteen_bit.c **** 						//	and			7.....0 of ret2 (ret2<<2);//ret2 left shifted 2 sopts
+  77:sixteen_bit.c **** 						//	and			7,6 of ret3 (ret3>>6);//ret3 right shifted 6 sopts
+  78:sixteen_bit.c **** 					ADC_volts = ((ret1<<10)+(ret2<<2)+(ret3>>6));
+ 263               		.stabn	68,0,78,.LM21-.LFBB1
+ 264               	.LM21:
+ 265 00f0 C401      		movw r24,r8
+ 266 00f2 880F      		lsl r24
+ 267 00f4 991F      		rol r25
+ 268 00f6 880F      		lsl r24
+ 269 00f8 991F      		rol r25
+ 270 00fa DC2C      		mov r13,r12
+ 271 00fc CC24      		clr r12
+ 272 00fe DD0C      		lsl r13
+ 273 0100 DD0C      		lsl r13
+ 274 0102 8C0D      		add r24,r12
+ 275 0104 9D1D      		adc r25,r13
+ 276 0106 B294      		swap r11
+ 277 0108 B694      		lsr r11
+ 278 010a B694      		lsr r11
+ 279 010c 53E0      		ldi r21,lo8(3)
+ 280 010e B522      		and r11,r21
+ 281 0110 8B0D      		add r24,r11
+GAS LISTING /tmp/cc6EQGYe.s 			page 10
+
+
+ 282 0112 911D      		adc r25,__zero_reg__
+ 283 0114 9093 0000 		sts ADC_volts+1,r25
+ 284 0118 8093 0000 		sts ADC_volts,r24
+ 285 011c 00C0      		rjmp .L9
+ 286               	.L6:
+  79:sixteen_bit.c **** 					return(0);//positive volatge +
+  80:sixteen_bit.c **** 					}
+  81:sixteen_bit.c **** 				if (!bitisset(ret1,7) && bitisset(ret1,6) )
+ 287               		.stabn	68,0,81,.LM22-.LFBB1
+ 288               	.LM22:
+ 289 011e C801      		movw r24,r16
+ 290 0120 B701      		movw r22,r14
+ 291 0122 47E0      		ldi r20,lo8(7)
+ 292 0124 0E94 0000 		call bitisset
+ 293 0128 8823      		tst r24
+ 294 012a 01F4      		brne .L9
+ 295               		.stabn	68,0,81,.LM23-.LFBB1
+ 296               	.LM23:
+ 297 012c C801      		movw r24,r16
+ 298 012e B701      		movw r22,r14
+ 299 0130 46E0      		ldi r20,lo8(6)
+ 300 0132 0E94 0000 		call bitisset
+ 301 0136 8823      		tst r24
+ 302 0138 01F0      		breq .L9
+  82:sixteen_bit.c **** 					{
+  83:sixteen_bit.c **** 					ADC_volts = ~((ret1<<10)+(ret2<<2)+(ret3>>6));//flip all bits, pg15 ltc2487 datasheet
+ 303               		.stabn	68,0,83,.LM24-.LFBB1
+ 304               	.LM24:
+ 305 013a C401      		movw r24,r8
+ 306 013c 880F      		lsl r24
+ 307 013e 991F      		rol r25
+ 308 0140 880F      		lsl r24
+ 309 0142 991F      		rol r25
+ 310 0144 DC2C      		mov r13,r12
+ 311 0146 CC24      		clr r12
+ 312 0148 DD0C      		lsl r13
+ 313 014a DD0C      		lsl r13
+ 314 014c 8C0D      		add r24,r12
+ 315 014e 9D1D      		adc r25,r13
+ 316 0150 B294      		swap r11
+ 317 0152 B694      		lsr r11
+ 318 0154 B694      		lsr r11
+ 319 0156 23E0      		ldi r18,lo8(3)
+ 320 0158 B222      		and r11,r18
+ 321 015a 8B0D      		add r24,r11
+ 322 015c 911D      		adc r25,__zero_reg__
+ 323 015e 8095      		com r24
+ 324 0160 9095      		com r25
+ 325 0162 9093 0000 		sts ADC_volts+1,r25
+ 326 0166 8093 0000 		sts ADC_volts,r24
+  84:sixteen_bit.c **** 					if (ADC_volts != 0xFF) //don't add 1 if 16 bit reg is full
+ 327               		.stabn	68,0,84,.LM25-.LFBB1
+ 328               	.LM25:
+ 329 016a 8091 0000 		lds r24,ADC_volts
+ 330 016e 9091 0000 		lds r25,ADC_volts+1
+ 331 0172 8F3F      		cpi r24,255
+ 332 0174 9105      		cpc r25,__zero_reg__
+GAS LISTING /tmp/cc6EQGYe.s 			page 11
+
+
+ 333 0176 01F0      		breq .L10
+  85:sixteen_bit.c **** 						{
+  86:sixteen_bit.c **** 						ADC_volts = ADC_volts + 1;//actual value off by 1, i.e, -1 will be 0, but w/ neg sign
+ 334               		.stabn	68,0,86,.LM26-.LFBB1
+ 335               	.LM26:
+ 336 0178 8091 0000 		lds r24,ADC_volts
+ 337 017c 9091 0000 		lds r25,ADC_volts+1
+ 338 0180 0196      		adiw r24,1
+ 339 0182 9093 0000 		sts ADC_volts+1,r25
+ 340 0186 8093 0000 		sts ADC_volts,r24
+ 341 018a 00C0      		rjmp .L10
+ 342               	.L7:
+  70:sixteen_bit.c **** 						return(2);//over fullscale -
+ 343               		.stabn	68,0,70,.LM27-.LFBB1
+ 344               	.LM27:
+ 345 018c 82E0      		ldi r24,lo8(2)
+ 346 018e 00C0      		rjmp .L4
+ 347               	.L9:
+  87:sixteen_bit.c **** 						} 	
+  88:sixteen_bit.c **** 					return(1);//negative voltage -
+  89:sixteen_bit.c **** 					}	
+  90:sixteen_bit.c **** 		return(0);
+ 348               		.stabn	68,0,90,.LM28-.LFBB1
+ 349               	.LM28:
+ 350 0190 80E0      		ldi r24,lo8(0)
+ 351 0192 00C0      		rjmp .L4
+ 352               	.L10:
+  88:sixteen_bit.c **** 					return(1);//negative voltage -
+ 353               		.stabn	68,0,88,.LM29-.LFBB1
+ 354               	.LM29:
+ 355 0194 81E0      		ldi r24,lo8(1)
+ 356               	.L4:
+ 357               	/* epilogue start */
+  91:sixteen_bit.c **** }
+ 358               		.stabn	68,0,91,.LM30-.LFBB1
+ 359               	.LM30:
+ 360 0196 0F90      		pop __tmp_reg__
+ 361 0198 CF91      		pop r28
+ 362 019a DF91      		pop r29
+ 363 019c 1F91      		pop r17
+ 364 019e 0F91      		pop r16
+ 365 01a0 FF90      		pop r15
+ 366 01a2 EF90      		pop r14
+ 367 01a4 DF90      		pop r13
+ 368 01a6 CF90      		pop r12
+ 369 01a8 BF90      		pop r11
+ 370 01aa AF90      		pop r10
+ 371 01ac 9F90      		pop r9
+ 372 01ae 8F90      		pop r8
+ 373 01b0 0895      		ret
+ 374               		.size	i2c_adc, .-i2c_adc
+ 375               		.stabs	"ret1:r(5,4)",64,0,58,12
+ 376               		.stabs	"ret2:r(5,4)",64,0,59,8
+ 377               		.stabs	"ret3:r(5,2)",64,0,60,11
+ 378               		.stabn	192,0,0,.LFBB1-.LFBB1
+ 379               		.stabn	224,0,0,.Lscope1-.LFBB1
+ 380               	.Lscope1:
+GAS LISTING /tmp/cc6EQGYe.s 			page 12
+
+
+ 381               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 382               		.stabd	78,0,0
+ 383               		.stabs	"read_adc:F(5,5)",36,0,32,read_adc
+ 384               		.stabs	"ADC_A:P(5,2)",64,0,32,24
+ 385               		.stabs	"ADC_B:P(5,2)",64,0,32,22
+ 386               		.stabs	"ADC_C:P(5,2)",64,0,32,20
+ 387               	.global	read_adc
+ 388               		.type	read_adc, @function
+ 389               	read_adc:
+ 390               		.stabd	46,0,0
+  33:sixteen_bit.c **** {
+ 391               		.stabn	68,0,33,.LM31-.LFBB2
+ 392               	.LM31:
+ 393               	.LFBB2:
+ 394               	/* prologue: function */
+ 395               	/* frame size = 0 */
+ 396               	/* stack size = 0 */
+ 397               	.L__stack_usage = 0
+  35:sixteen_bit.c ****     uint8_t sign = i2c_adc(ADC_A, ADC_B, ADC_C);//get value from ADC
+ 398               		.stabn	68,0,35,.LM32-.LFBB2
+ 399               	.LM32:
+ 400 01b2 0E94 0000 		call i2c_adc
+  36:sixteen_bit.c ****     if (sign == 2){return 65536;}//overscale
+ 401               		.stabn	68,0,36,.LM33-.LFBB2
+ 402               	.LM33:
+ 403 01b6 8230      		cpi r24,lo8(2)
+ 404 01b8 01F0      		breq .L14
+  37:sixteen_bit.c ****     if (sign == 1){ADC_signed = (0-ADC_volts);}//negative result
+ 405               		.stabn	68,0,37,.LM34-.LFBB2
+ 406               	.LM34:
+ 407 01ba 8130      		cpi r24,lo8(1)
+ 408 01bc 01F4      		brne .L13
+  37:sixteen_bit.c ****     if (sign == 1){ADC_signed = (0-ADC_volts);}//negative result
+ 409               		.stabn	68,0,37,.LM35-.LFBB2
+ 410               	.LM35:
+ 411 01be 2091 0000 		lds r18,ADC_volts
+ 412 01c2 3091 0000 		lds r19,ADC_volts+1
+ 413 01c6 3095      		com r19
+ 414 01c8 2195      		neg r18
+ 415 01ca 3F4F      		sbci r19,lo8(-1)
+ 416 01cc 00C0      		rjmp .L16
+ 417               	.L13:
+  38:sixteen_bit.c ****     if (sign == 0){ADC_signed = ADC_volts;}//positive result
+ 418               		.stabn	68,0,38,.LM36-.LFBB2
+ 419               	.LM36:
+ 420 01ce 8823      		tst r24
+ 421 01d0 01F4      		brne .L15
+  38:sixteen_bit.c ****     if (sign == 0){ADC_signed = ADC_volts;}//positive result
+ 422               		.stabn	68,0,38,.LM37-.LFBB2
+ 423               	.LM37:
+ 424 01d2 2091 0000 		lds r18,ADC_volts
+ 425 01d6 3091 0000 		lds r19,ADC_volts+1
+ 426               	.L16:
+ 427 01da 40E0      		ldi r20,lo8(0)
+ 428 01dc 50E0      		ldi r21,hi8(0)
+ 429 01de 00C0      		rjmp .L12
+ 430               	.L14:
+GAS LISTING /tmp/cc6EQGYe.s 			page 13
+
+
+  36:sixteen_bit.c ****     if (sign == 2){return 65536;}//overscale
+ 431               		.stabn	68,0,36,.LM38-.LFBB2
+ 432               	.LM38:
+ 433 01e0 20E0      		ldi r18,lo8(65536)
+ 434 01e2 30E0      		ldi r19,hi8(65536)
+ 435 01e4 41E0      		ldi r20,hlo8(65536)
+ 436 01e6 50E0      		ldi r21,hhi8(65536)
+ 437 01e8 00C0      		rjmp .L12
+ 438               	.L15:
+  34:sixteen_bit.c ****     int32_t ADC_signed = 0; 
+ 439               		.stabn	68,0,34,.LM39-.LFBB2
+ 440               	.LM39:
+ 441 01ea 20E0      		ldi r18,lo8(0)
+ 442 01ec 30E0      		ldi r19,hi8(0)
+ 443 01ee A901      		movw r20,r18
+ 444               	.L12:
+  40:sixteen_bit.c **** }
+ 445               		.stabn	68,0,40,.LM40-.LFBB2
+ 446               	.LM40:
+ 447 01f0 B901      		movw r22,r18
+ 448 01f2 CA01      		movw r24,r20
+ 449               	/* epilogue start */
+ 450 01f4 0895      		ret
+ 451               		.size	read_adc, .-read_adc
+ 452               		.stabs	"ADC_signed:r(5,5)",64,0,34,18
+ 453               		.stabs	"sign:r(5,2)",64,0,35,24
+ 454               		.stabn	192,0,0,.LFBB2-.LFBB2
+ 455               		.stabn	224,0,0,.Lscope2-.LFBB2
+ 456               	.Lscope2:
+ 457               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 458               		.stabd	78,0,0
+ 459               		.comm ADC_volts,2,1
+ 460               		.stabs	"ADC_volts:G(0,16)=B(5,4)",32,0,25,0
+ 461               		.stabs	"",100,0,0,.Letext0
+ 462               	.Letext0:
+ 463               	.global __do_clear_bss
+GAS LISTING /tmp/cc6EQGYe.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 sixteen_bit.c
+     /tmp/cc6EQGYe.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/cc6EQGYe.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/cc6EQGYe.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/cc6EQGYe.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/cc6EQGYe.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc6EQGYe.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc6EQGYe.s:92     .text:0000000000000000 i2c_adc
+                            *COM*:0000000000000002 ADC_volts
+     /tmp/cc6EQGYe.s:389    .text:00000000000001b2 read_adc
+
+UNDEFINED SYMBOLS
+i2c_start_wait
+i2c_write
+i2c_stop
+i2c_readAck
+i2c_readNak
+bitisset
+__do_clear_bss

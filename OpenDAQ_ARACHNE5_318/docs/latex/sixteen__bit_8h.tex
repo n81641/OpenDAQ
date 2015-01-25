@@ -1,0 +1,66 @@
+\hypertarget{sixteen__bit_8h}{\section{sixteen\-\_\-bit.\-h File Reference}
+\label{sixteen__bit_8h}\index{sixteen\-\_\-bit.\-h@{sixteen\-\_\-bit.\-h}}
+}
+
+
+\subsection{Description}
+Header for \hyperlink{sixteen__bit_8c}{sixteen\-\_\-bit.\-c}. I2c commands to setup and read L\-T\-C2495 Delta Sigma A\-D\-C by Linear Technology \begin{DoxyAuthor}{Author}
+Karl Walter. karl (at) waltech.\-com 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2014 Karl Walter. karl (at) waltech.\-com. This software is distributed under the M\-I\-T License. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\-Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\-:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. The software is provided \char`\"{}as is\char`\"{}, without warranty of any kind expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{sixteen__bit_8h_source}{sixteen\-\_\-bit.\-h}.
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\-\_\-t \hyperlink{sixteen__bit_8h_a8078fb1f3ba5d17173709055c431acec}{read\-\_\-adc} (uint8\-\_\-t A\-D\-C\-\_\-\-A, uint8\-\_\-t A\-D\-C\-\_\-\-B, uint8\-\_\-t A\-D\-C\-\_\-\-C)
+\item 
+uint8\-\_\-t \hyperlink{sixteen__bit_8h_a4b30fdcf24d39176e46b917018e925ec}{i2c\-\_\-adc} (uint8\-\_\-t address, uint8\-\_\-t mux1, uint8\-\_\-t mux2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sixteen__bit_8h_a4b30fdcf24d39176e46b917018e925ec}{\index{sixteen\-\_\-bit.\-h@{sixteen\-\_\-bit.\-h}!i2c\-\_\-adc@{i2c\-\_\-adc}}
+\index{i2c\-\_\-adc@{i2c\-\_\-adc}!sixteen_bit.h@{sixteen\-\_\-bit.\-h}}
+\subsubsection[{i2c\-\_\-adc}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t i2c\-\_\-adc (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{address, }
+\item[{uint8\-\_\-t}]{mux1, }
+\item[{uint8\-\_\-t}]{mux2}
+\end{DoxyParamCaption}
+)}}\label{sixteen__bit_8h_a4b30fdcf24d39176e46b917018e925ec}
+
+
+Definition at line 46 of file sixteen\-\_\-bit.\-c.
+
+\hypertarget{sixteen__bit_8h_a8078fb1f3ba5d17173709055c431acec}{\index{sixteen\-\_\-bit.\-h@{sixteen\-\_\-bit.\-h}!read\-\_\-adc@{read\-\_\-adc}}
+\index{read\-\_\-adc@{read\-\_\-adc}!sixteen_bit.h@{sixteen\-\_\-bit.\-h}}
+\subsubsection[{read\-\_\-adc}]{\setlength{\rightskip}{0pt plus 5cm}int32\-\_\-t read\-\_\-adc (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{A\-D\-C\-\_\-\-A, }
+\item[{uint8\-\_\-t}]{A\-D\-C\-\_\-\-B, }
+\item[{uint8\-\_\-t}]{A\-D\-C\-\_\-\-C}
+\end{DoxyParamCaption}
+)}}\label{sixteen__bit_8h_a8078fb1f3ba5d17173709055c431acec}
+
+
+Reads the value from the I2c A\-D\-C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em 3} & channel numbers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+signed value or 65536 if overscale 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file sixteen\-\_\-bit.\-c.
+

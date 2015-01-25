@@ -1,0 +1,2494 @@
+GAS LISTING /tmp/ccz5qAam.s 			page 1
+
+
+   1               		.file	"inputs.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_Fumitron_318/",100,0,2,.Ltext0
+   9               		.stabs	"inputs.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"inputs.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  31               		.stabs	"size_t:t(3,1)=(0,4)",128,0,211,0
+  32               		.stabs	"wchar_t:t(3,2)=(0,1)",128,0,323,0
+  33               		.stabn	162,0,0,0
+  34               		.stabs	"div_t:t(2,1)=(2,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+  35               		.stabs	"ldiv_t:t(2,3)=(2,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+  36               		.stabs	"__compar_fn_t:t(2,5)=(2,6)=*(2,7)=f(0,1)",128,0,80,0
+  37               		.stabn	162,0,0,0
+  38               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  39               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  40               		.stabs	"int8_t:t(5,1)=(0,10)",128,0,121,0
+  41               		.stabs	"uint8_t:t(5,2)=(0,11)",128,0,122,0
+  42               		.stabs	"int16_t:t(5,3)=(0,1)",128,0,123,0
+  43               		.stabs	"uint16_t:t(5,4)=(0,4)",128,0,124,0
+  44               		.stabs	"int32_t:t(5,5)=(0,3)",128,0,125,0
+  45               		.stabs	"uint32_t:t(5,6)=(0,5)",128,0,126,0
+  46               		.stabs	"int64_t:t(5,7)=(0,6)",128,0,128,0
+  47               		.stabs	"uint64_t:t(5,8)=(0,7)",128,0,129,0
+  48               		.stabs	"intptr_t:t(5,9)=(5,3)",128,0,142,0
+  49               		.stabs	"uintptr_t:t(5,10)=(5,4)",128,0,147,0
+  50               		.stabs	"int_least8_t:t(5,11)=(5,1)",128,0,159,0
+  51               		.stabs	"uint_least8_t:t(5,12)=(5,2)",128,0,164,0
+  52               		.stabs	"int_least16_t:t(5,13)=(5,3)",128,0,169,0
+  53               		.stabs	"uint_least16_t:t(5,14)=(5,4)",128,0,174,0
+  54               		.stabs	"int_least32_t:t(5,15)=(5,5)",128,0,179,0
+  55               		.stabs	"uint_least32_t:t(5,16)=(5,6)",128,0,184,0
+  56               		.stabs	"int_least64_t:t(5,17)=(5,7)",128,0,192,0
+  57               		.stabs	"uint_least64_t:t(5,18)=(5,8)",128,0,199,0
+GAS LISTING /tmp/ccz5qAam.s 			page 2
+
+
+  58               		.stabs	"int_fast8_t:t(5,19)=(5,1)",128,0,213,0
+  59               		.stabs	"uint_fast8_t:t(5,20)=(5,2)",128,0,218,0
+  60               		.stabs	"int_fast16_t:t(5,21)=(5,3)",128,0,223,0
+  61               		.stabs	"uint_fast16_t:t(5,22)=(5,4)",128,0,228,0
+  62               		.stabs	"int_fast32_t:t(5,23)=(5,5)",128,0,233,0
+  63               		.stabs	"uint_fast32_t:t(5,24)=(5,6)",128,0,238,0
+  64               		.stabs	"int_fast64_t:t(5,25)=(5,7)",128,0,246,0
+  65               		.stabs	"uint_fast64_t:t(5,26)=(5,8)",128,0,253,0
+  66               		.stabs	"intmax_t:t(5,27)=(5,7)",128,0,273,0
+  67               		.stabs	"uintmax_t:t(5,28)=(5,8)",128,0,278,0
+  68               		.stabn	162,0,0,0
+  69               		.stabn	162,0,0,0
+  70               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/pgmspace.h",130,0,0,0
+  71               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  72               		.stabs	"int_farptr_t:t(7,1)=(5,5)",128,0,77,0
+  73               		.stabs	"uint_farptr_t:t(7,2)=(5,6)",128,0,81,0
+  74               		.stabn	162,0,0,0
+  75               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  76               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  77               		.stabs	"__fuse_t:t(9,1)=(9,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  78               		.stabn	162,0,0,0
+  79               		.stabn	162,0,0,0
+  80               		.stabs	"prog_void:t(6,1)=(6,2)=(6,2)",128,0,217,0
+  81               		.stabs	"prog_char:t(6,3)=(6,4)=@s8;r(6,4);0;255;",128,0,218,0
+  82               		.stabs	"prog_uchar:t(6,5)=(6,6)=@s8;r(6,6);0;255;",128,0,219,0
+  83               		.stabs	"prog_int8_t:t(6,7)=(6,8)=(0,10)",128,0,221,0
+  84               		.stabs	"prog_uint8_t:t(6,9)=(6,10)=(0,11)",128,0,222,0
+  85               		.stabs	"prog_int16_t:t(6,11)=(6,12)=(0,1)",128,0,223,0
+  86               		.stabs	"prog_uint16_t:t(6,13)=(6,14)=(0,4)",128,0,224,0
+  87               		.stabs	"prog_int32_t:t(6,15)=(6,16)=(0,3)",128,0,225,0
+  88               		.stabs	"prog_uint32_t:t(6,17)=(6,18)=(0,5)",128,0,226,0
+  89               		.stabs	"prog_int64_t:t(6,19)=(6,20)=(0,6)",128,0,228,0
+  90               		.stabs	"prog_uint64_t:t(6,21)=(6,22)=(0,7)",128,0,229,0
+  91               		.stabn	162,0,0,0
+  92               		.stabs	"SHT25.h",130,0,0,0
+  93               		.stabs	"hum_dat:T(10,1)=s4SHT_temp:(5,4),0,16;SHT_rh:(5,4),16,16;;",128,0,0,0
+  94               		.stabn	162,0,0,0
+  95               		.stabs	"i2c_rtc.h",130,0,0,0
+  96               		.stabs	"RTC:t(11,1)=(11,2)=s8year:(5,4),0,16;month:(5,2),16,8;mday:(5,2),24,8;wday:(5,2),32,8;hour
+  97               		.stabn	162,0,0,0
+  98               		.stabs	"sample_data:T(1,1)=s760name:(1,2)=ar(1,3)=r(1,3);0;0177777;;0;19;(1,4)=ar(1,3);0;7;(0,2),0
+  99               		.stabn	162,0,0,0
+ 100               		.data
+ 101               	.LC1:
+ 102 0000 2C00      		.string	","
+ 103               	.LC0:
+ 104 0002 00        		.string	""
+ 105 0003 00        		.string	""
+ 106 0004 00        		.string	""
+ 107 0005 00        		.string	""
+ 108 0006 00        		.string	""
+ 109 0007 00        		.string	""
+ 110 0008 00        		.string	""
+ 111 0009 00        		.string	""
+ 112 000a 00        		.string	""
+ 113 000b 00        		.string	""
+ 114 000c 00        		.string	""
+GAS LISTING /tmp/ccz5qAam.s 			page 3
+
+
+ 115 000d 00        		.string	""
+ 116 000e 00        		.string	""
+ 117               		.text
+ 118               		.stabs	"calc_and_string:F(0,15)",36,0,33,calc_and_string
+ 119               		.stabs	"value:P(5,5)",64,0,33,10
+ 120               		.stabs	"sample:P(0,16)=*(1,1)",64,0,33,14
+ 121               		.stabs	"decimal:P(5,2)",64,0,33,17
+ 122               	.global	calc_and_string
+ 123               		.type	calc_and_string, @function
+ 124               	calc_and_string:
+ 125               		.stabd	46,0,0
+   1:inputs.c      **** ///
+   2:inputs.c      **** /// \file inputs.c
+   3:inputs.c      **** /// \brief All the input functions, in order for sampling reside here  
+   4:inputs.c      **** /// \details Add, delete, order blocks for each input needed.
+   5:inputs.c      **** /// \author University of Illinois Department and Environmental and Civil Engineering
+   6:inputs.c      **** /// \copyright Copyright (c) 2014 University of Illinois Department and Environmental and Civil Eng
+   7:inputs.c      **** ///This software is distributed under the MIT License. 
+   8:inputs.c      **** ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software an
+   9:inputs.c      **** ///associated documentation files (the "Software"), to deal in the Software without restriction, 
+  10:inputs.c      **** ///including without limitation the rights to use, copy, modify, merge, publish, distribute, sublic
+  11:inputs.c      **** ///and/or sell copies of the Software, and to permit persons to whom the Software is furnished to d
+  12:inputs.c      **** ///subject to the following conditions:
+  13:inputs.c      **** ///
+  14:inputs.c      **** ///\copyright The above copyright notice and this permission notice shall be included in all copies
+  15:inputs.c      **** ///portions of the Software.
+  16:inputs.c      **** ///The software is provided "as is", without warranty of any kind expressed or implied, 
+  17:inputs.c      **** ///including but not limited to the warranties of merchantability, fitness for a particular 
+  18:inputs.c      **** ///purpose and noninfringement.  In no event shall the authors or copyright holders be liable 
+  19:inputs.c      **** ///for any claim, damages or other liability whether in an action of contract, tort or 
+  20:inputs.c      **** ///otherwise, arising from, out of or in connection with the software or the use or other 
+  21:inputs.c      **** ///dealings in the software.
+  22:inputs.c      **** ///
+  23:inputs.c      **** #include "inputs.h"
+  24:inputs.c      **** #include "i2cmaster.h"
+  25:inputs.c      **** #include "utilities.h"
+  26:inputs.c      **** #include "suart.h"
+  27:inputs.c      **** #include "uart.h" 
+  28:inputs.c      **** 
+  29:inputs.c      **** 
+  30:inputs.c      **** 
+  31:inputs.c      **** 
+  32:inputs.c      **** 
+  33:inputs.c      **** void calc_and_string(int32_t value, struct sample_data *sample,uint8_t decimal)
+  34:inputs.c      **** {
+ 126               		.stabn	68,0,34,.LM0-.LFBB1
+ 127               	.LM0:
+ 128               	.LFBB1:
+ 129 0000 4F92      		push r4
+ 130 0002 5F92      		push r5
+ 131 0004 6F92      		push r6
+ 132 0006 7F92      		push r7
+ 133 0008 8F92      		push r8
+ 134 000a 9F92      		push r9
+ 135 000c AF92      		push r10
+ 136 000e BF92      		push r11
+ 137 0010 CF92      		push r12
+GAS LISTING /tmp/ccz5qAam.s 			page 4
+
+
+ 138 0012 DF92      		push r13
+ 139 0014 EF92      		push r14
+ 140 0016 FF92      		push r15
+ 141 0018 0F93      		push r16
+ 142 001a 1F93      		push r17
+ 143 001c DF93      		push r29
+ 144 001e CF93      		push r28
+ 145 0020 CDB7      		in r28,__SP_L__
+ 146 0022 DEB7      		in r29,__SP_H__
+ 147 0024 2C97      		sbiw r28,12
+ 148 0026 0FB6      		in __tmp_reg__,__SREG__
+ 149 0028 F894      		cli
+ 150 002a DEBF      		out __SP_H__,r29
+ 151 002c 0FBE      		out __SREG__,__tmp_reg__
+ 152 002e CDBF      		out __SP_L__,r28
+ 153               	/* prologue: function */
+ 154               	/* frame size = 12 */
+ 155               	/* stack size = 28 */
+ 156               	.L__stack_usage = 28
+ 157 0030 5B01      		movw r10,r22
+ 158 0032 6C01      		movw r12,r24
+ 159 0034 7A01      		movw r14,r20
+ 160 0036 122F      		mov r17,r18
+  35:inputs.c      ****     float temp;
+  36:inputs.c      ****     float newval;
+  37:inputs.c      ****     char temps[12] = "\0\0\0\0\0\0\0\0\0\0\0\0";
+ 161               		.stabn	68,0,37,.LM1-.LFBB1
+ 162               	.LM1:
+ 163 0038 DE01      		movw r26,r28
+ 164 003a 1196      		adiw r26,1
+ 165 003c E0E0      		ldi r30,lo8(.LC0)
+ 166 003e F0E0      		ldi r31,hi8(.LC0)
+ 167 0040 8CE0      		ldi r24,lo8(12)
+ 168               	.L2:
+ 169 0042 0190      		ld r0,Z+
+ 170 0044 0D92      		st X+,r0
+ 171 0046 8150      		subi r24,lo8(-(-1))
+ 172 0048 01F4      		brne .L2
+  38:inputs.c      ****     if (value < 65535L)//not overscale, apply scale and offset
+ 173               		.stabn	68,0,38,.LM2-.LFBB1
+ 174               	.LM2:
+ 175 004a 8FEF      		ldi r24,lo8(65535)
+ 176 004c A816      		cp r10,r24
+ 177 004e 8FEF      		ldi r24,hi8(65535)
+ 178 0050 B806      		cpc r11,r24
+ 179 0052 80E0      		ldi r24,hlo8(65535)
+ 180 0054 C806      		cpc r12,r24
+ 181 0056 80E0      		ldi r24,hhi8(65535)
+ 182 0058 D806      		cpc r13,r24
+ 183 005a 04F0      		brlt .+2
+ 184 005c 00C0      		rjmp .L4
+  39:inputs.c      ****     {
+  40:inputs.c      ****         //get the calval:
+  41:inputs.c      ****         temp = strtod(sample->calval[sample->number_inputs] ,0);
+ 185               		.stabn	68,0,41,.LM3-.LFBB1
+ 186               	.LM3:
+ 187 005e 9701      		movw r18,r14
+GAS LISTING /tmp/ccz5qAam.s 			page 5
+
+
+ 188 0060 2056      		subi r18,lo8(-(160))
+ 189 0062 3F4F      		sbci r19,hi8(-(160))
+ 190 0064 60EE      		ldi r22,lo8(480)
+ 191 0066 862E      		mov r8,r22
+ 192 0068 61E0      		ldi r22,hi8(480)
+ 193 006a 962E      		mov r9,r22
+ 194 006c 8E0C      		add r8,r14
+ 195 006e 9F1C      		adc r9,r15
+ 196 0070 F401      		movw r30,r8
+ 197 0072 8081      		ld r24,Z
+ 198 0074 90E0      		ldi r25,lo8(0)
+ 199 0076 53E0      		ldi r21,3
+ 200 0078 880F      	1:	lsl r24
+ 201 007a 991F      		rol r25
+ 202 007c 5A95      		dec r21
+ 203 007e 01F4      		brne 1b
+ 204 0080 820F      		add r24,r18
+ 205 0082 931F      		adc r25,r19
+ 206 0084 60E0      		ldi r22,lo8(0)
+ 207 0086 70E0      		ldi r23,hi8(0)
+ 208 0088 0E94 0000 		call strtod
+ 209 008c 2B01      		movw r4,r22
+ 210 008e 3C01      		movw r6,r24
+  42:inputs.c      ****         newval = value * temp;
+ 211               		.stabn	68,0,42,.LM4-.LFBB1
+ 212               	.LM4:
+ 213 0090 C601      		movw r24,r12
+ 214 0092 B501      		movw r22,r10
+ 215 0094 0E94 0000 		call __floatsisf
+ 216 0098 A301      		movw r20,r6
+ 217 009a 9201      		movw r18,r4
+ 218 009c 0E94 0000 		call __mulsf3
+ 219 00a0 062F      		mov r16,r22
+ 220 00a2 472E      		mov r4,r23
+ 221 00a4 A82E      		mov r10,r24
+ 222 00a6 D92E      		mov r13,r25
+  43:inputs.c      ****         temp = strtod(sample->offset[sample->number_inputs] ,0);
+ 223               		.stabn	68,0,43,.LM5-.LFBB1
+ 224               	.LM5:
+ 225 00a8 9701      		movw r18,r14
+ 226 00aa 205C      		subi r18,lo8(-(320))
+ 227 00ac 3E4F      		sbci r19,hi8(-(320))
+ 228 00ae F401      		movw r30,r8
+ 229 00b0 8081      		ld r24,Z
+ 230 00b2 90E0      		ldi r25,lo8(0)
+ 231 00b4 43E0      		ldi r20,3
+ 232 00b6 880F      	1:	lsl r24
+ 233 00b8 991F      		rol r25
+ 234 00ba 4A95      		dec r20
+ 235 00bc 01F4      		brne 1b
+ 236 00be 820F      		add r24,r18
+ 237 00c0 931F      		adc r25,r19
+ 238 00c2 60E0      		ldi r22,lo8(0)
+ 239 00c4 70E0      		ldi r23,hi8(0)
+ 240 00c6 0E94 0000 		call strtod
+ 241 00ca 9B01      		movw r18,r22
+ 242 00cc AC01      		movw r20,r24
+GAS LISTING /tmp/ccz5qAam.s 			page 6
+
+
+  44:inputs.c      ****         newval = newval + temp;
+ 243               		.stabn	68,0,44,.LM6-.LFBB1
+ 244               	.LM6:
+ 245 00ce 602F      		mov r22,r16
+ 246 00d0 742D      		mov r23,r4
+ 247 00d2 8A2D      		mov r24,r10
+ 248 00d4 9D2D      		mov r25,r13
+ 249 00d6 0E94 0000 		call __addsf3
+ 250 00da 00C0      		rjmp .L3
+ 251               	.L4:
+  45:inputs.c      ****     }
+  46:inputs.c      ****     else newval = 65536UL;
+ 252               		.stabn	68,0,46,.LM7-.LFBB1
+ 253               	.LM7:
+ 254 00dc 60E0      		ldi r22,lo8(0)
+ 255 00de 70E0      		ldi r23,lo8(0)
+ 256 00e0 80E8      		ldi r24,lo8(-128)
+ 257 00e2 97E4      		ldi r25,lo8(71)
+ 258               	.L3:
+  47:inputs.c      ****     dtostrf(newval,1,decimal,temps);//dtostrf(newval, min_width, digits after decimal, temps);
+ 259               		.stabn	68,0,47,.LM8-.LFBB1
+ 260               	.LM8:
+ 261 00e4 41E0      		ldi r20,lo8(1)
+ 262 00e6 212F      		mov r18,r17
+ 263 00e8 5E01      		movw r10,r28
+ 264 00ea 0894      		sec
+ 265 00ec A11C      		adc r10,__zero_reg__
+ 266 00ee B11C      		adc r11,__zero_reg__
+ 267 00f0 8501      		movw r16,r10
+ 268 00f2 0E94 0000 		call dtostrf
+  48:inputs.c      ****     strcat(sample->serialout,temps);
+ 269               		.stabn	68,0,48,.LM9-.LFBB1
+ 270               	.LM9:
+ 271 00f6 8DEF      		ldi r24,lo8(509)
+ 272 00f8 91E0      		ldi r25,hi8(509)
+ 273 00fa E80E      		add r14,r24
+ 274 00fc F91E      		adc r15,r25
+ 275 00fe C701      		movw r24,r14
+ 276 0100 B501      		movw r22,r10
+ 277 0102 0E94 0000 		call strcat
+  49:inputs.c      ****     strcat(sample->serialout,","); //add a comma
+ 278               		.stabn	68,0,49,.LM10-.LFBB1
+ 279               	.LM10:
+ 280 0106 C701      		movw r24,r14
+ 281 0108 60E0      		ldi r22,lo8(.LC1)
+ 282 010a 70E0      		ldi r23,hi8(.LC1)
+ 283 010c 0E94 0000 		call strcat
+ 284               	/* epilogue start */
+  50:inputs.c      **** }
+ 285               		.stabn	68,0,50,.LM11-.LFBB1
+ 286               	.LM11:
+ 287 0110 2C96      		adiw r28,12
+ 288 0112 0FB6      		in __tmp_reg__,__SREG__
+ 289 0114 F894      		cli
+ 290 0116 DEBF      		out __SP_H__,r29
+ 291 0118 0FBE      		out __SREG__,__tmp_reg__
+ 292 011a CDBF      		out __SP_L__,r28
+GAS LISTING /tmp/ccz5qAam.s 			page 7
+
+
+ 293 011c CF91      		pop r28
+ 294 011e DF91      		pop r29
+ 295 0120 1F91      		pop r17
+ 296 0122 0F91      		pop r16
+ 297 0124 FF90      		pop r15
+ 298 0126 EF90      		pop r14
+ 299 0128 DF90      		pop r13
+ 300 012a CF90      		pop r12
+ 301 012c BF90      		pop r11
+ 302 012e AF90      		pop r10
+ 303 0130 9F90      		pop r9
+ 304 0132 8F90      		pop r8
+ 305 0134 7F90      		pop r7
+ 306 0136 6F90      		pop r6
+ 307 0138 5F90      		pop r5
+ 308 013a 4F90      		pop r4
+ 309 013c 0895      		ret
+ 310               		.size	calc_and_string, .-calc_and_string
+ 311               		.stabs	"temps:(0,17)=ar(1,3);0;11;(0,2)",128,0,37,1
+ 312               		.stabn	192,0,0,.LFBB1-.LFBB1
+ 313               		.stabn	224,0,0,.Lscope1-.LFBB1
+ 314               	.Lscope1:
+ 315               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 316               		.stabd	78,0,0
+ 317               		.stabs	"sample_all_channels:F(0,15)",36,0,54,sample_all_channels
+ 318               		.stabs	"input_function:P(5,2)",64,0,54,15
+ 319               		.stabs	"sample:P(0,16)",64,0,54,8
+ 320               	.global	sample_all_channels
+ 321               		.type	sample_all_channels, @function
+ 322               	sample_all_channels:
+ 323               		.stabd	46,0,0
+  51:inputs.c      **** 
+  52:inputs.c      **** 
+  53:inputs.c      **** ///this samples all the channels
+  54:inputs.c      **** void sample_all_channels(uint8_t input_function, struct sample_data *sample)
+  55:inputs.c      **** {
+ 324               		.stabn	68,0,55,.LM12-.LFBB2
+ 325               	.LM12:
+ 326               	.LFBB2:
+ 327 013e 8F92      		push r8
+ 328 0140 9F92      		push r9
+ 329 0142 AF92      		push r10
+ 330 0144 BF92      		push r11
+ 331 0146 CF92      		push r12
+ 332 0148 DF92      		push r13
+ 333 014a FF92      		push r15
+ 334 014c 0F93      		push r16
+ 335 014e 1F93      		push r17
+ 336 0150 DF93      		push r29
+ 337 0152 CF93      		push r28
+ 338 0154 0F92      		push __tmp_reg__
+ 339 0156 CDB7      		in r28,__SP_L__
+ 340 0158 DEB7      		in r29,__SP_H__
+ 341               	/* prologue: function */
+ 342               	/* frame size = 1 */
+ 343               	/* stack size = 12 */
+ 344               	.L__stack_usage = 12
+GAS LISTING /tmp/ccz5qAam.s 			page 8
+
+
+ 345 015a F82E      		mov r15,r24
+ 346 015c 4B01      		movw r8,r22
+  56:inputs.c      ****     
+  57:inputs.c      ****     int32_t value = 0;//value from input
+  58:inputs.c      ****     sample->number_inputs = 0;
+ 347               		.stabn	68,0,58,.LM13-.LFBB2
+ 348               	.LM13:
+ 349 015e 8B01      		movw r16,r22
+ 350 0160 0052      		subi r16,lo8(-(480))
+ 351 0162 1E4F      		sbci r17,hi8(-(480))
+ 352 0164 F801      		movw r30,r16
+ 353 0166 1082      		st Z,__zero_reg__
+  59:inputs.c      ****     uint8_t report_chan =0;
+  60:inputs.c      ****     if (input_function == REPORT)
+ 354               		.stabn	68,0,60,.LM14-.LFBB2
+ 355               	.LM14:
+ 356 0168 8930      		cpi r24,lo8(9)
+ 357 016a 01F0      		breq .L57
+  61:inputs.c      ****     {
+  62:inputs.c      ****         input_function = SAMPLE;
+  63:inputs.c      ****         report_chan =1;
+  64:inputs.c      ****     }
+  65:inputs.c      **** 
+  66:inputs.c      **** 
+  67:inputs.c      **** 
+  68:inputs.c      **** 
+  69:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////0
+  70:inputs.c      **** // CO sample, sixteen bit channel, differential, init via I2c :
+  71:inputs.c      ****     switch(input_function)
+ 358               		.stabn	68,0,71,.LM15-.LFBB2
+ 359               	.LM15:
+ 360 016c 8130      		cpi r24,lo8(1)
+ 361 016e 01F0      		breq .L59
+ 362 0170 8A30      		cpi r24,lo8(10)
+ 363 0172 01F0      		breq .+2
+ 364 0174 00C0      		rjmp .L63
+ 365 0176 00C0      		rjmp .L69
+ 366               	.L57:
+  63:inputs.c      ****         report_chan =1;
+ 367               		.stabn	68,0,63,.LM16-.LFBB2
+ 368               	.LM16:
+ 369 0178 F1E0      		ldi r31,lo8(1)
+ 370 017a F983      		std Y+1,r31
+ 371 017c 00C0      		rjmp .L7
+ 372               	.L59:
+  59:inputs.c      ****     uint8_t report_chan =0;
+ 373               		.stabn	68,0,59,.LM17-.LFBB2
+ 374               	.LM17:
+ 375 017e 1982      		std Y+1,__zero_reg__
+ 376               	.L7:
+  72:inputs.c      ****     {
+  73:inputs.c      ****         case SAMPLE :
+  74:inputs.c      **** 			toggle_led( ); 
+ 377               		.stabn	68,0,74,.LM18-.LFBB2
+ 378               	.LM18:
+ 379 0180 0E94 0000 		call toggle_led
+  75:inputs.c      ****             value = read_adc(0x28, 0xA0, 0x88);//ch 0,1 diff 
+GAS LISTING /tmp/ccz5qAam.s 			page 9
+
+
+ 380               		.stabn	68,0,75,.LM19-.LFBB2
+ 381               	.LM19:
+ 382 0184 88E2      		ldi r24,lo8(40)
+ 383 0186 60EA      		ldi r22,lo8(-96)
+ 384 0188 48E8      		ldi r20,lo8(-120)
+ 385 018a 0E94 0000 		call read_adc
+  76:inputs.c      ****             calc_and_string(value, sample,1);
+ 386               		.stabn	68,0,76,.LM20-.LFBB2
+ 387               	.LM20:
+ 388 018e A401      		movw r20,r8
+ 389 0190 21E0      		ldi r18,lo8(1)
+ 390 0192 0E94 0000 		call calc_and_string
+  77:inputs.c      ****             if (report_chan ==1)//report channel run
+ 391               		.stabn	68,0,77,.LM21-.LFBB2
+ 392               	.LM21:
+ 393 0196 2981      		ldd r18,Y+1
+ 394 0198 2130      		cpi r18,lo8(1)
+ 395 019a 01F0      		breq .+2
+ 396 019c 00C0      		rjmp .L60
+  78:inputs.c      ****             { 
+  79:inputs.c      ****                 uart_putc('#');
+ 397               		.stabn	68,0,79,.LM22-.LFBB2
+ 398               	.LM22:
+ 399 019e 83E2      		ldi r24,lo8(35)
+ 400 01a0 0E94 0000 		call uart_putc
+  80:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 401               		.stabn	68,0,80,.LM23-.LFBB2
+ 402               	.LM23:
+ 403 01a4 F401      		movw r30,r8
+ 404 01a6 E052      		subi r30,lo8(-(480))
+ 405 01a8 FE4F      		sbci r31,hi8(-(480))
+ 406 01aa 8081      		ld r24,Z
+ 407 01ac 90E0      		ldi r25,lo8(0)
+ 408 01ae 0E94 0000 		call uart_putw_dec
+  81:inputs.c      ****                 uart_putc(' ');
+ 409               		.stabn	68,0,81,.LM24-.LFBB2
+ 410               	.LM24:
+ 411 01b2 80E2      		ldi r24,lo8(32)
+ 412 01b4 0E94 0000 		call uart_putc
+ 413 01b8 00C0      		rjmp .L65
+ 414               	.L69:
+  82:inputs.c      ****             }
+  83:inputs.c      ****             break;
+  84:inputs.c      ****         case TEST   :
+  85:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 415               		.stabn	68,0,85,.LM25-.LFBB2
+ 416               	.LM25:
+ 417 01ba FB01      		movw r30,r22
+ 418 01bc EF51      		subi r30,lo8(-(481))
+ 419 01be FE4F      		sbci r31,hi8(-(481))
+ 420 01c0 1082      		st Z,__zero_reg__
+  86:inputs.c      ****             i2c_init();
+ 421               		.stabn	68,0,86,.LM26-.LFBB2
+ 422               	.LM26:
+ 423 01c2 0E94 0000 		call i2c_init
+  87:inputs.c      ****             i2c_timeout_flag = 0;
+ 424               		.stabn	68,0,87,.LM27-.LFBB2
+GAS LISTING /tmp/ccz5qAam.s 			page 10
+
+
+ 425               	.LM27:
+ 426 01c6 1092 0000 		sts i2c_timeout_flag,__zero_reg__
+  88:inputs.c      ****             start_timer0();//starts the timeout timer
+ 427               		.stabn	68,0,88,.LM28-.LFBB2
+ 428               	.LM28:
+ 429 01ca 0E94 0000 		call start_timer0
+  89:inputs.c      ****             Init_CO();
+ 430               		.stabn	68,0,89,.LM29-.LFBB2
+ 431               	.LM29:
+ 432 01ce 0E94 0000 		call Init_CO
+  90:inputs.c      ****             TCCR0 = 0;// stop counter
+ 433               		.stabn	68,0,90,.LM30-.LFBB2
+ 434               	.LM30:
+ 435 01d2 13BE      		out 83-32,__zero_reg__
+  91:inputs.c      ****             sample->disabled[sample->number_inputs] = i2c_timeout_flag; //enable or diasble channel
+ 436               		.stabn	68,0,91,.LM31-.LFBB2
+ 437               	.LM31:
+ 438 01d4 8091 0000 		lds r24,i2c_timeout_flag
+ 439 01d8 F801      		movw r30,r16
+ 440 01da 9081      		ld r25,Z
+ 441 01dc F401      		movw r30,r8
+ 442 01de E90F      		add r30,r25
+ 443 01e0 F11D      		adc r31,__zero_reg__
+ 444 01e2 EF51      		subi r30,lo8(-(481))
+ 445 01e4 FE4F      		sbci r31,hi8(-(481))
+ 446 01e6 8083      		st Z,r24
+  92:inputs.c      ****             i2c_timeout_flag = 0;
+ 447               		.stabn	68,0,92,.LM32-.LFBB2
+ 448               	.LM32:
+ 449 01e8 1092 0000 		sts i2c_timeout_flag,__zero_reg__
+  93:inputs.c      ****             uart_puts_p(PSTR("#test result ch "));uart_putw_dec(sample->number_inputs); uart_putc('
+ 450               		.stabn	68,0,93,.LM33-.LFBB2
+ 451               	.LM33:
+ 452 01ec 80E0      		ldi r24,lo8(__c.1924)
+ 453 01ee 90E0      		ldi r25,hi8(__c.1924)
+ 454 01f0 0E94 0000 		call uart_puts_p
+ 455 01f4 F801      		movw r30,r16
+ 456 01f6 8081      		ld r24,Z
+ 457 01f8 90E0      		ldi r25,lo8(0)
+ 458 01fa 0E94 0000 		call uart_putw_dec
+ 459 01fe 8DE3      		ldi r24,lo8(61)
+ 460 0200 0E94 0000 		call uart_putc
+  94:inputs.c      ****             uart_putw_dec(sample->disabled[sample->number_inputs]);uart_putc('\n');
+ 461               		.stabn	68,0,94,.LM34-.LFBB2
+ 462               	.LM34:
+ 463 0204 F801      		movw r30,r16
+ 464 0206 8081      		ld r24,Z
+ 465 0208 F401      		movw r30,r8
+ 466 020a E80F      		add r30,r24
+ 467 020c F11D      		adc r31,__zero_reg__
+ 468 020e EF51      		subi r30,lo8(-(481))
+ 469 0210 FE4F      		sbci r31,hi8(-(481))
+ 470 0212 8081      		ld r24,Z
+ 471 0214 90E0      		ldi r25,lo8(0)
+ 472 0216 0E94 0000 		call uart_putw_dec
+ 473 021a 8AE0      		ldi r24,lo8(10)
+ 474 021c 0E94 0000 		call uart_putc
+GAS LISTING /tmp/ccz5qAam.s 			page 11
+
+
+ 475               	.L63:
+  59:inputs.c      ****     uint8_t report_chan =0;
+ 476               		.stabn	68,0,59,.LM35-.LFBB2
+ 477               	.LM35:
+ 478 0220 1982      		std Y+1,__zero_reg__
+ 479 0222 00C0      		rjmp .L8
+ 480               	.L60:
+  77:inputs.c      ****             if (report_chan ==1)//report channel run
+ 481               		.stabn	68,0,77,.LM36-.LFBB2
+ 482               	.LM36:
+ 483 0224 1982      		std Y+1,__zero_reg__
+ 484               	.L65:
+ 485 0226 FF24      		clr r15
+ 486 0228 F394      		inc r15
+ 487               	.L8:
+  95:inputs.c      ****             break;
+  96:inputs.c      ****     }
+  97:inputs.c      ****     sample->number_inputs ++ ;
+ 488               		.stabn	68,0,97,.LM37-.LFBB2
+ 489               	.LM37:
+ 490 022a 8401      		movw r16,r8
+ 491 022c 0052      		subi r16,lo8(-(480))
+ 492 022e 1E4F      		sbci r17,hi8(-(480))
+ 493 0230 F801      		movw r30,r16
+ 494 0232 8081      		ld r24,Z
+ 495 0234 8F5F      		subi r24,lo8(-(1))
+ 496 0236 8083      		st Z,r24
+  98:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+  99:inputs.c      **** 
+ 100:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////1
+ 101:inputs.c      ****     // CO bkg, sixteen bit channel, differential :
+ 102:inputs.c      ****     switch(input_function)
+ 497               		.stabn	68,0,102,.LM38-.LFBB2
+ 498               	.LM38:
+ 499 0238 FF2D      		mov r31,r15
+ 500 023a F130      		cpi r31,lo8(1)
+ 501 023c 01F0      		breq .L11
+ 502 023e FA30      		cpi r31,lo8(10)
+ 503 0240 01F4      		brne .L10
+ 504 0242 00C0      		rjmp .L70
+ 505               	.L11:
+ 103:inputs.c      ****     {
+ 104:inputs.c      ****         case SAMPLE  :
+ 105:inputs.c      **** 			toggle_led( ); 
+ 506               		.stabn	68,0,105,.LM39-.LFBB2
+ 507               	.LM39:
+ 508 0244 0E94 0000 		call toggle_led
+ 106:inputs.c      ****             value = read_adc(0x28, 0xA1, 0x88);//ch 2,3 diff 
+ 509               		.stabn	68,0,106,.LM40-.LFBB2
+ 510               	.LM40:
+ 511 0248 88E2      		ldi r24,lo8(40)
+ 512 024a 61EA      		ldi r22,lo8(-95)
+ 513 024c 48E8      		ldi r20,lo8(-120)
+ 514 024e 0E94 0000 		call read_adc
+ 107:inputs.c      ****             calc_and_string(value, sample,1);
+ 515               		.stabn	68,0,107,.LM41-.LFBB2
+ 516               	.LM41:
+GAS LISTING /tmp/ccz5qAam.s 			page 12
+
+
+ 517 0252 A401      		movw r20,r8
+ 518 0254 21E0      		ldi r18,lo8(1)
+ 519 0256 0E94 0000 		call calc_and_string
+ 108:inputs.c      ****             if (report_chan ==1)//report channel run
+ 520               		.stabn	68,0,108,.LM42-.LFBB2
+ 521               	.LM42:
+ 522 025a 2981      		ldd r18,Y+1
+ 523 025c 2130      		cpi r18,lo8(1)
+ 524 025e 01F4      		brne .L10
+ 109:inputs.c      ****             { 
+ 110:inputs.c      ****                 uart_putc('#');
+ 525               		.stabn	68,0,110,.LM43-.LFBB2
+ 526               	.LM43:
+ 527 0260 83E2      		ldi r24,lo8(35)
+ 528 0262 0E94 0000 		call uart_putc
+ 111:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 529               		.stabn	68,0,111,.LM44-.LFBB2
+ 530               	.LM44:
+ 531 0266 F801      		movw r30,r16
+ 532 0268 8081      		ld r24,Z
+ 533 026a 90E0      		ldi r25,lo8(0)
+ 534 026c 0E94 0000 		call uart_putw_dec
+ 112:inputs.c      ****                 uart_putc(' ');
+ 535               		.stabn	68,0,112,.LM45-.LFBB2
+ 536               	.LM45:
+ 537 0270 80E2      		ldi r24,lo8(32)
+ 538 0272 0E94 0000 		call uart_putc
+ 539 0276 00C0      		rjmp .L10
+ 540               	.L70:
+ 113:inputs.c      ****             }
+ 114:inputs.c      ****             break;
+ 115:inputs.c      ****         case TEST   :
+ 116:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 541               		.stabn	68,0,116,.LM46-.LFBB2
+ 542               	.LM46:
+ 543 0278 F401      		movw r30,r8
+ 544 027a E80F      		add r30,r24
+ 545 027c F11D      		adc r31,__zero_reg__
+ 546 027e EF51      		subi r30,lo8(-(481))
+ 547 0280 FE4F      		sbci r31,hi8(-(481))
+ 548 0282 1082      		st Z,__zero_reg__
+ 117:inputs.c      ****             i2c_init();
+ 549               		.stabn	68,0,117,.LM47-.LFBB2
+ 550               	.LM47:
+ 551 0284 0E94 0000 		call i2c_init
+ 552               	.L10:
+ 118:inputs.c      ****             break;
+ 119:inputs.c      ****     }
+ 120:inputs.c      ****     sample->number_inputs ++ ;
+ 553               		.stabn	68,0,120,.LM48-.LFBB2
+ 554               	.LM48:
+ 555 0288 8401      		movw r16,r8
+ 556 028a 0052      		subi r16,lo8(-(480))
+ 557 028c 1E4F      		sbci r17,hi8(-(480))
+ 558 028e F801      		movw r30,r16
+ 559 0290 8081      		ld r24,Z
+ 560 0292 8F5F      		subi r24,lo8(-(1))
+GAS LISTING /tmp/ccz5qAam.s 			page 13
+
+
+ 561 0294 8083      		st Z,r24
+ 121:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 122:inputs.c      **** 
+ 123:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////2
+ 124:inputs.c      ****     // C02 sample via serial communication: 
+ 125:inputs.c      **** 
+ 126:inputs.c      ****     switch(input_function)
+ 562               		.stabn	68,0,126,.LM49-.LFBB2
+ 563               	.LM49:
+ 564 0296 FF2D      		mov r31,r15
+ 565 0298 F130      		cpi r31,lo8(1)
+ 566 029a 01F0      		breq .L14
+ 567 029c FA30      		cpi r31,lo8(10)
+ 568 029e 01F0      		breq .+2
+ 569 02a0 00C0      		rjmp .L13
+ 570 02a2 00C0      		rjmp .L71
+ 571               	.L14:
+ 127:inputs.c      ****     {
+ 128:inputs.c      ****         case SAMPLE  :
+ 129:inputs.c      **** 			toggle_led( );
+ 572               		.stabn	68,0,129,.LM50-.LFBB2
+ 573               	.LM50:
+ 574 02a4 0E94 0000 		call toggle_led
+ 130:inputs.c      ****             if(sample->disabled[sample->number_inputs] == 1)//don't sample if disabled
+ 575               		.stabn	68,0,130,.LM51-.LFBB2
+ 576               	.LM51:
+ 577 02a8 F801      		movw r30,r16
+ 578 02aa 8081      		ld r24,Z
+ 579 02ac F401      		movw r30,r8
+ 580 02ae E80F      		add r30,r24
+ 581 02b0 F11D      		adc r31,__zero_reg__
+ 582 02b2 EF51      		subi r30,lo8(-(481))
+ 583 02b4 FE4F      		sbci r31,hi8(-(481))
+ 584 02b6 8081      		ld r24,Z
+ 585 02b8 8130      		cpi r24,lo8(1)
+ 586 02ba 01F4      		brne .L16
+ 131:inputs.c      ****             {
+ 132:inputs.c      ****                 calc_and_string(0, sample,1);
+ 587               		.stabn	68,0,132,.LM52-.LFBB2
+ 588               	.LM52:
+ 589 02bc 60E0      		ldi r22,lo8(0)
+ 590 02be 70E0      		ldi r23,hi8(0)
+ 591 02c0 CB01      		movw r24,r22
+ 592 02c2 A401      		movw r20,r8
+ 593 02c4 21E0      		ldi r18,lo8(1)
+ 594 02c6 0E94 0000 		call calc_and_string
+ 133:inputs.c      ****                 break;
+ 595               		.stabn	68,0,133,.LM53-.LFBB2
+ 596               	.LM53:
+ 597 02ca 00C0      		rjmp .L13
+ 598               	.L16:
+ 134:inputs.c      ****             }
+ 135:inputs.c      ****             value = get_CO2(1);//gets value form suart1
+ 599               		.stabn	68,0,135,.LM54-.LFBB2
+ 600               	.LM54:
+ 601 02cc 81E0      		ldi r24,lo8(1)
+ 602 02ce 0E94 0000 		call get_CO2
+GAS LISTING /tmp/ccz5qAam.s 			page 14
+
+
+ 603 02d2 BC01      		movw r22,r24
+ 604 02d4 80E0      		ldi r24,lo8(0)
+ 605 02d6 90E0      		ldi r25,hi8(0)
+ 136:inputs.c      ****             calc_and_string(value, sample,0);
+ 606               		.stabn	68,0,136,.LM55-.LFBB2
+ 607               	.LM55:
+ 608 02d8 A401      		movw r20,r8
+ 609 02da 20E0      		ldi r18,lo8(0)
+ 610 02dc 0E94 0000 		call calc_and_string
+ 137:inputs.c      ****             if (report_chan ==1)//report channel run
+ 611               		.stabn	68,0,137,.LM56-.LFBB2
+ 612               	.LM56:
+ 613 02e0 F981      		ldd r31,Y+1
+ 614 02e2 F130      		cpi r31,lo8(1)
+ 615 02e4 01F0      		breq .+2
+ 616 02e6 00C0      		rjmp .L13
+ 138:inputs.c      ****             { 
+ 139:inputs.c      ****                 uart_putc('#');
+ 617               		.stabn	68,0,139,.LM57-.LFBB2
+ 618               	.LM57:
+ 619 02e8 83E2      		ldi r24,lo8(35)
+ 620 02ea 0E94 0000 		call uart_putc
+ 140:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 621               		.stabn	68,0,140,.LM58-.LFBB2
+ 622               	.LM58:
+ 623 02ee F801      		movw r30,r16
+ 624 02f0 8081      		ld r24,Z
+ 625 02f2 90E0      		ldi r25,lo8(0)
+ 626 02f4 0E94 0000 		call uart_putw_dec
+ 141:inputs.c      ****                 uart_putc(' ');
+ 627               		.stabn	68,0,141,.LM59-.LFBB2
+ 628               	.LM59:
+ 629 02f8 80E2      		ldi r24,lo8(32)
+ 630 02fa 00C0      		rjmp .L66
+ 631               	.L71:
+ 142:inputs.c      ****             }
+ 143:inputs.c      ****             break;
+ 144:inputs.c      ****         case TEST           ://test channel
+ 145:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 632               		.stabn	68,0,145,.LM60-.LFBB2
+ 633               	.LM60:
+ 634 02fc F401      		movw r30,r8
+ 635 02fe E80F      		add r30,r24
+ 636 0300 F11D      		adc r31,__zero_reg__
+ 637 0302 EF51      		subi r30,lo8(-(481))
+ 638 0304 FE4F      		sbci r31,hi8(-(481))
+ 639 0306 1082      		st Z,__zero_reg__
+ 146:inputs.c      ****             init_CO2(1);
+ 640               		.stabn	68,0,146,.LM61-.LFBB2
+ 641               	.LM61:
+ 642 0308 81E0      		ldi r24,lo8(1)
+ 643 030a 0E94 0000 		call init_CO2
+ 147:inputs.c      ****             suart_timedout_flag = 0; DDRC |= (1<<6); PORTC &=~ (1<<6); //set flag pin low
+ 644               		.stabn	68,0,147,.LM62-.LFBB2
+ 645               	.LM62:
+ 646 030e 1092 0000 		sts suart_timedout_flag,__zero_reg__
+ 647 0312 A69A      		sbi 52-32,6
+GAS LISTING /tmp/ccz5qAam.s 			page 15
+
+
+ 648 0314 AE98      		cbi 53-32,6
+ 148:inputs.c      ****             start_timer0();//starts the timeout timer
+ 649               		.stabn	68,0,148,.LM63-.LFBB2
+ 650               	.LM63:
+ 651 0316 0E94 0000 		call start_timer0
+ 149:inputs.c      ****             get_CO2(1);
+ 652               		.stabn	68,0,149,.LM64-.LFBB2
+ 653               	.LM64:
+ 654 031a 81E0      		ldi r24,lo8(1)
+ 655 031c 0E94 0000 		call get_CO2
+ 150:inputs.c      ****             TCCR0 = 0;// stop counter
+ 656               		.stabn	68,0,150,.LM65-.LFBB2
+ 657               	.LM65:
+ 658 0320 13BE      		out 83-32,__zero_reg__
+ 151:inputs.c      ****             sample->disabled[sample->number_inputs] = suart_timedout_flag; //enable or diasble chan
+ 659               		.stabn	68,0,151,.LM66-.LFBB2
+ 660               	.LM66:
+ 661 0322 8091 0000 		lds r24,suart_timedout_flag
+ 662 0326 F801      		movw r30,r16
+ 663 0328 9081      		ld r25,Z
+ 664 032a F401      		movw r30,r8
+ 665 032c E90F      		add r30,r25
+ 666 032e F11D      		adc r31,__zero_reg__
+ 667 0330 EF51      		subi r30,lo8(-(481))
+ 668 0332 FE4F      		sbci r31,hi8(-(481))
+ 669 0334 8083      		st Z,r24
+ 152:inputs.c      ****             suart_timedout_flag = 0; PORTC &=~ (1<<6); //set flag pin low
+ 670               		.stabn	68,0,152,.LM67-.LFBB2
+ 671               	.LM67:
+ 672 0336 1092 0000 		sts suart_timedout_flag,__zero_reg__
+ 673 033a AE98      		cbi 53-32,6
+ 153:inputs.c      ****             uart_puts_p(PSTR("#test result ch "));uart_putw_dec(sample->number_inputs); uart_putc('
+ 674               		.stabn	68,0,153,.LM68-.LFBB2
+ 675               	.LM68:
+ 676 033c 80E0      		ldi r24,lo8(__c.1932)
+ 677 033e 90E0      		ldi r25,hi8(__c.1932)
+ 678 0340 0E94 0000 		call uart_puts_p
+ 679 0344 F801      		movw r30,r16
+ 680 0346 8081      		ld r24,Z
+ 681 0348 90E0      		ldi r25,lo8(0)
+ 682 034a 0E94 0000 		call uart_putw_dec
+ 683 034e 8DE3      		ldi r24,lo8(61)
+ 684 0350 0E94 0000 		call uart_putc
+ 154:inputs.c      ****             uart_putw_dec(sample->disabled[sample->number_inputs]);uart_putc('\n');
+ 685               		.stabn	68,0,154,.LM69-.LFBB2
+ 686               	.LM69:
+ 687 0354 F801      		movw r30,r16
+ 688 0356 8081      		ld r24,Z
+ 689 0358 F401      		movw r30,r8
+ 690 035a E80F      		add r30,r24
+ 691 035c F11D      		adc r31,__zero_reg__
+ 692 035e EF51      		subi r30,lo8(-(481))
+ 693 0360 FE4F      		sbci r31,hi8(-(481))
+ 694 0362 8081      		ld r24,Z
+ 695 0364 90E0      		ldi r25,lo8(0)
+ 696 0366 0E94 0000 		call uart_putw_dec
+ 697 036a 8AE0      		ldi r24,lo8(10)
+GAS LISTING /tmp/ccz5qAam.s 			page 16
+
+
+ 698               	.L66:
+ 699 036c 0E94 0000 		call uart_putc
+ 700               	.L13:
+ 155:inputs.c      ****             break; 
+ 156:inputs.c      ****     }
+ 157:inputs.c      ****     sample->number_inputs ++ ;
+ 701               		.stabn	68,0,157,.LM70-.LFBB2
+ 702               	.LM70:
+ 703 0370 8401      		movw r16,r8
+ 704 0372 0052      		subi r16,lo8(-(480))
+ 705 0374 1E4F      		sbci r17,hi8(-(480))
+ 706 0376 F801      		movw r30,r16
+ 707 0378 8081      		ld r24,Z
+ 708 037a 8F5F      		subi r24,lo8(-(1))
+ 709 037c 8083      		st Z,r24
+ 158:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 159:inputs.c      ****  
+ 160:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////3
+ 161:inputs.c      ****     // C02 bkg via serial communication: 
+ 162:inputs.c      **** 
+ 163:inputs.c      ****     switch(input_function)
+ 710               		.stabn	68,0,163,.LM71-.LFBB2
+ 711               	.LM71:
+ 712 037e FF2D      		mov r31,r15
+ 713 0380 F130      		cpi r31,lo8(1)
+ 714 0382 01F0      		breq .L18
+ 715 0384 FA30      		cpi r31,lo8(10)
+ 716 0386 01F0      		breq .+2
+ 717 0388 00C0      		rjmp .L17
+ 718 038a 00C0      		rjmp .L72
+ 719               	.L18:
+ 164:inputs.c      ****     {
+ 165:inputs.c      ****         case SAMPLE  :
+ 166:inputs.c      **** 			toggle_led( );
+ 720               		.stabn	68,0,166,.LM72-.LFBB2
+ 721               	.LM72:
+ 722 038c 0E94 0000 		call toggle_led
+ 167:inputs.c      ****             if(sample->disabled[sample->number_inputs] == 1)//don't sample if disabled
+ 723               		.stabn	68,0,167,.LM73-.LFBB2
+ 724               	.LM73:
+ 725 0390 F801      		movw r30,r16
+ 726 0392 8081      		ld r24,Z
+ 727 0394 F401      		movw r30,r8
+ 728 0396 E80F      		add r30,r24
+ 729 0398 F11D      		adc r31,__zero_reg__
+ 730 039a EF51      		subi r30,lo8(-(481))
+ 731 039c FE4F      		sbci r31,hi8(-(481))
+ 732 039e 8081      		ld r24,Z
+ 733 03a0 8130      		cpi r24,lo8(1)
+ 734 03a2 01F4      		brne .L20
+ 168:inputs.c      ****             {
+ 169:inputs.c      ****                 calc_and_string(0, sample,1);
+ 735               		.stabn	68,0,169,.LM74-.LFBB2
+ 736               	.LM74:
+ 737 03a4 60E0      		ldi r22,lo8(0)
+ 738 03a6 70E0      		ldi r23,hi8(0)
+ 739 03a8 CB01      		movw r24,r22
+GAS LISTING /tmp/ccz5qAam.s 			page 17
+
+
+ 740 03aa A401      		movw r20,r8
+ 741 03ac 21E0      		ldi r18,lo8(1)
+ 742 03ae 0E94 0000 		call calc_and_string
+ 170:inputs.c      ****                 break;
+ 743               		.stabn	68,0,170,.LM75-.LFBB2
+ 744               	.LM75:
+ 745 03b2 00C0      		rjmp .L17
+ 746               	.L20:
+ 171:inputs.c      ****             }
+ 172:inputs.c      ****             value = get_CO2(2);//gets value form suart1
+ 747               		.stabn	68,0,172,.LM76-.LFBB2
+ 748               	.LM76:
+ 749 03b4 82E0      		ldi r24,lo8(2)
+ 750 03b6 0E94 0000 		call get_CO2
+ 751 03ba BC01      		movw r22,r24
+ 752 03bc 80E0      		ldi r24,lo8(0)
+ 753 03be 90E0      		ldi r25,hi8(0)
+ 173:inputs.c      ****             calc_and_string(value, sample,0);
+ 754               		.stabn	68,0,173,.LM77-.LFBB2
+ 755               	.LM77:
+ 756 03c0 A401      		movw r20,r8
+ 757 03c2 20E0      		ldi r18,lo8(0)
+ 758 03c4 0E94 0000 		call calc_and_string
+ 174:inputs.c      ****             if (report_chan ==1)//report channel run
+ 759               		.stabn	68,0,174,.LM78-.LFBB2
+ 760               	.LM78:
+ 761 03c8 F981      		ldd r31,Y+1
+ 762 03ca F130      		cpi r31,lo8(1)
+ 763 03cc 01F0      		breq .+2
+ 764 03ce 00C0      		rjmp .L17
+ 175:inputs.c      ****             { 
+ 176:inputs.c      ****                 uart_putc('#');
+ 765               		.stabn	68,0,176,.LM79-.LFBB2
+ 766               	.LM79:
+ 767 03d0 83E2      		ldi r24,lo8(35)
+ 768 03d2 0E94 0000 		call uart_putc
+ 177:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 769               		.stabn	68,0,177,.LM80-.LFBB2
+ 770               	.LM80:
+ 771 03d6 F801      		movw r30,r16
+ 772 03d8 8081      		ld r24,Z
+ 773 03da 90E0      		ldi r25,lo8(0)
+ 774 03dc 0E94 0000 		call uart_putw_dec
+ 178:inputs.c      ****                 uart_putc(' ');
+ 775               		.stabn	68,0,178,.LM81-.LFBB2
+ 776               	.LM81:
+ 777 03e0 80E2      		ldi r24,lo8(32)
+ 778 03e2 00C0      		rjmp .L67
+ 779               	.L72:
+ 179:inputs.c      ****             }
+ 180:inputs.c      ****             break;
+ 181:inputs.c      ****         case TEST           ://test channel
+ 182:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 780               		.stabn	68,0,182,.LM82-.LFBB2
+ 781               	.LM82:
+ 782 03e4 F401      		movw r30,r8
+ 783 03e6 E80F      		add r30,r24
+GAS LISTING /tmp/ccz5qAam.s 			page 18
+
+
+ 784 03e8 F11D      		adc r31,__zero_reg__
+ 785 03ea EF51      		subi r30,lo8(-(481))
+ 786 03ec FE4F      		sbci r31,hi8(-(481))
+ 787 03ee 1082      		st Z,__zero_reg__
+ 183:inputs.c      ****             init_CO2(2);
+ 788               		.stabn	68,0,183,.LM83-.LFBB2
+ 789               	.LM83:
+ 790 03f0 82E0      		ldi r24,lo8(2)
+ 791 03f2 0E94 0000 		call init_CO2
+ 184:inputs.c      ****             suart_timedout_flag = 0; DDRC |= (1<<6); PORTC &=~ (1<<6); //set flag pin low
+ 792               		.stabn	68,0,184,.LM84-.LFBB2
+ 793               	.LM84:
+ 794 03f6 1092 0000 		sts suart_timedout_flag,__zero_reg__
+ 795 03fa A69A      		sbi 52-32,6
+ 796 03fc AE98      		cbi 53-32,6
+ 185:inputs.c      ****             start_timer0();//starts the timeout timer
+ 797               		.stabn	68,0,185,.LM85-.LFBB2
+ 798               	.LM85:
+ 799 03fe 0E94 0000 		call start_timer0
+ 186:inputs.c      ****             get_CO2(2);
+ 800               		.stabn	68,0,186,.LM86-.LFBB2
+ 801               	.LM86:
+ 802 0402 82E0      		ldi r24,lo8(2)
+ 803 0404 0E94 0000 		call get_CO2
+ 187:inputs.c      ****             TCCR0 = 0;// stop counter
+ 804               		.stabn	68,0,187,.LM87-.LFBB2
+ 805               	.LM87:
+ 806 0408 13BE      		out 83-32,__zero_reg__
+ 188:inputs.c      ****             sample->disabled[sample->number_inputs] = suart_timedout_flag; //enable or diasble chan
+ 807               		.stabn	68,0,188,.LM88-.LFBB2
+ 808               	.LM88:
+ 809 040a 8091 0000 		lds r24,suart_timedout_flag
+ 810 040e F801      		movw r30,r16
+ 811 0410 9081      		ld r25,Z
+ 812 0412 F401      		movw r30,r8
+ 813 0414 E90F      		add r30,r25
+ 814 0416 F11D      		adc r31,__zero_reg__
+ 815 0418 EF51      		subi r30,lo8(-(481))
+ 816 041a FE4F      		sbci r31,hi8(-(481))
+ 817 041c 8083      		st Z,r24
+ 189:inputs.c      ****             suart_timedout_flag = 0; PORTC &=~ (1<<6); //set flag pin low
+ 818               		.stabn	68,0,189,.LM89-.LFBB2
+ 819               	.LM89:
+ 820 041e 1092 0000 		sts suart_timedout_flag,__zero_reg__
+ 821 0422 AE98      		cbi 53-32,6
+ 190:inputs.c      ****             uart_puts_p(PSTR("#test result ch "));uart_putw_dec(sample->number_inputs); uart_putc('
+ 822               		.stabn	68,0,190,.LM90-.LFBB2
+ 823               	.LM90:
+ 824 0424 80E0      		ldi r24,lo8(__c.1937)
+ 825 0426 90E0      		ldi r25,hi8(__c.1937)
+ 826 0428 0E94 0000 		call uart_puts_p
+ 827 042c F801      		movw r30,r16
+ 828 042e 8081      		ld r24,Z
+ 829 0430 90E0      		ldi r25,lo8(0)
+ 830 0432 0E94 0000 		call uart_putw_dec
+ 831 0436 8DE3      		ldi r24,lo8(61)
+ 832 0438 0E94 0000 		call uart_putc
+GAS LISTING /tmp/ccz5qAam.s 			page 19
+
+
+ 191:inputs.c      ****             uart_putw_dec(sample->disabled[sample->number_inputs]);uart_putc('\n');
+ 833               		.stabn	68,0,191,.LM91-.LFBB2
+ 834               	.LM91:
+ 835 043c F801      		movw r30,r16
+ 836 043e 8081      		ld r24,Z
+ 837 0440 F401      		movw r30,r8
+ 838 0442 E80F      		add r30,r24
+ 839 0444 F11D      		adc r31,__zero_reg__
+ 840 0446 EF51      		subi r30,lo8(-(481))
+ 841 0448 FE4F      		sbci r31,hi8(-(481))
+ 842 044a 8081      		ld r24,Z
+ 843 044c 90E0      		ldi r25,lo8(0)
+ 844 044e 0E94 0000 		call uart_putw_dec
+ 845 0452 8AE0      		ldi r24,lo8(10)
+ 846               	.L67:
+ 847 0454 0E94 0000 		call uart_putc
+ 848               	.L17:
+ 192:inputs.c      ****             break; 
+ 193:inputs.c      ****     }
+ 194:inputs.c      ****     sample->number_inputs ++ ;
+ 849               		.stabn	68,0,194,.LM92-.LFBB2
+ 850               	.LM92:
+ 851 0458 8401      		movw r16,r8
+ 852 045a 0052      		subi r16,lo8(-(480))
+ 853 045c 1E4F      		sbci r17,hi8(-(480))
+ 854 045e F801      		movw r30,r16
+ 855 0460 8081      		ld r24,Z
+ 856 0462 8F5F      		subi r24,lo8(-(1))
+ 857 0464 8083      		st Z,r24
+ 195:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    ////////////////////// 
+ 196:inputs.c      ****     
+ 197:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////4
+ 198:inputs.c      ****     // PM, sixteen bit channel, differential :
+ 199:inputs.c      ****     switch(input_function)
+ 858               		.stabn	68,0,199,.LM93-.LFBB2
+ 859               	.LM93:
+ 860 0466 FF2D      		mov r31,r15
+ 861 0468 F130      		cpi r31,lo8(1)
+ 862 046a 01F0      		breq .L22
+ 863 046c FA30      		cpi r31,lo8(10)
+ 864 046e 01F4      		brne .L21
+ 865 0470 00C0      		rjmp .L73
+ 866               	.L22:
+ 200:inputs.c      ****     {
+ 201:inputs.c      ****         case SAMPLE  :
+ 202:inputs.c      **** 			toggle_led( ); 
+ 867               		.stabn	68,0,202,.LM94-.LFBB2
+ 868               	.LM94:
+ 869 0472 0E94 0000 		call toggle_led
+ 203:inputs.c      ****             value = read_adc(0x28, 0xA6, 0x88);//ch 12,13 diff 
+ 870               		.stabn	68,0,203,.LM95-.LFBB2
+ 871               	.LM95:
+ 872 0476 88E2      		ldi r24,lo8(40)
+ 873 0478 66EA      		ldi r22,lo8(-90)
+ 874 047a 48E8      		ldi r20,lo8(-120)
+ 875 047c 0E94 0000 		call read_adc
+ 204:inputs.c      ****             calc_and_string(value, sample,0);
+GAS LISTING /tmp/ccz5qAam.s 			page 20
+
+
+ 876               		.stabn	68,0,204,.LM96-.LFBB2
+ 877               	.LM96:
+ 878 0480 A401      		movw r20,r8
+ 879 0482 20E0      		ldi r18,lo8(0)
+ 880 0484 0E94 0000 		call calc_and_string
+ 205:inputs.c      ****             if (report_chan ==1)//report channel run
+ 881               		.stabn	68,0,205,.LM97-.LFBB2
+ 882               	.LM97:
+ 883 0488 2981      		ldd r18,Y+1
+ 884 048a 2130      		cpi r18,lo8(1)
+ 885 048c 01F4      		brne .L21
+ 206:inputs.c      ****             { 
+ 207:inputs.c      ****                 uart_putc('#');
+ 886               		.stabn	68,0,207,.LM98-.LFBB2
+ 887               	.LM98:
+ 888 048e 83E2      		ldi r24,lo8(35)
+ 889 0490 0E94 0000 		call uart_putc
+ 208:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 890               		.stabn	68,0,208,.LM99-.LFBB2
+ 891               	.LM99:
+ 892 0494 F801      		movw r30,r16
+ 893 0496 8081      		ld r24,Z
+ 894 0498 90E0      		ldi r25,lo8(0)
+ 895 049a 0E94 0000 		call uart_putw_dec
+ 209:inputs.c      ****                 uart_putc(' ');
+ 896               		.stabn	68,0,209,.LM100-.LFBB2
+ 897               	.LM100:
+ 898 049e 80E2      		ldi r24,lo8(32)
+ 899 04a0 0E94 0000 		call uart_putc
+ 900 04a4 00C0      		rjmp .L21
+ 901               	.L73:
+ 210:inputs.c      ****             }
+ 211:inputs.c      ****             break;
+ 212:inputs.c      ****         case TEST   :
+ 213:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 902               		.stabn	68,0,213,.LM101-.LFBB2
+ 903               	.LM101:
+ 904 04a6 F401      		movw r30,r8
+ 905 04a8 E80F      		add r30,r24
+ 906 04aa F11D      		adc r31,__zero_reg__
+ 907 04ac EF51      		subi r30,lo8(-(481))
+ 908 04ae FE4F      		sbci r31,hi8(-(481))
+ 909 04b0 1082      		st Z,__zero_reg__
+ 214:inputs.c      ****             i2c_init();
+ 910               		.stabn	68,0,214,.LM102-.LFBB2
+ 911               	.LM102:
+ 912 04b2 0E94 0000 		call i2c_init
+ 913               	.L21:
+ 215:inputs.c      ****             break;
+ 216:inputs.c      ****     }
+ 217:inputs.c      ****     sample->number_inputs ++ ;
+ 914               		.stabn	68,0,217,.LM103-.LFBB2
+ 915               	.LM103:
+ 916 04b6 8401      		movw r16,r8
+ 917 04b8 0052      		subi r16,lo8(-(480))
+ 918 04ba 1E4F      		sbci r17,hi8(-(480))
+ 919 04bc F801      		movw r30,r16
+GAS LISTING /tmp/ccz5qAam.s 			page 21
+
+
+ 920 04be 8081      		ld r24,Z
+ 921 04c0 8F5F      		subi r24,lo8(-(1))
+ 922 04c2 8083      		st Z,r24
+ 218:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 219:inputs.c      ****     
+ 220:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////5
+ 221:inputs.c      ****     // Dilution flow, sixteen bit channel, differential :
+ 222:inputs.c      ****     switch(input_function)
+ 923               		.stabn	68,0,222,.LM104-.LFBB2
+ 924               	.LM104:
+ 925 04c4 FF2D      		mov r31,r15
+ 926 04c6 F130      		cpi r31,lo8(1)
+ 927 04c8 01F0      		breq .L25
+ 928 04ca FA30      		cpi r31,lo8(10)
+ 929 04cc 01F4      		brne .L24
+ 930 04ce 00C0      		rjmp .L74
+ 931               	.L25:
+ 223:inputs.c      ****     {
+ 224:inputs.c      ****         case SAMPLE  :
+ 225:inputs.c      **** 			toggle_led( ); 
+ 932               		.stabn	68,0,225,.LM105-.LFBB2
+ 933               	.LM105:
+ 934 04d0 0E94 0000 		call toggle_led
+ 226:inputs.c      ****             value = read_adc(0x28, 0xA5, 0x88);//ch 10,11 diff 
+ 935               		.stabn	68,0,226,.LM106-.LFBB2
+ 936               	.LM106:
+ 937 04d4 88E2      		ldi r24,lo8(40)
+ 938 04d6 65EA      		ldi r22,lo8(-91)
+ 939 04d8 48E8      		ldi r20,lo8(-120)
+ 940 04da 0E94 0000 		call read_adc
+ 227:inputs.c      ****             calc_and_string(value, sample,0);
+ 941               		.stabn	68,0,227,.LM107-.LFBB2
+ 942               	.LM107:
+ 943 04de A401      		movw r20,r8
+ 944 04e0 20E0      		ldi r18,lo8(0)
+ 945 04e2 0E94 0000 		call calc_and_string
+ 228:inputs.c      ****             if (report_chan ==1)//report channel run
+ 946               		.stabn	68,0,228,.LM108-.LFBB2
+ 947               	.LM108:
+ 948 04e6 2981      		ldd r18,Y+1
+ 949 04e8 2130      		cpi r18,lo8(1)
+ 950 04ea 01F4      		brne .L24
+ 229:inputs.c      ****             { 
+ 230:inputs.c      ****                 uart_putc('#');
+ 951               		.stabn	68,0,230,.LM109-.LFBB2
+ 952               	.LM109:
+ 953 04ec 83E2      		ldi r24,lo8(35)
+ 954 04ee 0E94 0000 		call uart_putc
+ 231:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 955               		.stabn	68,0,231,.LM110-.LFBB2
+ 956               	.LM110:
+ 957 04f2 F801      		movw r30,r16
+ 958 04f4 8081      		ld r24,Z
+ 959 04f6 90E0      		ldi r25,lo8(0)
+ 960 04f8 0E94 0000 		call uart_putw_dec
+ 232:inputs.c      ****                 uart_putc(' ');
+ 961               		.stabn	68,0,232,.LM111-.LFBB2
+GAS LISTING /tmp/ccz5qAam.s 			page 22
+
+
+ 962               	.LM111:
+ 963 04fc 80E2      		ldi r24,lo8(32)
+ 964 04fe 0E94 0000 		call uart_putc
+ 965 0502 00C0      		rjmp .L24
+ 966               	.L74:
+ 233:inputs.c      ****             }
+ 234:inputs.c      ****             break;
+ 235:inputs.c      ****         case TEST   :
+ 236:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 967               		.stabn	68,0,236,.LM112-.LFBB2
+ 968               	.LM112:
+ 969 0504 F401      		movw r30,r8
+ 970 0506 E80F      		add r30,r24
+ 971 0508 F11D      		adc r31,__zero_reg__
+ 972 050a EF51      		subi r30,lo8(-(481))
+ 973 050c FE4F      		sbci r31,hi8(-(481))
+ 974 050e 1082      		st Z,__zero_reg__
+ 237:inputs.c      ****             i2c_init();
+ 975               		.stabn	68,0,237,.LM113-.LFBB2
+ 976               	.LM113:
+ 977 0510 0E94 0000 		call i2c_init
+ 978               	.L24:
+ 238:inputs.c      ****             break;
+ 239:inputs.c      ****     }
+ 240:inputs.c      ****     sample->number_inputs ++ ;
+ 979               		.stabn	68,0,240,.LM114-.LFBB2
+ 980               	.LM114:
+ 981 0514 8401      		movw r16,r8
+ 982 0516 0052      		subi r16,lo8(-(480))
+ 983 0518 1E4F      		sbci r17,hi8(-(480))
+ 984 051a F801      		movw r30,r16
+ 985 051c 8081      		ld r24,Z
+ 986 051e 8F5F      		subi r24,lo8(-(1))
+ 987 0520 8083      		st Z,r24
+ 241:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////    
+ 242:inputs.c      **** 
+ 243:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////6
+ 244:inputs.c      ****     // Teflon flow, sixteen bit channel, differential :
+ 245:inputs.c      ****     switch(input_function)
+ 988               		.stabn	68,0,245,.LM115-.LFBB2
+ 989               	.LM115:
+ 990 0522 FF2D      		mov r31,r15
+ 991 0524 F130      		cpi r31,lo8(1)
+ 992 0526 01F0      		breq .L28
+ 993 0528 FA30      		cpi r31,lo8(10)
+ 994 052a 01F4      		brne .L27
+ 995 052c 00C0      		rjmp .L75
+ 996               	.L28:
+ 246:inputs.c      ****     {
+ 247:inputs.c      ****         case SAMPLE  :
+ 248:inputs.c      **** 			toggle_led( ); 
+ 997               		.stabn	68,0,248,.LM116-.LFBB2
+ 998               	.LM116:
+ 999 052e 0E94 0000 		call toggle_led
+ 249:inputs.c      ****             value = read_adc(0x28, 0xA2, 0x88);//ch 4,5 diff 
+ 1000               		.stabn	68,0,249,.LM117-.LFBB2
+ 1001               	.LM117:
+GAS LISTING /tmp/ccz5qAam.s 			page 23
+
+
+ 1002 0532 88E2      		ldi r24,lo8(40)
+ 1003 0534 62EA      		ldi r22,lo8(-94)
+ 1004 0536 48E8      		ldi r20,lo8(-120)
+ 1005 0538 0E94 0000 		call read_adc
+ 250:inputs.c      ****             calc_and_string(value, sample,0);
+ 1006               		.stabn	68,0,250,.LM118-.LFBB2
+ 1007               	.LM118:
+ 1008 053c A401      		movw r20,r8
+ 1009 053e 20E0      		ldi r18,lo8(0)
+ 1010 0540 0E94 0000 		call calc_and_string
+ 251:inputs.c      ****             if (report_chan ==1)//report channel run
+ 1011               		.stabn	68,0,251,.LM119-.LFBB2
+ 1012               	.LM119:
+ 1013 0544 2981      		ldd r18,Y+1
+ 1014 0546 2130      		cpi r18,lo8(1)
+ 1015 0548 01F4      		brne .L27
+ 252:inputs.c      ****             { 
+ 253:inputs.c      ****                 uart_putc('#');
+ 1016               		.stabn	68,0,253,.LM120-.LFBB2
+ 1017               	.LM120:
+ 1018 054a 83E2      		ldi r24,lo8(35)
+ 1019 054c 0E94 0000 		call uart_putc
+ 254:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 1020               		.stabn	68,0,254,.LM121-.LFBB2
+ 1021               	.LM121:
+ 1022 0550 F801      		movw r30,r16
+ 1023 0552 8081      		ld r24,Z
+ 1024 0554 90E0      		ldi r25,lo8(0)
+ 1025 0556 0E94 0000 		call uart_putw_dec
+ 255:inputs.c      ****                 uart_putc(' ');
+ 1026               		.stabn	68,0,255,.LM122-.LFBB2
+ 1027               	.LM122:
+ 1028 055a 80E2      		ldi r24,lo8(32)
+ 1029 055c 0E94 0000 		call uart_putc
+ 1030 0560 00C0      		rjmp .L27
+ 1031               	.L75:
+ 256:inputs.c      ****             }
+ 257:inputs.c      ****             break;
+ 258:inputs.c      ****         case TEST   :
+ 259:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 1032               		.stabn	68,0,259,.LM123-.LFBB2
+ 1033               	.LM123:
+ 1034 0562 F401      		movw r30,r8
+ 1035 0564 E80F      		add r30,r24
+ 1036 0566 F11D      		adc r31,__zero_reg__
+ 1037 0568 EF51      		subi r30,lo8(-(481))
+ 1038 056a FE4F      		sbci r31,hi8(-(481))
+ 1039 056c 1082      		st Z,__zero_reg__
+ 260:inputs.c      ****             i2c_init();
+ 1040               		.stabn	68,0,260,.LM124-.LFBB2
+ 1041               	.LM124:
+ 1042 056e 0E94 0000 		call i2c_init
+ 1043               	.L27:
+ 261:inputs.c      ****             break;
+ 262:inputs.c      ****     }
+ 263:inputs.c      ****     sample->number_inputs ++ ;
+ 1044               		.stabn	68,0,263,.LM125-.LFBB2
+GAS LISTING /tmp/ccz5qAam.s 			page 24
+
+
+ 1045               	.LM125:
+ 1046 0572 8401      		movw r16,r8
+ 1047 0574 0052      		subi r16,lo8(-(480))
+ 1048 0576 1E4F      		sbci r17,hi8(-(480))
+ 1049 0578 F801      		movw r30,r16
+ 1050 057a 8081      		ld r24,Z
+ 1051 057c 8F5F      		subi r24,lo8(-(1))
+ 1052 057e 8083      		st Z,r24
+ 264:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 265:inputs.c      **** 
+ 266:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////7
+ 267:inputs.c      ****     // Quartz flow, sixteen bit channel, differential :
+ 268:inputs.c      ****     switch(input_function)
+ 1053               		.stabn	68,0,268,.LM126-.LFBB2
+ 1054               	.LM126:
+ 1055 0580 FF2D      		mov r31,r15
+ 1056 0582 F130      		cpi r31,lo8(1)
+ 1057 0584 01F0      		breq .L31
+ 1058 0586 FA30      		cpi r31,lo8(10)
+ 1059 0588 01F4      		brne .L30
+ 1060 058a 00C0      		rjmp .L76
+ 1061               	.L31:
+ 269:inputs.c      ****     {
+ 270:inputs.c      ****         case SAMPLE  :
+ 271:inputs.c      **** 			toggle_led( ); 
+ 1062               		.stabn	68,0,271,.LM127-.LFBB2
+ 1063               	.LM127:
+ 1064 058c 0E94 0000 		call toggle_led
+ 272:inputs.c      ****             value = read_adc(0x28, 0xA3, 0x88);//ch 6,7 diff 
+ 1065               		.stabn	68,0,272,.LM128-.LFBB2
+ 1066               	.LM128:
+ 1067 0590 88E2      		ldi r24,lo8(40)
+ 1068 0592 63EA      		ldi r22,lo8(-93)
+ 1069 0594 48E8      		ldi r20,lo8(-120)
+ 1070 0596 0E94 0000 		call read_adc
+ 273:inputs.c      ****             calc_and_string(value, sample,0);
+ 1071               		.stabn	68,0,273,.LM129-.LFBB2
+ 1072               	.LM129:
+ 1073 059a A401      		movw r20,r8
+ 1074 059c 20E0      		ldi r18,lo8(0)
+ 1075 059e 0E94 0000 		call calc_and_string
+ 274:inputs.c      ****             if (report_chan ==1)//report channel run
+ 1076               		.stabn	68,0,274,.LM130-.LFBB2
+ 1077               	.LM130:
+ 1078 05a2 2981      		ldd r18,Y+1
+ 1079 05a4 2130      		cpi r18,lo8(1)
+ 1080 05a6 01F4      		brne .L30
+ 275:inputs.c      ****             { 
+ 276:inputs.c      ****                 uart_putc('#');
+ 1081               		.stabn	68,0,276,.LM131-.LFBB2
+ 1082               	.LM131:
+ 1083 05a8 83E2      		ldi r24,lo8(35)
+ 1084 05aa 0E94 0000 		call uart_putc
+ 277:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 1085               		.stabn	68,0,277,.LM132-.LFBB2
+ 1086               	.LM132:
+ 1087 05ae F801      		movw r30,r16
+GAS LISTING /tmp/ccz5qAam.s 			page 25
+
+
+ 1088 05b0 8081      		ld r24,Z
+ 1089 05b2 90E0      		ldi r25,lo8(0)
+ 1090 05b4 0E94 0000 		call uart_putw_dec
+ 278:inputs.c      ****                 uart_putc(' ');
+ 1091               		.stabn	68,0,278,.LM133-.LFBB2
+ 1092               	.LM133:
+ 1093 05b8 80E2      		ldi r24,lo8(32)
+ 1094 05ba 0E94 0000 		call uart_putc
+ 1095 05be 00C0      		rjmp .L30
+ 1096               	.L76:
+ 279:inputs.c      ****             }
+ 280:inputs.c      ****             break;
+ 281:inputs.c      ****         case TEST   :
+ 282:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 1097               		.stabn	68,0,282,.LM134-.LFBB2
+ 1098               	.LM134:
+ 1099 05c0 F401      		movw r30,r8
+ 1100 05c2 E80F      		add r30,r24
+ 1101 05c4 F11D      		adc r31,__zero_reg__
+ 1102 05c6 EF51      		subi r30,lo8(-(481))
+ 1103 05c8 FE4F      		sbci r31,hi8(-(481))
+ 1104 05ca 1082      		st Z,__zero_reg__
+ 283:inputs.c      ****             i2c_init();
+ 1105               		.stabn	68,0,283,.LM135-.LFBB2
+ 1106               	.LM135:
+ 1107 05cc 0E94 0000 		call i2c_init
+ 1108               	.L30:
+ 284:inputs.c      ****             break;
+ 285:inputs.c      ****     }
+ 286:inputs.c      ****     sample->number_inputs ++ ;
+ 1109               		.stabn	68,0,286,.LM136-.LFBB2
+ 1110               	.LM136:
+ 1111 05d0 8401      		movw r16,r8
+ 1112 05d2 0052      		subi r16,lo8(-(480))
+ 1113 05d4 1E4F      		sbci r17,hi8(-(480))
+ 1114 05d6 F801      		movw r30,r16
+ 1115 05d8 8081      		ld r24,Z
+ 1116 05da 8F5F      		subi r24,lo8(-(1))
+ 1117 05dc 8083      		st Z,r24
+ 287:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 288:inputs.c      **** 
+ 289:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////8
+ 290:inputs.c      ****     // Bypass flow, sixteen bit channel, differential :
+ 291:inputs.c      ****     switch(input_function)
+ 1118               		.stabn	68,0,291,.LM137-.LFBB2
+ 1119               	.LM137:
+ 1120 05de FF2D      		mov r31,r15
+ 1121 05e0 F130      		cpi r31,lo8(1)
+ 1122 05e2 01F0      		breq .L34
+ 1123 05e4 FA30      		cpi r31,lo8(10)
+ 1124 05e6 01F4      		brne .L33
+ 1125 05e8 00C0      		rjmp .L77
+ 1126               	.L34:
+ 292:inputs.c      ****     {
+ 293:inputs.c      ****         case SAMPLE  :
+ 294:inputs.c      **** 			toggle_led( ); 
+ 1127               		.stabn	68,0,294,.LM138-.LFBB2
+GAS LISTING /tmp/ccz5qAam.s 			page 26
+
+
+ 1128               	.LM138:
+ 1129 05ea 0E94 0000 		call toggle_led
+ 295:inputs.c      ****             value = read_adc(0x28, 0xA4, 0x88);//ch 8,9 diff 
+ 1130               		.stabn	68,0,295,.LM139-.LFBB2
+ 1131               	.LM139:
+ 1132 05ee 88E2      		ldi r24,lo8(40)
+ 1133 05f0 64EA      		ldi r22,lo8(-92)
+ 1134 05f2 48E8      		ldi r20,lo8(-120)
+ 1135 05f4 0E94 0000 		call read_adc
+ 296:inputs.c      ****             calc_and_string(value, sample,0);
+ 1136               		.stabn	68,0,296,.LM140-.LFBB2
+ 1137               	.LM140:
+ 1138 05f8 A401      		movw r20,r8
+ 1139 05fa 20E0      		ldi r18,lo8(0)
+ 1140 05fc 0E94 0000 		call calc_and_string
+ 297:inputs.c      ****             if (report_chan ==1)//report channel run
+ 1141               		.stabn	68,0,297,.LM141-.LFBB2
+ 1142               	.LM141:
+ 1143 0600 2981      		ldd r18,Y+1
+ 1144 0602 2130      		cpi r18,lo8(1)
+ 1145 0604 01F4      		brne .L33
+ 298:inputs.c      ****             { 
+ 299:inputs.c      ****                 uart_putc('#');
+ 1146               		.stabn	68,0,299,.LM142-.LFBB2
+ 1147               	.LM142:
+ 1148 0606 83E2      		ldi r24,lo8(35)
+ 1149 0608 0E94 0000 		call uart_putc
+ 300:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 1150               		.stabn	68,0,300,.LM143-.LFBB2
+ 1151               	.LM143:
+ 1152 060c F801      		movw r30,r16
+ 1153 060e 8081      		ld r24,Z
+ 1154 0610 90E0      		ldi r25,lo8(0)
+ 1155 0612 0E94 0000 		call uart_putw_dec
+ 301:inputs.c      ****                 uart_putc(' ');
+ 1156               		.stabn	68,0,301,.LM144-.LFBB2
+ 1157               	.LM144:
+ 1158 0616 80E2      		ldi r24,lo8(32)
+ 1159 0618 0E94 0000 		call uart_putc
+ 1160 061c 00C0      		rjmp .L33
+ 1161               	.L77:
+ 302:inputs.c      ****             }
+ 303:inputs.c      ****             break;
+ 304:inputs.c      ****         case TEST   :
+ 305:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 1162               		.stabn	68,0,305,.LM145-.LFBB2
+ 1163               	.LM145:
+ 1164 061e F401      		movw r30,r8
+ 1165 0620 E80F      		add r30,r24
+ 1166 0622 F11D      		adc r31,__zero_reg__
+ 1167 0624 EF51      		subi r30,lo8(-(481))
+ 1168 0626 FE4F      		sbci r31,hi8(-(481))
+ 1169 0628 1082      		st Z,__zero_reg__
+ 306:inputs.c      ****             i2c_init();
+ 1170               		.stabn	68,0,306,.LM146-.LFBB2
+ 1171               	.LM146:
+ 1172 062a 0E94 0000 		call i2c_init
+GAS LISTING /tmp/ccz5qAam.s 			page 27
+
+
+ 1173               	.L33:
+ 307:inputs.c      ****             break;
+ 308:inputs.c      ****     }
+ 309:inputs.c      ****     sample->number_inputs ++ ;
+ 1174               		.stabn	68,0,309,.LM147-.LFBB2
+ 1175               	.LM147:
+ 1176 062e 8401      		movw r16,r8
+ 1177 0630 0052      		subi r16,lo8(-(480))
+ 1178 0632 1E4F      		sbci r17,hi8(-(480))
+ 1179 0634 F801      		movw r30,r16
+ 1180 0636 8081      		ld r24,Z
+ 1181 0638 8F5F      		subi r24,lo8(-(1))
+ 1182 063a 8083      		st Z,r24
+ 310:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 311:inputs.c      **** 
+ 312:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////9
+ 313:inputs.c      ****     //Thermocouple, sixteen bit channel:
+ 314:inputs.c      ****     switch(input_function)
+ 1183               		.stabn	68,0,314,.LM148-.LFBB2
+ 1184               	.LM148:
+ 1185 063c FF2D      		mov r31,r15
+ 1186 063e F130      		cpi r31,lo8(1)
+ 1187 0640 01F0      		breq .L37
+ 1188 0642 FA30      		cpi r31,lo8(10)
+ 1189 0644 01F4      		brne .L36
+ 1190 0646 00C0      		rjmp .L78
+ 1191               	.L37:
+ 315:inputs.c      ****     {
+ 316:inputs.c      ****         case SAMPLE  :
+ 317:inputs.c      **** 			toggle_led( );
+ 1192               		.stabn	68,0,317,.LM149-.LFBB2
+ 1193               	.LM149:
+ 1194 0648 0E94 0000 		call toggle_led
+ 318:inputs.c      ****             value = read_adc(0x28, 0xBF, 0x88);//channel 15 single ended
+ 1195               		.stabn	68,0,318,.LM150-.LFBB2
+ 1196               	.LM150:
+ 1197 064c 88E2      		ldi r24,lo8(40)
+ 1198 064e 6FEB      		ldi r22,lo8(-65)
+ 1199 0650 48E8      		ldi r20,lo8(-120)
+ 1200 0652 0E94 0000 		call read_adc
+ 319:inputs.c      ****             calc_and_string(value, sample,1);
+ 1201               		.stabn	68,0,319,.LM151-.LFBB2
+ 1202               	.LM151:
+ 1203 0656 A401      		movw r20,r8
+ 1204 0658 21E0      		ldi r18,lo8(1)
+ 1205 065a 0E94 0000 		call calc_and_string
+ 320:inputs.c      ****             if (report_chan ==1)//report channel run
+ 1206               		.stabn	68,0,320,.LM152-.LFBB2
+ 1207               	.LM152:
+ 1208 065e 2981      		ldd r18,Y+1
+ 1209 0660 2130      		cpi r18,lo8(1)
+ 1210 0662 01F4      		brne .L36
+ 321:inputs.c      ****             { 
+ 322:inputs.c      ****                 uart_putc('#');
+ 1211               		.stabn	68,0,322,.LM153-.LFBB2
+ 1212               	.LM153:
+ 1213 0664 83E2      		ldi r24,lo8(35)
+GAS LISTING /tmp/ccz5qAam.s 			page 28
+
+
+ 1214 0666 0E94 0000 		call uart_putc
+ 323:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 1215               		.stabn	68,0,323,.LM154-.LFBB2
+ 1216               	.LM154:
+ 1217 066a F801      		movw r30,r16
+ 1218 066c 8081      		ld r24,Z
+ 1219 066e 90E0      		ldi r25,lo8(0)
+ 1220 0670 0E94 0000 		call uart_putw_dec
+ 324:inputs.c      ****                 uart_putc(' ');
+ 1221               		.stabn	68,0,324,.LM155-.LFBB2
+ 1222               	.LM155:
+ 1223 0674 80E2      		ldi r24,lo8(32)
+ 1224 0676 0E94 0000 		call uart_putc
+ 1225 067a 00C0      		rjmp .L36
+ 1226               	.L78:
+ 325:inputs.c      ****             }
+ 326:inputs.c      ****             break;
+ 327:inputs.c      ****         case TEST           ://test channel
+ 328:inputs.c      **** 			sample->disabled[sample->number_inputs] = 0; //enable channel
+ 1227               		.stabn	68,0,328,.LM156-.LFBB2
+ 1228               	.LM156:
+ 1229 067c F401      		movw r30,r8
+ 1230 067e E80F      		add r30,r24
+ 1231 0680 F11D      		adc r31,__zero_reg__
+ 1232 0682 EF51      		subi r30,lo8(-(481))
+ 1233 0684 FE4F      		sbci r31,hi8(-(481))
+ 1234 0686 1082      		st Z,__zero_reg__
+ 329:inputs.c      **** 			i2c_init();
+ 1235               		.stabn	68,0,329,.LM157-.LFBB2
+ 1236               	.LM157:
+ 1237 0688 0E94 0000 		call i2c_init
+ 1238               	.L36:
+ 330:inputs.c      ****             break;
+ 331:inputs.c      ****     }
+ 332:inputs.c      ****     sample->number_inputs ++ ;
+ 1239               		.stabn	68,0,332,.LM158-.LFBB2
+ 1240               	.LM158:
+ 1241 068c 8401      		movw r16,r8
+ 1242 068e 0052      		subi r16,lo8(-(480))
+ 1243 0690 1E4F      		sbci r17,hi8(-(480))
+ 1244 0692 F801      		movw r30,r16
+ 1245 0694 8081      		ld r24,Z
+ 1246 0696 8F5F      		subi r24,lo8(-(1))
+ 1247 0698 8083      		st Z,r24
+ 333:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 334:inputs.c      ****     
+ 335:inputs.c      ****         ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////10
+ 336:inputs.c      ****     // Sample temp, 10 bit channel
+ 337:inputs.c      ****     switch(input_function)
+ 1248               		.stabn	68,0,337,.LM159-.LFBB2
+ 1249               	.LM159:
+ 1250 069a FF2D      		mov r31,r15
+ 1251 069c F130      		cpi r31,lo8(1)
+ 1252 069e 01F0      		breq .L40
+ 1253 06a0 FA30      		cpi r31,lo8(10)
+ 1254 06a2 01F4      		brne .L39
+ 1255 06a4 00C0      		rjmp .L79
+GAS LISTING /tmp/ccz5qAam.s 			page 29
+
+
+ 1256               	.L40:
+ 338:inputs.c      ****     {
+ 339:inputs.c      ****         case SAMPLE  : 
+ 340:inputs.c      **** 			toggle_led( );
+ 1257               		.stabn	68,0,340,.LM160-.LFBB2
+ 1258               	.LM160:
+ 1259 06a6 0E94 0000 		call toggle_led
+ 341:inputs.c      ****             value =read_adc_onboard(2, 5); //channel 2, 5 oversamples
+ 1260               		.stabn	68,0,341,.LM161-.LFBB2
+ 1261               	.LM161:
+ 1262 06aa 82E0      		ldi r24,lo8(2)
+ 1263 06ac 65E0      		ldi r22,lo8(5)
+ 1264 06ae 0E94 0000 		call read_adc_onboard
+ 1265 06b2 9C01      		movw r18,r24
+ 1266 06b4 B901      		movw r22,r18
+ 1267 06b6 8827      		clr r24
+ 1268 06b8 77FD      		sbrc r23,7
+ 1269 06ba 8095      		com r24
+ 1270 06bc 982F      		mov r25,r24
+ 342:inputs.c      ****             calc_and_string(value, sample,0);
+ 1271               		.stabn	68,0,342,.LM162-.LFBB2
+ 1272               	.LM162:
+ 1273 06be A401      		movw r20,r8
+ 1274 06c0 20E0      		ldi r18,lo8(0)
+ 1275 06c2 0E94 0000 		call calc_and_string
+ 343:inputs.c      ****             if (report_chan ==1)//report channel run
+ 1276               		.stabn	68,0,343,.LM163-.LFBB2
+ 1277               	.LM163:
+ 1278 06c6 3981      		ldd r19,Y+1
+ 1279 06c8 3130      		cpi r19,lo8(1)
+ 1280 06ca 01F4      		brne .L39
+ 344:inputs.c      ****             { 
+ 345:inputs.c      ****                 uart_putc('#');
+ 1281               		.stabn	68,0,345,.LM164-.LFBB2
+ 1282               	.LM164:
+ 1283 06cc 83E2      		ldi r24,lo8(35)
+ 1284 06ce 0E94 0000 		call uart_putc
+ 346:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 1285               		.stabn	68,0,346,.LM165-.LFBB2
+ 1286               	.LM165:
+ 1287 06d2 F801      		movw r30,r16
+ 1288 06d4 8081      		ld r24,Z
+ 1289 06d6 90E0      		ldi r25,lo8(0)
+ 1290 06d8 0E94 0000 		call uart_putw_dec
+ 347:inputs.c      ****                 uart_putc(' ');
+ 1291               		.stabn	68,0,347,.LM166-.LFBB2
+ 1292               	.LM166:
+ 1293 06dc 80E2      		ldi r24,lo8(32)
+ 1294 06de 0E94 0000 		call uart_putc
+ 1295 06e2 00C0      		rjmp .L39
+ 1296               	.L79:
+ 348:inputs.c      ****             }
+ 349:inputs.c      ****             break;
+ 350:inputs.c      ****         case TEST   :
+ 351:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 1297               		.stabn	68,0,351,.LM167-.LFBB2
+ 1298               	.LM167:
+GAS LISTING /tmp/ccz5qAam.s 			page 30
+
+
+ 1299 06e4 F401      		movw r30,r8
+ 1300 06e6 E80F      		add r30,r24
+ 1301 06e8 F11D      		adc r31,__zero_reg__
+ 1302 06ea EF51      		subi r30,lo8(-(481))
+ 1303 06ec FE4F      		sbci r31,hi8(-(481))
+ 1304 06ee 1082      		st Z,__zero_reg__
+ 352:inputs.c      ****             adc_init();
+ 1305               		.stabn	68,0,352,.LM168-.LFBB2
+ 1306               	.LM168:
+ 1307 06f0 0E94 0000 		call adc_init
+ 1308               	.L39:
+ 353:inputs.c      ****             break;
+ 354:inputs.c      **** 
+ 355:inputs.c      ****     }
+ 356:inputs.c      ****     sample->number_inputs ++ ;
+ 1309               		.stabn	68,0,356,.LM169-.LFBB2
+ 1310               	.LM169:
+ 1311 06f4 8401      		movw r16,r8
+ 1312 06f6 0052      		subi r16,lo8(-(480))
+ 1313 06f8 1E4F      		sbci r17,hi8(-(480))
+ 1314 06fa F801      		movw r30,r16
+ 1315 06fc 8081      		ld r24,Z
+ 1316 06fe 8F5F      		subi r24,lo8(-(1))
+ 1317 0700 8083      		st Z,r24
+ 357:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 358:inputs.c      **** 
+ 359:inputs.c      **** ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////11
+ 360:inputs.c      ****     // Bkg temp, 10 bit channel
+ 361:inputs.c      ****     switch(input_function)
+ 1318               		.stabn	68,0,361,.LM170-.LFBB2
+ 1319               	.LM170:
+ 1320 0702 FF2D      		mov r31,r15
+ 1321 0704 F130      		cpi r31,lo8(1)
+ 1322 0706 01F0      		breq .L43
+ 1323 0708 FA30      		cpi r31,lo8(10)
+ 1324 070a 01F4      		brne .L42
+ 1325 070c 00C0      		rjmp .L80
+ 1326               	.L43:
+ 362:inputs.c      ****     {
+ 363:inputs.c      ****         case SAMPLE  : 
+ 364:inputs.c      **** 			toggle_led( );
+ 1327               		.stabn	68,0,364,.LM171-.LFBB2
+ 1328               	.LM171:
+ 1329 070e 0E94 0000 		call toggle_led
+ 365:inputs.c      ****             value =read_adc_onboard(3, 5); //channel 3, 5 oversamples
+ 1330               		.stabn	68,0,365,.LM172-.LFBB2
+ 1331               	.LM172:
+ 1332 0712 83E0      		ldi r24,lo8(3)
+ 1333 0714 65E0      		ldi r22,lo8(5)
+ 1334 0716 0E94 0000 		call read_adc_onboard
+ 1335 071a 9C01      		movw r18,r24
+ 1336 071c B901      		movw r22,r18
+ 1337 071e 8827      		clr r24
+ 1338 0720 77FD      		sbrc r23,7
+ 1339 0722 8095      		com r24
+ 1340 0724 982F      		mov r25,r24
+ 366:inputs.c      ****             calc_and_string(value, sample,0);
+GAS LISTING /tmp/ccz5qAam.s 			page 31
+
+
+ 1341               		.stabn	68,0,366,.LM173-.LFBB2
+ 1342               	.LM173:
+ 1343 0726 A401      		movw r20,r8
+ 1344 0728 20E0      		ldi r18,lo8(0)
+ 1345 072a 0E94 0000 		call calc_and_string
+ 367:inputs.c      ****             if (report_chan ==1)//report channel run
+ 1346               		.stabn	68,0,367,.LM174-.LFBB2
+ 1347               	.LM174:
+ 1348 072e 3981      		ldd r19,Y+1
+ 1349 0730 3130      		cpi r19,lo8(1)
+ 1350 0732 01F4      		brne .L42
+ 368:inputs.c      ****             { 
+ 369:inputs.c      ****                 uart_putc('#');
+ 1351               		.stabn	68,0,369,.LM175-.LFBB2
+ 1352               	.LM175:
+ 1353 0734 83E2      		ldi r24,lo8(35)
+ 1354 0736 0E94 0000 		call uart_putc
+ 370:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 1355               		.stabn	68,0,370,.LM176-.LFBB2
+ 1356               	.LM176:
+ 1357 073a F801      		movw r30,r16
+ 1358 073c 8081      		ld r24,Z
+ 1359 073e 90E0      		ldi r25,lo8(0)
+ 1360 0740 0E94 0000 		call uart_putw_dec
+ 371:inputs.c      ****                 uart_putc(' ');
+ 1361               		.stabn	68,0,371,.LM177-.LFBB2
+ 1362               	.LM177:
+ 1363 0744 80E2      		ldi r24,lo8(32)
+ 1364 0746 0E94 0000 		call uart_putc
+ 1365 074a 00C0      		rjmp .L42
+ 1366               	.L80:
+ 372:inputs.c      ****             }
+ 373:inputs.c      ****             break;
+ 374:inputs.c      ****         case TEST   :
+ 375:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 1367               		.stabn	68,0,375,.LM178-.LFBB2
+ 1368               	.LM178:
+ 1369 074c F401      		movw r30,r8
+ 1370 074e E80F      		add r30,r24
+ 1371 0750 F11D      		adc r31,__zero_reg__
+ 1372 0752 EF51      		subi r30,lo8(-(481))
+ 1373 0754 FE4F      		sbci r31,hi8(-(481))
+ 1374 0756 1082      		st Z,__zero_reg__
+ 376:inputs.c      ****             adc_init();
+ 1375               		.stabn	68,0,376,.LM179-.LFBB2
+ 1376               	.LM179:
+ 1377 0758 0E94 0000 		call adc_init
+ 1378               	.L42:
+ 377:inputs.c      ****             break;
+ 378:inputs.c      **** 
+ 379:inputs.c      ****     }
+ 380:inputs.c      ****     sample->number_inputs ++ ;
+ 1379               		.stabn	68,0,380,.LM180-.LFBB2
+ 1380               	.LM180:
+ 1381 075c 8401      		movw r16,r8
+ 1382 075e 0052      		subi r16,lo8(-(480))
+ 1383 0760 1E4F      		sbci r17,hi8(-(480))
+GAS LISTING /tmp/ccz5qAam.s 			page 32
+
+
+ 1384 0762 F801      		movw r30,r16
+ 1385 0764 8081      		ld r24,Z
+ 1386 0766 8F5F      		subi r24,lo8(-(1))
+ 1387 0768 8083      		st Z,r24
+ 381:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 382:inputs.c      ****     
+ 383:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////12
+ 384:inputs.c      ****     // RH from SHT25:
+ 385:inputs.c      ****     struct hum_dat check_humid = {0,0};
+ 386:inputs.c      ****     switch(input_function)
+ 1388               		.stabn	68,0,386,.LM181-.LFBB2
+ 1389               	.LM181:
+ 1390 076a FF2D      		mov r31,r15
+ 1391 076c F130      		cpi r31,lo8(1)
+ 1392 076e 01F0      		breq .L46
+ 1393 0770 FA30      		cpi r31,lo8(10)
+ 1394 0772 01F0      		breq .+2
+ 1395 0774 00C0      		rjmp .L64
+ 1396 0776 00C0      		rjmp .L81
+ 1397               	.L46:
+ 387:inputs.c      ****     {
+ 388:inputs.c      ****         case SAMPLE  :
+ 389:inputs.c      ****             toggle_led( );
+ 1398               		.stabn	68,0,389,.LM182-.LFBB2
+ 1399               	.LM182:
+ 1400 0778 0E94 0000 		call toggle_led
+ 390:inputs.c      ****             if(sample->disabled[sample->number_inputs] == 1)//don't sample if disabled
+ 1401               		.stabn	68,0,390,.LM183-.LFBB2
+ 1402               	.LM183:
+ 1403 077c F801      		movw r30,r16
+ 1404 077e 8081      		ld r24,Z
+ 1405 0780 F401      		movw r30,r8
+ 1406 0782 E80F      		add r30,r24
+ 1407 0784 F11D      		adc r31,__zero_reg__
+ 1408 0786 EF51      		subi r30,lo8(-(481))
+ 1409 0788 FE4F      		sbci r31,hi8(-(481))
+ 1410 078a 8081      		ld r24,Z
+ 1411 078c 8130      		cpi r24,lo8(1)
+ 1412 078e 01F4      		brne .L48
+ 391:inputs.c      ****             {
+ 392:inputs.c      ****                 calc_and_string(0, sample,1);
+ 1413               		.stabn	68,0,392,.LM184-.LFBB2
+ 1414               	.LM184:
+ 1415 0790 60E0      		ldi r22,lo8(0)
+ 1416 0792 70E0      		ldi r23,hi8(0)
+ 1417 0794 CB01      		movw r24,r22
+ 1418 0796 A401      		movw r20,r8
+ 1419 0798 21E0      		ldi r18,lo8(1)
+ 1420 079a 0E94 0000 		call calc_and_string
+ 1421 079e 00C0      		rjmp .L64
+ 1422               	.L48:
+ 393:inputs.c      ****                 break;
+ 394:inputs.c      ****             }
+ 395:inputs.c      ****             check_humid = ReadSHT25();
+ 1423               		.stabn	68,0,395,.LM185-.LFBB2
+ 1424               	.LM185:
+ 1425 07a0 0E94 0000 		call ReadSHT25
+GAS LISTING /tmp/ccz5qAam.s 			page 33
+
+
+ 1426 07a4 5B01      		movw r10,r22
+ 1427 07a6 6C01      		movw r12,r24
+ 396:inputs.c      ****             calc_and_string(check_humid.SHT_rh, sample,0);//no decimal
+ 1428               		.stabn	68,0,396,.LM186-.LFBB2
+ 1429               	.LM186:
+ 1430 07a8 B601      		movw r22,r12
+ 1431 07aa 80E0      		ldi r24,lo8(0)
+ 1432 07ac 90E0      		ldi r25,hi8(0)
+ 1433 07ae A401      		movw r20,r8
+ 1434 07b0 20E0      		ldi r18,lo8(0)
+ 1435 07b2 0E94 0000 		call calc_and_string
+ 397:inputs.c      ****             if (report_chan ==1)//report channel run
+ 1436               		.stabn	68,0,397,.LM187-.LFBB2
+ 1437               	.LM187:
+ 1438 07b6 F981      		ldd r31,Y+1
+ 1439 07b8 F130      		cpi r31,lo8(1)
+ 1440 07ba 01F0      		breq .+2
+ 1441 07bc 00C0      		rjmp .L45
+ 398:inputs.c      ****             { 
+ 399:inputs.c      ****                 uart_putc('#');
+ 1442               		.stabn	68,0,399,.LM188-.LFBB2
+ 1443               	.LM188:
+ 1444 07be 83E2      		ldi r24,lo8(35)
+ 1445 07c0 0E94 0000 		call uart_putc
+ 400:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 1446               		.stabn	68,0,400,.LM189-.LFBB2
+ 1447               	.LM189:
+ 1448 07c4 F801      		movw r30,r16
+ 1449 07c6 8081      		ld r24,Z
+ 1450 07c8 90E0      		ldi r25,lo8(0)
+ 1451 07ca 0E94 0000 		call uart_putw_dec
+ 401:inputs.c      ****                 uart_putc(' ');
+ 1452               		.stabn	68,0,401,.LM190-.LFBB2
+ 1453               	.LM190:
+ 1454 07ce 80E2      		ldi r24,lo8(32)
+ 1455 07d0 0E94 0000 		call uart_putc
+ 1456 07d4 00C0      		rjmp .L45
+ 1457               	.L81:
+ 402:inputs.c      ****             }
+ 403:inputs.c      ****             
+ 404:inputs.c      ****             break;
+ 405:inputs.c      ****         case TEST   :
+ 406:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 1458               		.stabn	68,0,406,.LM191-.LFBB2
+ 1459               	.LM191:
+ 1460 07d6 F401      		movw r30,r8
+ 1461 07d8 E80F      		add r30,r24
+ 1462 07da F11D      		adc r31,__zero_reg__
+ 1463 07dc EF51      		subi r30,lo8(-(481))
+ 1464 07de FE4F      		sbci r31,hi8(-(481))
+ 1465 07e0 1082      		st Z,__zero_reg__
+ 407:inputs.c      ****             i2c_init();
+ 1466               		.stabn	68,0,407,.LM192-.LFBB2
+ 1467               	.LM192:
+ 1468 07e2 0E94 0000 		call i2c_init
+ 408:inputs.c      ****             i2c_timeout_flag = 0;
+ 1469               		.stabn	68,0,408,.LM193-.LFBB2
+GAS LISTING /tmp/ccz5qAam.s 			page 34
+
+
+ 1470               	.LM193:
+ 1471 07e6 1092 0000 		sts i2c_timeout_flag,__zero_reg__
+ 409:inputs.c      ****             start_timer0();//starts the timeout timer
+ 1472               		.stabn	68,0,409,.LM194-.LFBB2
+ 1473               	.LM194:
+ 1474 07ea 0E94 0000 		call start_timer0
+ 410:inputs.c      ****             ReadSHT25();//try communicating with channel
+ 1475               		.stabn	68,0,410,.LM195-.LFBB2
+ 1476               	.LM195:
+ 1477 07ee 0E94 0000 		call ReadSHT25
+ 411:inputs.c      ****             TCCR0 = 0;// stop counter
+ 1478               		.stabn	68,0,411,.LM196-.LFBB2
+ 1479               	.LM196:
+ 1480 07f2 13BE      		out 83-32,__zero_reg__
+ 412:inputs.c      ****             sample->disabled[sample->number_inputs] = i2c_timeout_flag; //enable or diasble channel
+ 1481               		.stabn	68,0,412,.LM197-.LFBB2
+ 1482               	.LM197:
+ 1483 07f4 8091 0000 		lds r24,i2c_timeout_flag
+ 1484 07f8 F801      		movw r30,r16
+ 1485 07fa 9081      		ld r25,Z
+ 1486 07fc F401      		movw r30,r8
+ 1487 07fe E90F      		add r30,r25
+ 1488 0800 F11D      		adc r31,__zero_reg__
+ 1489 0802 EF51      		subi r30,lo8(-(481))
+ 1490 0804 FE4F      		sbci r31,hi8(-(481))
+ 1491 0806 8083      		st Z,r24
+ 413:inputs.c      ****             i2c_timeout_flag = 0;
+ 1492               		.stabn	68,0,413,.LM198-.LFBB2
+ 1493               	.LM198:
+ 1494 0808 1092 0000 		sts i2c_timeout_flag,__zero_reg__
+ 414:inputs.c      ****             uart_puts_p(PSTR("#test result ch "));uart_putw_dec(sample->number_inputs); uart_putc('
+ 1495               		.stabn	68,0,414,.LM199-.LFBB2
+ 1496               	.LM199:
+ 1497 080c 80E0      		ldi r24,lo8(__c.1967)
+ 1498 080e 90E0      		ldi r25,hi8(__c.1967)
+ 1499 0810 0E94 0000 		call uart_puts_p
+ 1500 0814 F801      		movw r30,r16
+ 1501 0816 8081      		ld r24,Z
+ 1502 0818 90E0      		ldi r25,lo8(0)
+ 1503 081a 0E94 0000 		call uart_putw_dec
+ 1504 081e 8DE3      		ldi r24,lo8(61)
+ 1505 0820 0E94 0000 		call uart_putc
+ 415:inputs.c      ****             uart_putw_dec(sample->disabled[sample->number_inputs]);uart_putc('\n');
+ 1506               		.stabn	68,0,415,.LM200-.LFBB2
+ 1507               	.LM200:
+ 1508 0824 F801      		movw r30,r16
+ 1509 0826 8081      		ld r24,Z
+ 1510 0828 F401      		movw r30,r8
+ 1511 082a E80F      		add r30,r24
+ 1512 082c F11D      		adc r31,__zero_reg__
+ 1513 082e EF51      		subi r30,lo8(-(481))
+ 1514 0830 FE4F      		sbci r31,hi8(-(481))
+ 1515 0832 8081      		ld r24,Z
+ 1516 0834 90E0      		ldi r25,lo8(0)
+ 1517 0836 0E94 0000 		call uart_putw_dec
+ 1518 083a 8AE0      		ldi r24,lo8(10)
+ 1519 083c 0E94 0000 		call uart_putc
+GAS LISTING /tmp/ccz5qAam.s 			page 35
+
+
+ 1520               	.L64:
+ 385:inputs.c      ****     struct hum_dat check_humid = {0,0};
+ 1521               		.stabn	68,0,385,.LM201-.LFBB2
+ 1522               	.LM201:
+ 1523 0840 AA24      		clr r10
+ 1524 0842 BB24      		clr r11
+ 1525               	.L45:
+ 416:inputs.c      ****             break;
+ 417:inputs.c      ****     }
+ 418:inputs.c      ****     sample->number_inputs ++ ;
+ 1526               		.stabn	68,0,418,.LM202-.LFBB2
+ 1527               	.LM202:
+ 1528 0844 8401      		movw r16,r8
+ 1529 0846 0052      		subi r16,lo8(-(480))
+ 1530 0848 1E4F      		sbci r17,hi8(-(480))
+ 1531 084a F801      		movw r30,r16
+ 1532 084c 8081      		ld r24,Z
+ 1533 084e 8F5F      		subi r24,lo8(-(1))
+ 1534 0850 8083      		st Z,r24
+ 419:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 420:inputs.c      **** 
+ 421:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////13
+ 422:inputs.c      ****     // Temprature from SHT25:
+ 423:inputs.c      ****     //!>>>>>>>always put after RH, as sampling is done in that block<<<<<<<<<<<
+ 424:inputs.c      ****     switch(input_function)
+ 1535               		.stabn	68,0,424,.LM203-.LFBB2
+ 1536               	.LM203:
+ 1537 0852 FF2D      		mov r31,r15
+ 1538 0854 F130      		cpi r31,lo8(1)
+ 1539 0856 01F0      		breq .L50
+ 1540 0858 FA30      		cpi r31,lo8(10)
+ 1541 085a 01F0      		breq .+2
+ 1542 085c 00C0      		rjmp .L49
+ 1543 085e 00C0      		rjmp .L82
+ 1544               	.L50:
+ 425:inputs.c      ****     {
+ 426:inputs.c      ****         case SAMPLE  :
+ 427:inputs.c      **** 			toggle_led( );
+ 1545               		.stabn	68,0,427,.LM204-.LFBB2
+ 1546               	.LM204:
+ 1547 0860 0E94 0000 		call toggle_led
+ 428:inputs.c      ****             if(sample->disabled[sample->number_inputs] == 1)//don't sample if disabled
+ 1548               		.stabn	68,0,428,.LM205-.LFBB2
+ 1549               	.LM205:
+ 1550 0864 F801      		movw r30,r16
+ 1551 0866 8081      		ld r24,Z
+ 1552 0868 F401      		movw r30,r8
+ 1553 086a E80F      		add r30,r24
+ 1554 086c F11D      		adc r31,__zero_reg__
+ 1555 086e EF51      		subi r30,lo8(-(481))
+ 1556 0870 FE4F      		sbci r31,hi8(-(481))
+ 1557 0872 8081      		ld r24,Z
+ 1558 0874 8130      		cpi r24,lo8(1)
+ 1559 0876 01F4      		brne .L52
+ 429:inputs.c      ****             {
+ 430:inputs.c      ****                 calc_and_string(0, sample,1);
+ 1560               		.stabn	68,0,430,.LM206-.LFBB2
+GAS LISTING /tmp/ccz5qAam.s 			page 36
+
+
+ 1561               	.LM206:
+ 1562 0878 60E0      		ldi r22,lo8(0)
+ 1563 087a 70E0      		ldi r23,hi8(0)
+ 1564 087c CB01      		movw r24,r22
+ 1565 087e A401      		movw r20,r8
+ 1566 0880 21E0      		ldi r18,lo8(1)
+ 1567 0882 0E94 0000 		call calc_and_string
+ 431:inputs.c      ****                 break;
+ 1568               		.stabn	68,0,431,.LM207-.LFBB2
+ 1569               	.LM207:
+ 1570 0886 00C0      		rjmp .L49
+ 1571               	.L52:
+ 432:inputs.c      ****             }
+ 433:inputs.c      ****             calc_and_string(check_humid.SHT_temp, sample,0);
+ 1572               		.stabn	68,0,433,.LM208-.LFBB2
+ 1573               	.LM208:
+ 1574 0888 B501      		movw r22,r10
+ 1575 088a 80E0      		ldi r24,lo8(0)
+ 1576 088c 90E0      		ldi r25,hi8(0)
+ 1577 088e A401      		movw r20,r8
+ 1578 0890 20E0      		ldi r18,lo8(0)
+ 1579 0892 0E94 0000 		call calc_and_string
+ 434:inputs.c      ****             if (report_chan ==1)//report channel run
+ 1580               		.stabn	68,0,434,.LM209-.LFBB2
+ 1581               	.LM209:
+ 1582 0896 F981      		ldd r31,Y+1
+ 1583 0898 F130      		cpi r31,lo8(1)
+ 1584 089a 01F0      		breq .+2
+ 1585 089c 00C0      		rjmp .L49
+ 435:inputs.c      ****             { 
+ 436:inputs.c      ****                 uart_putc('#');
+ 1586               		.stabn	68,0,436,.LM210-.LFBB2
+ 1587               	.LM210:
+ 1588 089e 83E2      		ldi r24,lo8(35)
+ 1589 08a0 0E94 0000 		call uart_putc
+ 437:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 1590               		.stabn	68,0,437,.LM211-.LFBB2
+ 1591               	.LM211:
+ 1592 08a4 F801      		movw r30,r16
+ 1593 08a6 8081      		ld r24,Z
+ 1594 08a8 90E0      		ldi r25,lo8(0)
+ 1595 08aa 0E94 0000 		call uart_putw_dec
+ 438:inputs.c      ****                 uart_putc(' ');
+ 1596               		.stabn	68,0,438,.LM212-.LFBB2
+ 1597               	.LM212:
+ 1598 08ae 80E2      		ldi r24,lo8(32)
+ 1599 08b0 00C0      		rjmp .L68
+ 1600               	.L82:
+ 439:inputs.c      ****             }
+ 440:inputs.c      ****             break;
+ 441:inputs.c      ****         case TEST   :
+ 442:inputs.c      **** 			sample->disabled[sample->number_inputs] = 0; //enable channel
+ 1601               		.stabn	68,0,442,.LM213-.LFBB2
+ 1602               	.LM213:
+ 1603 08b2 F401      		movw r30,r8
+ 1604 08b4 E80F      		add r30,r24
+ 1605 08b6 F11D      		adc r31,__zero_reg__
+GAS LISTING /tmp/ccz5qAam.s 			page 37
+
+
+ 1606 08b8 EF51      		subi r30,lo8(-(481))
+ 1607 08ba FE4F      		sbci r31,hi8(-(481))
+ 1608 08bc 1082      		st Z,__zero_reg__
+ 443:inputs.c      ****             i2c_init();
+ 1609               		.stabn	68,0,443,.LM214-.LFBB2
+ 1610               	.LM214:
+ 1611 08be 0E94 0000 		call i2c_init
+ 444:inputs.c      ****             i2c_timeout_flag = 0;
+ 1612               		.stabn	68,0,444,.LM215-.LFBB2
+ 1613               	.LM215:
+ 1614 08c2 1092 0000 		sts i2c_timeout_flag,__zero_reg__
+ 445:inputs.c      ****             start_timer0();//starts the timeout timer
+ 1615               		.stabn	68,0,445,.LM216-.LFBB2
+ 1616               	.LM216:
+ 1617 08c6 0E94 0000 		call start_timer0
+ 446:inputs.c      ****             ReadSHT25();//try communicating with channel
+ 1618               		.stabn	68,0,446,.LM217-.LFBB2
+ 1619               	.LM217:
+ 1620 08ca 0E94 0000 		call ReadSHT25
+ 447:inputs.c      ****             TCCR0 = 0;// stop counter
+ 1621               		.stabn	68,0,447,.LM218-.LFBB2
+ 1622               	.LM218:
+ 1623 08ce 13BE      		out 83-32,__zero_reg__
+ 448:inputs.c      ****             sample->disabled[sample->number_inputs] = i2c_timeout_flag; //enable or diasble channel
+ 1624               		.stabn	68,0,448,.LM219-.LFBB2
+ 1625               	.LM219:
+ 1626 08d0 8091 0000 		lds r24,i2c_timeout_flag
+ 1627 08d4 F801      		movw r30,r16
+ 1628 08d6 9081      		ld r25,Z
+ 1629 08d8 F401      		movw r30,r8
+ 1630 08da E90F      		add r30,r25
+ 1631 08dc F11D      		adc r31,__zero_reg__
+ 1632 08de EF51      		subi r30,lo8(-(481))
+ 1633 08e0 FE4F      		sbci r31,hi8(-(481))
+ 1634 08e2 8083      		st Z,r24
+ 449:inputs.c      ****             i2c_timeout_flag = 0;
+ 1635               		.stabn	68,0,449,.LM220-.LFBB2
+ 1636               	.LM220:
+ 1637 08e4 1092 0000 		sts i2c_timeout_flag,__zero_reg__
+ 450:inputs.c      ****             uart_puts_p(PSTR("#test result ch "));uart_putw_dec(sample->number_inputs); uart_putc('
+ 1638               		.stabn	68,0,450,.LM221-.LFBB2
+ 1639               	.LM221:
+ 1640 08e8 80E0      		ldi r24,lo8(__c.1972)
+ 1641 08ea 90E0      		ldi r25,hi8(__c.1972)
+ 1642 08ec 0E94 0000 		call uart_puts_p
+ 1643 08f0 F801      		movw r30,r16
+ 1644 08f2 8081      		ld r24,Z
+ 1645 08f4 90E0      		ldi r25,lo8(0)
+ 1646 08f6 0E94 0000 		call uart_putw_dec
+ 1647 08fa 8DE3      		ldi r24,lo8(61)
+ 1648 08fc 0E94 0000 		call uart_putc
+ 451:inputs.c      ****             uart_putw_dec(sample->disabled[sample->number_inputs]);uart_putc('\n');
+ 1649               		.stabn	68,0,451,.LM222-.LFBB2
+ 1650               	.LM222:
+ 1651 0900 F801      		movw r30,r16
+ 1652 0902 8081      		ld r24,Z
+ 1653 0904 F401      		movw r30,r8
+GAS LISTING /tmp/ccz5qAam.s 			page 38
+
+
+ 1654 0906 E80F      		add r30,r24
+ 1655 0908 F11D      		adc r31,__zero_reg__
+ 1656 090a EF51      		subi r30,lo8(-(481))
+ 1657 090c FE4F      		sbci r31,hi8(-(481))
+ 1658 090e 8081      		ld r24,Z
+ 1659 0910 90E0      		ldi r25,lo8(0)
+ 1660 0912 0E94 0000 		call uart_putw_dec
+ 1661 0916 8AE0      		ldi r24,lo8(10)
+ 1662               	.L68:
+ 1663 0918 0E94 0000 		call uart_putc
+ 1664               	.L49:
+ 452:inputs.c      ****             break;
+ 453:inputs.c      **** 
+ 454:inputs.c      ****     }
+ 455:inputs.c      ****     sample->number_inputs ++ ;
+ 1665               		.stabn	68,0,455,.LM223-.LFBB2
+ 1666               	.LM223:
+ 1667 091c 8401      		movw r16,r8
+ 1668 091e 0052      		subi r16,lo8(-(480))
+ 1669 0920 1E4F      		sbci r17,hi8(-(480))
+ 1670 0922 F801      		movw r30,r16
+ 1671 0924 8081      		ld r24,Z
+ 1672 0926 8F5F      		subi r24,lo8(-(1))
+ 1673 0928 8083      		st Z,r24
+ 456:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 457:inputs.c      **** 
+ 458:inputs.c      ****     ////THIS IS A CHANNEL vvvvvvvvvvvvv    //////////////////////14
+ 459:inputs.c      ****     // battery voltage, 10 bit channel
+ 460:inputs.c      ****     switch(input_function)
+ 1674               		.stabn	68,0,460,.LM224-.LFBB2
+ 1675               	.LM224:
+ 1676 092a FF2D      		mov r31,r15
+ 1677 092c F130      		cpi r31,lo8(1)
+ 1678 092e 01F0      		breq .L54
+ 1679 0930 FA30      		cpi r31,lo8(10)
+ 1680 0932 01F4      		brne .L53
+ 1681 0934 00C0      		rjmp .L83
+ 1682               	.L54:
+ 461:inputs.c      ****     {
+ 462:inputs.c      ****         case SAMPLE  : 
+ 463:inputs.c      **** 			toggle_led( );
+ 1683               		.stabn	68,0,463,.LM225-.LFBB2
+ 1684               	.LM225:
+ 1685 0936 0E94 0000 		call toggle_led
+ 464:inputs.c      ****             value =read_adc_onboard(4, 5); //channel 4, 5 oversamples
+ 1686               		.stabn	68,0,464,.LM226-.LFBB2
+ 1687               	.LM226:
+ 1688 093a 84E0      		ldi r24,lo8(4)
+ 1689 093c 65E0      		ldi r22,lo8(5)
+ 1690 093e 0E94 0000 		call read_adc_onboard
+ 1691 0942 9C01      		movw r18,r24
+ 1692 0944 B901      		movw r22,r18
+ 1693 0946 8827      		clr r24
+ 1694 0948 77FD      		sbrc r23,7
+ 1695 094a 8095      		com r24
+ 1696 094c 982F      		mov r25,r24
+ 465:inputs.c      ****             calc_and_string(value, sample,1);
+GAS LISTING /tmp/ccz5qAam.s 			page 39
+
+
+ 1697               		.stabn	68,0,465,.LM227-.LFBB2
+ 1698               	.LM227:
+ 1699 094e A401      		movw r20,r8
+ 1700 0950 21E0      		ldi r18,lo8(1)
+ 1701 0952 0E94 0000 		call calc_and_string
+ 466:inputs.c      ****             if (report_chan ==1)//report channel run
+ 1702               		.stabn	68,0,466,.LM228-.LFBB2
+ 1703               	.LM228:
+ 1704 0956 3981      		ldd r19,Y+1
+ 1705 0958 3130      		cpi r19,lo8(1)
+ 1706 095a 01F4      		brne .L53
+ 467:inputs.c      ****             { 
+ 468:inputs.c      ****                 uart_putc('#');
+ 1707               		.stabn	68,0,468,.LM229-.LFBB2
+ 1708               	.LM229:
+ 1709 095c 83E2      		ldi r24,lo8(35)
+ 1710 095e 0E94 0000 		call uart_putc
+ 469:inputs.c      ****                 uart_putw_dec(sample->number_inputs);
+ 1711               		.stabn	68,0,469,.LM230-.LFBB2
+ 1712               	.LM230:
+ 1713 0962 F801      		movw r30,r16
+ 1714 0964 8081      		ld r24,Z
+ 1715 0966 90E0      		ldi r25,lo8(0)
+ 1716 0968 0E94 0000 		call uart_putw_dec
+ 470:inputs.c      ****                 uart_putc(' ');
+ 1717               		.stabn	68,0,470,.LM231-.LFBB2
+ 1718               	.LM231:
+ 1719 096c 80E2      		ldi r24,lo8(32)
+ 1720 096e 0E94 0000 		call uart_putc
+ 1721 0972 00C0      		rjmp .L53
+ 1722               	.L83:
+ 471:inputs.c      ****             }
+ 472:inputs.c      ****             break;
+ 473:inputs.c      ****         case TEST   :
+ 474:inputs.c      ****             sample->disabled[sample->number_inputs] = 0; //enable channel
+ 1723               		.stabn	68,0,474,.LM232-.LFBB2
+ 1724               	.LM232:
+ 1725 0974 F401      		movw r30,r8
+ 1726 0976 E80F      		add r30,r24
+ 1727 0978 F11D      		adc r31,__zero_reg__
+ 1728 097a EF51      		subi r30,lo8(-(481))
+ 1729 097c FE4F      		sbci r31,hi8(-(481))
+ 1730 097e 1082      		st Z,__zero_reg__
+ 475:inputs.c      ****             adc_init();
+ 1731               		.stabn	68,0,475,.LM233-.LFBB2
+ 1732               	.LM233:
+ 1733 0980 0E94 0000 		call adc_init
+ 1734               	.L53:
+ 476:inputs.c      ****             break;
+ 477:inputs.c      **** 
+ 478:inputs.c      ****     }
+ 479:inputs.c      ****     sample->number_inputs ++ ;
+ 1735               		.stabn	68,0,479,.LM234-.LFBB2
+ 1736               	.LM234:
+ 1737 0984 F401      		movw r30,r8
+ 1738 0986 E052      		subi r30,lo8(-(480))
+ 1739 0988 FE4F      		sbci r31,hi8(-(480))
+GAS LISTING /tmp/ccz5qAam.s 			page 40
+
+
+ 1740 098a 8081      		ld r24,Z
+ 1741 098c 8F5F      		subi r24,lo8(-(1))
+ 1742 098e 8083      		st Z,r24
+ 480:inputs.c      ****     ////END OF THIS CHANNEL ^^^^^^^^^^^^^^^^^^    //////////////////////
+ 481:inputs.c      **** 
+ 482:inputs.c      **** 
+ 483:inputs.c      **** 
+ 484:inputs.c      ****     uint16_t len = strlen(sample->serialout);
+ 1743               		.stabn	68,0,484,.LM235-.LFBB2
+ 1744               	.LM235:
+ 1745 0990 D401      		movw r26,r8
+ 1746 0992 A350      		subi r26,lo8(-(509))
+ 1747 0994 BE4F      		sbci r27,hi8(-(509))
+ 1748 0996 FD01      		movw r30,r26
+ 1749 0998 0190      		ld __tmp_reg__,Z+
+ 1750 099a 0020      		tst __tmp_reg__
+ 1751 099c 01F4      		brne .-6
+ 1752 099e EA1B      		sub r30,r26
+ 1753 09a0 FB0B      		sbc r31,r27
+ 485:inputs.c      ****     if  (sample->serialout[len-1] == ',')//remove last comma
+ 1754               		.stabn	68,0,485,.LM236-.LFBB2
+ 1755               	.LM236:
+ 1756 09a2 E80D      		add r30,r8
+ 1757 09a4 F91D      		adc r31,r9
+ 1758 09a6 E550      		subi r30,lo8(-(507))
+ 1759 09a8 FE4F      		sbci r31,hi8(-(507))
+ 1760 09aa 8081      		ld r24,Z
+ 1761 09ac 8C32      		cpi r24,lo8(44)
+ 1762 09ae 01F4      		brne .L6
+ 486:inputs.c      ****     {sample->serialout[len-1] = '\0';}
+ 1763               		.stabn	68,0,486,.LM237-.LFBB2
+ 1764               	.LM237:
+ 1765 09b0 1082      		st Z,__zero_reg__
+ 1766               	.L6:
+ 1767               	/* epilogue start */
+ 487:inputs.c      ****   
+ 488:inputs.c      **** 
+ 489:inputs.c      **** }
+ 1768               		.stabn	68,0,489,.LM238-.LFBB2
+ 1769               	.LM238:
+ 1770 09b2 0F90      		pop __tmp_reg__
+ 1771 09b4 CF91      		pop r28
+ 1772 09b6 DF91      		pop r29
+ 1773 09b8 1F91      		pop r17
+ 1774 09ba 0F91      		pop r16
+ 1775 09bc FF90      		pop r15
+ 1776 09be DF90      		pop r13
+ 1777 09c0 CF90      		pop r12
+ 1778 09c2 BF90      		pop r11
+ 1779 09c4 AF90      		pop r10
+ 1780 09c6 9F90      		pop r9
+ 1781 09c8 8F90      		pop r8
+ 1782 09ca 0895      		ret
+ 1783               		.size	sample_all_channels, .-sample_all_channels
+ 1784               		.stabs	"report_chan:(5,2)",128,0,59,1
+ 1785               		.stabs	"check_humid:r(10,1)",64,0,385,10
+ 1786               		.stabn	192,0,0,.LFBB2-.LFBB2
+GAS LISTING /tmp/ccz5qAam.s 			page 41
+
+
+ 1787               		.stabn	224,0,0,.Lscope2-.LFBB2
+ 1788               	.Lscope2:
+ 1789               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 1790               		.stabd	78,0,0
+ 1791               		.section	.progmem.data,"a",@progbits
+ 1792               		.type	__c.1972, @object
+ 1793               		.size	__c.1972, 17
+ 1794               	__c.1972:
+ 1795 0000 2374 6573 		.string	"#test result ch "
+ 1795      7420 7265 
+ 1795      7375 6C74 
+ 1795      2063 6820 
+ 1795      00
+ 1796               		.type	__c.1967, @object
+ 1797               		.size	__c.1967, 17
+ 1798               	__c.1967:
+ 1799 0011 2374 6573 		.string	"#test result ch "
+ 1799      7420 7265 
+ 1799      7375 6C74 
+ 1799      2063 6820 
+ 1799      00
+ 1800               		.type	__c.1937, @object
+ 1801               		.size	__c.1937, 17
+ 1802               	__c.1937:
+ 1803 0022 2374 6573 		.string	"#test result ch "
+ 1803      7420 7265 
+ 1803      7375 6C74 
+ 1803      2063 6820 
+ 1803      00
+ 1804               		.type	__c.1932, @object
+ 1805               		.size	__c.1932, 17
+ 1806               	__c.1932:
+ 1807 0033 2374 6573 		.string	"#test result ch "
+ 1807      7420 7265 
+ 1807      7375 6C74 
+ 1807      2063 6820 
+ 1807      00
+ 1808               		.type	__c.1924, @object
+ 1809               		.size	__c.1924, 17
+ 1810               	__c.1924:
+ 1811 0044 2374 6573 		.string	"#test result ch "
+ 1811      7420 7265 
+ 1811      7375 6C74 
+ 1811      2063 6820 
+ 1811      00
+ 1812               		.text
+ 1813               		.stabs	"",100,0,0,.Letext0
+ 1814               	.Letext0:
+ 1815               	.global __do_copy_data
+GAS LISTING /tmp/ccz5qAam.s 			page 42
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 inputs.c
+     /tmp/ccz5qAam.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccz5qAam.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccz5qAam.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccz5qAam.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccz5qAam.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccz5qAam.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccz5qAam.s:124    .text:0000000000000000 calc_and_string
+     /tmp/ccz5qAam.s:322    .text:000000000000013e sample_all_channels
+     /tmp/ccz5qAam.s:1810   .progmem.data:0000000000000044 __c.1924
+     /tmp/ccz5qAam.s:1806   .progmem.data:0000000000000033 __c.1932
+     /tmp/ccz5qAam.s:1802   .progmem.data:0000000000000022 __c.1937
+     /tmp/ccz5qAam.s:1798   .progmem.data:0000000000000011 __c.1967
+     /tmp/ccz5qAam.s:1794   .progmem.data:0000000000000000 __c.1972
+
+UNDEFINED SYMBOLS
+strtod
+__floatsisf
+__mulsf3
+__addsf3
+dtostrf
+strcat
+toggle_led
+read_adc
+uart_putc
+uart_putw_dec
+i2c_init
+i2c_timeout_flag
+start_timer0
+Init_CO
+uart_puts_p
+get_CO2
+init_CO2
+suart_timedout_flag
+read_adc_onboard
+adc_init
+ReadSHT25
+__do_copy_data

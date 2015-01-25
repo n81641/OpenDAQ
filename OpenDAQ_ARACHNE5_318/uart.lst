@@ -1,0 +1,1346 @@
+GAS LISTING /tmp/cc04lVMX.s 			page 1
+
+
+   1               		.file	"uart.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_ARACHNE5_220/",100,0,2,.Ltext0
+   9               		.stabs	"uart.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/string.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  30               		.stabs	"size_t:t(2,1)=(0,4)",128,0,211,0
+  31               		.stabn	162,0,0,0
+  32               		.stabn	162,0,0,0
+  33               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdio.h",130,0,0,0
+  34               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  35               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  36               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  37               		.stabs	"int8_t:t(6,1)=(0,10)",128,0,121,0
+  38               		.stabs	"uint8_t:t(6,2)=(0,11)",128,0,122,0
+  39               		.stabs	"int16_t:t(6,3)=(0,1)",128,0,123,0
+  40               		.stabs	"uint16_t:t(6,4)=(0,4)",128,0,124,0
+  41               		.stabs	"int32_t:t(6,5)=(0,3)",128,0,125,0
+  42               		.stabs	"uint32_t:t(6,6)=(0,5)",128,0,126,0
+  43               		.stabs	"int64_t:t(6,7)=(0,6)",128,0,128,0
+  44               		.stabs	"uint64_t:t(6,8)=(0,7)",128,0,129,0
+  45               		.stabs	"intptr_t:t(6,9)=(6,3)",128,0,142,0
+  46               		.stabs	"uintptr_t:t(6,10)=(6,4)",128,0,147,0
+  47               		.stabs	"int_least8_t:t(6,11)=(6,1)",128,0,159,0
+  48               		.stabs	"uint_least8_t:t(6,12)=(6,2)",128,0,164,0
+  49               		.stabs	"int_least16_t:t(6,13)=(6,3)",128,0,169,0
+  50               		.stabs	"uint_least16_t:t(6,14)=(6,4)",128,0,174,0
+  51               		.stabs	"int_least32_t:t(6,15)=(6,5)",128,0,179,0
+  52               		.stabs	"uint_least32_t:t(6,16)=(6,6)",128,0,184,0
+  53               		.stabs	"int_least64_t:t(6,17)=(6,7)",128,0,192,0
+  54               		.stabs	"uint_least64_t:t(6,18)=(6,8)",128,0,199,0
+  55               		.stabs	"int_fast8_t:t(6,19)=(6,1)",128,0,213,0
+  56               		.stabs	"uint_fast8_t:t(6,20)=(6,2)",128,0,218,0
+  57               		.stabs	"int_fast16_t:t(6,21)=(6,3)",128,0,223,0
+GAS LISTING /tmp/cc04lVMX.s 			page 2
+
+
+  58               		.stabs	"uint_fast16_t:t(6,22)=(6,4)",128,0,228,0
+  59               		.stabs	"int_fast32_t:t(6,23)=(6,5)",128,0,233,0
+  60               		.stabs	"uint_fast32_t:t(6,24)=(6,6)",128,0,238,0
+  61               		.stabs	"int_fast64_t:t(6,25)=(6,7)",128,0,246,0
+  62               		.stabs	"uint_fast64_t:t(6,26)=(6,8)",128,0,253,0
+  63               		.stabs	"intmax_t:t(6,27)=(6,7)",128,0,273,0
+  64               		.stabs	"uintmax_t:t(6,28)=(6,8)",128,0,278,0
+  65               		.stabn	162,0,0,0
+  66               		.stabn	162,0,0,0
+  67               		.stabs	"int_farptr_t:t(4,1)=(6,5)",128,0,77,0
+  68               		.stabs	"uint_farptr_t:t(4,2)=(6,6)",128,0,81,0
+  69               		.stabn	162,0,0,0
+  70               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdarg.h",130,0,0,0
+  71               		.stabs	"__gnuc_va_list:t(7,1)=(7,2)=*(0,15)",128,0,40,0
+  72               		.stabs	"va_list:t(7,3)=(7,1)",128,0,102,0
+  73               		.stabn	162,0,0,0
+  74               		.stabs	"__file:T(3,1)=s14buf:(3,2)=*(0,2),0,16;unget:(0,11),16,8;flags:(6,2),24,8;size:(0,1),32,16
+  75               		.stabn	162,0,0,0
+  76               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/interrupt.h",130,0,0,0
+  77               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  78               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  79               		.stabs	"__fuse_t:t(10,1)=(10,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  80               		.stabn	162,0,0,0
+  81               		.stabn	162,0,0,0
+  82               		.stabn	162,0,0,0
+  83               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/pgmspace.h",130,0,0,0
+  84               		.stabs	"prog_void:t(11,1)=(11,2)=(11,2)",128,0,217,0
+  85               		.stabs	"prog_char:t(11,3)=(11,4)=@s8;r(11,4);0;255;",128,0,218,0
+  86               		.stabs	"prog_uchar:t(11,5)=(11,6)=@s8;r(11,6);0;255;",128,0,219,0
+  87               		.stabs	"prog_int8_t:t(11,7)=(11,8)=(0,10)",128,0,221,0
+  88               		.stabs	"prog_uint8_t:t(11,9)=(11,10)=(0,11)",128,0,222,0
+  89               		.stabs	"prog_int16_t:t(11,11)=(11,12)=(0,1)",128,0,223,0
+  90               		.stabs	"prog_uint16_t:t(11,13)=(11,14)=(0,4)",128,0,224,0
+  91               		.stabs	"prog_int32_t:t(11,15)=(11,16)=(0,3)",128,0,225,0
+  92               		.stabs	"prog_uint32_t:t(11,17)=(11,18)=(0,5)",128,0,226,0
+  93               		.stabs	"prog_int64_t:t(11,19)=(11,20)=(0,6)",128,0,228,0
+  94               		.stabs	"prog_uint64_t:t(11,21)=(11,22)=(0,7)",128,0,229,0
+  95               		.stabn	162,0,0,0
+  96               		.stabs	"utilities.h",130,0,0,0
+  97               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  98               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  99               		.stabs	"wchar_t:t(14,1)=(0,1)",128,0,323,0
+ 100               		.stabn	162,0,0,0
+ 101               		.stabs	"div_t:t(13,1)=(13,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+ 102               		.stabs	"ldiv_t:t(13,3)=(13,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+ 103               		.stabs	"__compar_fn_t:t(13,5)=(13,6)=*(13,7)=f(0,1)",128,0,80,0
+ 104               		.stabn	162,0,0,0
+ 105               		.stabn	162,0,0,0
+ 106               		.stabs	"uart_init:F(0,15)",36,0,69,uart_init
+ 107               	.global	uart_init
+ 108               		.type	uart_init, @function
+ 109               	uart_init:
+ 110               		.stabd	46,0,0
+   1:uart.c        **** ///
+   2:uart.c        **** /// \file uart.c
+   3:uart.c        **** /// \brief hardware UART commands  
+   4:uart.c        **** /// \details 
+GAS LISTING /tmp/cc04lVMX.s 			page 3
+
+
+   5:uart.c        **** /// \author Roland Riegel <feedback@roland-riegel.de>
+   6:uart.c        **** /// \copyright Copyright (c) 2006-2009 by Roland Riegel <feedback@roland-riegel.de>
+   7:uart.c        **** /// This file is free software; you can redistribute it and/or modify
+   8:uart.c        **** /// it under the terms of the GNU General Public License version 2 as
+   9:uart.c        **** /// published by the Free Software Foundation.
+  10:uart.c        **** ///
+  11:uart.c        **** 
+  12:uart.c        **** #include <string.h>
+  13:uart.c        **** #include <stdio.h>
+  14:uart.c        **** #include <avr/interrupt.h>
+  15:uart.c        **** #include <avr/io.h>
+  16:uart.c        **** #include <avr/pgmspace.h>
+  17:uart.c        **** #include <avr/sfr_defs.h>
+  18:uart.c        **** #include <avr/sleep.h>
+  19:uart.c        **** 
+  20:uart.c        **** #include "uart.h"
+  21:uart.c        **** #include "utilities.h"
+  22:uart.c        **** 
+  23:uart.c        **** 
+  24:uart.c        **** /* some mcus have multiple uarts */
+  25:uart.c        **** #ifdef UDR0
+  26:uart.c        **** #define UBRRH UBRR0H
+  27:uart.c        **** #define UBRRL UBRR0L
+  28:uart.c        **** #define UDR UDR0
+  29:uart.c        **** 
+  30:uart.c        **** #define UCSRA UCSR0A
+  31:uart.c        **** #define UDRE UDRE0
+  32:uart.c        **** #define RXC RXC0
+  33:uart.c        **** 
+  34:uart.c        **** #define UCSRB UCSR0B
+  35:uart.c        **** #define RXEN RXEN0
+  36:uart.c        **** #define TXEN TXEN0
+  37:uart.c        **** #define RXCIE RXCIE0
+  38:uart.c        **** 
+  39:uart.c        **** #define UCSRC UCSR0C
+  40:uart.c        **** #define URSEL 
+  41:uart.c        **** #define UCSZ0 UCSZ00
+  42:uart.c        **** #define UCSZ1 UCSZ01
+  43:uart.c        **** #define UCSRC_SELECT 0
+  44:uart.c        **** #else
+  45:uart.c        **** #define UCSRC_SELECT (1 << URSEL)
+  46:uart.c        **** #endif
+  47:uart.c        **** 
+  48:uart.c        **** #ifndef USART_RXC_vect
+  49:uart.c        **** #if defined(UART0_RX_vect)
+  50:uart.c        **** #define USART_RXC_vect UART0_RX_vect
+  51:uart.c        **** #elif defined(UART_RX_vect)
+  52:uart.c        **** #define USART_RXC_vect UART_RX_vect
+  53:uart.c        **** #elif defined(USART0_RX_vect)
+  54:uart.c        **** #define USART_RXC_vect USART0_RX_vect
+  55:uart.c        **** #elif defined(USART_RX_vect)
+  56:uart.c        **** #define USART_RXC_vect USART_RX_vect
+  57:uart.c        **** #elif defined(USART0_RXC_vect)
+  58:uart.c        **** #define USART_RXC_vect USART0_RXC_vect
+  59:uart.c        **** #elif defined(USART_RXC_vect)
+  60:uart.c        **** #define USART_RXC_vect USART_RXC_vect
+  61:uart.c        **** #else
+GAS LISTING /tmp/cc04lVMX.s 			page 4
+
+
+  62:uart.c        **** #error "Uart receive complete interrupt not defined!"
+  63:uart.c        **** #endif
+  64:uart.c        **** #endif
+  65:uart.c        **** 
+  66:uart.c        **** #define BAUD 9600UL
+  67:uart.c        **** #define UBRRVAL (F_CPU/(BAUD*16)-1)
+  68:uart.c        **** 
+  69:uart.c        **** void uart_init()
+  70:uart.c        **** {
+ 111               		.stabn	68,0,70,.LM0-.LFBB1
+ 112               	.LM0:
+ 113               	.LFBB1:
+ 114               	/* prologue: function */
+ 115               	/* frame size = 0 */
+ 116               	/* stack size = 0 */
+ 117               	.L__stack_usage = 0
+  71:uart.c        ****     /* set baud rate */
+  72:uart.c        ****     UBRRH = UBRRVAL >> 8;
+ 118               		.stabn	68,0,72,.LM1-.LFBB1
+ 119               	.LM1:
+ 120 0000 10BC      		out 64-32,__zero_reg__
+  73:uart.c        ****     UBRRL = UBRRVAL & 0xff;
+ 121               		.stabn	68,0,73,.LM2-.LFBB1
+ 122               	.LM2:
+ 123 0002 8AE1      		ldi r24,lo8(26)
+ 124 0004 89B9      		out 41-32,r24
+  74:uart.c        ****     /* set frame format: 8 bit, no parity, 1 bit */
+  75:uart.c        ****     UCSRC = UCSRC_SELECT | (1 << UCSZ1) | (1 << UCSZ0);
+ 125               		.stabn	68,0,75,.LM3-.LFBB1
+ 126               	.LM3:
+ 127 0006 86E8      		ldi r24,lo8(-122)
+ 128 0008 80BD      		out 64-32,r24
+  76:uart.c        ****     /* enable serial receiver and transmitter */
+  77:uart.c        ****     UCSRB = (1 << RXEN) | (1 << TXEN) | (1 << RXCIE);
+ 129               		.stabn	68,0,77,.LM4-.LFBB1
+ 130               	.LM4:
+ 131 000a 88E9      		ldi r24,lo8(-104)
+ 132 000c 8AB9      		out 42-32,r24
+ 133               	/* epilogue start */
+  78:uart.c        **** 
+  79:uart.c        **** }
+ 134               		.stabn	68,0,79,.LM5-.LFBB1
+ 135               	.LM5:
+ 136 000e 0895      		ret
+ 137               		.size	uart_init, .-uart_init
+ 138               	.Lscope1:
+ 139               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 140               		.stabd	78,0,0
+ 141               		.stabs	"uart_putc:F(0,15)",36,0,81,uart_putc
+ 142               		.stabs	"c:P(6,2)",64,0,81,17
+ 143               	.global	uart_putc
+ 144               		.type	uart_putc, @function
+ 145               	uart_putc:
+ 146               		.stabd	46,0,0
+  80:uart.c        **** 
+  81:uart.c        **** void uart_putc(uint8_t c)
+  82:uart.c        **** {
+GAS LISTING /tmp/cc04lVMX.s 			page 5
+
+
+ 147               		.stabn	68,0,82,.LM6-.LFBB2
+ 148               	.LM6:
+ 149               	.LFBB2:
+ 150 0010 1F93      		push r17
+ 151               	/* prologue: function */
+ 152               	/* frame size = 0 */
+ 153               	/* stack size = 1 */
+ 154               	.L__stack_usage = 1
+ 155 0012 182F      		mov r17,r24
+  83:uart.c        ****     
+  84:uart.c        ****     if(c == '\n')
+ 156               		.stabn	68,0,84,.LM7-.LFBB2
+ 157               	.LM7:
+ 158 0014 8A30      		cpi r24,lo8(10)
+ 159 0016 01F4      		brne .L5
+  85:uart.c        ****         uart_putc('\r'); //add return
+ 160               		.stabn	68,0,85,.LM8-.LFBB2
+ 161               	.LM8:
+ 162 0018 8DE0      		ldi r24,lo8(13)
+ 163 001a 0E94 0000 		call uart_putc
+ 164               	.L5:
+  86:uart.c        **** 
+  87:uart.c        ****     /* wait until transmit buffer is empty */
+  88:uart.c        ****     while(!(UCSRA & (1 << UDRE)));
+ 165               		.stabn	68,0,88,.LM9-.LFBB2
+ 166               	.LM9:
+ 167 001e 5D9B      		sbis 43-32,5
+ 168 0020 00C0      		rjmp .L5
+  89:uart.c        **** 
+  90:uart.c        ****     /* send next byte */
+  91:uart.c        ****     UDR = c;
+ 169               		.stabn	68,0,91,.LM10-.LFBB2
+ 170               	.LM10:
+ 171 0022 1CB9      		out 44-32,r17
+ 172               	/* epilogue start */
+  92:uart.c        **** }
+ 173               		.stabn	68,0,92,.LM11-.LFBB2
+ 174               	.LM11:
+ 175 0024 1F91      		pop r17
+ 176 0026 0895      		ret
+ 177               		.size	uart_putc, .-uart_putc
+ 178               	.Lscope2:
+ 179               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 180               		.stabd	78,0,0
+ 181               		.stabs	"uart_putw_dec:F(0,15)",36,0,96,uart_putw_dec
+ 182               		.stabs	"w:P(6,4)",64,0,96,16
+ 183               	.global	uart_putw_dec
+ 184               		.type	uart_putw_dec, @function
+ 185               	uart_putw_dec:
+ 186               		.stabd	46,0,0
+  93:uart.c        **** 
+  94:uart.c        **** 
+  95:uart.c        **** 
+  96:uart.c        **** void uart_putw_dec(uint16_t w)
+  97:uart.c        **** {
+ 187               		.stabn	68,0,97,.LM12-.LFBB3
+ 188               	.LM12:
+GAS LISTING /tmp/cc04lVMX.s 			page 6
+
+
+ 189               	.LFBB3:
+ 190 0028 AF92      		push r10
+ 191 002a BF92      		push r11
+ 192 002c CF92      		push r12
+ 193 002e DF92      		push r13
+ 194 0030 EF92      		push r14
+ 195 0032 FF92      		push r15
+ 196 0034 0F93      		push r16
+ 197 0036 1F93      		push r17
+ 198 0038 CF93      		push r28
+ 199 003a DF93      		push r29
+ 200               	/* prologue: function */
+ 201               	/* frame size = 0 */
+ 202               	/* stack size = 10 */
+ 203               	.L__stack_usage = 10
+ 204 003c 8C01      		movw r16,r24
+ 205               	.LBB4:
+  98:uart.c        ****     uint16_t num = 10000;
+  99:uart.c        ****     uint8_t started = 0;
+ 100:uart.c        **** 
+ 101:uart.c        ****     while(num > 0)
+ 102:uart.c        ****     {
+ 103:uart.c        ****         uint8_t b = w / num;
+ 104:uart.c        ****         if(b > 0 || started || num == 1)
+ 105:uart.c        ****         {
+ 106:uart.c        ****             uart_putc('0' + b);
+ 107:uart.c        ****             started = 1;
+ 108:uart.c        ****         }
+ 109:uart.c        ****         w -= b * num;
+ 110:uart.c        **** 
+ 111:uart.c        ****         num /= 10;
+ 206               		.stabn	68,0,111,.LM13-.LFBB3
+ 207               	.LM13:
+ 208 003e 95E0      		ldi r25,lo8(5)
+ 209 0040 E92E      		mov r14,r25
+ 210 0042 F12C      		mov r15,__zero_reg__
+  99:uart.c        ****     uint8_t started = 0;
+ 211               		.stabn	68,0,99,.LM14-.LFBB3
+ 212               	.LM14:
+ 213 0044 20E0      		ldi r18,lo8(0)
+  98:uart.c        ****     uint16_t num = 10000;
+ 214               		.stabn	68,0,98,.LM15-.LFBB3
+ 215               	.LM15:
+ 216 0046 C0E1      		ldi r28,lo8(10000)
+ 217 0048 D7E2      		ldi r29,hi8(10000)
+ 218               		.stabn	68,0,111,.LM16-.LFBB3
+ 219               	.LM16:
+ 220 004a 8AE0      		ldi r24,lo8(10)
+ 221 004c C82E      		mov r12,r24
+ 222 004e D12C      		mov r13,__zero_reg__
+ 223               	.L11:
+ 103:uart.c        ****         uint8_t b = w / num;
+ 224               		.stabn	68,0,103,.LM17-.LFBB3
+ 225               	.LM17:
+ 226 0050 C801      		movw r24,r16
+ 227 0052 BE01      		movw r22,r28
+ 228 0054 0E94 0000 		call __udivmodhi4
+GAS LISTING /tmp/cc04lVMX.s 			page 7
+
+
+ 229 0058 B62E      		mov r11,r22
+ 104:uart.c        ****         if(b > 0 || started || num == 1)
+ 230               		.stabn	68,0,104,.LM18-.LFBB3
+ 231               	.LM18:
+ 232 005a 6623      		tst r22
+ 233 005c 01F4      		brne .L8
+ 104:uart.c        ****         if(b > 0 || started || num == 1)
+ 234               		.stabn	68,0,104,.LM19-.LFBB3
+ 235               	.LM19:
+ 236 005e 2223      		tst r18
+ 237 0060 01F4      		brne .L8
+ 238 0062 C130      		cpi r28,1
+ 239 0064 D105      		cpc r29,__zero_reg__
+ 240 0066 01F4      		brne .L9
+ 241               	.L8:
+ 106:uart.c        ****             uart_putc('0' + b);
+ 242               		.stabn	68,0,106,.LM20-.LFBB3
+ 243               	.LM20:
+ 244 0068 8B2D      		mov r24,r11
+ 245 006a 805D      		subi r24,lo8(-(48))
+ 246 006c 0E94 0000 		call uart_putc
+ 107:uart.c        ****             started = 1;
+ 247               		.stabn	68,0,107,.LM21-.LFBB3
+ 248               	.LM21:
+ 249 0070 21E0      		ldi r18,lo8(1)
+ 250               	.L9:
+ 251               		.stabn	68,0,111,.LM22-.LFBB3
+ 252               	.LM22:
+ 253 0072 CE01      		movw r24,r28
+ 254 0074 B601      		movw r22,r12
+ 255 0076 0E94 0000 		call __udivmodhi4
+ 256 007a 0894      		sec
+ 257 007c E108      		sbc r14,__zero_reg__
+ 258 007e F108      		sbc r15,__zero_reg__
+ 259               	.LBE4:
+ 101:uart.c        ****     while(num > 0)
+ 260               		.stabn	68,0,101,.LM23-.LFBB3
+ 261               	.LM23:
+ 262 0080 E114      		cp r14,__zero_reg__
+ 263 0082 F104      		cpc r15,__zero_reg__
+ 264 0084 01F0      		breq .L7
+ 265               	.LBB5:
+ 109:uart.c        ****         w -= b * num;
+ 266               		.stabn	68,0,109,.LM24-.LFBB3
+ 267               	.LM24:
+ 268 0086 4B2D      		mov r20,r11
+ 269 0088 50E0      		ldi r21,lo8(0)
+ 270 008a 4C9F      		mul r20,r28
+ 271 008c C001      		movw r24,r0
+ 272 008e 4D9F      		mul r20,r29
+ 273 0090 900D      		add r25,r0
+ 274 0092 5C9F      		mul r21,r28
+ 275 0094 900D      		add r25,r0
+ 276 0096 1124      		clr r1
+ 277 0098 081B      		sub r16,r24
+ 278 009a 190B      		sbc r17,r25
+ 279               		.stabn	68,0,111,.LM25-.LFBB3
+GAS LISTING /tmp/cc04lVMX.s 			page 8
+
+
+ 280               	.LM25:
+ 281 009c A62E      		mov r10,r22
+ 282 009e E501      		movw r28,r10
+ 283 00a0 5E01      		movw r10,r28
+ 284 00a2 B72E      		mov r11,r23
+ 285 00a4 E501      		movw r28,r10
+ 286 00a6 00C0      		rjmp .L11
+ 287               	.L7:
+ 288               	/* epilogue start */
+ 289               	.LBE5:
+ 112:uart.c        ****     }
+ 113:uart.c        **** }
+ 290               		.stabn	68,0,113,.LM26-.LFBB3
+ 291               	.LM26:
+ 292 00a8 DF91      		pop r29
+ 293 00aa CF91      		pop r28
+ 294 00ac 1F91      		pop r17
+ 295 00ae 0F91      		pop r16
+ 296 00b0 FF90      		pop r15
+ 297 00b2 EF90      		pop r14
+ 298 00b4 DF90      		pop r13
+ 299 00b6 CF90      		pop r12
+ 300 00b8 BF90      		pop r11
+ 301 00ba AF90      		pop r10
+ 302 00bc 0895      		ret
+ 303               		.size	uart_putw_dec, .-uart_putw_dec
+ 304               		.stabs	"started:r(6,2)",64,0,99,18
+ 305               		.stabn	192,0,0,.LFBB3-.LFBB3
+ 306               		.stabs	"b:r(6,2)",64,0,103,11
+ 307               		.stabn	192,0,0,.LBB4-.LFBB3
+ 308               		.stabn	224,0,0,.LBE4-.LFBB3
+ 309               		.stabs	"b:r(6,2)",64,0,103,11
+ 310               		.stabn	192,0,0,.LBB5-.LFBB3
+ 311               		.stabn	224,0,0,.LBE5-.LFBB3
+ 312               		.stabn	224,0,0,.Lscope3-.LFBB3
+ 313               	.Lscope3:
+ 314               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 315               		.stabd	78,0,0
+ 316               		.stabs	"uart_putdw_dec:F(0,15)",36,0,115,uart_putdw_dec
+ 317               		.stabs	"dw:P(6,6)",64,0,115,10
+ 318               	.global	uart_putdw_dec
+ 319               		.type	uart_putdw_dec, @function
+ 320               	uart_putdw_dec:
+ 321               		.stabd	46,0,0
+ 114:uart.c        **** 
+ 115:uart.c        **** void uart_putdw_dec(uint32_t dw)
+ 116:uart.c        **** {
+ 322               		.stabn	68,0,116,.LM27-.LFBB4
+ 323               	.LM27:
+ 324               	.LFBB4:
+ 325 00be 4F92      		push r4
+ 326 00c0 5F92      		push r5
+ 327 00c2 6F92      		push r6
+ 328 00c4 7F92      		push r7
+ 329 00c6 8F92      		push r8
+ 330 00c8 9F92      		push r9
+ 331 00ca AF92      		push r10
+GAS LISTING /tmp/cc04lVMX.s 			page 9
+
+
+ 332 00cc BF92      		push r11
+ 333 00ce CF92      		push r12
+ 334 00d0 DF92      		push r13
+ 335 00d2 EF92      		push r14
+ 336 00d4 FF92      		push r15
+ 337 00d6 0F93      		push r16
+ 338 00d8 1F93      		push r17
+ 339 00da CF93      		push r28
+ 340 00dc DF93      		push r29
+ 341               	/* prologue: function */
+ 342               	/* frame size = 0 */
+ 343               	/* stack size = 16 */
+ 344               	.L__stack_usage = 16
+ 345 00de 5B01      		movw r10,r22
+ 346 00e0 6C01      		movw r12,r24
+ 347               	.LBB6:
+ 117:uart.c        ****     uint32_t num = 1000000000;
+ 118:uart.c        ****     uint8_t started = 0;
+ 119:uart.c        **** 
+ 120:uart.c        ****     while(num > 0)
+ 121:uart.c        ****     {
+ 122:uart.c        ****         uint8_t b = dw / num;
+ 123:uart.c        ****         if(b > 0 || started || num == 1)
+ 124:uart.c        ****         {
+ 125:uart.c        ****             uart_putc('0' + b);
+ 126:uart.c        ****             started = 1;
+ 127:uart.c        ****         }
+ 128:uart.c        ****         dw -= b * num;
+ 129:uart.c        **** 
+ 130:uart.c        ****         num /= 10;
+ 348               		.stabn	68,0,130,.LM28-.LFBB4
+ 349               	.LM28:
+ 350 00e2 CAE0      		ldi r28,lo8(10)
+ 351 00e4 D0E0      		ldi r29,hi8(10)
+ 118:uart.c        ****     uint8_t started = 0;
+ 352               		.stabn	68,0,118,.LM29-.LFBB4
+ 353               	.LM29:
+ 354 00e6 4424      		clr r4
+ 117:uart.c        ****     uint32_t num = 1000000000;
+ 355               		.stabn	68,0,117,.LM30-.LFBB4
+ 356               	.LM30:
+ 357 00e8 E12C      		mov r14,__zero_reg__
+ 358 00ea 2AEC      		ldi r18,hi8(1000000000)
+ 359 00ec F22E      		mov r15,r18
+ 360 00ee 2AE9      		ldi r18,hlo8(1000000000)
+ 361 00f0 022F      		mov r16,r18
+ 362 00f2 2BE3      		ldi r18,hhi8(1000000000)
+ 363 00f4 122F      		mov r17,r18
+ 364               	.L16:
+ 122:uart.c        ****         uint8_t b = dw / num;
+ 365               		.stabn	68,0,122,.LM31-.LFBB4
+ 366               	.LM31:
+ 367 00f6 C601      		movw r24,r12
+ 368 00f8 B501      		movw r22,r10
+ 369 00fa A801      		movw r20,r16
+ 370 00fc 9701      		movw r18,r14
+ 371 00fe 0E94 0000 		call __udivmodsi4
+GAS LISTING /tmp/cc04lVMX.s 			page 10
+
+
+ 372 0102 922E      		mov r9,r18
+ 123:uart.c        ****         if(b > 0 || started || num == 1)
+ 373               		.stabn	68,0,123,.LM32-.LFBB4
+ 374               	.LM32:
+ 375 0104 2223      		tst r18
+ 376 0106 01F4      		brne .L13
+ 123:uart.c        ****         if(b > 0 || started || num == 1)
+ 377               		.stabn	68,0,123,.LM33-.LFBB4
+ 378               	.LM33:
+ 379 0108 4420      		tst r4
+ 380 010a 01F4      		brne .L13
+ 381 010c 81E0      		ldi r24,lo8(1)
+ 382 010e E816      		cp r14,r24
+ 383 0110 F104      		cpc r15,__zero_reg__
+ 384 0112 0105      		cpc r16,__zero_reg__
+ 385 0114 1105      		cpc r17,__zero_reg__
+ 386 0116 01F4      		brne .L14
+ 387               	.L13:
+ 125:uart.c        ****             uart_putc('0' + b);
+ 388               		.stabn	68,0,125,.LM34-.LFBB4
+ 389               	.LM34:
+ 390 0118 892D      		mov r24,r9
+ 391 011a 805D      		subi r24,lo8(-(48))
+ 392 011c 0E94 0000 		call uart_putc
+ 126:uart.c        ****             started = 1;
+ 393               		.stabn	68,0,126,.LM35-.LFBB4
+ 394               	.LM35:
+ 395 0120 4424      		clr r4
+ 396 0122 4394      		inc r4
+ 397               	.L14:
+ 398               		.stabn	68,0,130,.LM36-.LFBB4
+ 399               	.LM36:
+ 400 0124 C801      		movw r24,r16
+ 401 0126 B701      		movw r22,r14
+ 402 0128 2AE0      		ldi r18,lo8(10)
+ 403 012a 30E0      		ldi r19,hi8(10)
+ 404 012c 40E0      		ldi r20,hlo8(10)
+ 405 012e 50E0      		ldi r21,hhi8(10)
+ 406 0130 0E94 0000 		call __udivmodsi4
+ 407 0134 822E      		mov r8,r18
+ 408 0136 732E      		mov r7,r19
+ 409 0138 642E      		mov r6,r20
+ 410 013a 552E      		mov r5,r21
+ 411 013c 2197      		sbiw r28,1
+ 412               	.LBE6:
+ 120:uart.c        ****     while(num > 0)
+ 413               		.stabn	68,0,120,.LM37-.LFBB4
+ 414               	.LM37:
+ 415 013e 01F0      		breq .L12
+ 416               	.LBB7:
+ 128:uart.c        ****         dw -= b * num;
+ 417               		.stabn	68,0,128,.LM38-.LFBB4
+ 418               	.LM38:
+ 419 0140 692D      		mov r22,r9
+ 420 0142 70E0      		ldi r23,lo8(0)
+ 421 0144 80E0      		ldi r24,lo8(0)
+ 422 0146 90E0      		ldi r25,hi8(0)
+GAS LISTING /tmp/cc04lVMX.s 			page 11
+
+
+ 423 0148 A801      		movw r20,r16
+ 424 014a 9701      		movw r18,r14
+ 425 014c 0E94 0000 		call __mulsi3
+ 426 0150 A61A      		sub r10,r22
+ 427 0152 B70A      		sbc r11,r23
+ 428 0154 C80A      		sbc r12,r24
+ 429 0156 D90A      		sbc r13,r25
+ 430               		.stabn	68,0,130,.LM39-.LFBB4
+ 431               	.LM39:
+ 432 0158 E82C      		mov r14,r8
+ 433 015a F72C      		mov r15,r7
+ 434 015c 062D      		mov r16,r6
+ 435 015e 152D      		mov r17,r5
+ 436 0160 00C0      		rjmp .L16
+ 437               	.L12:
+ 438               	/* epilogue start */
+ 439               	.LBE7:
+ 131:uart.c        ****     }
+ 132:uart.c        **** }
+ 440               		.stabn	68,0,132,.LM40-.LFBB4
+ 441               	.LM40:
+ 442 0162 DF91      		pop r29
+ 443 0164 CF91      		pop r28
+ 444 0166 1F91      		pop r17
+ 445 0168 0F91      		pop r16
+ 446 016a FF90      		pop r15
+ 447 016c EF90      		pop r14
+ 448 016e DF90      		pop r13
+ 449 0170 CF90      		pop r12
+ 450 0172 BF90      		pop r11
+ 451 0174 AF90      		pop r10
+ 452 0176 9F90      		pop r9
+ 453 0178 8F90      		pop r8
+ 454 017a 7F90      		pop r7
+ 455 017c 6F90      		pop r6
+ 456 017e 5F90      		pop r5
+ 457 0180 4F90      		pop r4
+ 458 0182 0895      		ret
+ 459               		.size	uart_putdw_dec, .-uart_putdw_dec
+ 460               		.stabs	"started:r(6,2)",64,0,118,4
+ 461               		.stabn	192,0,0,.LFBB4-.LFBB4
+ 462               		.stabs	"b:r(6,2)",64,0,122,9
+ 463               		.stabn	192,0,0,.LBB6-.LFBB4
+ 464               		.stabn	224,0,0,.LBE6-.LFBB4
+ 465               		.stabs	"b:r(6,2)",64,0,122,9
+ 466               		.stabn	192,0,0,.LBB7-.LFBB4
+ 467               		.stabn	224,0,0,.LBE7-.LFBB4
+ 468               		.stabn	224,0,0,.Lscope4-.LFBB4
+ 469               	.Lscope4:
+ 470               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 471               		.stabd	78,0,0
+ 472               		.stabs	"uart_puts:F(0,15)",36,0,134,uart_puts
+ 473               	.global	uart_puts
+ 474               		.type	uart_puts, @function
+ 475               	uart_puts:
+ 476               		.stabd	46,0,0
+ 133:uart.c        **** 
+GAS LISTING /tmp/cc04lVMX.s 			page 12
+
+
+ 134:uart.c        **** void uart_puts(const char* str) 
+ 135:uart.c        **** {
+ 477               		.stabn	68,0,135,.LM41-.LFBB5
+ 478               	.LM41:
+ 479               	.LFBB5:
+ 480 0184 EF92      		push r14
+ 481 0186 FF92      		push r15
+ 482 0188 CF93      		push r28
+ 483 018a DF93      		push r29
+ 484               	/* prologue: function */
+ 485               	/* frame size = 0 */
+ 486               	/* stack size = 4 */
+ 487               	.L__stack_usage = 4
+ 488               		.stabn	68,0,135,.LM42-.LFBB5
+ 489               	.LM42:
+ 490 018c E82E      		mov r14,r24
+ 491 018e E701      		movw r28,r14
+ 492 0190 7E01      		movw r14,r28
+ 493 0192 F92E      		mov r15,r25
+ 494 0194 E701      		movw r28,r14
+ 136:uart.c        ****     while(*str)
+ 495               		.stabn	68,0,136,.LM43-.LFBB5
+ 496               	.LM43:
+ 497 0196 00C0      		rjmp .L18
+ 498               	.L19:
+ 137:uart.c        ****         uart_putc(*str++);
+ 499               		.stabn	68,0,137,.LM44-.LFBB5
+ 500               	.LM44:
+ 501 0198 0E94 0000 		call uart_putc
+ 502               	.L18:
+ 136:uart.c        ****     while(*str)
+ 503               		.stabn	68,0,136,.LM45-.LFBB5
+ 504               	.LM45:
+ 505 019c 8991      		ld r24,Y+
+ 506 019e 8823      		tst r24
+ 507 01a0 01F4      		brne .L19
+ 508               	.LBB8:
+ 509               	.LBB9:
+ 510               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext1
+ 511               	.Ltext1:
+   1:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   6:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   9:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  12:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      distribution.
+  16:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  17:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+GAS LISTING /tmp/cc04lVMX.s 			page 13
+
+
+  18:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  21:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  33:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* $Id: delay.h.in 2189 2010-10-13 09:39:34Z aboyapati $ */
+  34:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  35:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  38:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
+  39:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
+  40:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  41:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  42:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <inttypes.h>
+  43:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <util/delay_basic.h>
+  44:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <math.h>
+  45:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  46:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \file */
+  47:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  48:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \code
+  49:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  50:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  51:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #include <util/delay.h>
+  52:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \endcode
+  53:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  54:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  55:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  56:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  57:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     used.
+  58:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  59:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  60:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  61:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  62:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  63:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  64:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  65:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  66:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  67:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  68:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  69:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  70:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  71:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  72:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  73:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  74:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+GAS LISTING /tmp/cc04lVMX.s 			page 14
+
+
+  75:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     routines linked into the application.
+  76:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  77:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  78:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  79:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  80:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  81:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** */
+  82:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  83:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  84:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
+  85:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
+  86:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  87:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  88:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef F_CPU
+  89:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  90:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  91:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # define F_CPU 1000000UL
+  92:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  93:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  94:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+  95:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+  96:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  97:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  98:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /**
+  99:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    \ingroup util_delay
+ 100:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 101:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 102:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 103:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 104:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 105:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 106:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 107:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 108:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 109:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 110:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 111:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 112:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 113:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 114:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
+ 115:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 116:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 117:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 118:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 119:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
+ 120:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
+ 121:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
+ 122:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 123:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
+ 124:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    to round down and round to closest integer.
+ 125:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 126:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
+ 127:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
+ 128:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay
+ 129:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    although this will be deprecated in future.
+ 130:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 131:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****  */
+GAS LISTING /tmp/cc04lVMX.s 			page 15
+
+
+ 132:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** void
+ 133:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** _delay_ms(double __ms)
+ 134:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** {
+ 135:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint16_t __ticks;
+ 136:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	double __tmp ; 
+ 137:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && !defined(__DELAY_BACKWARD_COMPATIBLE__)
+ 138:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 139:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 140:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 141:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 142:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 143:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 144:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 145:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 146:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 147:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 148:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#else
+ 149:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		//round up by default
+ 150:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 151:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#endif
+ 152:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 153:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 512               		.stabn	68,0,153,.LM46-.LFBB5
+ 513               	.LM46:
+ 514 01a2 88E1      		 ldi r24,lo8(1048)
+ 515 01a4 94E0      	    ldi r25,hi8(1048)
+ 516 01a6 0197      	    1:sbiw r24,1
+ 517 01a8 01F4      	    brne 1b
+ 518 01aa 00C0      		rjmp .
+ 519               	/* epilogue start */
+ 520               	.LBE9:
+ 521               	.LBE8:
+ 522               		.stabs	"uart.c",132,0,0,.Ltext2
+ 523               	.Ltext2:
+ 138:uart.c        ****         _delay_ms(CHAR_DELAY);
+ 139:uart.c        **** }
+ 524               		.stabn	68,0,139,.LM47-.LFBB5
+ 525               	.LM47:
+ 526 01ac DF91      		pop r29
+ 527 01ae CF91      		pop r28
+ 528 01b0 FF90      		pop r15
+ 529 01b2 EF90      		pop r14
+ 530 01b4 0895      		ret
+ 531               		.size	uart_puts, .-uart_puts
+ 532               	.Lscope5:
+ 533               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 534               		.stabd	78,0,0
+ 535               		.stabs	"uart_puts_p:F(0,15)",36,0,141,uart_puts_p
+ 536               		.stabs	"str:P(0,16)=*(0,17)=k(11,3)",64,0,141,28
+ 537               	.global	uart_puts_p
+ 538               		.type	uart_puts_p, @function
+ 539               	uart_puts_p:
+ 540               		.stabd	46,0,0
+ 140:uart.c        **** 
+ 141:uart.c        **** void uart_puts_p(PGM_P str)
+ 142:uart.c        **** {
+ 541               		.stabn	68,0,142,.LM48-.LFBB6
+GAS LISTING /tmp/cc04lVMX.s 			page 16
+
+
+ 542               	.LM48:
+ 543               	.LFBB6:
+ 544 01b6 CF93      		push r28
+ 545 01b8 DF93      		push r29
+ 546               	/* prologue: function */
+ 547               	/* frame size = 0 */
+ 548               	/* stack size = 2 */
+ 549               	.L__stack_usage = 2
+ 550 01ba EC01      		movw r28,r24
+ 551               	.L22:
+ 552               		.stabn	68,0,142,.LM49-.LFBB6
+ 553               	.LM49:
+ 554 01bc FE01      		movw r30,r28
+ 555               	.LBB10:
+ 556               	.LBB11:
+ 143:uart.c        ****     while(1)
+ 144:uart.c        ****     {
+ 145:uart.c        ****         uint8_t b = pgm_read_byte_near(str++);
+ 557               		.stabn	68,0,145,.LM50-.LFBB6
+ 558               	.LM50:
+ 559 01be 2196      		adiw r28,1
+ 560               	/* #APP */
+ 561               	 ;  145 "uart.c" 1
+ 562 01c0 8491      		lpm r24, Z
+ 563               		
+ 564               	 ;  0 "" 2
+ 565               	/* #NOAPP */
+ 566               	.LBE11:
+ 146:uart.c        ****         if(!b)
+ 567               		.stabn	68,0,146,.LM51-.LFBB6
+ 568               	.LM51:
+ 569 01c2 8823      		tst r24
+ 570 01c4 01F0      		breq .L20
+ 147:uart.c        ****             break;
+ 148:uart.c        **** 
+ 149:uart.c        ****         uart_putc(b);
+ 571               		.stabn	68,0,149,.LM52-.LFBB6
+ 572               	.LM52:
+ 573 01c6 0E94 0000 		call uart_putc
+ 574               	.LBE10:
+ 150:uart.c        ****     }
+ 575               		.stabn	68,0,150,.LM53-.LFBB6
+ 576               	.LM53:
+ 577 01ca 00C0      		rjmp .L22
+ 578               	.L20:
+ 579               	/* epilogue start */
+ 151:uart.c        **** }
+ 580               		.stabn	68,0,151,.LM54-.LFBB6
+ 581               	.LM54:
+ 582 01cc DF91      		pop r29
+ 583 01ce CF91      		pop r28
+ 584 01d0 0895      		ret
+ 585               		.size	uart_puts_p, .-uart_puts_p
+ 586               		.stabs	"__addr16:r(6,4)",64,0,145,30
+ 587               		.stabn	192,0,0,.LBB11-.LFBB6
+ 588               		.stabn	224,0,0,.LBE11-.LFBB6
+ 589               	.Lscope6:
+GAS LISTING /tmp/cc04lVMX.s 			page 17
+
+
+ 590               		.stabs	"",36,0,0,.Lscope6-.LFBB6
+ 591               		.stabd	78,0,0
+ 592               		.stabs	"uart_getc:F(6,2)",36,0,153,uart_getc
+ 593               	.global	uart_getc
+ 594               		.type	uart_getc, @function
+ 595               	uart_getc:
+ 596               		.stabd	46,0,0
+ 152:uart.c        **** 
+ 153:uart.c        **** uint8_t uart_getc()
+ 154:uart.c        **** {
+ 597               		.stabn	68,0,154,.LM55-.LFBB7
+ 598               	.LM55:
+ 599               	.LFBB7:
+ 600               	/* prologue: function */
+ 601               	/* frame size = 0 */
+ 602               	/* stack size = 0 */
+ 603               	.L__stack_usage = 0
+ 604               	.L24:
+ 155:uart.c        **** 
+ 156:uart.c        ****     /* wait until receive buffer is full */
+ 157:uart.c        ****     while(!(UCSRA & (1 << RXC)));
+ 605               		.stabn	68,0,157,.LM56-.LFBB7
+ 606               	.LM56:
+ 607 01d2 5F9B      		sbis 43-32,7
+ 608 01d4 00C0      		rjmp .L24
+ 158:uart.c        ****     uint8_t b = UDR;
+ 609               		.stabn	68,0,158,.LM57-.LFBB7
+ 610               	.LM57:
+ 611 01d6 8CB1      		in r24,44-32
+ 159:uart.c        ****     if(b == '\r')
+ 612               		.stabn	68,0,159,.LM58-.LFBB7
+ 613               	.LM58:
+ 614 01d8 8D30      		cpi r24,lo8(13)
+ 615 01da 01F4      		brne .L25
+ 160:uart.c        ****         b = '\n';
+ 616               		.stabn	68,0,160,.LM59-.LFBB7
+ 617               	.LM59:
+ 618 01dc 8AE0      		ldi r24,lo8(10)
+ 619               	.L25:
+ 161:uart.c        ****     return b;
+ 162:uart.c        **** }
+ 620               		.stabn	68,0,162,.LM60-.LFBB7
+ 621               	.LM60:
+ 622 01de 0895      		ret
+ 623               		.size	uart_getc, .-uart_getc
+ 624               		.stabs	"b:r(6,2)",64,0,158,24
+ 625               		.stabn	192,0,0,.LFBB7-.LFBB7
+ 626               		.stabn	224,0,0,.Lscope7-.LFBB7
+ 627               	.Lscope7:
+ 628               		.stabs	"",36,0,0,.Lscope7-.LFBB7
+ 629               		.stabd	78,0,0
+ 630               		.stabs	"uart_getc_timeout:F(6,2)",36,0,164,uart_getc_timeout
+ 631               	.global	uart_getc_timeout
+ 632               		.type	uart_getc_timeout, @function
+ 633               	uart_getc_timeout:
+ 634               		.stabd	46,0,0
+ 163:uart.c        **** 
+GAS LISTING /tmp/cc04lVMX.s 			page 18
+
+
+ 164:uart.c        **** uint8_t uart_getc_timeout()
+ 165:uart.c        **** {
+ 635               		.stabn	68,0,165,.LM61-.LFBB8
+ 636               	.LM61:
+ 637               	.LFBB8:
+ 638               	/* prologue: function */
+ 639               	/* frame size = 0 */
+ 640               	/* stack size = 0 */
+ 641               	.L__stack_usage = 0
+ 166:uart.c        ****     uint8_t b = '\0';
+ 167:uart.c        ****     /* wait until receive buffer is full */
+ 168:uart.c        ****     suart_timedout_flag = 0;
+ 642               		.stabn	68,0,168,.LM62-.LFBB8
+ 643               	.LM62:
+ 644 01e0 1092 0000 		sts suart_timedout_flag,__zero_reg__
+ 169:uart.c        ****     start_timer0();
+ 645               		.stabn	68,0,169,.LM63-.LFBB8
+ 646               	.LM63:
+ 647 01e4 0E94 0000 		call start_timer0
+ 170:uart.c        ****     while(!(UCSRA & (1 << RXC)))
+ 648               		.stabn	68,0,170,.LM64-.LFBB8
+ 649               	.LM64:
+ 650 01e8 00C0      		rjmp .L29
+ 651               	.L31:
+ 171:uart.c        ****     {
+ 172:uart.c        ****        if (suart_timedout_flag == 1){break;}
+ 652               		.stabn	68,0,172,.LM65-.LFBB8
+ 653               	.LM65:
+ 654 01ea 8091 0000 		lds r24,suart_timedout_flag
+ 655 01ee 8130      		cpi r24,lo8(1)
+ 656 01f0 01F0      		breq .L30
+ 657               	.L29:
+ 170:uart.c        ****     while(!(UCSRA & (1 << RXC)))
+ 658               		.stabn	68,0,170,.LM66-.LFBB8
+ 659               	.LM66:
+ 660 01f2 5F9B      		sbis 43-32,7
+ 661 01f4 00C0      		rjmp .L31
+ 662               	.L30:
+ 173:uart.c        ****     }
+ 174:uart.c        ****     b = UDR;
+ 663               		.stabn	68,0,174,.LM67-.LFBB8
+ 664               	.LM67:
+ 665 01f6 8CB1      		in r24,44-32
+ 175:uart.c        ****     if(b == '\r')
+ 666               		.stabn	68,0,175,.LM68-.LFBB8
+ 667               	.LM68:
+ 668 01f8 8D30      		cpi r24,lo8(13)
+ 669 01fa 01F4      		brne .L32
+ 176:uart.c        ****         b = '\n';
+ 670               		.stabn	68,0,176,.LM69-.LFBB8
+ 671               	.LM69:
+ 672 01fc 8AE0      		ldi r24,lo8(10)
+ 673               	.L32:
+ 177:uart.c        **** 
+ 178:uart.c        ****     return b;
+ 179:uart.c        **** }
+ 674               		.stabn	68,0,179,.LM70-.LFBB8
+GAS LISTING /tmp/cc04lVMX.s 			page 19
+
+
+ 675               	.LM70:
+ 676 01fe 0895      		ret
+ 677               		.size	uart_getc_timeout, .-uart_getc_timeout
+ 678               		.stabs	"b:r(6,2)",64,0,166,24
+ 679               		.stabn	192,0,0,.LFBB8-.LFBB8
+ 680               		.stabn	224,0,0,.Lscope8-.LFBB8
+ 681               	.Lscope8:
+ 682               		.stabs	"",36,0,0,.Lscope8-.LFBB8
+ 683               		.stabd	78,0,0
+ 684               		.stabs	"read_line:F(6,2)",36,0,183,read_line
+ 685               		.stabs	"buffer:P(3,2)",64,0,183,10
+ 686               		.stabs	"buffer_length:P(6,2)",64,0,183,16
+ 687               	.global	read_line
+ 688               		.type	read_line, @function
+ 689               	read_line:
+ 690               		.stabd	46,0,0
+ 180:uart.c        **** 
+ 181:uart.c        **** 
+ 182:uart.c        **** //////read line from uart/////
+ 183:uart.c        **** uint8_t read_line(char* buffer, uint8_t buffer_length)
+ 184:uart.c        **** {
+ 691               		.stabn	68,0,184,.LM71-.LFBB9
+ 692               	.LM71:
+ 693               	.LFBB9:
+ 694 0200 AF92      		push r10
+ 695 0202 BF92      		push r11
+ 696 0204 DF92      		push r13
+ 697 0206 EF92      		push r14
+ 698 0208 FF92      		push r15
+ 699 020a 0F93      		push r16
+ 700 020c 1F93      		push r17
+ 701 020e DF93      		push r29
+ 702 0210 CF93      		push r28
+ 703 0212 0F92      		push __tmp_reg__
+ 704 0214 CDB7      		in r28,__SP_L__
+ 705 0216 DEB7      		in r29,__SP_H__
+ 706               	/* prologue: function */
+ 707               	/* frame size = 1 */
+ 708               	/* stack size = 10 */
+ 709               	.L__stack_usage = 10
+ 710 0218 5C01      		movw r10,r24
+ 711 021a 062F      		mov r16,r22
+ 185:uart.c        ****     memset(buffer, 0, buffer_length);
+ 712               		.stabn	68,0,185,.LM72-.LFBB9
+ 713               	.LM72:
+ 714 021c 60E0      		ldi r22,lo8(0)
+ 715 021e 70E0      		ldi r23,hi8(0)
+ 716 0220 402F      		mov r20,r16
+ 717 0222 50E0      		ldi r21,lo8(0)
+ 718 0224 0E94 0000 		call memset
+ 186:uart.c        **** 
+ 187:uart.c        ****     uint8_t read_length = 0;
+ 719               		.stabn	68,0,187,.LM73-.LFBB9
+ 720               	.LM73:
+ 721 0228 DD24      		clr r13
+ 188:uart.c        ****     while(read_length < buffer_length - 1)
+ 722               		.stabn	68,0,188,.LM74-.LFBB9
+GAS LISTING /tmp/cc04lVMX.s 			page 20
+
+
+ 723               	.LM74:
+ 724 022a 10E0      		ldi r17,lo8(0)
+ 725 022c 0150      		subi r16,lo8(-(-1))
+ 726 022e 1040      		sbci r17,hi8(-(-1))
+ 727 0230 00C0      		rjmp .L44
+ 728               	.L41:
+ 729               	.LBB12:
+ 189:uart.c        **** 	{	
+ 190:uart.c        **** 		//reset_button_check();		
+ 191:uart.c        **** 		uint8_t c = uart_getc();
+ 730               		.stabn	68,0,191,.LM75-.LFBB9
+ 731               	.LM75:
+ 732 0232 0E94 0000 		call uart_getc
+ 733 0236 982F      		mov r25,r24
+ 192:uart.c        ****         if(c == 0x08 || c == 0x7f)
+ 734               		.stabn	68,0,192,.LM76-.LFBB9
+ 735               	.LM76:
+ 736 0238 8830      		cpi r24,lo8(8)
+ 737 023a 01F0      		breq .L36
+ 738               		.stabn	68,0,192,.LM77-.LFBB9
+ 739               	.LM77:
+ 740 023c 8F37      		cpi r24,lo8(127)
+ 741 023e 01F4      		brne .L37
+ 742               	.L36:
+ 193:uart.c        ****         {
+ 194:uart.c        ****             if(read_length < 1)
+ 743               		.stabn	68,0,194,.LM78-.LFBB9
+ 744               	.LM78:
+ 745 0240 DD20      		tst r13
+ 746 0242 01F0      		breq .L44
+ 195:uart.c        ****                 continue;
+ 196:uart.c        ****             --read_length;
+ 747               		.stabn	68,0,196,.LM79-.LFBB9
+ 748               	.LM79:
+ 749 0244 DA94      		dec r13
+ 197:uart.c        ****             buffer[read_length] = '\0';
+ 750               		.stabn	68,0,197,.LM80-.LFBB9
+ 751               	.LM80:
+ 752 0246 F501      		movw r30,r10
+ 753 0248 ED0D      		add r30,r13
+ 754 024a F11D      		adc r31,__zero_reg__
+ 755 024c 1082      		st Z,__zero_reg__
+ 198:uart.c        **** 
+ 199:uart.c        ****             uart_putc(0x08);
+ 756               		.stabn	68,0,199,.LM81-.LFBB9
+ 757               	.LM81:
+ 758 024e 88E0      		ldi r24,lo8(8)
+ 759 0250 0E94 0000 		call uart_putc
+ 200:uart.c        ****             uart_putc(' ');
+ 760               		.stabn	68,0,200,.LM82-.LFBB9
+ 761               	.LM82:
+ 762 0254 80E2      		ldi r24,lo8(32)
+ 763 0256 0E94 0000 		call uart_putc
+ 201:uart.c        ****             uart_putc(0x08);
+ 764               		.stabn	68,0,201,.LM83-.LFBB9
+ 765               	.LM83:
+ 766 025a 88E0      		ldi r24,lo8(8)
+GAS LISTING /tmp/cc04lVMX.s 			page 21
+
+
+ 767 025c 0E94 0000 		call uart_putc
+ 202:uart.c        **** 
+ 203:uart.c        ****             continue;
+ 768               		.stabn	68,0,203,.LM84-.LFBB9
+ 769               	.LM84:
+ 770 0260 00C0      		rjmp .L44
+ 771               	.L37:
+ 204:uart.c        ****         }
+ 205:uart.c        ****         uart_putc(c);
+ 772               		.stabn	68,0,205,.LM85-.LFBB9
+ 773               	.LM85:
+ 774 0262 9983      		std Y+1,r25
+ 775 0264 0E94 0000 		call uart_putc
+ 776 0268 F501      		movw r30,r10
+ 777 026a EE0D      		add r30,r14
+ 778 026c FF1D      		adc r31,r15
+ 206:uart.c        ****         if(c == '\n')//echo
+ 779               		.stabn	68,0,206,.LM86-.LFBB9
+ 780               	.LM86:
+ 781 026e 9981      		ldd r25,Y+1
+ 782 0270 9A30      		cpi r25,lo8(10)
+ 783 0272 01F4      		brne .L39
+ 207:uart.c        ****         {
+ 208:uart.c        ****             buffer[read_length] = '\0';
+ 784               		.stabn	68,0,208,.LM87-.LFBB9
+ 785               	.LM87:
+ 786 0274 1082      		st Z,__zero_reg__
+ 209:uart.c        ****             break;
+ 787               		.stabn	68,0,209,.LM88-.LFBB9
+ 788               	.LM88:
+ 789 0276 00C0      		rjmp .L40
+ 790               	.L39:
+ 210:uart.c        ****         }
+ 211:uart.c        ****         else
+ 212:uart.c        ****         {
+ 213:uart.c        ****             buffer[read_length] = c;
+ 791               		.stabn	68,0,213,.LM89-.LFBB9
+ 792               	.LM89:
+ 793 0278 9083      		st Z,r25
+ 214:uart.c        ****             ++read_length;
+ 794               		.stabn	68,0,214,.LM90-.LFBB9
+ 795               	.LM90:
+ 796 027a D394      		inc r13
+ 797               	.L44:
+ 798               	.LBE12:
+ 188:uart.c        ****     while(read_length < buffer_length - 1)
+ 799               		.stabn	68,0,188,.LM91-.LFBB9
+ 800               	.LM91:
+ 801 027c ED2C      		mov r14,r13
+ 802 027e FF24      		clr r15
+ 803 0280 E016      		cp r14,r16
+ 804 0282 F106      		cpc r15,r17
+ 805 0284 04F0      		brlt .L41
+ 806               	.L40:
+ 215:uart.c        ****         }
+ 216:uart.c        ****     }
+ 217:uart.c        ****     return read_length;
+GAS LISTING /tmp/cc04lVMX.s 			page 22
+
+
+ 218:uart.c        **** }
+ 807               		.stabn	68,0,218,.LM92-.LFBB9
+ 808               	.LM92:
+ 809 0286 8D2D      		mov r24,r13
+ 810               	/* epilogue start */
+ 811 0288 0F90      		pop __tmp_reg__
+ 812 028a CF91      		pop r28
+ 813 028c DF91      		pop r29
+ 814 028e 1F91      		pop r17
+ 815 0290 0F91      		pop r16
+ 816 0292 FF90      		pop r15
+ 817 0294 EF90      		pop r14
+ 818 0296 DF90      		pop r13
+ 819 0298 BF90      		pop r11
+ 820 029a AF90      		pop r10
+ 821 029c 0895      		ret
+ 822               		.size	read_line, .-read_line
+ 823               		.stabs	"c:r(6,2)",64,0,191,25
+ 824               		.stabn	192,0,0,.LBB12-.LFBB9
+ 825               		.stabn	224,0,0,.LBE12-.LFBB9
+ 826               	.Lscope9:
+ 827               		.stabs	"",36,0,0,.Lscope9-.LFBB9
+ 828               		.stabd	78,0,0
+ 829               		.stabs	"__vector_13:F(0,15)",36,0,223,__vector_13
+ 830               	.global	__vector_13
+ 831               		.type	__vector_13, @function
+ 832               	__vector_13:
+ 833               		.stabd	46,0,0
+ 219:uart.c        **** 
+ 220:uart.c        **** 
+ 221:uart.c        **** 
+ 222:uart.c        **** 
+ 223:uart.c        **** EMPTY_INTERRUPT(USART_RXC_vect)
+ 834               		.stabn	68,0,223,.LM93-.LFBB10
+ 835               	.LM93:
+ 836               	.LFBB10:
+ 837               	/* prologue: naked */
+ 838               	/* frame size = 0 */
+ 839               	/* stack size = 0 */
+ 840               	.L__stack_usage = 0
+ 841               		.stabn	68,0,223,.LM94-.LFBB10
+ 842               	.LM94:
+ 843               	/* #APP */
+ 844               	 ;  223 "uart.c" 1
+ 845 029e 1895      		reti
+ 846               	 ;  0 "" 2
+ 847               	/* epilogue start */
+ 848               	/* #NOAPP */
+ 849               		.size	__vector_13, .-__vector_13
+ 850               	.Lscope10:
+ 851               		.stabs	"",36,0,0,.Lscope10-.LFBB10
+ 852               		.stabd	78,0,0
+ 853               		.stabs	"",100,0,0,.Letext0
+ 854               	.Letext0:
+GAS LISTING /tmp/cc04lVMX.s 			page 23
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uart.c
+     /tmp/cc04lVMX.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/cc04lVMX.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/cc04lVMX.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/cc04lVMX.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/cc04lVMX.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc04lVMX.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc04lVMX.s:109    .text:0000000000000000 uart_init
+     /tmp/cc04lVMX.s:145    .text:0000000000000010 uart_putc
+     /tmp/cc04lVMX.s:185    .text:0000000000000028 uart_putw_dec
+     /tmp/cc04lVMX.s:320    .text:00000000000000be uart_putdw_dec
+     /tmp/cc04lVMX.s:475    .text:0000000000000184 uart_puts
+     /tmp/cc04lVMX.s:539    .text:00000000000001b6 uart_puts_p
+     /tmp/cc04lVMX.s:595    .text:00000000000001d2 uart_getc
+     /tmp/cc04lVMX.s:633    .text:00000000000001e0 uart_getc_timeout
+     /tmp/cc04lVMX.s:689    .text:0000000000000200 read_line
+     /tmp/cc04lVMX.s:832    .text:000000000000029e __vector_13
+
+UNDEFINED SYMBOLS
+__udivmodhi4
+__udivmodsi4
+__mulsi3
+suart_timedout_flag
+start_timer0
+memset

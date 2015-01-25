@@ -1,0 +1,85 @@
+\hypertarget{non__vol_8c}{\section{non\-\_\-vol.\-c File Reference}
+\label{non__vol_8c}\index{non\-\_\-vol.\-c@{non\-\_\-vol.\-c}}
+}
+
+
+\subsection{Description}
+Stores and retreives Cal vals, names and offsets in E\-E\-M\-E\-M. Stores and retreives Cal vals, names and offsets in E\-E\-M\-E\-M \begin{DoxyAuthor}{Author}
+University of Illinois Department and Environmental and Civil Engineering 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2014 University of Illinois Department and Environmental and Civil Engineering. This software is distributed under the M\-I\-T License. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\-Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\-:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. The software is provided \char`\"{}as is\char`\"{}, without warranty of any kind expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{non__vol_8c_source}{non\-\_\-vol.\-c}.
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{non__vol_8c_a60933d2c18742ed550ed9805e8fd2695}{read\-\_\-write\-\_\-stored} (uint8\-\_\-t input\-\_\-function, struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$\hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data}, uint8\-\_\-t channel)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char E\-E\-M\-E\-M \hyperlink{non__vol_8c_ac816660fa7696eeabb1387ba81778453}{Names\-\_\-eemem} \mbox{[}\hyperlink{data__legnths_8h_a116720fa0b96a427ee416226b7bf728b}{I\-N\-P\-U\-T\-S\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}\hyperlink{data__legnths_8h_ac64541bdd81c961304b9babef1402640}{N\-A\-M\-E\-\_\-\-M\-A\-X}\mbox{]}
+\item 
+char E\-E\-M\-E\-M \hyperlink{non__vol_8c_a70a6e6db2302a1f1ba3fd015b2ebaa53}{Cal\-Vals\-\_\-eemem} \mbox{[}\hyperlink{data__legnths_8h_a116720fa0b96a427ee416226b7bf728b}{I\-N\-P\-U\-T\-S\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}\hyperlink{data__legnths_8h_ac64541bdd81c961304b9babef1402640}{N\-A\-M\-E\-\_\-\-M\-A\-X}\mbox{]}
+\item 
+char E\-E\-M\-E\-M \hyperlink{non__vol_8c_aab799411f3d71190d2b875905a8fd87a}{Offset\-\_\-eemem} \mbox{[}\hyperlink{data__legnths_8h_a116720fa0b96a427ee416226b7bf728b}{I\-N\-P\-U\-T\-S\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}\hyperlink{data__legnths_8h_ac64541bdd81c961304b9babef1402640}{N\-A\-M\-E\-\_\-\-M\-A\-X}\mbox{]}
+\item 
+uint8\-\_\-t E\-E\-M\-E\-M \hyperlink{non__vol_8c_aec4bd97c2205d081c3b7859abf0f3b35}{header\-\_\-id} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{non__vol_8c_a60933d2c18742ed550ed9805e8fd2695}{\index{non\-\_\-vol.\-c@{non\-\_\-vol.\-c}!read\-\_\-write\-\_\-stored@{read\-\_\-write\-\_\-stored}}
+\index{read\-\_\-write\-\_\-stored@{read\-\_\-write\-\_\-stored}!non_vol.c@{non\-\_\-vol.\-c}}
+\subsubsection[{read\-\_\-write\-\_\-stored}]{\setlength{\rightskip}{0pt plus 5cm}void read\-\_\-write\-\_\-stored (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{input\-\_\-function, }
+\item[{struct {\bf sample\-\_\-data} $\ast$}]{data, }
+\item[{uint8\-\_\-t}]{channel}
+\end{DoxyParamCaption}
+)}}\label{non__vol_8c_a60933d2c18742ed550ed9805e8fd2695}
+
+
+send function, data structure, channel to read/write 
+
+
+
+Definition at line 32 of file non\-\_\-vol.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{non__vol_8c_a70a6e6db2302a1f1ba3fd015b2ebaa53}{\index{non\-\_\-vol.\-c@{non\-\_\-vol.\-c}!Cal\-Vals\-\_\-eemem@{Cal\-Vals\-\_\-eemem}}
+\index{Cal\-Vals\-\_\-eemem@{Cal\-Vals\-\_\-eemem}!non_vol.c@{non\-\_\-vol.\-c}}
+\subsubsection[{Cal\-Vals\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}char E\-E\-M\-E\-M Cal\-Vals\-\_\-eemem\mbox{[}{\bf I\-N\-P\-U\-T\-S\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}{\bf N\-A\-M\-E\-\_\-\-M\-A\-X}\mbox{]}}}\label{non__vol_8c_a70a6e6db2302a1f1ba3fd015b2ebaa53}
+
+
+Definition at line 27 of file non\-\_\-vol.\-c.
+
+\hypertarget{non__vol_8c_aec4bd97c2205d081c3b7859abf0f3b35}{\index{non\-\_\-vol.\-c@{non\-\_\-vol.\-c}!header\-\_\-id@{header\-\_\-id}}
+\index{header\-\_\-id@{header\-\_\-id}!non_vol.c@{non\-\_\-vol.\-c}}
+\subsubsection[{header\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t E\-E\-M\-E\-M header\-\_\-id = 0}}\label{non__vol_8c_aec4bd97c2205d081c3b7859abf0f3b35}
+
+
+Definition at line 29 of file non\-\_\-vol.\-c.
+
+\hypertarget{non__vol_8c_ac816660fa7696eeabb1387ba81778453}{\index{non\-\_\-vol.\-c@{non\-\_\-vol.\-c}!Names\-\_\-eemem@{Names\-\_\-eemem}}
+\index{Names\-\_\-eemem@{Names\-\_\-eemem}!non_vol.c@{non\-\_\-vol.\-c}}
+\subsubsection[{Names\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}char E\-E\-M\-E\-M Names\-\_\-eemem\mbox{[}{\bf I\-N\-P\-U\-T\-S\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}{\bf N\-A\-M\-E\-\_\-\-M\-A\-X}\mbox{]}}}\label{non__vol_8c_ac816660fa7696eeabb1387ba81778453}
+
+
+Definition at line 26 of file non\-\_\-vol.\-c.
+
+\hypertarget{non__vol_8c_aab799411f3d71190d2b875905a8fd87a}{\index{non\-\_\-vol.\-c@{non\-\_\-vol.\-c}!Offset\-\_\-eemem@{Offset\-\_\-eemem}}
+\index{Offset\-\_\-eemem@{Offset\-\_\-eemem}!non_vol.c@{non\-\_\-vol.\-c}}
+\subsubsection[{Offset\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}char E\-E\-M\-E\-M Offset\-\_\-eemem\mbox{[}{\bf I\-N\-P\-U\-T\-S\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}{\bf N\-A\-M\-E\-\_\-\-M\-A\-X}\mbox{]}}}\label{non__vol_8c_aab799411f3d71190d2b875905a8fd87a}
+
+
+Definition at line 28 of file non\-\_\-vol.\-c.
+

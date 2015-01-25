@@ -1,0 +1,14 @@
+<map id="inputs.c" name="inputs.c">
+<area shape="rect" id="node2" href="$inputs_8h.html" title="inputs.h" alt="" coords="684,80,752,107"/>
+<area shape="rect" id="node10" href="$i2cmaster_8h.html" title="i2cmaster.h" alt="" coords="900,229,990,256"/>
+<area shape="rect" id="node12" href="$utilities_8h.html" title="utilities.h" alt="" coords="398,304,472,331"/>
+<area shape="rect" id="node17" href="$suart_8h.html" title="Software UART functions header. " alt="" coords="596,229,658,256"/>
+<area shape="rect" id="node21" href="$uart_8h.html" title="uart.h" alt="" coords="1271,155,1325,181"/>
+<area shape="rect" id="node7" href="$data__legnths_8h.html" title="data_legnths.h" alt="" coords="473,379,580,405"/>
+<area shape="rect" id="node8" href="$sixteen__bit_8h.html" title="sixteen_bit.h" alt="" coords="732,155,828,181"/>
+<area shape="rect" id="node14" href="$CO_8h.html" title="CO.h" alt="" coords="993,155,1046,181"/>
+<area shape="rect" id="node15" href="$SHT25_8h.html" title="SHT25.h" alt="" coords="1070,155,1144,181"/>
+<area shape="rect" id="node16" href="$CO2__serial_8h.html" title="CO2_serial.h" alt="" coords="609,155,708,181"/>
+<area shape="rect" id="node18" href="$10__bit_8h.html" title="10_bit.h" alt="" coords="364,229,432,256"/>
+<area shape="rect" id="node19" href="$i2c__rtc_8h.html" title="i2c_rtc.h" alt="" coords="49,229,121,256"/>
+</map>

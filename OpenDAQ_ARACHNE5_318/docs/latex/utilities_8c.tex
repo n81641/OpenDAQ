@@ -1,0 +1,127 @@
+\hypertarget{utilities_8c}{\section{utilities.\-c File Reference}
+\label{utilities_8c}\index{utilities.\-c@{utilities.\-c}}
+}
+
+
+\subsection{Description}
+Open\-D\-A\-Q misc controls. Timeout for testing, etc \begin{DoxyAuthor}{Author}
+University of Illinois Department and Environmental and Civil Engineering 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2014 University of Illinois Department and Environmental and Civil Engineering. This software is distributed under the M\-I\-T License. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\-Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\-:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. The software is provided \char`\"{}as is\char`\"{}, without warranty of any kind expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{utilities_8c_source}{utilities.\-c}.
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{utilities_8c_add2d7cdddfb682dcc0391e60cf42c7d6}{I\-S\-R} (T\-I\-M\-E\-R0\-\_\-\-O\-V\-F\-\_\-vect)
+\item 
+uint8\-\_\-t \hyperlink{utilities_8c_a789dd9e123f5af2c7c9ae0b4efb43854}{bitisset} (uint32\-\_\-t number, uint8\-\_\-t bit)
+\item 
+void \hyperlink{utilities_8c_a82b9fbc9a67f2d7b888437576a38f3f6}{spitout} (char $\ast$bigline)
+\item 
+void \hyperlink{utilities_8c_a2359c22ae6d312a181166f674f1d24b9}{toggle\-\_\-led} (void)
+\item 
+void \hyperlink{utilities_8c_afcc82992986f74b4bc482ef3428258d0}{start\-\_\-timer0} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint8\-\_\-t \hyperlink{utilities_8c_a24f7617ab90932b6b9e51ac2d7b3b5e3}{suart\-\_\-timedout\-\_\-flag}
+\item 
+volatile uint8\-\_\-t \hyperlink{utilities_8c_a10c7c5776234d15f07c3e63a0c6f6518}{i2c\-\_\-timeout\-\_\-flag}
+\item 
+volatile uint8\-\_\-t \hyperlink{utilities_8c_a6d3987a633d4caea53216691b2e3da06}{test\-\_\-timer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{utilities_8c_a789dd9e123f5af2c7c9ae0b4efb43854}{\index{utilities.\-c@{utilities.\-c}!bitisset@{bitisset}}
+\index{bitisset@{bitisset}!utilities.c@{utilities.\-c}}
+\subsubsection[{bitisset}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t bitisset (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{number, }
+\item[{uint8\-\_\-t}]{bit}
+\end{DoxyParamCaption}
+)}}\label{utilities_8c_a789dd9e123f5af2c7c9ae0b4efb43854}
+
+
+Definition at line 48 of file utilities.\-c.
+
+\hypertarget{utilities_8c_add2d7cdddfb682dcc0391e60cf42c7d6}{\index{utilities.\-c@{utilities.\-c}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!utilities.c@{utilities.\-c}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{T\-I\-M\-E\-R0\-\_\-\-O\-V\-F\-\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}\label{utilities_8c_add2d7cdddfb682dcc0391e60cf42c7d6}
+
+
+Definition at line 32 of file utilities.\-c.
+
+\hypertarget{utilities_8c_a82b9fbc9a67f2d7b888437576a38f3f6}{\index{utilities.\-c@{utilities.\-c}!spitout@{spitout}}
+\index{spitout@{spitout}!utilities.c@{utilities.\-c}}
+\subsubsection[{spitout}]{\setlength{\rightskip}{0pt plus 5cm}void spitout (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{bigline}
+\end{DoxyParamCaption}
+)}}\label{utilities_8c_a82b9fbc9a67f2d7b888437576a38f3f6}
+
+
+Definition at line 58 of file utilities.\-c.
+
+\hypertarget{utilities_8c_afcc82992986f74b4bc482ef3428258d0}{\index{utilities.\-c@{utilities.\-c}!start\-\_\-timer0@{start\-\_\-timer0}}
+\index{start\-\_\-timer0@{start\-\_\-timer0}!utilities.c@{utilities.\-c}}
+\subsubsection[{start\-\_\-timer0}]{\setlength{\rightskip}{0pt plus 5cm}void start\-\_\-timer0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{utilities_8c_afcc82992986f74b4bc482ef3428258d0}
+
+
+starts timer for peripheral timeout 
+
+
+
+Definition at line 74 of file utilities.\-c.
+
+\hypertarget{utilities_8c_a2359c22ae6d312a181166f674f1d24b9}{\index{utilities.\-c@{utilities.\-c}!toggle\-\_\-led@{toggle\-\_\-led}}
+\index{toggle\-\_\-led@{toggle\-\_\-led}!utilities.c@{utilities.\-c}}
+\subsubsection[{toggle\-\_\-led}]{\setlength{\rightskip}{0pt plus 5cm}void toggle\-\_\-led (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{utilities_8c_a2359c22ae6d312a181166f674f1d24b9}
+
+
+Definition at line 66 of file utilities.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{utilities_8c_a10c7c5776234d15f07c3e63a0c6f6518}{\index{utilities.\-c@{utilities.\-c}!i2c\-\_\-timeout\-\_\-flag@{i2c\-\_\-timeout\-\_\-flag}}
+\index{i2c\-\_\-timeout\-\_\-flag@{i2c\-\_\-timeout\-\_\-flag}!utilities.c@{utilities.\-c}}
+\subsubsection[{i2c\-\_\-timeout\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t i2c\-\_\-timeout\-\_\-flag}}\label{utilities_8c_a10c7c5776234d15f07c3e63a0c6f6518}
+
+
+Definition at line 28 of file utilities.\-c.
+
+\hypertarget{utilities_8c_a24f7617ab90932b6b9e51ac2d7b3b5e3}{\index{utilities.\-c@{utilities.\-c}!suart\-\_\-timedout\-\_\-flag@{suart\-\_\-timedout\-\_\-flag}}
+\index{suart\-\_\-timedout\-\_\-flag@{suart\-\_\-timedout\-\_\-flag}!utilities.c@{utilities.\-c}}
+\subsubsection[{suart\-\_\-timedout\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t suart\-\_\-timedout\-\_\-flag}}\label{utilities_8c_a24f7617ab90932b6b9e51ac2d7b3b5e3}
+
+
+Definition at line 27 of file utilities.\-c.
+
+\hypertarget{utilities_8c_a6d3987a633d4caea53216691b2e3da06}{\index{utilities.\-c@{utilities.\-c}!test\-\_\-timer@{test\-\_\-timer}}
+\index{test\-\_\-timer@{test\-\_\-timer}!utilities.c@{utilities.\-c}}
+\subsubsection[{test\-\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t test\-\_\-timer}}\label{utilities_8c_a6d3987a633d4caea53216691b2e3da06}
+
+
+Definition at line 29 of file utilities.\-c.
+

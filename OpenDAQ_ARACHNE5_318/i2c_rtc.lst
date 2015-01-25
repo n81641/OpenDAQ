@@ -1,0 +1,1489 @@
+GAS LISTING /tmp/ccZ6cM3a.s 			page 1
+
+
+   1               		.file	"i2c_rtc.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_ARACHNE5_220/",100,0,2,.Ltext0
+   9               		.stabs	"i2c_rtc.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"i2c_rtc.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  31               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  32               		.stabs	"int8_t:t(4,1)=(0,10)",128,0,121,0
+  33               		.stabs	"uint8_t:t(4,2)=(0,11)",128,0,122,0
+  34               		.stabs	"int16_t:t(4,3)=(0,1)",128,0,123,0
+  35               		.stabs	"uint16_t:t(4,4)=(0,4)",128,0,124,0
+  36               		.stabs	"int32_t:t(4,5)=(0,3)",128,0,125,0
+  37               		.stabs	"uint32_t:t(4,6)=(0,5)",128,0,126,0
+  38               		.stabs	"int64_t:t(4,7)=(0,6)",128,0,128,0
+  39               		.stabs	"uint64_t:t(4,8)=(0,7)",128,0,129,0
+  40               		.stabs	"intptr_t:t(4,9)=(4,3)",128,0,142,0
+  41               		.stabs	"uintptr_t:t(4,10)=(4,4)",128,0,147,0
+  42               		.stabs	"int_least8_t:t(4,11)=(4,1)",128,0,159,0
+  43               		.stabs	"uint_least8_t:t(4,12)=(4,2)",128,0,164,0
+  44               		.stabs	"int_least16_t:t(4,13)=(4,3)",128,0,169,0
+  45               		.stabs	"uint_least16_t:t(4,14)=(4,4)",128,0,174,0
+  46               		.stabs	"int_least32_t:t(4,15)=(4,5)",128,0,179,0
+  47               		.stabs	"uint_least32_t:t(4,16)=(4,6)",128,0,184,0
+  48               		.stabs	"int_least64_t:t(4,17)=(4,7)",128,0,192,0
+  49               		.stabs	"uint_least64_t:t(4,18)=(4,8)",128,0,199,0
+  50               		.stabs	"int_fast8_t:t(4,19)=(4,1)",128,0,213,0
+  51               		.stabs	"uint_fast8_t:t(4,20)=(4,2)",128,0,218,0
+  52               		.stabs	"int_fast16_t:t(4,21)=(4,3)",128,0,223,0
+  53               		.stabs	"uint_fast16_t:t(4,22)=(4,4)",128,0,228,0
+  54               		.stabs	"int_fast32_t:t(4,23)=(4,5)",128,0,233,0
+  55               		.stabs	"uint_fast32_t:t(4,24)=(4,6)",128,0,238,0
+  56               		.stabs	"int_fast64_t:t(4,25)=(4,7)",128,0,246,0
+  57               		.stabs	"uint_fast64_t:t(4,26)=(4,8)",128,0,253,0
+GAS LISTING /tmp/ccZ6cM3a.s 			page 2
+
+
+  58               		.stabs	"intmax_t:t(4,27)=(4,7)",128,0,273,0
+  59               		.stabs	"uintmax_t:t(4,28)=(4,8)",128,0,278,0
+  60               		.stabn	162,0,0,0
+  61               		.stabn	162,0,0,0
+  62               		.stabs	"int_farptr_t:t(2,1)=(4,5)",128,0,77,0
+  63               		.stabs	"uint_farptr_t:t(2,2)=(4,6)",128,0,81,0
+  64               		.stabn	162,0,0,0
+  65               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  66               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  67               		.stabs	"size_t:t(6,1)=(0,4)",128,0,211,0
+  68               		.stabs	"wchar_t:t(6,2)=(0,1)",128,0,323,0
+  69               		.stabn	162,0,0,0
+  70               		.stabs	"div_t:t(5,1)=(5,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+  71               		.stabs	"ldiv_t:t(5,3)=(5,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+  72               		.stabs	"__compar_fn_t:t(5,5)=(5,6)=*(5,7)=f(0,1)",128,0,80,0
+  73               		.stabn	162,0,0,0
+  74               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/interrupt.h",130,0,0,0
+  75               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  76               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  77               		.stabs	"__fuse_t:t(9,1)=(9,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  78               		.stabn	162,0,0,0
+  79               		.stabn	162,0,0,0
+  80               		.stabn	162,0,0,0
+  81               		.stabs	"RTC:t(1,1)=(1,2)=s8year:(4,4),0,16;month:(4,2),16,8;mday:(4,2),24,8;wday:(4,2),32,8;hour:(
+  82               		.stabn	162,0,0,0
+  83               		.stabs	"uart.h",130,0,0,0
+  84               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/pgmspace.h",130,0,0,0
+  85               		.stabs	"prog_void:t(11,1)=(11,2)=(11,2)",128,0,217,0
+  86               		.stabs	"prog_char:t(11,3)=(11,4)=@s8;r(11,4);0;255;",128,0,218,0
+  87               		.stabs	"prog_uchar:t(11,5)=(11,6)=@s8;r(11,6);0;255;",128,0,219,0
+  88               		.stabs	"prog_int8_t:t(11,7)=(11,8)=(0,10)",128,0,221,0
+  89               		.stabs	"prog_uint8_t:t(11,9)=(11,10)=(0,11)",128,0,222,0
+  90               		.stabs	"prog_int16_t:t(11,11)=(11,12)=(0,1)",128,0,223,0
+  91               		.stabs	"prog_uint16_t:t(11,13)=(11,14)=(0,4)",128,0,224,0
+  92               		.stabs	"prog_int32_t:t(11,15)=(11,16)=(0,3)",128,0,225,0
+  93               		.stabs	"prog_uint32_t:t(11,17)=(11,18)=(0,5)",128,0,226,0
+  94               		.stabs	"prog_int64_t:t(11,19)=(11,20)=(0,6)",128,0,228,0
+  95               		.stabs	"prog_uint64_t:t(11,21)=(11,22)=(0,7)",128,0,229,0
+  96               		.stabn	162,0,0,0
+  97               		.stabn	162,0,0,0
+  98               		.stabs	"i2c_read_block:F(0,15)",36,0,59,i2c_read_block
+  99               		.stabs	"dev:P(4,2)",64,0,59,17
+ 100               		.stabs	"adr:P(4,2)",64,0,59,22
+ 101               		.stabs	"cnt:P(4,2)",64,0,59,16
+ 102               	.global	i2c_read_block
+ 103               		.type	i2c_read_block, @function
+ 104               	i2c_read_block:
+ 105               		.stabd	46,0,0
+   1:i2c_rtc.c     **** ///
+   2:i2c_rtc.c     **** /// \file i2c_rtc.c
+   3:i2c_rtc.c     **** /// \brief communication with the real time clock via I2c  
+   4:i2c_rtc.c     **** /// \details works with DS1307 I2C clock IC
+   5:i2c_rtc.c     **** /// \author "theusch" via avrfreaks.net.
+   6:i2c_rtc.c     **** /// \copyright This software is published under the public domain.
+   7:i2c_rtc.c     **** ///Avrfreaks.net regarding posts: Any remarks, suggestions, ideas, graphics, or other material, inf
+   8:i2c_rtc.c     **** ///(collectively "Communications") you transmit or post on this website is deemed public and non-pr
+   9:i2c_rtc.c     **** ///You agree that Atmel has no obligation with respect to the Communications and has the right to c
+GAS LISTING /tmp/ccZ6cM3a.s 			page 3
+
+
+  10:i2c_rtc.c     **** ///disseminate, incorporate and otherwise use the Communications and all data, images sounds, text,
+  11:i2c_rtc.c     **** ///things embodied in the Communications for any purpose, commercial or non-commercial. Any Communi
+  12:i2c_rtc.c     **** ///transmitted or posted by you that are threatening, libelous, defamatory, obscene, pornographic, 
+  13:i2c_rtc.c     **** ///unlawful, are strictly prohibited and may be actionable by Atmel.
+  14:i2c_rtc.c     **** ///
+  15:i2c_rtc.c     **** 
+  16:i2c_rtc.c     **** #include "i2c_rtc.h"
+  17:i2c_rtc.c     **** #include "i2cmaster.h"
+  18:i2c_rtc.c     **** #include <string.h>
+  19:i2c_rtc.c     **** #include "uart.h"
+  20:i2c_rtc.c     **** 
+  21:i2c_rtc.c     **** #define   RTC_SEC_PER_HOUR   (60l * 60l) 
+  22:i2c_rtc.c     **** #define   RTC_SEC_PER_DAY      (RTC_SEC_PER_HOUR * 24l) 
+  23:i2c_rtc.c     **** #define   RTC_SEC_PER_YEAR   (RTC_SEC_PER_DAY * 365l) 
+  24:i2c_rtc.c     **** 
+  25:i2c_rtc.c     **** // Seconds from Jan.1, 1970 through Dec. 31, 2008. 
+  26:i2c_rtc.c     **** //   -- 39 years 
+  27:i2c_rtc.c     **** //   -- Leap years: 72, 76, 80, 84, 88, 92, 96, 00, 04, 08 
+  28:i2c_rtc.c     **** // 
+  29:i2c_rtc.c     **** //   According to Excel, there are 14245 days between those two dates. 
+  30:i2c_rtc.c     **** //      365 * 39 = 14235 so that would be 10 leap years. 
+  31:i2c_rtc.c     **** // 
+  32:i2c_rtc.c     **** #define   RTC_SEC_TILL_2009   (RTC_SEC_PER_DAY * 14245L) 
+  33:i2c_rtc.c     **** 
+  34:i2c_rtc.c     **** #define   RTC_YEAR_MIN   9   // 2009, as an 8-bit binary year 
+  35:i2c_rtc.c     **** #define   RTC_YEAR_MAX   25   // 2025, as an 8-bit binary year 
+  36:i2c_rtc.c     **** 
+  37:i2c_rtc.c     **** // Elapsed days at the end of each month shown (ignoring leap years) 
+  38:i2c_rtc.c     **** uint16_t rtc_days[13] = 
+  39:i2c_rtc.c     **** { 
+  40:i2c_rtc.c     **** 0, 
+  41:i2c_rtc.c     **** 31,      // J 
+  42:i2c_rtc.c     **** 59,      // F 
+  43:i2c_rtc.c     **** 90,      // M 
+  44:i2c_rtc.c     **** 120,   // A 
+  45:i2c_rtc.c     **** 151,   // M 
+  46:i2c_rtc.c     **** 181,   // J 
+  47:i2c_rtc.c     **** 212,   // J 
+  48:i2c_rtc.c     **** 243,   // A 
+  49:i2c_rtc.c     **** 273,   // S 
+  50:i2c_rtc.c     **** 304,   // O 
+  51:i2c_rtc.c     **** 334,   // N 
+  52:i2c_rtc.c     **** 365      // D 
+  53:i2c_rtc.c     **** };
+  54:i2c_rtc.c     **** 
+  55:i2c_rtc.c     **** 
+  56:i2c_rtc.c     **** 
+  57:i2c_rtc.c     **** //RTC functions 
+  58:i2c_rtc.c     **** 
+  59:i2c_rtc.c     **** void i2c_read_block(uint8_t dev, uint8_t adr, uint8_t cnt, void* buff)// Device addr, Read start ad
+  60:i2c_rtc.c     **** {
+ 106               		.stabn	68,0,60,.LM0-.LFBB1
+ 107               	.LM0:
+ 108               	.LFBB1:
+ 109 0000 EF92      		push r14
+ 110 0002 FF92      		push r15
+ 111 0004 0F93      		push r16
+GAS LISTING /tmp/ccZ6cM3a.s 			page 4
+
+
+ 112 0006 1F93      		push r17
+ 113 0008 DF93      		push r29
+ 114 000a CF93      		push r28
+ 115 000c 00D0      		rcall .
+ 116 000e 0F92      		push __tmp_reg__
+ 117 0010 CDB7      		in r28,__SP_L__
+ 118 0012 DEB7      		in r29,__SP_H__
+ 119               	/* prologue: function */
+ 120               	/* frame size = 3 */
+ 121               	/* stack size = 9 */
+ 122               	.L__stack_usage = 9
+ 123 0014 182F      		mov r17,r24
+ 124 0016 042F      		mov r16,r20
+  61:i2c_rtc.c     **** 	uint8_t *rbuff = buff;
+  62:i2c_rtc.c     **** 	i2c_start_wait(dev);
+ 125               		.stabn	68,0,62,.LM1-.LFBB1
+ 126               	.LM1:
+ 127 0018 2A83      		std Y+2,r18
+ 128 001a 3B83      		std Y+3,r19
+ 129 001c 6983      		std Y+1,r22
+ 130 001e 0E94 0000 		call i2c_start_wait
+  63:i2c_rtc.c     **** 	i2c_write(adr); //send start of block address
+ 131               		.stabn	68,0,63,.LM2-.LFBB1
+ 132               	.LM2:
+ 133 0022 6981      		ldd r22,Y+1
+ 134 0024 862F      		mov r24,r22
+ 135 0026 0E94 0000 		call i2c_write
+  64:i2c_rtc.c     **** 	i2c_start(dev | 1);//select device in read mode 
+ 136               		.stabn	68,0,64,.LM3-.LFBB1
+ 137               	.LM3:
+ 138 002a 812F      		mov r24,r17
+ 139 002c 8160      		ori r24,lo8(1)
+ 140 002e 0E94 0000 		call i2c_start
+ 141 0032 2A81      		ldd r18,Y+2
+ 142 0034 3B81      		ldd r19,Y+3
+ 143 0036 422F      		mov r20,r18
+ 144 0038 532F      		mov r21,r19
+ 145 003a 7A01      		movw r14,r20
+ 146               	.L4:
+  65:i2c_rtc.c     **** 	
+  66:i2c_rtc.c     **** 	do {					// Receive data 
+  67:i2c_rtc.c     **** 		cnt--;
+ 147               		.stabn	68,0,67,.LM4-.LFBB1
+ 148               	.LM4:
+ 149 003c 0150      		subi r16,lo8(-(-1))
+  68:i2c_rtc.c     **** 		*rbuff++ = i2c_read(cnt ? 1 : 0);
+ 150               		.stabn	68,0,68,.LM5-.LFBB1
+ 151               	.LM5:
+ 152 003e 01F0      		breq .L2
+ 153               		.stabn	68,0,68,.LM6-.LFBB1
+ 154               	.LM6:
+ 155 0040 0E94 0000 		call i2c_readAck
+ 156 0044 00C0      		rjmp .L3
+ 157               	.L2:
+ 158               		.stabn	68,0,68,.LM7-.LFBB1
+ 159               	.LM7:
+ 160 0046 0E94 0000 		call i2c_readNak
+GAS LISTING /tmp/ccZ6cM3a.s 			page 5
+
+
+ 161               	.L3:
+ 162               		.stabn	68,0,68,.LM8-.LFBB1
+ 163               	.LM8:
+ 164 004a F701      		movw r30,r14
+ 165 004c 8193      		st Z+,r24
+ 166 004e 7F01      		movw r14,r30
+  69:i2c_rtc.c     **** 		} while (cnt);
+ 167               		.stabn	68,0,69,.LM9-.LFBB1
+ 168               	.LM9:
+ 169 0050 0023      		tst r16
+ 170 0052 01F4      		brne .L4
+  70:i2c_rtc.c     **** 	i2c_stop();
+ 171               		.stabn	68,0,70,.LM10-.LFBB1
+ 172               	.LM10:
+ 173 0054 0E94 0000 		call i2c_stop
+ 174               	/* epilogue start */
+  71:i2c_rtc.c     **** }
+ 175               		.stabn	68,0,71,.LM11-.LFBB1
+ 176               	.LM11:
+ 177 0058 0F90      		pop __tmp_reg__
+ 178 005a 0F90      		pop __tmp_reg__
+ 179 005c 0F90      		pop __tmp_reg__
+ 180 005e CF91      		pop r28
+ 181 0060 DF91      		pop r29
+ 182 0062 1F91      		pop r17
+ 183 0064 0F91      		pop r16
+ 184 0066 FF90      		pop r15
+ 185 0068 EF90      		pop r14
+ 186 006a 0895      		ret
+ 187               		.size	i2c_read_block, .-i2c_read_block
+ 188               	.Lscope1:
+ 189               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 190               		.stabd	78,0,0
+ 191               		.stabs	"i2c_write_block:F(0,15)",36,0,73,i2c_write_block
+ 192               		.stabs	"dev:P(4,2)",64,0,73,24
+ 193               		.stabs	"adr:P(4,2)",64,0,73,22
+ 194               		.stabs	"cnt:P(4,2)",64,0,73,17
+ 195               	.global	i2c_write_block
+ 196               		.type	i2c_write_block, @function
+ 197               	i2c_write_block:
+ 198               		.stabd	46,0,0
+  72:i2c_rtc.c     **** 
+  73:i2c_rtc.c     **** void i2c_write_block(uint8_t dev, uint8_t adr, uint8_t cnt, void* buff)// Device addr, Read start a
+  74:i2c_rtc.c     **** {
+ 199               		.stabn	68,0,74,.LM12-.LFBB2
+ 200               	.LM12:
+ 201               	.LFBB2:
+ 202 006c EF92      		push r14
+ 203 006e FF92      		push r15
+ 204 0070 1F93      		push r17
+ 205 0072 DF93      		push r29
+ 206 0074 CF93      		push r28
+ 207 0076 0F92      		push __tmp_reg__
+ 208 0078 CDB7      		in r28,__SP_L__
+ 209 007a DEB7      		in r29,__SP_H__
+ 210               	/* prologue: function */
+ 211               	/* frame size = 1 */
+GAS LISTING /tmp/ccZ6cM3a.s 			page 6
+
+
+ 212               	/* stack size = 6 */
+ 213               	.L__stack_usage = 6
+ 214 007c 142F      		mov r17,r20
+  75:i2c_rtc.c     **** 	uint8_t *wbuff = buff;
+ 215               		.stabn	68,0,75,.LM13-.LFBB2
+ 216               	.LM13:
+ 217 007e E22F      		mov r30,r18
+ 218 0080 F32F      		mov r31,r19
+ 219 0082 7F01      		movw r14,r30
+  76:i2c_rtc.c     **** 	i2c_start_wait(dev);
+ 220               		.stabn	68,0,76,.LM14-.LFBB2
+ 221               	.LM14:
+ 222 0084 6983      		std Y+1,r22
+ 223 0086 0E94 0000 		call i2c_start_wait
+  77:i2c_rtc.c     **** 	i2c_write(adr); //send start of block address
+ 224               		.stabn	68,0,77,.LM15-.LFBB2
+ 225               	.LM15:
+ 226 008a 6981      		ldd r22,Y+1
+ 227 008c 862F      		mov r24,r22
+ 228 008e 0E94 0000 		call i2c_write
+ 229               	.L8:
+  78:i2c_rtc.c     **** 	do {						// Send data 
+  79:i2c_rtc.c     **** 			if (i2c_write(*wbuff++)) break;
+ 230               		.stabn	68,0,79,.LM16-.LFBB2
+ 231               	.LM16:
+ 232 0092 F701      		movw r30,r14
+ 233 0094 8191      		ld r24,Z+
+ 234 0096 7F01      		movw r14,r30
+ 235 0098 0E94 0000 		call i2c_write
+ 236 009c 8823      		tst r24
+ 237 009e 01F4      		brne .L7
+  80:i2c_rtc.c     **** 		} while (--cnt);
+ 238               		.stabn	68,0,80,.LM17-.LFBB2
+ 239               	.LM17:
+ 240 00a0 1150      		subi r17,lo8(-(-1))
+ 241 00a2 01F4      		brne .L8
+ 242               	.L7:
+  81:i2c_rtc.c     **** 	i2c_stop();
+ 243               		.stabn	68,0,81,.LM18-.LFBB2
+ 244               	.LM18:
+ 245 00a4 0E94 0000 		call i2c_stop
+ 246               	/* epilogue start */
+  82:i2c_rtc.c     **** }
+ 247               		.stabn	68,0,82,.LM19-.LFBB2
+ 248               	.LM19:
+ 249 00a8 0F90      		pop __tmp_reg__
+ 250 00aa CF91      		pop r28
+ 251 00ac DF91      		pop r29
+ 252 00ae 1F91      		pop r17
+ 253 00b0 FF90      		pop r15
+ 254 00b2 EF90      		pop r14
+ 255 00b4 0895      		ret
+ 256               		.size	i2c_write_block, .-i2c_write_block
+ 257               		.stabs	"wbuff:r(0,16)=*(4,2)",64,0,75,14
+ 258               		.stabn	192,0,0,.LFBB2-.LFBB2
+ 259               		.stabn	224,0,0,.Lscope2-.LFBB2
+ 260               	.Lscope2:
+GAS LISTING /tmp/ccZ6cM3a.s 			page 7
+
+
+ 261               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 262               		.stabd	78,0,0
+ 263               		.stabs	"rtc_gettime:F(4,2)",36,0,84,rtc_gettime
+ 264               		.stabs	"rtc:P(0,17)=*(1,1)",64,0,84,16
+ 265               	.global	rtc_gettime
+ 266               		.type	rtc_gettime, @function
+ 267               	rtc_gettime:
+ 268               		.stabd	46,0,0
+  83:i2c_rtc.c     **** 
+  84:i2c_rtc.c     **** uint8_t rtc_gettime (RTC *rtc)
+  85:i2c_rtc.c     **** {
+ 269               		.stabn	68,0,85,.LM20-.LFBB3
+ 270               	.LM20:
+ 271               	.LFBB3:
+ 272 00b6 0F93      		push r16
+ 273 00b8 1F93      		push r17
+ 274 00ba DF93      		push r29
+ 275 00bc CF93      		push r28
+ 276 00be CDB7      		in r28,__SP_L__
+ 277 00c0 DEB7      		in r29,__SP_H__
+ 278 00c2 2897      		sbiw r28,8
+ 279 00c4 0FB6      		in __tmp_reg__,__SREG__
+ 280 00c6 F894      		cli
+ 281 00c8 DEBF      		out __SP_H__,r29
+ 282 00ca 0FBE      		out __SREG__,__tmp_reg__
+ 283 00cc CDBF      		out __SP_L__,r28
+ 284               	/* prologue: function */
+ 285               	/* frame size = 8 */
+ 286               	/* stack size = 12 */
+ 287               	.L__stack_usage = 12
+ 288 00ce 8C01      		movw r16,r24
+  86:i2c_rtc.c     **** 	uint8_t buf[8];
+  87:i2c_rtc.c     **** 
+  88:i2c_rtc.c     **** 	i2c_read_block(0xD0, 0, 7, buf);
+ 289               		.stabn	68,0,88,.LM21-.LFBB3
+ 290               	.LM21:
+ 291 00d0 80ED      		ldi r24,lo8(-48)
+ 292 00d2 60E0      		ldi r22,lo8(0)
+ 293 00d4 47E0      		ldi r20,lo8(7)
+ 294 00d6 9E01      		movw r18,r28
+ 295 00d8 2F5F      		subi r18,lo8(-(1))
+ 296 00da 3F4F      		sbci r19,hi8(-(1))
+ 297 00dc 0E94 0000 		call i2c_read_block
+  89:i2c_rtc.c     **** 
+  90:i2c_rtc.c     **** 	rtc->sec = (buf[0] & 0x0F) + ((buf[0] >> 4) & 7) * 10;
+ 298               		.stabn	68,0,90,.LM22-.LFBB3
+ 299               	.LM22:
+ 300 00e0 2981      		ldd r18,Y+1
+ 301 00e2 922F      		mov r25,r18
+ 302 00e4 9695      		lsr r25
+ 303 00e6 9695      		lsr r25
+ 304 00e8 9695      		lsr r25
+ 305 00ea 9E70      		andi r25,lo8(14)
+ 306 00ec 892F      		mov r24,r25
+ 307 00ee 880F      		lsl r24
+ 308 00f0 880F      		lsl r24
+ 309 00f2 890F      		add r24,r25
+GAS LISTING /tmp/ccZ6cM3a.s 			page 8
+
+
+ 310 00f4 2F70      		andi r18,lo8(15)
+ 311 00f6 820F      		add r24,r18
+ 312 00f8 F801      		movw r30,r16
+ 313 00fa 8783      		std Z+7,r24
+  91:i2c_rtc.c     **** 	rtc->min = (buf[1] & 0x0F) + (buf[1] >> 4) * 10;
+ 314               		.stabn	68,0,91,.LM23-.LFBB3
+ 315               	.LM23:
+ 316 00fc 2A81      		ldd r18,Y+2
+ 317 00fe 922F      		mov r25,r18
+ 318 0100 9295      		swap r25
+ 319 0102 9F70      		andi r25,lo8(15)
+ 320 0104 990F      		lsl r25
+ 321 0106 892F      		mov r24,r25
+ 322 0108 880F      		lsl r24
+ 323 010a 880F      		lsl r24
+ 324 010c 890F      		add r24,r25
+ 325 010e 2F70      		andi r18,lo8(15)
+ 326 0110 820F      		add r24,r18
+ 327 0112 8683      		std Z+6,r24
+  92:i2c_rtc.c     **** 	rtc->hour = (buf[2] & 0x0F) + ((buf[2] >> 4) & 3) * 10;
+ 328               		.stabn	68,0,92,.LM24-.LFBB3
+ 329               	.LM24:
+ 330 0114 2B81      		ldd r18,Y+3
+ 331 0116 922F      		mov r25,r18
+ 332 0118 9695      		lsr r25
+ 333 011a 9695      		lsr r25
+ 334 011c 9695      		lsr r25
+ 335 011e 9670      		andi r25,lo8(6)
+ 336 0120 892F      		mov r24,r25
+ 337 0122 880F      		lsl r24
+ 338 0124 880F      		lsl r24
+ 339 0126 890F      		add r24,r25
+ 340 0128 922F      		mov r25,r18
+ 341 012a 9F70      		andi r25,lo8(15)
+ 342 012c 890F      		add r24,r25
+ 343 012e 8583      		std Z+5,r24
+  93:i2c_rtc.c     **** 	rtc->wday = (buf[2] & 0x07);
+ 344               		.stabn	68,0,93,.LM25-.LFBB3
+ 345               	.LM25:
+ 346 0130 2770      		andi r18,lo8(7)
+ 347 0132 2483      		std Z+4,r18
+  94:i2c_rtc.c     **** 	rtc->mday = (buf[4] & 0x0F) + ((buf[4] >> 4) & 3) * 10;
+ 348               		.stabn	68,0,94,.LM26-.LFBB3
+ 349               	.LM26:
+ 350 0134 2D81      		ldd r18,Y+5
+ 351 0136 922F      		mov r25,r18
+ 352 0138 9695      		lsr r25
+ 353 013a 9695      		lsr r25
+ 354 013c 9695      		lsr r25
+ 355 013e 9670      		andi r25,lo8(6)
+ 356 0140 892F      		mov r24,r25
+ 357 0142 880F      		lsl r24
+ 358 0144 880F      		lsl r24
+ 359 0146 890F      		add r24,r25
+ 360 0148 2F70      		andi r18,lo8(15)
+ 361 014a 820F      		add r24,r18
+ 362 014c 8383      		std Z+3,r24
+GAS LISTING /tmp/ccZ6cM3a.s 			page 9
+
+
+  95:i2c_rtc.c     **** 	rtc->month = (buf[5] & 0x0F) + ((buf[5] >> 4) & 1) * 10;
+ 363               		.stabn	68,0,95,.LM27-.LFBB3
+ 364               	.LM27:
+ 365 014e 2E81      		ldd r18,Y+6
+ 366 0150 922F      		mov r25,r18
+ 367 0152 9695      		lsr r25
+ 368 0154 9695      		lsr r25
+ 369 0156 9695      		lsr r25
+ 370 0158 9270      		andi r25,lo8(2)
+ 371 015a 892F      		mov r24,r25
+ 372 015c 880F      		lsl r24
+ 373 015e 880F      		lsl r24
+ 374 0160 890F      		add r24,r25
+ 375 0162 2F70      		andi r18,lo8(15)
+ 376 0164 820F      		add r24,r18
+ 377 0166 8283      		std Z+2,r24
+  96:i2c_rtc.c     **** 	rtc->year = 2000 + (buf[6] & 0x0F) + (buf[6] >> 4) * 10;
+ 378               		.stabn	68,0,96,.LM28-.LFBB3
+ 379               	.LM28:
+ 380 0168 2F81      		ldd r18,Y+7
+ 381 016a 822F      		mov r24,r18
+ 382 016c 90E0      		ldi r25,lo8(0)
+ 383 016e 8F70      		andi r24,lo8(15)
+ 384 0170 9070      		andi r25,hi8(15)
+ 385 0172 8053      		subi r24,lo8(-(2000))
+ 386 0174 984F      		sbci r25,hi8(-(2000))
+ 387 0176 2295      		swap r18
+ 388 0178 2F70      		andi r18,lo8(15)
+ 389 017a 3AE0      		ldi r19,lo8(10)
+ 390 017c 239F      		mul r18,r19
+ 391 017e 9001      		movw r18,r0
+ 392 0180 1124      		clr r1
+ 393 0182 820F      		add r24,r18
+ 394 0184 931F      		adc r25,r19
+ 395 0186 9183      		std Z+1,r25
+ 396 0188 8083      		st Z,r24
+  97:i2c_rtc.c     **** 
+  98:i2c_rtc.c     **** 	return 1;
+  99:i2c_rtc.c     **** }
+ 397               		.stabn	68,0,99,.LM29-.LFBB3
+ 398               	.LM29:
+ 399 018a 81E0      		ldi r24,lo8(1)
+ 400               	/* epilogue start */
+ 401 018c 2896      		adiw r28,8
+ 402 018e 0FB6      		in __tmp_reg__,__SREG__
+ 403 0190 F894      		cli
+ 404 0192 DEBF      		out __SP_H__,r29
+ 405 0194 0FBE      		out __SREG__,__tmp_reg__
+ 406 0196 CDBF      		out __SP_L__,r28
+ 407 0198 CF91      		pop r28
+ 408 019a DF91      		pop r29
+ 409 019c 1F91      		pop r17
+ 410 019e 0F91      		pop r16
+ 411 01a0 0895      		ret
+ 412               		.size	rtc_gettime, .-rtc_gettime
+ 413               		.stabs	"buf:(0,18)=ar(0,19)=r(0,19);0;0177777;;0;7;(4,2)",128,0,86,1
+ 414               		.stabn	192,0,0,.LFBB3-.LFBB3
+GAS LISTING /tmp/ccZ6cM3a.s 			page 10
+
+
+ 415               		.stabn	224,0,0,.Lscope3-.LFBB3
+ 416               	.Lscope3:
+ 417               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 418               		.stabd	78,0,0
+ 419               		.stabs	"rtc_settime:F(4,2)",36,0,101,rtc_settime
+ 420               		.stabs	"rtc:P(0,20)=*(0,21)=k(1,1)",64,0,101,30
+ 421               	.global	rtc_settime
+ 422               		.type	rtc_settime, @function
+ 423               	rtc_settime:
+ 424               		.stabd	46,0,0
+ 100:i2c_rtc.c     **** 
+ 101:i2c_rtc.c     **** uint8_t rtc_settime (const RTC *rtc)
+ 102:i2c_rtc.c     **** {
+ 425               		.stabn	68,0,102,.LM30-.LFBB4
+ 426               	.LM30:
+ 427               	.LFBB4:
+ 428 01a2 DF93      		push r29
+ 429 01a4 CF93      		push r28
+ 430 01a6 CDB7      		in r28,__SP_L__
+ 431 01a8 DEB7      		in r29,__SP_H__
+ 432 01aa 2897      		sbiw r28,8
+ 433 01ac 0FB6      		in __tmp_reg__,__SREG__
+ 434 01ae F894      		cli
+ 435 01b0 DEBF      		out __SP_H__,r29
+ 436 01b2 0FBE      		out __SREG__,__tmp_reg__
+ 437 01b4 CDBF      		out __SP_L__,r28
+ 438               	/* prologue: function */
+ 439               	/* frame size = 8 */
+ 440               	/* stack size = 10 */
+ 441               	.L__stack_usage = 10
+ 442 01b6 FC01      		movw r30,r24
+ 103:i2c_rtc.c     **** 	uint8_t buf[8];
+ 104:i2c_rtc.c     **** 	buf[0] = rtc->sec / 10 * 16 + rtc->sec % 10;
+ 443               		.stabn	68,0,104,.LM31-.LFBB4
+ 444               	.LM31:
+ 445 01b8 3781      		ldd r19,Z+7
+ 105:i2c_rtc.c     **** 	buf[1] = rtc->min / 10 * 16 + rtc->min % 10;
+ 446               		.stabn	68,0,105,.LM32-.LFBB4
+ 447               	.LM32:
+ 448 01ba 8681      		ldd r24,Z+6
+ 449 01bc 2AE0      		ldi r18,lo8(10)
+ 450 01be 622F      		mov r22,r18
+ 451 01c0 0E94 0000 		call __udivmodqi4
+ 452 01c4 8295      		swap r24
+ 453 01c6 807F      		andi r24,lo8(-16)
+ 454 01c8 890F      		add r24,r25
+ 455 01ca 8A83      		std Y+2,r24
+ 106:i2c_rtc.c     **** 	buf[2] = rtc->hour / 10 * 16 + rtc->hour % 10;
+ 456               		.stabn	68,0,106,.LM33-.LFBB4
+ 457               	.LM33:
+ 458 01cc 8581      		ldd r24,Z+5
+ 459 01ce 0E94 0000 		call __udivmodqi4
+ 460 01d2 8295      		swap r24
+ 461 01d4 807F      		andi r24,lo8(-16)
+ 462 01d6 890F      		add r24,r25
+ 463 01d8 8B83      		std Y+3,r24
+ 107:i2c_rtc.c     **** 	buf[3] = rtc->wday & 7;
+GAS LISTING /tmp/ccZ6cM3a.s 			page 11
+
+
+ 464               		.stabn	68,0,107,.LM34-.LFBB4
+ 465               	.LM34:
+ 466 01da 8481      		ldd r24,Z+4
+ 467 01dc 8770      		andi r24,lo8(7)
+ 468 01de 8C83      		std Y+4,r24
+ 108:i2c_rtc.c     **** 	buf[4] = rtc->mday / 10 * 16 + rtc->mday % 10;
+ 469               		.stabn	68,0,108,.LM35-.LFBB4
+ 470               	.LM35:
+ 471 01e0 8381      		ldd r24,Z+3
+ 472 01e2 0E94 0000 		call __udivmodqi4
+ 473 01e6 8295      		swap r24
+ 474 01e8 807F      		andi r24,lo8(-16)
+ 475 01ea 890F      		add r24,r25
+ 476 01ec 8D83      		std Y+5,r24
+ 109:i2c_rtc.c     **** 	buf[5] = rtc->month / 10 * 16 + rtc->month % 10;
+ 477               		.stabn	68,0,109,.LM36-.LFBB4
+ 478               	.LM36:
+ 479 01ee 8281      		ldd r24,Z+2
+ 480 01f0 0E94 0000 		call __udivmodqi4
+ 481 01f4 8295      		swap r24
+ 482 01f6 807F      		andi r24,lo8(-16)
+ 483 01f8 890F      		add r24,r25
+ 484 01fa 8E83      		std Y+6,r24
+ 110:i2c_rtc.c     **** 	buf[6] = (rtc->year - 2000) / 10 * 16 + (rtc->year - 2000) % 10;
+ 485               		.stabn	68,0,110,.LM37-.LFBB4
+ 486               	.LM37:
+ 487 01fc 8081      		ld r24,Z
+ 488 01fe 9181      		ldd r25,Z+1
+ 489 0200 805D      		subi r24,lo8(-(-2000))
+ 490 0202 9740      		sbci r25,hi8(-(-2000))
+ 491 0204 6AE0      		ldi r22,lo8(10)
+ 492 0206 70E0      		ldi r23,hi8(10)
+ 493 0208 0E94 0000 		call __udivmodhi4
+ 494 020c 6295      		swap r22
+ 495 020e 607F      		andi r22,lo8(-16)
+ 496 0210 680F      		add r22,r24
+ 497 0212 6F83      		std Y+7,r22
+ 104:i2c_rtc.c     **** 	buf[0] = rtc->sec / 10 * 16 + rtc->sec % 10;
+ 498               		.stabn	68,0,104,.LM38-.LFBB4
+ 499               	.LM38:
+ 500 0214 832F      		mov r24,r19
+ 501 0216 622F      		mov r22,r18
+ 502 0218 0E94 0000 		call __udivmodqi4
+ 503 021c 8295      		swap r24
+ 504 021e 807F      		andi r24,lo8(-16)
+ 505 0220 890F      		add r24,r25
+ 111:i2c_rtc.c     **** 	buf[0] &=~ (1<<7);//set clock to go
+ 506               		.stabn	68,0,111,.LM39-.LFBB4
+ 507               	.LM39:
+ 508 0222 8F77      		andi r24,lo8(127)
+ 509 0224 8983      		std Y+1,r24
+ 112:i2c_rtc.c     **** 	i2c_write_block(0xD0, 0, 7, buf);
+ 510               		.stabn	68,0,112,.LM40-.LFBB4
+ 511               	.LM40:
+ 512 0226 80ED      		ldi r24,lo8(-48)
+ 513 0228 60E0      		ldi r22,lo8(0)
+ 514 022a 47E0      		ldi r20,lo8(7)
+GAS LISTING /tmp/ccZ6cM3a.s 			page 12
+
+
+ 515 022c 9E01      		movw r18,r28
+ 516 022e 2F5F      		subi r18,lo8(-(1))
+ 517 0230 3F4F      		sbci r19,hi8(-(1))
+ 518 0232 0E94 0000 		call i2c_write_block
+ 113:i2c_rtc.c     **** 	return(1);
+ 114:i2c_rtc.c     **** }
+ 519               		.stabn	68,0,114,.LM41-.LFBB4
+ 520               	.LM41:
+ 521 0236 81E0      		ldi r24,lo8(1)
+ 522               	/* epilogue start */
+ 523 0238 2896      		adiw r28,8
+ 524 023a 0FB6      		in __tmp_reg__,__SREG__
+ 525 023c F894      		cli
+ 526 023e DEBF      		out __SP_H__,r29
+ 527 0240 0FBE      		out __SREG__,__tmp_reg__
+ 528 0242 CDBF      		out __SP_L__,r28
+ 529 0244 CF91      		pop r28
+ 530 0246 DF91      		pop r29
+ 531 0248 0895      		ret
+ 532               		.size	rtc_settime, .-rtc_settime
+ 533               		.stabs	"buf:(0,18)",128,0,103,1
+ 534               		.stabn	192,0,0,.LFBB4-.LFBB4
+ 535               		.stabn	224,0,0,.Lscope4-.LFBB4
+ 536               	.Lscope4:
+ 537               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 538               		.stabd	78,0,0
+ 539               		.stabs	"i2c_rtc_init:F(4,2)",36,0,117,i2c_rtc_init
+ 540               	.global	i2c_rtc_init
+ 541               		.type	i2c_rtc_init, @function
+ 542               	i2c_rtc_init:
+ 543               		.stabd	46,0,0
+ 115:i2c_rtc.c     **** 
+ 116:i2c_rtc.c     **** 
+ 117:i2c_rtc.c     **** uint8_t i2c_rtc_init (void)
+ 118:i2c_rtc.c     **** {
+ 544               		.stabn	68,0,118,.LM42-.LFBB5
+ 545               	.LM42:
+ 546               	.LFBB5:
+ 547 024a FF92      		push r15
+ 548 024c 0F93      		push r16
+ 549 024e 1F93      		push r17
+ 550 0250 DF93      		push r29
+ 551 0252 CF93      		push r28
+ 552 0254 CDB7      		in r28,__SP_L__
+ 553 0256 DEB7      		in r29,__SP_H__
+ 554 0258 2997      		sbiw r28,9
+ 555 025a 0FB6      		in __tmp_reg__,__SREG__
+ 556 025c F894      		cli
+ 557 025e DEBF      		out __SP_H__,r29
+ 558 0260 0FBE      		out __SREG__,__tmp_reg__
+ 559 0262 CDBF      		out __SP_L__,r28
+ 560               	/* prologue: function */
+ 561               	/* frame size = 9 */
+ 562               	/* stack size = 14 */
+ 563               	.L__stack_usage = 14
+ 119:i2c_rtc.c     **** 	i2c_init();
+ 564               		.stabn	68,0,119,.LM43-.LFBB5
+GAS LISTING /tmp/ccZ6cM3a.s 			page 13
+
+
+ 565               	.LM43:
+ 566 0264 0E94 0000 		call i2c_init
+ 120:i2c_rtc.c     ****     uint8_t buf[8];	//RTC R/W buffer 
+ 121:i2c_rtc.c     **** 	uint8_t adr;
+ 122:i2c_rtc.c     **** 
+ 123:i2c_rtc.c     ****     i2c_timeout_flag = 0;
+ 567               		.stabn	68,0,123,.LM44-.LFBB5
+ 568               	.LM44:
+ 569 0268 1092 0000 		sts i2c_timeout_flag,__zero_reg__
+ 124:i2c_rtc.c     ****     start_timer0();
+ 570               		.stabn	68,0,124,.LM45-.LFBB5
+ 571               	.LM45:
+ 572 026c 0E94 0000 		call start_timer0
+ 125:i2c_rtc.c     **** 
+ 126:i2c_rtc.c     **** 	// Read RTC registers 
+ 127:i2c_rtc.c     **** 	i2c_read_block(0xD0, 0, 8, buf);
+ 573               		.stabn	68,0,127,.LM46-.LFBB5
+ 574               	.LM46:
+ 575 0270 80ED      		ldi r24,lo8(-48)
+ 576 0272 60E0      		ldi r22,lo8(0)
+ 577 0274 48E0      		ldi r20,lo8(8)
+ 578 0276 8E01      		movw r16,r28
+ 579 0278 0F5F      		subi r16,lo8(-(1))
+ 580 027a 1F4F      		sbci r17,hi8(-(1))
+ 581 027c 9801      		movw r18,r16
+ 582 027e 0E94 0000 		call i2c_read_block
+ 128:i2c_rtc.c     **** 
+ 129:i2c_rtc.c     **** 	if (buf[7] & 0x20) {	// When data has been volatiled, set default time 
+ 583               		.stabn	68,0,129,.LM47-.LFBB5
+ 584               	.LM47:
+ 585 0282 8885      		ldd r24,Y+8
+ 586 0284 85FF      		sbrs r24,5
+ 587 0286 00C0      		rjmp .L13
+ 130:i2c_rtc.c     **** 		// Clear nv-ram. Reg[8..63] 
+ 131:i2c_rtc.c     **** 		memset(buf, 0, 8);
+ 588               		.stabn	68,0,131,.LM48-.LFBB5
+ 589               	.LM48:
+ 590 0288 88E0      		ldi r24,lo8(8)
+ 591 028a F801      		movw r30,r16
+ 592 028c 1192      		st Z+,__zero_reg__
+ 593 028e 8A95      	        dec r24
+ 594 0290 01F4      		brne .-6
+ 132:i2c_rtc.c     **** 		for (adr = 8; adr < 64; adr += 8)
+ 595               		.stabn	68,0,132,.LM49-.LFBB5
+ 596               	.LM49:
+ 597 0292 98E0      		ldi r25,lo8(8)
+ 133:i2c_rtc.c     **** 			i2c_write_block(0x0D, adr, 8, buf);
+ 598               		.stabn	68,0,133,.LM50-.LFBB5
+ 599               	.LM50:
+ 600 0294 F02E      		mov r15,r16
+ 601 0296 012F      		mov r16,r17
+ 602               	.L14:
+ 603               		.stabn	68,0,133,.LM51-.LFBB5
+ 604               	.LM51:
+ 605 0298 8DE0      		ldi r24,lo8(13)
+ 606 029a 692F      		mov r22,r25
+ 607 029c 48E0      		ldi r20,lo8(8)
+GAS LISTING /tmp/ccZ6cM3a.s 			page 14
+
+
+ 608 029e 2F2D      		mov r18,r15
+ 609 02a0 302F      		mov r19,r16
+ 610 02a2 9987      		std Y+9,r25
+ 611 02a4 0E94 0000 		call i2c_write_block
+ 132:i2c_rtc.c     **** 		for (adr = 8; adr < 64; adr += 8)
+ 612               		.stabn	68,0,132,.LM52-.LFBB5
+ 613               	.LM52:
+ 614 02a8 9985      		ldd r25,Y+9
+ 615 02aa 985F      		subi r25,lo8(-(8))
+ 616 02ac 9034      		cpi r25,lo8(64)
+ 617 02ae 01F4      		brne .L14
+ 134:i2c_rtc.c     **** 		// Reset time to Jan 1, '08. Reg[0..7] 
+ 135:i2c_rtc.c     **** 		buf[4] = 1; buf[5] = 1; buf[6] = 8;
+ 618               		.stabn	68,0,135,.LM53-.LFBB5
+ 619               	.LM53:
+ 620 02b0 81E0      		ldi r24,lo8(1)
+ 621 02b2 8D83      		std Y+5,r24
+ 622 02b4 8E83      		std Y+6,r24
+ 623 02b6 88E0      		ldi r24,lo8(8)
+ 624 02b8 8F83      		std Y+7,r24
+ 136:i2c_rtc.c     **** 		i2c_write_block(0x0D, 0, 8, buf);
+ 625               		.stabn	68,0,136,.LM54-.LFBB5
+ 626               	.LM54:
+ 627 02ba 8DE0      		ldi r24,lo8(13)
+ 628 02bc 60E0      		ldi r22,lo8(0)
+ 629 02be 48E0      		ldi r20,lo8(8)
+ 630 02c0 2F2D      		mov r18,r15
+ 631 02c2 302F      		mov r19,r16
+ 632 02c4 0E94 0000 		call i2c_write_block
+ 633               	.L13:
+ 137:i2c_rtc.c     **** 	}
+ 138:i2c_rtc.c     ****     TCCR0 = 0;// stop counter
+ 634               		.stabn	68,0,138,.LM55-.LFBB5
+ 635               	.LM55:
+ 636 02c8 13BE      		out 83-32,__zero_reg__
+ 139:i2c_rtc.c     **** 	return(i2c_timeout_flag);
+ 637               		.stabn	68,0,139,.LM56-.LFBB5
+ 638               	.LM56:
+ 639 02ca 8091 0000 		lds r24,i2c_timeout_flag
+ 640               	/* epilogue start */
+ 140:i2c_rtc.c     **** }
+ 641               		.stabn	68,0,140,.LM57-.LFBB5
+ 642               	.LM57:
+ 643 02ce 2996      		adiw r28,9
+ 644 02d0 0FB6      		in __tmp_reg__,__SREG__
+ 645 02d2 F894      		cli
+ 646 02d4 DEBF      		out __SP_H__,r29
+ 647 02d6 0FBE      		out __SREG__,__tmp_reg__
+ 648 02d8 CDBF      		out __SP_L__,r28
+ 649 02da CF91      		pop r28
+ 650 02dc DF91      		pop r29
+ 651 02de 1F91      		pop r17
+ 652 02e0 0F91      		pop r16
+ 653 02e2 FF90      		pop r15
+ 654 02e4 0895      		ret
+ 655               		.size	i2c_rtc_init, .-i2c_rtc_init
+ 656               		.stabs	"buf:(0,18)",128,0,120,1
+GAS LISTING /tmp/ccZ6cM3a.s 			page 15
+
+
+ 657               		.stabs	"adr:r(4,2)",64,0,121,25
+ 658               		.stabn	192,0,0,.LFBB5-.LFBB5
+ 659               		.stabn	224,0,0,.Lscope5-.LFBB5
+ 660               	.Lscope5:
+ 661               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 662               		.stabd	78,0,0
+ 663               		.stabs	"showtime:F(4,2)",36,0,142,showtime
+ 664               	.global	showtime
+ 665               		.type	showtime, @function
+ 666               	showtime:
+ 667               		.stabd	46,0,0
+ 141:i2c_rtc.c     **** 
+ 142:i2c_rtc.c     **** uint8_t showtime(void)
+ 143:i2c_rtc.c     **** {
+ 668               		.stabn	68,0,143,.LM58-.LFBB6
+ 669               	.LM58:
+ 670               	.LFBB6:
+ 671 02e6 1F93      		push r17
+ 672 02e8 DF93      		push r29
+ 673 02ea CF93      		push r28
+ 674 02ec CDB7      		in r28,__SP_L__
+ 675 02ee DEB7      		in r29,__SP_H__
+ 676 02f0 2897      		sbiw r28,8
+ 677 02f2 0FB6      		in __tmp_reg__,__SREG__
+ 678 02f4 F894      		cli
+ 679 02f6 DEBF      		out __SP_H__,r29
+ 680 02f8 0FBE      		out __SREG__,__tmp_reg__
+ 681 02fa CDBF      		out __SP_L__,r28
+ 682               	/* prologue: function */
+ 683               	/* frame size = 8 */
+ 684               	/* stack size = 11 */
+ 685               	.L__stack_usage = 11
+ 144:i2c_rtc.c     ****     RTC rtc;//struct for real time clock setting
+ 145:i2c_rtc.c     ****     uart_puts_p(PSTR("\n\r"));
+ 686               		.stabn	68,0,145,.LM59-.LFBB6
+ 687               	.LM59:
+ 688 02fc 80E0      		ldi r24,lo8(__c.1888)
+ 689 02fe 90E0      		ldi r25,hi8(__c.1888)
+ 690 0300 0E94 0000 		call uart_puts_p
+ 146:i2c_rtc.c     ****     uint8_t ok = rtc_gettime(&rtc);// Get time from rtc
+ 691               		.stabn	68,0,146,.LM60-.LFBB6
+ 692               	.LM60:
+ 693 0304 CE01      		movw r24,r28
+ 694 0306 0196      		adiw r24,1
+ 695 0308 0E94 0000 		call rtc_gettime
+ 696 030c 182F      		mov r17,r24
+ 147:i2c_rtc.c     ****     uart_putc('#');
+ 697               		.stabn	68,0,147,.LM61-.LFBB6
+ 698               	.LM61:
+ 699 030e 83E2      		ldi r24,lo8(35)
+ 700 0310 0E94 0000 		call uart_putc
+ 148:i2c_rtc.c     ****     uart_puts_p(PSTR("year: "));
+ 701               		.stabn	68,0,148,.LM62-.LFBB6
+ 702               	.LM62:
+ 703 0314 80E0      		ldi r24,lo8(__c.1891)
+ 704 0316 90E0      		ldi r25,hi8(__c.1891)
+ 705 0318 0E94 0000 		call uart_puts_p
+GAS LISTING /tmp/ccZ6cM3a.s 			page 16
+
+
+ 149:i2c_rtc.c     ****     uart_putw_dec(rtc.year);
+ 706               		.stabn	68,0,149,.LM63-.LFBB6
+ 707               	.LM63:
+ 708 031c 8981      		ldd r24,Y+1
+ 709 031e 9A81      		ldd r25,Y+2
+ 710 0320 0E94 0000 		call uart_putw_dec
+ 150:i2c_rtc.c     ****     uart_putc(' ');
+ 711               		.stabn	68,0,150,.LM64-.LFBB6
+ 712               	.LM64:
+ 713 0324 80E2      		ldi r24,lo8(32)
+ 714 0326 0E94 0000 		call uart_putc
+ 151:i2c_rtc.c     ****     uart_puts_p(PSTR("month: "));
+ 715               		.stabn	68,0,151,.LM65-.LFBB6
+ 716               	.LM65:
+ 717 032a 80E0      		ldi r24,lo8(__c.1893)
+ 718 032c 90E0      		ldi r25,hi8(__c.1893)
+ 719 032e 0E94 0000 		call uart_puts_p
+ 152:i2c_rtc.c     ****     uart_putw_dec(rtc.month);
+ 720               		.stabn	68,0,152,.LM66-.LFBB6
+ 721               	.LM66:
+ 722 0332 8B81      		ldd r24,Y+3
+ 723 0334 90E0      		ldi r25,lo8(0)
+ 724 0336 0E94 0000 		call uart_putw_dec
+ 153:i2c_rtc.c     ****     uart_putc(' ');
+ 725               		.stabn	68,0,153,.LM67-.LFBB6
+ 726               	.LM67:
+ 727 033a 80E2      		ldi r24,lo8(32)
+ 728 033c 0E94 0000 		call uart_putc
+ 154:i2c_rtc.c     ****     uart_puts_p(PSTR("day: "));
+ 729               		.stabn	68,0,154,.LM68-.LFBB6
+ 730               	.LM68:
+ 731 0340 80E0      		ldi r24,lo8(__c.1895)
+ 732 0342 90E0      		ldi r25,hi8(__c.1895)
+ 733 0344 0E94 0000 		call uart_puts_p
+ 155:i2c_rtc.c     ****     uart_putw_dec(rtc.mday);
+ 734               		.stabn	68,0,155,.LM69-.LFBB6
+ 735               	.LM69:
+ 736 0348 8C81      		ldd r24,Y+4
+ 737 034a 90E0      		ldi r25,lo8(0)
+ 738 034c 0E94 0000 		call uart_putw_dec
+ 156:i2c_rtc.c     ****     uart_putc(' ');
+ 739               		.stabn	68,0,156,.LM70-.LFBB6
+ 740               	.LM70:
+ 741 0350 80E2      		ldi r24,lo8(32)
+ 742 0352 0E94 0000 		call uart_putc
+ 157:i2c_rtc.c     ****     uart_puts_p(PSTR("hour: "));
+ 743               		.stabn	68,0,157,.LM71-.LFBB6
+ 744               	.LM71:
+ 745 0356 80E0      		ldi r24,lo8(__c.1897)
+ 746 0358 90E0      		ldi r25,hi8(__c.1897)
+ 747 035a 0E94 0000 		call uart_puts_p
+ 158:i2c_rtc.c     ****     uart_putw_dec(rtc.hour);
+ 748               		.stabn	68,0,158,.LM72-.LFBB6
+ 749               	.LM72:
+ 750 035e 8E81      		ldd r24,Y+6
+ 751 0360 90E0      		ldi r25,lo8(0)
+ 752 0362 0E94 0000 		call uart_putw_dec
+GAS LISTING /tmp/ccZ6cM3a.s 			page 17
+
+
+ 159:i2c_rtc.c     ****     uart_putc(' ');
+ 753               		.stabn	68,0,159,.LM73-.LFBB6
+ 754               	.LM73:
+ 755 0366 80E2      		ldi r24,lo8(32)
+ 756 0368 0E94 0000 		call uart_putc
+ 160:i2c_rtc.c     ****     uart_puts_p(PSTR("min: "));
+ 757               		.stabn	68,0,160,.LM74-.LFBB6
+ 758               	.LM74:
+ 759 036c 80E0      		ldi r24,lo8(__c.1899)
+ 760 036e 90E0      		ldi r25,hi8(__c.1899)
+ 761 0370 0E94 0000 		call uart_puts_p
+ 161:i2c_rtc.c     ****     uart_putw_dec(rtc.min);
+ 762               		.stabn	68,0,161,.LM75-.LFBB6
+ 763               	.LM75:
+ 764 0374 8F81      		ldd r24,Y+7
+ 765 0376 90E0      		ldi r25,lo8(0)
+ 766 0378 0E94 0000 		call uart_putw_dec
+ 162:i2c_rtc.c     ****     uart_putc(' ');
+ 767               		.stabn	68,0,162,.LM76-.LFBB6
+ 768               	.LM76:
+ 769 037c 80E2      		ldi r24,lo8(32)
+ 770 037e 0E94 0000 		call uart_putc
+ 163:i2c_rtc.c     ****     uart_puts_p(PSTR("sec: "));
+ 771               		.stabn	68,0,163,.LM77-.LFBB6
+ 772               	.LM77:
+ 773 0382 80E0      		ldi r24,lo8(__c.1901)
+ 774 0384 90E0      		ldi r25,hi8(__c.1901)
+ 775 0386 0E94 0000 		call uart_puts_p
+ 164:i2c_rtc.c     ****     uart_putw_dec(rtc.sec);
+ 776               		.stabn	68,0,164,.LM78-.LFBB6
+ 777               	.LM78:
+ 778 038a 8885      		ldd r24,Y+8
+ 779 038c 90E0      		ldi r25,lo8(0)
+ 780 038e 0E94 0000 		call uart_putw_dec
+ 165:i2c_rtc.c     ****     uart_puts_p(PSTR("\n"));
+ 781               		.stabn	68,0,165,.LM79-.LFBB6
+ 782               	.LM79:
+ 783 0392 80E0      		ldi r24,lo8(__c.1903)
+ 784 0394 90E0      		ldi r25,hi8(__c.1903)
+ 785 0396 0E94 0000 		call uart_puts_p
+ 166:i2c_rtc.c     ****     return ok;
+ 167:i2c_rtc.c     **** }
+ 786               		.stabn	68,0,167,.LM80-.LFBB6
+ 787               	.LM80:
+ 788 039a 812F      		mov r24,r17
+ 789               	/* epilogue start */
+ 790 039c 2896      		adiw r28,8
+ 791 039e 0FB6      		in __tmp_reg__,__SREG__
+ 792 03a0 F894      		cli
+ 793 03a2 DEBF      		out __SP_H__,r29
+ 794 03a4 0FBE      		out __SREG__,__tmp_reg__
+ 795 03a6 CDBF      		out __SP_L__,r28
+ 796 03a8 CF91      		pop r28
+ 797 03aa DF91      		pop r29
+ 798 03ac 1F91      		pop r17
+ 799 03ae 0895      		ret
+ 800               		.size	showtime, .-showtime
+GAS LISTING /tmp/ccZ6cM3a.s 			page 18
+
+
+ 801               		.stabs	"rtc:(1,1)",128,0,144,1
+ 802               		.stabs	"ok:r(4,2)",64,0,146,17
+ 803               		.stabn	192,0,0,.LFBB6-.LFBB6
+ 804               		.stabn	224,0,0,.Lscope6-.LFBB6
+ 805               	.Lscope6:
+ 806               		.stabs	"",36,0,0,.Lscope6-.LFBB6
+ 807               		.stabd	78,0,0
+ 808               		.stabs	"bintime2unixtime:F(4,6)",36,0,170,bintime2unixtime
+ 809               		.stabs	"rtc:P(0,17)",64,0,170,28
+ 810               	.global	bintime2unixtime
+ 811               		.type	bintime2unixtime, @function
+ 812               	bintime2unixtime:
+ 813               		.stabd	46,0,0
+ 168:i2c_rtc.c     **** 
+ 169:i2c_rtc.c     **** 
+ 170:i2c_rtc.c     **** uint32_t bintime2unixtime(RTC *rtc) 
+ 171:i2c_rtc.c     **** { 
+ 814               		.stabn	68,0,171,.LM81-.LFBB7
+ 815               	.LM81:
+ 816               	.LFBB7:
+ 817 03b0 6F92      		push r6
+ 818 03b2 7F92      		push r7
+ 819 03b4 8F92      		push r8
+ 820 03b6 9F92      		push r9
+ 821 03b8 AF92      		push r10
+ 822 03ba BF92      		push r11
+ 823 03bc CF92      		push r12
+ 824 03be DF92      		push r13
+ 825 03c0 EF92      		push r14
+ 826 03c2 FF92      		push r15
+ 827 03c4 0F93      		push r16
+ 828 03c6 1F93      		push r17
+ 829 03c8 CF93      		push r28
+ 830 03ca DF93      		push r29
+ 831               	/* prologue: function */
+ 832               	/* frame size = 0 */
+ 833               	/* stack size = 14 */
+ 834               	.L__stack_usage = 14
+ 835 03cc EC01      		movw r28,r24
+ 172:i2c_rtc.c     **** // Convert the BCD time From DS1305/6 to an unsigned long UNIX timestamp 
+ 173:i2c_rtc.c     **** //   of seconds since the epoch-- Jan. 1, 1970. 
+ 174:i2c_rtc.c     **** // 
+ 175:i2c_rtc.c     **** // As this app never needs to go back in time or specify arbitrary dates, 
+ 176:i2c_rtc.c     **** //   simplifications can be done by simply calculating the whole-year 
+ 177:i2c_rtc.c     **** //   seconds through an arbitrary year such as 2000, 2007, or 2008. 
+ 178:i2c_rtc.c     **** // 
+ 179:i2c_rtc.c     **** 
+ 180:i2c_rtc.c     **** uint32_t         work;   // accumulator of seconds 
+ 181:i2c_rtc.c     **** signed int      mult;   // working 
+ 182:i2c_rtc.c     **** 
+ 183:i2c_rtc.c     **** // Base seconds, 1970 through 2008 
+ 184:i2c_rtc.c     ****    work = RTC_SEC_TILL_2009; 
+ 185:i2c_rtc.c     **** 
+ 186:i2c_rtc.c     **** // How many years since? 
+ 187:i2c_rtc.c     ****    mult = rtc->year - RTC_YEAR_MIN; 
+ 836               		.stabn	68,0,187,.LM82-.LFBB7
+ 837               	.LM82:
+GAS LISTING /tmp/ccZ6cM3a.s 			page 19
+
+
+ 838 03ce 0881      		ld r16,Y
+ 839 03d0 1981      		ldd r17,Y+1
+ 840 03d2 0950      		subi r16,lo8(-(-9))
+ 841 03d4 1040      		sbci r17,hi8(-(-9))
+ 188:i2c_rtc.c     ****    if ((mult < 0) || (mult > (RTC_YEAR_MAX - RTC_YEAR_MIN + 1))) 
+ 842               		.stabn	68,0,188,.LM83-.LFBB7
+ 843               	.LM83:
+ 844 03d6 0231      		cpi r16,18
+ 845 03d8 1105      		cpc r17,__zero_reg__
+ 846 03da 00F0      		brlo .L18
+ 189:i2c_rtc.c     ****       { 
+ 190:i2c_rtc.c     ****       mult = 0; 
+ 847               		.stabn	68,0,190,.LM84-.LFBB7
+ 848               	.LM84:
+ 849 03dc 00E0      		ldi r16,lo8(0)
+ 850 03de 10E0      		ldi r17,hi8(0)
+ 851               	.L18:
+ 191:i2c_rtc.c     ****       } 
+ 192:i2c_rtc.c     **** // Add the whole years since start of 2009 
+ 193:i2c_rtc.c     ****    work += (unsigned long)mult * RTC_SEC_PER_YEAR; 
+ 852               		.stabn	68,0,193,.LM85-.LFBB7
+ 853               	.LM85:
+ 854 03e0 3801      		movw r6,r16
+ 855 03e2 8824      		clr r8
+ 856 03e4 77FC      		sbrc r7,7
+ 857 03e6 8094      		com r8
+ 858 03e8 982C      		mov r9,r8
+ 859 03ea C401      		movw r24,r8
+ 860 03ec B301      		movw r22,r6
+ 861 03ee 20E8      		ldi r18,lo8(31536000)
+ 862 03f0 33E3      		ldi r19,hi8(31536000)
+ 863 03f2 41EE      		ldi r20,hlo8(31536000)
+ 864 03f4 51E0      		ldi r21,hhi8(31536000)
+ 865 03f6 0E94 0000 		call __mulsi3
+ 866 03fa 5B01      		movw r10,r22
+ 867 03fc 6C01      		movw r12,r24
+ 868 03fe 80E8      		ldi r24,lo8(1230768000)
+ 869 0400 97E0      		ldi r25,hi8(1230768000)
+ 870 0402 ACE5      		ldi r26,hlo8(1230768000)
+ 871 0404 B9E4      		ldi r27,hhi8(1230768000)
+ 872 0406 A80E      		add r10,r24
+ 873 0408 B91E      		adc r11,r25
+ 874 040a CA1E      		adc r12,r26
+ 875 040c DB1E      		adc r13,r27
+ 194:i2c_rtc.c     **** 
+ 195:i2c_rtc.c     **** // Add a day for each leap year in the prior years 
+ 196:i2c_rtc.c     ****    work += ((unsigned long)mult/4) * RTC_SEC_PER_DAY; 
+ 876               		.stabn	68,0,196,.LM86-.LFBB7
+ 877               	.LM86:
+ 878 040e C401      		movw r24,r8
+ 879 0410 B301      		movw r22,r6
+ 880 0412 22E0      		ldi r18,2
+ 881 0414 9695      	1:	lsr r25
+ 882 0416 8795      		ror r24
+ 883 0418 7795      		ror r23
+ 884 041a 6795      		ror r22
+ 885 041c 2A95      		dec r18
+GAS LISTING /tmp/ccZ6cM3a.s 			page 20
+
+
+ 886 041e 01F4      		brne 1b
+ 887 0420 20E8      		ldi r18,lo8(86400)
+ 888 0422 31E5      		ldi r19,hi8(86400)
+ 889 0424 41E0      		ldi r20,hlo8(86400)
+ 890 0426 50E0      		ldi r21,hhi8(86400)
+ 891 0428 0E94 0000 		call __mulsi3
+ 892 042c A60E      		add r10,r22
+ 893 042e B71E      		adc r11,r23
+ 894 0430 C81E      		adc r12,r24
+ 895 0432 D91E      		adc r13,r25
+ 197:i2c_rtc.c     **** 
+ 198:i2c_rtc.c     **** // Add a day for this year, if leap year and past Feb. 
+ 199:i2c_rtc.c     ****    if ((mult+1) % 4 == 0) 
+ 896               		.stabn	68,0,199,.LM87-.LFBB7
+ 897               	.LM87:
+ 898 0434 0F5F      		subi r16,lo8(-(1))
+ 899 0436 1F4F      		sbci r17,hi8(-(1))
+ 900 0438 0370      		andi r16,lo8(3)
+ 901 043a 1070      		andi r17,hi8(3)
+ 902 043c 0115      		cp r16,__zero_reg__
+ 903 043e 1105      		cpc r17,__zero_reg__
+ 904 0440 01F4      		brne .L19
+ 200:i2c_rtc.c     ****       { 
+ 201:i2c_rtc.c     ****       // Leap year 
+ 202:i2c_rtc.c     ****       if (rtc->month > 2) 
+ 905               		.stabn	68,0,202,.LM88-.LFBB7
+ 906               	.LM88:
+ 907 0442 8A81      		ldd r24,Y+2
+ 908 0444 8330      		cpi r24,lo8(3)
+ 909 0446 00F0      		brlo .L19
+ 203:i2c_rtc.c     ****          { 
+ 204:i2c_rtc.c     ****          // Past February 
+ 205:i2c_rtc.c     ****          work += RTC_SEC_PER_DAY; 
+ 910               		.stabn	68,0,205,.LM89-.LFBB7
+ 911               	.LM89:
+ 912 0448 A20E      		add r10,r18
+ 913 044a B31E      		adc r11,r19
+ 914 044c C41E      		adc r12,r20
+ 915 044e D51E      		adc r13,r21
+ 916               	.L19:
+ 206:i2c_rtc.c     ****          } 
+ 207:i2c_rtc.c     ****       } 
+ 208:i2c_rtc.c     **** 
+ 209:i2c_rtc.c     **** // Add the days up to this month.  Use a table 
+ 210:i2c_rtc.c     ****    mult = rtc->month; 
+ 917               		.stabn	68,0,210,.LM90-.LFBB7
+ 918               	.LM90:
+ 919 0450 EA81      		ldd r30,Y+2
+ 920 0452 F0E0      		ldi r31,lo8(0)
+ 211:i2c_rtc.c     ****    if ((mult < 1) || (mult > 12)) 
+ 921               		.stabn	68,0,211,.LM91-.LFBB7
+ 922               	.LM91:
+ 923 0454 CF01      		movw r24,r30
+ 924 0456 0197      		sbiw r24,1
+ 925 0458 8C30      		cpi r24,12
+ 926 045a 9105      		cpc r25,__zero_reg__
+ 927 045c 00F0      		brlo .L20
+GAS LISTING /tmp/ccZ6cM3a.s 			page 21
+
+
+ 212:i2c_rtc.c     ****       { 
+ 213:i2c_rtc.c     ****       mult = 1; 
+ 928               		.stabn	68,0,213,.LM92-.LFBB7
+ 929               	.LM92:
+ 930 045e E1E0      		ldi r30,lo8(1)
+ 931 0460 F0E0      		ldi r31,hi8(1)
+ 932               	.L20:
+ 214:i2c_rtc.c     ****       } 
+ 215:i2c_rtc.c     **** 
+ 216:i2c_rtc.c     ****    work += ((unsigned long)rtc_days[mult-1]) * RTC_SEC_PER_DAY; 
+ 933               		.stabn	68,0,216,.LM93-.LFBB7
+ 934               	.LM93:
+ 935 0462 EE0F      		lsl r30
+ 936 0464 FF1F      		rol r31
+ 937 0466 E050      		subi r30,lo8(-(rtc_days-2))
+ 938 0468 F040      		sbci r31,hi8(-(rtc_days-2))
+ 939 046a 2081      		ld r18,Z
+ 940 046c 3181      		ldd r19,Z+1
+ 941 046e 40E0      		ldi r20,lo8(0)
+ 942 0470 50E0      		ldi r21,hi8(0)
+ 217:i2c_rtc.c     **** 
+ 218:i2c_rtc.c     **** // Add the days this month, up to today 
+ 219:i2c_rtc.c     ****    mult = rtc->mday; 
+ 943               		.stabn	68,0,219,.LM94-.LFBB7
+ 944               	.LM94:
+ 945 0472 6B81      		ldd r22,Y+3
+ 946 0474 70E0      		ldi r23,lo8(0)
+ 220:i2c_rtc.c     ****    if ((mult < 1) || (mult > 31)) 
+ 947               		.stabn	68,0,220,.LM95-.LFBB7
+ 948               	.LM95:
+ 949 0476 CB01      		movw r24,r22
+ 950 0478 0197      		sbiw r24,1
+ 951 047a 8F31      		cpi r24,31
+ 952 047c 9105      		cpc r25,__zero_reg__
+ 953 047e 00F0      		brlo .L21
+ 221:i2c_rtc.c     ****       { 
+ 222:i2c_rtc.c     ****       mult = 1; 
+ 954               		.stabn	68,0,222,.LM96-.LFBB7
+ 955               	.LM96:
+ 956 0480 61E0      		ldi r22,lo8(1)
+ 957 0482 70E0      		ldi r23,hi8(1)
+ 958               	.L21:
+ 223:i2c_rtc.c     ****       } 
+ 224:i2c_rtc.c     **** 
+ 225:i2c_rtc.c     ****    work += ((unsigned long)(mult-1)) * RTC_SEC_PER_DAY; 
+ 959               		.stabn	68,0,225,.LM97-.LFBB7
+ 960               	.LM97:
+ 961 0484 6150      		subi r22,lo8(-(-1))
+ 962 0486 7040      		sbci r23,hi8(-(-1))
+ 963 0488 8827      		clr r24
+ 964 048a 77FD      		sbrc r23,7
+ 965 048c 8095      		com r24
+ 966 048e 982F      		mov r25,r24
+ 220:i2c_rtc.c     ****    if ((mult < 1) || (mult > 31)) 
+ 967               		.stabn	68,0,220,.LM98-.LFBB7
+ 968               	.LM98:
+ 969 0490 620F      		add r22,r18
+GAS LISTING /tmp/ccZ6cM3a.s 			page 22
+
+
+ 970 0492 731F      		adc r23,r19
+ 971 0494 841F      		adc r24,r20
+ 972 0496 951F      		adc r25,r21
+ 973 0498 20E8      		ldi r18,lo8(86400)
+ 974 049a 31E5      		ldi r19,hi8(86400)
+ 975 049c 41E0      		ldi r20,hlo8(86400)
+ 976 049e 50E0      		ldi r21,hhi8(86400)
+ 977 04a0 0E94 0000 		call __mulsi3
+ 978 04a4 DC01      		movw r26,r24
+ 979 04a6 CB01      		movw r24,r22
+ 226:i2c_rtc.c     **** 
+ 227:i2c_rtc.c     **** // Add the seconds up to this hour 
+ 228:i2c_rtc.c     ****    mult = rtc->hour; 
+ 980               		.stabn	68,0,228,.LM99-.LFBB7
+ 981               	.LM99:
+ 982 04a8 6D81      		ldd r22,Y+5
+ 983 04aa 70E0      		ldi r23,lo8(0)
+ 229:i2c_rtc.c     ****    if ((mult < 0) || (mult > 23)) 
+ 984               		.stabn	68,0,229,.LM100-.LFBB7
+ 985               	.LM100:
+ 986 04ac 6831      		cpi r22,24
+ 987 04ae 7105      		cpc r23,__zero_reg__
+ 988 04b0 00F0      		brlo .L22
+ 230:i2c_rtc.c     ****       { 
+ 231:i2c_rtc.c     ****       mult = 1; 
+ 989               		.stabn	68,0,231,.LM101-.LFBB7
+ 990               	.LM101:
+ 991 04b2 61E0      		ldi r22,lo8(1)
+ 992 04b4 70E0      		ldi r23,hi8(1)
+ 993               	.L22:
+ 232:i2c_rtc.c     ****       } 
+ 233:i2c_rtc.c     **** 
+ 234:i2c_rtc.c     ****    work += ((unsigned long)(mult)) * RTC_SEC_PER_HOUR; 
+ 235:i2c_rtc.c     **** 
+ 236:i2c_rtc.c     **** // Add the seconds this hour 
+ 237:i2c_rtc.c     ****    mult = (unsigned int)60 * (unsigned int)rtc->min + (unsigned int)rtc->sec; 
+ 994               		.stabn	68,0,237,.LM102-.LFBB7
+ 995               	.LM102:
+ 996 04b6 3E81      		ldd r19,Y+6
+ 997 04b8 2CE3      		ldi r18,lo8(60)
+ 998 04ba 329F      		mul r19,r18
+ 999 04bc 7001      		movw r14,r0
+ 1000 04be 1124      		clr r1
+ 1001 04c0 2F81      		ldd r18,Y+7
+ 1002 04c2 E20E      		add r14,r18
+ 1003 04c4 F11C      		adc r15,__zero_reg__
+ 238:i2c_rtc.c     **** 
+ 239:i2c_rtc.c     ****    work += mult; 
+ 1004               		.stabn	68,0,239,.LM103-.LFBB7
+ 1005               	.LM103:
+ 1006 04c6 0027      		clr r16
+ 1007 04c8 F7FC      		sbrc r15,7
+ 1008 04ca 0095      		com r16
+ 1009 04cc 102F      		mov r17,r16
+ 225:i2c_rtc.c     ****    work += ((unsigned long)(mult-1)) * RTC_SEC_PER_DAY; 
+ 1010               		.stabn	68,0,225,.LM104-.LFBB7
+ 1011               	.LM104:
+GAS LISTING /tmp/ccZ6cM3a.s 			page 23
+
+
+ 1012 04ce EA0C      		add r14,r10
+ 1013 04d0 FB1C      		adc r15,r11
+ 1014 04d2 0C1D      		adc r16,r12
+ 1015 04d4 1D1D      		adc r17,r13
+ 234:i2c_rtc.c     ****    work += ((unsigned long)(mult)) * RTC_SEC_PER_HOUR; 
+ 1016               		.stabn	68,0,234,.LM105-.LFBB7
+ 1017               	.LM105:
+ 1018 04d6 E80E      		add r14,r24
+ 1019 04d8 F91E      		adc r15,r25
+ 1020 04da 0A1F      		adc r16,r26
+ 1021 04dc 1B1F      		adc r17,r27
+ 1022 04de 8827      		clr r24
+ 1023 04e0 77FD      		sbrc r23,7
+ 1024 04e2 8095      		com r24
+ 1025 04e4 982F      		mov r25,r24
+ 1026 04e6 20E1      		ldi r18,lo8(3600)
+ 1027 04e8 3EE0      		ldi r19,hi8(3600)
+ 1028 04ea 40E0      		ldi r20,hlo8(3600)
+ 1029 04ec 50E0      		ldi r21,hhi8(3600)
+ 1030 04ee 0E94 0000 		call __mulsi3
+ 1031               		.stabn	68,0,239,.LM106-.LFBB7
+ 1032               	.LM106:
+ 1033 04f2 E60E      		add r14,r22
+ 1034 04f4 F71E      		adc r15,r23
+ 1035 04f6 081F      		adc r16,r24
+ 1036 04f8 191F      		adc r17,r25
+ 240:i2c_rtc.c     **** 
+ 241:i2c_rtc.c     ****    return work; 
+ 242:i2c_rtc.c     **** }
+ 1037               		.stabn	68,0,242,.LM107-.LFBB7
+ 1038               	.LM107:
+ 1039 04fa B701      		movw r22,r14
+ 1040 04fc C801      		movw r24,r16
+ 1041               	/* epilogue start */
+ 1042 04fe DF91      		pop r29
+ 1043 0500 CF91      		pop r28
+ 1044 0502 1F91      		pop r17
+ 1045 0504 0F91      		pop r16
+ 1046 0506 FF90      		pop r15
+ 1047 0508 EF90      		pop r14
+ 1048 050a DF90      		pop r13
+ 1049 050c CF90      		pop r12
+ 1050 050e BF90      		pop r11
+ 1051 0510 AF90      		pop r10
+ 1052 0512 9F90      		pop r9
+ 1053 0514 8F90      		pop r8
+ 1054 0516 7F90      		pop r7
+ 1055 0518 6F90      		pop r6
+ 1056 051a 0895      		ret
+ 1057               		.size	bintime2unixtime, .-bintime2unixtime
+ 1058               	.Lscope7:
+ 1059               		.stabs	"",36,0,0,.Lscope7-.LFBB7
+ 1060               		.stabd	78,0,0
+ 1061               	.global	rtc_days
+ 1062               		.data
+ 1063               		.type	rtc_days, @object
+ 1064               		.size	rtc_days, 26
+GAS LISTING /tmp/ccZ6cM3a.s 			page 24
+
+
+ 1065               	rtc_days:
+ 1066 0000 0000      		.word	0
+ 1067 0002 1F00      		.word	31
+ 1068 0004 3B00      		.word	59
+ 1069 0006 5A00      		.word	90
+ 1070 0008 7800      		.word	120
+ 1071 000a 9700      		.word	151
+ 1072 000c B500      		.word	181
+ 1073 000e D400      		.word	212
+ 1074 0010 F300      		.word	243
+ 1075 0012 1101      		.word	273
+ 1076 0014 3001      		.word	304
+ 1077 0016 4E01      		.word	334
+ 1078 0018 6D01      		.word	365
+ 1079               		.section	.progmem.data,"a",@progbits
+ 1080               		.type	__c.1903, @object
+ 1081               		.size	__c.1903, 2
+ 1082               	__c.1903:
+ 1083 0000 0A00      		.string	"\n"
+ 1084               		.type	__c.1901, @object
+ 1085               		.size	__c.1901, 6
+ 1086               	__c.1901:
+ 1087 0002 7365 633A 		.string	"sec: "
+ 1087      2000 
+ 1088               		.type	__c.1899, @object
+ 1089               		.size	__c.1899, 6
+ 1090               	__c.1899:
+ 1091 0008 6D69 6E3A 		.string	"min: "
+ 1091      2000 
+ 1092               		.type	__c.1897, @object
+ 1093               		.size	__c.1897, 7
+ 1094               	__c.1897:
+ 1095 000e 686F 7572 		.string	"hour: "
+ 1095      3A20 00
+ 1096               		.type	__c.1895, @object
+ 1097               		.size	__c.1895, 6
+ 1098               	__c.1895:
+ 1099 0015 6461 793A 		.string	"day: "
+ 1099      2000 
+ 1100               		.type	__c.1893, @object
+ 1101               		.size	__c.1893, 8
+ 1102               	__c.1893:
+ 1103 001b 6D6F 6E74 		.string	"month: "
+ 1103      683A 2000 
+ 1104               		.type	__c.1891, @object
+ 1105               		.size	__c.1891, 7
+ 1106               	__c.1891:
+ 1107 0023 7965 6172 		.string	"year: "
+ 1107      3A20 00
+ 1108               		.type	__c.1888, @object
+ 1109               		.size	__c.1888, 3
+ 1110               	__c.1888:
+ 1111 002a 0A0D 00   		.string	"\n\r"
+ 1112               		.stabs	"rtc_days:G(0,22)=ar(0,19);0;12;(4,4)",32,0,38,0
+ 1113               		.text
+ 1114               		.stabs	"",100,0,0,.Letext0
+ 1115               	.Letext0:
+GAS LISTING /tmp/ccZ6cM3a.s 			page 25
+
+
+ 1116               	.global __do_copy_data
+GAS LISTING /tmp/ccZ6cM3a.s 			page 26
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 i2c_rtc.c
+     /tmp/ccZ6cM3a.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccZ6cM3a.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccZ6cM3a.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccZ6cM3a.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccZ6cM3a.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccZ6cM3a.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccZ6cM3a.s:104    .text:0000000000000000 i2c_read_block
+     /tmp/ccZ6cM3a.s:197    .text:000000000000006c i2c_write_block
+     /tmp/ccZ6cM3a.s:267    .text:00000000000000b6 rtc_gettime
+     /tmp/ccZ6cM3a.s:423    .text:00000000000001a2 rtc_settime
+     /tmp/ccZ6cM3a.s:542    .text:000000000000024a i2c_rtc_init
+     /tmp/ccZ6cM3a.s:666    .text:00000000000002e6 showtime
+     /tmp/ccZ6cM3a.s:1110   .progmem.data:000000000000002a __c.1888
+     /tmp/ccZ6cM3a.s:1106   .progmem.data:0000000000000023 __c.1891
+     /tmp/ccZ6cM3a.s:1102   .progmem.data:000000000000001b __c.1893
+     /tmp/ccZ6cM3a.s:1098   .progmem.data:0000000000000015 __c.1895
+     /tmp/ccZ6cM3a.s:1094   .progmem.data:000000000000000e __c.1897
+     /tmp/ccZ6cM3a.s:1090   .progmem.data:0000000000000008 __c.1899
+     /tmp/ccZ6cM3a.s:1086   .progmem.data:0000000000000002 __c.1901
+     /tmp/ccZ6cM3a.s:1082   .progmem.data:0000000000000000 __c.1903
+     /tmp/ccZ6cM3a.s:812    .text:00000000000003b0 bintime2unixtime
+     /tmp/ccZ6cM3a.s:1065   .data:0000000000000000 rtc_days
+
+UNDEFINED SYMBOLS
+i2c_start_wait
+i2c_write
+i2c_start
+i2c_readAck
+i2c_readNak
+i2c_stop
+__udivmodqi4
+__udivmodhi4
+i2c_init
+i2c_timeout_flag
+start_timer0
+uart_puts_p
+uart_putc
+uart_putw_dec
+__mulsi3
+__do_copy_data

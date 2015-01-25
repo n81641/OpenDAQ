@@ -1,0 +1,124 @@
+\hypertarget{i2c__rtc_8h}{\section{i2c\-\_\-rtc.\-h File Reference}
+\label{i2c__rtc_8h}\index{i2c\-\_\-rtc.\-h@{i2c\-\_\-rtc.\-h}}
+}
+
+
+\subsection{Description}
+Header for \hyperlink{i2c__rtc_8c}{i2c\-\_\-rtc.\-c}. \begin{DoxyAuthor}{Author}
+University of Illinois Department and Environmental and Civil Engineering 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2014 University of Illinois Department and Environmental and Civil Engineering. This software is distributed under the M\-I\-T License. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\-Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\-: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. The software is provided \char`\"{}as is\char`\"{}, without warranty of any kind expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{i2c__rtc_8h_source}{i2c\-\_\-rtc.\-h}.
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structRTC}{R\-T\-C}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{i2c__rtc_8h_adf1fef92d90b6df21aedaa3023a2582e}{i2c\-\_\-rtc\-\_\-init} (void)
+\item 
+uint8\-\_\-t \hyperlink{i2c__rtc_8h_aaccdb9c2d2af5416899853b0ae16ced9}{rtc\-\_\-settime} (const \hyperlink{structRTC}{R\-T\-C} $\ast$rtc)
+\item 
+uint8\-\_\-t \hyperlink{i2c__rtc_8h_af3ae4a32e142775cd413a430d01ca8f1}{rtc\-\_\-gettime} (\hyperlink{structRTC}{R\-T\-C} $\ast$rtc)
+\item 
+void \hyperlink{i2c__rtc_8h_a21d084b0ffc13fa0acf8bff1390b37b5}{i2c\-\_\-write\-\_\-block} (uint8\-\_\-t dev, uint8\-\_\-t adr, uint8\-\_\-t cnt, void $\ast$buff)
+\item 
+void \hyperlink{i2c__rtc_8h_a0ba794f460f5f0e798bab352de1bf57c}{i2c\-\_\-read\-\_\-block} (uint8\-\_\-t dev, uint8\-\_\-t adr, uint8\-\_\-t cnt, void $\ast$buff)
+\item 
+uint32\-\_\-t \hyperlink{i2c__rtc_8h_ab71abbaeab58d487d0ede60bc14af396}{bintime2unixtime} (\hyperlink{structRTC}{R\-T\-C} $\ast$rtc)
+\item 
+uint8\-\_\-t \hyperlink{i2c__rtc_8h_a84d1b268e95cc6bb65ed25a11b49ece6}{showtime} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{i2c__rtc_8h_ab71abbaeab58d487d0ede60bc14af396}{\index{i2c\-\_\-rtc.\-h@{i2c\-\_\-rtc.\-h}!bintime2unixtime@{bintime2unixtime}}
+\index{bintime2unixtime@{bintime2unixtime}!i2c_rtc.h@{i2c\-\_\-rtc.\-h}}
+\subsubsection[{bintime2unixtime}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t bintime2unixtime (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-T\-C} $\ast$}]{rtc}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8h_ab71abbaeab58d487d0ede60bc14af396}
+
+
+Definition at line 170 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8h_a0ba794f460f5f0e798bab352de1bf57c}{\index{i2c\-\_\-rtc.\-h@{i2c\-\_\-rtc.\-h}!i2c\-\_\-read\-\_\-block@{i2c\-\_\-read\-\_\-block}}
+\index{i2c\-\_\-read\-\_\-block@{i2c\-\_\-read\-\_\-block}!i2c_rtc.h@{i2c\-\_\-rtc.\-h}}
+\subsubsection[{i2c\-\_\-read\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}void i2c\-\_\-read\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{dev, }
+\item[{uint8\-\_\-t}]{adr, }
+\item[{uint8\-\_\-t}]{cnt, }
+\item[{void $\ast$}]{buff}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8h_a0ba794f460f5f0e798bab352de1bf57c}
+
+
+Definition at line 59 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8h_adf1fef92d90b6df21aedaa3023a2582e}{\index{i2c\-\_\-rtc.\-h@{i2c\-\_\-rtc.\-h}!i2c\-\_\-rtc\-\_\-init@{i2c\-\_\-rtc\-\_\-init}}
+\index{i2c\-\_\-rtc\-\_\-init@{i2c\-\_\-rtc\-\_\-init}!i2c_rtc.h@{i2c\-\_\-rtc.\-h}}
+\subsubsection[{i2c\-\_\-rtc\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t i2c\-\_\-rtc\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8h_adf1fef92d90b6df21aedaa3023a2582e}
+
+
+Definition at line 117 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8h_a21d084b0ffc13fa0acf8bff1390b37b5}{\index{i2c\-\_\-rtc.\-h@{i2c\-\_\-rtc.\-h}!i2c\-\_\-write\-\_\-block@{i2c\-\_\-write\-\_\-block}}
+\index{i2c\-\_\-write\-\_\-block@{i2c\-\_\-write\-\_\-block}!i2c_rtc.h@{i2c\-\_\-rtc.\-h}}
+\subsubsection[{i2c\-\_\-write\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}void i2c\-\_\-write\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{dev, }
+\item[{uint8\-\_\-t}]{adr, }
+\item[{uint8\-\_\-t}]{cnt, }
+\item[{void $\ast$}]{buff}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8h_a21d084b0ffc13fa0acf8bff1390b37b5}
+
+
+Definition at line 73 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8h_af3ae4a32e142775cd413a430d01ca8f1}{\index{i2c\-\_\-rtc.\-h@{i2c\-\_\-rtc.\-h}!rtc\-\_\-gettime@{rtc\-\_\-gettime}}
+\index{rtc\-\_\-gettime@{rtc\-\_\-gettime}!i2c_rtc.h@{i2c\-\_\-rtc.\-h}}
+\subsubsection[{rtc\-\_\-gettime}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rtc\-\_\-gettime (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-T\-C} $\ast$}]{rtc}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8h_af3ae4a32e142775cd413a430d01ca8f1}
+
+
+Definition at line 84 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8h_aaccdb9c2d2af5416899853b0ae16ced9}{\index{i2c\-\_\-rtc.\-h@{i2c\-\_\-rtc.\-h}!rtc\-\_\-settime@{rtc\-\_\-settime}}
+\index{rtc\-\_\-settime@{rtc\-\_\-settime}!i2c_rtc.h@{i2c\-\_\-rtc.\-h}}
+\subsubsection[{rtc\-\_\-settime}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rtc\-\_\-settime (
+\begin{DoxyParamCaption}
+\item[{const {\bf R\-T\-C} $\ast$}]{rtc}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8h_aaccdb9c2d2af5416899853b0ae16ced9}
+
+
+Definition at line 101 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8h_a84d1b268e95cc6bb65ed25a11b49ece6}{\index{i2c\-\_\-rtc.\-h@{i2c\-\_\-rtc.\-h}!showtime@{showtime}}
+\index{showtime@{showtime}!i2c_rtc.h@{i2c\-\_\-rtc.\-h}}
+\subsubsection[{showtime}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t showtime (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8h_a84d1b268e95cc6bb65ed25a11b49ece6}
+
+
+Definition at line 142 of file i2c\-\_\-rtc.\-c.
+

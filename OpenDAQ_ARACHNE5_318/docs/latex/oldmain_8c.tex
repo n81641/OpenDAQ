@@ -1,0 +1,806 @@
+\hypertarget{oldmain_8c}{\section{oldmain.\-c File Reference}
+\label{oldmain_8c}\index{oldmain.\-c@{oldmain.\-c}}
+}
+{\ttfamily \#include $<$inttypes.\-h$>$}\\*
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$compat/deprecated.\-h$>$}\\*
+{\ttfamily \#include $<$util/delay.\-h$>$}\\*
+{\ttfamily \#include $<$avr/pgmspace.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}uart.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}avr/eeprom.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$avr/wdt.\-h$>$}\\*
+{\ttfamily \#include $<$avr/sfr\-\_\-defs.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$setjmp.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}i2cmaster.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dataout.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}inputs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}suart.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}suart2.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhum__dat}{hum\-\_\-dat}
+\item 
+struct \hyperlink{structadcbitmask0}{adcbitmask0}
+\item 
+struct \hyperlink{structadcbitmask1}{adcbitmask1}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{oldmain_8c_a1c6d5de492ac61ad29aec7aa9a436bbf}{V\-E\-R\-S\-I\-O\-N}~1146\-U\-L
+\item 
+\#define \hyperlink{oldmain_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\-\_\-\-C\-P\-U}~4194304\-U\-L	/$\ast$ put in makefile?$\ast$/
+\item 
+\#define \hyperlink{oldmain_8c_a1274cba6178962492982d3ab171a6359}{D\-E\-G\-R\-E\-E\-\_\-\-P\-E\-R\-\_\-\-U\-N\-I\-T\-\_\-\-X100}~92.\-9
+\item 
+\#define \hyperlink{oldmain_8c_a6f0ff4c4012560109dc2a97f58a27572}{O\-F\-F\-S\-E\-T\-\_\-\-C\-H\-I\-P\-T\-E\-M\-P}~-\/700
+\item 
+\#define \hyperlink{oldmain_8c_ad0266a7a5f6af55c4a92f5e0a9c3a60c}{N\-U\-M\-\_\-\-B\-O\-X}~5
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \hyperlink{oldmain_8c_a4a020a9446b094e07e53376ac939a64d}{u08}
+\item 
+typedef char \hyperlink{oldmain_8c_a85d781fea5e4df1843c1c10b00e0d388}{s08}
+\item 
+typedef unsigned short \hyperlink{oldmain_8c_a9e6c91d77e24643b888dbd1a1a590054}{u16}
+\item 
+typedef short \hyperlink{oldmain_8c_a2e9bf6983da73775aa86158c825bf777}{s16}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{oldmain_8c_a6fa12a2c2411a267717c4e863917f3ab}{reset\-\_\-button\-\_\-check} (void)
+\item 
+void \hyperlink{oldmain_8c_a88533ad02465ce52d4e6de7b2095ec32}{init\-\_\-rtc} (void)
+\item 
+uint8\-\_\-t \hyperlink{oldmain_8c_a6d812a4e10f83179b915e3ee8825f63b}{Read\-T\-C\-N\-T1} (void)
+\item 
+uint8\-\_\-t \hyperlink{oldmain_8c_a0d315d4584d0209da2042aa7447c792a}{Write\-T\-C\-N\-T1} (uint8\-\_\-t i)
+\item 
+uint8\-\_\-t \hyperlink{oldmain_8c_a4b30fdcf24d39176e46b917018e925ec}{i2c\-\_\-adc} (uint8\-\_\-t address, uint8\-\_\-t mux1, uint8\-\_\-t mux2)
+\item 
+void \hyperlink{oldmain_8c_a822556d4baa0c602b3dbe639c8888421}{toggle\-\_\-\-L\-E\-D} (void)
+\item 
+uint16\-\_\-t \hyperlink{oldmain_8c_a6a4180206c5adbabcfcad7358daa3e45}{read\-\_\-adc} (uint8\-\_\-t A\-D\-C\-\_\-\-A, uint8\-\_\-t A\-D\-C\-\_\-\-B, uint8\-\_\-t A\-D\-C\-\_\-\-C, uint16\-\_\-t offset, uint8\-\_\-t offset\-\_\-sign, uint8\-\_\-t T\-C\-\_\-amp)
+\item 
+void \hyperlink{oldmain_8c_a77a802457c6978309d1d832ec7470854}{adv\-\_\-mode\-\_\-check} (void)
+\item 
+void \hyperlink{oldmain_8c_afbb1f2fb75c769370182e12d77273f0c}{cal\-\_\-val\-\_\-input\-\_\-delay} (void)
+\item 
+uint8\-\_\-t \hyperlink{oldmain_8c_a789dd9e123f5af2c7c9ae0b4efb43854}{bitisset} (uint32\-\_\-t number, uint8\-\_\-t bit)
+\item 
+void \hyperlink{oldmain_8c_a2b815e6730e8723a6d1d06d9ef8f31c0}{adc\-\_\-init} (void)
+\item 
+uint16\-\_\-t \hyperlink{oldmain_8c_a4589f8cb31a96580e97352c34ca955b1}{read\-\_\-adc\-\_\-onboard} (uint8\-\_\-t channel, uint32\-\_\-t offset, uint8\-\_\-t offset\-\_\-sign)
+\item 
+void \hyperlink{oldmain_8c_a16da507a27a401dadac9efabcfb6f174}{readmask} (void)
+\item 
+uint8\-\_\-t \hyperlink{oldmain_8c_a780e6fd2519887f31a3f1c4bb7f412b4}{find\-\_\-next\-\_\-input} (uint8\-\_\-t next\-\_\-one)
+\item 
+void \hyperlink{oldmain_8c_a3f4094d1a3c3f6c3b9a46e22f3f2177d}{output\-\_\-masks} (void)
+\item 
+uint16\-\_\-t \hyperlink{oldmain_8c_a768d80198b779649c602142832a875f3}{get\-\_\-\-C\-O2} (void)
+\item 
+uint16\-\_\-t \hyperlink{oldmain_8c_a48fc94652f3f69d9285c88ffb26438ea}{get\-\_\-\-C\-O22} (void)
+\item 
+void \hyperlink{oldmain_8c_a01248303ae56fa6daccd7d17846877c6}{get\-\_\-line} (char $\ast$buff, uint8\-\_\-t len)
+\item 
+void \hyperlink{oldmain_8c_afcd97f4e7050a43a0dd5c1d19b1a74eb}{get\-\_\-line2} (char $\ast$buff, uint8\-\_\-t len)
+\item 
+void \hyperlink{oldmain_8c_af860109b52a40cb1ee4e6306adc39ef0}{suart\-\_\-puts} (const char $\ast$str)
+\item 
+void \hyperlink{oldmain_8c_a6825683d84663eeeb3cb3a26fd5e3d2d}{suart\-\_\-puts2} (const char $\ast$str)
+\item 
+void \hyperlink{oldmain_8c_a0b1ab1e9653c65f60e96f5cf8a57b8f9}{co2\-\_\-cal} (void)
+\item 
+struct \hyperlink{structhum__dat}{hum\-\_\-dat} \hyperlink{oldmain_8c_a39269619e4e6ff1b192118bf2258d994}{Read\-S\-H\-T25} (void)
+\item 
+void \hyperlink{oldmain_8c_aa18b5f5de4aaa38e14dd8f2a0ed9d797}{test\-\_\-peripherals} (void)
+\item 
+void \hyperlink{oldmain_8c_a6a1def1bfaf51706e6b02984ab4360ac}{Init\-\_\-\-C\-O} (void)
+\item 
+void \hyperlink{oldmain_8c_a9e491f190d0b9096b53a33a94b780d9f}{C\-O\-\_\-to\-\_\-temp} (uint8\-\_\-t yes)
+\item 
+\hyperlink{oldmain_8c_ab16889ae984b9b798989a0d239283cac}{I\-S\-R} (T\-I\-M\-E\-R1\-\_\-\-O\-V\-F\-\_\-vect)
+\item 
+\hyperlink{oldmain_8c_add2d7cdddfb682dcc0391e60cf42c7d6}{I\-S\-R} (T\-I\-M\-E\-R0\-\_\-\-O\-V\-F\-\_\-vect)
+\item 
+\hyperlink{oldmain_8c_a05c2e5b588ced1cd7312f5b0edc5b295}{I\-S\-R} (A\-D\-C\-\_\-vect)
+\item 
+int \hyperlink{oldmain_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile int32\-\_\-t \hyperlink{oldmain_8c_aedd52e2587e2f3eeba412dff3443ff2c}{boxcar\-\_\-t} \mbox{[}8\mbox{]}\mbox{[}10\mbox{]}
+\item 
+volatile uint8\-\_\-t \hyperlink{oldmain_8c_a5132211ea7ba4f0e57adadaf2565851e}{stroke}
+\item 
+volatile uint16\-\_\-t \hyperlink{oldmain_8c_ae38071014c982893c7a3666cf5bf5525}{A\-D\-C\-\_\-volts}
+\item 
+volatile uint8\-\_\-t \hyperlink{oldmain_8c_a421bba774bcb352456ac0f04d335573e}{sign}
+\item 
+volatile uint8\-\_\-t \hyperlink{oldmain_8c_a85ff53dee37ecc06a63e0a32e8b2111a}{num\-\_\-inputs}
+\item 
+volatile uint32\-\_\-t \hyperlink{oldmain_8c_a72dd703685aee68e0a5ffbb6705677d6}{rtc\-\_\-counter}
+\item 
+volatile int32\-\_\-t \hyperlink{oldmain_8c_aebe1c24f76d207784ab1c03fa7b46ed5}{read\-\_\-temperature\-\_\-x\-\_\-100}
+\item 
+volatile uint8\-\_\-t \hyperlink{oldmain_8c_a7d5fdf07229c62ede50f28fa06027ae5}{temperature\-\_\-read\-\_\-flag}
+\item 
+uint8\-\_\-t E\-E\-M\-E\-M \hyperlink{oldmain_8c_ad3d09b1ff1618b84d64d76de74dfe43a}{inmask\-\_\-eemem} \mbox{[}6\mbox{]}
+\item 
+char \hyperlink{oldmain_8c_ad741ce6cc33d70c4191134b324cc8b32}{Cal\-Vals} \mbox{[}33\mbox{]}\mbox{[}8\mbox{]}
+\item 
+char E\-E\-M\-E\-M \hyperlink{oldmain_8c_a6ecb300115c248cfdac813f9c28333a8}{Cal\-Vals\-\_\-eemem} \mbox{[}33\mbox{]}\mbox{[}8\mbox{]}
+\item 
+uint16\-\_\-t E\-E\-M\-E\-M \hyperlink{oldmain_8c_af80d86f61f08f26ac576b6f080a96053}{Offset\-\_\-eemem} \mbox{[}33\mbox{]}
+\item 
+uint8\-\_\-t E\-E\-M\-E\-M \hyperlink{oldmain_8c_a691c2ad89e8d56fbcd5c6b1c9568bdb5}{Offset\-\_\-sign\-\_\-eemem} \mbox{[}33\mbox{]}
+\item 
+char \hyperlink{oldmain_8c_abc198f6cc27407cfde45f8a4e3246995}{Names} \mbox{[}33\mbox{]}\mbox{[}11\mbox{]}
+\item 
+uint8\-\_\-t E\-E\-M\-E\-M \hyperlink{oldmain_8c_ab45fe760c90a3c33a9dec7111594e5a5}{Names\-\_\-eemem} \mbox{[}33\mbox{]}\mbox{[}11\mbox{]}
+\item 
+char \hyperlink{oldmain_8c_aa78cbfd7773061e9bdd555472ba57c0d}{restartval} \mbox{[}1\mbox{]}
+\item 
+uint8\-\_\-t E\-E\-M\-E\-M \hyperlink{oldmain_8c_a417648d7c8f23f841f8d33fbc44a9c55}{restart} \mbox{[}1\mbox{]} =\char`\"{}O\char`\"{}
+\item 
+uint8\-\_\-t E\-E\-M\-E\-M \hyperlink{oldmain_8c_a17f2a4a910a72e8cd94da1db5a19f912}{order\-\_\-eemem} \mbox{[}33\mbox{]}
+\item 
+char E\-E\-M\-E\-M \hyperlink{oldmain_8c_acd7f7fe2686b0803ee2962b179ffbffc}{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp\-\_\-eemem} \mbox{[}8\mbox{]}
+\item 
+char \hyperlink{oldmain_8c_a25f1783e04de1ca26adae20be862d4ca}{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp} \mbox{[}8\mbox{]}
+\item 
+uint16\-\_\-t E\-E\-M\-E\-M \hyperlink{oldmain_8c_af55c704c6a5debb570dad3a0ef8dafb2}{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-eemem}
+\item 
+uint8\-\_\-t E\-E\-M\-E\-M \hyperlink{oldmain_8c_a6ce70d2f5c8632638cd3731a041c6210}{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-sign\-\_\-eemem}
+\item 
+struct \hyperlink{structadcbitmask1}{adcbitmask1} \hyperlink{oldmain_8c_a02e8a7fc504a116b1e63c8a5b541ad34}{Mask1} \mbox{[}$\,$\mbox{]}
+\item 
+struct \hyperlink{structadcbitmask0}{adcbitmask0} \hyperlink{oldmain_8c_a98e598b728a6d357593a01db530f936c}{Mask0} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{oldmain_8c_a1274cba6178962492982d3ab171a6359}{\index{oldmain.\-c@{oldmain.\-c}!D\-E\-G\-R\-E\-E\-\_\-\-P\-E\-R\-\_\-\-U\-N\-I\-T\-\_\-\-X100@{D\-E\-G\-R\-E\-E\-\_\-\-P\-E\-R\-\_\-\-U\-N\-I\-T\-\_\-\-X100}}
+\index{D\-E\-G\-R\-E\-E\-\_\-\-P\-E\-R\-\_\-\-U\-N\-I\-T\-\_\-\-X100@{D\-E\-G\-R\-E\-E\-\_\-\-P\-E\-R\-\_\-\-U\-N\-I\-T\-\_\-\-X100}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{D\-E\-G\-R\-E\-E\-\_\-\-P\-E\-R\-\_\-\-U\-N\-I\-T\-\_\-\-X100}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-G\-R\-E\-E\-\_\-\-P\-E\-R\-\_\-\-U\-N\-I\-T\-\_\-\-X100~92.\-9}}\label{oldmain_8c_a1274cba6178962492982d3ab171a6359}
+
+
+Definition at line 48 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a43bafb28b29491ec7f871319b5a3b2f8}{\index{oldmain.\-c@{oldmain.\-c}!F\-\_\-\-C\-P\-U@{F\-\_\-\-C\-P\-U}}
+\index{F\-\_\-\-C\-P\-U@{F\-\_\-\-C\-P\-U}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{F\-\_\-\-C\-P\-U}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-\_\-\-C\-P\-U~4194304\-U\-L	/$\ast$ put in makefile?$\ast$/}}\label{oldmain_8c_a43bafb28b29491ec7f871319b5a3b2f8}
+
+
+Definition at line 44 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_ad0266a7a5f6af55c4a92f5e0a9c3a60c}{\index{oldmain.\-c@{oldmain.\-c}!N\-U\-M\-\_\-\-B\-O\-X@{N\-U\-M\-\_\-\-B\-O\-X}}
+\index{N\-U\-M\-\_\-\-B\-O\-X@{N\-U\-M\-\_\-\-B\-O\-X}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-B\-O\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-B\-O\-X~5}}\label{oldmain_8c_ad0266a7a5f6af55c4a92f5e0a9c3a60c}
+
+
+Definition at line 50 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a6f0ff4c4012560109dc2a97f58a27572}{\index{oldmain.\-c@{oldmain.\-c}!O\-F\-F\-S\-E\-T\-\_\-\-C\-H\-I\-P\-T\-E\-M\-P@{O\-F\-F\-S\-E\-T\-\_\-\-C\-H\-I\-P\-T\-E\-M\-P}}
+\index{O\-F\-F\-S\-E\-T\-\_\-\-C\-H\-I\-P\-T\-E\-M\-P@{O\-F\-F\-S\-E\-T\-\_\-\-C\-H\-I\-P\-T\-E\-M\-P}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{O\-F\-F\-S\-E\-T\-\_\-\-C\-H\-I\-P\-T\-E\-M\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-F\-F\-S\-E\-T\-\_\-\-C\-H\-I\-P\-T\-E\-M\-P~-\/700}}\label{oldmain_8c_a6f0ff4c4012560109dc2a97f58a27572}
+
+
+Definition at line 49 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a1c6d5de492ac61ad29aec7aa9a436bbf}{\index{oldmain.\-c@{oldmain.\-c}!V\-E\-R\-S\-I\-O\-N@{V\-E\-R\-S\-I\-O\-N}}
+\index{V\-E\-R\-S\-I\-O\-N@{V\-E\-R\-S\-I\-O\-N}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-E\-R\-S\-I\-O\-N~1146\-U\-L}}\label{oldmain_8c_a1c6d5de492ac61ad29aec7aa9a436bbf}
+
+
+freq 4194394 (in makefile too) 
+
+
+
+Definition at line 41 of file oldmain.\-c.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{oldmain_8c_a85d781fea5e4df1843c1c10b00e0d388}{\index{oldmain.\-c@{oldmain.\-c}!s08@{s08}}
+\index{s08@{s08}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{s08}]{\setlength{\rightskip}{0pt plus 5cm}typedef char {\bf s08}}}\label{oldmain_8c_a85d781fea5e4df1843c1c10b00e0d388}
+
+
+Definition at line 84 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a2e9bf6983da73775aa86158c825bf777}{\index{oldmain.\-c@{oldmain.\-c}!s16@{s16}}
+\index{s16@{s16}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{s16}]{\setlength{\rightskip}{0pt plus 5cm}typedef short {\bf s16}}}\label{oldmain_8c_a2e9bf6983da73775aa86158c825bf777}
+
+
+Definition at line 86 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a4a020a9446b094e07e53376ac939a64d}{\index{oldmain.\-c@{oldmain.\-c}!u08@{u08}}
+\index{u08@{u08}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{u08}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf u08}}}\label{oldmain_8c_a4a020a9446b094e07e53376ac939a64d}
+
+
+Definition at line 83 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a9e6c91d77e24643b888dbd1a1a590054}{\index{oldmain.\-c@{oldmain.\-c}!u16@{u16}}
+\index{u16@{u16}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{u16}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned short {\bf u16}}}\label{oldmain_8c_a9e6c91d77e24643b888dbd1a1a590054}
+
+
+Definition at line 85 of file oldmain.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{oldmain_8c_a2b815e6730e8723a6d1d06d9ef8f31c0}{\index{oldmain.\-c@{oldmain.\-c}!adc\-\_\-init@{adc\-\_\-init}}
+\index{adc\-\_\-init@{adc\-\_\-init}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{adc\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void adc\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a2b815e6730e8723a6d1d06d9ef8f31c0}
+
+
+Definition at line 998 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a77a802457c6978309d1d832ec7470854}{\index{oldmain.\-c@{oldmain.\-c}!adv\-\_\-mode\-\_\-check@{adv\-\_\-mode\-\_\-check}}
+\index{adv\-\_\-mode\-\_\-check@{adv\-\_\-mode\-\_\-check}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{adv\-\_\-mode\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void adv\-\_\-mode\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a77a802457c6978309d1d832ec7470854}
+
+
+Definition at line 669 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a789dd9e123f5af2c7c9ae0b4efb43854}{\index{oldmain.\-c@{oldmain.\-c}!bitisset@{bitisset}}
+\index{bitisset@{bitisset}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{bitisset}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t bitisset (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{number, }
+\item[{uint8\-\_\-t}]{bit}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a789dd9e123f5af2c7c9ae0b4efb43854}
+
+
+Definition at line 989 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_afbb1f2fb75c769370182e12d77273f0c}{\index{oldmain.\-c@{oldmain.\-c}!cal\-\_\-val\-\_\-input\-\_\-delay@{cal\-\_\-val\-\_\-input\-\_\-delay}}
+\index{cal\-\_\-val\-\_\-input\-\_\-delay@{cal\-\_\-val\-\_\-input\-\_\-delay}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{cal\-\_\-val\-\_\-input\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}void cal\-\_\-val\-\_\-input\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_afbb1f2fb75c769370182e12d77273f0c}
+
+
+Definition at line 774 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a0b1ab1e9653c65f60e96f5cf8a57b8f9}{\index{oldmain.\-c@{oldmain.\-c}!co2\-\_\-cal@{co2\-\_\-cal}}
+\index{co2\-\_\-cal@{co2\-\_\-cal}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{co2\-\_\-cal}]{\setlength{\rightskip}{0pt plus 5cm}void co2\-\_\-cal (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a0b1ab1e9653c65f60e96f5cf8a57b8f9}
+
+
+Definition at line 1304 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a9e491f190d0b9096b53a33a94b780d9f}{\index{oldmain.\-c@{oldmain.\-c}!C\-O\-\_\-to\-\_\-temp@{C\-O\-\_\-to\-\_\-temp}}
+\index{C\-O\-\_\-to\-\_\-temp@{C\-O\-\_\-to\-\_\-temp}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{C\-O\-\_\-to\-\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}void C\-O\-\_\-to\-\_\-temp (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{yes}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a9e491f190d0b9096b53a33a94b780d9f}
+
+
+Definition at line 1569 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a780e6fd2519887f31a3f1c4bb7f412b4}{\index{oldmain.\-c@{oldmain.\-c}!find\-\_\-next\-\_\-input@{find\-\_\-next\-\_\-input}}
+\index{find\-\_\-next\-\_\-input@{find\-\_\-next\-\_\-input}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{find\-\_\-next\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t find\-\_\-next\-\_\-input (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{next\-\_\-one}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a780e6fd2519887f31a3f1c4bb7f412b4}
+
+
+Definition at line 1134 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a768d80198b779649c602142832a875f3}{\index{oldmain.\-c@{oldmain.\-c}!get\-\_\-\-C\-O2@{get\-\_\-\-C\-O2}}
+\index{get\-\_\-\-C\-O2@{get\-\_\-\-C\-O2}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{get\-\_\-\-C\-O2}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t get\-\_\-\-C\-O2 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a768d80198b779649c602142832a875f3}
+
+
+Definition at line 1178 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a48fc94652f3f69d9285c88ffb26438ea}{\index{oldmain.\-c@{oldmain.\-c}!get\-\_\-\-C\-O22@{get\-\_\-\-C\-O22}}
+\index{get\-\_\-\-C\-O22@{get\-\_\-\-C\-O22}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{get\-\_\-\-C\-O22}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t get\-\_\-\-C\-O22 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a48fc94652f3f69d9285c88ffb26438ea}
+
+
+Definition at line 1217 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a01248303ae56fa6daccd7d17846877c6}{\index{oldmain.\-c@{oldmain.\-c}!get\-\_\-line@{get\-\_\-line}}
+\index{get\-\_\-line@{get\-\_\-line}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{get\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buff, }
+\item[{uint8\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a01248303ae56fa6daccd7d17846877c6}
+
+
+Definition at line 1256 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_afcd97f4e7050a43a0dd5c1d19b1a74eb}{\index{oldmain.\-c@{oldmain.\-c}!get\-\_\-line2@{get\-\_\-line2}}
+\index{get\-\_\-line2@{get\-\_\-line2}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{get\-\_\-line2}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-line2 (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buff, }
+\item[{uint8\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_afcd97f4e7050a43a0dd5c1d19b1a74eb}
+
+
+Definition at line 1273 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a4b30fdcf24d39176e46b917018e925ec}{\index{oldmain.\-c@{oldmain.\-c}!i2c\-\_\-adc@{i2c\-\_\-adc}}
+\index{i2c\-\_\-adc@{i2c\-\_\-adc}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{i2c\-\_\-adc}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t i2c\-\_\-adc (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{address, }
+\item[{uint8\-\_\-t}]{mux1, }
+\item[{uint8\-\_\-t}]{mux2}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a4b30fdcf24d39176e46b917018e925ec}
+
+
+Definition at line 554 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a6a1def1bfaf51706e6b02984ab4360ac}{\index{oldmain.\-c@{oldmain.\-c}!Init\-\_\-\-C\-O@{Init\-\_\-\-C\-O}}
+\index{Init\-\_\-\-C\-O@{Init\-\_\-\-C\-O}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Init\-\_\-\-C\-O}]{\setlength{\rightskip}{0pt plus 5cm}void Init\-\_\-\-C\-O (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a6a1def1bfaf51706e6b02984ab4360ac}
+
+
+Definition at line 1538 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a88533ad02465ce52d4e6de7b2095ec32}{\index{oldmain.\-c@{oldmain.\-c}!init\-\_\-rtc@{init\-\_\-rtc}}
+\index{init\-\_\-rtc@{init\-\_\-rtc}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{init\-\_\-rtc}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-rtc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a88533ad02465ce52d4e6de7b2095ec32}
+
+
+Definition at line 537 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_ab16889ae984b9b798989a0d239283cac}{\index{oldmain.\-c@{oldmain.\-c}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{T\-I\-M\-E\-R1\-\_\-\-O\-V\-F\-\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_ab16889ae984b9b798989a0d239283cac}
+
+
+Definition at line 156 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_add2d7cdddfb682dcc0391e60cf42c7d6}{\index{oldmain.\-c@{oldmain.\-c}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{T\-I\-M\-E\-R0\-\_\-\-O\-V\-F\-\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_add2d7cdddfb682dcc0391e60cf42c7d6}
+
+
+Definition at line 161 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a05c2e5b588ced1cd7312f5b0edc5b295}{\index{oldmain.\-c@{oldmain.\-c}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{A\-D\-C\-\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a05c2e5b588ced1cd7312f5b0edc5b295}
+
+
+Definition at line 217 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{oldmain.\-c@{oldmain.\-c}!main@{main}}
+\index{main@{main}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definition at line 276 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a3f4094d1a3c3f6c3b9a46e22f3f2177d}{\index{oldmain.\-c@{oldmain.\-c}!output\-\_\-masks@{output\-\_\-masks}}
+\index{output\-\_\-masks@{output\-\_\-masks}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{output\-\_\-masks}]{\setlength{\rightskip}{0pt plus 5cm}void output\-\_\-masks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a3f4094d1a3c3f6c3b9a46e22f3f2177d}
+
+
+Definition at line 1159 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a6a4180206c5adbabcfcad7358daa3e45}{\index{oldmain.\-c@{oldmain.\-c}!read\-\_\-adc@{read\-\_\-adc}}
+\index{read\-\_\-adc@{read\-\_\-adc}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{read\-\_\-adc}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t read\-\_\-adc (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{A\-D\-C\-\_\-\-A, }
+\item[{uint8\-\_\-t}]{A\-D\-C\-\_\-\-B, }
+\item[{uint8\-\_\-t}]{A\-D\-C\-\_\-\-C, }
+\item[{uint16\-\_\-t}]{offset, }
+\item[{uint8\-\_\-t}]{offset\-\_\-sign, }
+\item[{uint8\-\_\-t}]{T\-C\-\_\-amp}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a6a4180206c5adbabcfcad7358daa3e45}
+\hypertarget{oldmain_8c_a4589f8cb31a96580e97352c34ca955b1}{\index{oldmain.\-c@{oldmain.\-c}!read\-\_\-adc\-\_\-onboard@{read\-\_\-adc\-\_\-onboard}}
+\index{read\-\_\-adc\-\_\-onboard@{read\-\_\-adc\-\_\-onboard}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{read\-\_\-adc\-\_\-onboard}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t read\-\_\-adc\-\_\-onboard (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{channel, }
+\item[{uint32\-\_\-t}]{offset, }
+\item[{uint8\-\_\-t}]{offset\-\_\-sign}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a4589f8cb31a96580e97352c34ca955b1}
+
+
+Definition at line 1014 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a16da507a27a401dadac9efabcfb6f174}{\index{oldmain.\-c@{oldmain.\-c}!readmask@{readmask}}
+\index{readmask@{readmask}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{readmask}]{\setlength{\rightskip}{0pt plus 5cm}void readmask (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a16da507a27a401dadac9efabcfb6f174}
+
+
+Definition at line 1070 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a39269619e4e6ff1b192118bf2258d994}{\index{oldmain.\-c@{oldmain.\-c}!Read\-S\-H\-T25@{Read\-S\-H\-T25}}
+\index{Read\-S\-H\-T25@{Read\-S\-H\-T25}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Read\-S\-H\-T25}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hum\-\_\-dat} Read\-S\-H\-T25 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a39269619e4e6ff1b192118bf2258d994}
+
+
+Definition at line 1508 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a6d812a4e10f83179b915e3ee8825f63b}{\index{oldmain.\-c@{oldmain.\-c}!Read\-T\-C\-N\-T1@{Read\-T\-C\-N\-T1}}
+\index{Read\-T\-C\-N\-T1@{Read\-T\-C\-N\-T1}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Read\-T\-C\-N\-T1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Read\-T\-C\-N\-T1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{oldmain_8c_a6d812a4e10f83179b915e3ee8825f63b}
+
+
+end of main 
+
+
+
+Definition at line 515 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a6fa12a2c2411a267717c4e863917f3ab}{\index{oldmain.\-c@{oldmain.\-c}!reset\-\_\-button\-\_\-check@{reset\-\_\-button\-\_\-check}}
+\index{reset\-\_\-button\-\_\-check@{reset\-\_\-button\-\_\-check}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{reset\-\_\-button\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-\_\-button\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a6fa12a2c2411a267717c4e863917f3ab}
+
+
+Definition at line 642 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_af860109b52a40cb1ee4e6306adc39ef0}{\index{oldmain.\-c@{oldmain.\-c}!suart\-\_\-puts@{suart\-\_\-puts}}
+\index{suart\-\_\-puts@{suart\-\_\-puts}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{suart\-\_\-puts}]{\setlength{\rightskip}{0pt plus 5cm}void suart\-\_\-puts (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_af860109b52a40cb1ee4e6306adc39ef0}
+
+
+Definition at line 1290 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a6825683d84663eeeb3cb3a26fd5e3d2d}{\index{oldmain.\-c@{oldmain.\-c}!suart\-\_\-puts2@{suart\-\_\-puts2}}
+\index{suart\-\_\-puts2@{suart\-\_\-puts2}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{suart\-\_\-puts2}]{\setlength{\rightskip}{0pt plus 5cm}void suart\-\_\-puts2 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a6825683d84663eeeb3cb3a26fd5e3d2d}
+
+
+Definition at line 1297 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_aa18b5f5de4aaa38e14dd8f2a0ed9d797}{\index{oldmain.\-c@{oldmain.\-c}!test\-\_\-peripherals@{test\-\_\-peripherals}}
+\index{test\-\_\-peripherals@{test\-\_\-peripherals}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{test\-\_\-peripherals}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-peripherals (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_aa18b5f5de4aaa38e14dd8f2a0ed9d797}
+
+
+Definition at line 1391 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a822556d4baa0c602b3dbe639c8888421}{\index{oldmain.\-c@{oldmain.\-c}!toggle\-\_\-\-L\-E\-D@{toggle\-\_\-\-L\-E\-D}}
+\index{toggle\-\_\-\-L\-E\-D@{toggle\-\_\-\-L\-E\-D}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{toggle\-\_\-\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}void toggle\-\_\-\-L\-E\-D (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{oldmain_8c_a822556d4baa0c602b3dbe639c8888421}
+
+
+Definition at line 655 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a0d315d4584d0209da2042aa7447c792a}{\index{oldmain.\-c@{oldmain.\-c}!Write\-T\-C\-N\-T1@{Write\-T\-C\-N\-T1}}
+\index{Write\-T\-C\-N\-T1@{Write\-T\-C\-N\-T1}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Write\-T\-C\-N\-T1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t Write\-T\-C\-N\-T1 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{oldmain_8c_a0d315d4584d0209da2042aa7447c792a}
+
+
+Definition at line 527 of file oldmain.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{oldmain_8c_ae38071014c982893c7a3666cf5bf5525}{\index{oldmain.\-c@{oldmain.\-c}!A\-D\-C\-\_\-volts@{A\-D\-C\-\_\-volts}}
+\index{A\-D\-C\-\_\-volts@{A\-D\-C\-\_\-volts}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{A\-D\-C\-\_\-volts}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint16\-\_\-t A\-D\-C\-\_\-volts}}\label{oldmain_8c_ae38071014c982893c7a3666cf5bf5525}
+
+
+Definition at line 63 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_aedd52e2587e2f3eeba412dff3443ff2c}{\index{oldmain.\-c@{oldmain.\-c}!boxcar\-\_\-t@{boxcar\-\_\-t}}
+\index{boxcar\-\_\-t@{boxcar\-\_\-t}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{boxcar\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}volatile int32\-\_\-t boxcar\-\_\-t\mbox{[}8\mbox{]}\mbox{[}10\mbox{]}}}\label{oldmain_8c_aedd52e2587e2f3eeba412dff3443ff2c}
+
+
+global vars/// 
+
+
+
+Definition at line 61 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_ad741ce6cc33d70c4191134b324cc8b32}{\index{oldmain.\-c@{oldmain.\-c}!Cal\-Vals@{Cal\-Vals}}
+\index{Cal\-Vals@{Cal\-Vals}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Cal\-Vals}]{\setlength{\rightskip}{0pt plus 5cm}char Cal\-Vals\mbox{[}33\mbox{]}\mbox{[}8\mbox{]}}}\label{oldmain_8c_ad741ce6cc33d70c4191134b324cc8b32}
+
+
+Definition at line 103 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a6ecb300115c248cfdac813f9c28333a8}{\index{oldmain.\-c@{oldmain.\-c}!Cal\-Vals\-\_\-eemem@{Cal\-Vals\-\_\-eemem}}
+\index{Cal\-Vals\-\_\-eemem@{Cal\-Vals\-\_\-eemem}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Cal\-Vals\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}char E\-E\-M\-E\-M Cal\-Vals\-\_\-eemem\mbox{[}33\mbox{]}\mbox{[}8\mbox{]}}}\label{oldmain_8c_a6ecb300115c248cfdac813f9c28333a8}
+
+
+Definition at line 104 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_ad3d09b1ff1618b84d64d76de74dfe43a}{\index{oldmain.\-c@{oldmain.\-c}!inmask\-\_\-eemem@{inmask\-\_\-eemem}}
+\index{inmask\-\_\-eemem@{inmask\-\_\-eemem}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{inmask\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t E\-E\-M\-E\-M inmask\-\_\-eemem\mbox{[}6\mbox{]}}}\label{oldmain_8c_ad3d09b1ff1618b84d64d76de74dfe43a}
+
+
+Definition at line 100 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a98e598b728a6d357593a01db530f936c}{\index{oldmain.\-c@{oldmain.\-c}!Mask0@{Mask0}}
+\index{Mask0@{Mask0}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Mask0}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf adcbitmask0} Mask0\mbox{[}$\,$\mbox{]}}}\label{oldmain_8c_a98e598b728a6d357593a01db530f936c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=\{  
+    \{0x28, 0xB0, 0x88\},  
+    \{0x28, 0xB8, 0x88\},  
+    \{0x28, 0xA0, 0x88\},  
+    \{0x28, 0xB1, 0x88\},  
+    \{0x28, 0xB9, 0x88\},  
+    \{0x28, 0xA1, 0x88\},  
+    \{0x28, 0xB2, 0x88\},  
+    \{0x28, 0xBA, 0x88\},  
+    \{0x28, 0xA2, 0x88\},  
+    \{0x28, 0xB3, 0x88\},  
+    \{0x28, 0xBB, 0x88\},  
+    \{0x28, 0xA3, 0x88\},  
+    \{0x28, 0xB4, 0x88\},  
+    \{0x28, 0xBC, 0x88\},  
+    \{0x28, 0xA4, 0x88\},  
+    \{0x28, 0xB5, 0x88\},  
+    \{0x28, 0xBD, 0x88\},  
+    \{0x28, 0xA5, 0x88\},  
+    \{0x28, 0xB6, 0x88\},  
+    \{0x28, 0xBE, 0x88\},  
+    \{0x28, 0xA6, 0x88\},  
+    \{0x28, 0xB7, 0x88\},  
+    \{0x28, 0xBF, 0x88\},  
+    \{0x28, 0xA7, 0x88\},  
+    \}
+\end{DoxyCode}
+
+
+Definition at line 248 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a02e8a7fc504a116b1e63c8a5b541ad34}{\index{oldmain.\-c@{oldmain.\-c}!Mask1@{Mask1}}
+\index{Mask1@{Mask1}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Mask1}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf adcbitmask1} Mask1\mbox{[}$\,$\mbox{]}}}\label{oldmain_8c_a02e8a7fc504a116b1e63c8a5b541ad34}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=\{
+    \{0\}, 
+    \{1\}, 
+    \{2\}, 
+    \{3\}, 
+    \{4\}, 
+    \{5\},  
+    \{6\},
+    \{7\},
+    \}
+\end{DoxyCode}
+
+
+Definition at line 238 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_abc198f6cc27407cfde45f8a4e3246995}{\index{oldmain.\-c@{oldmain.\-c}!Names@{Names}}
+\index{Names@{Names}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Names}]{\setlength{\rightskip}{0pt plus 5cm}char Names\mbox{[}33\mbox{]}\mbox{[}11\mbox{]}}}\label{oldmain_8c_abc198f6cc27407cfde45f8a4e3246995}
+
+
+Definition at line 109 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_ab45fe760c90a3c33a9dec7111594e5a5}{\index{oldmain.\-c@{oldmain.\-c}!Names\-\_\-eemem@{Names\-\_\-eemem}}
+\index{Names\-\_\-eemem@{Names\-\_\-eemem}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Names\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t E\-E\-M\-E\-M Names\-\_\-eemem\mbox{[}33\mbox{]}\mbox{[}11\mbox{]}}}\label{oldmain_8c_ab45fe760c90a3c33a9dec7111594e5a5}
+
+
+Definition at line 110 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a85ff53dee37ecc06a63e0a32e8b2111a}{\index{oldmain.\-c@{oldmain.\-c}!num\-\_\-inputs@{num\-\_\-inputs}}
+\index{num\-\_\-inputs@{num\-\_\-inputs}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{num\-\_\-inputs}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t num\-\_\-inputs}}\label{oldmain_8c_a85ff53dee37ecc06a63e0a32e8b2111a}
+
+
+Definition at line 65 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_af55c704c6a5debb570dad3a0ef8dafb2}{\index{oldmain.\-c@{oldmain.\-c}!Offset\-\_\-\-C\-O\-\_\-temp\-\_\-eemem@{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-eemem}}
+\index{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-eemem@{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-eemem}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t E\-E\-M\-E\-M Offset\-\_\-\-C\-O\-\_\-temp\-\_\-eemem}}\label{oldmain_8c_af55c704c6a5debb570dad3a0ef8dafb2}
+
+
+Definition at line 117 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a6ce70d2f5c8632638cd3731a041c6210}{\index{oldmain.\-c@{oldmain.\-c}!Offset\-\_\-\-C\-O\-\_\-temp\-\_\-sign\-\_\-eemem@{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-sign\-\_\-eemem}}
+\index{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-sign\-\_\-eemem@{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-sign\-\_\-eemem}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Offset\-\_\-\-C\-O\-\_\-temp\-\_\-sign\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t E\-E\-M\-E\-M Offset\-\_\-\-C\-O\-\_\-temp\-\_\-sign\-\_\-eemem}}\label{oldmain_8c_a6ce70d2f5c8632638cd3731a041c6210}
+
+
+Definition at line 118 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_af80d86f61f08f26ac576b6f080a96053}{\index{oldmain.\-c@{oldmain.\-c}!Offset\-\_\-eemem@{Offset\-\_\-eemem}}
+\index{Offset\-\_\-eemem@{Offset\-\_\-eemem}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Offset\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t E\-E\-M\-E\-M Offset\-\_\-eemem\mbox{[}33\mbox{]}}}\label{oldmain_8c_af80d86f61f08f26ac576b6f080a96053}
+
+
+Definition at line 107 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a691c2ad89e8d56fbcd5c6b1c9568bdb5}{\index{oldmain.\-c@{oldmain.\-c}!Offset\-\_\-sign\-\_\-eemem@{Offset\-\_\-sign\-\_\-eemem}}
+\index{Offset\-\_\-sign\-\_\-eemem@{Offset\-\_\-sign\-\_\-eemem}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Offset\-\_\-sign\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t E\-E\-M\-E\-M Offset\-\_\-sign\-\_\-eemem\mbox{[}33\mbox{]}}}\label{oldmain_8c_a691c2ad89e8d56fbcd5c6b1c9568bdb5}
+
+
+Definition at line 108 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a17f2a4a910a72e8cd94da1db5a19f912}{\index{oldmain.\-c@{oldmain.\-c}!order\-\_\-eemem@{order\-\_\-eemem}}
+\index{order\-\_\-eemem@{order\-\_\-eemem}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{order\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t E\-E\-M\-E\-M order\-\_\-eemem\mbox{[}33\mbox{]}}}\label{oldmain_8c_a17f2a4a910a72e8cd94da1db5a19f912}
+
+
+Definition at line 113 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_aebe1c24f76d207784ab1c03fa7b46ed5}{\index{oldmain.\-c@{oldmain.\-c}!read\-\_\-temperature\-\_\-x\-\_\-100@{read\-\_\-temperature\-\_\-x\-\_\-100}}
+\index{read\-\_\-temperature\-\_\-x\-\_\-100@{read\-\_\-temperature\-\_\-x\-\_\-100}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{read\-\_\-temperature\-\_\-x\-\_\-100}]{\setlength{\rightskip}{0pt plus 5cm}volatile int32\-\_\-t read\-\_\-temperature\-\_\-x\-\_\-100}}\label{oldmain_8c_aebe1c24f76d207784ab1c03fa7b46ed5}
+
+
+Definition at line 67 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a417648d7c8f23f841f8d33fbc44a9c55}{\index{oldmain.\-c@{oldmain.\-c}!restart@{restart}}
+\index{restart@{restart}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t E\-E\-M\-E\-M restart\mbox{[}1\mbox{]} =\char`\"{}O\char`\"{}}}\label{oldmain_8c_a417648d7c8f23f841f8d33fbc44a9c55}
+
+
+Definition at line 112 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_aa78cbfd7773061e9bdd555472ba57c0d}{\index{oldmain.\-c@{oldmain.\-c}!restartval@{restartval}}
+\index{restartval@{restartval}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{restartval}]{\setlength{\rightskip}{0pt plus 5cm}char restartval\mbox{[}1\mbox{]}}}\label{oldmain_8c_aa78cbfd7773061e9bdd555472ba57c0d}
+
+
+Definition at line 111 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a72dd703685aee68e0a5ffbb6705677d6}{\index{oldmain.\-c@{oldmain.\-c}!rtc\-\_\-counter@{rtc\-\_\-counter}}
+\index{rtc\-\_\-counter@{rtc\-\_\-counter}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{rtc\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\-\_\-t rtc\-\_\-counter}}\label{oldmain_8c_a72dd703685aee68e0a5ffbb6705677d6}
+
+
+Definition at line 66 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a421bba774bcb352456ac0f04d335573e}{\index{oldmain.\-c@{oldmain.\-c}!sign@{sign}}
+\index{sign@{sign}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{sign}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t sign}}\label{oldmain_8c_a421bba774bcb352456ac0f04d335573e}
+
+
+Definition at line 64 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a5132211ea7ba4f0e57adadaf2565851e}{\index{oldmain.\-c@{oldmain.\-c}!stroke@{stroke}}
+\index{stroke@{stroke}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{stroke}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t stroke}}\label{oldmain_8c_a5132211ea7ba4f0e57adadaf2565851e}
+
+
+Definition at line 62 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a7d5fdf07229c62ede50f28fa06027ae5}{\index{oldmain.\-c@{oldmain.\-c}!temperature\-\_\-read\-\_\-flag@{temperature\-\_\-read\-\_\-flag}}
+\index{temperature\-\_\-read\-\_\-flag@{temperature\-\_\-read\-\_\-flag}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{temperature\-\_\-read\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t temperature\-\_\-read\-\_\-flag}}\label{oldmain_8c_a7d5fdf07229c62ede50f28fa06027ae5}
+
+
+Definition at line 68 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_a25f1783e04de1ca26adae20be862d4ca}{\index{oldmain.\-c@{oldmain.\-c}!Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp@{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp}}
+\index{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp@{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}char Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp\mbox{[}8\mbox{]}}}\label{oldmain_8c_a25f1783e04de1ca26adae20be862d4ca}
+
+
+Definition at line 116 of file oldmain.\-c.
+
+\hypertarget{oldmain_8c_acd7f7fe2686b0803ee2962b179ffbffc}{\index{oldmain.\-c@{oldmain.\-c}!Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp\-\_\-eemem@{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp\-\_\-eemem}}
+\index{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp\-\_\-eemem@{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp\-\_\-eemem}!oldmain.c@{oldmain.\-c}}
+\subsubsection[{Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp\-\_\-eemem}]{\setlength{\rightskip}{0pt plus 5cm}char E\-E\-M\-E\-M Val\-\_\-ovr\-\_\-\-C\-O\-\_\-temp\-\_\-eemem\mbox{[}8\mbox{]}}}\label{oldmain_8c_acd7f7fe2686b0803ee2962b179ffbffc}
+
+
+Definition at line 115 of file oldmain.\-c.
+

@@ -1,0 +1,74 @@
+\hypertarget{CO2__serial_8c}{\section{C\-O2\-\_\-serial.\-c File Reference}
+\label{CO2__serial_8c}\index{C\-O2\-\_\-serial.\-c@{C\-O2\-\_\-serial.\-c}}
+}
+
+
+\subsection{Description}
+Control for the C\-O\-Z\-I\-R serial C\-O2 sensors. U\-A\-R\-T comunication via cammand and receive of data. \begin{DoxyAuthor}{Author}
+University of Illinois Department and Environmental and Civil Engineering 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2014 University of Illinois Department and Environmental and Civil Engineering. This software is distributed under the M\-I\-T License. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\-Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\-:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. The software is provided \char`\"{}as is\char`\"{}, without warranty of any kind expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{CO2__serial_8c_source}{C\-O2\-\_\-serial.\-c}.
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{CO2__serial_8c_a27867ebb1ec32b8cd3d26205a485d353}{init\-\_\-\-C\-O2} (uint8\-\_\-t C\-O\-\_\-chan)
+\item 
+uint16\-\_\-t \hyperlink{CO2__serial_8c_ad34a62d75d7846645c7ebcf88bee100e}{get\-\_\-\-C\-O2} (uint8\-\_\-t C\-O\-\_\-chan)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{CO2__serial_8c_aaf4a6f12320d1d572ad2420a7493dc1c}{buffersoft} \mbox{[}17\mbox{]} = \char`\"{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\char`\"{}
+\item 
+char \hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data} \mbox{[}6\mbox{]} = \char`\"{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{CO2__serial_8c_ad34a62d75d7846645c7ebcf88bee100e}{\index{C\-O2\-\_\-serial.\-c@{C\-O2\-\_\-serial.\-c}!get\-\_\-\-C\-O2@{get\-\_\-\-C\-O2}}
+\index{get\-\_\-\-C\-O2@{get\-\_\-\-C\-O2}!CO2_serial.c@{C\-O2\-\_\-serial.\-c}}
+\subsubsection[{get\-\_\-\-C\-O2}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t get\-\_\-\-C\-O2 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{C\-O\-\_\-chan}
+\end{DoxyParamCaption}
+)}}\label{CO2__serial_8c_ad34a62d75d7846645c7ebcf88bee100e}
+
+
+Definition at line 39 of file C\-O2\-\_\-serial.\-c.
+
+\hypertarget{CO2__serial_8c_a27867ebb1ec32b8cd3d26205a485d353}{\index{C\-O2\-\_\-serial.\-c@{C\-O2\-\_\-serial.\-c}!init\-\_\-\-C\-O2@{init\-\_\-\-C\-O2}}
+\index{init\-\_\-\-C\-O2@{init\-\_\-\-C\-O2}!CO2_serial.c@{C\-O2\-\_\-serial.\-c}}
+\subsubsection[{init\-\_\-\-C\-O2}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-\-C\-O2 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{C\-O\-\_\-chan}
+\end{DoxyParamCaption}
+)}}\label{CO2__serial_8c_a27867ebb1ec32b8cd3d26205a485d353}
+
+
+Definition at line 28 of file C\-O2\-\_\-serial.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{CO2__serial_8c_aaf4a6f12320d1d572ad2420a7493dc1c}{\index{C\-O2\-\_\-serial.\-c@{C\-O2\-\_\-serial.\-c}!buffersoft@{buffersoft}}
+\index{buffersoft@{buffersoft}!CO2_serial.c@{C\-O2\-\_\-serial.\-c}}
+\subsubsection[{buffersoft}]{\setlength{\rightskip}{0pt plus 5cm}char buffersoft\mbox{[}17\mbox{]} = \char`\"{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\char`\"{}}}\label{CO2__serial_8c_aaf4a6f12320d1d572ad2420a7493dc1c}
+
+
+Definition at line 37 of file C\-O2\-\_\-serial.\-c.
+
+\hypertarget{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{\index{C\-O2\-\_\-serial.\-c@{C\-O2\-\_\-serial.\-c}!data@{data}}
+\index{data@{data}!CO2_serial.c@{C\-O2\-\_\-serial.\-c}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}char data\mbox{[}6\mbox{]} = \char`\"{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\char`\"{}}}\label{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}
+
+
+Definition at line 38 of file C\-O2\-\_\-serial.\-c.
+

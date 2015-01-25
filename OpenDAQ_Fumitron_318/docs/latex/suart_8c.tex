@@ -1,0 +1,159 @@
+\hypertarget{suart_8c}{\section{suart.\-c File Reference}
+\label{suart_8c}\index{suart.\-c@{suart.\-c}}
+}
+
+
+\subsection{Description}
+software uart Multiple software uarts can be addd here. Setup pns and timing in \hyperlink{suart_8h}{suart.\-h} \begin{DoxyAuthor}{Author}
+Karl Walter. karl (at) waltech.\-com 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2014 Karl Walter. karl (at) waltech.\-com. This software is distributed under the M\-I\-T License. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\-Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\-: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. The software is provided \char`\"{}as is\char`\"{}, without warranty of any kind expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{suart_8c_source}{suart.\-c}.
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{suart_8c_abfb528e9ba1134ede16118dd7b3cc1fd}{get\-\_\-line} (uint8\-\_\-t uart\-\_\-num, char $\ast$buff, uint8\-\_\-t len)
+\item 
+void \hyperlink{suart_8c_a093cd29fcb88eeb35d5796092ba7637d}{suart\-\_\-puts} (uint8\-\_\-t uart\-\_\-num, const char $\ast$str)
+\item 
+void \hyperlink{suart_8c_a15f129725adb9fc628a0cfe70abccb9a}{suart\-\_\-init} (uint8\-\_\-t uart\-\_\-num)
+\item 
+void \hyperlink{suart_8c_aa6f3c48f6f45ca9f2cb7913775053958}{xmit1} (uint8\-\_\-t abyte)
+\item 
+void \hyperlink{suart_8c_aade2a056bb7d0df8ae4a405cdc18c3c2}{xmit2} (uint8\-\_\-t abyte)
+\item 
+void \hyperlink{suart_8c_afc70c1e53d28becc1655f7579686e5d1}{xmit3} (uint8\-\_\-t abyte)
+\item 
+uint8\-\_\-t \hyperlink{suart_8c_a02b1982441c8379a5ebe4aa0c22b1ac7}{rcvr1} (void)
+\item 
+uint8\-\_\-t \hyperlink{suart_8c_a416cb624357a1af98aa9dbc39bbec83b}{rcvr2} (void)
+\item 
+uint8\-\_\-t \hyperlink{suart_8c_a01305106a50800c63081298757d89612}{rcvr3} (void)
+\item 
+void \hyperlink{suart_8c_afe22079e5a765106d135df80fef1289f}{direct\-\_\-conn} (uint8\-\_\-t suart\-\_\-num)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{suart_8c_afe22079e5a765106d135df80fef1289f}{\index{suart.\-c@{suart.\-c}!direct\-\_\-conn@{direct\-\_\-conn}}
+\index{direct\-\_\-conn@{direct\-\_\-conn}!suart.c@{suart.\-c}}
+\subsubsection[{direct\-\_\-conn}]{\setlength{\rightskip}{0pt plus 5cm}void direct\-\_\-conn (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{suart\-\_\-num}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_afe22079e5a765106d135df80fef1289f}
+
+
+Definition at line 358 of file suart.\-c.
+
+\hypertarget{suart_8c_abfb528e9ba1134ede16118dd7b3cc1fd}{\index{suart.\-c@{suart.\-c}!get\-\_\-line@{get\-\_\-line}}
+\index{get\-\_\-line@{get\-\_\-line}!suart.c@{suart.\-c}}
+\subsubsection[{get\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{uart\-\_\-num, }
+\item[{char $\ast$}]{buff, }
+\item[{uint8\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_abfb528e9ba1134ede16118dd7b3cc1fd}
+
+
+Definition at line 27 of file suart.\-c.
+
+\hypertarget{suart_8c_a02b1982441c8379a5ebe4aa0c22b1ac7}{\index{suart.\-c@{suart.\-c}!rcvr1@{rcvr1}}
+\index{rcvr1@{rcvr1}!suart.c@{suart.\-c}}
+\subsubsection[{rcvr1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rcvr1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_a02b1982441c8379a5ebe4aa0c22b1ac7}
+
+
+can access up to three soft uarts 
+
+
+
+Definition at line 198 of file suart.\-c.
+
+\hypertarget{suart_8c_a416cb624357a1af98aa9dbc39bbec83b}{\index{suart.\-c@{suart.\-c}!rcvr2@{rcvr2}}
+\index{rcvr2@{rcvr2}!suart.c@{suart.\-c}}
+\subsubsection[{rcvr2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rcvr2 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_a416cb624357a1af98aa9dbc39bbec83b}
+
+
+Definition at line 252 of file suart.\-c.
+
+\hypertarget{suart_8c_a01305106a50800c63081298757d89612}{\index{suart.\-c@{suart.\-c}!rcvr3@{rcvr3}}
+\index{rcvr3@{rcvr3}!suart.c@{suart.\-c}}
+\subsubsection[{rcvr3}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rcvr3 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_a01305106a50800c63081298757d89612}
+
+
+Definition at line 306 of file suart.\-c.
+
+\hypertarget{suart_8c_a15f129725adb9fc628a0cfe70abccb9a}{\index{suart.\-c@{suart.\-c}!suart\-\_\-init@{suart\-\_\-init}}
+\index{suart\-\_\-init@{suart\-\_\-init}!suart.c@{suart.\-c}}
+\subsubsection[{suart\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void suart\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{uart\-\_\-num}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_a15f129725adb9fc628a0cfe70abccb9a}
+
+
+Definition at line 78 of file suart.\-c.
+
+\hypertarget{suart_8c_a093cd29fcb88eeb35d5796092ba7637d}{\index{suart.\-c@{suart.\-c}!suart\-\_\-puts@{suart\-\_\-puts}}
+\index{suart\-\_\-puts@{suart\-\_\-puts}!suart.c@{suart.\-c}}
+\subsubsection[{suart\-\_\-puts}]{\setlength{\rightskip}{0pt plus 5cm}void suart\-\_\-puts (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{uart\-\_\-num, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_a093cd29fcb88eeb35d5796092ba7637d}
+
+
+Definition at line 56 of file suart.\-c.
+
+\hypertarget{suart_8c_aa6f3c48f6f45ca9f2cb7913775053958}{\index{suart.\-c@{suart.\-c}!xmit1@{xmit1}}
+\index{xmit1@{xmit1}!suart.c@{suart.\-c}}
+\subsubsection[{xmit1}]{\setlength{\rightskip}{0pt plus 5cm}void xmit1 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{abyte}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_aa6f3c48f6f45ca9f2cb7913775053958}
+
+
+Definition at line 105 of file suart.\-c.
+
+\hypertarget{suart_8c_aade2a056bb7d0df8ae4a405cdc18c3c2}{\index{suart.\-c@{suart.\-c}!xmit2@{xmit2}}
+\index{xmit2@{xmit2}!suart.c@{suart.\-c}}
+\subsubsection[{xmit2}]{\setlength{\rightskip}{0pt plus 5cm}void xmit2 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{abyte}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_aade2a056bb7d0df8ae4a405cdc18c3c2}
+
+
+Definition at line 136 of file suart.\-c.
+
+\hypertarget{suart_8c_afc70c1e53d28becc1655f7579686e5d1}{\index{suart.\-c@{suart.\-c}!xmit3@{xmit3}}
+\index{xmit3@{xmit3}!suart.c@{suart.\-c}}
+\subsubsection[{xmit3}]{\setlength{\rightskip}{0pt plus 5cm}void xmit3 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{abyte}
+\end{DoxyParamCaption}
+)}}\label{suart_8c_afc70c1e53d28becc1655f7579686e5d1}
+
+
+Definition at line 166 of file suart.\-c.
+

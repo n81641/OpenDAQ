@@ -1,0 +1,1485 @@
+////////////////////////////////////////////
+//This is the firmware 
+//reset/program inputs on PB7 instead of PD3(used for bootlaod now)
+// -number offsets allowed
+//
+//NOTE: removed cli in suart.S receive byte routine
+//
+//
+// freq 4194394 (in makefile too)
+//
+//RH i2c addr: 	1000 000r/w = 0x80 +r/w
+//CO i2c addr: 	1001 000r/w	= 0x90 +r/w
+//ADC i2c addr: 0010 100r/w	= 0x28 +r/w
+//
+/////////////////////////////////////////// 
+#include <inttypes.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <ctype.h>
+#include <string.h>
+#include <compat/deprecated.h> 
+#include <util/delay.h>
+//#include <avr/sleep.h>
+#include <avr/pgmspace.h>
+#include "uart.h"
+#include "avr/eeprom.h"
+#include <avr/wdt.h> 
+#include <avr/sfr_defs.h> // has bit is set/clear.
+#include <stdio.h>
+#include <setjmp.h>
+#include "i2cmaster.h"
+#include "dataout.h"
+#include "suart.h"//soft uart
+#define VERSION 112UL
+//#define ICP PIND6 // input capture is on PORT D PIN 6
+
+#define F_CPU 4194394UL	/* put in makefile?*/
+//#define DEBUG
+//#define DEBUG2
+
+		#define DEGREE_PER_UNIT_X100 92.9 
+		#define OFFSET_CHIPTEMP -700  //-7*100
+		#define NUM_BOX 5//for boxcar average
+
+/*
+ * TWI address for Linear ADC 
+ * CA0, CA1, CA2 all low
+ * 0 bit is 0 (read or write direction added later)
+ * 0010100 0 ==> 0x28 16 chan ADC
+ * (1110111 0==>  0xEE (test...global address))
+ */
+///global vars///
+volatile int32_t boxcar_t[8][10];//temperature averager
+volatile uint8_t stroke;//set to 1 when the rtc counter fills
+volatile uint16_t ADC_volts; //Linear i2c ADC result
+volatile uint8_t sign;  // adc result sign 0=+ 1=- 2=overscale 
+volatile uint8_t num_inputs;//counts number of active inputs
+volatile uint32_t rtc_counter;  //define ovrflow counter for Real Time Clock
+volatile int32_t read_temperature_x_100; //chip temperature
+volatile uint8_t temperature_read_flag;// keeps track if temperature already read
+static volatile uint8_t charspot=0;//keeps track of the position of the numbers going into the string
+static volatile uint8_t CO2_ok =0;//flags for disabled/ok/testing
+static volatile uint8_t CO_ok =0;
+static volatile uint8_t humid_ok =0;
+static volatile uint8_t ADC_ok = 0;
+static volatile uint8_t test_timer =0;//overflow counter.  16=1 sec
+static volatile uint8_t CO_temp = 0;//set to input with CO connected to it. switch controller by i2c
+static jmp_buf buf1;
+static jmp_buf buf2;
+static jmp_buf buf3;
+static jmp_buf buf4;
+//defigned for built in adc:
+typedef unsigned char  u08;
+typedef          char  s08;
+typedef unsigned short u16;
+typedef          short s16;
+static volatile u16 adcData;
+static volatile u08 adcDataL;
+static volatile u08 adcDataH;
+
+struct hum_dat{uint16_t SHT_temp;uint16_t SHT_rh;};
+
+
+///parameters///
+/////////////////////////////eprom initial value setup
+static volatile uint8_t misc_mask;	//misc. mask
+static volatile uint8_t TCmask;	//thermocouple mask
+static volatile uint8_t oversam_mask;// oversample yes/no for 10 bit mask
+static volatile uint32_t inmask_all;//input masks combined into one number
+uint8_t EEMEM inmask_eemem[6];//6 input masks in the eemem,
+	//0 to 3 are i2c adc, and 10bit adc, 4 is Thermocouple choice for diff channels, 5 is 10 bit oversample, 6 is chip temp and sample timing
+//char EEMEM Val_ovr_time_eemem[8];//cal value over the first time column
+char CalVals[33][8];// 33 cal values made up of 8 character strings
+char EEMEM CalVals_eemem [33][8];//33 cal value spots in the EEMEM
+static volatile uint16_t offset[33];//offsets for each channel
+static volatile uint8_t offset_sign[33];//sign offsets for each channel 
+uint16_t EEMEM Offset_eemem [33];//33 value spots in the EEMEM
+uint8_t EEMEM Offset_sign_eemem [33];//33 sign spots in the EEMEM
+char Names[33][16];//  names made up of 16 character strings
+uint8_t EEMEM Names_eemem [33][16];//33 name spots in the EEMEM
+char restartval[1]; //if has been reset or fresh powerup
+uint8_t EEMEM restart[1]="O"; //capital O
+uint8_t EEMEM order_eemem[33];//array storing the order of the inputs
+static volatile uint8_t order [33];
+char EEMEM Val_ovr_CO_temp_eemem[8];//cal value over the CO_temp column 
+char Val_ovr_CO_temp[8];
+uint16_t EEMEM Offset_CO_temp_eemem;//33 value spots in the EEMEM
+uint8_t EEMEM Offset_CO_temp_sign_eemem;//33 sign spots in the EEMEM
+static volatile uint16_t Offset_CO_temp;//33 value spots in the EEMEM
+static volatile uint8_t Offset_CO_temp_sign;//33 sign spots in the EEMEM
+//////////////////////////////
+
+//////function prototypes below////vvvvv
+void reset_button_check(void);
+void init_rtc(void); //routine to initalizes RTC on timer/counter2
+inline uint8_t ReadTCNT1(void); //reads timer2
+inline uint8_t WriteTCNT1(uint8_t i);//writes timer2
+uint8_t i2c_adc(uint8_t address, uint8_t mux1, uint8_t mux2);//get data from linear ADC
+//void sample(void);// actual logging goes on here
+static uint8_t read_line(char* buffer, uint8_t buffer_length); 	//reads a line from uart
+void toggle_LED(void);
+uint16_t read_adc(uint8_t ADC_A, uint8_t ADC_B, uint8_t ADC_C, uint16_t offset, uint8_t offset_sign, uint8_t TC_amp);
+void adv_mode_check(void);//allows entry of input masks
+void cal_val_input_delay(void);// delays for 5 sec, allows input of cal values, names and offsets
+uint8_t bitisset(uint32_t number, uint8_t bit);
+void adc_init(void);
+uint16_t read_adc_onboard(uint8_t channel, uint32_t offset, uint8_t offset_sign);
+static void delay(uint16_t us); //.delay used in adc readings
+void readmask(void);
+uint8_t find_next_input(uint8_t next_one);
+void output_masks(void);
+uint16_t get_CO2(void);//>>CO2<</
+void get_line (char *buff, uint8_t len);  //soft uart receive a line
+void suart_puts(const char* str); //soft uart put string
+void co2_cal(void);//com with co2
+struct hum_dat ReadSHT25(void);
+void test_peripherals(void);
+void Init_CO(void);
+void CO_to_temp(uint8_t yes);
+
+
+
+ISR(TIMER1_OVF_vect) //time clock 
+{
+	rtc_counter++;
+	stroke=1;
+}
+ISR(TIMER0_OVF_vect) //timeout for periferal tests
+{
+
+	if (CO2_ok ==2)
+	{
+		uart_putc('.');
+		test_timer ++;
+		if (test_timer >= 10)
+		{
+			TCCR0 = 0;// stop counter
+			test_timer = 0;
+			CO2_ok = 0;//disable CO2
+			uart_putc('\n');
+			longjmp(buf1,1);// jumps back to where setjmp was called - making setjmp now return 1
+		}
+	}
+	if (CO_ok ==2)
+	{
+//		uart_putc('z');
+		TCCR0 = 0;// stop counter
+		CO_ok = 0;//disable CO
+		longjmp(buf2,1);// 
+
+	}
+	if (humid_ok ==2)
+	{
+//		uart_putc('c');
+		TCCR0 = 0;// stop counter
+		humid_ok = 0;//disable humid
+		longjmp(buf3,1);// j
+
+	}
+	if (ADC_ok ==2)
+	{
+		uart_putc('v');
+		TCCR0 = 0;// stop counter
+		ADC_ok = 0;//disable ADC
+		longjmp(buf4,1);// j
+
+	}
+}
+
+//interrupt for built-in adc
+ISR(ADC_vect) 
+{
+    adcDataL = ADCL;
+    adcDataH = ADCH;
+    
+    adcData = 0;
+    adcData = adcData | adcDataH;
+    adcData = adcData << 8;
+    adcData = adcData | adcDataL;
+}
+
+//Structures for input configurations
+
+struct adcbitmask0{//for i2c adc
+	uint8_t mux1;
+	uint8_t mux2;
+	uint8_t mux3;
+}; 
+struct adcbitmask1{//for inbuilt adc
+	uint8_t mux;
+}; 
+struct adcbitmask1 Mask1[]={//channels on inbuilt adc	
+	{0}, 
+	{1}, 
+	{2}, 
+	{3}, 
+	{4}, 
+	{5},  //
+	{6},
+	{7},
+	};
+struct adcbitmask0 Mask0[]={	//
+	{0x28, 0xB0, 0x88},  //1 ch 0 single ended
+	{0x28, 0xB8, 0x88},  //2 ch 1 single ended 
+	{0x28, 0xA0, 0x88},  //3 ch 0,1 diff
+	{0x28, 0xB1, 0x88},  //4 ch 2 single ended 
+	{0x28, 0xB9, 0x88},  //5 ch 3 single ended
+	{0x28, 0xA1, 0x88},  //6 ch 2,3 diff 
+	{0x28, 0xB2, 0x88},  //7 ch 4 single ended
+	{0x28, 0xBA, 0x88},  //8 ch 5 single ended
+	{0x28, 0xA2, 0x88},  //9 ch 4,5 diff
+	{0x28, 0xB3, 0x88},  //10 ch 6 single ended
+	{0x28, 0xBB, 0x88},  //11 ch 7 single ended
+	{0x28, 0xA3, 0x88},  //12 ch 6,7 diff
+	{0x28, 0xB4, 0x88},  //13 ch 8 single ended
+	{0x28, 0xBC, 0x88},  //14 ch 9 single ended
+	{0x28, 0xA4, 0x88},  //15 ch 8,9 diff
+	{0x28, 0xB5, 0x88},  //16 ch 10 single ended
+	{0x28, 0xBD, 0x88},  //17 ch 11 single ended
+	{0x28, 0xA5, 0x88},  //18 ch 10,11 diff
+	{0x28, 0xB6, 0x88},  //19 ch 12 single ended/ 
+	{0x28, 0xBE, 0x88},  //20 ch 13 single ended/
+	{0x28, 0xA6, 0x88},  //21 ch 12,13 diff/
+	{0x28, 0xB7, 0x88},  //22 ch 14 single ended/
+	{0x28, 0xBF, 0x88},  //23 ch 15 single ended
+	{0x28, 0xA7, 0x88},  //24 ch 14,15 diff/
+	};
+
+//////////////////////////vvvvvvvvvvvvvvv MAIN  vvvvvvvvvvvvvvvvvvvvv///////
+int main()
+{
+	DDRB &=~ (1<<7); //port B7 is input for reset switch
+	PORTB |= (1<<7); //pullup on
+	DDRB |= (1<<6); //port B6 is output for tx  (rx on Co2)
+	DDRD |= (1<<5); //port D led
+	PORTD &=~ (1<<5);//led - lo
+	wdt_disable();//disable watchdog
+    uart_init();/* setup uart */
+    adv_mode_check();
+    readmask();
+	#ifdef DEBUG
+	uart_puts_p(PSTR("init i2c bus\n"));
+	#endif
+	i2c_init();//inits i2c bus
+    test_peripherals();
+    if (CO_ok == 1){Init_CO();}//setup co potenstat chip
+    cal_val_input_delay();
+ ///
+	init_rtc();  // start clock
+	PORTD |= (1<<5); //led + hi
+	eeprom_read_block ((void*)&restartval, (const void*)restart,1);
+	////look for log command 
+	UCSRB |=(1 << RXEN);//enable receive uart
+	UCSRB |=(1 << RXCIE);
+	char buffer[50];
+	/* read command */
+	char* command = buffer;  //command points at buffer for now
+	uart_puts_p(PSTR("# 'log' command starts logging >"));	
+	while(1)
+	{
+		if(read_line(command, 10) < 1)    //input up to x - 1 characters
+		continue;//sits and waits for input and cr
+		/* execute command */
+		if(strcmp_P(command, PSTR("log")) == 0)
+		{
+			uart_puts_p(PSTR("#logging\n"));
+			//disable uart input//
+			UCSRB &= ~(1 << RXEN);
+			UCSRB &= ~(1 << RXCIE);
+			adc_init();
+			_delay_ms(500);//.5 second delay for logger software to start
+			uart_puts_p(PSTR("##,## \n"));//defines comma as seperator
+			for (uint8_t i=0; i<33; i++)//read user parameters:
+			{
+				offset[i]= eeprom_read_word(&Offset_eemem[i]);//read offsets
+				offset_sign[i]= eeprom_read_byte(&Offset_sign_eemem[i]);//read offsets' sign
+				order[i] = eeprom_read_byte(&order_eemem[i]);//read order
+			}
+			if(CO_temp != 0)//read CO_temp offsets if active
+			{
+				Offset_CO_temp= eeprom_read_word(&Offset_CO_temp_eemem);
+				Offset_CO_temp_sign= eeprom_read_byte(&Offset_CO_temp_sign_eemem);
+			}	
+			#ifdef DEBUG			
+			output_masks();
+			#endif
+		///////calvals///////
+			uart_putc('#');
+//			char Val_over_time[8];//output the value over the time column
+//			eeprom_read_block ((void*)&Val_over_time, (const void*)Val_ovr_time_eemem,8);
+//			uart_puts(Val_over_time);
+			uart_putc('0');
+			uart_putc(',');
+			for (uint8_t i = 0; i<num_inputs; i ++ )//output cal vals
+			{
+				uint8_t input_to_use = find_next_input(i);//get the input mask number 
+				eeprom_read_block ((void*)&CalVals[input_to_use], (const void*)CalVals_eemem[input_to_use],8);
+				uart_puts(CalVals[input_to_use]);
+				if (i< num_inputs-1){uart_putc(',');}					
+			}
+			if (CO_temp !=0)//put calval for CO_temp
+			{
+				eeprom_read_block ((void*)&Val_ovr_CO_temp, (const void*)Val_ovr_CO_temp_eemem,8);
+				uart_putc(','); uart_puts(Val_ovr_CO_temp);
+			}
+			if (CO2_ok == 1){uart_puts_p(PSTR(",1"));}
+			if (humid_ok == 1){uart_puts_p(PSTR(",1,1"));}
+			uart_putc('\n');
+			/*
+			if ((CO2_ok == 1)&&(humid_ok == 1)){uart_puts_p(PSTR(",1,1,1\n"));}
+			else if ((CO2_ok == 1)&&(humid_ok != 1)){uart_puts_p(PSTR(",1\n"));}
+			else if ((CO2_ok != 1)&&(humid_ok == 1)){uart_puts_p(PSTR(",1,1\n"));}
+			else {uart_putc('\n');}
+			*/
+		////////names////////
+			uart_puts_p(PSTR("seconds,"));
+			for (uint8_t i = 0; i<num_inputs; i ++ )//output names
+			{
+				uint8_t input_to_use = find_next_input(i);//get the input mask number 
+				eeprom_read_block ((void*)&Names[input_to_use], (const void*)Names_eemem[input_to_use],8);
+				uart_puts(Names[input_to_use]);
+				if (i< num_inputs-1){uart_putc(',');}	
+			}
+			if (CO_temp !=0){uart_puts_p(PSTR(",CO_temp"));}
+			if (CO2_ok == 1){uart_puts_p(PSTR(",CO2"));}
+			if (humid_ok == 1){uart_puts_p(PSTR(",PM_RH,PM_temp"));}
+			uart_putc('\n');	
+			/*
+			if ((CO2_ok == 1)&&(humid_ok == 1)){uart_puts_p(PSTR(",CO2,PM_RH,PM_temp\n"));}
+			else if (CO_temp !=0){uart_puts_p(PSTR(",CO_temp"));}//put calval for CO_temp
+			if ((CO2_ok == 1)&&(humid_ok != 1)){uart_puts_p(PSTR(",CO2\n"));}
+			else if ((CO2_ok != 1)&&(humid_ok == 1)){uart_puts_p(PSTR(",PM_RH,PM_temp\n"));}
+			else {uart_putc('\n');}
+			*/
+			PORTD &=~ (1<<5); //led + lo
+			break;//break out of the waiting to log loop and go to the main loggong loop
+		}
+		else
+		{
+				uart_puts_p(PSTR("'log' command starts logging\n"));
+		}
+	}
+	rtc_counter = 0;// zero out the timer
+	WriteTCNT1(0);
+	sei();
+	charspot=0;
+	while(1)/////////read and log loop VVVVVVV//////
+	{	
+		if(bitisset(misc_mask,0))
+		{
+			stroke = 0;
+			while(stroke != 1)//wait for the next second
+			{
+				asm volatile ("nop"::);
+			}
+		}
+		///////record time
+		uint16_t start_time = ReadTCNT1();
+		charspot = put_in_string('+',rtc_counter,'.',charspot);//put seconds in string
+		//uart_putw_dec(start_time);uart_putc(' ');
+		uint16_t tens = (100 * start_time );//read tenths
+		uint8_t tenths = (tens / 256);
+		if(tenths<10)
+		{
+			charspot = put_in_string('+',0,'n',charspot);// put just a zero in the string
+		}
+		charspot = put_in_string('+',tenths,',',charspot);// put tenths in string
+		temperature_read_flag =0;//set to one if temperature read this loop
+		for (uint8_t i = 0; i<num_inputs; i ++ )//output adcs		//loop for each input, read, calculate and transmit	
+		{
+			uint8_t input_to_use = find_next_input(i);//get the input mask number 
+			if (input_to_use < 24)//16 bit channels
+			{
+				uint8_t Thermo = 0;//is a thermocouple input or not
+				if (   (Mask0[input_to_use].mux2 >=0xB8) && (Mask0[input_to_use].mux2<= 0xBF) 
+						&& (bitisset(TCmask,(Mask0[input_to_use].mux2 - 0xB8)))   )
+				{Thermo = 1;}//check if input is a diff, and if the bit is set for T.C.
+				read_adc(Mask0[input_to_use].mux1, Mask0[input_to_use].mux2, Mask0[input_to_use].mux3,
+						offset[input_to_use], offset_sign[input_to_use], Thermo);
+			}
+			else if (input_to_use == 32)//chip temp
+			{
+				read_adc(0x28, 0xA0, 0xC0,offset[input_to_use],offset_sign[input_to_use],0);
+			}
+			else if (input_to_use >= 24 && input_to_use <32)//inbuilt channels
+			{
+				read_adc_onboard(Mask1[input_to_use-24].mux,offset[input_to_use],offset_sign[input_to_use]);
+			}	
+			reset_button_check();
+		}
+		if(CO_temp != 0)//read CO channel again for temperature
+		{
+			CO_to_temp(1); //switch to read CO_temp later
+			_delay_ms(100);
+			read_adc(Mask0[CO_temp].mux1, Mask0[CO_temp].mux2, Mask0[CO_temp].mux3,
+						Offset_CO_temp, Offset_CO_temp_sign, 0);
+			CO_to_temp(0); //switch back to read CO			
+		}
+		//if((bitisset(misc_mask,2))&&(CO2_ok ==1))
+		if(CO2_ok ==1)
+		{
+			uint16_t ppm = get_CO2();
+			charspot = put_in_string('+',ppm,',',charspot);//
+		}
+		//if((bitisset(misc_mask,3))&&(humid_ok ==1))
+		if(humid_ok ==1)
+		{
+			struct hum_dat check_humid = ReadSHT25();
+			#ifdef DEBUG
+			uart_putw_dec(check_humid.SHT_rh); uart_putc(' '); uart_putw_dec(check_humid.SHT_temp); uart_putc(' ');
+			#endif
+			//calculate:
+			check_humid.SHT_rh = (check_humid.SHT_rh/524) -6;
+			charspot = put_in_string('+',((check_humid.SHT_rh)),',',charspot);// put percent rh in string
+			if ((check_humid.SHT_temp/373) >= 47)
+			{
+				check_humid.SHT_temp = (check_humid.SHT_temp/373) -47;
+				charspot = put_in_string('+',(check_humid.SHT_temp),',',charspot);// put temperature in string
+			}
+			else //negative temp
+			{
+				check_humid.SHT_temp = 47-(check_humid.SHT_temp/373);
+				charspot = put_in_string('-',(check_humid.SHT_temp),',',charspot);// put temperature in string
+			}
+		}
+		reset_button_check();
+		spitout(charspot);
+		toggle_LED();
+		charspot=0;
+	}
+	return 0;
+}/// end of main
+
+//////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////vvvvvvvvv ROUTINES BELOW vvvvvvvvvvv//////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+////see page 90
+inline uint8_t ReadTCNT1(void)
+{
+unsigned char sreg;
+uint8_t i;
+sreg = SREG;
+cli();
+i=TCNT1;
+SREG = sreg;
+sei();
+return i;
+}
+
+inline uint8_t WriteTCNT1(uint8_t i)
+{
+unsigned char sreg;
+sreg = SREG;
+cli();
+TCNT1 = i;
+SREG = sreg;
+sei();
+return i;
+}
+void init_rtc(void) //inits real time clock on tc1
+{
+	TIMSK |= 1<<TOIE1;//interrupt enabled
+	TCNT1=0;
+	TCCR1B |= ((1<<CS10)|(1<<CS11)); //start timer /64 prescale.  fills up 1x sec with 4.194304 xtal
+	sei();
+    
+    
+#ifdef DEBUG
+	uart_puts_p(PSTR("RTC init\n"));
+#endif
+} //end of init real time clock
+
+
+//read i2c ADC:
+	//send i2c address, mux1, mux2 (see page 17 ltc2487 datasheet)
+	//returns 0 for + value, 1 for -value, 2 for overvoltage
+uint8_t i2c_adc(uint8_t address, uint8_t mux1, uint8_t mux2)
+{
+	//write mux and setup bits to ADC:
+	i2c_start_wait(address+I2C_WRITE);     // set device address and write mode			
+	i2c_write(mux1);	// Transmit first (of 2) input configure byte: 
+	i2c_write(mux2);	//Transmit second (of 2) input configure byte
+	i2c_stop();
+	_delay_ms(80); // 80 ok for normal channels, not enough for temp	
+	if (mux2 == 0xC0){_delay_ms(80);}//internal temp read needs more time
+    //delay(55000); //time for conversion to happen after stop command.  tried 25000, too little 35000, OK
+    //uart_puts_p(PSTR(" address sent "));
+    i2c_start(address+I2C_READ);   // set device address and read mode
+    uint16_t ret1 = i2c_readAck();// for what is read from i2c
+	uint16_t ret2 = i2c_readAck();// for i2c
+	uint8_t ret3 = i2c_readAck();// for i2c
+    i2c_stop();
+					//bit checks here:
+				if (bitisset(ret1,7) && bitisset(ret1,6) )
+					{
+						ADC_volts = 0xffff;
+						return(2);//over fullscale +
+					}
+				if (!bitisset(ret1,7) && !bitisset(ret1,6) )
+					{
+						return(2);//over fullscale -
+					}
+				if (bitisset(ret1,7) && !bitisset(ret1,6) )
+					{
+						//bits 21...6 from 24 bit adc register, read into 3 registers in avr, ret1,2,3
+						//which is bits 5,4,3,2,1,0 of ret1 (ret1<<10);//ret1 left shifted 10 sopts
+						//	and			7.....0 of ret2 (ret2<<2);//ret2 left shifted 2 sopts
+						//	and			7,6 of ret3 (ret3>>6);//ret3 right shifted 6 sopts
+					ADC_volts = ((ret1<<10)+(ret2<<2)+(ret3>>6));
+					return(0);//positive volatge +
+					}
+				if (!bitisset(ret1,7) && bitisset(ret1,6) )
+					{
+					ADC_volts = ~((ret1<<10)+(ret2<<2)+(ret3>>6));//flip all bits, pg15 ltc2487 datasheet
+					if (ADC_volts != 0xFF) //don't add 1 if 16 bit reg is full
+						{
+						ADC_volts = ADC_volts + 1;//actual value off by 1, i.e, -1 will be 0, but w/ neg sign
+						} 	
+					return(1);//negative voltage -
+					}	
+		return(0);
+}
+
+
+
+
+//////read line from uart/////
+static uint8_t read_line(char* buffer, uint8_t buffer_length)
+{
+    memset(buffer, 0, buffer_length);
+
+    uint8_t read_length = 0;
+    while(read_length < buffer_length - 1)
+	{	
+		//reset_button_check();		
+		uint8_t c = uart_getc();
+        if(c == 0x08 || c == 0x7f)
+        {
+            if(read_length < 1)
+                continue;
+            --read_length;
+            buffer[read_length] = '\0';
+
+            uart_putc(0x08);
+            uart_putc(' ');
+            uart_putc(0x08);
+
+            continue;
+        }
+        uart_putc(c);
+        if(c == '\n')//echo
+        {
+            buffer[read_length] = '\0';
+            break;
+        }
+        else
+        {
+            buffer[read_length] = c;
+            ++read_length;
+        }
+    }
+    return read_length;
+}
+
+void reset_button_check(void)
+{			
+	if (bit_is_clear(PINB,7))
+	{
+	uart_puts_p(PSTR("resetting\n"));
+	restartval[0] = 'R';
+	eeprom_write_block ((const void*)&restartval, (void*)&restart,1);//store fact that restart
+	//generate a reset
+	wdt_enable(WDTO_15MS);
+	_delay_ms(8000);
+	}
+}
+
+void toggle_LED(void)
+{
+	if (bit_is_set(PIND,5))
+	{
+	PORTD &=~ (1<<5); //led + lo	
+	}
+	if (bit_is_clear(PIND,5))
+	{
+	PORTD |= (1<<5); //led + hi
+	}	
+
+}
+
+//provide channel muxes, offset, thermocouple. returns value from adc.  Puts value in string. 
+uint16_t read_adc(uint8_t ADC_A, uint8_t ADC_B, uint8_t ADC_C, uint16_t offset, uint8_t offset_sign, uint8_t TC_amp)
+{
+	uint32_t adjusted_ADC_volts = 0;
+	uint16_t keep_value = 0;
+	uint8_t sign = i2c_adc(ADC_A, ADC_B, ADC_C);//get value from ADC
+//uart_putc('L');
+	if (sign == 2)//overscale
+    {
+     	keep_value = 65535;//not used.  has no sign
+     	charspot = put_in_string('+',keep_value,'O',charspot);//O means overscale
+     	//uart_putc('o');
+    }
+	else 
+	{
+		if (offset_sign == 1)//negative offset
+		{
+			if ((ADC_volts >= offset)&& (sign == 0))//negative offset, biggher than positive ADC_volts
+			{
+				adjusted_ADC_volts = ADC_volts - offset;
+				sign = 0;
+//uart_putc('a');
+			}
+			else if ((ADC_volts < offset)&& (sign == 0))//negative offset, smaller than positive ADC_volts
+			{ 
+				adjusted_ADC_volts = offset - ADC_volts;
+				sign = 1;
+//uart_putc('b');
+			}
+			else  if ((sign == 1))//negative offset, negative ADC_volts
+			{
+				adjusted_ADC_volts = ADC_volts + offset;
+				sign = 1;
+//uart_putc('c');
+			}
+		}
+	
+		if (offset_sign == 0)//positive offset
+		{
+			if ((ADC_volts < offset)&& (sign == 1))//positive offset, negative ADC_volts smaller than offset
+			{ 
+				adjusted_ADC_volts = offset-ADC_volts;
+				sign = 0;
+//uart_putc('p');
+			}
+			else if ((ADC_volts >= offset)&& (sign == 1))//positive offset, negative ADC_volts bigger than offset
+			{ 
+				adjusted_ADC_volts = ADC_volts - offset;
+				if (adjusted_ADC_volts == 0){sign = 0;}//avoid -0 situation
+				else{sign = 1;}
+//uart_putc('q');
+			}
+			else if ((sign == 0))//positive offset,positive ADC_volts
+			{ 
+				adjusted_ADC_volts = offset + ADC_volts;
+				sign = 0;
+//uart_putc('r');
+			}
+		}
+	 
+		if (TC_amp==1)//read temperature and subtract from above
+		{
+			uint32_t Value = ADC_volts;
+			adjusted_ADC_volts = ((Value/13.107) -15); //131.07 units/deg C. times 10. offset by -15 
+		}
+		if (sign == 0)//actually record value
+		{
+				keep_value = adjusted_ADC_volts;
+				charspot = put_in_string('+',keep_value,',',charspot);//
+		}
+		if (sign == 1)//actually record value
+		{
+				keep_value = adjusted_ADC_volts;
+				charspot = put_in_string('-',keep_value,',',charspot);//
+//uart_putc('t');
+		}
+	}
+	
+
+	
+
+return keep_value;
+}
+
+void adv_mode_check(void)
+{
+	//in this function only uart_puts doesn't work.  ran out of ram.  use uart_puts_p(PSTR());
+	
+	
+	UCSRB |= (1 << RXEN);
+	UCSRB |= (1 << RXCIE);//uart input enabled//
+	eeprom_read_block ((void*)&restartval, (const void*)restart,1);
+	if ((bit_is_clear(PINB,7))&& (restartval[0] != 'R'))//holding  reset button while power up
+	{
+		uart_puts_p(PSTR("version: "));
+		uart_putdw_dec(VERSION);
+		uart_puts_p(PSTR("\nADVANCED INPUT SETUP MODE\n"));
+		for (uint8_t i = 0; i<7; i++)//7 bit masks
+		{
+			uart_puts_p(PSTR("current value: "));
+			uint8_t epromtemp = eeprom_read_byte(&inmask_eemem[i]); 
+			uart_putw_dec(epromtemp);
+			//uart_puts(inmaskchar);
+			uart_puts_p(PSTR(" \n"));
+			uart_puts_p(PSTR("enter input mask decimal #"));
+			uart_putw_dec(i);
+			uart_putc('>');
+			uart_putc(' ');
+			char input[4];
+			if((read_line(input, 5) > 0))	//read one line  up to 4 characters
+			{
+				uart_puts_p(PSTR("you entered: "));
+				uart_putw_dec(atoi(input));
+				uart_putc('\n');
+				eeprom_write_byte(&inmask_eemem[i], atoi(input));
+				uart_puts_p(PSTR("written to EEMEM"));
+				uart_putc('\n');
+			}
+		}
+		readmask();//read back the masks above, and fill the mask with all the actives		
+		char buffer[12];// command string 
+		char* command = buffer;  //command points at buffer for now
+		while(1)//do the menu for inputting stuff
+		{
+			uart_puts_p(PSTR("current ordering: (active channel,order)\n"));
+			uint8_t input_number = 0;
+			for (uint8_t i = 0; i<32; i++ )//check of active, output order
+			{
+				if (bitisset(inmask_all,i))//input is active
+				{
+					uint8_t place_in_line = eeprom_read_byte(&order_eemem[i]);//read order array 
+					uart_putw_dec(input_number);uart_puts_p(PSTR(", "));
+					uart_putw_dec(place_in_line);uart_putc('\n');
+					input_number++;
+				}
+			}
+			if (bitisset(misc_mask,1))//chip temp
+				{
+					uint8_t place_in_line = eeprom_read_byte(&order_eemem[32]);//read order array 
+					uart_putw_dec(input_number);uart_puts_p(PSTR(", "));
+					uart_putw_dec(place_in_line);uart_putc('\n');
+					input_number++;
+				}
+			
+			uart_puts_p(PSTR("order entering. (start with 0)\n "));
+			uart_puts_p(PSTR("('exit' to quit) type number of input > "));
+			if(read_line(command, 10) < 1)    //input up to x - 1 characters
+				continue;
+			if(strcmp_P(command, PSTR("exit")) == 0)// checks if 
+			{	break;}
+			uint8_t inputednum = atoi(command);
+			uart_puts_p(PSTR("type order > "));
+			if(read_line(command, 10) < 1)    //input up to x - 1 characters
+				continue;
+			input_number = 0;
+			uint8_t eye = 0;
+			uint8_t found = 0;
+			if ((inputednum<33) && (atoi(command)<33)	)//check if entered number makes sense
+			{
+				for (uint8_t i = 0; i<32; i++ )//check of active
+				{
+					if (bitisset(inmask_all,i))//input is active
+					{
+						if (input_number == inputednum)
+						{	
+							found = 1;
+							eye= i;
+							break;
+						} //found the active input corresponding to the entered 
+					input_number++;
+					}
+				}
+				if ((bitisset(misc_mask,1)) && (found == 0))//check chip temp active
+					{
+						if (input_number == inputednum)
+						{
+							eye= 32;	
+						} 
+					}
+				eeprom_write_byte(&order_eemem[eye], atoi(command));
+			}	
+			else 
+			{uart_puts_p(PSTR("out of range"));}
+		}
+	}
+	restartval[0] = 'O';
+	eeprom_write_block ((const void*)&restartval, (void*)&restart,1);//store fact that restart
+}
+
+void cal_val_input_delay(void)
+{
+	// delays for 5 sec, allows input of cal values, names and offsets
+	char buffer[12];// command string 
+	char* command = buffer;  //command points at buffer for now
+	PORTD |= (1<<5); //LED on
+	#ifdef DEBUG
+	uart_puts_p(PSTR("CO_temp"));uart_putw_dec(CO_temp); uart_puts_p(PSTR("\n"));
+	#endif
+	uart_puts_p(PSTR("# type cal (in 5 seconds)\n"));
+	uint32_t timeout= 0;
+	uint32_t counts_to_timeout = 1300000;// 1.3m = ~5 sec
+	UCSRB |= (1 << RXEN);
+	UCSRB |= (1 << RXCIE);//uart input enabled//
+	while( !(UCSRA & (1 << RXC)) )// check for nothing in the rx buff 
+	{
+		timeout++;
+		if (timeout>=counts_to_timeout)//and not timed out
+		{break;}
+	}
+	if (timeout<counts_to_timeout)
+	{		
+		if (uart_getc() == 'c')// have to do this to prevent noise from causing cal mode
+		{
+		uart_putc('c');
+		read_line(command, 4);// read up to 3 chars
+		if(strcmp_P(command, PSTR("al")) == 0)// checks if 
+		{
+			uart_puts_p(PSTR("Version: "));uart_putw_dec(VERSION);uart_putc('\n');
+			while(1)//do the menu for inputting stuff
+			{
+				for (uint8_t i=0; i<33; i++)//read user parameters:
+				{
+					offset[i]= eeprom_read_word(&Offset_eemem[i]);//read offsets
+					order[i] = eeprom_read_byte(&order_eemem[i]);//read order
+				}
+				uart_puts_p(PSTR(" 1: Names, 2: Cal vals, 3: offsets"));
+				if(CO2_ok==1){uart_puts_p(PSTR(", 4: CO2 comm\n"));}
+				else{uart_putc('\n');}
+				uart_puts_p(PSTR(" enter number >"));
+				if(read_line(command, 10) < 1)    //input up to x - 1 characters
+           		 continue;	
+				if(strcmp_P(command, PSTR("1")) == 0)
+				{
+					uart_puts_p(PSTR("\nName Entry Menu (15 letters max)\n"));
+					uart_puts_p(PSTR("\nchannel:  name\n"));
+					for (uint8_t i = 0; i<num_inputs; i ++ )//output chans names and 
+					{
+						uart_putw_dec(i); uart_puts_p(PSTR(": "));
+						uint8_t input_to_use = find_next_input(i);//get the input mask number 
+						#ifdef DEBUG
+						uart_puts_p(PSTR(" (input_to_use: "));
+						uart_putw_dec(input_to_use);
+						uart_puts_p(PSTR("  "));
+						#endif
+						eeprom_read_block ((void*)&Names[input_to_use], (const void*)Names_eemem[input_to_use],16);
+						uart_puts(Names[input_to_use]); uart_putc('\n');	
+					}
+					uart_puts_p(PSTR("\n enter channel number to change >"));
+					char input1[4];
+					if((read_line(input1, 4) > 0))	//read one line  up to 3 characters
+					{
+						uint8_t name_number = atoi(input1);
+						uart_puts_p(PSTR("you entered: "));
+						uart_putw_dec(name_number);
+						uart_putc('\n');
+						uart_puts_p(PSTR("enter new name >"));
+						char input2[16];
+						if((read_line(input2, 16) > 0))	//read one line  up to 15 characters
+						{
+							uart_puts_p(PSTR("you entered: "));
+							uart_puts(input2);
+							uart_putc('\n'); 
+							uint8_t input_to_use = find_next_input(name_number);//get the input mask number 
+							eeprom_write_block ((const void*)&input2, (void*)Names_eemem[input_to_use],16);
+						}
+					}	
+				}
+				else if(strcmp_P(command, PSTR("2")) == 0)
+				{
+					uart_puts_p(PSTR("\nCal Val Entry Menu (15 digit max)\n"));
+					uart_puts_p(PSTR("\nchannel:  name, Cal Val\n"));
+//					char Val_over_time[8];//output the value over the time column
+//					eeprom_read_block ((void*)&Val_over_time, (const void*)Val_ovr_time_eemem,8);
+//					uart_puts_p(PSTR("99: time "));
+//					uart_puts(Val_over_time);
+//					uart_putc('\n');
+					for (uint8_t i = 0; i<num_inputs; i ++ )//output chans names and 
+					{
+						uart_putw_dec(i); uart_puts_p(PSTR(": "));
+						uint8_t input_to_use = find_next_input(i);//get the input mask number 
+						eeprom_read_block ((void*)&Names[input_to_use], (const void*)Names_eemem[input_to_use],16);
+						eeprom_read_block ((void*)&CalVals[input_to_use], (const void*)CalVals_eemem[input_to_use],8);
+						uart_puts(Names[input_to_use]); uart_putc(' '); uart_puts(CalVals[input_to_use]); uart_putc('\n');	
+					}
+					if (CO_temp !=0)//output CO_temp only
+					{
+						eeprom_read_block ((void*)&Val_ovr_CO_temp, (const void*)Val_ovr_CO_temp_eemem,8);
+						uart_puts_p(PSTR("88:  CO_temp  ")); 
+						uart_puts(Val_ovr_CO_temp);
+						uart_putc('\n');
+					}
+					uart_puts_p(PSTR("\n enter channel number to change >"));
+					char input1[4];
+					if((read_line(input1, 4) > 0))	//read one line  up to 3 characters
+					{
+						uint8_t name_number = atoi(input1);
+						uart_puts_p(PSTR("you entered: "));
+						uart_putw_dec(name_number);
+						uart_putc('\n');
+						uart_puts_p(PSTR("enter new calval >"));
+						char input2[16];
+						if((read_line(input2, 16) > 0))	//read one line  up to 15 characters
+						{
+							uart_puts_p(PSTR("you entered: "));
+							uart_puts(input2);
+							uart_putc('\n'); 
+//							if (name_number == 99)
+//							{
+//								eeprom_write_block ((const void*)&input2, (void*)Val_ovr_time_eemem,8);
+//							}
+							if (name_number == 88)
+							{
+								eeprom_write_block ((const void*)&input2, (void*)Val_ovr_CO_temp_eemem,8);
+							}
+							else
+							{
+								uint8_t input_to_use = find_next_input(name_number);//get the input mask number 
+								eeprom_write_block ((const void*)&input2, (void*)CalVals_eemem[input_to_use],8);
+							}
+						}
+					}	
+				}
+				else if(strcmp_P(command, PSTR("3")) == 0)//Offset entry
+				{
+					uart_puts_p(PSTR("\nOffset Entry Menu (+/- 65535 max/min)\n"));
+					uart_puts_p(PSTR("\nchannel:  name, Offset\n"));
+					for (uint8_t i = 0; i<num_inputs; i ++ )//output chans names and 
+					{
+						uart_putw_dec(i); uart_puts_p(PSTR(": "));
+						uint8_t input_to_use = find_next_input(i);//get the input mask number 
+						eeprom_read_block ((void*)&Names[input_to_use], (const void*)Names_eemem[input_to_use],16);
+						offset[input_to_use]= eeprom_read_word(&Offset_eemem[input_to_use]);
+						offset_sign[input_to_use]= eeprom_read_byte(&Offset_sign_eemem[input_to_use]);
+						uart_puts(Names[input_to_use]); uart_putc(' ');			//output offset
+						if( offset_sign[input_to_use] == 1){uart_putc('-');}
+						uart_putw_dec(offset[input_to_use]); 
+						uart_putc('\n');	
+					}
+					if( CO_temp != 0)//output prompt list item for CO_temp
+					{
+						Offset_CO_temp= eeprom_read_word(&Offset_CO_temp_eemem);
+						Offset_CO_temp_sign= eeprom_read_byte(&Offset_CO_temp_sign_eemem);
+						uart_putw_dec(88); uart_puts_p(PSTR(": "));
+						uart_puts_p(PSTR("CO_temp "));
+						if( Offset_CO_temp_sign){uart_putc('-');}
+						uart_putw_dec(Offset_CO_temp); 
+						uart_putc('\n');
+					}
+						
+					uart_puts_p(PSTR("\n enter channel number to change >"));
+					char input1[4];
+					if((read_line(input1, 4) > 0))	//read one line  up to 3 characters
+					{
+						uint8_t name_number = atoi(input1);
+						uart_puts_p(PSTR("you entered: "));
+						uart_putw_dec(name_number);
+						uart_putc('\n');
+						uart_puts_p(PSTR("enter new offset >"));
+						char input2[16];
+						if((read_line(input2, 16) > 0))	//read one line  up to 15 characters
+						{
+							uint8_t tempoffset_sign = 0;
+							for (uint8_t i = 0;i<strlen(input2);i++)//see of negative
+							{
+								if (input2[i] == '-')
+								{
+									tempoffset_sign = 1;//set neg flag
+									input2[i] = '0';//blank that spot tried '\0', 0, 1
+								}
+							}
+
+							uint16_t tempoffset = atoi(input2);
+							uart_puts_p(PSTR("you entered: "));
+							if( tempoffset_sign == 1){uart_putc('-');}
+							uart_putw_dec(tempoffset);
+							uart_putc('\n');
+							if (name_number == 88)
+							{
+								eeprom_write_word(&Offset_CO_temp_eemem, tempoffset);
+								eeprom_write_byte(&Offset_CO_temp_sign_eemem, tempoffset_sign);	
+							}
+							else
+							{
+								uint8_t input_to_use = find_next_input(name_number);//get the  mask number 
+								#ifdef DEBUG
+								uart_puts_p(PSTR("input number: "));uart_putw_dec(input_to_use);uart_putc('\n');
+								#endif
+								eeprom_write_word(&Offset_eemem[input_to_use], tempoffset);
+								eeprom_write_byte(&Offset_sign_eemem[input_to_use], tempoffset_sign);
+							}
+						}
+					}	
+				}
+				else if(strcmp_P(command, PSTR("4")) == 0)
+				{
+					co2_cal();
+				}			
+			}
+		}
+	}
+}
+}
+
+uint8_t bitisset(uint32_t number, uint8_t bit)
+{
+	//bit = number & (1 << x);
+	if ( number & (1UL <<bit) )
+	{return 1;}
+	else 
+	{return 0;}
+
+}
+void adc_init(void)
+{
+    ADCSRA |= ( (1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0) );//  sets adc clock prescaler to 128 see page 204
+    //ADMUX =  ( (1<<REFS0)|(1<<REFS1) );// sets ref volts to internal 2.56 see page 214
+	//set at sample time
+    ADCSRA |= (1<<ADIE); // enable ADC conversion complete interrupt
+    ADCSRA |= (1<<ADEN); // enable the ADC
+}
+static void delay(uint16_t us) //.delay used in adc readings
+{
+	volatile uint16_t i; // variable for software dealy
+    for (i=us; i>1; i--)		//software time dealy that may survive -0s optimization.
+			{
+			asm volatile ("nop"::);
+			}
+}
+uint16_t read_adc_onboard(uint8_t channel, uint32_t offset, uint8_t offset_sign)
+{
+	sei();//set enable interrupts
+	uint16_t total = 0;
+	uint8_t os = 1;  //oversamples
+	for(uint8_t i = 0; i<8; i++)//run through channels, see which this one is
+	{
+		if (bitisset(oversam_mask,i))//see if oversampling is on
+			{os=5;}//if oversampling is set then os = 5 else os=1
+	}
+
+	for (uint8_t i = 0;i<os;i++)
+	{
+		delay(5000);     
+		ADMUX = channel;// check channel 
+		ADMUX |= ( (1<<REFS0)|(1<<REFS1));
+		delay(5000);
+		ADCSRA |= (1<<ADSC);
+		delay(10000);     
+		total = total + adcData;
+	}
+	total = total/os;
+	
+	uint32_t adjusted_volts=0;
+	if (offset_sign == 1)//negative offset
+	{
+		if (total >= offset)//negative offset, biggher than positive ADC_volts
+		{
+			adjusted_volts = total - offset;
+			sign = 0;
+			//uart_putc('a');
+		}
+		else if (total < offset)//negative offset, smaller than positive ADC_volts
+		{ 
+			adjusted_volts = offset - total;
+			sign = 1;
+			//uart_putc('b');
+		}
+	}
+	if (offset_sign == 0)//positive offset
+	{
+		adjusted_volts = offset + total;
+		sign = 0;
+		//uart_putc('r');
+	}
+	if (sign == 0)//positive number in range
+	{
+		charspot = put_in_string('+',adjusted_volts,',',charspot);//	
+	}
+	if (sign == 1)//negative number in range
+	{
+		charspot = put_in_string('-',adjusted_volts,',',charspot);//	
+	}
+	return (0);				
+}
+
+void readmask(void)
+{
+	//read input masks, combine into one mask
+	inmask_all=0;
+	num_inputs=0;
+	for(uint8_t i = 4; i>0; i--)
+	{
+		#ifdef DEBUG
+		uart_puts_p(PSTR("input mask "));
+		uart_putdw_dec(i);
+		uart_puts_p(PSTR(": "));
+		uart_putdw_dec(eeprom_read_byte(&inmask_eemem[i-1]));	
+		uart_putc ('\n');
+		#endif
+		inmask_all = inmask_all | eeprom_read_byte(&inmask_eemem[i-1]);
+		if (i!=1)//don't leftshift the last one
+		{inmask_all = inmask_all<<8;}  //leftshift 8
+	}
+//uart_puts_p(PSTR("input mask all "));uart_putdw_dec(inmask_all);	uart_putc ('\n');
+	misc_mask=eeprom_read_byte(&inmask_eemem[6]);//read misc mask
+	if(bitisset(misc_mask,1))//check if internal temperature log is set
+	{
+		num_inputs++;
+	}
+	if((bitisset(misc_mask,2) && (bitisset(inmask_all, 22))))//check if switching co cont temp
+	{CO_temp = 22;}
+	else if((bitisset(misc_mask,3) && (bitisset(inmask_all, 21))))
+	{CO_temp = 21;}
+	else if((bitisset(misc_mask,4) && (bitisset(inmask_all, 19))))
+	{CO_temp = 19;}
+	else if((bitisset(misc_mask,5) && (bitisset(inmask_all, 18))))
+	{CO_temp = 18;}
+	
+	
+	for (uint8_t i = 0; i<32; i++)//look input masks, determine number of inputs
+	{
+		if (bitisset(inmask_all, i))
+		{
+			num_inputs++;
+		}
+	}
+	//read other masks:
+	TCmask = eeprom_read_byte(&inmask_eemem[4]);
+	oversam_mask = eeprom_read_byte(&inmask_eemem[5]);
+	#ifdef DEBUG
+	uart_putc ('\n');
+	uart_puts_p(PSTR("input mask all: "));
+	uart_putdw_dec(inmask_all);
+	uart_putc ('\n');
+	uart_puts_p(PSTR("number of active inputs: "));
+	uart_putw_dec(num_inputs);
+	uart_putc ('\n');
+	uart_puts_p(PSTR("TC mask: "));
+	uart_putw_dec(TCmask);
+	uart_putc ('\n');
+	uart_puts_p(PSTR("10 bit O.S. mask "));
+	uart_putw_dec(oversam_mask);
+	uart_putc ('\n');
+	uart_puts_p(PSTR("misc mask "));
+	uart_putw_dec(misc_mask);
+	uart_putc ('\n');
+	#endif
+}
+
+uint8_t find_next_input(uint8_t next_one)//send it the order number you're looking for, and it will send back the i for inputmask_all 
+{
+	for (uint8_t i = 0; i<32; i++ )//check of active, output order
+	{
+		if (  (bitisset(inmask_all,i)) && ( order[i]== (next_one))   )//active and is the next
+		{return(i);}
+	}
+	#ifdef DEBUG2
+	if ( bitisset(misc_mask,1))
+	{
+		uart_puts_p(PSTR(" found chiptemp  in miscmask. next one = "));
+		uart_putw_dec(next_one);
+		uart_puts_p(PSTR("\norder32 = "));
+		uart_putw_dec(order[32]);
+	}
+	if (  order[32]== (next_one))
+	{uart_puts_p(PSTR(" order of chiptemp is right "));}
+	#endif
+	
+	if (  (bitisset(misc_mask,1)) && ( order[32]== (next_one))   )//chip temp returns 32 
+		{return(32);}
+			
+	return(0);
+}
+
+void output_masks(void)
+{
+	//channel,active,order
+	uart_puts_p(PSTR(" channel,active,order,offset \n"));
+	for (uint8_t i = 0; i<32 ;i++)
+	{
+		uart_putw_dec(i); uart_puts_p(PSTR(" ,"));
+		if (bitisset(inmask_all,i)) {uart_putc('1'); uart_puts_p(PSTR(" ,"));}
+		else {uart_putc('0'); uart_puts_p(PSTR(" ,"));}
+		uart_putw_dec(order[i]);uart_puts_p(PSTR(" ,"));
+		uart_putw_dec(offset[i]);uart_puts_p(PSTR("\n"));
+	}
+	uart_putw_dec(32); uart_puts_p(PSTR(" ,"));//for chip temp channel
+	if (bitisset(misc_mask,1)) {uart_putc('1'); uart_puts_p(PSTR(" ,"));}
+	else {uart_putc('0'); uart_puts_p(PSTR(" ,"));}
+	uart_putw_dec(order[32]);uart_puts_p(PSTR(" ,"));
+	uart_putw_dec(offset[32]);uart_puts_p(PSTR("\n"));
+	
+}
+uint16_t get_CO2(void)//>>CO2<<////////
+{
+	char buffersoft[17] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+	char data[6] = "\0\0\0\0\0\0";
+	uint16_t c_o_ppm = 0;
+	while(TCNT1<40);//wait for enough time to not mess with comms when timer ISR hits
+	suart_puts("K 2\r\n"); //set C02 sensor to polling mode
+	#ifdef DEBUG
+	uart_puts_p(PSTR("in poll mode  "));
+	#endif
+	_delay_ms(100);
+	suart_puts("Z\r\n");
+	#ifdef DEBUG
+	uart_puts_p(PSTR("z sent    "));
+	#endif	
+	get_line (buffersoft, 17);
+	#ifdef DEBUG
+	uart_puts_p(PSTR("softbuffer  "));uart_puts(buffersoft);uart_putc(' ');
+	#endif
+	for(uint8_t i = 0; i<5; i++)//parse just the first number
+	{
+		data[i] = buffersoft[i+3];
+	}
+	c_o_ppm=strtoul(data, NULL,10);
+	if (c_o_ppm == 0)// try again if missread
+	{
+		suart_puts("K 2\r\n"); //set C02 sensor to polling mode
+		_delay_ms(1);
+		suart_puts("Z\r\n");	
+		get_line (buffersoft, 17);
+		for(uint8_t i = 0; i<5; i++)//parse just the first number
+		{
+			data[i] = buffersoft[i+3];
+		}
+		c_o_ppm=strtoul(data, NULL,10);
+	}
+	return c_o_ppm;
+}
+
+void get_line (char *buff, uint8_t len)//get line from soft uart
+{
+	uint8_t c, i;
+
+	i = 0;
+	for (;;) {
+		c = rcvr();
+		if (c == '\r') break;
+		if (c == '\n') break;
+		if ((c == '\b') && i) i--;
+		if ((c >= ' ') && (i < len - 1))
+				buff[i++] = c;
+	}
+	buff[i] = 0;
+//	xmit('\n');
+}
+
+void suart_puts(const char* str)
+{
+
+    while(*str)
+        {xmit(*str++);}
+}
+
+void co2_cal(void)//com with co2
+{
+	while(1)
+	{
+		suart_puts("K 2\r\n"); //set C02 sensor to polling mode	
+		_delay_ms(100);	
+		char buffersoft[17];
+	//read a command
+		uart_puts_p(PSTR("enter command (? for help) > "));
+		strcpy(buffersoft, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");//clear buffer
+		if(read_line(buffersoft, 10) < 1)    //input up to x - 1 characters
+		continue;
+		if(strcmp_P(buffersoft, PSTR("K 1")) == 0)
+		{
+			uart_puts_p(PSTR("streaming mode not available\n"));
+			continue;
+		}
+		if(strcmp_P(buffersoft, PSTR("?")) == 0)
+		{
+			uart_puts_p(PSTR("commands:\n A ###\n a\n F #### ####\n G\n H\n K x\n L\n M ####\n P ### ###\n p\n Q\n S ####\n s\n T\n U\n u ####\n X ####\n Y\n Z\n *\n"));
+			
+			//uart_puts_p(PSTR("HELP!\n"));
+			continue;
+		}
+	//pass it on to co2
+		suart_puts(buffersoft); //send command to CO2
+		suart_puts("\r\n"); //send \r\n to CO2
+		strcpy(buffersoft, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");//clear buffer
+	//read co2
+		get_line(buffersoft, 17);//receive response from CO2
+	//pass it on to uart
+		uart_puts_p(PSTR("CO2 says: "));uart_puts(buffersoft);uart_putc('\n');
+	}
+	/* 	
+	#ifdef DEBUG
+	uart_puts_p(PSTR("in poll mode  "));
+	#endif
+		
+	#ifdef DEBUG
+	uart_puts_p(PSTR("z sent    "));
+	#endif	
+		
+	#ifdef DEBUG
+	uart_puts_p(PSTR("softbuffer  "));uart_puts(buffersoft);uart_putc(' ');
+	#endif
+	*/
+}
+
+
+
+void test_peripherals(void)
+{
+	//CO_ok =0;
+	//humid_ok =0;
+	//ADC_ok = 0;
+	//CO2_ok =0;
+	//use 1 as OK, 0 as disabled, 2 as being tested
+\
+	uart_puts_p(PSTR("#testing: humid "));
+	humid_ok = 2;//set flag for testing humid
+	//start timer0:
+	TIMSK |= (1<<TOIE0);        //set  Overflow Interrupt Enable
+	TCNT0 = 0x00;				// set the timer to 0
+	TCCR0 |= ((1<<CS00)|(1<<CS02)); //  prescale the timer to be clock source to /1024 prescale  @ 4.19mhz fills 16x second
+	sei();
+	 if ( ! setjmp(buf3) ) //bad way of getting out of the I2C test 
+    {
+		i2c_start_wait(0x80+I2C_WRITE);     // set rh address and write mode
+		i2c_stop(); //
+	}
+	if (humid_ok ==2)
+	{
+		TCCR0 = 0;//stop timer
+		humid_ok = 1;//enable it
+	}
+
+	uart_puts_p(PSTR("   CO "));
+	CO_ok = 2;//set flag for testing CO
+	//start timer0
+	TCNT0 = 0x00;				// set the timer to 0
+	TCCR0 |= ((1<<CS00)|(1<<CS02)); //  prescale the timer to be clock source to /1024 prescale  @ 4.19mhz fills 16x second
+	if ( ! setjmp(buf2) ) //bad way of getting out of the I2C test 
+    {
+	i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode (CO)
+	i2c_stop(); //
+	}
+	if (CO_ok ==2)
+	{
+		TCCR0 = 0;//stop timer
+		CO_ok = 1;//enable it
+	}
+/*
+	uart_puts_p(PSTR("  ADC "));
+	ADC_ok = 2;//set flag for testing ADC
+	//start timer0:
+
+	TCNT0 = 0x00;				// set the timer to 0
+	TCCR0 |= ((1<<CS00)|(1<<CS02)); //  prescale the timer to be clock source to /1024 prescale  @ 4.19mhz fills 16x second
+	if ( ! setjmp(buf4) ) //bad way of getting out of the I2C test 
+    {
+		i2c_start_wait(0x28+I2C_WRITE);     // set device address and write mode			
+		i2c_stop();
+	}
+	if (ADC_ok ==2)
+	{
+		TCCR0 = 0;//stop timer
+		ADC_ok = 1;//enable it 
+		_delay_ms(100);
+	}
+*/	
+	uart_puts_p(PSTR("   CO2"));
+	char buffersoft[17] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+	suart_puts("K 2\r\n"); //set C02 sensor to polling mode
+	_delay_ms(100);
+	CO2_ok = 2;//set flag for testing CO2
+	//start timer0:
+	TCNT0 = 0x00;				// set the timer to 0
+	TCCR0 |= ((1<<CS00)|(1<<CS02)); //  prescale the timer to be clock source to /1024 prescale  @ 4.19mhz fills 16x second
+	sei();
+    if ( ! setjmp(buf1) ) //bad way of getting out of the suart read
+    {
+		//while(TCNT1<40);//wait for enough time to not mess with comms when timer ISR hits
+		suart_puts("Z\r\n"); //set C02 sensor to polling mode		
+		get_line (buffersoft, 17); //should equal "K 00001\r\n"
+	}
+	if (CO2_ok ==2)
+	{
+		TCCR0 = 0;//stop timer
+		CO2_ok = 1;//enable it
+		uart_putc('\n');
+	}
+	uart_puts_p(PSTR("#          "));
+	uart_putw_dec(humid_ok); uart_puts_p(PSTR("       "));//output results
+	uart_putw_dec(CO_ok); uart_puts_p(PSTR("     "));
+	uart_putw_dec(CO2_ok); uart_putc('\n');
+
+}
+
+struct hum_dat ReadSHT25(void)
+{
+	struct hum_dat data;
+
+		i2c_start_wait(0x80+I2C_WRITE);     // set device address and write mode
+		i2c_write(0xE5);	//get rh
+		_delay_ms(45);//delay for getting RH 12 bit
+		i2c_start_wait(0x80+I2C_READ);   // set device address and read mode
+		uint8_t ret1 = i2c_readAck();// data MSB
+		uint8_t ret2 = i2c_readAck();// data LSB
+		uint8_t ret3 = i2c_readAck();// checksum
+		data.SHT_rh = ((ret1<<8) +ret2);
+		i2c_stop(); // 
+		
+	
+		ret1=ret2=ret3=0;
+		i2c_start_wait(0x80+I2C_WRITE);     // set device address and write mode			
+		i2c_write(0xE3);	// get temperature
+		_delay_ms(95);//delay for getting T 14 bit
+		i2c_start_wait(0x80+I2C_READ);   // set device address and read mode
+		 ret1 = i2c_readAck();// data MSB
+		 ret2 = i2c_readAck();// data LSB
+		 ret3 = i2c_readAck();// checksum
+		data.SHT_temp = ((ret1<<8) +ret2);
+		i2c_stop(); //
+
+
+		return data;
+		 
+}
+void Init_CO(void)
+{
+		//reading the CO chip registers:
+//		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+//		i2c_write(0x00);	//tell it what register is being read or written: 0x00(status), 0x01(lock), 0x10, 0x11, or  0x12 (See page 14 of pdf)
+//		i2c_start_wait(0x90+I2C_READ);     // set device address and read mode
+//		uint8_t ret1 = i2c_readAck();// data 
+//		i2c_stop(); //
+		
+		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+		i2c_write(0x01);	//pointer to lock register, needs to be unlocked to write any other registers
+		i2c_write(0x00); //write "unlock" 0x00
+		i2c_stop(); //
+		
+		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+		i2c_write(0x10);	//pointer to TIACN register
+		i2c_write(0x13); //write  (See page 14 of pdf)
+		i2c_stop(); //
+		
+		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+		i2c_write(0x11);	//pointer to REFCN register
+		i2c_write(0x00); //write (See page 14 of pdf)
+		i2c_stop(); //
+		
+				i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+		i2c_write(0x12);	//pointer to MODECN register
+		i2c_write(0x03); //write (See page 14 of pdf)
+		i2c_stop(); //
+		 
+}
+
+void CO_to_temp(uint8_t yes)// switch controller to oytput temp.
+{
+	if (yes==1)//change to temperature
+	{
+		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+		i2c_write(0x12);	//pointer to MODECN register
+		i2c_write(0x07); //write (See page 14 of pdf)
+		i2c_stop(); //
+	}
+	else//change to potenstat
+	{
+		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+		i2c_write(0x12);	//pointer to MODECN register
+		i2c_write(0x03); //write (See page 14 of pdf)
+		i2c_stop(); //
+	}	 
+}

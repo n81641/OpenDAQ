@@ -1,0 +1,447 @@
+GAS LISTING /tmp/ccmaiUSz.s 			page 1
+
+
+   1               		.file	"non_vol.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_Fumitron_318/",100,0,2,.Ltext0
+   9               		.stabs	"non_vol.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"non_vol.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/pgmspace.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  31               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  32               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  33               		.stabs	"int8_t:t(5,1)=(0,10)",128,0,121,0
+  34               		.stabs	"uint8_t:t(5,2)=(0,11)",128,0,122,0
+  35               		.stabs	"int16_t:t(5,3)=(0,1)",128,0,123,0
+  36               		.stabs	"uint16_t:t(5,4)=(0,4)",128,0,124,0
+  37               		.stabs	"int32_t:t(5,5)=(0,3)",128,0,125,0
+  38               		.stabs	"uint32_t:t(5,6)=(0,5)",128,0,126,0
+  39               		.stabs	"int64_t:t(5,7)=(0,6)",128,0,128,0
+  40               		.stabs	"uint64_t:t(5,8)=(0,7)",128,0,129,0
+  41               		.stabs	"intptr_t:t(5,9)=(5,3)",128,0,142,0
+  42               		.stabs	"uintptr_t:t(5,10)=(5,4)",128,0,147,0
+  43               		.stabs	"int_least8_t:t(5,11)=(5,1)",128,0,159,0
+  44               		.stabs	"uint_least8_t:t(5,12)=(5,2)",128,0,164,0
+  45               		.stabs	"int_least16_t:t(5,13)=(5,3)",128,0,169,0
+  46               		.stabs	"uint_least16_t:t(5,14)=(5,4)",128,0,174,0
+  47               		.stabs	"int_least32_t:t(5,15)=(5,5)",128,0,179,0
+  48               		.stabs	"uint_least32_t:t(5,16)=(5,6)",128,0,184,0
+  49               		.stabs	"int_least64_t:t(5,17)=(5,7)",128,0,192,0
+  50               		.stabs	"uint_least64_t:t(5,18)=(5,8)",128,0,199,0
+  51               		.stabs	"int_fast8_t:t(5,19)=(5,1)",128,0,213,0
+  52               		.stabs	"uint_fast8_t:t(5,20)=(5,2)",128,0,218,0
+  53               		.stabs	"int_fast16_t:t(5,21)=(5,3)",128,0,223,0
+  54               		.stabs	"uint_fast16_t:t(5,22)=(5,4)",128,0,228,0
+  55               		.stabs	"int_fast32_t:t(5,23)=(5,5)",128,0,233,0
+  56               		.stabs	"uint_fast32_t:t(5,24)=(5,6)",128,0,238,0
+  57               		.stabs	"int_fast64_t:t(5,25)=(5,7)",128,0,246,0
+GAS LISTING /tmp/ccmaiUSz.s 			page 2
+
+
+  58               		.stabs	"uint_fast64_t:t(5,26)=(5,8)",128,0,253,0
+  59               		.stabs	"intmax_t:t(5,27)=(5,7)",128,0,273,0
+  60               		.stabs	"uintmax_t:t(5,28)=(5,8)",128,0,278,0
+  61               		.stabn	162,0,0,0
+  62               		.stabn	162,0,0,0
+  63               		.stabs	"int_farptr_t:t(3,1)=(5,5)",128,0,77,0
+  64               		.stabs	"uint_farptr_t:t(3,2)=(5,6)",128,0,81,0
+  65               		.stabn	162,0,0,0
+  66               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  67               		.stabs	"size_t:t(6,1)=(0,4)",128,0,211,0
+  68               		.stabn	162,0,0,0
+  69               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  70               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  71               		.stabs	"__fuse_t:t(8,1)=(8,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  72               		.stabn	162,0,0,0
+  73               		.stabn	162,0,0,0
+  74               		.stabs	"prog_void:t(2,1)=(2,2)=(2,2)",128,0,217,0
+  75               		.stabs	"prog_char:t(2,3)=(2,4)=@s8;r(2,4);0;255;",128,0,218,0
+  76               		.stabs	"prog_uchar:t(2,5)=(2,6)=@s8;r(2,6);0;255;",128,0,219,0
+  77               		.stabs	"prog_int8_t:t(2,7)=(2,8)=(0,10)",128,0,221,0
+  78               		.stabs	"prog_uint8_t:t(2,9)=(2,10)=(0,11)",128,0,222,0
+  79               		.stabs	"prog_int16_t:t(2,11)=(2,12)=(0,1)",128,0,223,0
+  80               		.stabs	"prog_uint16_t:t(2,13)=(2,14)=(0,4)",128,0,224,0
+  81               		.stabs	"prog_int32_t:t(2,15)=(2,16)=(0,3)",128,0,225,0
+  82               		.stabs	"prog_uint32_t:t(2,17)=(2,18)=(0,5)",128,0,226,0
+  83               		.stabs	"prog_int64_t:t(2,19)=(2,20)=(0,6)",128,0,228,0
+  84               		.stabs	"prog_uint64_t:t(2,21)=(2,22)=(0,7)",128,0,229,0
+  85               		.stabn	162,0,0,0
+  86               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/eeprom.h",130,0,0,0
+  87               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  88               		.stabs	"ptrdiff_t:t(10,1)=(0,1)",128,0,149,0
+  89               		.stabs	"wchar_t:t(10,2)=(0,1)",128,0,323,0
+  90               		.stabn	162,0,0,0
+  91               		.stabn	162,0,0,0
+  92               		.stabs	"inputs.h",130,0,0,0
+  93               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  94               		.stabs	"div_t:t(12,1)=(12,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+  95               		.stabs	"ldiv_t:t(12,3)=(12,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+  96               		.stabs	"__compar_fn_t:t(12,5)=(12,6)=*(12,7)=f(0,1)",128,0,80,0
+  97               		.stabn	162,0,0,0
+  98               		.stabs	"SHT25.h",130,0,0,0
+  99               		.stabs	"hum_dat:T(13,1)=s4SHT_temp:(5,4),0,16;SHT_rh:(5,4),16,16;;",128,0,0,0
+ 100               		.stabn	162,0,0,0
+ 101               		.stabs	"i2c_rtc.h",130,0,0,0
+ 102               		.stabs	"RTC:t(14,1)=(14,2)=s8year:(5,4),0,16;month:(5,2),16,8;mday:(5,2),24,8;wday:(5,2),32,8;hour
+ 103               		.stabn	162,0,0,0
+ 104               		.stabs	"sample_data:T(11,1)=s760name:(11,2)=ar(11,3)=r(11,3);0;0177777;;0;19;(11,4)=ar(11,3);0;7;(
+ 105               		.stabn	162,0,0,0
+ 106               		.stabn	162,0,0,0
+ 107               		.stabs	"read_write_stored:F(0,15)",36,0,32,read_write_stored
+ 108               		.stabs	"input_function:P(5,2)",64,0,32,24
+ 109               		.stabs	"data:P(0,16)=*(11,1)",64,0,32,28
+ 110               		.stabs	"channel:P(5,2)",64,0,32,17
+ 111               	.global	read_write_stored
+ 112               		.type	read_write_stored, @function
+ 113               	read_write_stored:
+ 114               		.stabd	46,0,0
+GAS LISTING /tmp/ccmaiUSz.s 			page 3
+
+
+   1:non_vol.c     **** /// \file non_vol.c
+   2:non_vol.c     **** /// \brief Stores and retreives Cal vals, names and offsets in EEMEM
+   3:non_vol.c     **** /// \details Stores and retreives Cal vals, names and offsets in EEMEM
+   4:non_vol.c     **** /// \author University of Illinois Department and Environmental and Civil Engineering
+   5:non_vol.c     **** /// \copyright Copyright (c) 2014 University of Illinois Department and Environmental and Civil Eng
+   6:non_vol.c     **** ///This software is distributed under the MIT License. 
+   7:non_vol.c     **** ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software an
+   8:non_vol.c     **** ///associated documentation files (the "Software"), to deal in the Software without restriction, 
+   9:non_vol.c     **** ///including without limitation the rights to use, copy, modify, merge, publish, distribute, sublic
+  10:non_vol.c     **** ///and/or sell copies of the Software, and to permit persons to whom the Software is furnished to d
+  11:non_vol.c     **** ///subject to the following conditions:
+  12:non_vol.c     **** ///
+  13:non_vol.c     **** ///\copyright The above copyright notice and this permission notice shall be included in all copies
+  14:non_vol.c     **** ///portions of the Software.
+  15:non_vol.c     **** ///The software is provided "as is", without warranty of any kind expressed or implied, 
+  16:non_vol.c     **** ///including but not limited to the warranties of merchantability, fitness for a particular 
+  17:non_vol.c     **** ///purpose and noninfringement.  In no event shall the authors or copyright holders be liable 
+  18:non_vol.c     **** ///for any claim, damages or other liability whether in an action of contract, tort or 
+  19:non_vol.c     **** ///otherwise, arising from, out of or in connection with the software or the use or other 
+  20:non_vol.c     **** ///dealings in the software.
+  21:non_vol.c     **** ///
+  22:non_vol.c     **** #include "non_vol.h"
+  23:non_vol.c     **** #include "inputs.h"  //so we have the structure
+  24:non_vol.c     **** #include "uart.h"
+  25:non_vol.c     **** 
+  26:non_vol.c     **** char EEMEM Names_eemem [INPUTS_MAX][NAME_MAX];// name spots in the EEMEM
+  27:non_vol.c     **** char EEMEM CalVals_eemem [INPUTS_MAX][NAME_MAX];// cal value spots in the EEMEM
+  28:non_vol.c     **** char EEMEM Offset_eemem [INPUTS_MAX][NAME_MAX];
+  29:non_vol.c     **** uint8_t EEMEM header_id = 0;
+  30:non_vol.c     **** 
+  31:non_vol.c     **** 
+  32:non_vol.c     **** void read_write_stored(uint8_t input_function, struct sample_data *data, uint8_t channel)
+  33:non_vol.c     **** {
+ 115               		.stabn	68,0,33,.LM0-.LFBB1
+ 116               	.LM0:
+ 117               	.LFBB1:
+ 118 0000 1F93      		push r17
+ 119 0002 CF93      		push r28
+ 120 0004 DF93      		push r29
+ 121               	/* prologue: function */
+ 122               	/* frame size = 0 */
+ 123               	/* stack size = 3 */
+ 124               	.L__stack_usage = 3
+ 125 0006 EB01      		movw r28,r22
+ 126 0008 142F      		mov r17,r20
+  34:non_vol.c     **** 
+  35:non_vol.c     ****     switch(input_function)
+ 127               		.stabn	68,0,35,.LM1-.LFBB1
+ 128               	.LM1:
+ 129 000a 8530      		cpi r24,lo8(5)
+ 130 000c 01F4      		brne .+2
+ 131 000e 00C0      		rjmp .L6
+ 132 0010 8630      		cpi r24,lo8(6)
+ 133 0012 00F4      		brsh .L11
+ 134 0014 8330      		cpi r24,lo8(3)
+ 135 0016 01F0      		breq .L4
+ 136 0018 8430      		cpi r24,lo8(4)
+GAS LISTING /tmp/ccmaiUSz.s 			page 4
+
+
+ 137 001a 00F4      		brsh .L5
+ 138 001c 8230      		cpi r24,lo8(2)
+ 139 001e 01F0      		breq .+2
+ 140 0020 00C0      		rjmp .L1
+ 141 0022 00C0      		rjmp .L12
+ 142               	.L11:
+ 143 0024 8730      		cpi r24,lo8(7)
+ 144 0026 01F4      		brne .+2
+ 145 0028 00C0      		rjmp .L8
+ 146 002a 8730      		cpi r24,lo8(7)
+ 147 002c 00F4      		brsh .+2
+ 148 002e 00C0      		rjmp .L7
+ 149 0030 8830      		cpi r24,lo8(8)
+ 150 0032 01F4      		brne .+2
+ 151 0034 00C0      		rjmp .L9
+ 152 0036 8930      		cpi r24,lo8(9)
+ 153 0038 01F0      		breq .+2
+ 154 003a 00C0      		rjmp .L1
+ 155 003c 00C0      		rjmp .L10
+ 156               	.L12:
+  36:non_vol.c     ****     {
+  37:non_vol.c     ****         case READ_NAME      ://reads from eemem
+  38:non_vol.c     ****             eeprom_read_block ((void*)data->name[channel], (const void*)Names_eemem[channel],NAME_M
+ 157               		.stabn	68,0,38,.LM2-.LFBB1
+ 158               	.LM2:
+ 159 003e 842F      		mov r24,r20
+ 160 0040 90E0      		ldi r25,lo8(0)
+ 161 0042 73E0      		ldi r23,3
+ 162 0044 880F      	1:	lsl r24
+ 163 0046 991F      		rol r25
+ 164 0048 7A95      		dec r23
+ 165 004a 01F4      		brne 1b
+ 166 004c BC01      		movw r22,r24
+ 167 004e 6050      		subi r22,lo8(-(Names_eemem))
+ 168 0050 7040      		sbci r23,hi8(-(Names_eemem))
+ 169 0052 8C0F      		add r24,r28
+ 170 0054 9D1F      		adc r25,r29
+ 171 0056 48E0      		ldi r20,lo8(8)
+ 172 0058 50E0      		ldi r21,hi8(8)
+ 173 005a 0E94 0000 		call __eerd_block_m32
+ 174               	.L4:
+  39:non_vol.c     ****         case WRITE_NAME     ://writes to eemem 
+  40:non_vol.c     ****             eeprom_write_block ((const void*)data->name[channel], (void*)Names_eemem[channel],NAME_
+ 175               		.stabn	68,0,40,.LM3-.LFBB1
+ 176               	.LM3:
+ 177 005e 812F      		mov r24,r17
+ 178 0060 90E0      		ldi r25,lo8(0)
+ 179 0062 63E0      		ldi r22,3
+ 180 0064 880F      	1:	lsl r24
+ 181 0066 991F      		rol r25
+ 182 0068 6A95      		dec r22
+ 183 006a 01F4      		brne 1b
+ 184 006c BC01      		movw r22,r24
+ 185 006e 6050      		subi r22,lo8(-(Names_eemem))
+ 186 0070 7040      		sbci r23,hi8(-(Names_eemem))
+ 187 0072 8C0F      		add r24,r28
+ 188 0074 9D1F      		adc r25,r29
+GAS LISTING /tmp/ccmaiUSz.s 			page 5
+
+
+ 189 0076 48E0      		ldi r20,lo8(8)
+ 190 0078 50E0      		ldi r21,hi8(8)
+ 191 007a 0E94 0000 		call __eewr_block_m32
+ 192               	.L5:
+  41:non_vol.c     ****         case READ_CALVAL    ://reads from eemem
+  42:non_vol.c     ****             eeprom_read_block ((void*)data->calval[channel], (const void*)CalVals_eemem[channel],NA
+ 193               		.stabn	68,0,42,.LM4-.LFBB1
+ 194               	.LM4:
+ 195 007e 812F      		mov r24,r17
+ 196 0080 90E0      		ldi r25,lo8(0)
+ 197 0082 53E0      		ldi r21,3
+ 198 0084 880F      	1:	lsl r24
+ 199 0086 991F      		rol r25
+ 200 0088 5A95      		dec r21
+ 201 008a 01F4      		brne 1b
+ 202 008c 9E01      		movw r18,r28
+ 203 008e 2056      		subi r18,lo8(-(160))
+ 204 0090 3F4F      		sbci r19,hi8(-(160))
+ 205 0092 BC01      		movw r22,r24
+ 206 0094 6050      		subi r22,lo8(-(CalVals_eemem))
+ 207 0096 7040      		sbci r23,hi8(-(CalVals_eemem))
+ 208 0098 820F      		add r24,r18
+ 209 009a 931F      		adc r25,r19
+ 210 009c 48E0      		ldi r20,lo8(8)
+ 211 009e 50E0      		ldi r21,hi8(8)
+ 212 00a0 0E94 0000 		call __eerd_block_m32
+ 213               	.L6:
+  43:non_vol.c     ****         case WRITE_CALVAL   ://writes to eemem
+  44:non_vol.c     ****             eeprom_write_block ((const void*)data->calval[channel], (void*)CalVals_eemem[channel],N
+ 214               		.stabn	68,0,44,.LM5-.LFBB1
+ 215               	.LM5:
+ 216 00a4 812F      		mov r24,r17
+ 217 00a6 90E0      		ldi r25,lo8(0)
+ 218 00a8 43E0      		ldi r20,3
+ 219 00aa 880F      	1:	lsl r24
+ 220 00ac 991F      		rol r25
+ 221 00ae 4A95      		dec r20
+ 222 00b0 01F4      		brne 1b
+ 223 00b2 9E01      		movw r18,r28
+ 224 00b4 2056      		subi r18,lo8(-(160))
+ 225 00b6 3F4F      		sbci r19,hi8(-(160))
+ 226 00b8 BC01      		movw r22,r24
+ 227 00ba 6050      		subi r22,lo8(-(CalVals_eemem))
+ 228 00bc 7040      		sbci r23,hi8(-(CalVals_eemem))
+ 229 00be 820F      		add r24,r18
+ 230 00c0 931F      		adc r25,r19
+ 231 00c2 48E0      		ldi r20,lo8(8)
+ 232 00c4 50E0      		ldi r21,hi8(8)
+ 233 00c6 0E94 0000 		call __eewr_block_m32
+ 234               	.L7:
+  45:non_vol.c     ****         case READ_OFFSET    ://reads from eemem
+  46:non_vol.c     ****             eeprom_read_block ((void*)data->offset[channel], (const void*)Offset_eemem[channel],NAM
+ 235               		.stabn	68,0,46,.LM6-.LFBB1
+ 236               	.LM6:
+ 237 00ca 812F      		mov r24,r17
+ 238 00cc 90E0      		ldi r25,lo8(0)
+ 239 00ce 33E0      		ldi r19,3
+GAS LISTING /tmp/ccmaiUSz.s 			page 6
+
+
+ 240 00d0 880F      	1:	lsl r24
+ 241 00d2 991F      		rol r25
+ 242 00d4 3A95      		dec r19
+ 243 00d6 01F4      		brne 1b
+ 244 00d8 9E01      		movw r18,r28
+ 245 00da 205C      		subi r18,lo8(-(320))
+ 246 00dc 3E4F      		sbci r19,hi8(-(320))
+ 247 00de BC01      		movw r22,r24
+ 248 00e0 6050      		subi r22,lo8(-(Offset_eemem))
+ 249 00e2 7040      		sbci r23,hi8(-(Offset_eemem))
+ 250 00e4 820F      		add r24,r18
+ 251 00e6 931F      		adc r25,r19
+ 252 00e8 48E0      		ldi r20,lo8(8)
+ 253 00ea 50E0      		ldi r21,hi8(8)
+ 254 00ec 0E94 0000 		call __eerd_block_m32
+ 255               	.L8:
+  47:non_vol.c     ****         case WRITE_OFFSET   ://writes to eemem
+  48:non_vol.c     ****             eeprom_write_block ((const void*)data->offset[channel], (void*)Offset_eemem[channel],NA
+ 256               		.stabn	68,0,48,.LM7-.LFBB1
+ 257               	.LM7:
+ 258 00f0 812F      		mov r24,r17
+ 259 00f2 90E0      		ldi r25,lo8(0)
+ 260 00f4 23E0      		ldi r18,3
+ 261 00f6 880F      	1:	lsl r24
+ 262 00f8 991F      		rol r25
+ 263 00fa 2A95      		dec r18
+ 264 00fc 01F4      		brne 1b
+ 265 00fe 9E01      		movw r18,r28
+ 266 0100 205C      		subi r18,lo8(-(320))
+ 267 0102 3E4F      		sbci r19,hi8(-(320))
+ 268 0104 BC01      		movw r22,r24
+ 269 0106 6050      		subi r22,lo8(-(Offset_eemem))
+ 270 0108 7040      		sbci r23,hi8(-(Offset_eemem))
+ 271 010a 820F      		add r24,r18
+ 272 010c 931F      		adc r25,r19
+ 273 010e 48E0      		ldi r20,lo8(8)
+ 274 0110 50E0      		ldi r21,hi8(8)
+ 275 0112 0E94 0000 		call __eewr_block_m32
+ 276               	.L9:
+  49:non_vol.c     ****         case READ_HDR_ID   :
+  50:non_vol.c     ****             data->header_id_val = eeprom_read_byte(&header_id);
+ 277               		.stabn	68,0,50,.LM8-.LFBB1
+ 278               	.LM8:
+ 279 0116 80E0      		ldi r24,lo8(header_id)
+ 280 0118 90E0      		ldi r25,hi8(header_id)
+ 281 011a 0E94 0000 		call __eerd_byte_m32
+ 282 011e FE01      		movw r30,r28
+ 283 0120 E950      		subi r30,lo8(-(759))
+ 284 0122 FD4F      		sbci r31,hi8(-(759))
+ 285 0124 8083      		st Z,r24
+ 286               	.L10:
+  51:non_vol.c     ****         case WRITE_HDR_ID  :
+  52:non_vol.c     ****             eeprom_write_byte (&header_id, data->header_id_val);
+ 287               		.stabn	68,0,52,.LM9-.LFBB1
+ 288               	.LM9:
+ 289 0126 C950      		subi r28,lo8(-(759))
+ 290 0128 DD4F      		sbci r29,hi8(-(759))
+GAS LISTING /tmp/ccmaiUSz.s 			page 7
+
+
+ 291 012a 80E0      		ldi r24,lo8(header_id)
+ 292 012c 90E0      		ldi r25,hi8(header_id)
+ 293 012e 6881      		ld r22,Y
+ 294 0130 0E94 0000 		call __eewr_byte_m32
+ 295               	.L1:
+ 296               	/* epilogue start */
+  53:non_vol.c     ****     }
+  54:non_vol.c     ****  
+  55:non_vol.c     **** }
+ 297               		.stabn	68,0,55,.LM10-.LFBB1
+ 298               	.LM10:
+ 299 0134 DF91      		pop r29
+ 300 0136 CF91      		pop r28
+ 301 0138 1F91      		pop r17
+ 302 013a 0895      		ret
+ 303               		.size	read_write_stored, .-read_write_stored
+ 304               	.Lscope1:
+ 305               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 306               		.stabd	78,0,0
+ 307               	.global	header_id
+ 308               		.section	.eeprom,"aw",@progbits
+ 309               		.type	header_id, @object
+ 310               		.size	header_id, 1
+ 311               	header_id:
+ 312 0000 00        		.skip 1,0
+ 313               	.global	Names_eemem
+ 314               		.type	Names_eemem, @object
+ 315               		.size	Names_eemem, 160
+ 316               	Names_eemem:
+ 317 0001 0000 0000 		.skip 160,0
+ 317      0000 0000 
+ 317      0000 0000 
+ 317      0000 0000 
+ 317      0000 0000 
+ 318               	.global	CalVals_eemem
+ 319               		.type	CalVals_eemem, @object
+ 320               		.size	CalVals_eemem, 160
+ 321               	CalVals_eemem:
+ 322 00a1 0000 0000 		.skip 160,0
+ 322      0000 0000 
+ 322      0000 0000 
+ 322      0000 0000 
+ 322      0000 0000 
+ 323               	.global	Offset_eemem
+ 324               		.type	Offset_eemem, @object
+ 325               		.size	Offset_eemem, 160
+ 326               	Offset_eemem:
+ 327 0141 0000 0000 		.skip 160,0
+ 327      0000 0000 
+ 327      0000 0000 
+ 327      0000 0000 
+ 327      0000 0000 
+ 328               		.stabs	"Names_eemem:G(11,2)",32,0,26,0
+ 329               		.stabs	"CalVals_eemem:G(11,2)",32,0,27,0
+ 330               		.stabs	"Offset_eemem:G(11,2)",32,0,28,0
+ 331               		.stabs	"header_id:G(5,2)",32,0,29,0
+ 332               		.text
+GAS LISTING /tmp/ccmaiUSz.s 			page 8
+
+
+ 333               		.stabs	"",100,0,0,.Letext0
+ 334               	.Letext0:
+GAS LISTING /tmp/ccmaiUSz.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 non_vol.c
+     /tmp/ccmaiUSz.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccmaiUSz.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccmaiUSz.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccmaiUSz.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccmaiUSz.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccmaiUSz.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccmaiUSz.s:113    .text:0000000000000000 read_write_stored
+     /tmp/ccmaiUSz.s:316    .eeprom:0000000000000001 Names_eemem
+     /tmp/ccmaiUSz.s:321    .eeprom:00000000000000a1 CalVals_eemem
+     /tmp/ccmaiUSz.s:326    .eeprom:0000000000000141 Offset_eemem
+     /tmp/ccmaiUSz.s:311    .eeprom:0000000000000000 header_id
+
+UNDEFINED SYMBOLS
+__eerd_block_m32
+__eewr_block_m32
+__eerd_byte_m32
+__eewr_byte_m32

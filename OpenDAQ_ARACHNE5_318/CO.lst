@@ -1,0 +1,309 @@
+GAS LISTING /tmp/cc7a5T7j.s 			page 1
+
+
+   1               		.file	"CO.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_ARACHNE5_220/",100,0,2,.Ltext0
+   9               		.stabs	"CO.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"CO.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  31               		.stabs	"int8_t:t(3,1)=(0,10)",128,0,121,0
+  32               		.stabs	"uint8_t:t(3,2)=(0,11)",128,0,122,0
+  33               		.stabs	"int16_t:t(3,3)=(0,1)",128,0,123,0
+  34               		.stabs	"uint16_t:t(3,4)=(0,4)",128,0,124,0
+  35               		.stabs	"int32_t:t(3,5)=(0,3)",128,0,125,0
+  36               		.stabs	"uint32_t:t(3,6)=(0,5)",128,0,126,0
+  37               		.stabs	"int64_t:t(3,7)=(0,6)",128,0,128,0
+  38               		.stabs	"uint64_t:t(3,8)=(0,7)",128,0,129,0
+  39               		.stabs	"intptr_t:t(3,9)=(3,3)",128,0,142,0
+  40               		.stabs	"uintptr_t:t(3,10)=(3,4)",128,0,147,0
+  41               		.stabs	"int_least8_t:t(3,11)=(3,1)",128,0,159,0
+  42               		.stabs	"uint_least8_t:t(3,12)=(3,2)",128,0,164,0
+  43               		.stabs	"int_least16_t:t(3,13)=(3,3)",128,0,169,0
+  44               		.stabs	"uint_least16_t:t(3,14)=(3,4)",128,0,174,0
+  45               		.stabs	"int_least32_t:t(3,15)=(3,5)",128,0,179,0
+  46               		.stabs	"uint_least32_t:t(3,16)=(3,6)",128,0,184,0
+  47               		.stabs	"int_least64_t:t(3,17)=(3,7)",128,0,192,0
+  48               		.stabs	"uint_least64_t:t(3,18)=(3,8)",128,0,199,0
+  49               		.stabs	"int_fast8_t:t(3,19)=(3,1)",128,0,213,0
+  50               		.stabs	"uint_fast8_t:t(3,20)=(3,2)",128,0,218,0
+  51               		.stabs	"int_fast16_t:t(3,21)=(3,3)",128,0,223,0
+  52               		.stabs	"uint_fast16_t:t(3,22)=(3,4)",128,0,228,0
+  53               		.stabs	"int_fast32_t:t(3,23)=(3,5)",128,0,233,0
+  54               		.stabs	"uint_fast32_t:t(3,24)=(3,6)",128,0,238,0
+  55               		.stabs	"int_fast64_t:t(3,25)=(3,7)",128,0,246,0
+  56               		.stabs	"uint_fast64_t:t(3,26)=(3,8)",128,0,253,0
+  57               		.stabs	"intmax_t:t(3,27)=(3,7)",128,0,273,0
+GAS LISTING /tmp/cc7a5T7j.s 			page 2
+
+
+  58               		.stabs	"uintmax_t:t(3,28)=(3,8)",128,0,278,0
+  59               		.stabn	162,0,0,0
+  60               		.stabn	162,0,0,0
+  61               		.stabs	"i2cmaster.h",130,0,0,0
+  62               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  63               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/sfr_defs.h",130,0,0,0
+  64               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  65               		.stabs	"int_farptr_t:t(7,1)=(3,5)",128,0,77,0
+  66               		.stabs	"uint_farptr_t:t(7,2)=(3,6)",128,0,81,0
+  67               		.stabn	162,0,0,0
+  68               		.stabn	162,0,0,0
+  69               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  70               		.stabs	"__fuse_t:t(8,1)=(8,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  71               		.stabn	162,0,0,0
+  72               		.stabn	162,0,0,0
+  73               		.stabn	162,0,0,0
+  74               		.stabn	162,0,0,0
+  75               		.stabs	"Init_CO:F(0,15)",36,0,24,Init_CO
+  76               	.global	Init_CO
+  77               		.type	Init_CO, @function
+  78               	Init_CO:
+  79               		.stabd	46,0,0
+   1:CO.c          **** /// \file CO.c
+   2:CO.c          **** /// \brief Power-on setup of LMP91000 potenstat chip   
+   3:CO.c          **** /// \details Setup via I2c, then analog output.
+   4:CO.c          **** /// \author University of Illinois Department and Environmental and Civil Engineering
+   5:CO.c          **** /// \copyright Copyright (c) 2014 University of Illinois Department and Environmental and Civil Eng
+   6:CO.c          **** ///This software is distributed under the MIT License. 
+   7:CO.c          **** ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software an
+   8:CO.c          **** ///associated documentation files (the "Software"), to deal in the Software without restriction, 
+   9:CO.c          **** ///including without limitation the rights to use, copy, modify, merge, publish, distribute, sublic
+  10:CO.c          **** ///and/or sell copies of the Software, and to permit persons to whom the Software is furnished to d
+  11:CO.c          **** ///subject to the following conditions:
+  12:CO.c          **** ///
+  13:CO.c          **** ///\copyright The above copyright notice and this permission notice shall be included in all copies
+  14:CO.c          **** ///portions of the Software.
+  15:CO.c          **** ///The software is provided "as is", without warranty of any kind expressed or implied, 
+  16:CO.c          **** ///including but not limited to the warranties of merchantability, fitness for a particular 
+  17:CO.c          **** ///purpose and noninfringement.  In no event shall the authors or copyright holders be liable 
+  18:CO.c          **** ///for any claim, damages or other liability whether in an action of contract, tort or 
+  19:CO.c          **** ///otherwise, arising from, out of or in connection with the software or the use or other 
+  20:CO.c          **** ///dealings in the software.
+  21:CO.c          **** ///
+  22:CO.c          **** #include "CO.h"
+  23:CO.c          **** 
+  24:CO.c          **** void Init_CO(void)
+  25:CO.c          **** {
+  80               		.stabn	68,0,25,.LM0-.LFBB1
+  81               	.LM0:
+  82               	.LFBB1:
+  83               	/* prologue: function */
+  84               	/* frame size = 0 */
+  85               	/* stack size = 0 */
+  86               	.L__stack_usage = 0
+  26:CO.c          **** 		//reading the CO chip registers:
+  27:CO.c          **** //		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+  28:CO.c          **** //		i2c_write(0x00);	//tell it what register is being read or written: 0x00(status), 0x01(lock), 0x
+GAS LISTING /tmp/cc7a5T7j.s 			page 3
+
+
+  29:CO.c          **** //		i2c_start_wait(0x90+I2C_READ);     // set device address and read mode
+  30:CO.c          **** //		uint8_t ret1 = i2c_readAck();// data 
+  31:CO.c          **** //		i2c_stop(); //
+  32:CO.c          **** 		
+  33:CO.c          **** 		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+  87               		.stabn	68,0,33,.LM1-.LFBB1
+  88               	.LM1:
+  89 0000 80E9      		ldi r24,lo8(-112)
+  90 0002 0E94 0000 		call i2c_start_wait
+  34:CO.c          **** 		i2c_write(0x01);	//pointer to lock register, needs to be unlocked to write any other registers
+  91               		.stabn	68,0,34,.LM2-.LFBB1
+  92               	.LM2:
+  93 0006 81E0      		ldi r24,lo8(1)
+  94 0008 0E94 0000 		call i2c_write
+  35:CO.c          **** 		i2c_write(0x00); //write "unlock" 0x00
+  95               		.stabn	68,0,35,.LM3-.LFBB1
+  96               	.LM3:
+  97 000c 80E0      		ldi r24,lo8(0)
+  98 000e 0E94 0000 		call i2c_write
+  36:CO.c          **** 		i2c_stop(); //
+  99               		.stabn	68,0,36,.LM4-.LFBB1
+ 100               	.LM4:
+ 101 0012 0E94 0000 		call i2c_stop
+  37:CO.c          **** 		
+  38:CO.c          **** 		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+ 102               		.stabn	68,0,38,.LM5-.LFBB1
+ 103               	.LM5:
+ 104 0016 80E9      		ldi r24,lo8(-112)
+ 105 0018 0E94 0000 		call i2c_start_wait
+  39:CO.c          **** 		i2c_write(0x10);	//pointer to TIACN register
+ 106               		.stabn	68,0,39,.LM6-.LFBB1
+ 107               	.LM6:
+ 108 001c 80E1      		ldi r24,lo8(16)
+ 109 001e 0E94 0000 		call i2c_write
+  40:CO.c          **** 		i2c_write(0x13); //write  (See page 14 of pdf)
+ 110               		.stabn	68,0,40,.LM7-.LFBB1
+ 111               	.LM7:
+ 112 0022 83E1      		ldi r24,lo8(19)
+ 113 0024 0E94 0000 		call i2c_write
+  41:CO.c          **** 		i2c_stop(); //
+ 114               		.stabn	68,0,41,.LM8-.LFBB1
+ 115               	.LM8:
+ 116 0028 0E94 0000 		call i2c_stop
+  42:CO.c          **** 		
+  43:CO.c          **** 		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+ 117               		.stabn	68,0,43,.LM9-.LFBB1
+ 118               	.LM9:
+ 119 002c 80E9      		ldi r24,lo8(-112)
+ 120 002e 0E94 0000 		call i2c_start_wait
+  44:CO.c          **** 		i2c_write(0x11);	//pointer to REFCN register
+ 121               		.stabn	68,0,44,.LM10-.LFBB1
+ 122               	.LM10:
+ 123 0032 81E1      		ldi r24,lo8(17)
+ 124 0034 0E94 0000 		call i2c_write
+  45:CO.c          **** 		i2c_write(0x00); //write (See page 14 of pdf)
+ 125               		.stabn	68,0,45,.LM11-.LFBB1
+ 126               	.LM11:
+GAS LISTING /tmp/cc7a5T7j.s 			page 4
+
+
+ 127 0038 80E0      		ldi r24,lo8(0)
+ 128 003a 0E94 0000 		call i2c_write
+  46:CO.c          **** 		i2c_stop(); //
+ 129               		.stabn	68,0,46,.LM12-.LFBB1
+ 130               	.LM12:
+ 131 003e 0E94 0000 		call i2c_stop
+  47:CO.c          **** 		
+  48:CO.c          ****         i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+ 132               		.stabn	68,0,48,.LM13-.LFBB1
+ 133               	.LM13:
+ 134 0042 80E9      		ldi r24,lo8(-112)
+ 135 0044 0E94 0000 		call i2c_start_wait
+  49:CO.c          **** 		i2c_write(0x12);	//pointer to MODECN register
+ 136               		.stabn	68,0,49,.LM14-.LFBB1
+ 137               	.LM14:
+ 138 0048 82E1      		ldi r24,lo8(18)
+ 139 004a 0E94 0000 		call i2c_write
+  50:CO.c          **** 		i2c_write(0x03); //write (See page 14 of pdf)
+ 140               		.stabn	68,0,50,.LM15-.LFBB1
+ 141               	.LM15:
+ 142 004e 83E0      		ldi r24,lo8(3)
+ 143 0050 0E94 0000 		call i2c_write
+  51:CO.c          **** 		i2c_stop(); //
+ 144               		.stabn	68,0,51,.LM16-.LFBB1
+ 145               	.LM16:
+ 146 0054 0E94 0000 		call i2c_stop
+ 147               	/* epilogue start */
+  52:CO.c          **** 		 
+  53:CO.c          **** }
+ 148               		.stabn	68,0,53,.LM17-.LFBB1
+ 149               	.LM17:
+ 150 0058 0895      		ret
+ 151               		.size	Init_CO, .-Init_CO
+ 152               	.Lscope1:
+ 153               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 154               		.stabd	78,0,0
+ 155               		.stabs	"CO_to_temp:F(0,15)",36,0,55,CO_to_temp
+ 156               		.stabs	"yes:P(3,2)",64,0,55,24
+ 157               	.global	CO_to_temp
+ 158               		.type	CO_to_temp, @function
+ 159               	CO_to_temp:
+ 160               		.stabd	46,0,0
+  54:CO.c          **** 
+  55:CO.c          **** void CO_to_temp(uint8_t yes)// switch controller to oytput temp.
+  56:CO.c          **** {
+ 161               		.stabn	68,0,56,.LM18-.LFBB2
+ 162               	.LM18:
+ 163               	.LFBB2:
+ 164               	/* prologue: function */
+ 165               	/* frame size = 0 */
+ 166               	/* stack size = 0 */
+ 167               	.L__stack_usage = 0
+  57:CO.c          **** 	if (yes==1)//change to temperature
+ 168               		.stabn	68,0,57,.LM19-.LFBB2
+ 169               	.LM19:
+ 170 005a 8130      		cpi r24,lo8(1)
+ 171 005c 01F4      		brne .L3
+GAS LISTING /tmp/cc7a5T7j.s 			page 5
+
+
+  58:CO.c          **** 	{
+  59:CO.c          **** 		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+ 172               		.stabn	68,0,59,.LM20-.LFBB2
+ 173               	.LM20:
+ 174 005e 80E9      		ldi r24,lo8(-112)
+ 175 0060 0E94 0000 		call i2c_start_wait
+  60:CO.c          **** 		i2c_write(0x12);	//pointer to MODECN register
+ 176               		.stabn	68,0,60,.LM21-.LFBB2
+ 177               	.LM21:
+ 178 0064 82E1      		ldi r24,lo8(18)
+ 179 0066 0E94 0000 		call i2c_write
+  61:CO.c          **** 		i2c_write(0x07); //write (See page 14 of pdf)
+ 180               		.stabn	68,0,61,.LM22-.LFBB2
+ 181               	.LM22:
+ 182 006a 87E0      		ldi r24,lo8(7)
+ 183 006c 00C0      		rjmp .L5
+ 184               	.L3:
+  62:CO.c          **** 		i2c_stop(); //
+  63:CO.c          **** 	}
+  64:CO.c          **** 	else//change to potenstat
+  65:CO.c          **** 	{
+  66:CO.c          **** 		i2c_start_wait(0x90+I2C_WRITE);     // set device address and write mode
+ 185               		.stabn	68,0,66,.LM23-.LFBB2
+ 186               	.LM23:
+ 187 006e 80E9      		ldi r24,lo8(-112)
+ 188 0070 0E94 0000 		call i2c_start_wait
+  67:CO.c          **** 		i2c_write(0x12);	//pointer to MODECN register
+ 189               		.stabn	68,0,67,.LM24-.LFBB2
+ 190               	.LM24:
+ 191 0074 82E1      		ldi r24,lo8(18)
+ 192 0076 0E94 0000 		call i2c_write
+  68:CO.c          **** 		i2c_write(0x03); //write (See page 14 of pdf)
+ 193               		.stabn	68,0,68,.LM25-.LFBB2
+ 194               	.LM25:
+ 195 007a 83E0      		ldi r24,lo8(3)
+ 196               	.L5:
+ 197 007c 0E94 0000 		call i2c_write
+  69:CO.c          **** 		i2c_stop(); //
+ 198               		.stabn	68,0,69,.LM26-.LFBB2
+ 199               	.LM26:
+ 200 0080 0E94 0000 		call i2c_stop
+ 201 0084 0895      		ret
+ 202               		.size	CO_to_temp, .-CO_to_temp
+ 203               	.Lscope2:
+ 204               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 205               		.stabd	78,0,0
+ 206               		.stabs	"",100,0,0,.Letext0
+ 207               	.Letext0:
+GAS LISTING /tmp/cc7a5T7j.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 CO.c
+     /tmp/cc7a5T7j.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/cc7a5T7j.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/cc7a5T7j.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/cc7a5T7j.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/cc7a5T7j.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc7a5T7j.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc7a5T7j.s:78     .text:0000000000000000 Init_CO
+     /tmp/cc7a5T7j.s:159    .text:000000000000005a CO_to_temp
+
+UNDEFINED SYMBOLS
+i2c_start_wait
+i2c_write
+i2c_stop

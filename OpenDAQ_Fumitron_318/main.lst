@@ -1,0 +1,4252 @@
+GAS LISTING /tmp/ccsaRNb4.s 			page 1
+
+
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_Fumitron_318/",100,0,2,.Ltext0
+   9               		.stabs	"main.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  31               		.stabs	"int8_t:t(3,1)=(0,10)",128,0,121,0
+  32               		.stabs	"uint8_t:t(3,2)=(0,11)",128,0,122,0
+  33               		.stabs	"int16_t:t(3,3)=(0,1)",128,0,123,0
+  34               		.stabs	"uint16_t:t(3,4)=(0,4)",128,0,124,0
+  35               		.stabs	"int32_t:t(3,5)=(0,3)",128,0,125,0
+  36               		.stabs	"uint32_t:t(3,6)=(0,5)",128,0,126,0
+  37               		.stabs	"int64_t:t(3,7)=(0,6)",128,0,128,0
+  38               		.stabs	"uint64_t:t(3,8)=(0,7)",128,0,129,0
+  39               		.stabs	"intptr_t:t(3,9)=(3,3)",128,0,142,0
+  40               		.stabs	"uintptr_t:t(3,10)=(3,4)",128,0,147,0
+  41               		.stabs	"int_least8_t:t(3,11)=(3,1)",128,0,159,0
+  42               		.stabs	"uint_least8_t:t(3,12)=(3,2)",128,0,164,0
+  43               		.stabs	"int_least16_t:t(3,13)=(3,3)",128,0,169,0
+  44               		.stabs	"uint_least16_t:t(3,14)=(3,4)",128,0,174,0
+  45               		.stabs	"int_least32_t:t(3,15)=(3,5)",128,0,179,0
+  46               		.stabs	"uint_least32_t:t(3,16)=(3,6)",128,0,184,0
+  47               		.stabs	"int_least64_t:t(3,17)=(3,7)",128,0,192,0
+  48               		.stabs	"uint_least64_t:t(3,18)=(3,8)",128,0,199,0
+  49               		.stabs	"int_fast8_t:t(3,19)=(3,1)",128,0,213,0
+  50               		.stabs	"uint_fast8_t:t(3,20)=(3,2)",128,0,218,0
+  51               		.stabs	"int_fast16_t:t(3,21)=(3,3)",128,0,223,0
+  52               		.stabs	"uint_fast16_t:t(3,22)=(3,4)",128,0,228,0
+  53               		.stabs	"int_fast32_t:t(3,23)=(3,5)",128,0,233,0
+  54               		.stabs	"uint_fast32_t:t(3,24)=(3,6)",128,0,238,0
+  55               		.stabs	"int_fast64_t:t(3,25)=(3,7)",128,0,246,0
+  56               		.stabs	"uint_fast64_t:t(3,26)=(3,8)",128,0,253,0
+  57               		.stabs	"intmax_t:t(3,27)=(3,7)",128,0,273,0
+GAS LISTING /tmp/ccsaRNb4.s 			page 2
+
+
+  58               		.stabs	"uintmax_t:t(3,28)=(3,8)",128,0,278,0
+  59               		.stabn	162,0,0,0
+  60               		.stabn	162,0,0,0
+  61               		.stabs	"int_farptr_t:t(1,1)=(3,5)",128,0,77,0
+  62               		.stabs	"uint_farptr_t:t(1,2)=(3,6)",128,0,81,0
+  63               		.stabn	162,0,0,0
+  64               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  65               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  66               		.stabs	"__fuse_t:t(5,1)=(5,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  67               		.stabn	162,0,0,0
+  68               		.stabn	162,0,0,0
+  69               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  70               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  71               		.stabs	"size_t:t(7,1)=(0,4)",128,0,211,0
+  72               		.stabs	"wchar_t:t(7,2)=(0,1)",128,0,323,0
+  73               		.stabn	162,0,0,0
+  74               		.stabs	"div_t:t(6,1)=(6,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+  75               		.stabs	"ldiv_t:t(6,3)=(6,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+  76               		.stabs	"__compar_fn_t:t(6,5)=(6,6)=*(6,7)=f(0,1)",128,0,80,0
+  77               		.stabn	162,0,0,0
+  78               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdarg.h",130,0,0,0
+  79               		.stabs	"__gnuc_va_list:t(8,1)=(8,2)=*(0,15)",128,0,40,0
+  80               		.stabs	"va_list:t(8,3)=(8,1)",128,0,102,0
+  81               		.stabn	162,0,0,0
+  82               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/pgmspace.h",130,0,0,0
+  83               		.stabs	"prog_void:t(9,1)=(9,2)=(9,2)",128,0,217,0
+  84               		.stabs	"prog_char:t(9,3)=(9,4)=@s8;r(9,4);0;255;",128,0,218,0
+  85               		.stabs	"prog_uchar:t(9,5)=(9,6)=@s8;r(9,6);0;255;",128,0,219,0
+  86               		.stabs	"prog_int8_t:t(9,7)=(9,8)=(0,10)",128,0,221,0
+  87               		.stabs	"prog_uint8_t:t(9,9)=(9,10)=(0,11)",128,0,222,0
+  88               		.stabs	"prog_int16_t:t(9,11)=(9,12)=(0,1)",128,0,223,0
+  89               		.stabs	"prog_uint16_t:t(9,13)=(9,14)=(0,4)",128,0,224,0
+  90               		.stabs	"prog_int32_t:t(9,15)=(9,16)=(0,3)",128,0,225,0
+  91               		.stabs	"prog_uint32_t:t(9,17)=(9,18)=(0,5)",128,0,226,0
+  92               		.stabs	"prog_int64_t:t(9,19)=(9,20)=(0,6)",128,0,228,0
+  93               		.stabs	"prog_uint64_t:t(9,21)=(9,22)=(0,7)",128,0,229,0
+  94               		.stabn	162,0,0,0
+  95               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/eeprom.h",130,0,0,0
+  96               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  97               		.stabs	"ptrdiff_t:t(11,1)=(0,1)",128,0,149,0
+  98               		.stabn	162,0,0,0
+  99               		.stabn	162,0,0,0
+ 100               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdio.h",130,0,0,0
+ 101               		.stabs	"__file:T(12,1)=s14buf:(12,2)=*(0,2),0,16;unget:(0,11),16,8;flags:(3,2),24,8;size:(0,1),32,
+ 102               		.stabn	162,0,0,0
+ 103               		.stabs	"inputs.h",130,0,0,0
+ 104               		.stabs	"SHT25.h",130,0,0,0
+ 105               		.stabs	"hum_dat:T(14,1)=s4SHT_temp:(3,4),0,16;SHT_rh:(3,4),16,16;;",128,0,0,0
+ 106               		.stabn	162,0,0,0
+ 107               		.stabs	"i2c_rtc.h",130,0,0,0
+ 108               		.stabs	"RTC:t(15,1)=(15,2)=s8year:(3,4),0,16;month:(3,2),16,8;mday:(3,2),24,8;wday:(3,2),32,8;hour
+ 109               		.stabn	162,0,0,0
+ 110               		.stabs	"sample_data:T(13,1)=s760name:(13,2)=ar(13,3)=r(13,3);0;0177777;;0;19;(13,4)=ar(13,3);0;7;(
+ 111               		.stabn	162,0,0,0
+ 112               		.stabs	"__vector_9:F(0,15)",36,0,73,__vector_9
+ 113               	.global	__vector_9
+ 114               		.type	__vector_9, @function
+GAS LISTING /tmp/ccsaRNb4.s 			page 3
+
+
+ 115               	__vector_9:
+ 116               		.stabd	46,0,0
+   1:main.c        **** ///
+   2:main.c        **** /// \file main.c
+   3:main.c        **** /// \brief Main program for OpenEmissionsDAQ  
+   4:main.c        **** /// \details See inputs.c to configure and order the inputs.  \n 
+   5:main.c        **** ///  See int main() section for details on the power up process and main loop.
+   6:main.c        **** /// \author University of Illinois Department and Environmental and Civil Engineering
+   7:main.c        **** /// \copyright Copyright (c) 2014 University of Illinois Department and Environmental and Civil Eng
+   8:main.c        **** ///This software is distributed under the MIT License. 
+   9:main.c        **** ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software an
+  10:main.c        **** ///associated documentation files (the "Software"), to deal in the Software without restriction, 
+  11:main.c        **** ///including without limitation the rights to use, copy, modify, merge, publish, distribute, sublic
+  12:main.c        **** ///and/or sell copies of the Software, and to permit persons to whom the Software is furnished to d
+  13:main.c        **** ///subject to the following conditions:
+  14:main.c        **** ///
+  15:main.c        **** ///\copyright The above copyright notice and this permission notice shall be included in all copies
+  16:main.c        **** ///portions of the Software.
+  17:main.c        **** ///The software is provided "as is", without warranty of any kind expressed or implied, 
+  18:main.c        **** ///including but not limited to the warranties of merchantability, fitness for a particular 
+  19:main.c        **** ///purpose and noninfringement.  In no event shall the authors or copyright holders be liable 
+  20:main.c        **** ///for any claim, damages or other liability whether in an action of contract, tort or 
+  21:main.c        **** ///otherwise, arising from, out of or in connection with the software or the use or other 
+  22:main.c        **** ///dealings in the software.
+  23:main.c        **** ///
+  24:main.c        **** 
+  25:main.c        **** //comment out to run with no RTC for troubleshooting purposes
+  26:main.c        **** # define CLOCKCONNECTED 
+  27:main.c        **** 
+  28:main.c        **** 
+  29:main.c        **** // freq 4194304 (in makefile)
+  30:main.c        **** //
+  31:main.c        **** //RH i2c addr: 	1000 000r/w = 0x80 +r/w
+  32:main.c        **** //CO i2c addr: 	1001 000r/w	= 0x90 +r/w  
+  33:main.c        **** //ADC i2c addr: 0010 100r/w	= 0x28 +r/w 
+  34:main.c        **** //
+  35:main.c        **** ///////////////////////////////////////////  
+  36:main.c        **** #include <inttypes.h>
+  37:main.c        **** #include <avr/io.h>
+  38:main.c        **** #include <avr/interrupt.h> 
+  39:main.c        **** #include <stdlib.h>
+  40:main.c        **** #include <stdarg.h>
+  41:main.c        **** #include <ctype.h>
+  42:main.c        **** #include <string.h>
+  43:main.c        **** #include <compat/deprecated.h> 
+  44:main.c        **** #include <util/delay.h>
+  45:main.c        **** #include <avr/pgmspace.h>
+  46:main.c        **** #include "avr/eeprom.h"
+  47:main.c        **** #include <avr/wdt.h> 
+  48:main.c        **** #include <avr/sfr_defs.h> // has bit is set/clear.
+  49:main.c        **** #include <stdio.h>
+  50:main.c        **** 
+  51:main.c        **** #include "uart.h"
+  52:main.c        **** #include "inputs.h"
+  53:main.c        **** #include "utilities.h"
+  54:main.c        **** #include "non_vol.h"
+  55:main.c        **** #include "suart.h"
+GAS LISTING /tmp/ccsaRNb4.s 			page 4
+
+
+  56:main.c        **** #include "i2c_rtc.h"
+  57:main.c        **** 
+  58:main.c        **** //global vars//
+  59:main.c        **** ///incremented every 16 sec for testing timeout.
+  60:main.c        **** volatile uint8_t sixteen; 
+  61:main.c        **** 
+  62:main.c        **** //////function prototypes vvvvv ////
+  63:main.c        **** 
+  64:main.c        **** uint8_t cal_val_input_delay(void);
+  65:main.c        **** void cal_menu(struct sample_data *data);//menu for entering things
+  66:main.c        **** void read_stored_vals(struct sample_data *data);
+  67:main.c        **** uint8_t showtime(void);
+  68:main.c        **** uint16_t timesample(struct sample_data *data);
+  69:main.c        **** void output_headers( struct sample_data *data); 
+  70:main.c        **** 
+  71:main.c        **** 
+  72:main.c        **** /////////////////////////////////////////////interrupt routines////////////////////////////////////
+  73:main.c        **** ISR(TIMER1_OVF_vect)
+  74:main.c        **** {
+ 117               		.stabn	68,0,74,.LM0-.LFBB1
+ 118               	.LM0:
+ 119               	.LFBB1:
+ 120 0000 1F92      		push __zero_reg__
+ 121 0002 0F92      		push r0
+ 122 0004 0FB6      		in r0,__SREG__
+ 123 0006 0F92      		push r0
+ 124 0008 1124      		clr __zero_reg__
+ 125 000a 8F93      		push r24
+ 126               	/* prologue: Signal */
+ 127               	/* frame size = 0 */
+ 128               	/* stack size = 4 */
+ 129               	.L__stack_usage = 4
+  75:main.c        ****     sixteen++;
+ 130               		.stabn	68,0,75,.LM1-.LFBB1
+ 131               	.LM1:
+ 132 000c 8091 0000 		lds r24,sixteen
+ 133 0010 8F5F      		subi r24,lo8(-(1))
+ 134 0012 8093 0000 		sts sixteen,r24
+ 135               	/* epilogue start */
+  76:main.c        **** }
+ 136               		.stabn	68,0,76,.LM2-.LFBB1
+ 137               	.LM2:
+ 138 0016 8F91      		pop r24
+ 139 0018 0F90      		pop r0
+ 140 001a 0FBE      		out __SREG__,r0
+ 141 001c 0F90      		pop r0
+ 142 001e 1F90      		pop __zero_reg__
+ 143 0020 1895      		reti
+ 144               		.size	__vector_9, .-__vector_9
+ 145               	.Lscope1:
+ 146               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 147               		.stabd	78,0,0
+ 148               		.stabs	"cal_val_input_delay:F(3,2)",36,0,231,cal_val_input_delay
+ 149               	.global	cal_val_input_delay
+ 150               		.type	cal_val_input_delay, @function
+ 151               	cal_val_input_delay:
+ 152               		.stabd	46,0,0
+GAS LISTING /tmp/ccsaRNb4.s 			page 5
+
+
+  77:main.c        **** 
+  78:main.c        **** //////////////////////////vvvvvvvvvvvvvvv MAIN  vvvvvvvvvvvvvvvvvvvvv///////
+  79:main.c        **** 
+  80:main.c        **** /// ### When the DAQ is powered up, the following occour:###
+  81:main.c        **** /// • All channels are counted by running the sample_all_channels() 
+  82:main.c        **** /// function in input.c wih case JUST_COUNT \n
+  83:main.c        **** /// • The user is given 5 second to enter "cal" and use the value entry menu in cal_menu()  \n
+  84:main.c        **** /// • The UART receive is disabled in order to avoid noise if disconnected \n
+  85:main.c        **** /// • All channels are tested. The function sample_all_channels() is run with case TEST.  
+  86:main.c        **** /// This also initilizes the channels that need. initilization   \n
+  87:main.c        **** /// • The Real Time Clock is tested.  The DAQ cannot continue if the clock does not respond. I.e.
+  88:main.c        **** /// • The time it takes to run a sample loop is determined.  This number is used to determine whe
+  89:main.c        **** /// • The headers are read from the EEMEM (non volitale memory). These are then added to the outp
+  90:main.c        **** /// • The initial start time is calculated.  \n
+  91:main.c        **** 
+  92:main.c        **** int main()
+  93:main.c        **** {
+  94:main.c        **** 
+  95:main.c        ****     DDRD |= (1<<5); //port D led
+  96:main.c        ****     uart_init();// setup uart 
+  97:main.c        **** 
+  98:main.c        ****     struct sample_data data;//main structure to haul around all the data and related
+  99:main.c        ****     for (uint8_t i= 0; i<LINESIZE ;i++){data.serialout[i] = '\0';}//init (blank) serialout
+ 100:main.c        **** 	
+ 101:main.c        ****     sample_all_channels(JUST_COUNT, &data);// count channels
+ 102:main.c        ****     
+ 103:main.c        ****     //cal mode check 
+ 104:main.c        ****     if (cal_val_input_delay())//check if user wants to enter cal mode
+ 105:main.c        ****         {cal_menu(&data);} //go to cal menu
+ 106:main.c        ****         
+ 107:main.c        ****     UCSRB &=~ (1 << RXEN); UCSRB &=~ (1 << RXCIE);//uart input disabled anti-noise//
+ 108:main.c        ****     
+ 109:main.c        ****     //test channels
+ 110:main.c        ****     uart_puts_p(PSTR("#test chans\n"));
+ 111:main.c        ****     sample_all_channels(TEST, &data);// test each channel, record if not working
+ 112:main.c        **** #ifdef   CLOCKCONNECTED   
+ 113:main.c        ****     // check RTC
+ 114:main.c        ****      uart_puts_p(PSTR("#test result rtc="));
+ 115:main.c        ****      uart_putw_dec(i2c_rtc_init());
+ 116:main.c        ****     uart_putc('\n');
+ 117:main.c        **** #endif	
+ 118:main.c        ****     //time sampling
+ 119:main.c        ****     uart_puts_p(PSTR("#time sampling\n")); 
+ 120:main.c        **** 	uint32_t starttime; 
+ 121:main.c        ****     uint32_t nowtime;
+ 122:main.c        ****     uint16_t sample_secs = timesample(&data);//runs a sample loop
+ 123:main.c        ****     
+ 124:main.c        ****     
+ 125:main.c        ****     //headers 
+ 126:main.c        ****     uart_puts_p(PSTR("#read headers\n"));
+ 127:main.c        ****     read_stored_vals(&data);
+ 128:main.c        ****     uart_puts_p(PSTR("#headers: \n"));
+ 129:main.c        ****     output_headers( &data);
+ 130:main.c        ****     
+ 131:main.c        **** #ifdef   CLOCKCONNECTED  
+ 132:main.c        ****      rtc_gettime(&data.rtc);// Get time from rtc
+ 133:main.c        **** #endif    
+GAS LISTING /tmp/ccsaRNb4.s 			page 6
+
+
+ 134:main.c        ****      
+ 135:main.c        ****      nowtime = bintime2unixtime(&data.rtc);
+ 136:main.c        ****     uint32_t power_on_sec;//second trackers
+ 137:main.c        ****     uint32_t elapsed_sec;//second trackers
+ 138:main.c        ****     power_on_sec = starttime = nowtime + sample_secs;//set first start time    
+ 139:main.c        ****     _delay_ms(1);//must wait between time queries
+ 140:main.c        ****     /// ### The main loop is started: ###
+ 141:main.c        ****     ///
+ 142:main.c        ****     /// • The RTC is polled every 1 ms until the start time is matched. \n
+ 143:main.c        ****     /// • The date and time is added to the output string: sample_data.serialout, then the Header
+ 144:main.c        ****     /// • All the channels are sampled and the values are added to the output string: sample_data
+ 145:main.c        ****     /// This is done by running the function sample_all_channels()  with case SAMPLE
+ 146:main.c        ****     
+ 147:main.c        ****     
+ 148:main.c        ****     while(1)//sample away 
+ 149:main.c        ****     {
+ 150:main.c        **** #ifdef   CLOCKCONNECTED 
+ 151:main.c        ****          while (nowtime<starttime)//wait for time here, polling RTC
+ 152:main.c        ****          {
+ 153:main.c        ****              rtc_gettime(&data.rtc);// Get time from rtc
+ 154:main.c        ****              nowtime = bintime2unixtime(&data.rtc);
+ 155:main.c        ****             _delay_ms(1); 
+ 156:main.c        ****          }
+ 157:main.c        **** #endif
+ 158:main.c        ****         char temps[12] = "\0\0\0\0\0\0\0\0\0\0\0\0"; //used for number to string conversion
+ 159:main.c        ****         //date time:
+ 160:main.c        ****         //year   
+ 161:main.c        ****         ultoa (data.rtc.year,temps,10);    
+ 162:main.c        ****         strcat(data.serialout,temps);
+ 163:main.c        ****  
+ 164:main.c        ****         //month
+ 165:main.c        ****         ultoa (data.rtc.month,temps,10);    
+ 166:main.c        ****         if (strlen(temps) == 1)
+ 167:main.c        ****         {
+ 168:main.c        **** 			strcat(data.serialout,"0");
+ 169:main.c        **** 		}	
+ 170:main.c        ****         strcat(data.serialout,temps);
+ 171:main.c        **** 
+ 172:main.c        ****         //day
+ 173:main.c        ****         ultoa (data.rtc.mday,temps,10); 
+ 174:main.c        ****         if (strlen(temps) == 1)
+ 175:main.c        ****         {
+ 176:main.c        **** 			strcat(data.serialout,"0");
+ 177:main.c        **** 		}	   
+ 178:main.c        ****         strcat(data.serialout,temps);
+ 179:main.c        ****        
+ 180:main.c        ****         strcat(data.serialout," ");
+ 181:main.c        ****         
+ 182:main.c        ****         //hour
+ 183:main.c        ****         ultoa (data.rtc.hour,temps,10);  
+ 184:main.c        ****         if (strlen(temps) == 1)
+ 185:main.c        ****         {
+ 186:main.c        **** 			strcat(data.serialout,"0");
+ 187:main.c        **** 		}	     
+ 188:main.c        ****         strcat(data.serialout,temps);
+ 189:main.c        ****         strcat(data.serialout,":");
+ 190:main.c        ****         //min
+GAS LISTING /tmp/ccsaRNb4.s 			page 7
+
+
+ 191:main.c        ****         ultoa (data.rtc.min,temps,10); 
+ 192:main.c        ****         if (strlen(temps) == 1)
+ 193:main.c        ****         {
+ 194:main.c        **** 			strcat(data.serialout,"0");
+ 195:main.c        **** 		}	      
+ 196:main.c        ****         strcat(data.serialout,temps);
+ 197:main.c        ****         strcat(data.serialout,":");
+ 198:main.c        ****         //sec
+ 199:main.c        ****         ultoa (data.rtc.sec,temps,10); 
+ 200:main.c        ****         if (strlen(temps) == 1)
+ 201:main.c        ****         {
+ 202:main.c        **** 			strcat(data.serialout,"0");
+ 203:main.c        **** 		}	      
+ 204:main.c        ****         strcat(data.serialout,temps);
+ 205:main.c        ****         strcat(data.serialout,",");
+ 206:main.c        ****         
+ 207:main.c        ****         starttime = nowtime + sample_secs;//set next start time
+ 208:main.c        ****         elapsed_sec = nowtime - power_on_sec; 
+ 209:main.c        ****         
+ 210:main.c        ****         sprintf(temps, "%ld", elapsed_sec);
+ 211:main.c        ****         strcat(data.serialout,temps);
+ 212:main.c        ****         strcat(data.serialout,","); //add a comma
+ 213:main.c        ****         //elapsed seconds done
+ 214:main.c        ****         
+ 215:main.c        ****         
+ 216:main.c        ****         //Header ID:
+ 217:main.c        ****         itoa( data.header_id_val,temps,10);//header ID
+ 218:main.c        ****         strcat(data.serialout,temps);
+ 219:main.c        ****         strcat(data.serialout,","); 
+ 220:main.c        **** 
+ 221:main.c        ****         
+ 222:main.c        ****         sample_all_channels(SAMPLE, &data);//sample
+ 223:main.c        ****         (strcat(data.serialout,"\n"));
+ 224:main.c        ****         spitout(data.serialout);//output
+ 225:main.c        ****         
+ 226:main.c        ****     }
+ 227:main.c        ****     
+ 228:main.c        **** }
+ 229:main.c        **** 
+ 230:main.c        **** ///See if user wants to enter cal mode on startup
+ 231:main.c        **** uint8_t cal_val_input_delay(void)
+ 232:main.c        **** {
+ 153               		.stabn	68,0,232,.LM3-.LFBB2
+ 154               	.LM3:
+ 155               	.LFBB2:
+ 156 0022 0F93      		push r16
+ 157 0024 1F93      		push r17
+ 158 0026 DF93      		push r29
+ 159 0028 CF93      		push r28
+ 160 002a 00D0      		rcall .
+ 161 002c 00D0      		rcall .
+ 162 002e 0F92      		push __tmp_reg__
+ 163 0030 CDB7      		in r28,__SP_L__
+ 164 0032 DEB7      		in r29,__SP_H__
+ 165               	/* prologue: function */
+ 166               	/* frame size = 5 */
+ 167               	/* stack size = 9 */
+GAS LISTING /tmp/ccsaRNb4.s 			page 8
+
+
+ 168               	.L__stack_usage = 9
+ 233:main.c        **** 	// delays for 5 sec, allows input of cal values, names and offsets
+ 234:main.c        **** 	char command[5];// command string
+ 235:main.c        ****     uint8_t calmode = 0; //flag for calmode or not 
+ 236:main.c        **** 	PORTD |= (1<<5); //LED on
+ 169               		.stabn	68,0,236,.LM4-.LFBB2
+ 170               	.LM4:
+ 171 0034 959A      		sbi 50-32,5
+ 237:main.c        **** 	uart_puts_p(PSTR("# type cal (in 5 sec)\n"));
+ 172               		.stabn	68,0,237,.LM5-.LFBB2
+ 173               	.LM5:
+ 174 0036 80E0      		ldi r24,lo8(__c.2196)
+ 175 0038 90E0      		ldi r25,hi8(__c.2196)
+ 176 003a 0E94 0000 		call uart_puts_p
+ 238:main.c        **** 	uint32_t timeout= 0;
+ 239:main.c        **** 	uint32_t counts_to_timeout = 1300000;// 1.3m = ~5 sec
+ 240:main.c        **** 	UCSRB |= (1 << RXEN);
+ 177               		.stabn	68,0,240,.LM6-.LFBB2
+ 178               	.LM6:
+ 179 003e 549A      		sbi 42-32,4
+ 241:main.c        **** 	UCSRB |= (1 << RXCIE);//uart input enabled//
+ 180               		.stabn	68,0,241,.LM7-.LFBB2
+ 181               	.LM7:
+ 182 0040 579A      		sbi 42-32,7
+ 238:main.c        **** 	uint32_t timeout= 0;
+ 183               		.stabn	68,0,238,.LM8-.LFBB2
+ 184               	.LM8:
+ 185 0042 80E0      		ldi r24,lo8(0)
+ 186 0044 90E0      		ldi r25,hi8(0)
+ 187 0046 DC01      		movw r26,r24
+ 242:main.c        **** 	while( !(UCSRA & (1 << RXC)) )// check for nothing in the rx buff 
+ 188               		.stabn	68,0,242,.LM9-.LFBB2
+ 189               	.LM9:
+ 190 0048 00C0      		rjmp .L3
+ 191               	.L5:
+ 243:main.c        **** 	{
+ 244:main.c        **** 		timeout++;
+ 192               		.stabn	68,0,244,.LM10-.LFBB2
+ 193               	.LM10:
+ 194 004a 0196      		adiw r24,1
+ 195 004c A11D      		adc r26,__zero_reg__
+ 196 004e B11D      		adc r27,__zero_reg__
+ 245:main.c        **** 		if (timeout>=counts_to_timeout)//and not timed out
+ 197               		.stabn	68,0,245,.LM11-.LFBB2
+ 198               	.LM11:
+ 199 0050 8032      		cpi r24,lo8(1300000)
+ 200 0052 26ED      		ldi r18,hi8(1300000)
+ 201 0054 9207      		cpc r25,r18
+ 202 0056 23E1      		ldi r18,hlo8(1300000)
+ 203 0058 A207      		cpc r26,r18
+ 204 005a 20E0      		ldi r18,hhi8(1300000)
+ 205 005c B207      		cpc r27,r18
+ 206 005e 01F0      		breq .L9
+ 207               	.L3:
+ 242:main.c        **** 	while( !(UCSRA & (1 << RXC)) )// check for nothing in the rx buff 
+ 208               		.stabn	68,0,242,.LM12-.LFBB2
+ 209               	.LM12:
+GAS LISTING /tmp/ccsaRNb4.s 			page 9
+
+
+ 210 0060 5F9B      		sbis 43-32,7
+ 211 0062 00C0      		rjmp .L5
+ 246:main.c        **** 		{break;}
+ 247:main.c        **** 	}
+ 248:main.c        **** 	if (timeout<counts_to_timeout)
+ 212               		.stabn	68,0,248,.LM13-.LFBB2
+ 213               	.LM13:
+ 214 0064 8032      		cpi r24,lo8(1300000)
+ 215 0066 26ED      		ldi r18,hi8(1300000)
+ 216 0068 9207      		cpc r25,r18
+ 217 006a 23E1      		ldi r18,hlo8(1300000)
+ 218 006c A207      		cpc r26,r18
+ 219 006e 20E0      		ldi r18,hhi8(1300000)
+ 220 0070 B207      		cpc r27,r18
+ 221 0072 00F4      		brsh .L9
+ 249:main.c        **** 	{		
+ 250:main.c        **** 		if (uart_getc() == 'c')// have to do this to prevent noise from causing cal mode
+ 222               		.stabn	68,0,250,.LM14-.LFBB2
+ 223               	.LM14:
+ 224 0074 0E94 0000 		call uart_getc
+ 225 0078 8336      		cpi r24,lo8(99)
+ 226 007a 01F4      		brne .L9
+ 251:main.c        **** 		{
+ 252:main.c        ****             uart_putc('c');
+ 227               		.stabn	68,0,252,.LM15-.LFBB2
+ 228               	.LM15:
+ 229 007c 0E94 0000 		call uart_putc
+ 253:main.c        ****             read_line(command, 4);// read up to 3 chars
+ 230               		.stabn	68,0,253,.LM16-.LFBB2
+ 231               	.LM16:
+ 232 0080 8E01      		movw r16,r28
+ 233 0082 0F5F      		subi r16,lo8(-(1))
+ 234 0084 1F4F      		sbci r17,hi8(-(1))
+ 235 0086 C801      		movw r24,r16
+ 236 0088 64E0      		ldi r22,lo8(4)
+ 237 008a 0E94 0000 		call read_line
+ 254:main.c        ****             if(strcmp_P(command, PSTR("al")) == 0)// checks if "al" is there
+ 238               		.stabn	68,0,254,.LM17-.LFBB2
+ 239               	.LM17:
+ 240 008e C801      		movw r24,r16
+ 241 0090 60E0      		ldi r22,lo8(__c.2203)
+ 242 0092 70E0      		ldi r23,hi8(__c.2203)
+ 243 0094 0E94 0000 		call strcmp_P
+ 244 0098 0097      		sbiw r24,0
+ 245 009a 01F4      		brne .L9
+ 255:main.c        ****             {
+ 256:main.c        ****                 uart_puts_p(PSTR("Ver: "));uart_putw_dec(VERSION);
+ 246               		.stabn	68,0,256,.LM18-.LFBB2
+ 247               	.LM18:
+ 248 009c 80E0      		ldi r24,lo8(__c.2205)
+ 249 009e 90E0      		ldi r25,hi8(__c.2205)
+ 250 00a0 0E94 0000 		call uart_puts_p
+ 251 00a4 8EE3      		ldi r24,lo8(318)
+ 252 00a6 91E0      		ldi r25,hi8(318)
+ 253 00a8 0E94 0000 		call uart_putw_dec
+ 257:main.c        ****                 uart_putc('\n');
+ 254               		.stabn	68,0,257,.LM19-.LFBB2
+GAS LISTING /tmp/ccsaRNb4.s 			page 10
+
+
+ 255               	.LM19:
+ 256 00ac 8AE0      		ldi r24,lo8(10)
+ 257 00ae 0E94 0000 		call uart_putc
+ 258:main.c        ****                 calmode = 1;
+ 258               		.stabn	68,0,258,.LM20-.LFBB2
+ 259               	.LM20:
+ 260 00b2 81E0      		ldi r24,lo8(1)
+ 261 00b4 00C0      		rjmp .L4
+ 262               	.L9:
+ 235:main.c        ****     uint8_t calmode = 0; //flag for calmode or not 
+ 263               		.stabn	68,0,235,.LM21-.LFBB2
+ 264               	.LM21:
+ 265 00b6 80E0      		ldi r24,lo8(0)
+ 266               	.L4:
+ 259:main.c        ****             }
+ 260:main.c        ****         }
+ 261:main.c        ****     }
+ 262:main.c        ****     PORTD &=~ (1<<5); //LED off
+ 267               		.stabn	68,0,262,.LM22-.LFBB2
+ 268               	.LM22:
+ 269 00b8 9598      		cbi 50-32,5
+ 270               	/* epilogue start */
+ 263:main.c        ****     return calmode;
+ 264:main.c        **** }
+ 271               		.stabn	68,0,264,.LM23-.LFBB2
+ 272               	.LM23:
+ 273 00ba 0F90      		pop __tmp_reg__
+ 274 00bc 0F90      		pop __tmp_reg__
+ 275 00be 0F90      		pop __tmp_reg__
+ 276 00c0 0F90      		pop __tmp_reg__
+ 277 00c2 0F90      		pop __tmp_reg__
+ 278 00c4 CF91      		pop r28
+ 279 00c6 DF91      		pop r29
+ 280 00c8 1F91      		pop r17
+ 281 00ca 0F91      		pop r16
+ 282 00cc 0895      		ret
+ 283               		.size	cal_val_input_delay, .-cal_val_input_delay
+ 284               		.stabs	"command:(0,16)=ar(13,3);0;4;(0,2)",128,0,234,1
+ 285               		.stabs	"calmode:r(3,2)",64,0,235,24
+ 286               		.stabs	"timeout:r(3,6)",64,0,238,24
+ 287               		.stabn	192,0,0,.LFBB2-.LFBB2
+ 288               		.stabn	224,0,0,.Lscope2-.LFBB2
+ 289               	.Lscope2:
+ 290               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 291               		.stabd	78,0,0
+ 292               		.stabs	"read_stored_vals:F(0,15)",36,0,436,read_stored_vals
+ 293               		.stabs	"data:P(0,17)=*(13,1)",64,0,436,28
+ 294               	.global	read_stored_vals
+ 295               		.type	read_stored_vals, @function
+ 296               	read_stored_vals:
+ 297               		.stabd	46,0,0
+ 265:main.c        **** ///input menu for cal values and names.             
+ 266:main.c        **** void cal_menu(struct sample_data *data)
+ 267:main.c        **** {
+ 268:main.c        ****     char command[NAME_MAX+1] = "";
+ 269:main.c        ****     read_stored_vals(data);
+ 270:main.c        ****     RTC rtc;//struct for real time clock setting
+GAS LISTING /tmp/ccsaRNb4.s 			page 11
+
+
+ 271:main.c        ****     while(1)//do the menu for inputting stuff
+ 272:main.c        ****     {
+ 273:main.c        ****         uart_puts_p(PSTR("1: Names \n2: Cal val \n3: offset \n4: time \n5: CO2 \n" ));
+ 274:main.c        ****         uart_puts_p(PSTR(" enter>"));
+ 275:main.c        ****         if(read_line(command,3) < 1)    //input up to x - 1 characters
+ 276:main.c        ****             continue;
+ 277:main.c        ****         uint8_t choice = atoi(command);
+ 278:main.c        ****         switch(choice)
+ 279:main.c        ****         {
+ 280:main.c        ****          case 1 :
+ 281:main.c        ****             uart_puts_p(PSTR("\nName Entry (7 char max)\n"));
+ 282:main.c        ****             uart_puts_p(PSTR("\nchan:  name\n"));
+ 283:main.c        ****             //uart_puts_p(PSTR("\nchannels: ")); uart_putw_dec(data->number_inputs);uart_putc('\n')
+ 284:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 285:main.c        ****             {
+ 286:main.c        ****                 uart_putw_dec(i);  uart_puts_p(PSTR(": "));  
+ 287:main.c        ****                 uart_puts(data->name[i]); uart_putc('\n');      
+ 288:main.c        ****             }
+ 289:main.c        ****             uart_putw_dec(data->number_inputs);  uart_puts_p(PSTR(": "));
+ 290:main.c        ****             uart_puts_p(PSTR("header ID  ")); uart_putw_dec(data->header_id_val); uart_putc('\n');
+ 291:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice 
+ 292:main.c        ****             uart_puts_p(PSTR("\n enter chan num>"));
+ 293:main.c        ****             if((read_line(command, 3) > 0))	//read one line  
+ 294:main.c        ****             {
+ 295:main.c        ****                 uint8_t name_number = atoi(command);
+ 296:main.c        ****                 uart_puts_p(PSTR(" entered: "));
+ 297:main.c        ****                 uart_putw_dec(name_number);
+ 298:main.c        ****                 uart_putc('\n');
+ 299:main.c        ****                 memset(command,'\0',NAME_MAX+1);//clear choice
+ 300:main.c        ****                 if (name_number < data->number_inputs) 
+ 301:main.c        ****                 {
+ 302:main.c        ****                     uart_puts_p(PSTR("enter new name >"));
+ 303:main.c        ****                     if((read_line(command, NAME_MAX) > 0))	//read one line 
+ 304:main.c        ****                     {
+ 305:main.c        ****                         uart_puts_p(PSTR(" entered: "));
+ 306:main.c        ****                         uart_puts(command);
+ 307:main.c        ****                         uart_putc('\n');
+ 308:main.c        ****                         strcpy(data->name[name_number], command); //record
+ 309:main.c        ****                         read_write_stored(WRITE_NAME ,data, name_number);//store
+ 310:main.c        ****                     }
+ 311:main.c        ****                 }
+ 312:main.c        ****                 if (name_number == data->number_inputs)
+ 313:main.c        ****                 {
+ 314:main.c        ****                     uart_puts_p(PSTR("enter ID >"));
+ 315:main.c        ****                     if((read_line(command, 4) > 0))	//read one line
+ 316:main.c        ****                     {
+ 317:main.c        ****                         uint8_t id = atoi(command);
+ 318:main.c        ****                         uart_puts_p(PSTR(" entered: "));
+ 319:main.c        ****                         uart_putw_dec(id);
+ 320:main.c        ****                         uart_putc('\n');
+ 321:main.c        ****                         data->header_id_val = id;//record
+ 322:main.c        ****                         read_write_stored(WRITE_HDR_ID ,data, 0);//store
+ 323:main.c        ****                     }
+ 324:main.c        ****                 }
+ 325:main.c        ****             }
+ 326:main.c        ****             break;      
+ 327:main.c        ****          case 2 :
+GAS LISTING /tmp/ccsaRNb4.s 			page 12
+
+
+ 328:main.c        ****             uart_puts_p(PSTR("\nCal val Entry (7 char max)\n"));
+ 329:main.c        ****             uart_puts_p(PSTR("\nchan:  name:  value:\n"));
+ 330:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 331:main.c        ****             {
+ 332:main.c        ****                 uart_putw_dec(i);                      uart_puts_p(PSTR(": "));  
+ 333:main.c        ****                 uart_puts(data->name[i]);              uart_puts_p(PSTR(": "));
+ 334:main.c        ****                 uart_puts(data->calval[i]);            uart_putc('\n');      
+ 335:main.c        ****             }
+ 336:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice 
+ 337:main.c        ****             uart_puts_p(PSTR("\n enter chan number>"));
+ 338:main.c        ****             if((read_line(command, 3) > 0))	//read one line  up to 3 characters
+ 339:main.c        ****             {
+ 340:main.c        ****                 uint8_t name_number = atoi(command);
+ 341:main.c        ****                 uart_puts_p(PSTR(" entered: "));
+ 342:main.c        ****                 uart_putw_dec(name_number);
+ 343:main.c        ****                 uart_putc('\n');
+ 344:main.c        ****                 memset(command,'\0',NAME_MAX+1);//clear choice
+ 345:main.c        ****                 uart_puts_p(PSTR("enter value >"));
+ 346:main.c        ****                 if((read_line(command, NAME_MAX) > 0))	//read one line  up to 10 characters
+ 347:main.c        ****                 {
+ 348:main.c        ****                     uart_puts_p(PSTR("entered: "));
+ 349:main.c        ****                     uart_puts(command);
+ 350:main.c        ****                     uart_putc('\n');
+ 351:main.c        ****                     strcpy(data->calval[name_number], command); //record
+ 352:main.c        ****                     read_write_stored(WRITE_CALVAL ,data, name_number);//store
+ 353:main.c        ****                 }
+ 354:main.c        ****             }
+ 355:main.c        ****             break;
+ 356:main.c        ****          case 3 :
+ 357:main.c        ****             uart_puts_p(PSTR("\nOffset Entry (7 char max)\n"));
+ 358:main.c        ****             uart_puts_p(PSTR("\nchan:  name:  offset:\n"));
+ 359:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 360:main.c        ****             {
+ 361:main.c        ****                 uart_putw_dec(i);                   uart_puts_p(PSTR(": "));  
+ 362:main.c        ****                 uart_puts(data->name[i]);              uart_puts_p(PSTR(": "));
+ 363:main.c        ****                 uart_puts(data->offset[i]);        uart_putc('\n');      
+ 364:main.c        ****             }
+ 365:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice 
+ 366:main.c        ****             uart_puts_p(PSTR("\n enter channel number>"));
+ 367:main.c        ****             if((read_line(command, 4) > 0))	//read one line  up to 3 characters
+ 368:main.c        ****             {
+ 369:main.c        ****                 uint8_t name_number = atoi(command);
+ 370:main.c        ****                 uart_puts_p(PSTR("entered: "));
+ 371:main.c        ****                 uart_putw_dec(name_number);
+ 372:main.c        ****                 uart_putc('\n');
+ 373:main.c        ****                 memset(command,'\0',NAME_MAX+1);//clear choice
+ 374:main.c        ****                 uart_puts_p(PSTR("enter value >"));
+ 375:main.c        ****                 if((read_line(command, NAME_MAX) > 0))	//read one line  up to 10 characters
+ 376:main.c        ****                 {
+ 377:main.c        ****                     uart_puts_p(PSTR("entered: "));
+ 378:main.c        ****                     uart_puts(command);
+ 379:main.c        ****                     uart_putc('\n');
+ 380:main.c        ****                     strcpy(data->offset[name_number], command); //record
+ 381:main.c        ****                     read_write_stored(WRITE_OFFSET ,data, name_number);//store
+ 382:main.c        ****                 }
+ 383:main.c        ****             }
+ 384:main.c        ****             break;
+GAS LISTING /tmp/ccsaRNb4.s 			page 13
+
+
+ 385:main.c        ****          case 4 : //Time set RTC
+ 386:main.c        ****             showtime();
+ 387:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice
+ 388:main.c        ****             uart_puts_p(PSTR("change? (y/n)"));uart_puts_p(PSTR(" >"));
+ 389:main.c        ****             if((read_line(command, 3) > 0))	//read one line
+ 390:main.c        ****             {
+ 391:main.c        ****                 if(strcmp_P(command, PSTR("y")) == 0)
+ 392:main.c        ****                 {     
+ 393:main.c        ****                     uart_puts_p(PSTR("\n yr, 4 digit"));uart_puts_p(PSTR(" >"));
+ 394:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 395:main.c        ****                     { rtc.year = atoi(command);}
+ 396:main.c        ****                     
+ 397:main.c        ****                     uart_puts_p(PSTR("\n month, 2 dgt"));uart_puts_p(PSTR(" >"));
+ 398:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 399:main.c        ****                     { rtc.month = atoi(command);}
+ 400:main.c        ****                     
+ 401:main.c        ****                     uart_puts_p(PSTR("\n day, 2 dgt"));uart_puts_p(PSTR(" >"));
+ 402:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 403:main.c        ****                     { rtc.mday = atoi(command);}
+ 404:main.c        ****                             
+ 405:main.c        ****                     uart_puts_p(PSTR("\n hr, 24hr 2 dgt"));uart_puts_p(PSTR(" >"));
+ 406:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 407:main.c        ****                     { rtc.hour = atoi(command);}
+ 408:main.c        ****                             
+ 409:main.c        ****                     uart_puts_p(PSTR("\n mins, 2 dgt"));uart_puts_p(PSTR(" >"));
+ 410:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 411:main.c        ****                     {  rtc.min = atoi(command); }
+ 412:main.c        ****                     
+ 413:main.c        ****                     rtc.sec = 0;
+ 414:main.c        ****                     uart_putw_dec(rtc_settime (&rtc));
+ 415:main.c        ****                     uart_puts_p(PSTR("\n"));
+ 416:main.c        ****                     showtime();
+ 417:main.c        ****                 }
+ 418:main.c        ****                 else showtime();
+ 419:main.c        ****             }
+ 420:main.c        ****             break;
+ 421:main.c        ****          case 5 :
+ 422:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice 
+ 423:main.c        ****             uart_puts_p(PSTR("\n enter S-Uart chan 1,2,3 >"));
+ 424:main.c        ****             if((read_line(command, 3) < 1)){;}	//read one line  
+ 425:main.c        ****             uint8_t choice = atoi(command);
+ 426:main.c        ****             uart_puts_p(PSTR("direct connection to S-uart ")); uart_putw_dec(choice); uart_putc('\n
+ 427:main.c        ****             uart_puts_p(PSTR("use RET CR command ends\n"));
+ 428:main.c        ****             direct_conn(choice);
+ 429:main.c        ****             uart_puts_p(PSTR("not implemented\n"));
+ 430:main.c        ****             break;
+ 431:main.c        ****         }
+ 432:main.c        ****     }
+ 433:main.c        **** }
+ 434:main.c        **** 
+ 435:main.c        **** ///read all the names and cal vals in the EEMEM
+ 436:main.c        **** void read_stored_vals(struct sample_data *data)
+ 437:main.c        **** {
+ 298               		.stabn	68,0,437,.LM24-.LFBB3
+ 299               	.LM24:
+ 300               	.LFBB3:
+ 301 00ce 6F92      		push r6
+GAS LISTING /tmp/ccsaRNb4.s 			page 14
+
+
+ 302 00d0 7F92      		push r7
+ 303 00d2 8F92      		push r8
+ 304 00d4 9F92      		push r9
+ 305 00d6 AF92      		push r10
+ 306 00d8 BF92      		push r11
+ 307 00da CF92      		push r12
+ 308 00dc DF92      		push r13
+ 309 00de EF92      		push r14
+ 310 00e0 FF92      		push r15
+ 311 00e2 0F93      		push r16
+ 312 00e4 1F93      		push r17
+ 313 00e6 CF93      		push r28
+ 314 00e8 DF93      		push r29
+ 315               	/* prologue: function */
+ 316               	/* frame size = 0 */
+ 317               	/* stack size = 14 */
+ 318               	.L__stack_usage = 14
+ 319 00ea EC01      		movw r28,r24
+ 438:main.c        ****     uart_puts_p(PSTR("# num inputs: "));
+ 320               		.stabn	68,0,438,.LM25-.LFBB3
+ 321               	.LM25:
+ 322 00ec 80E0      		ldi r24,lo8(__c.2335)
+ 323 00ee 90E0      		ldi r25,hi8(__c.2335)
+ 324 00f0 0E94 0000 		call uart_puts_p
+ 439:main.c        ****     sample_all_channels(JUST_COUNT, data);//count channels
+ 325               		.stabn	68,0,439,.LM26-.LFBB3
+ 326               	.LM26:
+ 327 00f4 80E0      		ldi r24,lo8(0)
+ 328 00f6 BE01      		movw r22,r28
+ 329 00f8 0E94 0000 		call sample_all_channels
+ 440:main.c        ****     uart_putw_dec(data->number_inputs);  uart_puts_p(PSTR("\n"));
+ 330               		.stabn	68,0,440,.LM27-.LFBB3
+ 331               	.LM27:
+ 332 00fc 8E01      		movw r16,r28
+ 333 00fe 0052      		subi r16,lo8(-(480))
+ 334 0100 1E4F      		sbci r17,hi8(-(480))
+ 335 0102 F801      		movw r30,r16
+ 336 0104 8081      		ld r24,Z
+ 337 0106 90E0      		ldi r25,lo8(0)
+ 338 0108 0E94 0000 		call uart_putw_dec
+ 339 010c 80E0      		ldi r24,lo8(__c.2337)
+ 340 010e 90E0      		ldi r25,hi8(__c.2337)
+ 341 0110 0E94 0000 		call uart_puts_p
+ 441:main.c        ****     
+ 442:main.c        ****     uart_puts_p(PSTR("# reading EEMEM "));
+ 342               		.stabn	68,0,442,.LM28-.LFBB3
+ 343               	.LM28:
+ 344 0114 80E0      		ldi r24,lo8(__c.2339)
+ 345 0116 90E0      		ldi r25,hi8(__c.2339)
+ 346 0118 0E94 0000 		call uart_puts_p
+ 443:main.c        ****     
+ 444:main.c        ****     uint8_t tempnum = data->number_inputs; //because num_inputs is getting overwritten
+ 347               		.stabn	68,0,444,.LM29-.LFBB3
+ 348               	.LM29:
+ 349 011c F801      		movw r30,r16
+ 350 011e 0081      		ld r16,Z
+ 351               	.LBB13:
+GAS LISTING /tmp/ccsaRNb4.s 			page 15
+
+
+ 445:main.c        ****     
+ 446:main.c        ****     for (uint8_t i = 0; i<tempnum ; i ++ )//read all the eemems into the samples structure
+ 352               		.stabn	68,0,446,.LM30-.LFBB3
+ 353               	.LM30:
+ 354 0120 10E0      		ldi r17,lo8(0)
+ 355 0122 00C0      		rjmp .L11
+ 356               	.L12:
+ 447:main.c        ****     {
+ 448:main.c        ****         read_write_stored(READ_NAME,data, i);
+ 357               		.stabn	68,0,448,.LM31-.LFBB3
+ 358               	.LM31:
+ 359 0124 82E0      		ldi r24,lo8(2)
+ 360 0126 BE01      		movw r22,r28
+ 361 0128 412F      		mov r20,r17
+ 362 012a 0E94 0000 		call read_write_stored
+ 449:main.c        ****         read_write_stored(READ_CALVAL,data, i);
+ 363               		.stabn	68,0,449,.LM32-.LFBB3
+ 364               	.LM32:
+ 365 012e 84E0      		ldi r24,lo8(4)
+ 366 0130 BE01      		movw r22,r28
+ 367 0132 412F      		mov r20,r17
+ 368 0134 0E94 0000 		call read_write_stored
+ 450:main.c        ****         read_write_stored(READ_OFFSET,data,i); 
+ 369               		.stabn	68,0,450,.LM33-.LFBB3
+ 370               	.LM33:
+ 371 0138 86E0      		ldi r24,lo8(6)
+ 372 013a BE01      		movw r22,r28
+ 373 013c 412F      		mov r20,r17
+ 374 013e 0E94 0000 		call read_write_stored
+ 451:main.c        ****         uart_puts_p(PSTR("."));
+ 375               		.stabn	68,0,451,.LM34-.LFBB3
+ 376               	.LM34:
+ 377 0142 80E0      		ldi r24,lo8(__c.2343)
+ 378 0144 90E0      		ldi r25,hi8(__c.2343)
+ 379 0146 0E94 0000 		call uart_puts_p
+ 446:main.c        ****     for (uint8_t i = 0; i<tempnum ; i ++ )//read all the eemems into the samples structure
+ 380               		.stabn	68,0,446,.LM35-.LFBB3
+ 381               	.LM35:
+ 382 014a 1F5F      		subi r17,lo8(-(1))
+ 383               	.L11:
+ 446:main.c        ****     for (uint8_t i = 0; i<tempnum ; i ++ )//read all the eemems into the samples structure
+ 384               		.stabn	68,0,446,.LM36-.LFBB3
+ 385               	.LM36:
+ 386 014c 1017      		cp r17,r16
+ 387 014e 00F0      		brlo .L12
+ 388               	.LBE13:
+ 452:main.c        ****     }
+ 453:main.c        ****     read_write_stored(READ_HDR_ID,data, 0);//header ID
+ 389               		.stabn	68,0,453,.LM37-.LFBB3
+ 390               	.LM37:
+ 391 0150 88E0      		ldi r24,lo8(8)
+ 392 0152 BE01      		movw r22,r28
+ 393 0154 40E0      		ldi r20,lo8(0)
+ 394 0156 0E94 0000 		call read_write_stored
+ 454:main.c        ****     uart_puts_p(PSTR("# done\n"));
+ 395               		.stabn	68,0,454,.LM38-.LFBB3
+ 396               	.LM38:
+GAS LISTING /tmp/ccsaRNb4.s 			page 16
+
+
+ 397 015a 80E0      		ldi r24,lo8(__c.2348)
+ 398 015c 90E0      		ldi r25,hi8(__c.2348)
+ 399 015e 0E94 0000 		call uart_puts_p
+ 400               	.LBB14:
+ 455:main.c        ****     
+ 456:main.c        ****     //validate calvals and offsets:
+ 457:main.c        ****     float temp;
+ 458:main.c        ****     for (uint8_t i = 0; i<data->number_inputs ; i ++ )
+ 401               		.stabn	68,0,458,.LM39-.LFBB3
+ 402               	.LM39:
+ 403 0162 10E0      		ldi r17,lo8(0)
+ 404 0164 30EE      		ldi r19,lo8(480)
+ 405 0166 632E      		mov r6,r19
+ 406 0168 31E0      		ldi r19,hi8(480)
+ 407 016a 732E      		mov r7,r19
+ 408 016c 6C0E      		add r6,r28
+ 409 016e 7D1E      		adc r7,r29
+ 459:main.c        ****     {
+ 460:main.c        ****         temp = strtod(data->calval[i] ,0);
+ 410               		.stabn	68,0,460,.LM40-.LFBB3
+ 411               	.LM40:
+ 412 0170 20EA      		ldi r18,lo8(160)
+ 413 0172 822E      		mov r8,r18
+ 414 0174 912C      		mov r9,__zero_reg__
+ 415 0176 8C0E      		add r8,r28
+ 416 0178 9D1E      		adc r9,r29
+ 461:main.c        ****         //uart_putdw_dec(temp);uart_puts_p(PSTR("<-- calval \n"));
+ 462:main.c        ****         if ( (temp >65535 )|| (temp< -65535))
+ 463:main.c        ****         {
+ 464:main.c        ****             uart_puts_p(PSTR("# warning: corrupt calval\n")); 
+ 465:main.c        ****         }
+ 466:main.c        ****         temp = strtod(data->offset[i] ,0);
+ 417               		.stabn	68,0,466,.LM41-.LFBB3
+ 418               	.LM41:
+ 419 017a 90E4      		ldi r25,lo8(320)
+ 420 017c A92E      		mov r10,r25
+ 421 017e 91E0      		ldi r25,hi8(320)
+ 422 0180 B92E      		mov r11,r25
+ 423 0182 AC0E      		add r10,r28
+ 424 0184 BD1E      		adc r11,r29
+ 458:main.c        ****     for (uint8_t i = 0; i<data->number_inputs ; i ++ )
+ 425               		.stabn	68,0,458,.LM42-.LFBB3
+ 426               	.LM42:
+ 427 0186 00C0      		rjmp .L13
+ 428               	.L20:
+ 460:main.c        ****         temp = strtod(data->calval[i] ,0);
+ 429               		.stabn	68,0,460,.LM43-.LFBB3
+ 430               	.LM43:
+ 431 0188 C12F      		mov r28,r17
+ 432 018a D0E0      		ldi r29,lo8(0)
+ 433 018c 83E0      		ldi r24,3
+ 434 018e CC0F      	1:	lsl r28
+ 435 0190 DD1F      		rol r29
+ 436 0192 8A95      		dec r24
+ 437 0194 01F4      		brne 1b
+ 438 0196 C401      		movw r24,r8
+ 439 0198 8C0F      		add r24,r28
+GAS LISTING /tmp/ccsaRNb4.s 			page 17
+
+
+ 440 019a 9D1F      		adc r25,r29
+ 441 019c 60E0      		ldi r22,lo8(0)
+ 442 019e 70E0      		ldi r23,hi8(0)
+ 443 01a0 0E94 0000 		call strtod
+ 444 01a4 6B01      		movw r12,r22
+ 445 01a6 7C01      		movw r14,r24
+ 462:main.c        ****         if ( (temp >65535 )|| (temp< -65535))
+ 446               		.stabn	68,0,462,.LM44-.LFBB3
+ 447               	.LM44:
+ 448 01a8 20E0      		ldi r18,lo8(0x477fff00)
+ 449 01aa 3FEF      		ldi r19,hi8(0x477fff00)
+ 450 01ac 4FE7      		ldi r20,hlo8(0x477fff00)
+ 451 01ae 57E4      		ldi r21,hhi8(0x477fff00)
+ 452 01b0 0E94 0000 		call __gtsf2
+ 453 01b4 1816      		cp __zero_reg__,r24
+ 454 01b6 04F0      		brlt .L14
+ 462:main.c        ****         if ( (temp >65535 )|| (temp< -65535))
+ 455               		.stabn	68,0,462,.LM45-.LFBB3
+ 456               	.LM45:
+ 457 01b8 C701      		movw r24,r14
+ 458 01ba B601      		movw r22,r12
+ 459 01bc 20E0      		ldi r18,lo8(0xc77fff00)
+ 460 01be 3FEF      		ldi r19,hi8(0xc77fff00)
+ 461 01c0 4FE7      		ldi r20,hlo8(0xc77fff00)
+ 462 01c2 57EC      		ldi r21,hhi8(0xc77fff00)
+ 463 01c4 0E94 0000 		call __ltsf2
+ 464 01c8 87FF      		sbrs r24,7
+ 465 01ca 00C0      		rjmp .L15
+ 466               	.L14:
+ 464:main.c        ****             uart_puts_p(PSTR("# warning: corrupt calval\n")); 
+ 467               		.stabn	68,0,464,.LM46-.LFBB3
+ 468               	.LM46:
+ 469 01cc 80E0      		ldi r24,lo8(__c.2352)
+ 470 01ce 90E0      		ldi r25,hi8(__c.2352)
+ 471 01d0 0E94 0000 		call uart_puts_p
+ 472               	.L15:
+ 473               		.stabn	68,0,466,.LM47-.LFBB3
+ 474               	.LM47:
+ 475 01d4 C501      		movw r24,r10
+ 476 01d6 8C0F      		add r24,r28
+ 477 01d8 9D1F      		adc r25,r29
+ 478 01da 60E0      		ldi r22,lo8(0)
+ 479 01dc 70E0      		ldi r23,hi8(0)
+ 480 01de 0E94 0000 		call strtod
+ 481 01e2 6B01      		movw r12,r22
+ 482 01e4 7C01      		movw r14,r24
+ 467:main.c        ****         //uart_putdw_dec(temp);uart_puts_p(PSTR("<-- offset \n"));
+ 468:main.c        ****         if ( (temp >65535 )|| (temp< -65535))
+ 483               		.stabn	68,0,468,.LM48-.LFBB3
+ 484               	.LM48:
+ 485 01e6 20E0      		ldi r18,lo8(0x477fff00)
+ 486 01e8 3FEF      		ldi r19,hi8(0x477fff00)
+ 487 01ea 4FE7      		ldi r20,hlo8(0x477fff00)
+ 488 01ec 57E4      		ldi r21,hhi8(0x477fff00)
+ 489 01ee 0E94 0000 		call __gtsf2
+ 490 01f2 1816      		cp __zero_reg__,r24
+ 491 01f4 04F0      		brlt .L17
+GAS LISTING /tmp/ccsaRNb4.s 			page 18
+
+
+ 492               		.stabn	68,0,468,.LM49-.LFBB3
+ 493               	.LM49:
+ 494 01f6 C701      		movw r24,r14
+ 495 01f8 B601      		movw r22,r12
+ 496 01fa 20E0      		ldi r18,lo8(0xc77fff00)
+ 497 01fc 3FEF      		ldi r19,hi8(0xc77fff00)
+ 498 01fe 4FE7      		ldi r20,hlo8(0xc77fff00)
+ 499 0200 57EC      		ldi r21,hhi8(0xc77fff00)
+ 500 0202 0E94 0000 		call __ltsf2
+ 501 0206 87FF      		sbrs r24,7
+ 502 0208 00C0      		rjmp .L18
+ 503               	.L17:
+ 469:main.c        ****         {
+ 470:main.c        ****             uart_puts_p(PSTR("# warning: corrupt offset\n")); 
+ 504               		.stabn	68,0,470,.LM50-.LFBB3
+ 505               	.LM50:
+ 506 020a 80E0      		ldi r24,lo8(__c.2354)
+ 507 020c 90E0      		ldi r25,hi8(__c.2354)
+ 508 020e 0E94 0000 		call uart_puts_p
+ 509               	.L18:
+ 458:main.c        ****     for (uint8_t i = 0; i<data->number_inputs ; i ++ )
+ 510               		.stabn	68,0,458,.LM51-.LFBB3
+ 511               	.LM51:
+ 512 0212 1F5F      		subi r17,lo8(-(1))
+ 513               	.L13:
+ 458:main.c        ****     for (uint8_t i = 0; i<data->number_inputs ; i ++ )
+ 514               		.stabn	68,0,458,.LM52-.LFBB3
+ 515               	.LM52:
+ 516 0214 F301      		movw r30,r6
+ 517 0216 8081      		ld r24,Z
+ 518 0218 1817      		cp r17,r24
+ 519 021a 00F4      		brsh .+2
+ 520 021c 00C0      		rjmp .L20
+ 521               	/* epilogue start */
+ 522               	.LBE14:
+ 471:main.c        ****         }
+ 472:main.c        ****     }
+ 473:main.c        **** 
+ 474:main.c        **** }
+ 523               		.stabn	68,0,474,.LM53-.LFBB3
+ 524               	.LM53:
+ 525 021e DF91      		pop r29
+ 526 0220 CF91      		pop r28
+ 527 0222 1F91      		pop r17
+ 528 0224 0F91      		pop r16
+ 529 0226 FF90      		pop r15
+ 530 0228 EF90      		pop r14
+ 531 022a DF90      		pop r13
+ 532 022c CF90      		pop r12
+ 533 022e BF90      		pop r11
+ 534 0230 AF90      		pop r10
+ 535 0232 9F90      		pop r9
+ 536 0234 8F90      		pop r8
+ 537 0236 7F90      		pop r7
+ 538 0238 6F90      		pop r6
+ 539 023a 0895      		ret
+ 540               		.size	read_stored_vals, .-read_stored_vals
+GAS LISTING /tmp/ccsaRNb4.s 			page 19
+
+
+ 541               		.stabs	"tempnum:r(3,2)",64,0,444,16
+ 542               		.stabn	192,0,0,.LFBB3-.LFBB3
+ 543               		.stabs	"i:r(3,2)",64,0,446,17
+ 544               		.stabn	192,0,0,.LBB13-.LFBB3
+ 545               		.stabn	224,0,0,.LBE13-.LFBB3
+ 546               		.stabs	"i:r(3,2)",64,0,458,17
+ 547               		.stabn	192,0,0,.LBB14-.LFBB3
+ 548               		.stabn	224,0,0,.LBE14-.LFBB3
+ 549               		.stabn	224,0,0,.Lscope3-.LFBB3
+ 550               	.Lscope3:
+ 551               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 552               		.stabd	78,0,0
+ 553               		.stabs	"cal_menu:F(0,15)",36,0,266,cal_menu
+ 554               		.stabs	"data:P(0,17)",64,0,266,12
+ 555               	.global	cal_menu
+ 556               		.type	cal_menu, @function
+ 557               	cal_menu:
+ 558               		.stabd	46,0,0
+ 267:main.c        **** {
+ 559               		.stabn	68,0,267,.LM54-.LFBB4
+ 560               	.LM54:
+ 561               	.LFBB4:
+ 562 023c 2F92      		push r2
+ 563 023e 3F92      		push r3
+ 564 0240 4F92      		push r4
+ 565 0242 5F92      		push r5
+ 566 0244 6F92      		push r6
+ 567 0246 7F92      		push r7
+ 568 0248 8F92      		push r8
+ 569 024a 9F92      		push r9
+ 570 024c AF92      		push r10
+ 571 024e BF92      		push r11
+ 572 0250 CF92      		push r12
+ 573 0252 DF92      		push r13
+ 574 0254 EF92      		push r14
+ 575 0256 FF92      		push r15
+ 576 0258 0F93      		push r16
+ 577 025a 1F93      		push r17
+ 578 025c DF93      		push r29
+ 579 025e CF93      		push r28
+ 580 0260 CDB7      		in r28,__SP_L__
+ 581 0262 DEB7      		in r29,__SP_H__
+ 582 0264 6197      		sbiw r28,17
+ 583 0266 0FB6      		in __tmp_reg__,__SREG__
+ 584 0268 F894      		cli
+ 585 026a DEBF      		out __SP_H__,r29
+ 586 026c 0FBE      		out __SREG__,__tmp_reg__
+ 587 026e CDBF      		out __SP_L__,r28
+ 588               	/* prologue: function */
+ 589               	/* frame size = 17 */
+ 590               	/* stack size = 35 */
+ 591               	.L__stack_usage = 35
+ 592 0270 6C01      		movw r12,r24
+ 268:main.c        ****     char command[NAME_MAX+1] = "";
+ 593               		.stabn	68,0,268,.LM55-.LFBB4
+ 594               	.LM55:
+ 595 0272 1986      		std Y+9,__zero_reg__
+GAS LISTING /tmp/ccsaRNb4.s 			page 20
+
+
+ 596 0274 1A86      		std Y+10,__zero_reg__
+ 597 0276 1B86      		std Y+11,__zero_reg__
+ 598 0278 1C86      		std Y+12,__zero_reg__
+ 599 027a FE01      		movw r30,r28
+ 600 027c 3D96      		adiw r30,13
+ 601 027e 85E0      		ldi r24,lo8(5)
+ 602 0280 DF01      		movw r26,r30
+ 603 0282 1D92      		st X+,__zero_reg__
+ 604 0284 8A95      	        dec r24
+ 605 0286 01F4      		brne .-6
+ 269:main.c        ****     read_stored_vals(data);
+ 606               		.stabn	68,0,269,.LM56-.LFBB4
+ 607               	.LM56:
+ 608 0288 C601      		movw r24,r12
+ 609 028a 0E94 0000 		call read_stored_vals
+ 610               	.LBB15:
+ 275:main.c        ****         if(read_line(command,3) < 1)    //input up to x - 1 characters
+ 611               		.stabn	68,0,275,.LM57-.LFBB4
+ 612               	.LM57:
+ 613 028e 39E0      		ldi r19,lo8(9)
+ 614 0290 E32E      		mov r14,r19
+ 615 0292 F12C      		mov r15,__zero_reg__
+ 616 0294 EC0E      		add r14,r28
+ 617 0296 FD1E      		adc r15,r29
+ 618               	.LBB16:
+ 619               	.LBB18:
+ 359:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 620               		.stabn	68,0,359,.LM58-.LFBB4
+ 621               	.LM58:
+ 622 0298 20EE      		ldi r18,lo8(480)
+ 623 029a A22E      		mov r10,r18
+ 624 029c 21E0      		ldi r18,hi8(480)
+ 625 029e B22E      		mov r11,r18
+ 626 02a0 AC0C      		add r10,r12
+ 627 02a2 BD1C      		adc r11,r13
+ 363:main.c        ****                 uart_puts(data->offset[i]);        uart_putc('\n');      
+ 628               		.stabn	68,0,363,.LM59-.LFBB4
+ 629               	.LM59:
+ 630 02a4 90E4      		ldi r25,lo8(320)
+ 631 02a6 692E      		mov r6,r25
+ 632 02a8 91E0      		ldi r25,hi8(320)
+ 633 02aa 792E      		mov r7,r25
+ 634 02ac 6C0C      		add r6,r12
+ 635 02ae 7D1C      		adc r7,r13
+ 636               	.LBE18:
+ 290:main.c        ****             uart_puts_p(PSTR("header ID  ")); uart_putw_dec(data->header_id_val); uart_putc('\n');
+ 637               		.stabn	68,0,290,.LM60-.LFBB4
+ 638               	.LM60:
+ 639 02b0 87EF      		ldi r24,lo8(759)
+ 640 02b2 282E      		mov r2,r24
+ 641 02b4 82E0      		ldi r24,hi8(759)
+ 642 02b6 382E      		mov r3,r24
+ 643 02b8 2C0C      		add r2,r12
+ 644 02ba 3D1C      		adc r3,r13
+ 645               	.LBB17:
+ 334:main.c        ****                 uart_puts(data->calval[i]);            uart_putc('\n');      
+ 646               		.stabn	68,0,334,.LM61-.LFBB4
+GAS LISTING /tmp/ccsaRNb4.s 			page 21
+
+
+ 647               	.LM61:
+ 648 02bc 00EA      		ldi r16,lo8(160)
+ 649 02be 402E      		mov r4,r16
+ 650 02c0 512C      		mov r5,__zero_reg__
+ 651 02c2 4C0C      		add r4,r12
+ 652 02c4 5D1C      		adc r5,r13
+ 653               	.L45:
+ 654               	.LBE17:
+ 655               	.LBE16:
+ 273:main.c        ****         uart_puts_p(PSTR("1: Names \n2: Cal val \n3: offset \n4: time \n5: CO2 \n" ));
+ 656               		.stabn	68,0,273,.LM62-.LFBB4
+ 657               	.LM62:
+ 658 02c6 80E0      		ldi r24,lo8(__c.2212)
+ 659 02c8 90E0      		ldi r25,hi8(__c.2212)
+ 660 02ca 0E94 0000 		call uart_puts_p
+ 274:main.c        ****         uart_puts_p(PSTR(" enter>"));
+ 661               		.stabn	68,0,274,.LM63-.LFBB4
+ 662               	.LM63:
+ 663 02ce 80E0      		ldi r24,lo8(__c.2214)
+ 664 02d0 90E0      		ldi r25,hi8(__c.2214)
+ 665 02d2 0E94 0000 		call uart_puts_p
+ 275:main.c        ****         if(read_line(command,3) < 1)    //input up to x - 1 characters
+ 666               		.stabn	68,0,275,.LM64-.LFBB4
+ 667               	.LM64:
+ 668 02d6 C701      		movw r24,r14
+ 669 02d8 63E0      		ldi r22,lo8(3)
+ 670 02da 0E94 0000 		call read_line
+ 671 02de 8823      		tst r24
+ 672 02e0 01F0      		breq .L45
+ 277:main.c        ****         uint8_t choice = atoi(command);
+ 673               		.stabn	68,0,277,.LM65-.LFBB4
+ 674               	.LM65:
+ 675 02e2 C701      		movw r24,r14
+ 676 02e4 0E94 0000 		call atoi
+ 278:main.c        ****         switch(choice)
+ 677               		.stabn	68,0,278,.LM66-.LFBB4
+ 678               	.LM66:
+ 679 02e8 8330      		cpi r24,lo8(3)
+ 680 02ea 01F4      		brne .+2
+ 681 02ec 00C0      		rjmp .L26
+ 682 02ee 8430      		cpi r24,lo8(4)
+ 683 02f0 00F4      		brsh .L29
+ 684 02f2 8130      		cpi r24,lo8(1)
+ 685 02f4 01F0      		breq .L24
+ 686 02f6 8230      		cpi r24,lo8(2)
+ 687 02f8 01F4      		brne .L45
+ 688 02fa 00C0      		rjmp .L48
+ 689               	.L29:
+ 690 02fc 8430      		cpi r24,lo8(4)
+ 691 02fe 01F4      		brne .+2
+ 692 0300 00C0      		rjmp .L27
+ 693 0302 8530      		cpi r24,lo8(5)
+ 694 0304 01F4      		brne .L45
+ 695 0306 00C0      		rjmp .L49
+ 696               	.L24:
+ 697               	.LBB26:
+ 281:main.c        ****             uart_puts_p(PSTR("\nName Entry (7 char max)\n"));
+GAS LISTING /tmp/ccsaRNb4.s 			page 22
+
+
+ 698               		.stabn	68,0,281,.LM67-.LFBB4
+ 699               	.LM67:
+ 700 0308 80E0      		ldi r24,lo8(__c.2219)
+ 701 030a 90E0      		ldi r25,hi8(__c.2219)
+ 702 030c 0E94 0000 		call uart_puts_p
+ 282:main.c        ****             uart_puts_p(PSTR("\nchan:  name\n"));
+ 703               		.stabn	68,0,282,.LM68-.LFBB4
+ 704               	.LM68:
+ 705 0310 80E0      		ldi r24,lo8(__c.2221)
+ 706 0312 90E0      		ldi r25,hi8(__c.2221)
+ 707 0314 0E94 0000 		call uart_puts_p
+ 708               	.LBB19:
+ 284:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 709               		.stabn	68,0,284,.LM69-.LFBB4
+ 710               	.LM69:
+ 711 0318 9924      		clr r9
+ 712 031a 00C0      		rjmp .L30
+ 713               	.L31:
+ 286:main.c        ****                 uart_putw_dec(i);  uart_puts_p(PSTR(": "));  
+ 714               		.stabn	68,0,286,.LM70-.LFBB4
+ 715               	.LM70:
+ 716 031c 092D      		mov r16,r9
+ 717 031e 10E0      		ldi r17,lo8(0)
+ 718 0320 C801      		movw r24,r16
+ 719 0322 0E94 0000 		call uart_putw_dec
+ 720 0326 80E0      		ldi r24,lo8(__c.2224)
+ 721 0328 90E0      		ldi r25,hi8(__c.2224)
+ 722 032a 0E94 0000 		call uart_puts_p
+ 287:main.c        ****                 uart_puts(data->name[i]); uart_putc('\n');      
+ 723               		.stabn	68,0,287,.LM71-.LFBB4
+ 724               	.LM71:
+ 725 032e C801      		movw r24,r16
+ 726 0330 13E0      		ldi r17,3
+ 727 0332 880F      	1:	lsl r24
+ 728 0334 991F      		rol r25
+ 729 0336 1A95      		dec r17
+ 730 0338 01F4      		brne 1b
+ 731 033a 8C0D      		add r24,r12
+ 732 033c 9D1D      		adc r25,r13
+ 733 033e 0E94 0000 		call uart_puts
+ 734 0342 8AE0      		ldi r24,lo8(10)
+ 735 0344 0E94 0000 		call uart_putc
+ 284:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 736               		.stabn	68,0,284,.LM72-.LFBB4
+ 737               	.LM72:
+ 738 0348 9394      		inc r9
+ 739               	.L30:
+ 284:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 740               		.stabn	68,0,284,.LM73-.LFBB4
+ 741               	.LM73:
+ 742 034a F501      		movw r30,r10
+ 743 034c 8081      		ld r24,Z
+ 744 034e 9816      		cp r9,r24
+ 745 0350 00F0      		brlo .L31
+ 746               	.LBE19:
+ 289:main.c        ****             uart_putw_dec(data->number_inputs);  uart_puts_p(PSTR(": "));
+ 747               		.stabn	68,0,289,.LM74-.LFBB4
+GAS LISTING /tmp/ccsaRNb4.s 			page 23
+
+
+ 748               	.LM74:
+ 749 0352 90E0      		ldi r25,lo8(0)
+ 750 0354 0E94 0000 		call uart_putw_dec
+ 751 0358 80E0      		ldi r24,lo8(__c.2229)
+ 752 035a 90E0      		ldi r25,hi8(__c.2229)
+ 753 035c 0E94 0000 		call uart_puts_p
+ 290:main.c        ****             uart_puts_p(PSTR("header ID  ")); uart_putw_dec(data->header_id_val); uart_putc('\n');
+ 754               		.stabn	68,0,290,.LM75-.LFBB4
+ 755               	.LM75:
+ 756 0360 80E0      		ldi r24,lo8(__c.2231)
+ 757 0362 90E0      		ldi r25,hi8(__c.2231)
+ 758 0364 0E94 0000 		call uart_puts_p
+ 759 0368 D101      		movw r26,r2
+ 760 036a 8C91      		ld r24,X
+ 761 036c 90E0      		ldi r25,lo8(0)
+ 762 036e 0E94 0000 		call uart_putw_dec
+ 763 0372 8AE0      		ldi r24,lo8(10)
+ 764 0374 0E94 0000 		call uart_putc
+ 291:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice 
+ 765               		.stabn	68,0,291,.LM76-.LFBB4
+ 766               	.LM76:
+ 767 0378 B9E0      		ldi r27,lo8(9)
+ 768 037a 8B2E      		mov r8,r27
+ 769 037c F701      		movw r30,r14
+ 770 037e 882D      		mov r24,r8
+ 771 0380 1192      		st Z+,__zero_reg__
+ 772 0382 8A95      	        dec r24
+ 773 0384 01F4      		brne .-6
+ 292:main.c        ****             uart_puts_p(PSTR("\n enter chan num>"));
+ 774               		.stabn	68,0,292,.LM77-.LFBB4
+ 775               	.LM77:
+ 776 0386 80E0      		ldi r24,lo8(__c.2233)
+ 777 0388 90E0      		ldi r25,hi8(__c.2233)
+ 778 038a 0E94 0000 		call uart_puts_p
+ 293:main.c        ****             if((read_line(command, 3) > 0))	//read one line  
+ 779               		.stabn	68,0,293,.LM78-.LFBB4
+ 780               	.LM78:
+ 781 038e C701      		movw r24,r14
+ 782 0390 63E0      		ldi r22,lo8(3)
+ 783 0392 0E94 0000 		call read_line
+ 784 0396 8823      		tst r24
+ 785 0398 01F4      		brne .+2
+ 786 039a 00C0      		rjmp .L45
+ 787               	.LBB20:
+ 295:main.c        ****                 uint8_t name_number = atoi(command);
+ 788               		.stabn	68,0,295,.LM79-.LFBB4
+ 789               	.LM79:
+ 790 039c C701      		movw r24,r14
+ 791 039e 0E94 0000 		call atoi
+ 792 03a2 982E      		mov r9,r24
+ 296:main.c        ****                 uart_puts_p(PSTR(" entered: "));
+ 793               		.stabn	68,0,296,.LM80-.LFBB4
+ 794               	.LM80:
+ 795 03a4 80E0      		ldi r24,lo8(__c.2236)
+ 796 03a6 90E0      		ldi r25,hi8(__c.2236)
+ 797 03a8 0E94 0000 		call uart_puts_p
+ 297:main.c        ****                 uart_putw_dec(name_number);
+GAS LISTING /tmp/ccsaRNb4.s 			page 24
+
+
+ 798               		.stabn	68,0,297,.LM81-.LFBB4
+ 799               	.LM81:
+ 800 03ac 092D      		mov r16,r9
+ 801 03ae 10E0      		ldi r17,lo8(0)
+ 802 03b0 C801      		movw r24,r16
+ 803 03b2 0E94 0000 		call uart_putw_dec
+ 298:main.c        ****                 uart_putc('\n');
+ 804               		.stabn	68,0,298,.LM82-.LFBB4
+ 805               	.LM82:
+ 806 03b6 8AE0      		ldi r24,lo8(10)
+ 807 03b8 0E94 0000 		call uart_putc
+ 299:main.c        ****                 memset(command,'\0',NAME_MAX+1);//clear choice
+ 808               		.stabn	68,0,299,.LM83-.LFBB4
+ 809               	.LM83:
+ 810 03bc D701      		movw r26,r14
+ 811 03be 1D92      		st X+,__zero_reg__
+ 812 03c0 8A94      	        dec r8
+ 813 03c2 01F4      		brne .-6
+ 300:main.c        ****                 if (name_number < data->number_inputs) 
+ 814               		.stabn	68,0,300,.LM84-.LFBB4
+ 815               	.LM84:
+ 816 03c4 F501      		movw r30,r10
+ 817 03c6 8081      		ld r24,Z
+ 818 03c8 9816      		cp r9,r24
+ 819 03ca 00F4      		brsh .L32
+ 302:main.c        ****                     uart_puts_p(PSTR("enter new name >"));
+ 820               		.stabn	68,0,302,.LM85-.LFBB4
+ 821               	.LM85:
+ 822 03cc 80E0      		ldi r24,lo8(__c.2238)
+ 823 03ce 90E0      		ldi r25,hi8(__c.2238)
+ 824 03d0 0E94 0000 		call uart_puts_p
+ 303:main.c        ****                     if((read_line(command, NAME_MAX) > 0))	//read one line 
+ 825               		.stabn	68,0,303,.LM86-.LFBB4
+ 826               	.LM86:
+ 827 03d4 C701      		movw r24,r14
+ 828 03d6 68E0      		ldi r22,lo8(8)
+ 829 03d8 0E94 0000 		call read_line
+ 830 03dc 8823      		tst r24
+ 831 03de 01F0      		breq .L32
+ 305:main.c        ****                         uart_puts_p(PSTR(" entered: "));
+ 832               		.stabn	68,0,305,.LM87-.LFBB4
+ 833               	.LM87:
+ 834 03e0 80E0      		ldi r24,lo8(__c.2240)
+ 835 03e2 90E0      		ldi r25,hi8(__c.2240)
+ 836 03e4 0E94 0000 		call uart_puts_p
+ 306:main.c        ****                         uart_puts(command);
+ 837               		.stabn	68,0,306,.LM88-.LFBB4
+ 838               	.LM88:
+ 839 03e8 C701      		movw r24,r14
+ 840 03ea 0E94 0000 		call uart_puts
+ 307:main.c        ****                         uart_putc('\n');
+ 841               		.stabn	68,0,307,.LM89-.LFBB4
+ 842               	.LM89:
+ 843 03ee 8AE0      		ldi r24,lo8(10)
+ 844 03f0 0E94 0000 		call uart_putc
+ 308:main.c        ****                         strcpy(data->name[name_number], command); //record
+ 845               		.stabn	68,0,308,.LM90-.LFBB4
+GAS LISTING /tmp/ccsaRNb4.s 			page 25
+
+
+ 846               	.LM90:
+ 847 03f4 C801      		movw r24,r16
+ 848 03f6 A3E0      		ldi r26,3
+ 849 03f8 880F      	1:	lsl r24
+ 850 03fa 991F      		rol r25
+ 851 03fc AA95      		dec r26
+ 852 03fe 01F4      		brne 1b
+ 853 0400 8C0D      		add r24,r12
+ 854 0402 9D1D      		adc r25,r13
+ 855 0404 B701      		movw r22,r14
+ 856 0406 0E94 0000 		call strcpy
+ 309:main.c        ****                         read_write_stored(WRITE_NAME ,data, name_number);//store
+ 857               		.stabn	68,0,309,.LM91-.LFBB4
+ 858               	.LM91:
+ 859 040a 83E0      		ldi r24,lo8(3)
+ 860 040c B601      		movw r22,r12
+ 861 040e 492D      		mov r20,r9
+ 862 0410 0E94 0000 		call read_write_stored
+ 863               	.L32:
+ 312:main.c        ****                 if (name_number == data->number_inputs)
+ 864               		.stabn	68,0,312,.LM92-.LFBB4
+ 865               	.LM92:
+ 866 0414 D501      		movw r26,r10
+ 867 0416 8C91      		ld r24,X
+ 868 0418 9816      		cp r9,r24
+ 869 041a 01F0      		breq .+2
+ 870 041c 00C0      		rjmp .L45
+ 314:main.c        ****                     uart_puts_p(PSTR("enter ID >"));
+ 871               		.stabn	68,0,314,.LM93-.LFBB4
+ 872               	.LM93:
+ 873 041e 80E0      		ldi r24,lo8(__c.2242)
+ 874 0420 90E0      		ldi r25,hi8(__c.2242)
+ 875 0422 0E94 0000 		call uart_puts_p
+ 315:main.c        ****                     if((read_line(command, 4) > 0))	//read one line
+ 876               		.stabn	68,0,315,.LM94-.LFBB4
+ 877               	.LM94:
+ 878 0426 C701      		movw r24,r14
+ 879 0428 64E0      		ldi r22,lo8(4)
+ 880 042a 0E94 0000 		call read_line
+ 881 042e 8823      		tst r24
+ 882 0430 01F4      		brne .+2
+ 883 0432 00C0      		rjmp .L45
+ 884               	.LBB21:
+ 317:main.c        ****                         uint8_t id = atoi(command);
+ 885               		.stabn	68,0,317,.LM95-.LFBB4
+ 886               	.LM95:
+ 887 0434 C701      		movw r24,r14
+ 888 0436 0E94 0000 		call atoi
+ 889 043a 082F      		mov r16,r24
+ 318:main.c        ****                         uart_puts_p(PSTR(" entered: "));
+ 890               		.stabn	68,0,318,.LM96-.LFBB4
+ 891               	.LM96:
+ 892 043c 80E0      		ldi r24,lo8(__c.2245)
+ 893 043e 90E0      		ldi r25,hi8(__c.2245)
+ 894 0440 0E94 0000 		call uart_puts_p
+ 319:main.c        ****                         uart_putw_dec(id);
+ 895               		.stabn	68,0,319,.LM97-.LFBB4
+GAS LISTING /tmp/ccsaRNb4.s 			page 26
+
+
+ 896               	.LM97:
+ 897 0444 802F      		mov r24,r16
+ 898 0446 90E0      		ldi r25,lo8(0)
+ 899 0448 0E94 0000 		call uart_putw_dec
+ 320:main.c        ****                         uart_putc('\n');
+ 900               		.stabn	68,0,320,.LM98-.LFBB4
+ 901               	.LM98:
+ 902 044c 8AE0      		ldi r24,lo8(10)
+ 903 044e 0E94 0000 		call uart_putc
+ 321:main.c        ****                         data->header_id_val = id;//record
+ 904               		.stabn	68,0,321,.LM99-.LFBB4
+ 905               	.LM99:
+ 906 0452 F101      		movw r30,r2
+ 907 0454 0083      		st Z,r16
+ 322:main.c        ****                         read_write_stored(WRITE_HDR_ID ,data, 0);//store
+ 908               		.stabn	68,0,322,.LM100-.LFBB4
+ 909               	.LM100:
+ 910 0456 89E0      		ldi r24,lo8(9)
+ 911 0458 B601      		movw r22,r12
+ 912 045a 40E0      		ldi r20,lo8(0)
+ 913 045c 00C0      		rjmp .L46
+ 914               	.L48:
+ 915               	.LBE21:
+ 916               	.LBE20:
+ 328:main.c        ****             uart_puts_p(PSTR("\nCal val Entry (7 char max)\n"));
+ 917               		.stabn	68,0,328,.LM101-.LFBB4
+ 918               	.LM101:
+ 919 045e 80E0      		ldi r24,lo8(__c.2249)
+ 920 0460 90E0      		ldi r25,hi8(__c.2249)
+ 921 0462 0E94 0000 		call uart_puts_p
+ 329:main.c        ****             uart_puts_p(PSTR("\nchan:  name:  value:\n"));
+ 922               		.stabn	68,0,329,.LM102-.LFBB4
+ 923               	.LM102:
+ 924 0466 80E0      		ldi r24,lo8(__c.2251)
+ 925 0468 90E0      		ldi r25,hi8(__c.2251)
+ 926 046a 0E94 0000 		call uart_puts_p
+ 927               	.LBB22:
+ 330:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 928               		.stabn	68,0,330,.LM103-.LFBB4
+ 929               	.LM103:
+ 930 046e 9924      		clr r9
+ 931 0470 00C0      		rjmp .L33
+ 932               	.L34:
+ 332:main.c        ****                 uart_putw_dec(i);                      uart_puts_p(PSTR(": "));  
+ 933               		.stabn	68,0,332,.LM104-.LFBB4
+ 934               	.LM104:
+ 935 0472 092D      		mov r16,r9
+ 936 0474 10E0      		ldi r17,lo8(0)
+ 937 0476 C801      		movw r24,r16
+ 938 0478 0E94 0000 		call uart_putw_dec
+ 939 047c 80E0      		ldi r24,lo8(__c.2254)
+ 940 047e 90E0      		ldi r25,hi8(__c.2254)
+ 941 0480 0E94 0000 		call uart_puts_p
+ 333:main.c        ****                 uart_puts(data->name[i]);              uart_puts_p(PSTR(": "));
+ 942               		.stabn	68,0,333,.LM105-.LFBB4
+ 943               	.LM105:
+ 944 0484 F3E0      		ldi r31,3
+GAS LISTING /tmp/ccsaRNb4.s 			page 27
+
+
+ 945 0486 000F      	1:	lsl r16
+ 946 0488 111F      		rol r17
+ 947 048a FA95      		dec r31
+ 948 048c 01F4      		brne 1b
+ 949 048e C601      		movw r24,r12
+ 950 0490 800F      		add r24,r16
+ 951 0492 911F      		adc r25,r17
+ 952 0494 0E94 0000 		call uart_puts
+ 953 0498 80E0      		ldi r24,lo8(__c.2256)
+ 954 049a 90E0      		ldi r25,hi8(__c.2256)
+ 955 049c 0E94 0000 		call uart_puts_p
+ 334:main.c        ****                 uart_puts(data->calval[i]);            uart_putc('\n');      
+ 956               		.stabn	68,0,334,.LM106-.LFBB4
+ 957               	.LM106:
+ 958 04a0 C201      		movw r24,r4
+ 959 04a2 800F      		add r24,r16
+ 960 04a4 911F      		adc r25,r17
+ 961 04a6 0E94 0000 		call uart_puts
+ 962 04aa 8AE0      		ldi r24,lo8(10)
+ 963 04ac 0E94 0000 		call uart_putc
+ 330:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 964               		.stabn	68,0,330,.LM107-.LFBB4
+ 965               	.LM107:
+ 966 04b0 9394      		inc r9
+ 967               	.L33:
+ 330:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 968               		.stabn	68,0,330,.LM108-.LFBB4
+ 969               	.LM108:
+ 970 04b2 D501      		movw r26,r10
+ 971 04b4 8C91      		ld r24,X
+ 972 04b6 9816      		cp r9,r24
+ 973 04b8 00F0      		brlo .L34
+ 974               	.LBE22:
+ 336:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice 
+ 975               		.stabn	68,0,336,.LM109-.LFBB4
+ 976               	.LM109:
+ 977 04ba E9E0      		ldi r30,lo8(9)
+ 978 04bc 8E2E      		mov r8,r30
+ 979 04be F701      		movw r30,r14
+ 980 04c0 882D      		mov r24,r8
+ 981 04c2 1192      		st Z+,__zero_reg__
+ 982 04c4 8A95      	        dec r24
+ 983 04c6 01F4      		brne .-6
+ 337:main.c        ****             uart_puts_p(PSTR("\n enter chan number>"));
+ 984               		.stabn	68,0,337,.LM110-.LFBB4
+ 985               	.LM110:
+ 986 04c8 80E0      		ldi r24,lo8(__c.2261)
+ 987 04ca 90E0      		ldi r25,hi8(__c.2261)
+ 988 04cc 0E94 0000 		call uart_puts_p
+ 338:main.c        ****             if((read_line(command, 3) > 0))	//read one line  up to 3 characters
+ 989               		.stabn	68,0,338,.LM111-.LFBB4
+ 990               	.LM111:
+ 991 04d0 C701      		movw r24,r14
+ 992 04d2 63E0      		ldi r22,lo8(3)
+ 993 04d4 0E94 0000 		call read_line
+ 994 04d8 8823      		tst r24
+ 995 04da 01F4      		brne .+2
+GAS LISTING /tmp/ccsaRNb4.s 			page 28
+
+
+ 996 04dc 00C0      		rjmp .L45
+ 997               	.LBB23:
+ 340:main.c        ****                 uint8_t name_number = atoi(command);
+ 998               		.stabn	68,0,340,.LM112-.LFBB4
+ 999               	.LM112:
+ 1000 04de C701      		movw r24,r14
+ 1001 04e0 0E94 0000 		call atoi
+ 1002 04e4 982E      		mov r9,r24
+ 341:main.c        ****                 uart_puts_p(PSTR(" entered: "));
+ 1003               		.stabn	68,0,341,.LM113-.LFBB4
+ 1004               	.LM113:
+ 1005 04e6 80E0      		ldi r24,lo8(__c.2264)
+ 1006 04e8 90E0      		ldi r25,hi8(__c.2264)
+ 1007 04ea 0E94 0000 		call uart_puts_p
+ 342:main.c        ****                 uart_putw_dec(name_number);
+ 1008               		.stabn	68,0,342,.LM114-.LFBB4
+ 1009               	.LM114:
+ 1010 04ee 092D      		mov r16,r9
+ 1011 04f0 10E0      		ldi r17,lo8(0)
+ 1012 04f2 C801      		movw r24,r16
+ 1013 04f4 0E94 0000 		call uart_putw_dec
+ 343:main.c        ****                 uart_putc('\n');
+ 1014               		.stabn	68,0,343,.LM115-.LFBB4
+ 1015               	.LM115:
+ 1016 04f8 8AE0      		ldi r24,lo8(10)
+ 1017 04fa 0E94 0000 		call uart_putc
+ 344:main.c        ****                 memset(command,'\0',NAME_MAX+1);//clear choice
+ 1018               		.stabn	68,0,344,.LM116-.LFBB4
+ 1019               	.LM116:
+ 1020 04fe D701      		movw r26,r14
+ 1021 0500 1D92      		st X+,__zero_reg__
+ 1022 0502 8A94      	        dec r8
+ 1023 0504 01F4      		brne .-6
+ 345:main.c        ****                 uart_puts_p(PSTR("enter value >"));
+ 1024               		.stabn	68,0,345,.LM117-.LFBB4
+ 1025               	.LM117:
+ 1026 0506 80E0      		ldi r24,lo8(__c.2266)
+ 1027 0508 90E0      		ldi r25,hi8(__c.2266)
+ 1028 050a 0E94 0000 		call uart_puts_p
+ 346:main.c        ****                 if((read_line(command, NAME_MAX) > 0))	//read one line  up to 10 characters
+ 1029               		.stabn	68,0,346,.LM118-.LFBB4
+ 1030               	.LM118:
+ 1031 050e C701      		movw r24,r14
+ 1032 0510 68E0      		ldi r22,lo8(8)
+ 1033 0512 0E94 0000 		call read_line
+ 1034 0516 8823      		tst r24
+ 1035 0518 01F4      		brne .+2
+ 1036 051a 00C0      		rjmp .L45
+ 348:main.c        ****                     uart_puts_p(PSTR("entered: "));
+ 1037               		.stabn	68,0,348,.LM119-.LFBB4
+ 1038               	.LM119:
+ 1039 051c 80E0      		ldi r24,lo8(__c.2268)
+ 1040 051e 90E0      		ldi r25,hi8(__c.2268)
+ 1041 0520 0E94 0000 		call uart_puts_p
+ 349:main.c        ****                     uart_puts(command);
+ 1042               		.stabn	68,0,349,.LM120-.LFBB4
+ 1043               	.LM120:
+GAS LISTING /tmp/ccsaRNb4.s 			page 29
+
+
+ 1044 0524 C701      		movw r24,r14
+ 1045 0526 0E94 0000 		call uart_puts
+ 350:main.c        ****                     uart_putc('\n');
+ 1046               		.stabn	68,0,350,.LM121-.LFBB4
+ 1047               	.LM121:
+ 1048 052a 8AE0      		ldi r24,lo8(10)
+ 1049 052c 0E94 0000 		call uart_putc
+ 351:main.c        ****                     strcpy(data->calval[name_number], command); //record
+ 1050               		.stabn	68,0,351,.LM122-.LFBB4
+ 1051               	.LM122:
+ 1052 0530 C801      		movw r24,r16
+ 1053 0532 73E0      		ldi r23,3
+ 1054 0534 880F      	1:	lsl r24
+ 1055 0536 991F      		rol r25
+ 1056 0538 7A95      		dec r23
+ 1057 053a 01F4      		brne 1b
+ 1058 053c 840D      		add r24,r4
+ 1059 053e 951D      		adc r25,r5
+ 1060 0540 B701      		movw r22,r14
+ 1061 0542 0E94 0000 		call strcpy
+ 352:main.c        ****                     read_write_stored(WRITE_CALVAL ,data, name_number);//store
+ 1062               		.stabn	68,0,352,.LM123-.LFBB4
+ 1063               	.LM123:
+ 1064 0546 85E0      		ldi r24,lo8(5)
+ 1065               	.L47:
+ 1066 0548 B601      		movw r22,r12
+ 1067 054a 492D      		mov r20,r9
+ 1068               	.L46:
+ 1069 054c 0E94 0000 		call read_write_stored
+ 1070 0550 00C0      		rjmp .L45
+ 1071               	.L26:
+ 1072               	.LBE23:
+ 357:main.c        ****             uart_puts_p(PSTR("\nOffset Entry (7 char max)\n"));
+ 1073               		.stabn	68,0,357,.LM124-.LFBB4
+ 1074               	.LM124:
+ 1075 0552 80E0      		ldi r24,lo8(__c.2271)
+ 1076 0554 90E0      		ldi r25,hi8(__c.2271)
+ 1077 0556 0E94 0000 		call uart_puts_p
+ 358:main.c        ****             uart_puts_p(PSTR("\nchan:  name:  offset:\n"));
+ 1078               		.stabn	68,0,358,.LM125-.LFBB4
+ 1079               	.LM125:
+ 1080 055a 80E0      		ldi r24,lo8(__c.2273)
+ 1081 055c 90E0      		ldi r25,hi8(__c.2273)
+ 1082 055e 0E94 0000 		call uart_puts_p
+ 1083               	.LBB24:
+ 359:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 1084               		.stabn	68,0,359,.LM126-.LFBB4
+ 1085               	.LM126:
+ 1086 0562 9924      		clr r9
+ 1087 0564 00C0      		rjmp .L35
+ 1088               	.L36:
+ 361:main.c        ****                 uart_putw_dec(i);                   uart_puts_p(PSTR(": "));  
+ 1089               		.stabn	68,0,361,.LM127-.LFBB4
+ 1090               	.LM127:
+ 1091 0566 092D      		mov r16,r9
+ 1092 0568 10E0      		ldi r17,lo8(0)
+ 1093 056a C801      		movw r24,r16
+GAS LISTING /tmp/ccsaRNb4.s 			page 30
+
+
+ 1094 056c 0E94 0000 		call uart_putw_dec
+ 1095 0570 80E0      		ldi r24,lo8(__c.2276)
+ 1096 0572 90E0      		ldi r25,hi8(__c.2276)
+ 1097 0574 0E94 0000 		call uart_puts_p
+ 362:main.c        ****                 uart_puts(data->name[i]);              uart_puts_p(PSTR(": "));
+ 1098               		.stabn	68,0,362,.LM128-.LFBB4
+ 1099               	.LM128:
+ 1100 0578 63E0      		ldi r22,3
+ 1101 057a 000F      	1:	lsl r16
+ 1102 057c 111F      		rol r17
+ 1103 057e 6A95      		dec r22
+ 1104 0580 01F4      		brne 1b
+ 1105 0582 C601      		movw r24,r12
+ 1106 0584 800F      		add r24,r16
+ 1107 0586 911F      		adc r25,r17
+ 1108 0588 0E94 0000 		call uart_puts
+ 1109 058c 80E0      		ldi r24,lo8(__c.2278)
+ 1110 058e 90E0      		ldi r25,hi8(__c.2278)
+ 1111 0590 0E94 0000 		call uart_puts_p
+ 363:main.c        ****                 uart_puts(data->offset[i]);        uart_putc('\n');      
+ 1112               		.stabn	68,0,363,.LM129-.LFBB4
+ 1113               	.LM129:
+ 1114 0594 C301      		movw r24,r6
+ 1115 0596 800F      		add r24,r16
+ 1116 0598 911F      		adc r25,r17
+ 1117 059a 0E94 0000 		call uart_puts
+ 1118 059e 8AE0      		ldi r24,lo8(10)
+ 1119 05a0 0E94 0000 		call uart_putc
+ 359:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 1120               		.stabn	68,0,359,.LM130-.LFBB4
+ 1121               	.LM130:
+ 1122 05a4 9394      		inc r9
+ 1123               	.L35:
+ 359:main.c        ****             for (uint8_t i = 0; i<data->number_inputs; i ++ )//output chans names and 
+ 1124               		.stabn	68,0,359,.LM131-.LFBB4
+ 1125               	.LM131:
+ 1126 05a6 F501      		movw r30,r10
+ 1127 05a8 8081      		ld r24,Z
+ 1128 05aa 9816      		cp r9,r24
+ 1129 05ac 00F0      		brlo .L36
+ 1130               	.LBE24:
+ 365:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice 
+ 1131               		.stabn	68,0,365,.LM132-.LFBB4
+ 1132               	.LM132:
+ 1133 05ae 59E0      		ldi r21,lo8(9)
+ 1134 05b0 852E      		mov r8,r21
+ 1135 05b2 D701      		movw r26,r14
+ 1136 05b4 E82D      		mov r30,r8
+ 1137 05b6 1D92      		st X+,__zero_reg__
+ 1138 05b8 EA95      	        dec r30
+ 1139 05ba 01F4      		brne .-6
+ 366:main.c        ****             uart_puts_p(PSTR("\n enter channel number>"));
+ 1140               		.stabn	68,0,366,.LM133-.LFBB4
+ 1141               	.LM133:
+ 1142 05bc 80E0      		ldi r24,lo8(__c.2283)
+ 1143 05be 90E0      		ldi r25,hi8(__c.2283)
+ 1144 05c0 0E94 0000 		call uart_puts_p
+GAS LISTING /tmp/ccsaRNb4.s 			page 31
+
+
+ 367:main.c        ****             if((read_line(command, 4) > 0))	//read one line  up to 3 characters
+ 1145               		.stabn	68,0,367,.LM134-.LFBB4
+ 1146               	.LM134:
+ 1147 05c4 C701      		movw r24,r14
+ 1148 05c6 64E0      		ldi r22,lo8(4)
+ 1149 05c8 0E94 0000 		call read_line
+ 1150 05cc 8823      		tst r24
+ 1151 05ce 01F4      		brne .+2
+ 1152 05d0 00C0      		rjmp .L45
+ 1153               	.LBB25:
+ 369:main.c        ****                 uint8_t name_number = atoi(command);
+ 1154               		.stabn	68,0,369,.LM135-.LFBB4
+ 1155               	.LM135:
+ 1156 05d2 C701      		movw r24,r14
+ 1157 05d4 0E94 0000 		call atoi
+ 1158 05d8 982E      		mov r9,r24
+ 370:main.c        ****                 uart_puts_p(PSTR("entered: "));
+ 1159               		.stabn	68,0,370,.LM136-.LFBB4
+ 1160               	.LM136:
+ 1161 05da 80E0      		ldi r24,lo8(__c.2286)
+ 1162 05dc 90E0      		ldi r25,hi8(__c.2286)
+ 1163 05de 0E94 0000 		call uart_puts_p
+ 371:main.c        ****                 uart_putw_dec(name_number);
+ 1164               		.stabn	68,0,371,.LM137-.LFBB4
+ 1165               	.LM137:
+ 1166 05e2 092D      		mov r16,r9
+ 1167 05e4 10E0      		ldi r17,lo8(0)
+ 1168 05e6 C801      		movw r24,r16
+ 1169 05e8 0E94 0000 		call uart_putw_dec
+ 372:main.c        ****                 uart_putc('\n');
+ 1170               		.stabn	68,0,372,.LM138-.LFBB4
+ 1171               	.LM138:
+ 1172 05ec 8AE0      		ldi r24,lo8(10)
+ 1173 05ee 0E94 0000 		call uart_putc
+ 373:main.c        ****                 memset(command,'\0',NAME_MAX+1);//clear choice
+ 1174               		.stabn	68,0,373,.LM139-.LFBB4
+ 1175               	.LM139:
+ 1176 05f2 D701      		movw r26,r14
+ 1177 05f4 1D92      		st X+,__zero_reg__
+ 1178 05f6 8A94      	        dec r8
+ 1179 05f8 01F4      		brne .-6
+ 374:main.c        ****                 uart_puts_p(PSTR("enter value >"));
+ 1180               		.stabn	68,0,374,.LM140-.LFBB4
+ 1181               	.LM140:
+ 1182 05fa 80E0      		ldi r24,lo8(__c.2288)
+ 1183 05fc 90E0      		ldi r25,hi8(__c.2288)
+ 1184 05fe 0E94 0000 		call uart_puts_p
+ 375:main.c        ****                 if((read_line(command, NAME_MAX) > 0))	//read one line  up to 10 characters
+ 1185               		.stabn	68,0,375,.LM141-.LFBB4
+ 1186               	.LM141:
+ 1187 0602 C701      		movw r24,r14
+ 1188 0604 68E0      		ldi r22,lo8(8)
+ 1189 0606 0E94 0000 		call read_line
+ 1190 060a 8823      		tst r24
+ 1191 060c 01F4      		brne .+2
+ 1192 060e 00C0      		rjmp .L45
+ 377:main.c        ****                     uart_puts_p(PSTR("entered: "));
+GAS LISTING /tmp/ccsaRNb4.s 			page 32
+
+
+ 1193               		.stabn	68,0,377,.LM142-.LFBB4
+ 1194               	.LM142:
+ 1195 0610 80E0      		ldi r24,lo8(__c.2290)
+ 1196 0612 90E0      		ldi r25,hi8(__c.2290)
+ 1197 0614 0E94 0000 		call uart_puts_p
+ 378:main.c        ****                     uart_puts(command);
+ 1198               		.stabn	68,0,378,.LM143-.LFBB4
+ 1199               	.LM143:
+ 1200 0618 C701      		movw r24,r14
+ 1201 061a 0E94 0000 		call uart_puts
+ 379:main.c        ****                     uart_putc('\n');
+ 1202               		.stabn	68,0,379,.LM144-.LFBB4
+ 1203               	.LM144:
+ 1204 061e 8AE0      		ldi r24,lo8(10)
+ 1205 0620 0E94 0000 		call uart_putc
+ 380:main.c        ****                     strcpy(data->offset[name_number], command); //record
+ 1206               		.stabn	68,0,380,.LM145-.LFBB4
+ 1207               	.LM145:
+ 1208 0624 C801      		movw r24,r16
+ 1209 0626 43E0      		ldi r20,3
+ 1210 0628 880F      	1:	lsl r24
+ 1211 062a 991F      		rol r25
+ 1212 062c 4A95      		dec r20
+ 1213 062e 01F4      		brne 1b
+ 1214 0630 860D      		add r24,r6
+ 1215 0632 971D      		adc r25,r7
+ 1216 0634 B701      		movw r22,r14
+ 1217 0636 0E94 0000 		call strcpy
+ 381:main.c        ****                     read_write_stored(WRITE_OFFSET ,data, name_number);//store
+ 1218               		.stabn	68,0,381,.LM146-.LFBB4
+ 1219               	.LM146:
+ 1220 063a 87E0      		ldi r24,lo8(7)
+ 1221 063c 00C0      		rjmp .L47
+ 1222               	.L27:
+ 1223               	.LBE25:
+ 386:main.c        ****             showtime();
+ 1224               		.stabn	68,0,386,.LM147-.LFBB4
+ 1225               	.LM147:
+ 1226 063e 0E94 0000 		call showtime
+ 387:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice
+ 1227               		.stabn	68,0,387,.LM148-.LFBB4
+ 1228               	.LM148:
+ 1229 0642 89E0      		ldi r24,lo8(9)
+ 1230 0644 F701      		movw r30,r14
+ 1231 0646 1192      		st Z+,__zero_reg__
+ 1232 0648 8A95      	        dec r24
+ 1233 064a 01F4      		brne .-6
+ 388:main.c        ****             uart_puts_p(PSTR("change? (y/n)"));uart_puts_p(PSTR(" >"));
+ 1234               		.stabn	68,0,388,.LM149-.LFBB4
+ 1235               	.LM149:
+ 1236 064c 80E0      		ldi r24,lo8(__c.2293)
+ 1237 064e 90E0      		ldi r25,hi8(__c.2293)
+ 1238 0650 0E94 0000 		call uart_puts_p
+ 1239 0654 80E0      		ldi r24,lo8(__c.2295)
+ 1240 0656 90E0      		ldi r25,hi8(__c.2295)
+ 1241 0658 0E94 0000 		call uart_puts_p
+ 389:main.c        ****             if((read_line(command, 3) > 0))	//read one line
+GAS LISTING /tmp/ccsaRNb4.s 			page 33
+
+
+ 1242               		.stabn	68,0,389,.LM150-.LFBB4
+ 1243               	.LM150:
+ 1244 065c C701      		movw r24,r14
+ 1245 065e 63E0      		ldi r22,lo8(3)
+ 1246 0660 0E94 0000 		call read_line
+ 1247 0664 8823      		tst r24
+ 1248 0666 01F4      		brne .+2
+ 1249 0668 00C0      		rjmp .L45
+ 391:main.c        ****                 if(strcmp_P(command, PSTR("y")) == 0)
+ 1250               		.stabn	68,0,391,.LM151-.LFBB4
+ 1251               	.LM151:
+ 1252 066a C701      		movw r24,r14
+ 1253 066c 60E0      		ldi r22,lo8(__c.2297)
+ 1254 066e 70E0      		ldi r23,hi8(__c.2297)
+ 1255 0670 0E94 0000 		call strcmp_P
+ 1256 0674 0097      		sbiw r24,0
+ 1257 0676 01F0      		breq .+2
+ 1258 0678 00C0      		rjmp .L37
+ 393:main.c        ****                     uart_puts_p(PSTR("\n yr, 4 digit"));uart_puts_p(PSTR(" >"));
+ 1259               		.stabn	68,0,393,.LM152-.LFBB4
+ 1260               	.LM152:
+ 1261 067a 80E0      		ldi r24,lo8(__c.2299)
+ 1262 067c 90E0      		ldi r25,hi8(__c.2299)
+ 1263 067e 0E94 0000 		call uart_puts_p
+ 1264 0682 80E0      		ldi r24,lo8(__c.2301)
+ 1265 0684 90E0      		ldi r25,hi8(__c.2301)
+ 1266 0686 0E94 0000 		call uart_puts_p
+ 394:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 1267               		.stabn	68,0,394,.LM153-.LFBB4
+ 1268               	.LM153:
+ 1269 068a C701      		movw r24,r14
+ 1270 068c 67E0      		ldi r22,lo8(7)
+ 1271 068e 0E94 0000 		call read_line
+ 1272 0692 8823      		tst r24
+ 1273 0694 01F0      		breq .L38
+ 395:main.c        ****                     { rtc.year = atoi(command);}
+ 1274               		.stabn	68,0,395,.LM154-.LFBB4
+ 1275               	.LM154:
+ 1276 0696 C701      		movw r24,r14
+ 1277 0698 0E94 0000 		call atoi
+ 1278 069c 9A83      		std Y+2,r25
+ 1279 069e 8983      		std Y+1,r24
+ 1280               	.L38:
+ 397:main.c        ****                     uart_puts_p(PSTR("\n month, 2 dgt"));uart_puts_p(PSTR(" >"));
+ 1281               		.stabn	68,0,397,.LM155-.LFBB4
+ 1282               	.LM155:
+ 1283 06a0 80E0      		ldi r24,lo8(__c.2303)
+ 1284 06a2 90E0      		ldi r25,hi8(__c.2303)
+ 1285 06a4 0E94 0000 		call uart_puts_p
+ 1286 06a8 80E0      		ldi r24,lo8(__c.2305)
+ 1287 06aa 90E0      		ldi r25,hi8(__c.2305)
+ 1288 06ac 0E94 0000 		call uart_puts_p
+ 398:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 1289               		.stabn	68,0,398,.LM156-.LFBB4
+ 1290               	.LM156:
+ 1291 06b0 C701      		movw r24,r14
+ 1292 06b2 67E0      		ldi r22,lo8(7)
+GAS LISTING /tmp/ccsaRNb4.s 			page 34
+
+
+ 1293 06b4 0E94 0000 		call read_line
+ 1294 06b8 8823      		tst r24
+ 1295 06ba 01F0      		breq .L39
+ 399:main.c        ****                     { rtc.month = atoi(command);}
+ 1296               		.stabn	68,0,399,.LM157-.LFBB4
+ 1297               	.LM157:
+ 1298 06bc C701      		movw r24,r14
+ 1299 06be 0E94 0000 		call atoi
+ 1300 06c2 8B83      		std Y+3,r24
+ 1301               	.L39:
+ 401:main.c        ****                     uart_puts_p(PSTR("\n day, 2 dgt"));uart_puts_p(PSTR(" >"));
+ 1302               		.stabn	68,0,401,.LM158-.LFBB4
+ 1303               	.LM158:
+ 1304 06c4 80E0      		ldi r24,lo8(__c.2307)
+ 1305 06c6 90E0      		ldi r25,hi8(__c.2307)
+ 1306 06c8 0E94 0000 		call uart_puts_p
+ 1307 06cc 80E0      		ldi r24,lo8(__c.2309)
+ 1308 06ce 90E0      		ldi r25,hi8(__c.2309)
+ 1309 06d0 0E94 0000 		call uart_puts_p
+ 402:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 1310               		.stabn	68,0,402,.LM159-.LFBB4
+ 1311               	.LM159:
+ 1312 06d4 C701      		movw r24,r14
+ 1313 06d6 67E0      		ldi r22,lo8(7)
+ 1314 06d8 0E94 0000 		call read_line
+ 1315 06dc 8823      		tst r24
+ 1316 06de 01F0      		breq .L40
+ 403:main.c        ****                     { rtc.mday = atoi(command);}
+ 1317               		.stabn	68,0,403,.LM160-.LFBB4
+ 1318               	.LM160:
+ 1319 06e0 C701      		movw r24,r14
+ 1320 06e2 0E94 0000 		call atoi
+ 1321 06e6 8C83      		std Y+4,r24
+ 1322               	.L40:
+ 405:main.c        ****                     uart_puts_p(PSTR("\n hr, 24hr 2 dgt"));uart_puts_p(PSTR(" >"));
+ 1323               		.stabn	68,0,405,.LM161-.LFBB4
+ 1324               	.LM161:
+ 1325 06e8 80E0      		ldi r24,lo8(__c.2311)
+ 1326 06ea 90E0      		ldi r25,hi8(__c.2311)
+ 1327 06ec 0E94 0000 		call uart_puts_p
+ 1328 06f0 80E0      		ldi r24,lo8(__c.2313)
+ 1329 06f2 90E0      		ldi r25,hi8(__c.2313)
+ 1330 06f4 0E94 0000 		call uart_puts_p
+ 406:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 1331               		.stabn	68,0,406,.LM162-.LFBB4
+ 1332               	.LM162:
+ 1333 06f8 C701      		movw r24,r14
+ 1334 06fa 67E0      		ldi r22,lo8(7)
+ 1335 06fc 0E94 0000 		call read_line
+ 1336 0700 8823      		tst r24
+ 1337 0702 01F0      		breq .L41
+ 407:main.c        ****                     { rtc.hour = atoi(command);}
+ 1338               		.stabn	68,0,407,.LM163-.LFBB4
+ 1339               	.LM163:
+ 1340 0704 C701      		movw r24,r14
+ 1341 0706 0E94 0000 		call atoi
+ 1342 070a 8E83      		std Y+6,r24
+GAS LISTING /tmp/ccsaRNb4.s 			page 35
+
+
+ 1343               	.L41:
+ 409:main.c        ****                     uart_puts_p(PSTR("\n mins, 2 dgt"));uart_puts_p(PSTR(" >"));
+ 1344               		.stabn	68,0,409,.LM164-.LFBB4
+ 1345               	.LM164:
+ 1346 070c 80E0      		ldi r24,lo8(__c.2315)
+ 1347 070e 90E0      		ldi r25,hi8(__c.2315)
+ 1348 0710 0E94 0000 		call uart_puts_p
+ 1349 0714 80E0      		ldi r24,lo8(__c.2317)
+ 1350 0716 90E0      		ldi r25,hi8(__c.2317)
+ 1351 0718 0E94 0000 		call uart_puts_p
+ 410:main.c        ****                     if((read_line(command, 7) > 0))	//read one line  up to 6 characters
+ 1352               		.stabn	68,0,410,.LM165-.LFBB4
+ 1353               	.LM165:
+ 1354 071c C701      		movw r24,r14
+ 1355 071e 67E0      		ldi r22,lo8(7)
+ 1356 0720 0E94 0000 		call read_line
+ 1357 0724 8823      		tst r24
+ 1358 0726 01F0      		breq .L42
+ 411:main.c        ****                     {  rtc.min = atoi(command); }
+ 1359               		.stabn	68,0,411,.LM166-.LFBB4
+ 1360               	.LM166:
+ 1361 0728 C701      		movw r24,r14
+ 1362 072a 0E94 0000 		call atoi
+ 1363 072e 8F83      		std Y+7,r24
+ 1364               	.L42:
+ 413:main.c        ****                     rtc.sec = 0;
+ 1365               		.stabn	68,0,413,.LM167-.LFBB4
+ 1366               	.LM167:
+ 1367 0730 1886      		std Y+8,__zero_reg__
+ 414:main.c        ****                     uart_putw_dec(rtc_settime (&rtc));
+ 1368               		.stabn	68,0,414,.LM168-.LFBB4
+ 1369               	.LM168:
+ 1370 0732 CE01      		movw r24,r28
+ 1371 0734 0196      		adiw r24,1
+ 1372 0736 0E94 0000 		call rtc_settime
+ 1373 073a 90E0      		ldi r25,lo8(0)
+ 1374 073c 0E94 0000 		call uart_putw_dec
+ 415:main.c        ****                     uart_puts_p(PSTR("\n"));
+ 1375               		.stabn	68,0,415,.LM169-.LFBB4
+ 1376               	.LM169:
+ 1377 0740 80E0      		ldi r24,lo8(__c.2319)
+ 1378 0742 90E0      		ldi r25,hi8(__c.2319)
+ 1379 0744 0E94 0000 		call uart_puts_p
+ 1380               	.L37:
+ 418:main.c        ****                 else showtime();
+ 1381               		.stabn	68,0,418,.LM170-.LFBB4
+ 1382               	.LM170:
+ 1383 0748 0E94 0000 		call showtime
+ 1384 074c 00C0      		rjmp .L45
+ 1385               	.L49:
+ 422:main.c        ****             memset(command,'\0',NAME_MAX+1);//clear choice 
+ 1386               		.stabn	68,0,422,.LM171-.LFBB4
+ 1387               	.LM171:
+ 1388 074e 89E0      		ldi r24,lo8(9)
+ 1389 0750 D701      		movw r26,r14
+ 1390 0752 1D92      		st X+,__zero_reg__
+ 1391 0754 8A95      	        dec r24
+GAS LISTING /tmp/ccsaRNb4.s 			page 36
+
+
+ 1392 0756 01F4      		brne .-6
+ 423:main.c        ****             uart_puts_p(PSTR("\n enter S-Uart chan 1,2,3 >"));
+ 1393               		.stabn	68,0,423,.LM172-.LFBB4
+ 1394               	.LM172:
+ 1395 0758 80E0      		ldi r24,lo8(__c.2322)
+ 1396 075a 90E0      		ldi r25,hi8(__c.2322)
+ 1397 075c 0E94 0000 		call uart_puts_p
+ 424:main.c        ****             if((read_line(command, 3) < 1)){;}	//read one line  
+ 1398               		.stabn	68,0,424,.LM173-.LFBB4
+ 1399               	.LM173:
+ 1400 0760 C701      		movw r24,r14
+ 1401 0762 63E0      		ldi r22,lo8(3)
+ 1402 0764 0E94 0000 		call read_line
+ 425:main.c        ****             uint8_t choice = atoi(command);
+ 1403               		.stabn	68,0,425,.LM174-.LFBB4
+ 1404               	.LM174:
+ 1405 0768 C701      		movw r24,r14
+ 1406 076a 0E94 0000 		call atoi
+ 1407 076e 082F      		mov r16,r24
+ 426:main.c        ****             uart_puts_p(PSTR("direct connection to S-uart ")); uart_putw_dec(choice); uart_putc('\n
+ 1408               		.stabn	68,0,426,.LM175-.LFBB4
+ 1409               	.LM175:
+ 1410 0770 80E0      		ldi r24,lo8(__c.2325)
+ 1411 0772 90E0      		ldi r25,hi8(__c.2325)
+ 1412 0774 0E94 0000 		call uart_puts_p
+ 1413 0778 802F      		mov r24,r16
+ 1414 077a 90E0      		ldi r25,lo8(0)
+ 1415 077c 0E94 0000 		call uart_putw_dec
+ 1416 0780 8AE0      		ldi r24,lo8(10)
+ 1417 0782 0E94 0000 		call uart_putc
+ 427:main.c        ****             uart_puts_p(PSTR("use RET CR command ends\n"));
+ 1418               		.stabn	68,0,427,.LM176-.LFBB4
+ 1419               	.LM176:
+ 1420 0786 80E0      		ldi r24,lo8(__c.2327)
+ 1421 0788 90E0      		ldi r25,hi8(__c.2327)
+ 1422 078a 0E94 0000 		call uart_puts_p
+ 428:main.c        ****             direct_conn(choice);
+ 1423               		.stabn	68,0,428,.LM177-.LFBB4
+ 1424               	.LM177:
+ 1425 078e 802F      		mov r24,r16
+ 1426 0790 0E94 0000 		call direct_conn
+ 429:main.c        ****             uart_puts_p(PSTR("not implemented\n"));
+ 1427               		.stabn	68,0,429,.LM178-.LFBB4
+ 1428               	.LM178:
+ 1429 0794 80E0      		ldi r24,lo8(__c.2329)
+ 1430 0796 90E0      		ldi r25,hi8(__c.2329)
+ 1431 0798 0E94 0000 		call uart_puts_p
+ 1432 079c 00C0      		rjmp .L45
+ 1433               	.LBE26:
+ 1434               	.LBE15:
+ 1435               		.size	cal_menu, .-cal_menu
+ 1436               		.stabs	"command:(0,18)=ar(13,3);0;8;(0,2)",128,0,268,9
+ 1437               		.stabs	"rtc:(15,1)",128,0,270,1
+ 1438               		.stabn	192,0,0,.LFBB4-.LFBB4
+ 1439               		.stabs	"i:r(3,2)",64,0,330,9
+ 1440               		.stabn	192,0,0,.LBB17-.LFBB4
+ 1441               		.stabn	224,0,0,.LBE17-.LFBB4
+GAS LISTING /tmp/ccsaRNb4.s 			page 37
+
+
+ 1442               		.stabs	"i:r(3,2)",64,0,359,9
+ 1443               		.stabn	192,0,0,.LBB18-.LFBB4
+ 1444               		.stabn	224,0,0,.LBE18-.LFBB4
+ 1445               		.stabs	"i:r(3,2)",64,0,284,9
+ 1446               		.stabn	192,0,0,.LBB19-.LFBB4
+ 1447               		.stabn	224,0,0,.LBE19-.LFBB4
+ 1448               		.stabs	"name_number:r(3,2)",64,0,295,9
+ 1449               		.stabn	192,0,0,.LBB20-.LFBB4
+ 1450               		.stabn	224,0,0,.LBE20-.LFBB4
+ 1451               		.stabs	"i:r(3,2)",64,0,330,9
+ 1452               		.stabn	192,0,0,.LBB22-.LFBB4
+ 1453               		.stabn	224,0,0,.LBE22-.LFBB4
+ 1454               		.stabs	"i:r(3,2)",64,0,359,9
+ 1455               		.stabn	192,0,0,.LBB24-.LFBB4
+ 1456               		.stabn	224,0,0,.LBE24-.LFBB4
+ 1457               		.stabn	224,0,0,.Lscope4-.LFBB4
+ 1458               	.Lscope4:
+ 1459               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 1460               		.stabd	78,0,0
+ 1461               		.data
+ 1462               	.LC0:
+ 1463 0000 2363 616C 		.string	"#calVals:,1,"
+ 1463      5661 6C73 
+ 1463      3A2C 312C 
+ 1463      00
+ 1464               	.LC2:
+ 1465 000d 2C00      		.string	","
+ 1466               	.LC3:
+ 1467 000f 0A00      		.string	"\n"
+ 1468               	.LC4:
+ 1469 0011 236F 6666 		.string	"#offsets:,0,"
+ 1469      7365 7473 
+ 1469      3A2C 302C 
+ 1469      00
+ 1470               	.LC5:
+ 1471 001e 7469 6D65 		.string	"time,seconds,headID,"
+ 1471      2C73 6563 
+ 1471      6F6E 6473 
+ 1471      2C68 6561 
+ 1471      6449 442C 
+ 1472               	.LC1:
+ 1473 0033 00        		.string	""
+ 1474 0034 00        		.string	""
+ 1475 0035 00        		.string	""
+ 1476 0036 00        		.string	""
+ 1477 0037 00        		.string	""
+ 1478               		.text
+ 1479               		.stabs	"output_headers:F(0,15)",36,0,479,output_headers
+ 1480               		.stabs	"data:P(0,17)",64,0,479,12
+ 1481               	.global	output_headers
+ 1482               		.type	output_headers, @function
+ 1483               	output_headers:
+ 1484               		.stabd	46,0,0
+ 475:main.c        **** 
+ 476:main.c        **** 
+ 477:main.c        **** 
+ 478:main.c        **** ///Add headers to serialout:
+GAS LISTING /tmp/ccsaRNb4.s 			page 38
+
+
+ 479:main.c        **** void output_headers( struct sample_data *data)
+ 480:main.c        **** {
+ 1485               		.stabn	68,0,480,.LM179-.LFBB5
+ 1486               	.LM179:
+ 1487               	.LFBB5:
+ 1488 079e 6F92      		push r6
+ 1489 07a0 7F92      		push r7
+ 1490 07a2 9F92      		push r9
+ 1491 07a4 AF92      		push r10
+ 1492 07a6 BF92      		push r11
+ 1493 07a8 CF92      		push r12
+ 1494 07aa DF92      		push r13
+ 1495 07ac EF92      		push r14
+ 1496 07ae FF92      		push r15
+ 1497 07b0 0F93      		push r16
+ 1498 07b2 1F93      		push r17
+ 1499 07b4 DF93      		push r29
+ 1500 07b6 CF93      		push r28
+ 1501 07b8 00D0      		rcall .
+ 1502 07ba 00D0      		rcall .
+ 1503 07bc CDB7      		in r28,__SP_L__
+ 1504 07be DEB7      		in r29,__SP_H__
+ 1505               	/* prologue: function */
+ 1506               	/* frame size = 4 */
+ 1507               	/* stack size = 17 */
+ 1508               	.L__stack_usage = 17
+ 1509 07c0 6C01      		movw r12,r24
+ 481:main.c        ****    
+ 482:main.c        ****     //output cal vals (slope)  
+ 483:main.c        ****     (strcat(data->serialout,"#calVals:,1,")) ;//add string and move pointer  //value placeholder ov
+ 1510               		.stabn	68,0,483,.LM180-.LFBB5
+ 1511               	.LM180:
+ 1512 07c2 8DEF      		ldi r24,lo8(509)
+ 1513 07c4 E82E      		mov r14,r24
+ 1514 07c6 81E0      		ldi r24,hi8(509)
+ 1515 07c8 F82E      		mov r15,r24
+ 1516 07ca EC0C      		add r14,r12
+ 1517 07cc FD1C      		adc r15,r13
+ 1518 07ce C701      		movw r24,r14
+ 1519 07d0 60E0      		ldi r22,lo8(.LC0)
+ 1520 07d2 70E0      		ldi r23,hi8(.LC0)
+ 1521 07d4 0E94 0000 		call strcat
+ 484:main.c        ****     char id_str[4] = "\0\0\0\0";
+ 1522               		.stabn	68,0,484,.LM181-.LFBB5
+ 1523               	.LM181:
+ 1524 07d8 8091 0000 		lds r24,.LC1
+ 1525 07dc 9091 0000 		lds r25,.LC1+1
+ 1526 07e0 A091 0000 		lds r26,.LC1+2
+ 1527 07e4 B091 0000 		lds r27,.LC1+3
+ 1528 07e8 8983      		std Y+1,r24
+ 1529 07ea 9A83      		std Y+2,r25
+ 1530 07ec AB83      		std Y+3,r26
+ 1531 07ee BC83      		std Y+4,r27
+ 485:main.c        ****     itoa( data->header_id_val,id_str,10);
+ 1532               		.stabn	68,0,485,.LM182-.LFBB5
+ 1533               	.LM182:
+ 1534 07f0 F601      		movw r30,r12
+GAS LISTING /tmp/ccsaRNb4.s 			page 39
+
+
+ 1535 07f2 E950      		subi r30,lo8(-(759))
+ 1536 07f4 FD4F      		sbci r31,hi8(-(759))
+ 1537 07f6 8081      		ld r24,Z
+ 1538 07f8 90E0      		ldi r25,lo8(0)
+ 1539 07fa 8E01      		movw r16,r28
+ 1540 07fc 0F5F      		subi r16,lo8(-(1))
+ 1541 07fe 1F4F      		sbci r17,hi8(-(1))
+ 1542 0800 B801      		movw r22,r16
+ 1543 0802 4AE0      		ldi r20,lo8(10)
+ 1544 0804 50E0      		ldi r21,hi8(10)
+ 1545 0806 0E94 0000 		call itoa
+ 486:main.c        ****     strcat(data->serialout,id_str);
+ 1546               		.stabn	68,0,486,.LM183-.LFBB5
+ 1547               	.LM183:
+ 1548 080a C701      		movw r24,r14
+ 1549 080c B801      		movw r22,r16
+ 1550 080e 0E94 0000 		call strcat
+ 487:main.c        ****     strcat(data->serialout,",");
+ 1551               		.stabn	68,0,487,.LM184-.LFBB5
+ 1552               	.LM184:
+ 1553 0812 C701      		movw r24,r14
+ 1554 0814 60E0      		ldi r22,lo8(.LC2)
+ 1555 0816 70E0      		ldi r23,hi8(.LC2)
+ 1556 0818 0E94 0000 		call strcat
+ 1557               	.LBB27:
+ 488:main.c        ****     
+ 489:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output cal vals
+ 1558               		.stabn	68,0,489,.LM185-.LFBB5
+ 1559               	.LM185:
+ 1560 081c 9924      		clr r9
+ 1561 081e 00EE      		ldi r16,lo8(480)
+ 1562 0820 A02E      		mov r10,r16
+ 1563 0822 01E0      		ldi r16,hi8(480)
+ 1564 0824 B02E      		mov r11,r16
+ 1565 0826 AC0C      		add r10,r12
+ 1566 0828 BD1C      		adc r11,r13
+ 490:main.c        ****     {
+ 491:main.c        ****         strcat(data->serialout,data->calval[i]);
+ 1567               		.stabn	68,0,491,.LM186-.LFBB5
+ 1568               	.LM186:
+ 1569 082a 10EA      		ldi r17,lo8(160)
+ 1570 082c 612E      		mov r6,r17
+ 1571 082e 712C      		mov r7,__zero_reg__
+ 1572 0830 6C0C      		add r6,r12
+ 1573 0832 7D1C      		adc r7,r13
+ 489:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output cal vals
+ 1574               		.stabn	68,0,489,.LM187-.LFBB5
+ 1575               	.LM187:
+ 1576 0834 00C0      		rjmp .L51
+ 1577               	.L53:
+ 1578               		.stabn	68,0,491,.LM188-.LFBB5
+ 1579               	.LM188:
+ 1580 0836 092D      		mov r16,r9
+ 1581 0838 10E0      		ldi r17,lo8(0)
+ 1582 083a B801      		movw r22,r16
+ 1583 083c B3E0      		ldi r27,3
+ 1584 083e 660F      	1:	lsl r22
+GAS LISTING /tmp/ccsaRNb4.s 			page 40
+
+
+ 1585 0840 771F      		rol r23
+ 1586 0842 BA95      		dec r27
+ 1587 0844 01F4      		brne 1b
+ 1588 0846 660D      		add r22,r6
+ 1589 0848 771D      		adc r23,r7
+ 1590 084a C701      		movw r24,r14
+ 1591 084c 0E94 0000 		call strcat
+ 492:main.c        ****         if (i < (data->number_inputs-1))
+ 1592               		.stabn	68,0,492,.LM189-.LFBB5
+ 1593               	.LM189:
+ 1594 0850 F501      		movw r30,r10
+ 1595 0852 8081      		ld r24,Z
+ 1596 0854 90E0      		ldi r25,lo8(0)
+ 1597 0856 0197      		sbiw r24,1
+ 1598 0858 0817      		cp r16,r24
+ 1599 085a 1907      		cpc r17,r25
+ 1600 085c 04F4      		brge .L52
+ 493:main.c        ****         {(strcat(data->serialout,",")); }//add a comma
+ 1601               		.stabn	68,0,493,.LM190-.LFBB5
+ 1602               	.LM190:
+ 1603 085e C701      		movw r24,r14
+ 1604 0860 60E0      		ldi r22,lo8(.LC2)
+ 1605 0862 70E0      		ldi r23,hi8(.LC2)
+ 1606 0864 0E94 0000 		call strcat
+ 1607               	.L52:
+ 489:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output cal vals
+ 1608               		.stabn	68,0,489,.LM191-.LFBB5
+ 1609               	.LM191:
+ 1610 0868 9394      		inc r9
+ 1611               	.L51:
+ 489:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output cal vals
+ 1612               		.stabn	68,0,489,.LM192-.LFBB5
+ 1613               	.LM192:
+ 1614 086a F501      		movw r30,r10
+ 1615 086c 8081      		ld r24,Z
+ 1616 086e 9816      		cp r9,r24
+ 1617 0870 00F0      		brlo .L53
+ 1618               	.LBE27:
+ 494:main.c        ****     }
+ 495:main.c        ****     strcat(data->serialout,"\n");//add newline
+ 1619               		.stabn	68,0,495,.LM193-.LFBB5
+ 1620               	.LM193:
+ 1621 0872 C701      		movw r24,r14
+ 1622 0874 60E0      		ldi r22,lo8(.LC3)
+ 1623 0876 70E0      		ldi r23,hi8(.LC3)
+ 1624 0878 0E94 0000 		call strcat
+ 496:main.c        ****     spitout(data->serialout);//out put to serial
+ 1625               		.stabn	68,0,496,.LM194-.LFBB5
+ 1626               	.LM194:
+ 1627 087c C701      		movw r24,r14
+ 1628 087e 0E94 0000 		call spitout
+ 497:main.c        ****     
+ 498:main.c        ****     //output offsets
+ 499:main.c        ****     (strcat(data->serialout,"#offsets:,0,")) ;//add string and move pointer  //value placeholder ov
+ 1629               		.stabn	68,0,499,.LM195-.LFBB5
+ 1630               	.LM195:
+ 1631 0882 C701      		movw r24,r14
+GAS LISTING /tmp/ccsaRNb4.s 			page 41
+
+
+ 1632 0884 60E0      		ldi r22,lo8(.LC4)
+ 1633 0886 70E0      		ldi r23,hi8(.LC4)
+ 1634 0888 0E94 0000 		call strcat
+ 500:main.c        ****     strcat(data->serialout,id_str);
+ 1635               		.stabn	68,0,500,.LM196-.LFBB5
+ 1636               	.LM196:
+ 1637 088c C701      		movw r24,r14
+ 1638 088e BE01      		movw r22,r28
+ 1639 0890 6F5F      		subi r22,lo8(-(1))
+ 1640 0892 7F4F      		sbci r23,hi8(-(1))
+ 1641 0894 0E94 0000 		call strcat
+ 501:main.c        ****     strcat(data->serialout,",");
+ 1642               		.stabn	68,0,501,.LM197-.LFBB5
+ 1643               	.LM197:
+ 1644 0898 C701      		movw r24,r14
+ 1645 089a 60E0      		ldi r22,lo8(.LC2)
+ 1646 089c 70E0      		ldi r23,hi8(.LC2)
+ 1647 089e 0E94 0000 		call strcat
+ 1648               	.LBB28:
+ 502:main.c        ****     
+ 503:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output cal vals
+ 1649               		.stabn	68,0,503,.LM198-.LFBB5
+ 1650               	.LM198:
+ 1651 08a2 9924      		clr r9
+ 1652 08a4 A0EE      		ldi r26,lo8(480)
+ 1653 08a6 AA2E      		mov r10,r26
+ 1654 08a8 A1E0      		ldi r26,hi8(480)
+ 1655 08aa BA2E      		mov r11,r26
+ 1656 08ac AC0C      		add r10,r12
+ 1657 08ae BD1C      		adc r11,r13
+ 504:main.c        ****     {
+ 505:main.c        ****         strcat(data->serialout,data->offset[i]);
+ 1658               		.stabn	68,0,505,.LM199-.LFBB5
+ 1659               	.LM199:
+ 1660 08b0 F0E4      		ldi r31,lo8(320)
+ 1661 08b2 6F2E      		mov r6,r31
+ 1662 08b4 F1E0      		ldi r31,hi8(320)
+ 1663 08b6 7F2E      		mov r7,r31
+ 1664 08b8 6C0C      		add r6,r12
+ 1665 08ba 7D1C      		adc r7,r13
+ 503:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output cal vals
+ 1666               		.stabn	68,0,503,.LM200-.LFBB5
+ 1667               	.LM200:
+ 1668 08bc 00C0      		rjmp .L54
+ 1669               	.L56:
+ 1670               		.stabn	68,0,505,.LM201-.LFBB5
+ 1671               	.LM201:
+ 1672 08be 092D      		mov r16,r9
+ 1673 08c0 10E0      		ldi r17,lo8(0)
+ 1674 08c2 B801      		movw r22,r16
+ 1675 08c4 E3E0      		ldi r30,3
+ 1676 08c6 660F      	1:	lsl r22
+ 1677 08c8 771F      		rol r23
+ 1678 08ca EA95      		dec r30
+ 1679 08cc 01F4      		brne 1b
+ 1680 08ce 660D      		add r22,r6
+ 1681 08d0 771D      		adc r23,r7
+GAS LISTING /tmp/ccsaRNb4.s 			page 42
+
+
+ 1682 08d2 C701      		movw r24,r14
+ 1683 08d4 0E94 0000 		call strcat
+ 506:main.c        ****         if (i < (data->number_inputs-1))
+ 1684               		.stabn	68,0,506,.LM202-.LFBB5
+ 1685               	.LM202:
+ 1686 08d8 F501      		movw r30,r10
+ 1687 08da 8081      		ld r24,Z
+ 1688 08dc 90E0      		ldi r25,lo8(0)
+ 1689 08de 0197      		sbiw r24,1
+ 1690 08e0 0817      		cp r16,r24
+ 1691 08e2 1907      		cpc r17,r25
+ 1692 08e4 04F4      		brge .L55
+ 507:main.c        ****         {(strcat(data->serialout,",")); }//add a comma
+ 1693               		.stabn	68,0,507,.LM203-.LFBB5
+ 1694               	.LM203:
+ 1695 08e6 C701      		movw r24,r14
+ 1696 08e8 60E0      		ldi r22,lo8(.LC2)
+ 1697 08ea 70E0      		ldi r23,hi8(.LC2)
+ 1698 08ec 0E94 0000 		call strcat
+ 1699               	.L55:
+ 503:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output cal vals
+ 1700               		.stabn	68,0,503,.LM204-.LFBB5
+ 1701               	.LM204:
+ 1702 08f0 9394      		inc r9
+ 1703               	.L54:
+ 503:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output cal vals
+ 1704               		.stabn	68,0,503,.LM205-.LFBB5
+ 1705               	.LM205:
+ 1706 08f2 F501      		movw r30,r10
+ 1707 08f4 8081      		ld r24,Z
+ 1708 08f6 9816      		cp r9,r24
+ 1709 08f8 00F0      		brlo .L56
+ 1710               	.LBE28:
+ 508:main.c        ****     }
+ 509:main.c        ****     strcat(data->serialout,"\n");//add newline
+ 1711               		.stabn	68,0,509,.LM206-.LFBB5
+ 1712               	.LM206:
+ 1713 08fa C701      		movw r24,r14
+ 1714 08fc 60E0      		ldi r22,lo8(.LC3)
+ 1715 08fe 70E0      		ldi r23,hi8(.LC3)
+ 1716 0900 0E94 0000 		call strcat
+ 510:main.c        ****     spitout(data->serialout);//out put to serial
+ 1717               		.stabn	68,0,510,.LM207-.LFBB5
+ 1718               	.LM207:
+ 1719 0904 C701      		movw r24,r14
+ 1720 0906 0E94 0000 		call spitout
+ 511:main.c        ****     
+ 512:main.c        ****     strcat(data->serialout,"time,seconds,headID,");//add string 
+ 1721               		.stabn	68,0,512,.LM208-.LFBB5
+ 1722               	.LM208:
+ 1723 090a C701      		movw r24,r14
+ 1724 090c 60E0      		ldi r22,lo8(.LC5)
+ 1725 090e 70E0      		ldi r23,hi8(.LC5)
+ 1726 0910 0E94 0000 		call strcat
+ 1727               	.LBB29:
+ 513:main.c        ****     //char id_str[4] = "\0\0\0\0";
+ 514:main.c        ****     //itoa( data->header_id_val,id_str,10);
+GAS LISTING /tmp/ccsaRNb4.s 			page 43
+
+
+ 515:main.c        ****     //strcat(data->serialout,id_str);
+ 516:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output names
+ 1728               		.stabn	68,0,516,.LM209-.LFBB5
+ 1729               	.LM209:
+ 1730 0914 9924      		clr r9
+ 1731 0916 50EE      		ldi r21,lo8(480)
+ 1732 0918 A52E      		mov r10,r21
+ 1733 091a 51E0      		ldi r21,hi8(480)
+ 1734 091c B52E      		mov r11,r21
+ 1735 091e AC0C      		add r10,r12
+ 1736 0920 BD1C      		adc r11,r13
+ 1737 0922 00C0      		rjmp .L57
+ 1738               	.L59:
+ 517:main.c        ****     {
+ 518:main.c        ****         strcat(data->serialout,data->name[i]);
+ 1739               		.stabn	68,0,518,.LM210-.LFBB5
+ 1740               	.LM210:
+ 1741 0924 092D      		mov r16,r9
+ 1742 0926 10E0      		ldi r17,lo8(0)
+ 1743 0928 B801      		movw r22,r16
+ 1744 092a 43E0      		ldi r20,3
+ 1745 092c 660F      	1:	lsl r22
+ 1746 092e 771F      		rol r23
+ 1747 0930 4A95      		dec r20
+ 1748 0932 01F4      		brne 1b
+ 1749 0934 6C0D      		add r22,r12
+ 1750 0936 7D1D      		adc r23,r13
+ 1751 0938 C701      		movw r24,r14
+ 1752 093a 0E94 0000 		call strcat
+ 519:main.c        ****         if (i < (data->number_inputs-1))
+ 1753               		.stabn	68,0,519,.LM211-.LFBB5
+ 1754               	.LM211:
+ 1755 093e F501      		movw r30,r10
+ 1756 0940 8081      		ld r24,Z
+ 1757 0942 90E0      		ldi r25,lo8(0)
+ 1758 0944 0197      		sbiw r24,1
+ 1759 0946 0817      		cp r16,r24
+ 1760 0948 1907      		cpc r17,r25
+ 1761 094a 04F4      		brge .L58
+ 520:main.c        ****         {strcat(data->serialout,","); }//add a comma
+ 1762               		.stabn	68,0,520,.LM212-.LFBB5
+ 1763               	.LM212:
+ 1764 094c C701      		movw r24,r14
+ 1765 094e 60E0      		ldi r22,lo8(.LC2)
+ 1766 0950 70E0      		ldi r23,hi8(.LC2)
+ 1767 0952 0E94 0000 		call strcat
+ 1768               	.L58:
+ 516:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output names
+ 1769               		.stabn	68,0,516,.LM213-.LFBB5
+ 1770               	.LM213:
+ 1771 0956 9394      		inc r9
+ 1772               	.L57:
+ 516:main.c        ****     for (uint8_t i = 0; i<data->number_inputs; i ++ )//output names
+ 1773               		.stabn	68,0,516,.LM214-.LFBB5
+ 1774               	.LM214:
+ 1775 0958 F501      		movw r30,r10
+ 1776 095a 8081      		ld r24,Z
+GAS LISTING /tmp/ccsaRNb4.s 			page 44
+
+
+ 1777 095c 9816      		cp r9,r24
+ 1778 095e 00F0      		brlo .L59
+ 1779               	.LBE29:
+ 521:main.c        ****     }
+ 522:main.c        ****     strcat(data->serialout,"\n");//add newline
+ 1780               		.stabn	68,0,522,.LM215-.LFBB5
+ 1781               	.LM215:
+ 1782 0960 C701      		movw r24,r14
+ 1783 0962 60E0      		ldi r22,lo8(.LC3)
+ 1784 0964 70E0      		ldi r23,hi8(.LC3)
+ 1785 0966 0E94 0000 		call strcat
+ 523:main.c        ****     spitout(data->serialout);//out put to serial
+ 1786               		.stabn	68,0,523,.LM216-.LFBB5
+ 1787               	.LM216:
+ 1788 096a C701      		movw r24,r14
+ 1789 096c 0E94 0000 		call spitout
+ 1790               	/* epilogue start */
+ 524:main.c        ****     
+ 525:main.c        ****     
+ 526:main.c        **** }
+ 1791               		.stabn	68,0,526,.LM217-.LFBB5
+ 1792               	.LM217:
+ 1793 0970 0F90      		pop __tmp_reg__
+ 1794 0972 0F90      		pop __tmp_reg__
+ 1795 0974 0F90      		pop __tmp_reg__
+ 1796 0976 0F90      		pop __tmp_reg__
+ 1797 0978 CF91      		pop r28
+ 1798 097a DF91      		pop r29
+ 1799 097c 1F91      		pop r17
+ 1800 097e 0F91      		pop r16
+ 1801 0980 FF90      		pop r15
+ 1802 0982 EF90      		pop r14
+ 1803 0984 DF90      		pop r13
+ 1804 0986 CF90      		pop r12
+ 1805 0988 BF90      		pop r11
+ 1806 098a AF90      		pop r10
+ 1807 098c 9F90      		pop r9
+ 1808 098e 7F90      		pop r7
+ 1809 0990 6F90      		pop r6
+ 1810 0992 0895      		ret
+ 1811               		.size	output_headers, .-output_headers
+ 1812               		.stabs	"id_str:(0,19)=ar(13,3);0;3;(0,2)",128,0,484,1
+ 1813               		.stabn	192,0,0,.LFBB5-.LFBB5
+ 1814               		.stabs	"i:r(3,2)",64,0,489,9
+ 1815               		.stabn	192,0,0,.LBB27-.LFBB5
+ 1816               		.stabn	224,0,0,.LBE27-.LFBB5
+ 1817               		.stabs	"i:r(3,2)",64,0,503,9
+ 1818               		.stabn	192,0,0,.LBB28-.LFBB5
+ 1819               		.stabn	224,0,0,.LBE28-.LFBB5
+ 1820               		.stabs	"i:r(3,2)",64,0,516,9
+ 1821               		.stabn	192,0,0,.LBB29-.LFBB5
+ 1822               		.stabn	224,0,0,.LBE29-.LFBB5
+ 1823               		.stabn	224,0,0,.Lscope5-.LFBB5
+ 1824               	.Lscope5:
+ 1825               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 1826               		.stabd	78,0,0
+ 1827               		.stabs	"timesample:F(3,4)",36,0,528,timesample
+GAS LISTING /tmp/ccsaRNb4.s 			page 45
+
+
+ 1828               		.stabs	"data:P(0,17)",64,0,528,28
+ 1829               	.global	timesample
+ 1830               		.type	timesample, @function
+ 1831               	timesample:
+ 1832               		.stabd	46,0,0
+ 527:main.c        **** ///Check and calculate time for sampling period.
+ 528:main.c        **** uint16_t timesample(struct sample_data *data)
+ 529:main.c        **** {
+ 1833               		.stabn	68,0,529,.LM218-.LFBB6
+ 1834               	.LM218:
+ 1835               	.LFBB6:
+ 1836 0994 0F93      		push r16
+ 1837 0996 1F93      		push r17
+ 1838 0998 CF93      		push r28
+ 1839 099a DF93      		push r29
+ 1840               	/* prologue: function */
+ 1841               	/* frame size = 0 */
+ 1842               	/* stack size = 4 */
+ 1843               	.L__stack_usage = 4
+ 1844 099c EC01      		movw r28,r24
+ 530:main.c        ****     //check how long to run a sample set
+ 531:main.c        ****     uint16_t sample_secs;
+ 532:main.c        ****     
+ 533:main.c        ****     //start 16 bit timer
+ 534:main.c        ****     sixteen = 0;//16 second counter
+ 1845               		.stabn	68,0,534,.LM219-.LFBB6
+ 1846               	.LM219:
+ 1847 099e 1092 0000 		sts sixteen,__zero_reg__
+ 535:main.c        ****     TIMSK |= (1<<TOIE1);                //set  Overflow Interrupt Enable
+ 1848               		.stabn	68,0,535,.LM220-.LFBB6
+ 1849               	.LM220:
+ 1850 09a2 89B7      		in r24,89-32
+ 1851 09a4 8460      		ori r24,lo8(4)
+ 1852 09a6 89BF      		out 89-32,r24
+ 536:main.c        ****     TCNT1 = 0x00;				        // set the timer to 0
+ 1853               		.stabn	68,0,536,.LM221-.LFBB6
+ 1854               	.LM221:
+ 1855 09a8 1DBC      		out 76+1-32,__zero_reg__
+ 1856 09aa 1CBC      		out 76-32,__zero_reg__
+ 537:main.c        ****     TCCR1B |= ((1<<CS10)|(1<<CS12));    //  prescale the timer to be clock source to /1024 prescale
+ 1857               		.stabn	68,0,537,.LM222-.LFBB6
+ 1858               	.LM222:
+ 1859 09ac 8EB5      		in r24,78-32
+ 1860 09ae 8560      		ori r24,lo8(5)
+ 1861 09b0 8EBD      		out 78-32,r24
+ 538:main.c        ****     sei();
+ 1862               		.stabn	68,0,538,.LM223-.LFBB6
+ 1863               	.LM223:
+ 1864               	/* #APP */
+ 1865               	 ;  538 "main.c" 1
+ 1866 09b2 7894      		sei
+ 1867               	 ;  0 "" 2
+ 539:main.c        ****     sample_all_channels(REPORT, data);//run one sample loop
+ 1868               		.stabn	68,0,539,.LM224-.LFBB6
+ 1869               	.LM224:
+ 1870               	/* #NOAPP */
+ 1871 09b4 89E0      		ldi r24,lo8(9)
+GAS LISTING /tmp/ccsaRNb4.s 			page 46
+
+
+ 1872 09b6 BE01      		movw r22,r28
+ 1873 09b8 0E94 0000 		call sample_all_channels
+ 540:main.c        ****     TCCR1B |= 0x00;//Stop timer, check value
+ 1874               		.stabn	68,0,540,.LM225-.LFBB6
+ 1875               	.LM225:
+ 1876 09bc 8EB5      		in r24,78-32
+ 1877 09be 8EBD      		out 78-32,r24
+ 541:main.c        ****     //time in ms = sixteen*1000 +TCNT/4.09
+ 542:main.c        ****     sample_secs = TCNT1/4;
+ 1878               		.stabn	68,0,542,.LM226-.LFBB6
+ 1879               	.LM226:
+ 1880 09c0 8CB5      		in r24,76-32
+ 1881 09c2 9DB5      		in r25,76+1-32
+ 1882 09c4 9695      		lsr r25
+ 1883 09c6 8795      		ror r24
+ 1884 09c8 9695      		lsr r25
+ 1885 09ca 8795      		ror r24
+ 543:main.c        ****     sample_secs = sample_secs + (sixteen*1000);//time in ms
+ 1886               		.stabn	68,0,543,.LM227-.LFBB6
+ 1887               	.LM227:
+ 1888 09cc 4091 0000 		lds r20,sixteen
+ 1889 09d0 885A      		subi r24,lo8(-(600))
+ 1890 09d2 9D4F      		sbci r25,hi8(-(600))
+ 1891 09d4 50E0      		ldi r21,lo8(0)
+ 1892 09d6 68EE      		ldi r22,lo8(1000)
+ 1893 09d8 73E0      		ldi r23,hi8(1000)
+ 1894 09da 469F      		mul r20,r22
+ 1895 09dc 9001      		movw r18,r0
+ 1896 09de 479F      		mul r20,r23
+ 1897 09e0 300D      		add r19,r0
+ 1898 09e2 569F      		mul r21,r22
+ 1899 09e4 300D      		add r19,r0
+ 1900 09e6 1124      		clr r1
+ 544:main.c        ****     sample_secs = sample_secs + 600;//add 600 ms
+ 1901               		.stabn	68,0,544,.LM228-.LFBB6
+ 1902               	.LM228:
+ 1903 09e8 820F      		add r24,r18
+ 1904 09ea 931F      		adc r25,r19
+ 545:main.c        ****     sample_secs = sample_secs/1000;//time in sec, remainder left off
+ 1905               		.stabn	68,0,545,.LM229-.LFBB6
+ 1906               	.LM229:
+ 1907 09ec 0E94 0000 		call __udivmodhi4
+ 1908 09f0 8B01      		movw r16,r22
+ 546:main.c        ****     sample_secs = sample_secs + 1;//the next second
+ 1909               		.stabn	68,0,546,.LM230-.LFBB6
+ 1910               	.LM230:
+ 1911 09f2 0F5F      		subi r16,lo8(-(1))
+ 1912 09f4 1F4F      		sbci r17,hi8(-(1))
+ 528:main.c        **** uint16_t timesample(struct sample_data *data)
+ 1913               		.stabn	68,0,528,.LM231-.LFBB6
+ 1914               	.LM231:
+ 1915 09f6 C350      		subi r28,lo8(-(509))
+ 1916 09f8 DE4F      		sbci r29,hi8(-(509))
+ 1917 09fa 8AEF      		ldi r24,lo8(-6)
+ 1918               	.L61:
+ 1919               	.LBB30:
+ 547:main.c        ****     for (uint8_t i= 0; i<LINESIZE ;i++){data->serialout[i] = '\0';}//init (blank) serialout
+GAS LISTING /tmp/ccsaRNb4.s 			page 47
+
+
+ 1920               		.stabn	68,0,547,.LM232-.LFBB6
+ 1921               	.LM232:
+ 1922 09fc 1992      		st Y+,__zero_reg__
+ 1923 09fe 8150      		subi r24,lo8(-(-1))
+ 1924 0a00 01F4      		brne .L61
+ 1925               	.LBE30:
+ 548:main.c        ****     uart_putc('\n');
+ 1926               		.stabn	68,0,548,.LM233-.LFBB6
+ 1927               	.LM233:
+ 1928 0a02 8AE0      		ldi r24,lo8(10)
+ 1929 0a04 0E94 0000 		call uart_putc
+ 549:main.c        **** 	return sample_secs;
+ 550:main.c        **** }
+ 1930               		.stabn	68,0,550,.LM234-.LFBB6
+ 1931               	.LM234:
+ 1932 0a08 C801      		movw r24,r16
+ 1933               	/* epilogue start */
+ 1934 0a0a DF91      		pop r29
+ 1935 0a0c CF91      		pop r28
+ 1936 0a0e 1F91      		pop r17
+ 1937 0a10 0F91      		pop r16
+ 1938 0a12 0895      		ret
+ 1939               		.size	timesample, .-timesample
+ 1940               	.Lscope6:
+ 1941               		.stabs	"",36,0,0,.Lscope6-.LFBB6
+ 1942               		.stabd	78,0,0
+ 1943               		.data
+ 1944               	.LC7:
+ 1945 0038 3000      		.string	"0"
+ 1946               	.LC8:
+ 1947 003a 2000      		.string	" "
+ 1948               	.LC9:
+ 1949 003c 3A00      		.string	":"
+ 1950               	.LC10:
+ 1951 003e 256C 6400 		.string	"%ld"
+ 1952               	.LC6:
+ 1953 0042 00        		.string	""
+ 1954 0043 00        		.string	""
+ 1955 0044 00        		.string	""
+ 1956 0045 00        		.string	""
+ 1957 0046 00        		.string	""
+ 1958 0047 00        		.string	""
+ 1959 0048 00        		.string	""
+ 1960 0049 00        		.string	""
+ 1961 004a 00        		.string	""
+ 1962 004b 00        		.string	""
+ 1963 004c 00        		.string	""
+ 1964 004d 00        		.string	""
+ 1965 004e 00        		.string	""
+ 1966               		.text
+ 1967               		.stabs	"main:F(0,1)",36,0,92,main
+ 1968               	.global	main
+ 1969               		.type	main, @function
+ 1970               	main:
+ 1971               		.stabd	46,0,0
+  93:main.c        **** {
+ 1972               		.stabn	68,0,93,.LM235-.LFBB7
+GAS LISTING /tmp/ccsaRNb4.s 			page 48
+
+
+ 1973               	.LM235:
+ 1974               	.LFBB7:
+ 1975 0a14 2F92      		push r2
+ 1976 0a16 3F92      		push r3
+ 1977 0a18 4F92      		push r4
+ 1978 0a1a 5F92      		push r5
+ 1979 0a1c 6F92      		push r6
+ 1980 0a1e 7F92      		push r7
+ 1981 0a20 8F92      		push r8
+ 1982 0a22 9F92      		push r9
+ 1983 0a24 AF92      		push r10
+ 1984 0a26 BF92      		push r11
+ 1985 0a28 CF92      		push r12
+ 1986 0a2a DF92      		push r13
+ 1987 0a2c EF92      		push r14
+ 1988 0a2e FF92      		push r15
+ 1989 0a30 0F93      		push r16
+ 1990 0a32 1F93      		push r17
+ 1991 0a34 DF93      		push r29
+ 1992 0a36 CF93      		push r28
+ 1993 0a38 CDB7      		in r28,__SP_L__
+ 1994 0a3a DEB7      		in r29,__SP_H__
+ 1995 0a3c CE50      		subi r28,lo8(-(-782))
+ 1996 0a3e D340      		sbci r29,hi8(-(-782))
+ 1997 0a40 0FB6      		in __tmp_reg__,__SREG__
+ 1998 0a42 F894      		cli
+ 1999 0a44 DEBF      		out __SP_H__,r29
+ 2000 0a46 0FBE      		out __SREG__,__tmp_reg__
+ 2001 0a48 CDBF      		out __SP_L__,r28
+ 2002               	/* prologue: function */
+ 2003               	/* frame size = 782 */
+ 2004               	/* stack size = 800 */
+ 2005               	.L__stack_usage = 800
+  95:main.c        ****     DDRD |= (1<<5); //port D led
+ 2006               		.stabn	68,0,95,.LM236-.LFBB7
+ 2007               	.LM236:
+ 2008 0a4a 8D9A      		sbi 49-32,5
+  96:main.c        ****     uart_init();// setup uart 
+ 2009               		.stabn	68,0,96,.LM237-.LFBB7
+ 2010               	.LM237:
+ 2011 0a4c 0E94 0000 		call uart_init
+ 2012 0a50 FE01      		movw r30,r28
+ 2013 0a52 E65F      		subi r30,lo8(-(522))
+ 2014 0a54 FD4F      		sbci r31,hi8(-(522))
+  92:main.c        **** int main()
+ 2015               		.stabn	68,0,92,.LM238-.LFBB7
+ 2016               	.LM238:
+ 2017 0a56 CE01      		movw r24,r28
+ 2018 0a58 8C5F      		subi r24,lo8(-(772))
+ 2019 0a5a 9C4F      		sbci r25,hi8(-(772))
+ 2020               	.L64:
+ 2021               	.LBB31:
+  99:main.c        ****     for (uint8_t i= 0; i<LINESIZE ;i++){data.serialout[i] = '\0';}//init (blank) serialout
+ 2022               		.stabn	68,0,99,.LM239-.LFBB7
+ 2023               	.LM239:
+ 2024 0a5c 1192      		st Z+,__zero_reg__
+ 2025 0a5e E817      		cp r30,r24
+GAS LISTING /tmp/ccsaRNb4.s 			page 49
+
+
+ 2026 0a60 F907      		cpc r31,r25
+ 2027 0a62 01F4      		brne .L64
+ 2028               	.LBE31:
+ 101:main.c        ****     sample_all_channels(JUST_COUNT, &data);// count channels
+ 2029               		.stabn	68,0,101,.LM240-.LFBB7
+ 2030               	.LM240:
+ 2031 0a64 8E01      		movw r16,r28
+ 2032 0a66 035F      		subi r16,lo8(-(13))
+ 2033 0a68 1F4F      		sbci r17,hi8(-(13))
+ 2034 0a6a 80E0      		ldi r24,lo8(0)
+ 2035 0a6c B801      		movw r22,r16
+ 2036 0a6e 0E94 0000 		call sample_all_channels
+ 104:main.c        ****     if (cal_val_input_delay())//check if user wants to enter cal mode
+ 2037               		.stabn	68,0,104,.LM241-.LFBB7
+ 2038               	.LM241:
+ 2039 0a72 0E94 0000 		call cal_val_input_delay
+ 2040 0a76 8823      		tst r24
+ 2041 0a78 01F0      		breq .L65
+ 105:main.c        ****         {cal_menu(&data);} //go to cal menu
+ 2042               		.stabn	68,0,105,.LM242-.LFBB7
+ 2043               	.LM242:
+ 2044 0a7a C801      		movw r24,r16
+ 2045 0a7c 0E94 0000 		call cal_menu
+ 2046               	.L65:
+ 107:main.c        ****     UCSRB &=~ (1 << RXEN); UCSRB &=~ (1 << RXCIE);//uart input disabled anti-noise//
+ 2047               		.stabn	68,0,107,.LM243-.LFBB7
+ 2048               	.LM243:
+ 2049 0a80 5498      		cbi 42-32,4
+ 2050 0a82 5798      		cbi 42-32,7
+ 110:main.c        ****     uart_puts_p(PSTR("#test chans\n"));
+ 2051               		.stabn	68,0,110,.LM244-.LFBB7
+ 2052               	.LM244:
+ 2053 0a84 80E0      		ldi r24,lo8(__c.2171)
+ 2054 0a86 90E0      		ldi r25,hi8(__c.2171)
+ 2055 0a88 0E94 0000 		call uart_puts_p
+ 111:main.c        ****     sample_all_channels(TEST, &data);// test each channel, record if not working
+ 2056               		.stabn	68,0,111,.LM245-.LFBB7
+ 2057               	.LM245:
+ 2058 0a8c 5DE0      		ldi r21,lo8(13)
+ 2059 0a8e C52E      		mov r12,r21
+ 2060 0a90 D12C      		mov r13,__zero_reg__
+ 2061 0a92 CC0E      		add r12,r28
+ 2062 0a94 DD1E      		adc r13,r29
+ 2063 0a96 8AE0      		ldi r24,lo8(10)
+ 2064 0a98 B601      		movw r22,r12
+ 2065 0a9a 0E94 0000 		call sample_all_channels
+ 114:main.c        ****      uart_puts_p(PSTR("#test result rtc="));
+ 2066               		.stabn	68,0,114,.LM246-.LFBB7
+ 2067               	.LM246:
+ 2068 0a9e 80E0      		ldi r24,lo8(__c.2173)
+ 2069 0aa0 90E0      		ldi r25,hi8(__c.2173)
+ 2070 0aa2 0E94 0000 		call uart_puts_p
+ 115:main.c        ****      uart_putw_dec(i2c_rtc_init());
+ 2071               		.stabn	68,0,115,.LM247-.LFBB7
+ 2072               	.LM247:
+ 2073 0aa6 0E94 0000 		call i2c_rtc_init
+ 2074 0aaa 90E0      		ldi r25,lo8(0)
+GAS LISTING /tmp/ccsaRNb4.s 			page 50
+
+
+ 2075 0aac 0E94 0000 		call uart_putw_dec
+ 116:main.c        ****     uart_putc('\n');
+ 2076               		.stabn	68,0,116,.LM248-.LFBB7
+ 2077               	.LM248:
+ 2078 0ab0 8AE0      		ldi r24,lo8(10)
+ 2079 0ab2 0E94 0000 		call uart_putc
+ 119:main.c        ****     uart_puts_p(PSTR("#time sampling\n")); 
+ 2080               		.stabn	68,0,119,.LM249-.LFBB7
+ 2081               	.LM249:
+ 2082 0ab6 80E0      		ldi r24,lo8(__c.2175)
+ 2083 0ab8 90E0      		ldi r25,hi8(__c.2175)
+ 2084 0aba 0E94 0000 		call uart_puts_p
+ 122:main.c        ****     uint16_t sample_secs = timesample(&data);//runs a sample loop
+ 2085               		.stabn	68,0,122,.LM250-.LFBB7
+ 2086               	.LM250:
+ 2087 0abe C601      		movw r24,r12
+ 2088 0ac0 0E94 0000 		call timesample
+ 2089 0ac4 7C01      		movw r14,r24
+ 126:main.c        ****     uart_puts_p(PSTR("#read headers\n"));
+ 2090               		.stabn	68,0,126,.LM251-.LFBB7
+ 2091               	.LM251:
+ 2092 0ac6 80E0      		ldi r24,lo8(__c.2180)
+ 2093 0ac8 90E0      		ldi r25,hi8(__c.2180)
+ 2094 0aca 0E94 0000 		call uart_puts_p
+ 127:main.c        ****     read_stored_vals(&data);
+ 2095               		.stabn	68,0,127,.LM252-.LFBB7
+ 2096               	.LM252:
+ 2097 0ace C601      		movw r24,r12
+ 2098 0ad0 0E94 0000 		call read_stored_vals
+ 128:main.c        ****     uart_puts_p(PSTR("#headers: \n"));
+ 2099               		.stabn	68,0,128,.LM253-.LFBB7
+ 2100               	.LM253:
+ 2101 0ad4 80E0      		ldi r24,lo8(__c.2182)
+ 2102 0ad6 90E0      		ldi r25,hi8(__c.2182)
+ 2103 0ad8 0E94 0000 		call uart_puts_p
+ 129:main.c        ****     output_headers( &data);
+ 2104               		.stabn	68,0,129,.LM254-.LFBB7
+ 2105               	.LM254:
+ 2106 0adc C601      		movw r24,r12
+ 2107 0ade 0E94 0000 		call output_headers
+ 132:main.c        ****      rtc_gettime(&data.rtc);// Get time from rtc
+ 2108               		.stabn	68,0,132,.LM255-.LFBB7
+ 2109               	.LM255:
+ 2110 0ae2 8E01      		movw r16,r28
+ 2111 0ae4 0E5F      		subi r16,lo8(-(514))
+ 2112 0ae6 1D4F      		sbci r17,hi8(-(514))
+ 2113 0ae8 C801      		movw r24,r16
+ 2114 0aea 0E94 0000 		call rtc_gettime
+ 135:main.c        ****      nowtime = bintime2unixtime(&data.rtc);
+ 2115               		.stabn	68,0,135,.LM256-.LFBB7
+ 2116               	.LM256:
+ 2117 0aee C801      		movw r24,r16
+ 2118 0af0 0E94 0000 		call bintime2unixtime
+ 2119 0af4 4B01      		movw r8,r22
+ 2120 0af6 5C01      		movw r10,r24
+ 138:main.c        ****     power_on_sec = starttime = nowtime + sample_secs;//set first start time    
+ 2121               		.stabn	68,0,138,.LM257-.LFBB7
+GAS LISTING /tmp/ccsaRNb4.s 			page 51
+
+
+ 2122               	.LM257:
+ 2123 0af8 9701      		movw r18,r14
+ 2124 0afa 40E0      		ldi r20,lo8(0)
+ 2125 0afc 50E0      		ldi r21,hi8(0)
+ 2126 0afe CB5F      		subi r28,lo8(-773)
+ 2127 0b00 DC4F      		sbci r29,hi8(-773)
+ 2128 0b02 2883      		st Y,r18
+ 2129 0b04 3983      		std Y+1,r19
+ 2130 0b06 4A83      		std Y+2,r20
+ 2131 0b08 5B83      		std Y+3,r21
+ 2132 0b0a C550      		subi r28,lo8(773)
+ 2133 0b0c D340      		sbci r29,hi8(773)
+ 2134 0b0e 260F      		add r18,r22
+ 2135 0b10 371F      		adc r19,r23
+ 2136 0b12 481F      		adc r20,r24
+ 2137 0b14 591F      		adc r21,r25
+ 2138 0b16 C75F      		subi r28,lo8(-777)
+ 2139 0b18 DC4F      		sbci r29,hi8(-777)
+ 2140 0b1a 2883      		st Y,r18
+ 2141 0b1c 3983      		std Y+1,r19
+ 2142 0b1e 4A83      		std Y+2,r20
+ 2143 0b20 5B83      		std Y+3,r21
+ 2144 0b22 C950      		subi r28,lo8(777)
+ 2145 0b24 D340      		sbci r29,hi8(777)
+ 2146               	.LBB32:
+ 2147               	.LBB33:
+ 2148               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext1
+ 2149               	.Ltext1:
+   1:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   6:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   9:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  12:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      distribution.
+  16:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  17:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  21:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+GAS LISTING /tmp/ccsaRNb4.s 			page 52
+
+
+  30:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  33:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* $Id: delay.h.in 2189 2010-10-13 09:39:34Z aboyapati $ */
+  34:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  35:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  38:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
+  39:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
+  40:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  41:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  42:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <inttypes.h>
+  43:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <util/delay_basic.h>
+  44:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <math.h>
+  45:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  46:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \file */
+  47:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  48:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \code
+  49:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  50:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  51:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #include <util/delay.h>
+  52:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \endcode
+  53:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  54:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  55:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  56:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  57:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     used.
+  58:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  59:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  60:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  61:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  62:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  63:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  64:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  65:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  66:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  67:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  68:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  69:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  70:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  71:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  72:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  73:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  74:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  75:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     routines linked into the application.
+  76:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  77:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  78:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  79:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  80:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  81:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** */
+  82:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  83:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  84:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
+  85:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
+  86:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+GAS LISTING /tmp/ccsaRNb4.s 			page 53
+
+
+  87:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  88:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef F_CPU
+  89:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  90:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  91:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # define F_CPU 1000000UL
+  92:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  93:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  94:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+  95:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+  96:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  97:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  98:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /**
+  99:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    \ingroup util_delay
+ 100:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 101:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 102:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 103:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 104:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 105:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 106:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 107:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 108:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 109:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 110:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 111:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 112:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 113:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 114:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
+ 115:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 116:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 117:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 118:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 119:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
+ 120:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
+ 121:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
+ 122:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 123:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
+ 124:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    to round down and round to closest integer.
+ 125:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 126:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
+ 127:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
+ 128:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay
+ 129:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    although this will be deprecated in future.
+ 130:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 131:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****  */
+ 132:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** void
+ 133:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** _delay_ms(double __ms)
+ 134:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** {
+ 135:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint16_t __ticks;
+ 136:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	double __tmp ; 
+ 137:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && !defined(__DELAY_BACKWARD_COMPATIBLE__)
+ 138:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 139:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 140:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 141:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 142:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 143:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+GAS LISTING /tmp/ccsaRNb4.s 			page 54
+
+
+ 144:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 145:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 146:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 147:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 148:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#else
+ 149:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		//round up by default
+ 150:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 151:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#endif
+ 152:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 153:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 2150               		.stabn	68,0,153,.LM258-.LFBB7
+ 2151               	.LM258:
+ 2152 0b26 88E1      		 ldi r24,lo8(1048)
+ 2153 0b28 94E0      	    ldi r25,hi8(1048)
+ 2154 0b2a 0197      	    1:sbiw r24,1
+ 2155 0b2c 01F4      	    brne 1b
+ 2156 0b2e 00C0      		rjmp .
+ 2157               		.stabs	"main.c",132,0,0,.Ltext2
+ 2158               	.Ltext2:
+ 138:main.c        ****     power_on_sec = starttime = nowtime + sample_secs;//set first start time    
+ 2159               		.stabn	68,0,138,.LM259-.LFBB7
+ 2160               	.LM259:
+ 2161 0b30 2901      		movw r4,r18
+ 2162 0b32 3A01      		movw r6,r20
+ 2163               	.LBE33:
+ 2164               	.LBE32:
+ 2165               	.LBB34:
+ 153:main.c        ****              rtc_gettime(&data.rtc);// Get time from rtc
+ 2166               		.stabn	68,0,153,.LM260-.LFBB7
+ 2167               	.LM260:
+ 2168 0b34 1801      		movw r2,r16
+ 158:main.c        ****         char temps[12] = "\0\0\0\0\0\0\0\0\0\0\0\0"; //used for number to string conversion
+ 2169               		.stabn	68,0,158,.LM261-.LFBB7
+ 2170               	.LM261:
+ 2171 0b36 8E01      		movw r16,r28
+ 2172 0b38 0F5F      		subi r16,lo8(-(1))
+ 2173 0b3a 1F4F      		sbci r17,hi8(-(1))
+ 162:main.c        ****         strcat(data.serialout,temps);
+ 2174               		.stabn	68,0,162,.LM262-.LFBB7
+ 2175               	.LM262:
+ 2176 0b3c 4AE0      		ldi r20,lo8(522)
+ 2177 0b3e E42E      		mov r14,r20
+ 2178 0b40 42E0      		ldi r20,hi8(522)
+ 2179 0b42 F42E      		mov r15,r20
+ 2180 0b44 EC0E      		add r14,r28
+ 2181 0b46 FD1E      		adc r15,r29
+ 204:main.c        ****         strcat(data.serialout,temps);
+ 2182               		.stabn	68,0,204,.LM263-.LFBB7
+ 2183               	.LM263:
+ 2184 0b48 C35F      		subi r28,lo8(-781)
+ 2185 0b4a DC4F      		sbci r29,hi8(-781)
+ 2186 0b4c C882      		st Y,r12
+ 2187 0b4e CD50      		subi r28,lo8(781)
+ 2188 0b50 D340      		sbci r29,hi8(781)
+ 2189 0b52 C25F      		subi r28,lo8(-782)
+ 2190 0b54 DC4F      		sbci r29,hi8(-782)
+ 2191 0b56 D882      		st Y,r13
+GAS LISTING /tmp/ccsaRNb4.s 			page 55
+
+
+ 2192 0b58 CE50      		subi r28,lo8(782)
+ 2193 0b5a D340      		sbci r29,hi8(782)
+ 210:main.c        ****         sprintf(temps, "%ld", elapsed_sec);
+ 2194               		.stabn	68,0,210,.LM264-.LFBB7
+ 2195               	.LM264:
+ 2196 0b5c 30E0      		ldi r19,lo8(.LC10)
+ 2197 0b5e C32E      		mov r12,r19
+ 2198 0b60 30E0      		ldi r19,hi8(.LC10)
+ 2199 0b62 D32E      		mov r13,r19
+ 2200 0b64 00C0      		rjmp .L77
+ 2201               	.L67:
+ 153:main.c        ****              rtc_gettime(&data.rtc);// Get time from rtc
+ 2202               		.stabn	68,0,153,.LM265-.LFBB7
+ 2203               	.LM265:
+ 2204 0b66 C101      		movw r24,r2
+ 2205 0b68 0E94 0000 		call rtc_gettime
+ 154:main.c        ****              nowtime = bintime2unixtime(&data.rtc);
+ 2206               		.stabn	68,0,154,.LM266-.LFBB7
+ 2207               	.LM266:
+ 2208 0b6c C101      		movw r24,r2
+ 2209 0b6e 0E94 0000 		call bintime2unixtime
+ 2210 0b72 4B01      		movw r8,r22
+ 2211 0b74 5C01      		movw r10,r24
+ 2212               	.LBB35:
+ 2213               	.LBB36:
+ 2214               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext3
+ 2215               	.Ltext3:
+ 2216               		.stabn	68,0,153,.LM267-.LFBB7
+ 2217               	.LM267:
+ 2218 0b76 A8E1      		 ldi r26,lo8(1048)
+ 2219 0b78 B4E0      	    ldi r27,hi8(1048)
+ 2220 0b7a 1197      	    1:sbiw r26,1
+ 2221 0b7c 01F4      	    brne 1b
+ 2222 0b7e 00C0      		rjmp .
+ 2223               	.L77:
+ 2224               	.LBE36:
+ 2225               	.LBE35:
+ 2226               		.stabs	"main.c",132,0,0,.Ltext4
+ 2227               	.Ltext4:
+ 151:main.c        ****          while (nowtime<starttime)//wait for time here, polling RTC
+ 2228               		.stabn	68,0,151,.LM268-.LFBB7
+ 2229               	.LM268:
+ 2230 0b80 8414      		cp r8,r4
+ 2231 0b82 9504      		cpc r9,r5
+ 2232 0b84 A604      		cpc r10,r6
+ 2233 0b86 B704      		cpc r11,r7
+ 2234 0b88 00F0      		brlo .L67
+ 158:main.c        ****         char temps[12] = "\0\0\0\0\0\0\0\0\0\0\0\0"; //used for number to string conversion
+ 2235               		.stabn	68,0,158,.LM269-.LFBB7
+ 2236               	.LM269:
+ 2237 0b8a D801      		movw r26,r16
+ 2238 0b8c E0E0      		ldi r30,lo8(.LC6)
+ 2239 0b8e F0E0      		ldi r31,hi8(.LC6)
+ 2240 0b90 8CE0      		ldi r24,lo8(12)
+ 2241               	.L68:
+ 2242 0b92 0190      		ld r0,Z+
+ 2243 0b94 0D92      		st X+,r0
+GAS LISTING /tmp/ccsaRNb4.s 			page 56
+
+
+ 2244 0b96 8150      		subi r24,lo8(-(-1))
+ 2245 0b98 01F4      		brne .L68
+ 161:main.c        ****         ultoa (data.rtc.year,temps,10);    
+ 2246               		.stabn	68,0,161,.LM270-.LFBB7
+ 2247               	.LM270:
+ 2248 0b9a F101      		movw r30,r2
+ 2249 0b9c 6081      		ld r22,Z
+ 2250 0b9e 7181      		ldd r23,Z+1
+ 2251 0ba0 80E0      		ldi r24,lo8(0)
+ 2252 0ba2 90E0      		ldi r25,hi8(0)
+ 2253 0ba4 A801      		movw r20,r16
+ 2254 0ba6 2AE0      		ldi r18,lo8(10)
+ 2255 0ba8 30E0      		ldi r19,hi8(10)
+ 2256 0baa 0E94 0000 		call ultoa
+ 162:main.c        ****         strcat(data.serialout,temps);
+ 2257               		.stabn	68,0,162,.LM271-.LFBB7
+ 2258               	.LM271:
+ 2259 0bae C701      		movw r24,r14
+ 2260 0bb0 B801      		movw r22,r16
+ 2261 0bb2 0E94 0000 		call strcat
+ 165:main.c        ****         ultoa (data.rtc.month,temps,10);    
+ 2262               		.stabn	68,0,165,.LM272-.LFBB7
+ 2263               	.LM272:
+ 2264 0bb6 CC5F      		subi r28,lo8(-516)
+ 2265 0bb8 DD4F      		sbci r29,hi8(-516)
+ 2266 0bba 6881      		ld r22,Y
+ 2267 0bbc C450      		subi r28,lo8(516)
+ 2268 0bbe D240      		sbci r29,hi8(516)
+ 2269 0bc0 70E0      		ldi r23,lo8(0)
+ 2270 0bc2 80E0      		ldi r24,lo8(0)
+ 2271 0bc4 90E0      		ldi r25,hi8(0)
+ 2272 0bc6 A801      		movw r20,r16
+ 2273 0bc8 2AE0      		ldi r18,lo8(10)
+ 2274 0bca 30E0      		ldi r19,hi8(10)
+ 2275 0bcc 0E94 0000 		call ultoa
+ 166:main.c        ****         if (strlen(temps) == 1)
+ 2276               		.stabn	68,0,166,.LM273-.LFBB7
+ 2277               	.LM273:
+ 2278 0bd0 F801      		movw r30,r16
+ 2279 0bd2 0190      		ld __tmp_reg__,Z+
+ 2280 0bd4 0020      		tst __tmp_reg__
+ 2281 0bd6 01F4      		brne .-6
+ 2282 0bd8 3297      		sbiw r30,2
+ 2283 0bda E017      		cp r30,r16
+ 2284 0bdc F107      		cpc r31,r17
+ 2285 0bde 01F4      		brne .L69
+ 168:main.c        **** 			strcat(data.serialout,"0");
+ 2286               		.stabn	68,0,168,.LM274-.LFBB7
+ 2287               	.LM274:
+ 2288 0be0 C701      		movw r24,r14
+ 2289 0be2 60E0      		ldi r22,lo8(.LC7)
+ 2290 0be4 70E0      		ldi r23,hi8(.LC7)
+ 2291 0be6 0E94 0000 		call strcat
+ 2292               	.L69:
+ 170:main.c        ****         strcat(data.serialout,temps);
+ 2293               		.stabn	68,0,170,.LM275-.LFBB7
+ 2294               	.LM275:
+GAS LISTING /tmp/ccsaRNb4.s 			page 57
+
+
+ 2295 0bea C701      		movw r24,r14
+ 2296 0bec B801      		movw r22,r16
+ 2297 0bee 0E94 0000 		call strcat
+ 173:main.c        ****         ultoa (data.rtc.mday,temps,10); 
+ 2298               		.stabn	68,0,173,.LM276-.LFBB7
+ 2299               	.LM276:
+ 2300 0bf2 CB5F      		subi r28,lo8(-517)
+ 2301 0bf4 DD4F      		sbci r29,hi8(-517)
+ 2302 0bf6 6881      		ld r22,Y
+ 2303 0bf8 C550      		subi r28,lo8(517)
+ 2304 0bfa D240      		sbci r29,hi8(517)
+ 2305 0bfc 70E0      		ldi r23,lo8(0)
+ 2306 0bfe 80E0      		ldi r24,lo8(0)
+ 2307 0c00 90E0      		ldi r25,hi8(0)
+ 2308 0c02 A801      		movw r20,r16
+ 2309 0c04 2AE0      		ldi r18,lo8(10)
+ 2310 0c06 30E0      		ldi r19,hi8(10)
+ 2311 0c08 0E94 0000 		call ultoa
+ 174:main.c        ****         if (strlen(temps) == 1)
+ 2312               		.stabn	68,0,174,.LM277-.LFBB7
+ 2313               	.LM277:
+ 2314 0c0c F801      		movw r30,r16
+ 2315 0c0e 0190      		ld __tmp_reg__,Z+
+ 2316 0c10 0020      		tst __tmp_reg__
+ 2317 0c12 01F4      		brne .-6
+ 2318 0c14 3297      		sbiw r30,2
+ 2319 0c16 E017      		cp r30,r16
+ 2320 0c18 F107      		cpc r31,r17
+ 2321 0c1a 01F4      		brne .L70
+ 176:main.c        **** 			strcat(data.serialout,"0");
+ 2322               		.stabn	68,0,176,.LM278-.LFBB7
+ 2323               	.LM278:
+ 2324 0c1c C701      		movw r24,r14
+ 2325 0c1e 60E0      		ldi r22,lo8(.LC7)
+ 2326 0c20 70E0      		ldi r23,hi8(.LC7)
+ 2327 0c22 0E94 0000 		call strcat
+ 2328               	.L70:
+ 178:main.c        ****         strcat(data.serialout,temps);
+ 2329               		.stabn	68,0,178,.LM279-.LFBB7
+ 2330               	.LM279:
+ 2331 0c26 C701      		movw r24,r14
+ 2332 0c28 B801      		movw r22,r16
+ 2333 0c2a 0E94 0000 		call strcat
+ 180:main.c        ****         strcat(data.serialout," ");
+ 2334               		.stabn	68,0,180,.LM280-.LFBB7
+ 2335               	.LM280:
+ 2336 0c2e C701      		movw r24,r14
+ 2337 0c30 60E0      		ldi r22,lo8(.LC8)
+ 2338 0c32 70E0      		ldi r23,hi8(.LC8)
+ 2339 0c34 0E94 0000 		call strcat
+ 183:main.c        ****         ultoa (data.rtc.hour,temps,10);  
+ 2340               		.stabn	68,0,183,.LM281-.LFBB7
+ 2341               	.LM281:
+ 2342 0c38 C95F      		subi r28,lo8(-519)
+ 2343 0c3a DD4F      		sbci r29,hi8(-519)
+ 2344 0c3c 6881      		ld r22,Y
+ 2345 0c3e C750      		subi r28,lo8(519)
+GAS LISTING /tmp/ccsaRNb4.s 			page 58
+
+
+ 2346 0c40 D240      		sbci r29,hi8(519)
+ 2347 0c42 70E0      		ldi r23,lo8(0)
+ 2348 0c44 80E0      		ldi r24,lo8(0)
+ 2349 0c46 90E0      		ldi r25,hi8(0)
+ 2350 0c48 A801      		movw r20,r16
+ 2351 0c4a 2AE0      		ldi r18,lo8(10)
+ 2352 0c4c 30E0      		ldi r19,hi8(10)
+ 2353 0c4e 0E94 0000 		call ultoa
+ 184:main.c        ****         if (strlen(temps) == 1)
+ 2354               		.stabn	68,0,184,.LM282-.LFBB7
+ 2355               	.LM282:
+ 2356 0c52 F801      		movw r30,r16
+ 2357 0c54 0190      		ld __tmp_reg__,Z+
+ 2358 0c56 0020      		tst __tmp_reg__
+ 2359 0c58 01F4      		brne .-6
+ 2360 0c5a 3297      		sbiw r30,2
+ 2361 0c5c E017      		cp r30,r16
+ 2362 0c5e F107      		cpc r31,r17
+ 2363 0c60 01F4      		brne .L71
+ 186:main.c        **** 			strcat(data.serialout,"0");
+ 2364               		.stabn	68,0,186,.LM283-.LFBB7
+ 2365               	.LM283:
+ 2366 0c62 C701      		movw r24,r14
+ 2367 0c64 60E0      		ldi r22,lo8(.LC7)
+ 2368 0c66 70E0      		ldi r23,hi8(.LC7)
+ 2369 0c68 0E94 0000 		call strcat
+ 2370               	.L71:
+ 188:main.c        ****         strcat(data.serialout,temps);
+ 2371               		.stabn	68,0,188,.LM284-.LFBB7
+ 2372               	.LM284:
+ 2373 0c6c C701      		movw r24,r14
+ 2374 0c6e B801      		movw r22,r16
+ 2375 0c70 0E94 0000 		call strcat
+ 189:main.c        ****         strcat(data.serialout,":");
+ 2376               		.stabn	68,0,189,.LM285-.LFBB7
+ 2377               	.LM285:
+ 2378 0c74 C701      		movw r24,r14
+ 2379 0c76 60E0      		ldi r22,lo8(.LC9)
+ 2380 0c78 70E0      		ldi r23,hi8(.LC9)
+ 2381 0c7a 0E94 0000 		call strcat
+ 191:main.c        ****         ultoa (data.rtc.min,temps,10); 
+ 2382               		.stabn	68,0,191,.LM286-.LFBB7
+ 2383               	.LM286:
+ 2384 0c7e C85F      		subi r28,lo8(-520)
+ 2385 0c80 DD4F      		sbci r29,hi8(-520)
+ 2386 0c82 6881      		ld r22,Y
+ 2387 0c84 C850      		subi r28,lo8(520)
+ 2388 0c86 D240      		sbci r29,hi8(520)
+ 2389 0c88 70E0      		ldi r23,lo8(0)
+ 2390 0c8a 80E0      		ldi r24,lo8(0)
+ 2391 0c8c 90E0      		ldi r25,hi8(0)
+ 2392 0c8e A801      		movw r20,r16
+ 2393 0c90 2AE0      		ldi r18,lo8(10)
+ 2394 0c92 30E0      		ldi r19,hi8(10)
+ 2395 0c94 0E94 0000 		call ultoa
+ 192:main.c        ****         if (strlen(temps) == 1)
+ 2396               		.stabn	68,0,192,.LM287-.LFBB7
+GAS LISTING /tmp/ccsaRNb4.s 			page 59
+
+
+ 2397               	.LM287:
+ 2398 0c98 F801      		movw r30,r16
+ 2399 0c9a 0190      		ld __tmp_reg__,Z+
+ 2400 0c9c 0020      		tst __tmp_reg__
+ 2401 0c9e 01F4      		brne .-6
+ 2402 0ca0 3297      		sbiw r30,2
+ 2403 0ca2 E017      		cp r30,r16
+ 2404 0ca4 F107      		cpc r31,r17
+ 2405 0ca6 01F4      		brne .L72
+ 194:main.c        **** 			strcat(data.serialout,"0");
+ 2406               		.stabn	68,0,194,.LM288-.LFBB7
+ 2407               	.LM288:
+ 2408 0ca8 C701      		movw r24,r14
+ 2409 0caa 60E0      		ldi r22,lo8(.LC7)
+ 2410 0cac 70E0      		ldi r23,hi8(.LC7)
+ 2411 0cae 0E94 0000 		call strcat
+ 2412               	.L72:
+ 196:main.c        ****         strcat(data.serialout,temps);
+ 2413               		.stabn	68,0,196,.LM289-.LFBB7
+ 2414               	.LM289:
+ 2415 0cb2 C701      		movw r24,r14
+ 2416 0cb4 B801      		movw r22,r16
+ 2417 0cb6 0E94 0000 		call strcat
+ 197:main.c        ****         strcat(data.serialout,":");
+ 2418               		.stabn	68,0,197,.LM290-.LFBB7
+ 2419               	.LM290:
+ 2420 0cba C701      		movw r24,r14
+ 2421 0cbc 60E0      		ldi r22,lo8(.LC9)
+ 2422 0cbe 70E0      		ldi r23,hi8(.LC9)
+ 2423 0cc0 0E94 0000 		call strcat
+ 199:main.c        ****         ultoa (data.rtc.sec,temps,10); 
+ 2424               		.stabn	68,0,199,.LM291-.LFBB7
+ 2425               	.LM291:
+ 2426 0cc4 C75F      		subi r28,lo8(-521)
+ 2427 0cc6 DD4F      		sbci r29,hi8(-521)
+ 2428 0cc8 6881      		ld r22,Y
+ 2429 0cca C950      		subi r28,lo8(521)
+ 2430 0ccc D240      		sbci r29,hi8(521)
+ 2431 0cce 70E0      		ldi r23,lo8(0)
+ 2432 0cd0 80E0      		ldi r24,lo8(0)
+ 2433 0cd2 90E0      		ldi r25,hi8(0)
+ 2434 0cd4 A801      		movw r20,r16
+ 2435 0cd6 2AE0      		ldi r18,lo8(10)
+ 2436 0cd8 30E0      		ldi r19,hi8(10)
+ 2437 0cda 0E94 0000 		call ultoa
+ 200:main.c        ****         if (strlen(temps) == 1)
+ 2438               		.stabn	68,0,200,.LM292-.LFBB7
+ 2439               	.LM292:
+ 2440 0cde F801      		movw r30,r16
+ 2441 0ce0 0190      		ld __tmp_reg__,Z+
+ 2442 0ce2 0020      		tst __tmp_reg__
+ 2443 0ce4 01F4      		brne .-6
+ 2444 0ce6 3297      		sbiw r30,2
+ 2445 0ce8 E017      		cp r30,r16
+ 2446 0cea F107      		cpc r31,r17
+ 2447 0cec 01F4      		brne .L73
+ 202:main.c        **** 			strcat(data.serialout,"0");
+GAS LISTING /tmp/ccsaRNb4.s 			page 60
+
+
+ 2448               		.stabn	68,0,202,.LM293-.LFBB7
+ 2449               	.LM293:
+ 2450 0cee C701      		movw r24,r14
+ 2451 0cf0 60E0      		ldi r22,lo8(.LC7)
+ 2452 0cf2 70E0      		ldi r23,hi8(.LC7)
+ 2453 0cf4 0E94 0000 		call strcat
+ 2454               	.L73:
+ 204:main.c        ****         strcat(data.serialout,temps);
+ 2455               		.stabn	68,0,204,.LM294-.LFBB7
+ 2456               	.LM294:
+ 2457 0cf8 C701      		movw r24,r14
+ 2458 0cfa B801      		movw r22,r16
+ 2459 0cfc 0E94 0000 		call strcat
+ 205:main.c        ****         strcat(data.serialout,",");
+ 2460               		.stabn	68,0,205,.LM295-.LFBB7
+ 2461               	.LM295:
+ 2462 0d00 C701      		movw r24,r14
+ 2463 0d02 60E0      		ldi r22,lo8(.LC2)
+ 2464 0d04 70E0      		ldi r23,hi8(.LC2)
+ 2465 0d06 0E94 0000 		call strcat
+ 207:main.c        ****         starttime = nowtime + sample_secs;//set next start time
+ 2466               		.stabn	68,0,207,.LM296-.LFBB7
+ 2467               	.LM296:
+ 2468 0d0a CB5F      		subi r28,lo8(-773)
+ 2469 0d0c DC4F      		sbci r29,hi8(-773)
+ 2470 0d0e 4880      		ld r4,Y
+ 2471 0d10 5980      		ldd r5,Y+1
+ 2472 0d12 6A80      		ldd r6,Y+2
+ 2473 0d14 7B80      		ldd r7,Y+3
+ 2474 0d16 C550      		subi r28,lo8(773)
+ 2475 0d18 D340      		sbci r29,hi8(773)
+ 2476 0d1a 480C      		add r4,r8
+ 2477 0d1c 591C      		adc r5,r9
+ 2478 0d1e 6A1C      		adc r6,r10
+ 2479 0d20 7B1C      		adc r7,r11
+ 210:main.c        ****         sprintf(temps, "%ld", elapsed_sec);
+ 2480               		.stabn	68,0,210,.LM297-.LFBB7
+ 2481               	.LM297:
+ 2482 0d22 2DB7      		in r18,__SP_L__
+ 2483 0d24 3EB7      		in r19,__SP_H__
+ 2484 0d26 2850      		subi r18,lo8(-(-8))
+ 2485 0d28 3040      		sbci r19,hi8(-(-8))
+ 2486 0d2a 0FB6      		in __tmp_reg__,__SREG__
+ 2487 0d2c F894      		cli
+ 2488 0d2e 3EBF      		out __SP_H__,r19
+ 2489 0d30 0FBE      		out __SREG__,__tmp_reg__
+ 2490 0d32 2DBF      		out __SP_L__,r18
+ 2491 0d34 EDB7      		in r30,__SP_L__
+ 2492 0d36 FEB7      		in r31,__SP_H__
+ 2493 0d38 3196      		adiw r30,1
+ 2494 0d3a ADB7      		in r26,__SP_L__
+ 2495 0d3c BEB7      		in r27,__SP_H__
+ 2496 0d3e 1296      		adiw r26,1+1
+ 2497 0d40 1C93      		st X,r17
+ 2498 0d42 0E93      		st -X,r16
+ 2499 0d44 1197      		sbiw r26,1
+ 2500 0d46 D382      		std Z+3,r13
+GAS LISTING /tmp/ccsaRNb4.s 			page 61
+
+
+ 2501 0d48 C282      		std Z+2,r12
+ 208:main.c        ****         elapsed_sec = nowtime - power_on_sec; 
+ 2502               		.stabn	68,0,208,.LM298-.LFBB7
+ 2503               	.LM298:
+ 2504 0d4a D501      		movw r26,r10
+ 2505 0d4c C401      		movw r24,r8
+ 2506 0d4e C75F      		subi r28,lo8(-777)
+ 2507 0d50 DC4F      		sbci r29,hi8(-777)
+ 2508 0d52 2881      		ld r18,Y
+ 2509 0d54 3981      		ldd r19,Y+1
+ 2510 0d56 4A81      		ldd r20,Y+2
+ 2511 0d58 5B81      		ldd r21,Y+3
+ 2512 0d5a C950      		subi r28,lo8(777)
+ 2513 0d5c D340      		sbci r29,hi8(777)
+ 2514 0d5e 821B      		sub r24,r18
+ 2515 0d60 930B      		sbc r25,r19
+ 2516 0d62 A40B      		sbc r26,r20
+ 2517 0d64 B50B      		sbc r27,r21
+ 210:main.c        ****         sprintf(temps, "%ld", elapsed_sec);
+ 2518               		.stabn	68,0,210,.LM299-.LFBB7
+ 2519               	.LM299:
+ 2520 0d66 8483      		std Z+4,r24
+ 2521 0d68 9583      		std Z+5,r25
+ 2522 0d6a A683      		std Z+6,r26
+ 2523 0d6c B783      		std Z+7,r27
+ 2524 0d6e 0E94 0000 		call sprintf
+ 211:main.c        ****         strcat(data.serialout,temps);
+ 2525               		.stabn	68,0,211,.LM300-.LFBB7
+ 2526               	.LM300:
+ 2527 0d72 4DB7      		in r20,__SP_L__
+ 2528 0d74 5EB7      		in r21,__SP_H__
+ 2529 0d76 485F      		subi r20,lo8(-(8))
+ 2530 0d78 5F4F      		sbci r21,hi8(-(8))
+ 2531 0d7a 0FB6      		in __tmp_reg__,__SREG__
+ 2532 0d7c F894      		cli
+ 2533 0d7e 5EBF      		out __SP_H__,r21
+ 2534 0d80 0FBE      		out __SREG__,__tmp_reg__
+ 2535 0d82 4DBF      		out __SP_L__,r20
+ 2536 0d84 C701      		movw r24,r14
+ 2537 0d86 B801      		movw r22,r16
+ 2538 0d88 0E94 0000 		call strcat
+ 212:main.c        ****         strcat(data.serialout,","); //add a comma
+ 2539               		.stabn	68,0,212,.LM301-.LFBB7
+ 2540               	.LM301:
+ 2541 0d8c C701      		movw r24,r14
+ 2542 0d8e 60E0      		ldi r22,lo8(.LC2)
+ 2543 0d90 70E0      		ldi r23,hi8(.LC2)
+ 2544 0d92 0E94 0000 		call strcat
+ 217:main.c        ****         itoa( data.header_id_val,temps,10);//header ID
+ 2545               		.stabn	68,0,217,.LM302-.LFBB7
+ 2546               	.LM302:
+ 2547 0d96 CC5F      		subi r28,lo8(-772)
+ 2548 0d98 DC4F      		sbci r29,hi8(-772)
+ 2549 0d9a 8881      		ld r24,Y
+ 2550 0d9c C450      		subi r28,lo8(772)
+ 2551 0d9e D340      		sbci r29,hi8(772)
+ 2552 0da0 90E0      		ldi r25,lo8(0)
+GAS LISTING /tmp/ccsaRNb4.s 			page 62
+
+
+ 2553 0da2 B801      		movw r22,r16
+ 2554 0da4 4AE0      		ldi r20,lo8(10)
+ 2555 0da6 50E0      		ldi r21,hi8(10)
+ 2556 0da8 0E94 0000 		call itoa
+ 218:main.c        ****         strcat(data.serialout,temps);
+ 2557               		.stabn	68,0,218,.LM303-.LFBB7
+ 2558               	.LM303:
+ 2559 0dac C701      		movw r24,r14
+ 2560 0dae B801      		movw r22,r16
+ 2561 0db0 0E94 0000 		call strcat
+ 219:main.c        ****         strcat(data.serialout,","); 
+ 2562               		.stabn	68,0,219,.LM304-.LFBB7
+ 2563               	.LM304:
+ 2564 0db4 C701      		movw r24,r14
+ 2565 0db6 60E0      		ldi r22,lo8(.LC2)
+ 2566 0db8 70E0      		ldi r23,hi8(.LC2)
+ 2567 0dba 0E94 0000 		call strcat
+ 222:main.c        ****         sample_all_channels(SAMPLE, &data);//sample
+ 2568               		.stabn	68,0,222,.LM305-.LFBB7
+ 2569               	.LM305:
+ 2570 0dbe 81E0      		ldi r24,lo8(1)
+ 2571 0dc0 C35F      		subi r28,lo8(-781)
+ 2572 0dc2 DC4F      		sbci r29,hi8(-781)
+ 2573 0dc4 6881      		ld r22,Y
+ 2574 0dc6 CD50      		subi r28,lo8(781)
+ 2575 0dc8 D340      		sbci r29,hi8(781)
+ 2576 0dca C25F      		subi r28,lo8(-782)
+ 2577 0dcc DC4F      		sbci r29,hi8(-782)
+ 2578 0dce 7881      		ld r23,Y
+ 2579 0dd0 CE50      		subi r28,lo8(782)
+ 2580 0dd2 D340      		sbci r29,hi8(782)
+ 2581 0dd4 0E94 0000 		call sample_all_channels
+ 223:main.c        ****         (strcat(data.serialout,"\n"));
+ 2582               		.stabn	68,0,223,.LM306-.LFBB7
+ 2583               	.LM306:
+ 2584 0dd8 C701      		movw r24,r14
+ 2585 0dda 60E0      		ldi r22,lo8(.LC3)
+ 2586 0ddc 70E0      		ldi r23,hi8(.LC3)
+ 2587 0dde 0E94 0000 		call strcat
+ 224:main.c        ****         spitout(data.serialout);//output
+ 2588               		.stabn	68,0,224,.LM307-.LFBB7
+ 2589               	.LM307:
+ 2590 0de2 C701      		movw r24,r14
+ 2591 0de4 0E94 0000 		call spitout
+ 2592 0de8 00C0      		rjmp .L77
+ 2593               	.LBE34:
+ 2594               		.size	main, .-main
+ 2595               		.stabs	"data:(13,1)",128,0,98,13
+ 2596               		.stabs	"nowtime:r(3,6)",64,0,121,8
+ 2597               		.stabs	"sample_secs:r(3,4)",64,0,122,14
+ 2598               		.stabn	192,0,0,.LFBB7-.LFBB7
+ 2599               		.stabs	"temps:(0,20)=ar(13,3);0;11;(0,2)",128,0,158,1
+ 2600               		.stabn	192,0,0,.LBB34-.LFBB7
+ 2601               		.stabn	224,0,0,.LBE34-.LFBB7
+ 2602               		.stabn	224,0,0,.Lscope7-.LFBB7
+ 2603               	.Lscope7:
+ 2604               		.stabs	"",36,0,0,.Lscope7-.LFBB7
+GAS LISTING /tmp/ccsaRNb4.s 			page 63
+
+
+ 2605               		.stabd	78,0,0
+ 2606               		.comm sixteen,1,1
+ 2607               		.section	.progmem.data,"a",@progbits
+ 2608               		.type	__c.2354, @object
+ 2609               		.size	__c.2354, 27
+ 2610               	__c.2354:
+ 2611 0000 2320 7761 		.string	"# warning: corrupt offset\n"
+ 2611      726E 696E 
+ 2611      673A 2063 
+ 2611      6F72 7275 
+ 2611      7074 206F 
+ 2612               		.type	__c.2352, @object
+ 2613               		.size	__c.2352, 27
+ 2614               	__c.2352:
+ 2615 001b 2320 7761 		.string	"# warning: corrupt calval\n"
+ 2615      726E 696E 
+ 2615      673A 2063 
+ 2615      6F72 7275 
+ 2615      7074 2063 
+ 2616               		.type	__c.2348, @object
+ 2617               		.size	__c.2348, 8
+ 2618               	__c.2348:
+ 2619 0036 2320 646F 		.string	"# done\n"
+ 2619      6E65 0A00 
+ 2620               		.type	__c.2343, @object
+ 2621               		.size	__c.2343, 2
+ 2622               	__c.2343:
+ 2623 003e 2E00      		.string	"."
+ 2624               		.type	__c.2339, @object
+ 2625               		.size	__c.2339, 17
+ 2626               	__c.2339:
+ 2627 0040 2320 7265 		.string	"# reading EEMEM "
+ 2627      6164 696E 
+ 2627      6720 4545 
+ 2627      4D45 4D20 
+ 2627      00
+ 2628               		.type	__c.2337, @object
+ 2629               		.size	__c.2337, 2
+ 2630               	__c.2337:
+ 2631 0051 0A00      		.string	"\n"
+ 2632               		.type	__c.2335, @object
+ 2633               		.size	__c.2335, 15
+ 2634               	__c.2335:
+ 2635 0053 2320 6E75 		.string	"# num inputs: "
+ 2635      6D20 696E 
+ 2635      7075 7473 
+ 2635      3A20 00
+ 2636               		.type	__c.2329, @object
+ 2637               		.size	__c.2329, 17
+ 2638               	__c.2329:
+ 2639 0062 6E6F 7420 		.string	"not implemented\n"
+ 2639      696D 706C 
+ 2639      656D 656E 
+ 2639      7465 640A 
+ 2639      00
+ 2640               		.type	__c.2327, @object
+ 2641               		.size	__c.2327, 25
+GAS LISTING /tmp/ccsaRNb4.s 			page 64
+
+
+ 2642               	__c.2327:
+ 2643 0073 7573 6520 		.string	"use RET CR command ends\n"
+ 2643      5245 5420 
+ 2643      4352 2063 
+ 2643      6F6D 6D61 
+ 2643      6E64 2065 
+ 2644               		.type	__c.2325, @object
+ 2645               		.size	__c.2325, 29
+ 2646               	__c.2325:
+ 2647 008c 6469 7265 		.string	"direct connection to S-uart "
+ 2647      6374 2063 
+ 2647      6F6E 6E65 
+ 2647      6374 696F 
+ 2647      6E20 746F 
+ 2648               		.type	__c.2322, @object
+ 2649               		.size	__c.2322, 28
+ 2650               	__c.2322:
+ 2651 00a9 0A20 656E 		.string	"\n enter S-Uart chan 1,2,3 >"
+ 2651      7465 7220 
+ 2651      532D 5561 
+ 2651      7274 2063 
+ 2651      6861 6E20 
+ 2652               		.type	__c.2319, @object
+ 2653               		.size	__c.2319, 2
+ 2654               	__c.2319:
+ 2655 00c5 0A00      		.string	"\n"
+ 2656               		.type	__c.2317, @object
+ 2657               		.size	__c.2317, 3
+ 2658               	__c.2317:
+ 2659 00c7 203E 00   		.string	" >"
+ 2660               		.type	__c.2315, @object
+ 2661               		.size	__c.2315, 14
+ 2662               	__c.2315:
+ 2663 00ca 0A20 6D69 		.string	"\n mins, 2 dgt"
+ 2663      6E73 2C20 
+ 2663      3220 6467 
+ 2663      7400 
+ 2664               		.type	__c.2313, @object
+ 2665               		.size	__c.2313, 3
+ 2666               	__c.2313:
+ 2667 00d8 203E 00   		.string	" >"
+ 2668               		.type	__c.2311, @object
+ 2669               		.size	__c.2311, 17
+ 2670               	__c.2311:
+ 2671 00db 0A20 6872 		.string	"\n hr, 24hr 2 dgt"
+ 2671      2C20 3234 
+ 2671      6872 2032 
+ 2671      2064 6774 
+ 2671      00
+ 2672               		.type	__c.2309, @object
+ 2673               		.size	__c.2309, 3
+ 2674               	__c.2309:
+ 2675 00ec 203E 00   		.string	" >"
+ 2676               		.type	__c.2307, @object
+ 2677               		.size	__c.2307, 13
+ 2678               	__c.2307:
+ 2679 00ef 0A20 6461 		.string	"\n day, 2 dgt"
+GAS LISTING /tmp/ccsaRNb4.s 			page 65
+
+
+ 2679      792C 2032 
+ 2679      2064 6774 
+ 2679      00
+ 2680               		.type	__c.2305, @object
+ 2681               		.size	__c.2305, 3
+ 2682               	__c.2305:
+ 2683 00fc 203E 00   		.string	" >"
+ 2684               		.type	__c.2303, @object
+ 2685               		.size	__c.2303, 15
+ 2686               	__c.2303:
+ 2687 00ff 0A20 6D6F 		.string	"\n month, 2 dgt"
+ 2687      6E74 682C 
+ 2687      2032 2064 
+ 2687      6774 00
+ 2688               		.type	__c.2301, @object
+ 2689               		.size	__c.2301, 3
+ 2690               	__c.2301:
+ 2691 010e 203E 00   		.string	" >"
+ 2692               		.type	__c.2299, @object
+ 2693               		.size	__c.2299, 14
+ 2694               	__c.2299:
+ 2695 0111 0A20 7972 		.string	"\n yr, 4 digit"
+ 2695      2C20 3420 
+ 2695      6469 6769 
+ 2695      7400 
+ 2696               		.type	__c.2297, @object
+ 2697               		.size	__c.2297, 2
+ 2698               	__c.2297:
+ 2699 011f 7900      		.string	"y"
+ 2700               		.type	__c.2295, @object
+ 2701               		.size	__c.2295, 3
+ 2702               	__c.2295:
+ 2703 0121 203E 00   		.string	" >"
+ 2704               		.type	__c.2293, @object
+ 2705               		.size	__c.2293, 14
+ 2706               	__c.2293:
+ 2707 0124 6368 616E 		.string	"change? (y/n)"
+ 2707      6765 3F20 
+ 2707      2879 2F6E 
+ 2707      2900 
+ 2708               		.type	__c.2290, @object
+ 2709               		.size	__c.2290, 10
+ 2710               	__c.2290:
+ 2711 0132 656E 7465 		.string	"entered: "
+ 2711      7265 643A 
+ 2711      2000 
+ 2712               		.type	__c.2288, @object
+ 2713               		.size	__c.2288, 14
+ 2714               	__c.2288:
+ 2715 013c 656E 7465 		.string	"enter value >"
+ 2715      7220 7661 
+ 2715      6C75 6520 
+ 2715      3E00 
+ 2716               		.type	__c.2286, @object
+ 2717               		.size	__c.2286, 10
+ 2718               	__c.2286:
+ 2719 014a 656E 7465 		.string	"entered: "
+GAS LISTING /tmp/ccsaRNb4.s 			page 66
+
+
+ 2719      7265 643A 
+ 2719      2000 
+ 2720               		.type	__c.2283, @object
+ 2721               		.size	__c.2283, 24
+ 2722               	__c.2283:
+ 2723 0154 0A20 656E 		.string	"\n enter channel number>"
+ 2723      7465 7220 
+ 2723      6368 616E 
+ 2723      6E65 6C20 
+ 2723      6E75 6D62 
+ 2724               		.type	__c.2278, @object
+ 2725               		.size	__c.2278, 3
+ 2726               	__c.2278:
+ 2727 016c 3A20 00   		.string	": "
+ 2728               		.type	__c.2276, @object
+ 2729               		.size	__c.2276, 3
+ 2730               	__c.2276:
+ 2731 016f 3A20 00   		.string	": "
+ 2732               		.type	__c.2273, @object
+ 2733               		.size	__c.2273, 24
+ 2734               	__c.2273:
+ 2735 0172 0A63 6861 		.string	"\nchan:  name:  offset:\n"
+ 2735      6E3A 2020 
+ 2735      6E61 6D65 
+ 2735      3A20 206F 
+ 2735      6666 7365 
+ 2736               		.type	__c.2271, @object
+ 2737               		.size	__c.2271, 28
+ 2738               	__c.2271:
+ 2739 018a 0A4F 6666 		.string	"\nOffset Entry (7 char max)\n"
+ 2739      7365 7420 
+ 2739      456E 7472 
+ 2739      7920 2837 
+ 2739      2063 6861 
+ 2740               		.type	__c.2268, @object
+ 2741               		.size	__c.2268, 10
+ 2742               	__c.2268:
+ 2743 01a6 656E 7465 		.string	"entered: "
+ 2743      7265 643A 
+ 2743      2000 
+ 2744               		.type	__c.2266, @object
+ 2745               		.size	__c.2266, 14
+ 2746               	__c.2266:
+ 2747 01b0 656E 7465 		.string	"enter value >"
+ 2747      7220 7661 
+ 2747      6C75 6520 
+ 2747      3E00 
+ 2748               		.type	__c.2264, @object
+ 2749               		.size	__c.2264, 11
+ 2750               	__c.2264:
+ 2751 01be 2065 6E74 		.string	" entered: "
+ 2751      6572 6564 
+ 2751      3A20 00
+ 2752               		.type	__c.2261, @object
+ 2753               		.size	__c.2261, 21
+ 2754               	__c.2261:
+ 2755 01c9 0A20 656E 		.string	"\n enter chan number>"
+GAS LISTING /tmp/ccsaRNb4.s 			page 67
+
+
+ 2755      7465 7220 
+ 2755      6368 616E 
+ 2755      206E 756D 
+ 2755      6265 723E 
+ 2756               		.type	__c.2256, @object
+ 2757               		.size	__c.2256, 3
+ 2758               	__c.2256:
+ 2759 01de 3A20 00   		.string	": "
+ 2760               		.type	__c.2254, @object
+ 2761               		.size	__c.2254, 3
+ 2762               	__c.2254:
+ 2763 01e1 3A20 00   		.string	": "
+ 2764               		.type	__c.2251, @object
+ 2765               		.size	__c.2251, 23
+ 2766               	__c.2251:
+ 2767 01e4 0A63 6861 		.string	"\nchan:  name:  value:\n"
+ 2767      6E3A 2020 
+ 2767      6E61 6D65 
+ 2767      3A20 2076 
+ 2767      616C 7565 
+ 2768               		.type	__c.2249, @object
+ 2769               		.size	__c.2249, 29
+ 2770               	__c.2249:
+ 2771 01fb 0A43 616C 		.string	"\nCal val Entry (7 char max)\n"
+ 2771      2076 616C 
+ 2771      2045 6E74 
+ 2771      7279 2028 
+ 2771      3720 6368 
+ 2772               		.type	__c.2245, @object
+ 2773               		.size	__c.2245, 11
+ 2774               	__c.2245:
+ 2775 0218 2065 6E74 		.string	" entered: "
+ 2775      6572 6564 
+ 2775      3A20 00
+ 2776               		.type	__c.2242, @object
+ 2777               		.size	__c.2242, 11
+ 2778               	__c.2242:
+ 2779 0223 656E 7465 		.string	"enter ID >"
+ 2779      7220 4944 
+ 2779      203E 00
+ 2780               		.type	__c.2240, @object
+ 2781               		.size	__c.2240, 11
+ 2782               	__c.2240:
+ 2783 022e 2065 6E74 		.string	" entered: "
+ 2783      6572 6564 
+ 2783      3A20 00
+ 2784               		.type	__c.2238, @object
+ 2785               		.size	__c.2238, 17
+ 2786               	__c.2238:
+ 2787 0239 656E 7465 		.string	"enter new name >"
+ 2787      7220 6E65 
+ 2787      7720 6E61 
+ 2787      6D65 203E 
+ 2787      00
+ 2788               		.type	__c.2236, @object
+ 2789               		.size	__c.2236, 11
+ 2790               	__c.2236:
+GAS LISTING /tmp/ccsaRNb4.s 			page 68
+
+
+ 2791 024a 2065 6E74 		.string	" entered: "
+ 2791      6572 6564 
+ 2791      3A20 00
+ 2792               		.type	__c.2233, @object
+ 2793               		.size	__c.2233, 18
+ 2794               	__c.2233:
+ 2795 0255 0A20 656E 		.string	"\n enter chan num>"
+ 2795      7465 7220 
+ 2795      6368 616E 
+ 2795      206E 756D 
+ 2795      3E00 
+ 2796               		.type	__c.2231, @object
+ 2797               		.size	__c.2231, 12
+ 2798               	__c.2231:
+ 2799 0267 6865 6164 		.string	"header ID  "
+ 2799      6572 2049 
+ 2799      4420 2000 
+ 2800               		.type	__c.2229, @object
+ 2801               		.size	__c.2229, 3
+ 2802               	__c.2229:
+ 2803 0273 3A20 00   		.string	": "
+ 2804               		.type	__c.2224, @object
+ 2805               		.size	__c.2224, 3
+ 2806               	__c.2224:
+ 2807 0276 3A20 00   		.string	": "
+ 2808               		.type	__c.2221, @object
+ 2809               		.size	__c.2221, 14
+ 2810               	__c.2221:
+ 2811 0279 0A63 6861 		.string	"\nchan:  name\n"
+ 2811      6E3A 2020 
+ 2811      6E61 6D65 
+ 2811      0A00 
+ 2812               		.type	__c.2219, @object
+ 2813               		.size	__c.2219, 26
+ 2814               	__c.2219:
+ 2815 0287 0A4E 616D 		.string	"\nName Entry (7 char max)\n"
+ 2815      6520 456E 
+ 2815      7472 7920 
+ 2815      2837 2063 
+ 2815      6861 7220 
+ 2816               		.type	__c.2214, @object
+ 2817               		.size	__c.2214, 8
+ 2818               	__c.2214:
+ 2819 02a1 2065 6E74 		.string	" enter>"
+ 2819      6572 3E00 
+ 2820               		.type	__c.2212, @object
+ 2821               		.size	__c.2212, 51
+ 2822               	__c.2212:
+ 2823 02a9 313A 204E 		.string	"1: Names \n2: Cal val \n3: offset \n4: time \n5: CO2 \n"
+ 2823      616D 6573 
+ 2823      200A 323A 
+ 2823      2043 616C 
+ 2823      2076 616C 
+ 2824               		.type	__c.2205, @object
+ 2825               		.size	__c.2205, 6
+ 2826               	__c.2205:
+ 2827 02dc 5665 723A 		.string	"Ver: "
+GAS LISTING /tmp/ccsaRNb4.s 			page 69
+
+
+ 2827      2000 
+ 2828               		.type	__c.2203, @object
+ 2829               		.size	__c.2203, 3
+ 2830               	__c.2203:
+ 2831 02e2 616C 00   		.string	"al"
+ 2832               		.type	__c.2196, @object
+ 2833               		.size	__c.2196, 23
+ 2834               	__c.2196:
+ 2835 02e5 2320 7479 		.string	"# type cal (in 5 sec)\n"
+ 2835      7065 2063 
+ 2835      616C 2028 
+ 2835      696E 2035 
+ 2835      2073 6563 
+ 2836               		.type	__c.2182, @object
+ 2837               		.size	__c.2182, 12
+ 2838               	__c.2182:
+ 2839 02fc 2368 6561 		.string	"#headers: \n"
+ 2839      6465 7273 
+ 2839      3A20 0A00 
+ 2840               		.type	__c.2180, @object
+ 2841               		.size	__c.2180, 15
+ 2842               	__c.2180:
+ 2843 0308 2372 6561 		.string	"#read headers\n"
+ 2843      6420 6865 
+ 2843      6164 6572 
+ 2843      730A 00
+ 2844               		.type	__c.2175, @object
+ 2845               		.size	__c.2175, 16
+ 2846               	__c.2175:
+ 2847 0317 2374 696D 		.string	"#time sampling\n"
+ 2847      6520 7361 
+ 2847      6D70 6C69 
+ 2847      6E67 0A00 
+ 2848               		.type	__c.2173, @object
+ 2849               		.size	__c.2173, 18
+ 2850               	__c.2173:
+ 2851 0327 2374 6573 		.string	"#test result rtc="
+ 2851      7420 7265 
+ 2851      7375 6C74 
+ 2851      2072 7463 
+ 2851      3D00 
+ 2852               		.type	__c.2171, @object
+ 2853               		.size	__c.2171, 13
+ 2854               	__c.2171:
+ 2855 0339 2374 6573 		.string	"#test chans\n"
+ 2855      7420 6368 
+ 2855      616E 730A 
+ 2855      00
+ 2856               		.stabs	"sixteen:G(0,21)=B(3,2)",32,0,60,0
+ 2857               		.text
+ 2858               		.stabs	"",100,0,0,.Letext0
+ 2859               	.Letext0:
+ 2860               	.global __do_copy_data
+ 2861               	.global __do_clear_bss
+GAS LISTING /tmp/ccsaRNb4.s 			page 70
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccsaRNb4.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccsaRNb4.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccsaRNb4.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccsaRNb4.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccsaRNb4.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccsaRNb4.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccsaRNb4.s:115    .text:0000000000000000 __vector_9
+                            *COM*:0000000000000001 sixteen
+     /tmp/ccsaRNb4.s:151    .text:0000000000000022 cal_val_input_delay
+     /tmp/ccsaRNb4.s:2834   .progmem.data:00000000000002e5 __c.2196
+     /tmp/ccsaRNb4.s:2830   .progmem.data:00000000000002e2 __c.2203
+     /tmp/ccsaRNb4.s:2826   .progmem.data:00000000000002dc __c.2205
+     /tmp/ccsaRNb4.s:296    .text:00000000000000ce read_stored_vals
+     /tmp/ccsaRNb4.s:2634   .progmem.data:0000000000000053 __c.2335
+     /tmp/ccsaRNb4.s:2630   .progmem.data:0000000000000051 __c.2337
+     /tmp/ccsaRNb4.s:2626   .progmem.data:0000000000000040 __c.2339
+     /tmp/ccsaRNb4.s:2622   .progmem.data:000000000000003e __c.2343
+     /tmp/ccsaRNb4.s:2618   .progmem.data:0000000000000036 __c.2348
+     /tmp/ccsaRNb4.s:2614   .progmem.data:000000000000001b __c.2352
+     /tmp/ccsaRNb4.s:2610   .progmem.data:0000000000000000 __c.2354
+     /tmp/ccsaRNb4.s:557    .text:000000000000023c cal_menu
+     /tmp/ccsaRNb4.s:2822   .progmem.data:00000000000002a9 __c.2212
+     /tmp/ccsaRNb4.s:2818   .progmem.data:00000000000002a1 __c.2214
+     /tmp/ccsaRNb4.s:2814   .progmem.data:0000000000000287 __c.2219
+     /tmp/ccsaRNb4.s:2810   .progmem.data:0000000000000279 __c.2221
+     /tmp/ccsaRNb4.s:2806   .progmem.data:0000000000000276 __c.2224
+     /tmp/ccsaRNb4.s:2802   .progmem.data:0000000000000273 __c.2229
+     /tmp/ccsaRNb4.s:2798   .progmem.data:0000000000000267 __c.2231
+     /tmp/ccsaRNb4.s:2794   .progmem.data:0000000000000255 __c.2233
+     /tmp/ccsaRNb4.s:2790   .progmem.data:000000000000024a __c.2236
+     /tmp/ccsaRNb4.s:2786   .progmem.data:0000000000000239 __c.2238
+     /tmp/ccsaRNb4.s:2782   .progmem.data:000000000000022e __c.2240
+     /tmp/ccsaRNb4.s:2778   .progmem.data:0000000000000223 __c.2242
+     /tmp/ccsaRNb4.s:2774   .progmem.data:0000000000000218 __c.2245
+     /tmp/ccsaRNb4.s:2770   .progmem.data:00000000000001fb __c.2249
+     /tmp/ccsaRNb4.s:2766   .progmem.data:00000000000001e4 __c.2251
+     /tmp/ccsaRNb4.s:2762   .progmem.data:00000000000001e1 __c.2254
+     /tmp/ccsaRNb4.s:2758   .progmem.data:00000000000001de __c.2256
+     /tmp/ccsaRNb4.s:2754   .progmem.data:00000000000001c9 __c.2261
+     /tmp/ccsaRNb4.s:2750   .progmem.data:00000000000001be __c.2264
+     /tmp/ccsaRNb4.s:2746   .progmem.data:00000000000001b0 __c.2266
+     /tmp/ccsaRNb4.s:2742   .progmem.data:00000000000001a6 __c.2268
+     /tmp/ccsaRNb4.s:2738   .progmem.data:000000000000018a __c.2271
+     /tmp/ccsaRNb4.s:2734   .progmem.data:0000000000000172 __c.2273
+     /tmp/ccsaRNb4.s:2730   .progmem.data:000000000000016f __c.2276
+     /tmp/ccsaRNb4.s:2726   .progmem.data:000000000000016c __c.2278
+     /tmp/ccsaRNb4.s:2722   .progmem.data:0000000000000154 __c.2283
+     /tmp/ccsaRNb4.s:2718   .progmem.data:000000000000014a __c.2286
+     /tmp/ccsaRNb4.s:2714   .progmem.data:000000000000013c __c.2288
+     /tmp/ccsaRNb4.s:2710   .progmem.data:0000000000000132 __c.2290
+     /tmp/ccsaRNb4.s:2706   .progmem.data:0000000000000124 __c.2293
+     /tmp/ccsaRNb4.s:2702   .progmem.data:0000000000000121 __c.2295
+     /tmp/ccsaRNb4.s:2698   .progmem.data:000000000000011f __c.2297
+     /tmp/ccsaRNb4.s:2694   .progmem.data:0000000000000111 __c.2299
+     /tmp/ccsaRNb4.s:2690   .progmem.data:000000000000010e __c.2301
+GAS LISTING /tmp/ccsaRNb4.s 			page 71
+
+
+     /tmp/ccsaRNb4.s:2686   .progmem.data:00000000000000ff __c.2303
+     /tmp/ccsaRNb4.s:2682   .progmem.data:00000000000000fc __c.2305
+     /tmp/ccsaRNb4.s:2678   .progmem.data:00000000000000ef __c.2307
+     /tmp/ccsaRNb4.s:2674   .progmem.data:00000000000000ec __c.2309
+     /tmp/ccsaRNb4.s:2670   .progmem.data:00000000000000db __c.2311
+     /tmp/ccsaRNb4.s:2666   .progmem.data:00000000000000d8 __c.2313
+     /tmp/ccsaRNb4.s:2662   .progmem.data:00000000000000ca __c.2315
+     /tmp/ccsaRNb4.s:2658   .progmem.data:00000000000000c7 __c.2317
+     /tmp/ccsaRNb4.s:2654   .progmem.data:00000000000000c5 __c.2319
+     /tmp/ccsaRNb4.s:2650   .progmem.data:00000000000000a9 __c.2322
+     /tmp/ccsaRNb4.s:2646   .progmem.data:000000000000008c __c.2325
+     /tmp/ccsaRNb4.s:2642   .progmem.data:0000000000000073 __c.2327
+     /tmp/ccsaRNb4.s:2638   .progmem.data:0000000000000062 __c.2329
+     /tmp/ccsaRNb4.s:1483   .text:000000000000079e output_headers
+     /tmp/ccsaRNb4.s:1831   .text:0000000000000994 timesample
+     /tmp/ccsaRNb4.s:1970   .text:0000000000000a14 main
+     /tmp/ccsaRNb4.s:2854   .progmem.data:0000000000000339 __c.2171
+     /tmp/ccsaRNb4.s:2850   .progmem.data:0000000000000327 __c.2173
+     /tmp/ccsaRNb4.s:2846   .progmem.data:0000000000000317 __c.2175
+     /tmp/ccsaRNb4.s:2842   .progmem.data:0000000000000308 __c.2180
+     /tmp/ccsaRNb4.s:2838   .progmem.data:00000000000002fc __c.2182
+
+UNDEFINED SYMBOLS
+uart_puts_p
+uart_getc
+uart_putc
+read_line
+strcmp_P
+uart_putw_dec
+sample_all_channels
+read_write_stored
+strtod
+__gtsf2
+__ltsf2
+atoi
+uart_puts
+strcpy
+showtime
+rtc_settime
+direct_conn
+strcat
+itoa
+spitout
+__udivmodhi4
+uart_init
+i2c_rtc_init
+rtc_gettime
+bintime2unixtime
+ultoa
+sprintf
+__do_copy_data
+__do_clear_bss

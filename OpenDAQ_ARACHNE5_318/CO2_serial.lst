@@ -1,0 +1,662 @@
+GAS LISTING /tmp/ccWL8Jfn.s 			page 1
+
+
+   1               		.file	"CO2_serial.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_ARACHNE5_220/",100,0,2,.Ltext0
+   9               		.stabs	"CO2_serial.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"CO2_serial.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  31               		.stabs	"size_t:t(3,1)=(0,4)",128,0,211,0
+  32               		.stabs	"wchar_t:t(3,2)=(0,1)",128,0,323,0
+  33               		.stabn	162,0,0,0
+  34               		.stabs	"div_t:t(2,1)=(2,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+  35               		.stabs	"ldiv_t:t(2,3)=(2,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+  36               		.stabs	"__compar_fn_t:t(2,5)=(2,6)=*(2,7)=f(0,1)",128,0,80,0
+  37               		.stabn	162,0,0,0
+  38               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  39               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  40               		.stabs	"int8_t:t(5,1)=(0,10)",128,0,121,0
+  41               		.stabs	"uint8_t:t(5,2)=(0,11)",128,0,122,0
+  42               		.stabs	"int16_t:t(5,3)=(0,1)",128,0,123,0
+  43               		.stabs	"uint16_t:t(5,4)=(0,4)",128,0,124,0
+  44               		.stabs	"int32_t:t(5,5)=(0,3)",128,0,125,0
+  45               		.stabs	"uint32_t:t(5,6)=(0,5)",128,0,126,0
+  46               		.stabs	"int64_t:t(5,7)=(0,6)",128,0,128,0
+  47               		.stabs	"uint64_t:t(5,8)=(0,7)",128,0,129,0
+  48               		.stabs	"intptr_t:t(5,9)=(5,3)",128,0,142,0
+  49               		.stabs	"uintptr_t:t(5,10)=(5,4)",128,0,147,0
+  50               		.stabs	"int_least8_t:t(5,11)=(5,1)",128,0,159,0
+  51               		.stabs	"uint_least8_t:t(5,12)=(5,2)",128,0,164,0
+  52               		.stabs	"int_least16_t:t(5,13)=(5,3)",128,0,169,0
+  53               		.stabs	"uint_least16_t:t(5,14)=(5,4)",128,0,174,0
+  54               		.stabs	"int_least32_t:t(5,15)=(5,5)",128,0,179,0
+  55               		.stabs	"uint_least32_t:t(5,16)=(5,6)",128,0,184,0
+  56               		.stabs	"int_least64_t:t(5,17)=(5,7)",128,0,192,0
+  57               		.stabs	"uint_least64_t:t(5,18)=(5,8)",128,0,199,0
+GAS LISTING /tmp/ccWL8Jfn.s 			page 2
+
+
+  58               		.stabs	"int_fast8_t:t(5,19)=(5,1)",128,0,213,0
+  59               		.stabs	"uint_fast8_t:t(5,20)=(5,2)",128,0,218,0
+  60               		.stabs	"int_fast16_t:t(5,21)=(5,3)",128,0,223,0
+  61               		.stabs	"uint_fast16_t:t(5,22)=(5,4)",128,0,228,0
+  62               		.stabs	"int_fast32_t:t(5,23)=(5,5)",128,0,233,0
+  63               		.stabs	"uint_fast32_t:t(5,24)=(5,6)",128,0,238,0
+  64               		.stabs	"int_fast64_t:t(5,25)=(5,7)",128,0,246,0
+  65               		.stabs	"uint_fast64_t:t(5,26)=(5,8)",128,0,253,0
+  66               		.stabs	"intmax_t:t(5,27)=(5,7)",128,0,273,0
+  67               		.stabs	"uintmax_t:t(5,28)=(5,8)",128,0,278,0
+  68               		.stabn	162,0,0,0
+  69               		.stabn	162,0,0,0
+  70               		.stabs	"suart.h",130,0,0,0
+  71               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  72               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/sfr_defs.h",130,0,0,0
+  73               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  74               		.stabs	"int_farptr_t:t(9,1)=(5,5)",128,0,77,0
+  75               		.stabs	"uint_farptr_t:t(9,2)=(5,6)",128,0,81,0
+  76               		.stabn	162,0,0,0
+  77               		.stabn	162,0,0,0
+  78               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  79               		.stabs	"__fuse_t:t(10,1)=(10,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  80               		.stabn	162,0,0,0
+  81               		.stabn	162,0,0,0
+  82               		.stabn	162,0,0,0
+  83               		.stabn	162,0,0,0
+  84               		.stabs	"uart.h",130,0,0,0
+  85               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/pgmspace.h",130,0,0,0
+  86               		.stabs	"prog_void:t(12,1)=(12,2)=(12,2)",128,0,217,0
+  87               		.stabs	"prog_char:t(12,3)=(12,4)=@s8;r(12,4);0;255;",128,0,218,0
+  88               		.stabs	"prog_uchar:t(12,5)=(12,6)=@s8;r(12,6);0;255;",128,0,219,0
+  89               		.stabs	"prog_int8_t:t(12,7)=(12,8)=(0,10)",128,0,221,0
+  90               		.stabs	"prog_uint8_t:t(12,9)=(12,10)=(0,11)",128,0,222,0
+  91               		.stabs	"prog_int16_t:t(12,11)=(12,12)=(0,1)",128,0,223,0
+  92               		.stabs	"prog_uint16_t:t(12,13)=(12,14)=(0,4)",128,0,224,0
+  93               		.stabs	"prog_int32_t:t(12,15)=(12,16)=(0,3)",128,0,225,0
+  94               		.stabs	"prog_uint32_t:t(12,17)=(12,18)=(0,5)",128,0,226,0
+  95               		.stabs	"prog_int64_t:t(12,19)=(12,20)=(0,6)",128,0,228,0
+  96               		.stabs	"prog_uint64_t:t(12,21)=(12,22)=(0,7)",128,0,229,0
+  97               		.stabn	162,0,0,0
+  98               		.stabn	162,0,0,0
+  99               		.data
+ 100               	.LC0:
+ 101 0000 4B20 310D 		.string	"K 1\r\n"
+ 101      0A00 
+ 102               		.text
+ 103               		.stabs	"init_CO2:F(0,15)",36,0,28,init_CO2
+ 104               		.stabs	"CO2_chan:P(5,2)",64,0,28,17
+ 105               	.global	init_CO2
+ 106               		.type	init_CO2, @function
+ 107               	init_CO2:
+ 108               		.stabd	46,0,0
+   1:CO2_serial.c  **** /// \file CO2_serial.c
+   2:CO2_serial.c  **** /// \brief Control for the COZIR serial CO2 sensors   
+   3:CO2_serial.c  **** /// \details UART comunication via cammand and receive of data.
+   4:CO2_serial.c  **** /// \author University of Illinois Department and Environmental and Civil Engineering
+   5:CO2_serial.c  **** /// \copyright Copyright (c) 2014 University of Illinois Department and Environmental and Civil Eng
+GAS LISTING /tmp/ccWL8Jfn.s 			page 3
+
+
+   6:CO2_serial.c  **** ///This software is distributed under the MIT License. 
+   7:CO2_serial.c  **** ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software an
+   8:CO2_serial.c  **** ///associated documentation files (the "Software"), to deal in the Software without restriction, 
+   9:CO2_serial.c  **** ///including without limitation the rights to use, copy, modify, merge, publish, distribute, sublic
+  10:CO2_serial.c  **** ///and/or sell copies of the Software, and to permit persons to whom the Software is furnished to d
+  11:CO2_serial.c  **** ///subject to the following conditions:
+  12:CO2_serial.c  **** ///
+  13:CO2_serial.c  **** ///\copyright The above copyright notice and this permission notice shall be included in all copies
+  14:CO2_serial.c  **** ///portions of the Software.
+  15:CO2_serial.c  **** ///The software is provided "as is", without warranty of any kind expressed or implied, 
+  16:CO2_serial.c  **** ///including but not limited to the warranties of merchantability, fitness for a particular 
+  17:CO2_serial.c  **** ///purpose and noninfringement.  In no event shall the authors or copyright holders be liable 
+  18:CO2_serial.c  **** ///for any claim, damages or other liability whether in an action of contract, tort or 
+  19:CO2_serial.c  **** ///otherwise, arising from, out of or in connection with the software or the use or other 
+  20:CO2_serial.c  **** ///dealings in the software.
+  21:CO2_serial.c  **** ///
+  22:CO2_serial.c  **** #include "CO2_serial.h"
+  23:CO2_serial.c  **** #include <avr/io.h>
+  24:CO2_serial.c  **** #include <util/delay.h>
+  25:CO2_serial.c  **** #include <string.h>
+  26:CO2_serial.c  **** #include "uart.h"
+  27:CO2_serial.c  **** 
+  28:CO2_serial.c  **** void init_CO2(uint8_t CO2_chan)
+  29:CO2_serial.c  **** {
+ 109               		.stabn	68,0,29,.LM0-.LFBB1
+ 110               	.LM0:
+ 111               	.LFBB1:
+ 112 0000 1F93      		push r17
+ 113 0002 CF93      		push r28
+ 114 0004 DF93      		push r29
+ 115               	/* prologue: function */
+ 116               	/* frame size = 0 */
+ 117               	/* stack size = 3 */
+ 118               	.L__stack_usage = 3
+ 119 0006 182F      		mov r17,r24
+  30:CO2_serial.c  ****     suart_init(CO2_chan);
+ 120               		.stabn	68,0,30,.LM1-.LFBB1
+ 121               	.LM1:
+ 122 0008 0E94 0000 		call suart_init
+ 123               	.LBB6:
+ 124               	.LBB7:
+ 125               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext1
+ 126               	.Ltext1:
+   1:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   6:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+   9:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  12:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+GAS LISTING /tmp/ccWL8Jfn.s 			page 4
+
+
+  15:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      distribution.
+  16:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  17:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  21:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  33:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* $Id: delay.h.in 2189 2010-10-13 09:39:34Z aboyapati $ */
+  34:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  35:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  38:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
+  39:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
+  40:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  41:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  42:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <inttypes.h>
+  43:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <util/delay_basic.h>
+  44:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #include <math.h>
+  45:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  46:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \file */
+  47:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  48:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \code
+  49:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  50:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  51:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     #include <util/delay.h>
+  52:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \endcode
+  53:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  54:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  55:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  56:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  57:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     used.
+  58:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  59:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  60:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  61:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  62:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  63:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  64:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  65:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  66:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  67:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  68:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  69:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  70:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  71:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+GAS LISTING /tmp/ccWL8Jfn.s 			page 5
+
+
+  72:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  73:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  74:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  75:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     routines linked into the application.
+  76:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  77:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  78:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  79:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  80:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  81:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** */
+  82:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  83:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  84:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
+  85:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
+  86:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  87:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  88:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef F_CPU
+  89:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  90:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  91:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # define F_CPU 1000000UL
+  92:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  93:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  94:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+  95:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+  96:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #endif
+  97:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+  98:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** /**
+  99:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    \ingroup util_delay
+ 100:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 101:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 102:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 103:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 104:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 105:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 106:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 107:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 108:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 109:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 110:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 111:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 112:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 113:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 114:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
+ 115:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 116:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 117:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 118:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 119:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
+ 120:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
+ 121:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
+ 122:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 123:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
+ 124:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    to round down and round to closest integer.
+ 125:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 126:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
+ 127:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
+ 128:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay
+GAS LISTING /tmp/ccWL8Jfn.s 			page 6
+
+
+ 129:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****    although this will be deprecated in future.
+ 130:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 131:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h ****  */
+ 132:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** void
+ 133:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** _delay_ms(double __ms)
+ 134:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** {
+ 135:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint16_t __ticks;
+ 136:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	double __tmp ; 
+ 137:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && !defined(__DELAY_BACKWARD_COMPATIBLE__)
+ 138:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 139:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 140:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 141:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 142:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 143:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 144:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 145:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 146:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 147:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 148:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#else
+ 149:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		//round up by default
+ 150:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 151:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	#endif
+ 152:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 
+ 153:/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 127               		.stabn	68,0,153,.LM2-.LFBB1
+ 128               	.LM2:
+ 129 000c 88E1      		 ldi r24,lo8(1048)
+ 130 000e 94E0      	    ldi r25,hi8(1048)
+ 131 0010 0197      	    1:sbiw r24,1
+ 132 0012 01F4      	    brne 1b
+ 133 0014 00C0      		rjmp .
+ 134               	.LBE7:
+ 135               	.LBE6:
+ 136               		.stabs	"CO2_serial.c",132,0,0,.Ltext2
+ 137               	.Ltext2:
+  31:CO2_serial.c  ****     _delay_ms(1);
+  32:CO2_serial.c  ****     suart_puts(CO2_chan,"K 1\r\n"); //set C02 sensor to streaming mode
+ 138               		.stabn	68,0,32,.LM3-.LFBB1
+ 139               	.LM3:
+ 140 0016 C0E0      		ldi r28,lo8(.LC0)
+ 141 0018 D0E0      		ldi r29,hi8(.LC0)
+ 142 001a 812F      		mov r24,r17
+ 143 001c BE01      		movw r22,r28
+ 144 001e 0E94 0000 		call suart_puts
+ 145               	.LBB8:
+ 146               	.LBB9:
+ 147               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay.h",132,0,0,.Ltext3
+ 148               	.Ltext3:
+ 149               		.stabn	68,0,153,.LM4-.LFBB1
+ 150               	.LM4:
+ 151 0022 8DEA      		 ldi r24,lo8(83885)
+ 152 0024 97E4      	    ldi r25,hi8(83885)
+ 153 0026 A1E0      	    ldi r26,hlo8(83885)
+ 154 0028 8150      	    1:subi r24,1
+ 155 002a 9040      	    sbci r25,0
+ 156 002c A040      	    sbci r26,0
+GAS LISTING /tmp/ccWL8Jfn.s 			page 7
+
+
+ 157 002e 01F4      	    brne 1b
+ 158 0030 00C0      		rjmp .
+ 159 0032 00C0      		rjmp .
+ 160               	.LBE9:
+ 161               	.LBE8:
+ 162               		.stabs	"CO2_serial.c",132,0,0,.Ltext4
+ 163               	.Ltext4:
+  33:CO2_serial.c  ****     _delay_ms(100);
+  34:CO2_serial.c  ****     suart_puts(CO2_chan,"K 1\r\n"); //set C02 sensor to streaming mode again to be sure
+ 164               		.stabn	68,0,34,.LM5-.LFBB1
+ 165               	.LM5:
+ 166 0034 812F      		mov r24,r17
+ 167 0036 BE01      		movw r22,r28
+ 168 0038 0E94 0000 		call suart_puts
+ 169               	/* epilogue start */
+  35:CO2_serial.c  **** }
+ 170               		.stabn	68,0,35,.LM6-.LFBB1
+ 171               	.LM6:
+ 172 003c DF91      		pop r29
+ 173 003e CF91      		pop r28
+ 174 0040 1F91      		pop r17
+ 175 0042 0895      		ret
+ 176               		.size	init_CO2, .-init_CO2
+ 177               	.Lscope1:
+ 178               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 179               		.stabd	78,0,0
+ 180               		.data
+ 181               	.LC1:
+ 182 0006 00        		.string	""
+ 183 0007 00        		.string	""
+ 184 0008 00        		.string	""
+ 185 0009 00        		.string	""
+ 186 000a 00        		.string	""
+ 187 000b 00        		.string	""
+ 188 000c 00        		.string	""
+ 189 000d 00        		.string	""
+ 190 000e 00        		.string	""
+ 191 000f 00        		.string	""
+ 192 0010 00        		.string	""
+ 193 0011 00        		.string	""
+ 194 0012 00        		.string	""
+ 195 0013 00        		.string	""
+ 196 0014 00        		.string	""
+ 197 0015 00        		.string	""
+ 198 0016 00        		.string	""
+ 199 0017 00        		.string	""
+ 200               	.LC2:
+ 201 0018 00        		.string	""
+ 202 0019 00        		.string	""
+ 203 001a 00        		.string	""
+ 204 001b 00        		.string	""
+ 205 001c 00        		.string	""
+ 206 001d 00        		.string	""
+ 207               		.text
+ 208               		.stabs	"get_CO2:F(5,4)",36,0,37,get_CO2
+ 209               		.stabs	"CO2_chan:P(5,2)",64,0,37,15
+ 210               	.global	get_CO2
+GAS LISTING /tmp/ccWL8Jfn.s 			page 8
+
+
+ 211               		.type	get_CO2, @function
+ 212               	get_CO2:
+ 213               		.stabd	46,0,0
+  36:CO2_serial.c  **** 
+  37:CO2_serial.c  **** uint16_t get_CO2(uint8_t CO2_chan)//>>CO2<<////////
+  38:CO2_serial.c  **** {
+ 214               		.stabn	68,0,38,.LM7-.LFBB2
+ 215               	.LM7:
+ 216               	.LFBB2:
+ 217 0044 FF92      		push r15
+ 218 0046 0F93      		push r16
+ 219 0048 1F93      		push r17
+ 220 004a DF93      		push r29
+ 221 004c CF93      		push r28
+ 222 004e CDB7      		in r28,__SP_L__
+ 223 0050 DEB7      		in r29,__SP_H__
+ 224 0052 6797      		sbiw r28,23
+ 225 0054 0FB6      		in __tmp_reg__,__SREG__
+ 226 0056 F894      		cli
+ 227 0058 DEBF      		out __SP_H__,r29
+ 228 005a 0FBE      		out __SREG__,__tmp_reg__
+ 229 005c CDBF      		out __SP_L__,r28
+ 230               	/* prologue: function */
+ 231               	/* frame size = 23 */
+ 232               	/* stack size = 28 */
+ 233               	.L__stack_usage = 28
+ 234 005e F82E      		mov r15,r24
+  39:CO2_serial.c  ****     char bufsurt[17] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+ 235               		.stabn	68,0,39,.LM8-.LFBB2
+ 236               	.LM8:
+ 237 0060 DE01      		movw r26,r28
+ 238 0062 1696      		adiw r26,6
+ 239 0064 E0E0      		ldi r30,lo8(.LC1)
+ 240 0066 F0E0      		ldi r31,hi8(.LC1)
+ 241 0068 81E1      		ldi r24,lo8(17)
+ 242               	.L3:
+ 243 006a 0190      		ld r0,Z+
+ 244 006c 0D92      		st X+,r0
+ 245 006e 8150      		subi r24,lo8(-(-1))
+ 246 0070 01F4      		brne .L3
+  40:CO2_serial.c  ****     char data[5] = "\0\0\0\0\0";
+ 247               		.stabn	68,0,40,.LM9-.LFBB2
+ 248               	.LM9:
+ 249 0072 DE01      		movw r26,r28
+ 250 0074 1196      		adiw r26,1
+ 251 0076 E0E0      		ldi r30,lo8(.LC2)
+ 252 0078 F0E0      		ldi r31,hi8(.LC2)
+ 253 007a 85E0      		ldi r24,lo8(5)
+ 254               	.L4:
+ 255 007c 0190      		ld r0,Z+
+ 256 007e 0D92      		st X+,r0
+ 257 0080 8150      		subi r24,lo8(-(-1))
+ 258 0082 01F4      		brne .L4
+  41:CO2_serial.c  ****     uint16_t c_o_ppm = 0;
+  42:CO2_serial.c  ****     for(uint8_t j = 0; j<3; j++) //3 trys
+ 259               		.stabn	68,0,42,.LM10-.LFBB2
+ 260               	.LM10:
+GAS LISTING /tmp/ccWL8Jfn.s 			page 9
+
+
+ 261 0084 90E0      		ldi r25,lo8(0)
+ 262               	.LBB10:
+  43:CO2_serial.c  ****     {
+  44:CO2_serial.c  ****         get_line (CO2_chan,bufsurt, 17);//data
+ 263               		.stabn	68,0,44,.LM11-.LFBB2
+ 264               	.LM11:
+ 265 0086 8E01      		movw r16,r28
+ 266 0088 0A5F      		subi r16,lo8(-(6))
+ 267 008a 1F4F      		sbci r17,hi8(-(6))
+ 268               	.L6:
+ 269 008c 8F2D      		mov r24,r15
+ 270 008e B801      		movw r22,r16
+ 271 0090 41E1      		ldi r20,lo8(17)
+ 272 0092 9F8B      		std Y+23,r25
+ 273 0094 0E94 0000 		call get_line
+  45:CO2_serial.c  ****         //uart_puts("buffer: ");  uart_puts(bufsurt); uart_putc('\n');
+  46:CO2_serial.c  ****         if (strlen(bufsurt)==16)  //exact legnth of data from CO2 sensor
+ 274               		.stabn	68,0,46,.LM12-.LFBB2
+ 275               	.LM12:
+ 276 0098 F801      		movw r30,r16
+ 277 009a 0190      		ld __tmp_reg__,Z+
+ 278 009c 0020      		tst __tmp_reg__
+ 279 009e 01F4      		brne .-6
+ 280 00a0 7197      		sbiw r30,17
+ 281 00a2 9F89      		ldd r25,Y+23
+ 282 00a4 E017      		cp r30,r16
+ 283 00a6 F107      		cpc r31,r17
+ 284 00a8 01F0      		breq .L9
+  42:CO2_serial.c  ****     for(uint8_t j = 0; j<3; j++) //3 trys
+ 285               		.stabn	68,0,42,.LM13-.LFBB2
+ 286               	.LM13:
+ 287 00aa 9F5F      		subi r25,lo8(-(1))
+ 288 00ac 9330      		cpi r25,lo8(3)
+ 289 00ae 01F4      		brne .L6
+ 290               	.L9:
+ 291               		.stabn	68,0,46,.LM14-.LFBB2
+ 292               	.LM14:
+ 293 00b0 20E0      		ldi r18,lo8(0)
+ 294 00b2 E0E0      		ldi r30,lo8(0)
+ 295               	.LBE10:
+ 296               	.LBB11:
+  47:CO2_serial.c  ****         {break;} 
+  48:CO2_serial.c  ****     }
+  49:CO2_serial.c  ****     uint8_t Z_pos = 0;
+  50:CO2_serial.c  ****     for(uint8_t i = 0; i<8; i++)//find the Z in the first 8 characters
+  51:CO2_serial.c  ****     {
+  52:CO2_serial.c  ****         if (bufsurt[i] == 'Z')
+ 297               		.stabn	68,0,52,.LM15-.LFBB2
+ 298               	.LM15:
+ 299 00b4 CE01      		movw r24,r28
+ 300 00b6 0696      		adiw r24,6
+ 301               	.L11:
+ 302 00b8 DC01      		movw r26,r24
+ 303 00ba A20F      		add r26,r18
+ 304 00bc B11D      		adc r27,__zero_reg__
+ 305 00be 3C91      		ld r19,X
+ 306 00c0 3A35      		cpi r19,lo8(90)
+GAS LISTING /tmp/ccWL8Jfn.s 			page 10
+
+
+ 307 00c2 01F4      		brne .L7
+ 308 00c4 E22F      		mov r30,r18
+ 309               	.L7:
+  50:CO2_serial.c  ****     for(uint8_t i = 0; i<8; i++)//find the Z in the first 8 characters
+ 310               		.stabn	68,0,50,.LM16-.LFBB2
+ 311               	.LM16:
+ 312 00c6 2F5F      		subi r18,lo8(-(1))
+ 313 00c8 2830      		cpi r18,lo8(8)
+ 314 00ca 01F4      		brne .L11
+  37:CO2_serial.c  **** uint16_t get_CO2(uint8_t CO2_chan)//>>CO2<<////////
+ 315               		.stabn	68,0,37,.LM17-.LFBB2
+ 316               	.LM17:
+ 317 00cc CE01      		movw r24,r28
+ 318 00ce 0696      		adiw r24,6
+  53:CO2_serial.c  ****         {Z_pos = i;}
+  54:CO2_serial.c  ****     }
+  55:CO2_serial.c  **** 	for(uint8_t i = 0; i<5; i++)//parse just the first number, Big Z
+  56:CO2_serial.c  ****     {
+  57:CO2_serial.c  ****         data[i] = bufsurt[i+Z_pos+2];
+ 319               		.stabn	68,0,57,.LM18-.LFBB2
+ 320               	.LM18:
+ 321 00d0 F0E0      		ldi r31,lo8(0)
+ 322 00d2 3296      		adiw r30,2
+  37:CO2_serial.c  **** uint16_t get_CO2(uint8_t CO2_chan)//>>CO2<<////////
+ 323               		.stabn	68,0,37,.LM19-.LFBB2
+ 324               	.LM19:
+ 325 00d4 E80F      		add r30,r24
+ 326 00d6 F91F      		adc r31,r25
+  50:CO2_serial.c  ****     for(uint8_t i = 0; i<8; i++)//find the Z in the first 8 characters
+ 327               		.stabn	68,0,50,.LM20-.LFBB2
+ 328               	.LM20:
+ 329 00d8 DE01      		movw r26,r28
+ 330 00da 1196      		adiw r26,1
+ 331               	.L8:
+ 332               	.LBE11:
+ 333               	.LBB12:
+ 334               		.stabn	68,0,57,.LM21-.LFBB2
+ 335               	.LM21:
+ 336 00dc 2191      		ld r18,Z+
+ 337 00de 2D93      		st X+,r18
+  55:CO2_serial.c  **** 	for(uint8_t i = 0; i<5; i++)//parse just the first number, Big Z
+ 338               		.stabn	68,0,55,.LM22-.LFBB2
+ 339               	.LM22:
+ 340 00e0 A817      		cp r26,r24
+ 341 00e2 B907      		cpc r27,r25
+ 342 00e4 01F4      		brne .L8
+ 343               	.LBE12:
+  58:CO2_serial.c  ****     }
+  59:CO2_serial.c  ****     //uart_puts("data: ");  uart_puts(data); uart_putc('\n');
+  60:CO2_serial.c  ****     c_o_ppm=strtoul(data, NULL,10);  
+ 344               		.stabn	68,0,60,.LM23-.LFBB2
+ 345               	.LM23:
+ 346 00e6 CE01      		movw r24,r28
+ 347 00e8 0196      		adiw r24,1
+ 348 00ea 60E0      		ldi r22,lo8(0)
+ 349 00ec 70E0      		ldi r23,hi8(0)
+ 350 00ee 4AE0      		ldi r20,lo8(10)
+GAS LISTING /tmp/ccWL8Jfn.s 			page 11
+
+
+ 351 00f0 50E0      		ldi r21,hi8(10)
+ 352 00f2 0E94 0000 		call strtoul
+  61:CO2_serial.c  ****         
+  62:CO2_serial.c  **** 	return c_o_ppm;
+  63:CO2_serial.c  **** }
+ 353               		.stabn	68,0,63,.LM24-.LFBB2
+ 354               	.LM24:
+ 355 00f6 CB01      		movw r24,r22
+ 356               	/* epilogue start */
+ 357 00f8 6796      		adiw r28,23
+ 358 00fa 0FB6      		in __tmp_reg__,__SREG__
+ 359 00fc F894      		cli
+ 360 00fe DEBF      		out __SP_H__,r29
+ 361 0100 0FBE      		out __SREG__,__tmp_reg__
+ 362 0102 CDBF      		out __SP_L__,r28
+ 363 0104 CF91      		pop r28
+ 364 0106 DF91      		pop r29
+ 365 0108 1F91      		pop r17
+ 366 010a 0F91      		pop r16
+ 367 010c FF90      		pop r15
+ 368 010e 0895      		ret
+ 369               		.size	get_CO2, .-get_CO2
+ 370               		.stabs	"bufsurt:(0,16)=ar(0,17)=r(0,17);0;0177777;;0;16;(0,2)",128,0,39,6
+ 371               		.stabs	"data:(0,18)=ar(0,17);0;4;(0,2)",128,0,40,1
+ 372               		.stabs	"Z_pos:r(5,2)",64,0,49,30
+ 373               		.stabn	192,0,0,.LFBB2-.LFBB2
+ 374               		.stabs	"j:r(5,2)",64,0,42,25
+ 375               		.stabn	192,0,0,.LBB10-.LFBB2
+ 376               		.stabn	224,0,0,.LBE10-.LFBB2
+ 377               		.stabs	"i:r(5,2)",64,0,50,18
+ 378               		.stabn	192,0,0,.LBB11-.LFBB2
+ 379               		.stabn	224,0,0,.LBE11-.LFBB2
+ 380               		.stabn	224,0,0,.Lscope2-.LFBB2
+ 381               	.Lscope2:
+ 382               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 383               		.stabd	78,0,0
+ 384               		.stabs	"",100,0,0,.Letext0
+ 385               	.Letext0:
+ 386               	.global __do_copy_data
+GAS LISTING /tmp/ccWL8Jfn.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 CO2_serial.c
+     /tmp/ccWL8Jfn.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccWL8Jfn.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccWL8Jfn.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccWL8Jfn.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccWL8Jfn.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccWL8Jfn.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccWL8Jfn.s:107    .text:0000000000000000 init_CO2
+     /tmp/ccWL8Jfn.s:212    .text:0000000000000044 get_CO2
+
+UNDEFINED SYMBOLS
+suart_init
+suart_puts
+get_line
+strtoul
+__do_copy_data

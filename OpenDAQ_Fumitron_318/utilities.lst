@@ -1,0 +1,440 @@
+GAS LISTING /tmp/ccbdEO6B.s 			page 1
+
+
+   1               		.file	"utilities.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.stabs	"/home/rusty/Emissions/microcontroller/OpenDAQ_Fumitron_318/",100,0,2,.Ltext0
+   9               		.stabs	"utilities.c",100,0,2,.Ltext0
+  10               		.text
+  11               	.Ltext0:
+  12               		.stabs	"gcc2_compiled.",60,0,0,0
+  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
+  28               		.stabs	"utilities.h",130,0,0,0
+  29               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdlib.h",130,0,0,0
+  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
+  31               		.stabs	"size_t:t(3,1)=(0,4)",128,0,211,0
+  32               		.stabs	"wchar_t:t(3,2)=(0,1)",128,0,323,0
+  33               		.stabn	162,0,0,0
+  34               		.stabs	"div_t:t(2,1)=(2,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,71,0
+  35               		.stabs	"ldiv_t:t(2,3)=(2,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,77,0
+  36               		.stabs	"__compar_fn_t:t(2,5)=(2,6)=*(2,7)=f(0,1)",128,0,80,0
+  37               		.stabn	162,0,0,0
+  38               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
+  39               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
+  40               		.stabs	"int8_t:t(5,1)=(0,10)",128,0,121,0
+  41               		.stabs	"uint8_t:t(5,2)=(0,11)",128,0,122,0
+  42               		.stabs	"int16_t:t(5,3)=(0,1)",128,0,123,0
+  43               		.stabs	"uint16_t:t(5,4)=(0,4)",128,0,124,0
+  44               		.stabs	"int32_t:t(5,5)=(0,3)",128,0,125,0
+  45               		.stabs	"uint32_t:t(5,6)=(0,5)",128,0,126,0
+  46               		.stabs	"int64_t:t(5,7)=(0,6)",128,0,128,0
+  47               		.stabs	"uint64_t:t(5,8)=(0,7)",128,0,129,0
+  48               		.stabs	"intptr_t:t(5,9)=(5,3)",128,0,142,0
+  49               		.stabs	"uintptr_t:t(5,10)=(5,4)",128,0,147,0
+  50               		.stabs	"int_least8_t:t(5,11)=(5,1)",128,0,159,0
+  51               		.stabs	"uint_least8_t:t(5,12)=(5,2)",128,0,164,0
+  52               		.stabs	"int_least16_t:t(5,13)=(5,3)",128,0,169,0
+  53               		.stabs	"uint_least16_t:t(5,14)=(5,4)",128,0,174,0
+  54               		.stabs	"int_least32_t:t(5,15)=(5,5)",128,0,179,0
+  55               		.stabs	"uint_least32_t:t(5,16)=(5,6)",128,0,184,0
+  56               		.stabs	"int_least64_t:t(5,17)=(5,7)",128,0,192,0
+  57               		.stabs	"uint_least64_t:t(5,18)=(5,8)",128,0,199,0
+GAS LISTING /tmp/ccbdEO6B.s 			page 2
+
+
+  58               		.stabs	"int_fast8_t:t(5,19)=(5,1)",128,0,213,0
+  59               		.stabs	"uint_fast8_t:t(5,20)=(5,2)",128,0,218,0
+  60               		.stabs	"int_fast16_t:t(5,21)=(5,3)",128,0,223,0
+  61               		.stabs	"uint_fast16_t:t(5,22)=(5,4)",128,0,228,0
+  62               		.stabs	"int_fast32_t:t(5,23)=(5,5)",128,0,233,0
+  63               		.stabs	"uint_fast32_t:t(5,24)=(5,6)",128,0,238,0
+  64               		.stabs	"int_fast64_t:t(5,25)=(5,7)",128,0,246,0
+  65               		.stabs	"uint_fast64_t:t(5,26)=(5,8)",128,0,253,0
+  66               		.stabs	"intmax_t:t(5,27)=(5,7)",128,0,273,0
+  67               		.stabs	"uintmax_t:t(5,28)=(5,8)",128,0,278,0
+  68               		.stabn	162,0,0,0
+  69               		.stabn	162,0,0,0
+  70               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/interrupt.h",130,0,0,0
+  71               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
+  72               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/sfr_defs.h",130,0,0,0
+  73               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
+  74               		.stabs	"int_farptr_t:t(9,1)=(5,5)",128,0,77,0
+  75               		.stabs	"uint_farptr_t:t(9,2)=(5,6)",128,0,81,0
+  76               		.stabn	162,0,0,0
+  77               		.stabn	162,0,0,0
+  78               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
+  79               		.stabs	"__fuse_t:t(10,1)=(10,2)=s2low:(0,11),0,8;high:(0,11),8,8;;",128,0,252,0
+  80               		.stabn	162,0,0,0
+  81               		.stabn	162,0,0,0
+  82               		.stabn	162,0,0,0
+  83               		.stabn	162,0,0,0
+  84               		.stabs	"uart.h",130,0,0,0
+  85               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/pgmspace.h",130,0,0,0
+  86               		.stabs	"prog_void:t(12,1)=(12,2)=(12,2)",128,0,217,0
+  87               		.stabs	"prog_char:t(12,3)=(12,4)=@s8;r(12,4);0;255;",128,0,218,0
+  88               		.stabs	"prog_uchar:t(12,5)=(12,6)=@s8;r(12,6);0;255;",128,0,219,0
+  89               		.stabs	"prog_int8_t:t(12,7)=(12,8)=(0,10)",128,0,221,0
+  90               		.stabs	"prog_uint8_t:t(12,9)=(12,10)=(0,11)",128,0,222,0
+  91               		.stabs	"prog_int16_t:t(12,11)=(12,12)=(0,1)",128,0,223,0
+  92               		.stabs	"prog_uint16_t:t(12,13)=(12,14)=(0,4)",128,0,224,0
+  93               		.stabs	"prog_int32_t:t(12,15)=(12,16)=(0,3)",128,0,225,0
+  94               		.stabs	"prog_uint32_t:t(12,17)=(12,18)=(0,5)",128,0,226,0
+  95               		.stabs	"prog_int64_t:t(12,19)=(12,20)=(0,6)",128,0,228,0
+  96               		.stabs	"prog_uint64_t:t(12,21)=(12,22)=(0,7)",128,0,229,0
+  97               		.stabn	162,0,0,0
+  98               		.stabn	162,0,0,0
+  99               		.stabs	"__vector_11:F(0,15)",36,0,32,__vector_11
+ 100               	.global	__vector_11
+ 101               		.type	__vector_11, @function
+ 102               	__vector_11:
+ 103               		.stabd	46,0,0
+   1:utilities.c   **** /// \file utilities.c
+   2:utilities.c   **** /// \brief OpenDAQ misc controls 
+   3:utilities.c   **** /// \details Timeout for testing, etc
+   4:utilities.c   **** /// \author University of Illinois Department and Environmental and Civil Engineering
+   5:utilities.c   **** /// \copyright Copyright (c) 2014 University of Illinois Department and Environmental and Civil Eng
+   6:utilities.c   **** ///This software is distributed under the MIT License. 
+   7:utilities.c   **** ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software an
+   8:utilities.c   **** ///associated documentation files (the "Software"), to deal in the Software without restriction, 
+   9:utilities.c   **** ///including without limitation the rights to use, copy, modify, merge, publish, distribute, sublic
+  10:utilities.c   **** ///and/or sell copies of the Software, and to permit persons to whom the Software is furnished to d
+  11:utilities.c   **** ///subject to the following conditions:
+GAS LISTING /tmp/ccbdEO6B.s 			page 3
+
+
+  12:utilities.c   **** ///
+  13:utilities.c   **** ///\copyright The above copyright notice and this permission notice shall be included in all copies
+  14:utilities.c   **** ///portions of the Software.
+  15:utilities.c   **** ///The software is provided "as is", without warranty of any kind expressed or implied, 
+  16:utilities.c   **** ///including but not limited to the warranties of merchantability, fitness for a particular 
+  17:utilities.c   **** ///purpose and noninfringement.  In no event shall the authors or copyright holders be liable 
+  18:utilities.c   **** ///for any claim, damages or other liability whether in an action of contract, tort or 
+  19:utilities.c   **** ///otherwise, arising from, out of or in connection with the software or the use or other 
+  20:utilities.c   **** ///dealings in the software.
+  21:utilities.c   **** ///
+  22:utilities.c   **** 
+  23:utilities.c   **** #include "utilities.h"
+  24:utilities.c   **** #include "uart.h"
+  25:utilities.c   **** 
+  26:utilities.c   **** 
+  27:utilities.c   **** volatile uint8_t suart_timedout_flag; // global for timeout
+  28:utilities.c   **** volatile uint8_t i2c_timeout_flag; // global for timeout
+  29:utilities.c   **** volatile uint8_t test_timer ;//overflow counter.  16=1 sec
+  30:utilities.c   **** 
+  31:utilities.c   **** 
+  32:utilities.c   **** ISR(TIMER0_OVF_vect) //timeout for periferal tests
+  33:utilities.c   **** {
+ 104               		.stabn	68,0,33,.LM0-.LFBB1
+ 105               	.LM0:
+ 106               	.LFBB1:
+ 107 0000 1F92      		push __zero_reg__
+ 108 0002 0F92      		push r0
+ 109 0004 0FB6      		in r0,__SREG__
+ 110 0006 0F92      		push r0
+ 111 0008 1124      		clr __zero_reg__
+ 112 000a 8F93      		push r24
+ 113               	/* prologue: Signal */
+ 114               	/* frame size = 0 */
+ 115               	/* stack size = 4 */
+ 116               	.L__stack_usage = 4
+  34:utilities.c   ****     
+  35:utilities.c   ****     test_timer ++;
+ 117               		.stabn	68,0,35,.LM1-.LFBB1
+ 118               	.LM1:
+ 119 000c 8091 0000 		lds r24,test_timer
+ 120 0010 8F5F      		subi r24,lo8(-(1))
+ 121 0012 8093 0000 		sts test_timer,r24
+  36:utilities.c   ****     if (test_timer >= 12) // a second +
+ 122               		.stabn	68,0,36,.LM2-.LFBB1
+ 123               	.LM2:
+ 124 0016 8091 0000 		lds r24,test_timer
+ 125 001a 8C30      		cpi r24,lo8(12)
+ 126 001c 00F0      		brlo .L1
+  37:utilities.c   ****     {
+  38:utilities.c   ****         i2c_timeout_flag = 1;
+ 127               		.stabn	68,0,38,.LM3-.LFBB1
+ 128               	.LM3:
+ 129 001e 81E0      		ldi r24,lo8(1)
+ 130 0020 8093 0000 		sts i2c_timeout_flag,r24
+  39:utilities.c   ****         test_timer = 0;
+ 131               		.stabn	68,0,39,.LM4-.LFBB1
+ 132               	.LM4:
+GAS LISTING /tmp/ccbdEO6B.s 			page 4
+
+
+ 133 0024 1092 0000 		sts test_timer,__zero_reg__
+  40:utilities.c   ****         suart_timedout_flag = 1;
+ 134               		.stabn	68,0,40,.LM5-.LFBB1
+ 135               	.LM5:
+ 136 0028 8093 0000 		sts suart_timedout_flag,r24
+  41:utilities.c   ****         PORTC |= (1<<6); //set flag pin
+ 137               		.stabn	68,0,41,.LM6-.LFBB1
+ 138               	.LM6:
+ 139 002c AE9A      		sbi 53-32,6
+  42:utilities.c   ****         TCCR0 = 0;// stop counter
+ 140               		.stabn	68,0,42,.LM7-.LFBB1
+ 141               	.LM7:
+ 142 002e 13BE      		out 83-32,__zero_reg__
+ 143               	.L1:
+ 144               	/* epilogue start */
+  43:utilities.c   ****         
+  44:utilities.c   ****     }
+  45:utilities.c   ****     
+  46:utilities.c   **** }
+ 145               		.stabn	68,0,46,.LM8-.LFBB1
+ 146               	.LM8:
+ 147 0030 8F91      		pop r24
+ 148 0032 0F90      		pop r0
+ 149 0034 0FBE      		out __SREG__,r0
+ 150 0036 0F90      		pop r0
+ 151 0038 1F90      		pop __zero_reg__
+ 152 003a 1895      		reti
+ 153               		.size	__vector_11, .-__vector_11
+ 154               	.Lscope1:
+ 155               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 156               		.stabd	78,0,0
+ 157               		.stabs	"bitisset:F(5,2)",36,0,48,bitisset
+ 158               		.stabs	"number:P(5,6)",64,0,48,22
+ 159               		.stabs	"bit:P(5,2)",64,0,48,20
+ 160               	.global	bitisset
+ 161               		.type	bitisset, @function
+ 162               	bitisset:
+ 163               		.stabd	46,0,0
+  47:utilities.c   **** 
+  48:utilities.c   **** uint8_t bitisset(uint32_t number, uint8_t bit)
+  49:utilities.c   **** {
+ 164               		.stabn	68,0,49,.LM9-.LFBB2
+ 165               	.LM9:
+ 166               	.LFBB2:
+ 167               	/* prologue: function */
+ 168               	/* frame size = 0 */
+ 169               	/* stack size = 0 */
+ 170               	.L__stack_usage = 0
+ 171 003c DC01      		movw r26,r24
+ 172 003e CB01      		movw r24,r22
+  50:utilities.c   **** 	//bit = number & (1 << x);
+  51:utilities.c   **** 	if ( number & (1UL <<bit) )
+ 173               		.stabn	68,0,51,.LM10-.LFBB2
+ 174               	.LM10:
+ 175 0040 00C0      		rjmp 2f
+ 176 0042 B695      	1:	lsr r27
+ 177 0044 A795      		ror r26
+GAS LISTING /tmp/ccbdEO6B.s 			page 5
+
+
+ 178 0046 9795      		ror r25
+ 179 0048 8795      		ror r24
+ 180 004a 4A95      	2:	dec r20
+ 181 004c 02F4      		brpl 1b
+  52:utilities.c   **** 	{return 1;}
+  53:utilities.c   **** 	else 
+  54:utilities.c   **** 	{return 0;}
+  55:utilities.c   **** 
+  56:utilities.c   **** }
+ 182               		.stabn	68,0,56,.LM11-.LFBB2
+ 183               	.LM11:
+ 184 004e 8170      		andi r24,lo8(1)
+ 185               	/* epilogue start */
+ 186 0050 0895      		ret
+ 187               		.size	bitisset, .-bitisset
+ 188               	.Lscope2:
+ 189               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 190               		.stabd	78,0,0
+ 191               		.stabs	"spitout:F(0,15)",36,0,58,spitout
+ 192               	.global	spitout
+ 193               		.type	spitout, @function
+ 194               	spitout:
+ 195               		.stabd	46,0,0
+  57:utilities.c   **** 
+  58:utilities.c   **** void spitout( char *bigline)//sends out and blanks string
+  59:utilities.c   **** {
+ 196               		.stabn	68,0,59,.LM12-.LFBB3
+ 197               	.LM12:
+ 198               	.LFBB3:
+ 199 0052 0F93      		push r16
+ 200 0054 1F93      		push r17
+ 201               	/* prologue: function */
+ 202               	/* frame size = 0 */
+ 203               	/* stack size = 2 */
+ 204               	.L__stack_usage = 2
+ 205 0056 8C01      		movw r16,r24
+  60:utilities.c   **** 
+  61:utilities.c   ****     
+  62:utilities.c   ****     uart_puts(bigline);
+ 206               		.stabn	68,0,62,.LM13-.LFBB3
+ 207               	.LM13:
+ 208 0058 0E94 0000 		call uart_puts
+ 209 005c 802F      		mov r24,r16
+ 210 005e 912F      		mov r25,r17
+ 211 0060 FC01      		movw r30,r24
+ 212 0062 8AEF      		ldi r24,lo8(-6)
+ 213               	.L5:
+ 214               	.LBB2:
+  63:utilities.c   ****     for (uint8_t i= 0; i<LINESIZE ;i++){bigline[i] = '\0';}//blank serialout
+ 215               		.stabn	68,0,63,.LM14-.LFBB3
+ 216               	.LM14:
+ 217 0064 1192      		st Z+,__zero_reg__
+ 218 0066 8150      		subi r24,lo8(-(-1))
+ 219 0068 01F4      		brne .L5
+ 220               	/* epilogue start */
+ 221               	.LBE2:
+  64:utilities.c   **** }
+GAS LISTING /tmp/ccbdEO6B.s 			page 6
+
+
+ 222               		.stabn	68,0,64,.LM15-.LFBB3
+ 223               	.LM15:
+ 224 006a 1F91      		pop r17
+ 225 006c 0F91      		pop r16
+ 226 006e 0895      		ret
+ 227               		.size	spitout, .-spitout
+ 228               	.Lscope3:
+ 229               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 230               		.stabd	78,0,0
+ 231               		.stabs	"toggle_led:F(0,15)",36,0,66,toggle_led
+ 232               	.global	toggle_led
+ 233               		.type	toggle_led, @function
+ 234               	toggle_led:
+ 235               		.stabd	46,0,0
+  65:utilities.c   **** 
+  66:utilities.c   **** void toggle_led(void)
+  67:utilities.c   **** {
+ 236               		.stabn	68,0,67,.LM16-.LFBB4
+ 237               	.LM16:
+ 238               	.LFBB4:
+ 239               	/* prologue: function */
+ 240               	/* frame size = 0 */
+ 241               	/* stack size = 0 */
+ 242               	.L__stack_usage = 0
+  68:utilities.c   ****     if bit_is_set(PIND,5){PORTD &=~ (1<<5);}//led - low
+ 243               		.stabn	68,0,68,.LM17-.LFBB4
+ 244               	.LM17:
+ 245 0070 859B      		sbis 48-32,5
+ 246 0072 00C0      		rjmp .L8
+ 247               		.stabn	68,0,68,.LM18-.LFBB4
+ 248               	.LM18:
+ 249 0074 9598      		cbi 50-32,5
+ 250 0076 0895      		ret
+ 251               	.L8:
+  69:utilities.c   ****     else{PORTD |= (1<<5);}
+ 252               		.stabn	68,0,69,.LM19-.LFBB4
+ 253               	.LM19:
+ 254 0078 959A      		sbi 50-32,5
+ 255 007a 0895      		ret
+ 256               		.size	toggle_led, .-toggle_led
+ 257               	.Lscope4:
+ 258               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 259               		.stabd	78,0,0
+ 260               		.stabs	"start_timer0:F(0,15)",36,0,74,start_timer0
+ 261               	.global	start_timer0
+ 262               		.type	start_timer0, @function
+ 263               	start_timer0:
+ 264               		.stabd	46,0,0
+  70:utilities.c   **** 
+  71:utilities.c   **** }
+  72:utilities.c   **** 
+  73:utilities.c   **** ///starts timer for peripheral timeout
+  74:utilities.c   **** void start_timer0(void)
+  75:utilities.c   **** { 
+ 265               		.stabn	68,0,75,.LM20-.LFBB5
+ 266               	.LM20:
+ 267               	.LFBB5:
+GAS LISTING /tmp/ccbdEO6B.s 			page 7
+
+
+ 268               	/* prologue: function */
+ 269               	/* frame size = 0 */
+ 270               	/* stack size = 0 */
+ 271               	.L__stack_usage = 0
+  76:utilities.c   ****     cli();
+ 272               		.stabn	68,0,76,.LM21-.LFBB5
+ 273               	.LM21:
+ 274               	/* #APP */
+ 275               	 ;  76 "utilities.c" 1
+ 276 007c F894      		cli
+ 277               	 ;  0 "" 2
+  77:utilities.c   ****     TIMSK |= (1<<TOIE0);        //set  Overflow Interrupt Enable
+ 278               		.stabn	68,0,77,.LM22-.LFBB5
+ 279               	.LM22:
+ 280               	/* #NOAPP */
+ 281 007e 89B7      		in r24,89-32
+ 282 0080 8160      		ori r24,lo8(1)
+ 283 0082 89BF      		out 89-32,r24
+  78:utilities.c   **** 	TCNT0 = 0x00;				// set the timer to 0
+ 284               		.stabn	68,0,78,.LM23-.LFBB5
+ 285               	.LM23:
+ 286 0084 12BE      		out 82-32,__zero_reg__
+  79:utilities.c   **** 	TCCR0 |= ((1<<CS00)|(1<<CS02)); //  prescale the timer to be clock source to /1024 prescale  @ 4.1
+ 287               		.stabn	68,0,79,.LM24-.LFBB5
+ 288               	.LM24:
+ 289 0086 83B7      		in r24,83-32
+ 290 0088 8560      		ori r24,lo8(5)
+ 291 008a 83BF      		out 83-32,r24
+  80:utilities.c   **** 	sei();
+ 292               		.stabn	68,0,80,.LM25-.LFBB5
+ 293               	.LM25:
+ 294               	/* #APP */
+ 295               	 ;  80 "utilities.c" 1
+ 296 008c 7894      		sei
+ 297               	 ;  0 "" 2
+ 298               	/* epilogue start */
+  81:utilities.c   **** }
+ 299               		.stabn	68,0,81,.LM26-.LFBB5
+ 300               	.LM26:
+ 301               	/* #NOAPP */
+ 302 008e 0895      		ret
+ 303               		.size	start_timer0, .-start_timer0
+ 304               	.Lscope5:
+ 305               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 306               		.stabd	78,0,0
+ 307               		.comm suart_timedout_flag,1,1
+ 308               		.comm i2c_timeout_flag,1,1
+ 309               		.comm test_timer,1,1
+ 310               		.stabs	"suart_timedout_flag:G(0,16)=B(5,2)",32,0,27,0
+ 311               		.stabs	"i2c_timeout_flag:G(0,16)",32,0,28,0
+ 312               		.stabs	"test_timer:G(0,16)",32,0,29,0
+ 313               		.stabs	"",100,0,0,.Letext0
+ 314               	.Letext0:
+ 315               	.global __do_clear_bss
+GAS LISTING /tmp/ccbdEO6B.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 utilities.c
+     /tmp/ccbdEO6B.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccbdEO6B.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccbdEO6B.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccbdEO6B.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccbdEO6B.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccbdEO6B.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccbdEO6B.s:102    .text:0000000000000000 __vector_11
+                            *COM*:0000000000000001 test_timer
+                            *COM*:0000000000000001 i2c_timeout_flag
+                            *COM*:0000000000000001 suart_timedout_flag
+     /tmp/ccbdEO6B.s:162    .text:000000000000003c bitisset
+     /tmp/ccbdEO6B.s:194    .text:0000000000000052 spitout
+     /tmp/ccbdEO6B.s:234    .text:0000000000000070 toggle_led
+     /tmp/ccbdEO6B.s:263    .text:000000000000007c start_timer0
+
+UNDEFINED SYMBOLS
+uart_puts
+__do_clear_bss

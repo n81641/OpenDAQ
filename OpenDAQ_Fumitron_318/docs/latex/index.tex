@@ -1,0 +1,41 @@
+\hypertarget{index_Overview}{}\section{Overview}\label{index_Overview}
+This firmware is designed to be easily edited to add, remove, and change the order of inputs.\par
+All the standard input blocks are in the file \hyperlink{inputs_8c}{inputs.\-c} \par
+With minimal programming experience, other sensors with different protocols may be added as well, by creating a new input block and adding it to \hyperlink{inputs_8c}{inputs.\-c} \par
+\hypertarget{index_two}{}\section{Adding and ordering channels}\label{index_two}
+ \hypertarget{index_three}{}\section{Compiling}\label{index_three}
+ \hypertarget{index_four}{}\section{Uploading the .\-hex file to the D\-A\-Q}\label{index_four}
+Prerequisites\-: \par
+ 
+\begin{DoxyItemize}
+\item Avrdude\-: sudo apt-\/get install avrdude \par
+  
+\item ~D\-A\-Q connected to serial port to which you have access (i.\-e. /dev/tty\-U\-S\-B0 or /dev/tty\-S0, or /dev/tty\-A\-C\-M0) \par
+  
+\end{DoxyItemize}Uploading\-:\par
+ 
+\begin{DoxyItemize}
+\item Power off the D\-A\-Q. Install the jumper on the angled 2-\/pin connector Power the D\-A\-Q on. The D\-A\-Q is now in bootloader mode. 
+\item In a terminal, cd to the folder .hex file and issue the command\-:~  avrdude -\/c avr109 -\/p atmega32 -\/\-P /dev/tty\-S5 -\/e -\/\-U flash\-:w\-:Open\-D\-A\-Q\-\_\-113.\-hex~ (replace /dev/tty\-S5 with the proper port, and Open\-D\-A\-Q\-\_\-113 with the correct version name.)  
+\end{DoxyItemize}\hypertarget{index_fourptfive}{}\section{Troubleshooting Notes}\label{index_fourptfive}
+Soft U\-A\-R\-T pins are easy to get reversed. Swap the pins or swap the assignments in \hyperlink{suart_8h}{suart.\-h} Use the direct connection in the cal menu to test.
+
+All external-\/to-\/the-\/\-D\-A\-Q channels are tested at startup. If the channel replies, a 0 is shown, if there is a failure, that channel is disabled and a 1 will be shown.
+
+When the channels are sampled to determine timing, each enabled channel is reported with a \# sign.
+
+If the clock fails, the D\-A\-Q will not continue. \par
+ \hypertarget{index_five}{}\section{Additional Information}\label{index_five}
+{\bfseries Soft U\-A\-R\-T pin assignments\-:}\par
+ S-\/\-U\-A\-R\-T 1\-: Rx(in)\-: P\-I\-N B5, Tx(out)\-: P\-O\-R\-T B6. (On 6 pin reset connector)\par
+ S-\/\-U\-A\-R\-T 2\-: Rx(in)\-: P\-I\-N A0, Tx(out)\-: P\-O\-R\-T A1. (On G\-P\-I\-O connector)\par
+ S-\/\-U\-A\-R\-T 3\-: Rx(in)\-: P\-I\-N A6, Tx(out)\-: P\-O\-R\-T A7 (On G\-P\-I\-O connector)\par
+ All are set to 9600,8n1\par
+ These can be changed in \hyperlink{suart_8h}{suart.\-h} \hypertarget{index_six}{}\section{Further Development}\label{index_six}
+{\bfseries Important inline documentation on functions\-: \par
+ } \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}\par
+ \hyperlink{suart_8h}{suart.\-h}\par
+ {\bfseries Format of the channel entries\-: \par
+ }Each block has two sections, S\-A\-M\-P\-L\-E and T\-E\-S\-T.~ T\-E\-S\-T is done right after power-\/up, and will test and/or initializes each channel.~ If a channel fails, it will be disabled, and will not be sampled when the main sample loop runs, just~ A zero placeholder will be the output.~ This way the D\-A\-Q can operate with a sensor disconnected. The test is only done one time at startup, so a sensor that is removed or disconnected later will stop the D\-A\-Q.~ \par
+ \par
+ {\bfseries Inputs and their corresponding files\-:}   

@@ -1,0 +1,213 @@
+\hypertarget{i2c__rtc_8c}{\section{i2c\-\_\-rtc.\-c File Reference}
+\label{i2c__rtc_8c}\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}}
+}
+
+
+\subsection{Description}
+communication with the real time clock via I2c works with D\-S1307 I2\-C clock I\-C \begin{DoxyAuthor}{Author}
+\char`\"{}theusch\char`\"{} via avrfreaks.\-net. 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+This software is published under the public domain. Avrfreaks.\-net regarding posts\-: Any remarks, suggestions, ideas, graphics, or other material, information or other communication (collectively \char`\"{}\-Communications\char`\"{}) you transmit or post on this website is deemed public and non-\/proprietary. You agree that Atmel has no obligation with respect to the Communications and has the right to copy, disseminate, incorporate and otherwise use the Communications and all data, images sounds, text, and other things embodied in the Communications for any purpose, commercial or non-\/commercial. Any Communications transmitted or posted by you that are threatening, libelous, defamatory, obscene, pornographic, or otherwise unlawful, are strictly prohibited and may be actionable by Atmel. 
+\end{DoxyCopyright}
+
+
+Definition in file \hyperlink{i2c__rtc_8c_source}{i2c\-\_\-rtc.\-c}.
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{i2c__rtc_8c_abec76d83296fd7e05c5136ed854aebb8}{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-H\-O\-U\-R}~(60l $\ast$ 60l)
+\item 
+\#define \hyperlink{i2c__rtc_8c_a91a89241bb688061752051aa8e0896e9}{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y}~(\hyperlink{i2c__rtc_8c_abec76d83296fd7e05c5136ed854aebb8}{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-H\-O\-U\-R} $\ast$ 24l)
+\item 
+\#define \hyperlink{i2c__rtc_8c_ae7b2554d4bcff989041298b7644c65f8}{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-Y\-E\-A\-R}~(\hyperlink{i2c__rtc_8c_a91a89241bb688061752051aa8e0896e9}{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y} $\ast$ 365l)
+\item 
+\#define \hyperlink{i2c__rtc_8c_ad03aa74ae72c1affade99e86a62092e5}{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-T\-I\-L\-L\-\_\-2009}~(\hyperlink{i2c__rtc_8c_a91a89241bb688061752051aa8e0896e9}{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y} $\ast$ 14245\-L)
+\item 
+\#define \hyperlink{i2c__rtc_8c_a917455f399eb03bb451ca3b12cc3310d}{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-I\-N}~9
+\item 
+\#define \hyperlink{i2c__rtc_8c_a72b68660aec4a924c12a124e2ec5f852}{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-A\-X}~25
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{i2c__rtc_8c_a0ba794f460f5f0e798bab352de1bf57c}{i2c\-\_\-read\-\_\-block} (uint8\-\_\-t dev, uint8\-\_\-t adr, uint8\-\_\-t cnt, void $\ast$buff)
+\item 
+void \hyperlink{i2c__rtc_8c_a21d084b0ffc13fa0acf8bff1390b37b5}{i2c\-\_\-write\-\_\-block} (uint8\-\_\-t dev, uint8\-\_\-t adr, uint8\-\_\-t cnt, void $\ast$buff)
+\item 
+uint8\-\_\-t \hyperlink{i2c__rtc_8c_af3ae4a32e142775cd413a430d01ca8f1}{rtc\-\_\-gettime} (\hyperlink{structRTC}{R\-T\-C} $\ast$rtc)
+\item 
+uint8\-\_\-t \hyperlink{i2c__rtc_8c_aaccdb9c2d2af5416899853b0ae16ced9}{rtc\-\_\-settime} (const \hyperlink{structRTC}{R\-T\-C} $\ast$rtc)
+\item 
+uint8\-\_\-t \hyperlink{i2c__rtc_8c_adf1fef92d90b6df21aedaa3023a2582e}{i2c\-\_\-rtc\-\_\-init} (void)
+\item 
+uint8\-\_\-t \hyperlink{i2c__rtc_8c_a84d1b268e95cc6bb65ed25a11b49ece6}{showtime} (void)
+\item 
+uint32\-\_\-t \hyperlink{i2c__rtc_8c_ab71abbaeab58d487d0ede60bc14af396}{bintime2unixtime} (\hyperlink{structRTC}{R\-T\-C} $\ast$rtc)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\-\_\-t \hyperlink{i2c__rtc_8c_a030e9227eb3fa547cc953e9b340841c5}{rtc\-\_\-days} \mbox{[}13\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{i2c__rtc_8c_a91a89241bb688061752051aa8e0896e9}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y@{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y}}
+\index{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y@{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y~({\bf R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-H\-O\-U\-R} $\ast$ 24l)}}\label{i2c__rtc_8c_a91a89241bb688061752051aa8e0896e9}
+
+
+Definition at line 22 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_abec76d83296fd7e05c5136ed854aebb8}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-H\-O\-U\-R@{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-H\-O\-U\-R}}
+\index{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-H\-O\-U\-R@{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-H\-O\-U\-R}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-H\-O\-U\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-H\-O\-U\-R~(60l $\ast$ 60l)}}\label{i2c__rtc_8c_abec76d83296fd7e05c5136ed854aebb8}
+
+
+Definition at line 21 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_ae7b2554d4bcff989041298b7644c65f8}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-Y\-E\-A\-R@{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-Y\-E\-A\-R}}
+\index{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-Y\-E\-A\-R@{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-Y\-E\-A\-R}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-Y\-E\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-Y\-E\-A\-R~({\bf R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y} $\ast$ 365l)}}\label{i2c__rtc_8c_ae7b2554d4bcff989041298b7644c65f8}
+
+
+Definition at line 23 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_ad03aa74ae72c1affade99e86a62092e5}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-T\-I\-L\-L\-\_\-2009@{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-T\-I\-L\-L\-\_\-2009}}
+\index{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-T\-I\-L\-L\-\_\-2009@{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-T\-I\-L\-L\-\_\-2009}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-T\-I\-L\-L\-\_\-2009}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-T\-I\-L\-L\-\_\-2009~({\bf R\-T\-C\-\_\-\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-D\-A\-Y} $\ast$ 14245\-L)}}\label{i2c__rtc_8c_ad03aa74ae72c1affade99e86a62092e5}
+
+
+Definition at line 32 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_a72b68660aec4a924c12a124e2ec5f852}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-A\-X@{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-A\-X}}
+\index{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-A\-X@{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-A\-X}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-A\-X~25}}\label{i2c__rtc_8c_a72b68660aec4a924c12a124e2ec5f852}
+
+
+Definition at line 35 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_a917455f399eb03bb451ca3b12cc3310d}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-I\-N@{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-I\-N}}
+\index{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-I\-N@{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-I\-N}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-C\-\_\-\-Y\-E\-A\-R\-\_\-\-M\-I\-N~9}}\label{i2c__rtc_8c_a917455f399eb03bb451ca3b12cc3310d}
+
+
+Definition at line 34 of file i2c\-\_\-rtc.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{i2c__rtc_8c_ab71abbaeab58d487d0ede60bc14af396}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!bintime2unixtime@{bintime2unixtime}}
+\index{bintime2unixtime@{bintime2unixtime}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{bintime2unixtime}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t bintime2unixtime (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-T\-C} $\ast$}]{rtc}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8c_ab71abbaeab58d487d0ede60bc14af396}
+
+
+Definition at line 170 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_a0ba794f460f5f0e798bab352de1bf57c}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!i2c\-\_\-read\-\_\-block@{i2c\-\_\-read\-\_\-block}}
+\index{i2c\-\_\-read\-\_\-block@{i2c\-\_\-read\-\_\-block}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{i2c\-\_\-read\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}void i2c\-\_\-read\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{dev, }
+\item[{uint8\-\_\-t}]{adr, }
+\item[{uint8\-\_\-t}]{cnt, }
+\item[{void $\ast$}]{buff}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8c_a0ba794f460f5f0e798bab352de1bf57c}
+
+
+Definition at line 59 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_adf1fef92d90b6df21aedaa3023a2582e}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!i2c\-\_\-rtc\-\_\-init@{i2c\-\_\-rtc\-\_\-init}}
+\index{i2c\-\_\-rtc\-\_\-init@{i2c\-\_\-rtc\-\_\-init}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{i2c\-\_\-rtc\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t i2c\-\_\-rtc\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8c_adf1fef92d90b6df21aedaa3023a2582e}
+
+
+Definition at line 117 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_a21d084b0ffc13fa0acf8bff1390b37b5}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!i2c\-\_\-write\-\_\-block@{i2c\-\_\-write\-\_\-block}}
+\index{i2c\-\_\-write\-\_\-block@{i2c\-\_\-write\-\_\-block}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{i2c\-\_\-write\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}void i2c\-\_\-write\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{dev, }
+\item[{uint8\-\_\-t}]{adr, }
+\item[{uint8\-\_\-t}]{cnt, }
+\item[{void $\ast$}]{buff}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8c_a21d084b0ffc13fa0acf8bff1390b37b5}
+
+
+Definition at line 73 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_af3ae4a32e142775cd413a430d01ca8f1}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!rtc\-\_\-gettime@{rtc\-\_\-gettime}}
+\index{rtc\-\_\-gettime@{rtc\-\_\-gettime}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{rtc\-\_\-gettime}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rtc\-\_\-gettime (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-T\-C} $\ast$}]{rtc}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8c_af3ae4a32e142775cd413a430d01ca8f1}
+
+
+Definition at line 84 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_aaccdb9c2d2af5416899853b0ae16ced9}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!rtc\-\_\-settime@{rtc\-\_\-settime}}
+\index{rtc\-\_\-settime@{rtc\-\_\-settime}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{rtc\-\_\-settime}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rtc\-\_\-settime (
+\begin{DoxyParamCaption}
+\item[{const {\bf R\-T\-C} $\ast$}]{rtc}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8c_aaccdb9c2d2af5416899853b0ae16ced9}
+
+
+Definition at line 101 of file i2c\-\_\-rtc.\-c.
+
+\hypertarget{i2c__rtc_8c_a84d1b268e95cc6bb65ed25a11b49ece6}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!showtime@{showtime}}
+\index{showtime@{showtime}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{showtime}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t showtime (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{i2c__rtc_8c_a84d1b268e95cc6bb65ed25a11b49ece6}
+
+
+Definition at line 142 of file i2c\-\_\-rtc.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{i2c__rtc_8c_a030e9227eb3fa547cc953e9b340841c5}{\index{i2c\-\_\-rtc.\-c@{i2c\-\_\-rtc.\-c}!rtc\-\_\-days@{rtc\-\_\-days}}
+\index{rtc\-\_\-days@{rtc\-\_\-days}!i2c_rtc.c@{i2c\-\_\-rtc.\-c}}
+\subsubsection[{rtc\-\_\-days}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t rtc\-\_\-days\mbox{[}13\mbox{]}}}\label{i2c__rtc_8c_a030e9227eb3fa547cc953e9b340841c5}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= 
+\{ 
+0, 
+31,      
+59,      
+90,      
+120,   
+151,   
+181,   
+212,   
+243,   
+273,   
+304,   
+334,   
+365      
+\}
+\end{DoxyCode}
+
+
+Definition at line 38 of file i2c\-\_\-rtc.\-c.
+
