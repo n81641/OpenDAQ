@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wday',['wday',['../structRTC.html#ab3b1c5e52d95f4c763cdbfe7316ab6a9',1,'RTC']]]
+  ['year',['year',['../structRTC.html#a94d8ae49bff6a2df2b9ff8e390f57dc7',1,'RTC']]]
 ];

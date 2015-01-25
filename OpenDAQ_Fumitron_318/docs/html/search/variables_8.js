@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['offset',['offset',['../structsample__data.html#a4c30d8a850f9c106f5614849386d498e',1,'sample_data']]],
-  ['offset_5feemem',['Offset_eemem',['../non__vol_8c.html#aab799411f3d71190d2b875905a8fd87a',1,'non_vol.c']]]
+  ['rtc',['rtc',['../structsample__data.html#abc7bac4a5c01e9effcf9f33a42f57f06',1,'sample_data']]],
+  ['rtc_5fdays',['rtc_days',['../i2c__rtc_8c.html#a030e9227eb3fa547cc953e9b340841c5',1,'i2c_rtc.c']]]
 ];

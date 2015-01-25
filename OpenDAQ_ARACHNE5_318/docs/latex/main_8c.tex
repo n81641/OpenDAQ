@@ -27,15 +27,15 @@ Definition in file \hyperlink{main_8c_source}{main.\-c}.
 \item 
 uint8\-\_\-t \hyperlink{main_8c_a71fec7786e47daeb9b1da34a655cebb5}{cal\-\_\-val\-\_\-input\-\_\-delay} (void)
 \item 
-void \hyperlink{main_8c_ada126027c8137450615f03a8692fb255}{cal\-\_\-menu} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$\hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+void \hyperlink{main_8c_ada126027c8137450615f03a8692fb255}{cal\-\_\-menu} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$data)
 \item 
-void \hyperlink{main_8c_abd331c160dab86ce825c1bcfd6525357}{read\-\_\-stored\-\_\-vals} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$\hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+void \hyperlink{main_8c_abd331c160dab86ce825c1bcfd6525357}{read\-\_\-stored\-\_\-vals} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$data)
 \item 
 uint8\-\_\-t \hyperlink{main_8c_a84d1b268e95cc6bb65ed25a11b49ece6}{showtime} (void)
 \item 
-uint16\-\_\-t \hyperlink{main_8c_ae0119e9f659b71796300980a8b9f8415}{timesample} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$\hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+uint16\-\_\-t \hyperlink{main_8c_ae0119e9f659b71796300980a8b9f8415}{timesample} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$data)
 \item 
-void \hyperlink{main_8c_a91b726e7a458c2ebd31ff51eaf57517c}{output\-\_\-headers} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$\hyperlink{CO2__serial_8c_a3825e3e0922badc8848709cf608821ea}{data})
+void \hyperlink{main_8c_a91b726e7a458c2ebd31ff51eaf57517c}{output\-\_\-headers} (struct \hyperlink{structsample__data}{sample\-\_\-data} $\ast$data)
 \item 
 \hyperlink{main_8c_ab16889ae984b9b798989a0d239283cac}{I\-S\-R} (T\-I\-M\-E\-R1\-\_\-\-O\-V\-F\-\_\-vect)
 \item 
@@ -72,7 +72,7 @@ input menu for cal values and names.
 
 
 
-Definition at line 246 of file main.\-c.
+Definition at line 266 of file main.\-c.
 
 \hypertarget{main_8c_a71fec7786e47daeb9b1da34a655cebb5}{\index{main.\-c@{main.\-c}!cal\-\_\-val\-\_\-input\-\_\-delay@{cal\-\_\-val\-\_\-input\-\_\-delay}}
 \index{cal\-\_\-val\-\_\-input\-\_\-delay@{cal\-\_\-val\-\_\-input\-\_\-delay}!main.c@{main.\-c}}
@@ -87,7 +87,7 @@ See if user wants to enter cal mode on startup.
 
 
 
-Definition at line 211 of file main.\-c.
+Definition at line 231 of file main.\-c.
 
 \hypertarget{main_8c_ab16889ae984b9b798989a0d239283cac}{\index{main.\-c@{main.\-c}!I\-S\-R@{I\-S\-R}}
 \index{I\-S\-R@{I\-S\-R}!main.c@{main.\-c}}
@@ -139,7 +139,7 @@ Add headers to serialout\-:
 
 
 
-Definition at line 459 of file main.\-c.
+Definition at line 479 of file main.\-c.
 
 \hypertarget{main_8c_abd331c160dab86ce825c1bcfd6525357}{\index{main.\-c@{main.\-c}!read\-\_\-stored\-\_\-vals@{read\-\_\-stored\-\_\-vals}}
 \index{read\-\_\-stored\-\_\-vals@{read\-\_\-stored\-\_\-vals}!main.c@{main.\-c}}
@@ -154,7 +154,7 @@ read all the names and cal vals in the E\-E\-M\-E\-M
 
 
 
-Definition at line 416 of file main.\-c.
+Definition at line 436 of file main.\-c.
 
 \hypertarget{main_8c_a84d1b268e95cc6bb65ed25a11b49ece6}{\index{main.\-c@{main.\-c}!showtime@{showtime}}
 \index{showtime@{showtime}!main.c@{main.\-c}}
@@ -180,7 +180,7 @@ Check and calculate time for sampling period.
 
 
 
-Definition at line 491 of file main.\-c.
+Definition at line 528 of file main.\-c.
 
 
 
