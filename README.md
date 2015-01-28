@@ -2,7 +2,7 @@
 University Of Illinois DAQ firmware
 
 Please see Documentation in /docs/html/index.html of each version.
-[Documentation](OpenDAQ/OpenDAQ_118/docs/html/index.html)
+[Documentation](/OpenDAQ_118/docs/html/index.html)
 
 Overview
 
