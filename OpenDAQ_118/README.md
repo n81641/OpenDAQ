@@ -217,8 +217,16 @@ case it is four.
 \section three Compiling
 \htmlonly Save the file, then click the down arrow by the brick icon,
 choose
-"Make Custom Target" and type clean in the box. Return. Then choose
-"Make
+"Make Custom Target" and type clean in the box. Return.<br>
+Open the file Makefile and edit the version number and the device name:
+<br>
+<font color="green">PROJECTNAME=OpenDAQ_THISMACHINE&dollar;(VER)</font><br>
+Channge THISMACHINE to the name of the machine the firmware has been customized for.<br>
+<font color="green">VER := 118</font><br>
+This must be a number. The tens and ones digits refer to the main firmware version.  
+The hundreds spot is the verson number for the specific device. 
+For example, if the firmware has been modified for THISMACHINE four times, the number would then be 418.<br>
+Then choose "Make
 All" After some other messages, the following message should appear in
 the area below the code
 editor window:
@@ -276,7 +284,7 @@ if there is a failure, that channel is disabled and a 1 will be shown.
 
 When the channels are sampled to determine timing, each enabled channel is reported with a # sign.
 
-If the clock fails, the DAQ will not continue.
+Check the clock time. If the clock fails, or reverts to default time after a battery change, the DAQ will not continue.
 <br>
 \section five Additional Information
 <strong>Soft UART pin assignments:</strong><br>

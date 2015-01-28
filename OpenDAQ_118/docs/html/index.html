@@ -304,8 +304,16 @@ case it is four.
 Compiling</h1>
  Save the file, then click the down arrow by the brick icon,
 choose
-"Make Custom Target" and type clean in the box. Return. Then choose
-"Make
+"Make Custom Target" and type clean in the box. Return.<br>
+Open the file Makefile and edit the version number and the device name:
+<br>
+<font color="green">PROJECTNAME=OpenDAQ_THISMACHINE&dollar;(VER)</font><br>
+Channge THISMACHINE to the name of the machine the firmware has been customized for.<br>
+<font color="green">VER := 118</font><br>
+This must be a number. The tens and ones digits refer to the main firmware version.  
+The hundreds spot is the verson number for the specific device. 
+For example, if the firmware has been modified for THISMACHINE four times, the number would then be 418.<br>
+Then choose "Make
 All" After some other messages, the following message should appear in
 the area below the code
 editor window:
@@ -353,7 +361,7 @@ Troubleshooting Notes</h1>
 <p>Soft UART pins are easy to get reversed. Swap the pins or swap the assignments in <a class="el" href="suart_8h.html" title="header for suart.c Port and Pin setup here. ">suart.h</a> Use the direct connection in the cal menu to test.</p>
 <p>All external-to-the-DAQ channels are tested at startup. If the channel replies, a 0 is shown, if there is a failure, that channel is disabled and a 1 will be shown.</p>
 <p>When the channels are sampled to determine timing, each enabled channel is reported with a # sign.</p>
-<p>If the clock fails, the DAQ will not continue. <br/>
+<p>Check the clock time. If the clock fails, or reverts to default time after a battery change, the DAQ will not continue. <br/>
  </p>
 <h1><a class="anchor" id="five"></a>
 Additional Information</h1>
@@ -507,7 +515,7 @@ Where CL and TT are the display specific commands<br>
  </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 10 2014 19:52:08 for Open Emissions DAQ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 28 2015 10:49:21 for Open Emissions DAQ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

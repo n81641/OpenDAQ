@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['mday',['mday',['../structRTC.html#a8572937f310a4d7de1b5229d05c1c5af',1,'RTC']]],
-  ['min',['min',['../structRTC.html#a09bf7e86654a65b51df00b38e22b8044',1,'RTC']]],
-  ['month',['month',['../structRTC.html#ab3edfa995dc98159d1ecaa5e7cb9fb8e',1,'RTC']]]
+  ['name',['name',['../structsample__data.html#ad7e5e24f779c9d9683fee404e3b63e21',1,'sample_data']]],
+  ['names_5feemem',['Names_eemem',['../non__vol_8c.html#ac816660fa7696eeabb1387ba81778453',1,'non_vol.c']]],
+  ['number_5finputs',['number_inputs',['../structsample__data.html#aab5f5b842f431253c223d01ba22fef55',1,'sample_data']]]
 ];

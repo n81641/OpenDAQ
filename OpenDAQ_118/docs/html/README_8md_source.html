@@ -301,227 +301,235 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="stringliteral">\section three Compiling</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="stringliteral">\htmlonly Save the file, then click the down arrow by the brick icon,</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="stringliteral">choose</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="stringliteral">&quot;Make Custom Target&quot; and type clean in the box. Return. Then choose</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="stringliteral">&quot;Make</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="stringliteral">All&quot; After some other messages, the following message should appear in</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="stringliteral">the area below the code</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="stringliteral">editor window:</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="stringliteral">&lt;br style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="stringliteral">&lt;font color=&quot;green&quot;&gt;&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt; -O ihex</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="stringliteral">opendaq07.out opendaq07.hex&lt;/span&gt;&lt;br style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;Compilation finished</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="stringliteral">successfully.&lt;/span&gt;&lt;br style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;avr-objcopy -j .eeprom &lt;/span&gt;&lt;br</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="stringliteral">style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;--change-section-lma .eeprom=0 &lt;/span&gt;&lt;br</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="stringliteral">style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;-O ihex opendaq07.out</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="stringliteral">opendaq07.ee.hex&lt;/span&gt;&lt;br&gt;</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="stringliteral">&lt;/font&gt;&lt;br&gt;</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="stringliteral">Alternately, use these terminal commands: (in the firmware folder) &lt;br&gt;</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="stringliteral">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;make clean&lt;br&gt;</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="stringliteral">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;make</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="stringliteral">&lt;/span&gt;&lt;br&gt;</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="stringliteral">Now upload the hex file (opendaq07.hex in this example) to the DAQ.&lt;br&gt;</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="stringliteral">\endhtmlonly</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="stringliteral">\section four Uploading the .hex file to the DAQ</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="stringliteral">Prerequisites:</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="stringliteral">&lt;ul&gt;</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="stringliteral">&lt;li&gt;Avrdude:</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;sudo apt-get install</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="stringliteral">avrdude &lt;br&gt;</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="stringliteral">&lt;/span&gt;&lt;/li&gt;</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="stringliteral">&lt;li&gt;&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;&lt;/span&gt;&amp;nbsp;DAQ</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="stringliteral">connected to serial port to which you have access (i.e. /dev/ttyUSB0 or</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="stringliteral">/dev/ttyS0, or /dev/ttyACM0) &lt;br&gt;</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="stringliteral">&lt;/li&gt;</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="stringliteral">&lt;/ul&gt;</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="stringliteral">Uploading:&lt;br&gt;</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="stringliteral">&lt;ul&gt;</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="stringliteral">&lt;li&gt;Power off the DAQ. Install the jumper on the angled 2-pin</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="stringliteral">connector Power the DAQ on. The DAQ is now in bootloader mode.&lt;/li&gt;</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="stringliteral">&lt;li&gt;In a terminal, cd to the folder .hex file and issue the</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="stringliteral">command:&amp;nbsp; &lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="stringliteral">avrdude -c avr109 -p atmega32 -P /dev/ttyS5 -e -U</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="stringliteral">flash:w:OpenDAQ_113.hex&lt;/span&gt;&amp;nbsp; (replace /dev/ttyS5 with the</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="stringliteral">proper port, and OpenDAQ_113 with the correct version name.)</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="stringliteral">&lt;/li&gt;</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="stringliteral">&lt;/ul&gt;</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="stringliteral">\section fourptfive Troubleshooting Notes</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="stringliteral">Soft UART pins are easy to get reversed.  Swap the pins or swap the assignments in suart.h </span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="stringliteral">Use the direct connection in the cal menu to test.</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="stringliteral">All external-to-the-DAQ channels are tested at startup.  If the channel replies, a 0 is shown, </span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="stringliteral">if there is a failure, that channel is disabled and a 1 will be shown.  </span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="stringliteral">When the channels are sampled to determine timing, each enabled channel is reported with a # sign.</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="stringliteral">&quot;Make Custom Target&quot; and type clean in the box. Return.&lt;br&gt;</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="stringliteral">Open the file Makefile and edit the version number and the device name:</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="stringliteral">&lt;font color=&quot;green&quot;&gt;PROJECTNAME=OpenDAQ_THISMACHINE&amp;dollar;(VER)&lt;/font&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="stringliteral">Channge THISMACHINE to the name of the machine the firmware has been customized for.&lt;br&gt;</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="stringliteral">&lt;font color=&quot;green&quot;&gt;VER := 118&lt;/font&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="stringliteral">This must be a number. The tens and ones digits refer to the main firmware version.  </span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="stringliteral">The hundreds spot is the verson number for the specific device. </span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="stringliteral">For example, if the firmware has been modified for THISMACHINE four times, the number would then be 418.&lt;br&gt;</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="stringliteral">Then choose &quot;Make</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="stringliteral">All&quot; After some other messages, the following message should appear in</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="stringliteral">the area below the code</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="stringliteral">editor window:</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="stringliteral">&lt;br style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="stringliteral">&lt;font color=&quot;green&quot;&gt;&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt; -O ihex</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="stringliteral">opendaq07.out opendaq07.hex&lt;/span&gt;&lt;br style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;Compilation finished</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="stringliteral">successfully.&lt;/span&gt;&lt;br style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;avr-objcopy -j .eeprom &lt;/span&gt;&lt;br</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="stringliteral">style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;--change-section-lma .eeprom=0 &lt;/span&gt;&lt;br</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="stringliteral">style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;-O ihex opendaq07.out</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="stringliteral">opendaq07.ee.hex&lt;/span&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="stringliteral">&lt;/font&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="stringliteral">Alternately, use these terminal commands: (in the firmware folder) &lt;br&gt;</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="stringliteral">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;make clean&lt;br&gt;</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="stringliteral">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;make</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="stringliteral">&lt;/span&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="stringliteral">Now upload the hex file (opendaq07.hex in this example) to the DAQ.&lt;br&gt;</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="stringliteral">\endhtmlonly</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="stringliteral">\section four Uploading the .hex file to the DAQ</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="stringliteral">Prerequisites:</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="stringliteral">&lt;ul&gt;</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="stringliteral">&lt;li&gt;Avrdude:</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;sudo apt-get install</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="stringliteral">avrdude &lt;br&gt;</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="stringliteral">&lt;/span&gt;&lt;/li&gt;</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="stringliteral">&lt;li&gt;&lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;&lt;/span&gt;&amp;nbsp;DAQ</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="stringliteral">connected to serial port to which you have access (i.e. /dev/ttyUSB0 or</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="stringliteral">/dev/ttyS0, or /dev/ttyACM0) &lt;br&gt;</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="stringliteral">&lt;/li&gt;</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="stringliteral">&lt;/ul&gt;</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="stringliteral">Uploading:&lt;br&gt;</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="stringliteral">&lt;ul&gt;</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="stringliteral">&lt;li&gt;Power off the DAQ. Install the jumper on the angled 2-pin</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="stringliteral">connector Power the DAQ on. The DAQ is now in bootloader mode.&lt;/li&gt;</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="stringliteral">&lt;li&gt;In a terminal, cd to the folder .hex file and issue the</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="stringliteral">command:&amp;nbsp; &lt;span style=&quot;color: rgb(51, 102, 255);&quot;&gt;</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="stringliteral">avrdude -c avr109 -p atmega32 -P /dev/ttyS5 -e -U</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="stringliteral">flash:w:OpenDAQ_113.hex&lt;/span&gt;&amp;nbsp; (replace /dev/ttyS5 with the</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="stringliteral">proper port, and OpenDAQ_113 with the correct version name.)</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="stringliteral">&lt;/li&gt;</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="stringliteral">&lt;/ul&gt;</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="stringliteral">\section fourptfive Troubleshooting Notes</span></div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="stringliteral">If the clock fails, the DAQ will not continue.</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="stringliteral">\section five Additional Information</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="stringliteral">&lt;strong&gt;Soft UART pin assignments:&lt;/strong&gt;&lt;br&gt;</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="stringliteral">S-UART 1: Rx(in): PIN B5, Tx(out): PORT B6. (On 6 pin reset connector)&lt;br&gt;</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="stringliteral">S-UART 2: Rx(in): PIN A0, Tx(out): PORT A1. (On GPIO connector)&lt;br&gt;</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="stringliteral">S-UART 3: Rx(in): PIN A6, Tx(out): PORT A7 (On GPIO connector)&lt;br&gt;</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="stringliteral">All are set to 9600,8n1&lt;br&gt;</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="stringliteral">These can be changed in suart.h \htmlonly </span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="stringliteral">&lt;strong&gt;&lt;br&gt;DAQ microcontroller pins:&lt;/strong&gt;</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot; cellpadding=&quot;2&quot;</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="stringliteral">cellspacing=&quot;2&quot;&gt;</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;I2C terminal&lt;br&gt;</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot;</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="stringliteral">cellpadding=&quot;2&quot; cellspacing=&quot;2&quot;&gt;</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;sda&lt;/td&gt;</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT C1 &lt;br&gt;</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;scl &lt;/td&gt;</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT C0&lt;br&gt;</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Serial</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot;</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="stringliteral">cellpadding=&quot;2&quot; cellspacing=&quot;2&quot;&gt;</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Rx&lt;/td&gt;</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT D0&lt;/td&gt;</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Tx&lt;/td&gt;</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT D1&lt;/td&gt;</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;10 bit ADC/GPIO</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot;</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="stringliteral">cellpadding=&quot;2&quot; cellspacing=&quot;2&quot;&gt;</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;ch0&lt;/td&gt;</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT A0&lt;/td&gt;</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;ch1&lt;br&gt;</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT A1&lt;br&gt;</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="stringliteral">&lt;meta http-equiv=&quot;content-type&quot;</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="stringliteral">content=&quot;text/html; charset=utf-8&quot;&gt;</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="stringliteral">&lt;span</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="stringliteral">style=&quot;color: rgb(0, 0, 0); font-family: Arial,&#39;</span>Liberation Sans<span class="charliteral">&#39;,&#39;</span>DejaVu Sans<span class="stringliteral">&#39;,sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 17.8048px; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; display: inline ! important; float: none; background-color: rgb(255, 255, 255);&quot;&gt;↓&lt;/span&gt;&lt;/td&gt;</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="stringliteral">&lt;meta http-equiv=&quot;content-type&quot;</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="stringliteral">content=&quot;text/html; charset=utf-8&quot;&gt;</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="stringliteral">&lt;span</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="stringliteral">style=&quot;color: rgb(0, 0, 0); font-family: Arial,&#39;</span>Liberation Sans<span class="charliteral">&#39;,&#39;</span>DejaVu Sans<span class="stringliteral">&#39;,sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 17.8048px; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; display: inline ! important; float: none; background-color: rgb(255, 255, 255);&quot;&gt;↓&lt;/span&gt;&lt;/td&gt;</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;ch7&lt;/td&gt;</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT A7&lt;/td&gt;</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;6 pin terminal with reset</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot;</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="stringliteral">cellpadding=&quot;2&quot; cellspacing=&quot;2&quot;&gt;</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;H-rst&lt;/td&gt;</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;hard reset pin&lt;/td&gt;</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Tx2 &lt;/td&gt;</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT B5&lt;br&gt;</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Rx2&lt;/td&gt;</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT B6&lt;br&gt;</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;reset&lt;/td&gt;</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT B7&lt;br&gt;</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="stringliteral">&lt;strong&gt;Communication with the CO2 serial port directly: &lt;/strong&gt;&lt;br&gt;</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="stringliteral">Start picocom with&lt;br&gt;</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="stringliteral">&lt;font color=&quot;green&quot;&gt;--omap crcrlf&lt;/font&gt;&lt;br&gt;</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="stringliteral">like this:&lt;font color=&quot;green&quot;&gt; picocom --omap crcrlf /dev/ttyS0 &lt;/font&gt;&lt;br&gt;</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="stringliteral">That way it will send the required \r\n at the end of the command.&lt;br&gt;</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="stringliteral">Picocom version 1.7 or greater required.</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="stringliteral">\endhtmlonly</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="stringliteral">\section six Further Development</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="stringliteral">&lt;strong&gt;Important inline documentation on functions: &lt;br&gt;</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="stringliteral">&lt;/strong&gt;</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="stringliteral">main()&lt;br&gt;</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="stringliteral">suart.h&lt;br&gt;</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="stringliteral">&lt;strong&gt;Format of the channel entries: &lt;br&gt;</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="stringliteral">&lt;/strong&gt;Each block has two sections, SAMPLE and TEST.&amp;nbsp; TEST is</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="stringliteral">done right after power-up, and will test and/or initializes each</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="stringliteral">channel.&amp;nbsp; If a channel fails, it will be disabled, and will not be</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="stringliteral">sampled when the main sample loop runs, just&amp;nbsp; A zero placeholder</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="stringliteral">will be the output.&amp;nbsp; This way the DAQ can operate with a sensor</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="stringliteral">disconnected. The test is only done one time at startup, so a sensor</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="stringliteral">that is removed or disconnected later will stop the DAQ.&amp;nbsp; &lt;br&gt;</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="stringliteral">&lt;strong&gt;Inputs and their corresponding files:&lt;/strong&gt;</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="stringliteral">@image html OPENDAQ_diag.png</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="stringliteral">\htmlonly&lt;br&gt;</span></div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="stringliteral">Each input has a file which contains the commands for sampling it. That</span></div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="stringliteral">file usually</span></div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="stringliteral">has a corresponding file containing the low-level communication code,</span></div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="stringliteral">such as i2c or UART. These low-level files are shared and can be used</span></div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="stringliteral">by any input or stand-alone.&amp;nbsp; Channels that sample using built-in</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="stringliteral">devices, such as the 10-bit ADC have no low-level file. &lt;br&gt;</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="stringliteral">An example using a low-level file stand-alone:&amp;nbsp; using soft-UART 3</span></div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="stringliteral">in the main loop to output text for a UART enabled LCD display:</span></div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(0, 153, 0);&quot;&gt;suart_puts(3, const char*</span></div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="stringliteral">&quot;CL&quot;);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span></div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="stringliteral">&amp;nbsp; &amp;nbsp; //clears screen</span></div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="stringliteral">&lt;/span&gt;&lt;br style=&quot;color: rgb(0, 153, 0);&quot;&gt;</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(0, 153, 0);&quot;&gt;suart_puts(3, const char*</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="stringliteral">&quot;TTsample completed&quot;);&amp;nbsp;&amp;nbsp; //sends text &quot;sample completed&quot;&lt;/span&gt;&lt;br&gt;</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="stringliteral">Where CL and TT are the display specific commands&lt;br&gt;</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="stringliteral">Soft UART pins are easy to get reversed.  Swap the pins or swap the assignments in suart.h </span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="stringliteral">Use the direct connection in the cal menu to test.</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="stringliteral">All external-to-the-DAQ channels are tested at startup.  If the channel replies, a 0 is shown, </span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="stringliteral">if there is a failure, that channel is disabled and a 1 will be shown.  </span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="stringliteral">When the channels are sampled to determine timing, each enabled channel is reported with a # sign.</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="stringliteral">Check the clock time. If the clock fails, or reverts to default time after a battery change, the DAQ will not continue.</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="stringliteral">\section five Additional Information</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="stringliteral">&lt;strong&gt;Soft UART pin assignments:&lt;/strong&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="stringliteral">S-UART 1: Rx(in): PIN B5, Tx(out): PORT B6. (On 6 pin reset connector)&lt;br&gt;</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="stringliteral">S-UART 2: Rx(in): PIN A0, Tx(out): PORT A1. (On GPIO connector)&lt;br&gt;</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="stringliteral">S-UART 3: Rx(in): PIN A6, Tx(out): PORT A7 (On GPIO connector)&lt;br&gt;</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="stringliteral">All are set to 9600,8n1&lt;br&gt;</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="stringliteral">These can be changed in suart.h \htmlonly </span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="stringliteral">&lt;strong&gt;&lt;br&gt;DAQ microcontroller pins:&lt;/strong&gt;</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot; cellpadding=&quot;2&quot;</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="stringliteral">cellspacing=&quot;2&quot;&gt;</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;I2C terminal&lt;br&gt;</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot;</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="stringliteral">cellpadding=&quot;2&quot; cellspacing=&quot;2&quot;&gt;</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;sda&lt;/td&gt;</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT C1 &lt;br&gt;</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;scl &lt;/td&gt;</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT C0&lt;br&gt;</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Serial</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot;</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="stringliteral">cellpadding=&quot;2&quot; cellspacing=&quot;2&quot;&gt;</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Rx&lt;/td&gt;</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT D0&lt;/td&gt;</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Tx&lt;/td&gt;</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT D1&lt;/td&gt;</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;10 bit ADC/GPIO</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot;</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="stringliteral">cellpadding=&quot;2&quot; cellspacing=&quot;2&quot;&gt;</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;ch0&lt;/td&gt;</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT A0&lt;/td&gt;</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;ch1&lt;br&gt;</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT A1&lt;br&gt;</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="stringliteral">&lt;meta http-equiv=&quot;content-type&quot;</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="stringliteral">content=&quot;text/html; charset=utf-8&quot;&gt;</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="stringliteral">&lt;span</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="stringliteral">style=&quot;color: rgb(0, 0, 0); font-family: Arial,&#39;</span>Liberation Sans<span class="charliteral">&#39;,&#39;</span>DejaVu Sans<span class="stringliteral">&#39;,sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 17.8048px; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; display: inline ! important; float: none; background-color: rgb(255, 255, 255);&quot;&gt;↓&lt;/span&gt;&lt;/td&gt;</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="stringliteral">&lt;meta http-equiv=&quot;content-type&quot;</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="stringliteral">content=&quot;text/html; charset=utf-8&quot;&gt;</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="stringliteral">&lt;span</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="stringliteral">style=&quot;color: rgb(0, 0, 0); font-family: Arial,&#39;</span>Liberation Sans<span class="charliteral">&#39;,&#39;</span>DejaVu Sans<span class="stringliteral">&#39;,sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 17.8048px; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; display: inline ! important; float: none; background-color: rgb(255, 255, 255);&quot;&gt;↓&lt;/span&gt;&lt;/td&gt;</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;ch7&lt;/td&gt;</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT A7&lt;/td&gt;</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;6 pin terminal with reset</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="stringliteral">&lt;table style=&quot;text-align: left; width: 100%;&quot; border=&quot;1&quot;</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="stringliteral">cellpadding=&quot;2&quot; cellspacing=&quot;2&quot;&gt;</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="stringliteral">&lt;tbody&gt;</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;H-rst&lt;/td&gt;</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;hard reset pin&lt;/td&gt;</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Tx2 &lt;/td&gt;</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT B5&lt;br&gt;</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;Rx2&lt;/td&gt;</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT B6&lt;br&gt;</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="stringliteral">&lt;tr&gt;</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;reset&lt;/td&gt;</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="stringliteral">&lt;td style=&quot;vertical-align: top;&quot;&gt;PORT B7&lt;br&gt;</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="stringliteral">&lt;/td&gt;</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="stringliteral">&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="stringliteral">&lt;/tbody&gt;</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="stringliteral">&lt;/table&gt;</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="stringliteral">&lt;strong&gt;Communication with the CO2 serial port directly: &lt;/strong&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="stringliteral">Start picocom with&lt;br&gt;</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="stringliteral">&lt;font color=&quot;green&quot;&gt;--omap crcrlf&lt;/font&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="stringliteral">like this:&lt;font color=&quot;green&quot;&gt; picocom --omap crcrlf /dev/ttyS0 &lt;/font&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="stringliteral">That way it will send the required \r\n at the end of the command.&lt;br&gt;</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="stringliteral">Picocom version 1.7 or greater required.</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="stringliteral">\endhtmlonly</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="stringliteral">\section six Further Development</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="stringliteral">&lt;strong&gt;Important inline documentation on functions: &lt;br&gt;</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="stringliteral">&lt;/strong&gt;</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="stringliteral">main()&lt;br&gt;</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="stringliteral">suart.h&lt;br&gt;</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="stringliteral">&lt;strong&gt;Format of the channel entries: &lt;br&gt;</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="stringliteral">&lt;/strong&gt;Each block has two sections, SAMPLE and TEST.&amp;nbsp; TEST is</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="stringliteral">done right after power-up, and will test and/or initializes each</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="stringliteral">channel.&amp;nbsp; If a channel fails, it will be disabled, and will not be</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="stringliteral">sampled when the main sample loop runs, just&amp;nbsp; A zero placeholder</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="stringliteral">will be the output.&amp;nbsp; This way the DAQ can operate with a sensor</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="stringliteral">disconnected. The test is only done one time at startup, so a sensor</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="stringliteral">that is removed or disconnected later will stop the DAQ.&amp;nbsp; &lt;br&gt;</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="stringliteral">&lt;strong&gt;Inputs and their corresponding files:&lt;/strong&gt;</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="stringliteral">@image html OPENDAQ_diag.png</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="stringliteral">\htmlonly&lt;br&gt;</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="stringliteral">Each input has a file which contains the commands for sampling it. That</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="stringliteral">file usually</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="stringliteral">has a corresponding file containing the low-level communication code,</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="stringliteral">such as i2c or UART. These low-level files are shared and can be used</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="stringliteral">by any input or stand-alone.&amp;nbsp; Channels that sample using built-in</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="stringliteral">devices, such as the 10-bit ADC have no low-level file. &lt;br&gt;</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="stringliteral">An example using a low-level file stand-alone:&amp;nbsp; using soft-UART 3</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="stringliteral">in the main loop to output text for a UART enabled LCD display:</span></div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="stringliteral">\endhtmlonly</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="stringliteral"><div class="ttc" id="sixteen__bit_8c_html_a8078fb1f3ba5d17173709055c431acec"><div class="ttname"><a href="sixteen__bit_8c.html#a8078fb1f3ba5d17173709055c431acec">read_adc</a></div><div class="ttdeci">int32_t read_adc(uint8_t ADC_A, uint8_t ADC_B, uint8_t ADC_C)</div><div class="ttdoc">Reads the value from the I2c ADC. </div><div class="ttdef"><b>Definition:</b> <a href="sixteen__bit_8c_source.html#l00032">sixteen_bit.c:32</a></div></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(0, 153, 0);&quot;&gt;suart_puts(3, const char*</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="stringliteral">&quot;CL&quot;);&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="stringliteral">&amp;nbsp; &amp;nbsp; //clears screen</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="stringliteral">&lt;/span&gt;&lt;br style=&quot;color: rgb(0, 153, 0);&quot;&gt;</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="stringliteral">&lt;span style=&quot;color: rgb(0, 153, 0);&quot;&gt;suart_puts(3, const char*</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;<span class="stringliteral">&quot;TTsample completed&quot;);&amp;nbsp;&amp;nbsp; //sends text &quot;sample completed&quot;&lt;/span&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="stringliteral">Where CL and TT are the display specific commands&lt;br&gt;</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="stringliteral">&lt;br&gt;</span></div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="stringliteral">\endhtmlonly</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="stringliteral"><div class="ttc" id="sixteen__bit_8c_html_a8078fb1f3ba5d17173709055c431acec"><div class="ttname"><a href="sixteen__bit_8c.html#a8078fb1f3ba5d17173709055c431acec">read_adc</a></div><div class="ttdeci">int32_t read_adc(uint8_t ADC_A, uint8_t ADC_B, uint8_t ADC_C)</div><div class="ttdoc">Reads the value from the I2c ADC. </div><div class="ttdef"><b>Definition:</b> <a href="sixteen__bit_8c_source.html#l00032">sixteen_bit.c:32</a></div></div>
 <div class="ttc" id="10__bit_8c_html_adf79ef31c8f4e4173ca74e518dc64d33"><div class="ttname"><a href="10__bit_8c.html#adf79ef31c8f4e4173ca74e518dc64d33">read_adc_onboard</a></div><div class="ttdeci">int16_t read_adc_onboard(uint8_t channel, uint8_t oversamples)</div><div class="ttdef"><b>Definition:</b> <a href="10__bit_8c_source.html#l00061">10_bit.c:61</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 10 2014 19:52:08 for Open Emissions DAQ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 28 2015 10:49:21 for Open Emissions DAQ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
