@@ -233,22 +233,22 @@ editor window:
 <br>
 <br style="color: rgb(51, 102, 255);">
 <font color="green"><span style="color: rgb(51, 102, 255);"> -O ihex
-opendaq07.out opendaq07.hex</span><br style="color: rgb(51, 102, 255);">
+opendaq_THISMACHINE107.out opendaq_THISMACHINE107.hex</span><br style="color: rgb(51, 102, 255);">
 <span style="color: rgb(51, 102, 255);">Compilation finished
 successfully.</span><br style="color: rgb(51, 102, 255);">
 <span style="color: rgb(51, 102, 255);">avr-objcopy -j .eeprom \</span><br
 style="color: rgb(51, 102, 255);">
 <span style="color: rgb(51, 102, 255);">--change-section-lma .eeprom=0 \</span><br
 style="color: rgb(51, 102, 255);">
-<span style="color: rgb(51, 102, 255);">-O ihex opendaq07.out
-opendaq07.ee.hex</span><br>
+<span style="color: rgb(51, 102, 255);">-O ihex opendaq_THISMACHINE107.out
+opendaq_THISMACHINE107.ee.hex</span><br>
 </font><br>
 Alternately, use these terminal commands: (in the firmware folder) <br>
 <span style="color: rgb(51, 102, 255);">
 &nbsp;&nbsp;&nbsp;&nbsp;make clean<br>
 &nbsp;&nbsp;&nbsp;&nbsp;make
 </span><br>
-Now upload the hex file (opendaq07.hex in this example) to the DAQ.<br>
+Now upload the hex file (opendaq_THISMACHINE107.hex in this example) to the DAQ.<br>
 \endhtmlonly
 \section four Uploading the .hex file to the DAQ
 Prerequisites:
