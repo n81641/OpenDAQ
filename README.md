@@ -3,7 +3,7 @@ University Of Illinois DAQ firmware
 
 Please see Documentation in /docs/html/index.html of each version.
 [Documentation](/OpenDAQ_118/docs/html/index.html)
-
+http://htmlpreview.github.com/?https://github.com/n81641/OpenDAQ/blob/master/OpenDAQ_118/docs/html/index.html
 Overview
 
 This firmware is designed to be easily edited to add, remove, and change the order of inputs.
