@@ -8,6 +8,5 @@ var searchData=
   ['ddrp3r',['DDRP3R',['../suart_8h.html#afeabf541458db76940277b424e52d6e8',1,'suart.h']]],
   ['ddrp3t',['DDRP3T',['../suart_8h.html#a3331b5b0b35257676d4e216aafcfdae4',1,'suart.h']]],
   ['direct_5fconn',['direct_conn',['../suart_8c.html#afe22079e5a765106d135df80fef1289f',1,'direct_conn(uint8_t suart_num):&#160;suart.c'],['../suart_8h.html#afe22079e5a765106d135df80fef1289f',1,'direct_conn(uint8_t suart_num):&#160;suart.c']]],
-  ['disabled',['disabled',['../structsample__data.html#a43021cf4232112c0be0deb325252da5d',1,'sample_data']]],
-  ['documentation_20for_20the_20model_2032_20daq_20opendaq_20firmware_2e',['Documentation for the Model 32 DAQ OpenDAQ firmware.',['../index.html',1,'']]]
+  ['disabled',['disabled',['../structsample__data.html#a43021cf4232112c0be0deb325252da5d',1,'sample_data']]]
 ];

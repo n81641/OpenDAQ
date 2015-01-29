@@ -12,7 +12,7 @@ var searchData=
   ['read_5foffset',['READ_OFFSET',['../non__vol_8h.html#ad32c3a5b42163e171daccde5b5d5de02',1,'non_vol.h']]],
   ['read_5fstored_5fvals',['read_stored_vals',['../main_8c.html#abd331c160dab86ce825c1bcfd6525357',1,'main.c']]],
   ['read_5fwrite_5fstored',['read_write_stored',['../non__vol_8c.html#a60933d2c18742ed550ed9805e8fd2695',1,'read_write_stored(uint8_t input_function, struct sample_data *data, uint8_t channel):&#160;non_vol.c'],['../non__vol_8h.html#a60933d2c18742ed550ed9805e8fd2695',1,'read_write_stored(uint8_t input_function, struct sample_data *data, uint8_t channel):&#160;non_vol.c']]],
-  ['readme_2emd',['README.md',['../README_8md.html',1,'']]],
+  ['readme_5fdox_2emd',['readme_dox.md',['../readme__dox_8md.html',1,'']]],
   ['readsht25',['ReadSHT25',['../SHT25_8c.html#a39269619e4e6ff1b192118bf2258d994',1,'ReadSHT25(void):&#160;SHT25.c'],['../SHT25_8h.html#a39269619e4e6ff1b192118bf2258d994',1,'ReadSHT25(void):&#160;SHT25.c']]],
   ['report',['REPORT',['../inputs_8h.html#a787099914a94ed31fa544b985b55752f',1,'inputs.h']]],
   ['rtc',['RTC',['../structRTC.html',1,'RTC'],['../structsample__data.html#abc7bac4a5c01e9effcf9f33a42f57f06',1,'sample_data::rtc()']]],
